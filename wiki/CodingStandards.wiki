@@ -1,0 +1,4 @@
+#labels Phase-Implementation
+All developers working on the sfShop platform should follow next Coding standards.
+
+http://framework.zend.com/manual/en/coding-standard.html
