@@ -1,0 +1,16 @@
+propel:
+  _attributes:          { package: plugins.sfsCurrencyPlugin.lib.model }
+
+  currencies:
+    _attributes:        { phpName: sfsCurrency }
+    id:                 ~
+    title:              varchar(255)
+    code:               varchar(3)
+    symbol_left:        varchar(10)
+    symbol_right:       varchar(10)
+    decimal_point:      varchar(1)
+    thousands_point:    varchar(1)
+    decimal_places:     varchar(1)
+    value:              {type: float, size: 13,8 }
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }

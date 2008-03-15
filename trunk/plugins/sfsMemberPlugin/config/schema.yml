@@ -1,0 +1,43 @@
+propel:
+  _attributes:          { package: plugins.sfsMemberPlugin.lib.model }
+
+  members:
+    _attributes:        { phpName: sfsMember }
+    id:                 ~
+    gender:             { type: integer }
+    firstname:          varchar(255)
+    lastname:           varchar(255)
+    email:              varchar(255)
+    default_address_id: { type: integer, foreignTable: address_book, foreignReference: id, onDelete: restrict }
+    secret_question_id: { type: integer, foreignTable: members_secret_questions, foreignReference: id, onDelete: restrict }
+    secret_answer:      varchar(255)
+    phone:              varchar(255)
+    mobile_phone:       varchar(255)
+    password:           varchar(255)
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+    lastlogin_at:       { type: timestamp }
+    is_deleted:         { type: integer, size: 1, default: 0 }
+    confirm_code:       varchar(255)
+    is_confirmed:       { type: integer, size: 1, default: 0 }
+
+  members_secret_questions:
+    _attributes:        { phpName: sfsMemberSecretQuestions, isI18N: true, i18nTable: members_secret_questions_i18n }
+    id:                 ~
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+
+  members_secret_questions_i18n:
+    _attributes:        { phpName: sfsMemberSecretQuestionsI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: members_secret_questions, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    question:           varchar(255)
+
+  address_book:
+    _attributes:        { phpName: sfsAddressBook }
+    member_id:          { type: integer, foreignTable: members, foreignReference: id, onDelete: cascade }
+    country_id:         { type: integer }
+    state:              varchar(32)
+    city:               varchar(32)
+    street:             varchar(64)
+    postcode:           varchar(10)

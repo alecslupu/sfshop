@@ -1,0 +1,18 @@
+propel:
+  _attributes:          { package: plugins.sfsCorePlugin.lib.model }
+
+  languages:
+    _attributes:        { phpName: sfsLanguage }
+    id:                 ~
+    name:               varchar(255)
+    code:               varchar(3)
+    thumbnail:          varchar(255)
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+    
+  countries:
+    _attributes:        { phpName: sfsCountry }
+    id:                 ~
+    name:               varchar(255)
+    iso_code_2:         varchar(2)
+    iso_code_3:         varchar(3)

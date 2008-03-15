@@ -1,0 +1,37 @@
+propel:
+  _attributes:          { package: plugins.sfsProductPlugin.lib.model }
+
+  manufactures:
+    _attributes:        { phpName: sfsManufacture, isI18N: true, i18nTable: manufactures_i18n }
+    id:                 ~
+    thumbnail:          varchar(255)
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+
+  manufactures_i18n:
+    _attributes:        { phpName: sfsManufactureI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: manufactures, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    name:               varchar(255)
+    description:        longvarchar
+
+  products:
+    _attributes:        { phpName: sfsProduct, isI18N: true, i18nTable: products_i18n }
+    id:                 ~
+    manufacture_id:     { type: integer, required: true, foreignTable: manufactures, foreignReference: id, onDelete: cascade }
+    category_id:        { type: integer, required: true, foreignTable: categories, foreignReference: id, onDelete: cascade }
+    thumbnail:          varchar(255)
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+    price:              { type: decimal, size: 15,4 }
+    quantity:           { type: integer }
+    is_active:          { type: integer, size: 1 }
+
+  products_i18n:
+    _attributes:        { phpName: sfsProductI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: products, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    title:              varchar(255)
+    description:        longvarchar
+    meta_keywords:      longvarchar
+    meta_description:   longvarchar
