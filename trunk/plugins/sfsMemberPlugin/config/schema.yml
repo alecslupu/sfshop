@@ -7,7 +7,7 @@ propel:
     gender:             { type: integer }
     firstname:          varchar(255)
     lastname:           varchar(255)
-    email:              varchar(255)
+    email:              { type: varchar(255) }
     default_address_id: { type: integer, foreignTable: address_book, foreignReference: id, onDelete: restrict }
     secret_question_id: { type: integer, foreignTable: members_secret_questions, foreignReference: id, onDelete: restrict }
     secret_answer:      varchar(255)

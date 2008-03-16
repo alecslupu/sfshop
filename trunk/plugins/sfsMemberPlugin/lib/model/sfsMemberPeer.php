@@ -9,4 +9,22 @@
  */ 
 class sfsMemberPeer extends BasesfsMemberPeer
 {
+    const CONFIRMED = 1;
+
+    protected static $member = null;
+    
+    /**
+    * Get member object by email.
+    *
+    * @param  string $email
+    * @return mixed if member exist returns object, otherwise null.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function retrieveByEmail($email)
+    {
+        $criteria = new Criteria();
+        $criteria->add(sfsMemberPeer::EMAIL, $email);
+        return sfsMemberPeer::doSelectOne($criteria);
+    }
 }

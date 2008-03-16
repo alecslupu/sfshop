@@ -1,0 +1,47 @@
+#
+# Members
+#
+
+registration:
+  url: /registration
+  param: { module: members, action: registration }
+
+registered:
+  url: /registered
+  param: { module: members, action: registered }
+
+forgotPassword:
+  url: /forgotPassword
+  param: { module: members, action: forgotPassword }
+
+passwordSent:
+  url: /passwordSent
+  param: { module: members, action: passwordSent }
+
+login: 
+  url: /login
+  param: { module: members, action: login }
+
+logout:
+  url: /logout
+  param: { module: members, action: logout }
+
+myProfile:
+  url: /myProfile
+  param: { module: members, action: myProfile }
+
+editProfile:
+  url: /editProfile
+  param: { module: members, action: editProfile }
+
+changePassword:
+  url: /changePassword
+  param: { module: members, action: changePassword }
+
+confirmRegistration:
+  url: /confirmRegistration/*
+  param: { module: members, action: confirmRegistration }
+
+profile:
+  url: /profile/:username/*
+  param: { module: members, action: profile }
