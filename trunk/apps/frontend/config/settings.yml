@@ -19,6 +19,11 @@ test:
     no_script_name:         off
     etag:                   off
 
+all:
+  .settings:
+    enabled_modules:         [default, members]
+    standard_helpers:       [ I18N, Partial, Form, Window, Javascript, Date ]
+    
 #all:
 #  .actions:
 #    error_404_module:       default   # To be called when a 404 error is raised
