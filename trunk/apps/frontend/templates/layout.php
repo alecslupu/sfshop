@@ -4,15 +4,58 @@
 
 <?php include_http_metas() ?>
 <?php include_metas() ?>
-
 <?php include_title() ?>
 
 <link rel="shortcut icon" href="/favicon.ico" />
 
 </head>
+
 <body>
 
-<?php echo $sf_data->getRaw('sf_content') ?>
-
+<div class="main">
+    <div class="main_center">
+        <div class="header_top_line">
+            <div class="members_links">
+               <?php  if (!$sf_user->isAuthenticated()): ?>
+                  <div id="login_link">
+                    <?php echo link_to(__('Sign in','@login')) ?>
+                    | <?php echo link_to(__('Forgot password'),'@forgotPassword') ?> | <?php echo link_to(__('Registration'),'@registration') ?>
+                  </div>
+              <?php else: ?>
+                <div>
+                  <?php echo __('Hello'); ?>, &nbsp;
+                  <?php echo link_to($sf_user->getMemberName(),'@myProfile'); ?>! |
+                  <?php echo link_to(__('Logout'),'@logout'); ?> &nbsp; &nbsp;
+                </div>
+              <?php endif; ?>
+            </div>
+            <div class="logo"><?php echo link_to('<img src="/images/logo.jpg" width="148" height="31" border="0"/>','@homepage') ?></div>
+            <div class="search_form">
+                <div class="search_input_text">
+                    <input type="text" name="query"/>
+                    
+                </div>
+                <div class="search_button"><input type="image" name="search" src="/images/search.jpg" class="btn_search"/>
+                </div>
+            </div>
+        </div> 
+        <div class="menu">
+            <div><?php echo link_to(__('My profile'),'@myProfile'); ?></div>
+        </div>
+        <div class="line1"><?php //include_component_slot('sidebar') ?></div>
+        <div class="line2">&nbsp;</div>
+        <div style="padding: 1px 10px 10px 10px; background: #FFFFFF">
+            <?php echo $sf_data->getRaw('sf_content') ?>
+        </div>
+         <div class="footer">
+           <div class="footer_line"><img src="/images/big_line_1.gif" width="2" height="1"></div>
+           <div class="footer_block1">
+              <div class="footer_block2"><div class="footer_content"><a href="index.html">sfShop</a></div></div>
+           </div>
+           <div class="footer_line"><img src="/images/big_line_1.gif" width="2" height="1"></div>
+         </div>
+   </div>
+</div>
 </body>
 </html>
+
