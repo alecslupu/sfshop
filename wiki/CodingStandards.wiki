@@ -2,7 +2,7 @@
 All developers working on the sfShop platform should follow next Coding standards.
 
 ==1. PHP File Formatting==
-1.1. General
+====1.1. General====
 For files that contain only PHP code, the closing tag ("?>") is never permitted. It is not required by PHP. Not including it prevents trailing whitespace from being accidentally injected into the output. 
 
 1.2. Indentation
