@@ -1,7 +1,7 @@
 #labels Phase-Implementation
 All developers working on the sfShop platform should follow next Coding standards.
 
-1. PHP File Formatting
+==1. PHP File Formatting==
 1.1. General
 For files that contain only PHP code, the closing tag ("?>") is never permitted. It is not required by PHP. Not including it prevents trailing whitespace from being accidentally injected into the output. 
 
@@ -14,7 +14,7 @@ The target line length is 80 characters, i.e. developers should aim keep code as
 1.4. Line Termination
 Line termination is the standard way for Unix text files. Lines must end only with a linefeed (LF). 
 
-2. Naming Conventions
+==2. Naming Conventions==
 2.1. Classes
 Class names may only contain alphanumeric characters. Underscores are not permitted. 
 Class names must always start with sfs prefix which points that class is a part of sfShop platform.  When a class name consists of more than one word, the first letter of each new word must be capitalized. This is commonly called "camelCase" formatting. 
@@ -45,7 +45,8 @@ Constants may contain both alphanumeric characters and the underscore. Numbers a
 EMBED_SUPPRESS_EMBED_EXCEPTION // is permitted  
 EMBED_SUPPRESSEMBEDEXCEPTION // is not. 
 }}}
-3. Coding Style
+
+==3. Coding Style==
 3.1. PHP Code Demarcation
 PHP code must always be delimited by the full-form, standard PHP tags: 
 {{{
