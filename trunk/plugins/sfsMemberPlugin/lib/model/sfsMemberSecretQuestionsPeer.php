@@ -9,4 +9,15 @@
  */ 
 class sfsMemberSecretQuestionsPeer extends BasesfsMemberSecretQuestionsPeer
 {
+    /**
+    * Gets all records from secret questions table.
+    * 
+    * @return array with objects
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getAllQuestionsWithI18n()
+    {
+        return self::doSelectWithI18n(new Criteria());
+    }
 }

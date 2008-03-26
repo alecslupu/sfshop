@@ -9,4 +9,8 @@
  */ 
 class sfsMemberSecretQuestions extends BasesfsMemberSecretQuestions
 {
+    public function __toString()
+    {
+        return $this->getQuestion();
+    }
 }
