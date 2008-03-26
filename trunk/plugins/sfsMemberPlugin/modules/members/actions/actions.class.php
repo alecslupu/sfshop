@@ -11,6 +11,14 @@
 class membersActions extends sfActions
 {
 
+    /**
+    * Checks entered data and if data is correct sets member authenticated.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
     public function executeLogin()
     {
         $this->form = new sfsLoginForm();
@@ -52,6 +60,40 @@ class membersActions extends sfActions
                 else {
                     $this->redirect($redirect_to);
                 }
+            }
+        }
+    }
+    
+    /**
+    * Checks entered data and if data is correct adds new member to database.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeRegistration()
+    {
+        sfLoader::loadHelpers('I18N');
+        
+        $this->form = new sfsRegistrationForm();
+        
+        if ($this->getRequest()->isMethod('post')) {
+
+            $this->form->bind(
+                array(
+                    'email'            => $this->getRequestParameter('email'),
+                    'first_name'       => $this->getRequestParameter('first_name'),
+                    'last_name'        => $this->getRequestParameter('last_name'),
+                    'password'         => $this->getRequestParameter('password'),
+                    'confirm_password' => $this->getRequestParameter('confirm_password'),
+                    'secret_question'  => $this->getRequestParameter('secret_question'),
+                    'secret_answer'    => $this->getRequestParameter('secret_answer')
+                )
+            );
+
+            if ($this->form->isValid()) {
+                
             }
         }
     }

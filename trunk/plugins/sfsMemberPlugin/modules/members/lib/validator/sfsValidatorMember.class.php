@@ -16,17 +16,22 @@ class sfsValidatorMember extends sfValidatorBase
    * Available options:
    *
    *  * check_login
+   *  * check_email
    *
    * Available error codes:
    *
    *  * check_login
+   *  * check_email
    *
    * @see sfValidatorBase
    */
     protected function configure($options = array(), $messages = array())
     {
         $this->addMessage('check_login', 'You have wrong email or password.');
+        $this->addMessage('check_email', 'Accout with this email alredy exist.');
+
         $this->addOption('check_login');
+        $this->addOption('check_email');
     }
 
     /**
@@ -44,6 +49,7 @@ class sfsValidatorMember extends sfValidatorBase
     */
     protected function doClean($value)
     {
+        $clean = true;
         $member = sfsMemberPeer::retrieveByEmail($value);
 
         if ($this->hasOption('check_login')) {
