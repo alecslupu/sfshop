@@ -21,8 +21,11 @@ test:
 
 all:
   .settings:
-    enabled_modules:         [default, members]
-    standard_helpers:       [ I18N, Partial, Form, Window, Javascript, Date ]
+    enabled_modules:        [default, members]
+    standard_helpers:       [ I18N, Partial, Javascript, Date ]
+    # i18n
+    i18n:                   on
+    default_culture:        en
     
 #all:
 #  .actions:
