@@ -311,20 +311,16 @@ input.confirm_code {
 
 /* forms */
 
-form .error {
-  border: red 1px solid;
+ul {
+  margin: 0px;
 }
 
-.error_msg {
-  color: red;
-}
-
-span.mandatory {
+ul.error_list li {
+  list-style: none;
   color: red;
 }
 
 input {
-  width: 200px;
   border: #000000 1px solid;
 }
 
