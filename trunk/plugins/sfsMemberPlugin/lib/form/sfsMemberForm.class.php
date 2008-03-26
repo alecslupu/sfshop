@@ -9,7 +9,18 @@
  */
 class sfsMemberForm extends BasesfsMemberForm
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+    }
+  
+    public function bind($taintedValues, $taintedFiles)
+    {
+        $request = sfContext::getInstance()->getRequest();
+        
+        if ($request->hasParameter(self::$CSRFFieldName))
+        {
+            $taintedValues[self::$CSRFFieldName] = $request->getParameter(self::$CSRFFieldName);
+        }
+        parent::bind($taintedValues, $taintedFiles);
+    }
 }
