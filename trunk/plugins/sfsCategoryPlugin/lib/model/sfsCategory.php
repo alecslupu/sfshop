@@ -9,4 +9,5 @@
  */ 
 class sfsCategory extends BasesfsCategory
 {
+
 }

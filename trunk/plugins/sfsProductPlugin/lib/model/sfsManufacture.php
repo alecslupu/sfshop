@@ -9,4 +9,5 @@
  */ 
 class sfsManufacture extends BasesfsManufacture
 {
+
 }

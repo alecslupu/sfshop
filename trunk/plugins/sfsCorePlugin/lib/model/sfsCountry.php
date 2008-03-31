@@ -9,4 +9,5 @@
  */ 
 class sfsCountry extends BasesfsCountry
 {
+
 }

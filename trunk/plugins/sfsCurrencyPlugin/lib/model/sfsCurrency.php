@@ -9,4 +9,5 @@
  */ 
 class sfsCurrency extends BasesfsCurrency
 {
+
 }
