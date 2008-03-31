@@ -85,6 +85,8 @@ class membersActions extends sfActions
                     'email'            => $this->getRequestParameter('email'),
                     'first_name'       => $this->getRequestParameter('first_name'),
                     'last_name'        => $this->getRequestParameter('last_name'),
+                    //'phone'            => $this->getRequestParameter('phone'),
+                    //'mobile_phone'     => $this->getRequestParameter('mobile_phone'),
                     'password'         => $this->getRequestParameter('password'),
                     'confirm_password' => $this->getRequestParameter('confirm_password'),
                     'secret_question'  => $this->getRequestParameter('secret_question'),
@@ -93,7 +95,10 @@ class membersActions extends sfActions
             );
 
             if ($this->form->isValid()) {
-                
+                $this->form->updateObject();
+                $member = $this->form->getObject();
+                $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
+                $member->save();
             }
         }
     }
