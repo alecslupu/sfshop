@@ -12,8 +12,18 @@ class sfsMemberForm extends BasesfsMemberForm
     public function configure()
     {
     }
-  
-    public function bind($taintedValues, $taintedFiles)
+
+    /**
+    * Binds the form with input values.
+    *
+    * It triggers the validator schema validation.
+    *
+    * @param array An array of input values
+    * @param array An array of uploaded files (in the $_FILES or $_GET format)
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function bind(array $taintedValues = null, array $taintedFiles = array())
     {
         $request = sfContext::getInstance()->getRequest();
         
