@@ -10,7 +10,7 @@
 class sfsMemberPeer extends BasesfsMemberPeer
 {
     const CONFIRMED = 1;
-
+    
     protected static $member = null;
     
     /**
@@ -26,5 +26,17 @@ class sfsMemberPeer extends BasesfsMemberPeer
         $criteria = new Criteria();
         $criteria->add(sfsMemberPeer::EMAIL, $email);
         return sfsMemberPeer::doSelectOne($criteria);
+    }
+    
+    /**
+    * Generates confirm code
+    *
+    * @return string with confirm code.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function generateConfirmCode()
+    {
+        return md5(time() . uniqid());
     }
 }
