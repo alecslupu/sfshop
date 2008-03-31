@@ -57,7 +57,7 @@ class sfsValidatorMember extends sfValidatorBase
             $password = sfContext::getInstance()->getRequest()->getParameter('password');
 
             if (is_object($member)) {
-                if ($member->getPassword() == md5($password)) {
+                if ($member->getCheckPassword($password)) {
                     throw new sfValidatorError($this, 'check_login', array('value' => $value, 'check_login' => $this->getOption('check_login')));
                 }
             }
@@ -65,7 +65,12 @@ class sfsValidatorMember extends sfValidatorBase
                 throw new sfValidatorError($this, 'check_login', array('value' => $value, 'check_login' => $this->getOption('check_login')));
             }
         }
-
+        elseif ($this->hasOption('check_email')) {
+            if ($member !== null) {
+                throw new sfValidatorError($this, 'check_email', array('value' => $value, 'check_email' => $this->getOption('check_email')));
+            }
+        }
+        
         return $clean;
     }
 }
