@@ -35,30 +35,43 @@ class sfsRegistrationForm extends sfsMemberForm
                 ),
                 new sfsValidatorMember(
                     array('check_email' => true),
-                    array('check_email' => 'dasas')
+                    array('check_email' => 'An account with this email already exists')
                 )
             )
         );
         
         $validatorPassword = new sfValidatorString(
             array(
-                'required' => true, 
+                'required'   => true, 
                 'min_length' => 6 , 
                 'max_length' => 20
             ),
-            array('invalid' => __('assa'))
+            array(
+                'min_length' => __('Password must be 6 or more characters'),
+                'max_length' => __('Password must be 20 or less characters')
+            )
         );
         
-        $validatorConfirmPassword = new sfValidatorPass(
-            array('required' => true)
+        $validatorConfirmPassword = new sfsValidatorCompare(
+            array(
+                'required' => true, 
+                'check'    => 'password'
+            ),
+            array('invalid'  => 'Passwords do not match')
         );
         
         $validatorFirstName = new sfValidatorString(
-            array('required' => true, 'min_length' => 4)
+            array(
+                'required'   => true, 
+                'min_length' => 4
+            )
         );
         
         $validatorLastName = new sfValidatorString(
-            array('required' => true, 'min_length' => 4)
+            array(
+                'required'   => true, 
+                'min_length' => 4
+            )
         );
         
         $validatorSecretQuestion = new sfValidatorChoice(
@@ -66,7 +79,10 @@ class sfsRegistrationForm extends sfsMemberForm
         );
         
         $validatorSecretAnswer = new sfValidatorString(
-            array('required' => true, 'min_length' => 4)
+            array(
+                'required'   => true, 
+                'min_length' => 4
+            )
         );
         
         $this->setValidators(
