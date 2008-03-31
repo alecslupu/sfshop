@@ -11,6 +11,6 @@ propel:
     decimal_point:      varchar(1)
     thousands_point:    varchar(1)
     decimal_places:     varchar(1)
-    value:              {type: float, size: 13,8 }
+    value:              { type: float }
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }

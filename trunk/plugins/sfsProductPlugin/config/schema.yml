@@ -23,7 +23,7 @@ propel:
     thumbnail:          varchar(255)
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
-    price:              { type: decimal, size: 15,4 }
+    price:              { type: decimal }
     quantity:           { type: integer }
     is_active:          { type: integer, size: 1 }
 
