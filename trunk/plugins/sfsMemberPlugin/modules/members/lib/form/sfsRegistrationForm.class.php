@@ -13,8 +13,14 @@ class sfsRegistrationForm extends sfsMemberForm
             }
         }
 
+        $arrayGenders = array(
+            'male'   => __('Male'),
+            'female' => __('Female')
+        );
+        
         $this->setWidgets(
             array(
+                'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'email'              => new sfWidgetFormInput(),
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
@@ -27,6 +33,10 @@ class sfsRegistrationForm extends sfsMemberForm
              )
         );
         
+        $validatorGender = new sfValidatorChoice(
+            array('choices' => $arrayGenders)
+        );
+        
         $validatorEmail = new sfValidatorAnd(
             array(
                 new sfValidatorEmail(
@@ -35,7 +45,7 @@ class sfsRegistrationForm extends sfsMemberForm
                 ),
                 new sfsValidatorMember(
                     array('check_email' => true),
-                    array('check_email' => 'An account with this email already exists')
+                    array('check_email' => __('An account with this email already exists'))
                 )
             )
         );
@@ -87,6 +97,7 @@ class sfsRegistrationForm extends sfsMemberForm
         
         $this->setValidators(
             array(
+               //'gender'           => $validatorGender,
                'email'            => $validatorEmail,
                'password'         => $validatorPassword,
                'confirm_password' => $validatorConfirmPassword,

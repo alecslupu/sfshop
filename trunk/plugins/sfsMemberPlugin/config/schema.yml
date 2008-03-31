@@ -5,11 +5,11 @@ propel:
     _attributes:        { phpName: sfsMember }
     id:                 ~
     gender:             { type: integer }
-    firstname:          varchar(255)
-    lastname:           varchar(255)
-    email:              { type: varchar(255) }
+    first_name:         varchar(255)
+    last_name:          varchar(255)
+    email:              varchar(255)
     default_address_id: { type: integer, foreignTable: address_book, foreignReference: id, onDelete: restrict }
-    secret_question_id: { type: integer, foreignTable: members_secret_questions, foreignReference: id, onDelete: restrict }
+    secret_question:    varchar(255)
     secret_answer:      varchar(255)
     phone:              varchar(255)
     mobile_phone:       varchar(255)

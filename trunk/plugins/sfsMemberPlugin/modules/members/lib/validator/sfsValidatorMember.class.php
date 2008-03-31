@@ -40,16 +40,17 @@ class sfsValidatorMember extends sfValidatorBase
     * Gets member object by email.
     * 
     * If option "check_login" is set, checks password entered and password of member object. If
-    * passwords do not match set error and returns false, returns true otherwise.
+    * passwords do not match set error.
+    * If option "check_email" is set, checks email is unique.
     * 
     * @param  string $value email value
-    * @return bool false if member exist with this email and password, false otherwise
+    * @return string $clean, value of field
     * @author Dmitry Nesteruk
     * @access public
     */
     protected function doClean($value)
     {
-        $clean = true;
+        $clean = $value;
         $member = sfsMemberPeer::retrieveByEmail($value);
 
         if ($this->hasOption('check_login')) {

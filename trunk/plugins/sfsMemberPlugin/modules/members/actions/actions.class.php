@@ -79,9 +79,10 @@ class membersActions extends sfActions
         $this->form = new sfsRegistrationForm();
         
         if ($this->getRequest()->isMethod('post')) {
-
+        
             $this->form->bind(
                 array(
+                    //'gender'           => $this->getRequestParameter('gender'),
                     'email'            => $this->getRequestParameter('email'),
                     'first_name'       => $this->getRequestParameter('first_name'),
                     'last_name'        => $this->getRequestParameter('last_name'),
@@ -93,12 +94,14 @@ class membersActions extends sfActions
                     'secret_answer'    => $this->getRequestParameter('secret_answer')
                 )
             );
-
+            
             if ($this->form->isValid()) {
-                $this->form->updateObject();
-                $member = $this->form->getObject();
+                $member = $this->form->updateObject();
                 $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
                 $member->save();
+                
+                $this->getUser()->setFlash('registered', true);
+                $this->redirect('@registration');
             }
         }
     }
