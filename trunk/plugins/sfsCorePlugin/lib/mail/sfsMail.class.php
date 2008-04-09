@@ -1,6 +1,6 @@
 <?php
 /**
- * Class provides solution for send mail.
+ * Class provides functionality for send email.
  *
  * @package    plugins.sfsCorePlugin.lib
  * @subpackage mail
@@ -9,8 +9,16 @@
  */
 class sfsMail extends Mail
 {
-    protected $params = array();
+    protected $bodyParams = array();
     
+    /**
+    * Creates mailer object, sets mail parameters: from, charset and priority.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
     public function __construct()
     {
         parent::__construct();
@@ -21,25 +29,69 @@ class sfsMail extends Mail
         $this->setEncoding('utf8');
     }
     
+    /**
+    * Sets subject and body from template.
+    *
+    * @param object $template
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
     public function setTemplate(sfsEmailTemplate $template)
     {
         $this->setSubject($template->getSubject());
         $this->setBody($template->getBody());
     }
     
-    public function setParams(array $params)
+    /**
+    * Assign array with body params to protected variable of class.
+    *
+    * @param array $bodyParams
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function setBodyParams(array $bodyParams)
     {
-        $this->params = $params;
+        $this->bodyParams = $bodyParams;
     }
     
-    public function getParams()
+    /**
+    * Gets array with body params.
+    *
+    * @param void
+    * @return array
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function getBodyParams()
     {
         return $this->params;
     }
     
+    /**
+    * Sets mail body.
+    *
+    * @param array $bodyParams
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
     public function setBody($body)
     {
         $this->mailer->Body = $body;
+    }
+    
+    /**
+    * Replaces labels in body on value of body params. Calls parent function send.
+    *
+    * @param array $bodyParams
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function send()
+    {
         $params = $this->getParams();
         
         if (is_array($params) && !empty($params)) {
@@ -47,5 +99,7 @@ class sfsMail extends Mail
                 $this->mailer->Body = str_replace('%' . $key . '%', $value, $this->mailer->Body);
             }
         }
+        
+        parent::send();
     }
 }
