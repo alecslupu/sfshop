@@ -1,0 +1,18 @@
+---
+sfsEmailTemplate: 
+  sfEmailTemplate_EN_1: 
+    name: REGISTRATION
+    culture: 'en'
+    subject: 'Registration'
+    body: |
+      Hello!<br/><br/>
+      Thanks for registration on our site. You should confirm registration.<br/><br/>
+      Click to link for confirm regisration <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Confirmation code:
+      %confirm_code%<br/><br/>
+      Your login data:<br/>
+      Login: '%username%<br/>'
+      Password: '%password%<br/><br/>'
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12
+
