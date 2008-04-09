@@ -1,6 +1,6 @@
 propel:
   _attributes:          { package: plugins.sfsCorePlugin.lib.model }
-
+  
   languages:
     _attributes:        { phpName: sfsLanguage }
     id:                 ~
@@ -16,3 +16,17 @@ propel:
     name:               varchar(255)
     iso_code_2:         varchar(2)
     iso_code_3:         varchar(3)
+    
+  email_template:
+    _attributes:        { phpName: sfsEmailTemplate, isI18N: true, i18nTable: email_template_i18n }
+    id:                 ~
+    name:               varchar(255)
+    created_at:         ~
+    updated_at:         ~
+    
+  email_template_i18n:
+    _attributes:        { phpName: sfsEmailTemplateI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: email_template, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    subject:            varchar(255)
+    body:               longvarchar
