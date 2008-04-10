@@ -5,14 +5,14 @@ class sfsRegistrationForm extends sfsMemberForm
     {
         $arrayQuestions = array();
         $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
-
+        
         if ($questions !== null) {
             $arrayQuestions[] = '';
             foreach ($questions as $question) {
                 $arrayQuestions[$question->getQuestion()] = $question->getQuestion();
             }
         }
-
+        
         $arrayGenders = array(
             'male'   => __('Male'),
             'female' => __('Female')
@@ -62,11 +62,15 @@ class sfsRegistrationForm extends sfsMemberForm
             )
         );
         
-        $validatorConfirmPassword = new sfsValidatorCompare(
-            array(
-                'required' => true, 
-                'check'    => 'password'
-            ),
+        $validatorConfirmPassword = new sfValidatorString(
+            array('required'   => true)
+        );
+        
+        $validatorComparePasswords = new sfValidatorSchemaCompare(
+            'password', 
+            'equal',
+            'confirm_password',
+            array(),
             array('invalid'  => 'Passwords do not match')
         );
         
@@ -107,7 +111,9 @@ class sfsRegistrationForm extends sfsMemberForm
                'secret_answer'    => $validatorSecretAnswer
             )
         );
-
+        
+        $this->validatorSchema->setPostValidator($validatorComparePasswords);
+        $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
     }
 }
