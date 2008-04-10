@@ -12,7 +12,7 @@ class sfsMail extends Mail
     protected $bodyParams = array();
     
     /**
-    * Creates mailer object, sets mail parameters: from, charset and priority.
+    * Creates mailer object, sets mail parameters.
     *
     * @param  void
     * @return void
@@ -22,11 +22,21 @@ class sfsMail extends Mail
     public function __construct()
     {
         parent::__construct();
-
+        
         $this->setFrom(sfConfig::get('app_mail_address_from', 'admin@localhost.com'));
         $this->setPriority(1);
-        $this->setCharset('utf8');
-        $this->setEncoding('utf8');
+        $this->setContentType('text/html');
+        
+        if (sfConfig::get('app_mail_smtp', false))
+        {
+            $this->setHostname(sfConfig::get('app_mail_smtp_host'));
+            $this->setPort(sfConfig::get('app_mail_smtp_port'));
+            $this->setUsername(sfConfig::get('app_mail_smtp_username'));
+            $this->setPassword(sfConfig::get('app_mail_smtp_password'));
+        }
+        
+        //$this->setCharset('utf8');
+        //$this->setEncoding('utf8');
     }
     
     /**
@@ -66,20 +76,7 @@ class sfsMail extends Mail
     */
     public function getBodyParams()
     {
-        return $this->params;
-    }
-    
-    /**
-    * Sets mail body.
-    *
-    * @param array $bodyParams
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function setBody($body)
-    {
-        $this->mailer->Body = $body;
+        return $this->bodyParams;
     }
     
     /**
@@ -92,11 +89,11 @@ class sfsMail extends Mail
     */
     public function send()
     {
-        $params = $this->getParams();
+        $params = $this->getBodyParams();
         
         if (is_array($params) && !empty($params)) {
             foreach($params as $key => $value) {
-                $this->mailer->Body = str_replace('%' . $key . '%', $value, $this->mailer->Body);
+                $this->setBody(str_replace('%' . $key . '%', $value, $this->getBody()));
             }
         }
         

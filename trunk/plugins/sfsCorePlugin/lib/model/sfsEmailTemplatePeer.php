@@ -12,7 +12,7 @@ class sfsEmailTemplatePeer extends BasesfsEmailTemplatePeer
     const REGISTRATION = 'REGISTRATION';
     
     /**
-    * Gets email template with body and subject.
+    * Gets email template with body and subject by tamplate name and culture.
     *
     * @param  string $name
     * @return mixed if template exist returns object, otherwise null.
@@ -23,7 +23,7 @@ class sfsEmailTemplatePeer extends BasesfsEmailTemplatePeer
     {
         $criteria = new Criteria();
         $criteria->add(self::NAME, $name);
-        $object = self::doSelectWithI18n($criteria, $culture);
+        $objects = self::doSelectWithI18n($criteria, $culture);
         
         if ($objects) {
             return $objects[0];
