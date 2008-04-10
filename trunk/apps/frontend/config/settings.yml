@@ -21,7 +21,7 @@ test:
 
 all:
   .settings:
-    enabled_modules:        [default, members]
+    enabled_modules:        [ default, members, sfEmail ]
     standard_helpers:       [ I18N, Partial, Javascript, Date ]
     # i18n
     i18n:                   on
