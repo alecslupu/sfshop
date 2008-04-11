@@ -77,9 +77,9 @@ class membersActions extends sfActions
         sfLoader::loadHelpers('I18N');
         
         $this->form = new sfsRegistrationForm();
+        $this->form->embedForm('address', new sfsAddressForm());
         
         if ($this->getRequest()->isMethod('post')) {
-        
             $this->form->bind(
                 array(
                     'gender'           => $this->getRequestParameter('gender'),
@@ -91,7 +91,12 @@ class membersActions extends sfActions
                     'password'         => $this->getRequestParameter('password'),
                     'confirm_password' => $this->getRequestParameter('confirm_password'),
                     'secret_question'  => $this->getRequestParameter('secret_question'),
-                    'secret_answer'    => $this->getRequestParameter('secret_answer')
+                    'secret_answer'    => $this->getRequestParameter('secret_answer'),
+                    
+                    'address[state]'    => $this->getRequestParameter('address[state]'),
+                    'address[city]'     => $this->getRequestParameter('city'),
+                    'address[street]'   => $this->getRequestParameter('street'),
+                    'address[postcode]' => $this->getRequestParameter('postcode'),
                 )
             );
             
@@ -100,7 +105,9 @@ class membersActions extends sfActions
                 $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
                 $member->save();
                 
-                $urlToConfirm = sfContext::getInstance()->getController()->genUrl('@confirmRegistration?confirm_code='.$confirmCode);
+                $controler = sfContext::getInstance()->getController();
+                $confirmCode = $member->getConfirmCode();
+                $urlToConfirm = $controler->genUrl('@confirmRegistration?confirm_code=' . $confirmCode);
                 $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::REGISTRATION, $this->getUser()->getCulture());
                 
                 $mail = new sfsMail();
@@ -109,7 +116,7 @@ class membersActions extends sfActions
                 $mail->setBodyParams(
                     array(
                         'email'                => $member->getEmail(),
-                        'password'             => $member->getPassword(),
+                        'password'             => $this->getRequestParameter('password'),
                         'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
                         'confirm_code'         => $confirmCode
                     )

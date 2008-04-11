@@ -41,11 +41,11 @@ class sfsRegistrationForm extends sfsMemberForm
             array(
                 new sfValidatorEmail(
                     array('required' => true), 
-                    array('invalid' => __('This is not a valid email address'))
+                    array('invalid' => 'This is not a valid email address')
                 ),
                 new sfsValidatorMember(
                     array('check_email' => true),
-                    array('check_email' => __('An account with this email already exists'))
+                    array('check_email' => 'An account with this email already exists')
                 )
             )
         );
@@ -57,8 +57,8 @@ class sfsRegistrationForm extends sfsMemberForm
                 'max_length' => 20
             ),
             array(
-                'min_length' => __('Password must be 6 or more characters'),
-                'max_length' => __('Password must be 20 or less characters')
+                'min_length' => 'Password must be 6 or more characters',
+                'max_length' => 'Password must be 20 or less characters'
             )
         );
         
@@ -88,8 +88,54 @@ class sfsRegistrationForm extends sfsMemberForm
             )
         );
         
+        $validatorPhone = new sfValidatorAnd(
+            array(
+                new sfValidatorRegex(
+                    array(
+                        'required' => false,
+                        'pattern'  => '/^[0-9()]{1,}$/i'
+                    ),
+                    array('invalid'  => 'Phone number must contain only numerals and "()"')
+                ),
+                new sfValidatorString(
+                    array(
+                        'required'   => false,
+                        'min_length' => 4
+                    ),
+                    array(
+                        'min_length' => 'Phone number can not be less 4 numerals'
+                    )
+                )
+            ),
+            array('required' =>false)
+        );
+        
+        $validatorMobilePhone = new sfValidatorAnd(
+            array(
+                new sfValidatorRegex(
+                    array(
+                        'required' => false,
+                        'pattern'  => '/^[0-9()]{1,}$/i'
+                    ),
+                    array('invalid'  => 'Mobile phone number must contain only numerals and "()"')
+                ),
+                new sfValidatorString(
+                    array(
+                        'min_length' => 11,
+                        'max_length' => 15
+                    ),
+                    array(
+                        'min_length' => 'Mobile phone number can not be less 11 characters',
+                        'max_length' => 'Mobile phone number can not be more 15 characters',
+                    )
+                )
+            ),
+            array('required' => false)
+        );
+        
         $validatorSecretQuestion = new sfValidatorChoice(
-            array('choices' => $arrayQuestions)
+            array('choices' => $arrayQuestions),
+            array('invalid'  => 'Please select secret question')
         );
         
         $validatorSecretAnswer = new sfValidatorString(
@@ -107,6 +153,8 @@ class sfsRegistrationForm extends sfsMemberForm
                'confirm_password' => $validatorConfirmPassword,
                'first_name'       => $validatorFirstName,
                'last_name'        => $validatorLastName,
+               'phone'            => $validatorPhone,
+               'mobile_phone'     => $validatorMobilePhone,
                'secret_question'  => $validatorSecretQuestion,
                'secret_answer'    => $validatorSecretAnswer
             )

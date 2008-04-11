@@ -35,6 +35,7 @@ propel:
 
   address_book:
     _attributes:        { phpName: sfsAddressBook }
+    id:                 ~
     member_id:          { type: integer, foreignTable: members, foreignReference: id, onDelete: cascade }
     country_id:         { type: integer }
     state:              varchar(32)

@@ -11,6 +11,7 @@ class sfsMemberForm extends BasesfsMemberForm
 {
     public function configure()
     {
+        
     }
 
     /**
