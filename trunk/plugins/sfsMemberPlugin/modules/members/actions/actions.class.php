@@ -80,26 +80,9 @@ class membersActions extends sfActions
         $this->form->embedForm('address', new sfsAddressForm());
         
         if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind(
-                array(
-                    'gender'           => $this->getRequestParameter('gender'),
-                    'email'            => $this->getRequestParameter('email'),
-                    'first_name'       => $this->getRequestParameter('first_name'),
-                    'last_name'        => $this->getRequestParameter('last_name'),
-                    'phone'            => $this->getRequestParameter('phone'),
-                    'mobile_phone'     => $this->getRequestParameter('mobile_phone'),
-                    'password'         => $this->getRequestParameter('password'),
-                    'confirm_password' => $this->getRequestParameter('confirm_password'),
-                    'secret_question'  => $this->getRequestParameter('secret_question'),
-                    'secret_answer'    => $this->getRequestParameter('secret_answer'),
-                    
-                    'address[state]'    => $this->getRequestParameter('address[state]'),
-                    'address[city]'     => $this->getRequestParameter('city'),
-                    'address[street]'   => $this->getRequestParameter('street'),
-                    'address[postcode]' => $this->getRequestParameter('postcode'),
-                )
-            );
-            
+
+            $this->form->bind(array('registration'  => $this->getRequestParameter('registration')));
+
             if ($this->form->isValid()) {
                 $member = $this->form->updateObject();
                 $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
@@ -116,7 +99,7 @@ class membersActions extends sfActions
                 $mail->setBodyParams(
                     array(
                         'email'                => $member->getEmail(),
-                        'password'             => $this->getRequestParameter('password'),
+                        'password'             => $this->getRequestParameter('registration[password]'),
                         'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
                         'confirm_code'         => $confirmCode
                     )

@@ -163,5 +163,6 @@ class sfsRegistrationForm extends sfsMemberForm
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        $this->getWidgetSchema()->setNameFormat('registration[%s]');
     }
 }
