@@ -28,7 +28,7 @@
                 </div>
               <?php endif; ?>
             </div>
-            <div class="logo"><?php echo link_to('<img src="/images/logo.jpg" width="148" height="31" border="0"/>','@homepage') ?></div>
+            <div class="logo"><?php echo link_to('<img src="/images/logo.jpg" width="79" height="43" border="0"/>','@homepage') ?></div>
             <div class="search_form">
                 <div class="search_input_text">
                     <input type="text" name="query"/>
