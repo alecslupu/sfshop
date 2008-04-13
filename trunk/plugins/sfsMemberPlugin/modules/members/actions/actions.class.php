@@ -65,7 +65,7 @@ class membersActions extends sfActions
     }
     
     /**
-    * Checks entered data and if data is correct adds new member to database.
+    * Checks entered data and if data is correct add new member to database.
     *
     * @param  void
     * @return void
@@ -80,12 +80,24 @@ class membersActions extends sfActions
         $this->form->embedForm('address', new sfsAddressForm());
         
         if ($this->getRequest()->isMethod('post')) {
-
-            $this->form->bind(array('registration'  => $this->getRequestParameter('registration')));
+            $this->form->bind($this->getRequestParameter('registration'));
 
             if ($this->form->isValid()) {
+                
                 $member = $this->form->updateObject();
                 $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
+                $member->save();
+                
+                $address = $this->getRequest()->getParameter('address');
+                $addressBook = new sfsAddressBook();
+                $addressBook->setMemberId($member->getId());
+                $addressBook->setCountryId($address['country_id']);
+                $addressBook->setState($address['state']);
+                $addressBook->setCity($address['city']);
+                $addressBook->setPostcode($address['postcode']);
+                $addressBook->save();
+                
+                $member->setDefaultAddressId($addressBook);
                 $member->save();
                 
                 $controler = sfContext::getInstance()->getController();
@@ -99,7 +111,7 @@ class membersActions extends sfActions
                 $mail->setBodyParams(
                     array(
                         'email'                => $member->getEmail(),
-                        'password'             => $this->getRequestParameter('registration[password]'),
+                        'password'             => $this->getRequestParameter('password'),
                         'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
                         'confirm_code'         => $confirmCode
                     )
@@ -108,6 +120,34 @@ class membersActions extends sfActions
                 
                 $this->getUser()->setFlash('registered', true);
                 $this->redirect('@registration');
+            }
+        }
+    }
+    
+    /**
+    * Checks entered confirm code, if code is correct set member is confirmed.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeConfirmRegistration()
+    {
+        sfLoader::loadHelpers('I18N');
+        $this->form = new sfsConfirmRegistrationForm();
+        
+        if ($this->getRequest()->isMethod('post')) {
+            $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
+            
+            if ($this->form->isValid()) {
+                $member = sfsMemberPeer::retrieveByConfirmCode($this->getRequestParameter('confirm_code'));
+                $member->setIsConfirmed(sfsMemberPeer::CONFIRMED);
+                $member->save();
+                $this->getUser()->login($member);
+                
+                $this->getUser()->setFlash('confirmed', true);
+                $this->redirect('@confirmRegistration');
             }
         }
     }

@@ -3,9 +3,8 @@
 <?php if ($sf_user->hasFlash('registered')): ?>
     <?php echo __('You are registered now. Thanks!') ?>
 <?php else: ?>
-    <form action="<?php echo url_for('@registration'); ?>" method="post">
+    <form action="<?php echo url_for('@registration'); ?>" method="post" class="form">
       <table cellspacing="0" cellpadding="2">
-        <?php //echo $form ?>
         <tr><td><b><?php echo __('Your Personal Details') ?></b></td></tr>
         <tr>
             <td><?php echo $form['gender']->renderLabel(); ?></td>
@@ -51,13 +50,44 @@
             <td><?php echo $form['confirm_password']->render(); ?></td>
             <td><?php echo $form['confirm_password']->renderError(); ?></td>
         </tr>
+        <tr>
+            <td><?php echo $form['secret_question']->renderLabel(); ?></td>
+            <td><?php echo $form['secret_question']->render(); ?></td>
+            <td><?php echo $form['secret_question']->renderError(); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $form['secret_answer']->renderLabel(); ?></td>
+            <td><?php echo $form['secret_answer']->render(); ?></td>
+            <td><?php echo $form['secret_answer']->renderError(); ?></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
         <tr><td><b><?php echo __('Your Address') ?></b></td></tr>
+        <tr>
+            <td><?php echo $form['address']['country_id']->renderLabel(); ?></td>
+            <td><?php echo $form['address']['country_id']->render(); ?></td>
+            <td><?php echo $form['address']['country_id']->renderError(); ?></td>
+        </tr>
         <tr>
             <td><?php echo $form['address']['state']->renderLabel(); ?></td>
             <td><?php echo $form['address']['state']->render(); ?></td>
             <td><?php echo $form['address']['state']->renderError(); ?></td>
         </tr>
-        <tr><td colspan="2"><input type="submit" value="<?php echo __('Register') ?>"/></td></tr>
+        <tr>
+            <td><?php echo $form['address']['city']->renderLabel(); ?></td>
+            <td><?php echo $form['address']['city']->render(); ?></td>
+            <td><?php echo $form['address']['city']->renderError(); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $form['address']['street']->renderLabel(); ?></td>
+            <td><?php echo $form['address']['street']->render(); ?></td>
+            <td><?php echo $form['address']['street']->renderError(); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $form['address']['postcode']->renderLabel(); ?></td>
+            <td><?php echo $form['address']['postcode']->render(); ?></td>
+            <td><?php echo $form['address']['postcode']->renderError(); ?></td>
+        </tr>
+        <tr><td colspan="2"><input type="submit" value="<?php echo __('Register') ?>" class="button"/></td></tr>
       </table>
     </form>
 <?php endif; ?>

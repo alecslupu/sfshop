@@ -3,6 +3,7 @@ class sfsRegistrationForm extends sfsMemberForm
 {
     public function configure()
     {
+        //parent::configure();
         $arrayQuestions = array();
         $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
         
@@ -107,7 +108,7 @@ class sfsRegistrationForm extends sfsMemberForm
                     )
                 )
             ),
-            array('required' =>false)
+            array('required' => false)
         );
         
         $validatorMobilePhone = new sfValidatorAnd(
@@ -135,7 +136,7 @@ class sfsRegistrationForm extends sfsMemberForm
         
         $validatorSecretQuestion = new sfValidatorChoice(
             array('choices' => $arrayQuestions),
-            array('invalid'  => 'Please select secret question')
+            array('invalid' => 'Please select secret question')
         );
         
         $validatorSecretAnswer = new sfValidatorString(
@@ -159,7 +160,6 @@ class sfsRegistrationForm extends sfsMemberForm
                'secret_answer'    => $validatorSecretAnswer
             )
         );
-        
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

@@ -3,15 +3,21 @@ class sfsAddressForm extends sfsAddressBookForm
 {
     public function configure()
     {
+        $c = new sfCultureInfo(sfContext::getInstance()->getUser()->getCulture());
+        $arrayCountries = $c->getCountries();
         
         $this->setWidgets(
             array(
-                'country_id'         => new sfWidgetFormInput(),
+                'country_id'         => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
                 'state'              => new sfWidgetFormInput(),
                 'city'               => new sfWidgetFormInput(),
                 'street'             => new sfWidgetFormInput(),
                 'postcode'           => new sfWidgetFormInput()
              )
+        );
+        
+        $validatorCountry = new sfValidatorChoice(
+            array('choices' => $arrayCountries)
         );
         
         $validatorState = new sfValidatorString(
@@ -53,13 +59,15 @@ class sfsAddressForm extends sfsAddressBookForm
         
         $this->setValidators(
             array(
-               'state'    => $validatorState,
-               'city'     => $validatorCity,
-               'street'   => $validatorStreet,
-               'postcode' => $validatorPostcode
+               //'country_id' => $validatorCountry,
+               'state'      => $validatorState,
+               'city'       => $validatorCity,
+               'street'     => $validatorStreet,
+               'postcode'   => $validatorPostcode
             )
         );
         
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        $this->validatorSchema->setOption('allow_extra_fields', true);
     }
 }
