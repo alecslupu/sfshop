@@ -13,7 +13,7 @@ class sfsMemberForm extends BasesfsMemberForm
     {
         
     }
-
+    
     /**
     * Binds the form with input values.
     *
@@ -24,6 +24,7 @@ class sfsMemberForm extends BasesfsMemberForm
     * @author Dmitry Nesteruk
     * @access public
     */
+    
     public function bind(array $taintedValues = null, array $taintedFiles = array())
     {
         $request = sfContext::getInstance()->getRequest();
