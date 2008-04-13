@@ -351,3 +351,14 @@ textarea {
 .editor_ok_button {
     width: auto;
 }
+
+/*******************************/
+
+.form input {
+    width: 250px;
+}
+
+.form input.button {
+    width: auto;
+}
+
