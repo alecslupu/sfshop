@@ -14,10 +14,6 @@ forgotPassword:
   url: /forgotPassword
   param: { module: members, action: forgotPassword }
 
-passwordSent:
-  url: /passwordSent
-  param: { module: members, action: passwordSent }
-
 login: 
   url: /login
   param: { module: members, action: login }
