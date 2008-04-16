@@ -10,9 +10,13 @@ registered:
   url: /registered
   param: { module: members, action: registered }
 
-forgotPassword:
+forgotPasswordStepOne:
   url: /forgotPassword
-  param: { module: members, action: forgotPassword }
+  param: { module: members, action: forgotPasswordStepOne }
+
+forgotPasswordStepTwo:
+  url: /forgotPasswordStepTwo
+  param: { module: members, action: forgotPasswordStepTwo }
 
 login: 
   url: /login
