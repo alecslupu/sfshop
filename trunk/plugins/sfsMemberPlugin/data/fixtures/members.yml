@@ -8,6 +8,8 @@ sfsMember:
     first_name: Nesteruk
     phone: 32123123121
     mobile_phone: 1231231232123
+    secret_question: What was the name of your first school?
+    secret_answer: test
     created_at: 2007-12-17 10:17:39
     is_deleted: 0
     confirm_code: 14ad75adde376a57cda2069a6d5902d6
@@ -20,6 +22,8 @@ sfsMember:
     first_name: Tester
     phone: 32123123121
     mobile_phone: 1231231232123
+    secret_question: What was the name of your first school?
+    secret_answer: test
     created_at: 2007-12-17 10:17:39
     is_deleted: 0
     confirm_code: 14ad75adde376a57cda2069a6d5902d6
@@ -40,12 +44,12 @@ sfsMemberSecretQuestionsI18n:
   sfsMemberSecretQuestionsI18n_1:
     id:        sfsMemberSecretQuestions_1
     culture:   en
-    question:  'What was the name of your first school?'
+    question:  What was the name of your first school?
   sfsMemberSecretQuestionsI18n_2:
     id:        sfsMemberSecretQuestions_2
     culture:   en
-    question:  'Who was your childhood hero?'
+    question:  Who was your childhood hero?
   sfsMemberSecretQuestionsI18n_3:
     id:        sfsMemberSecretQuestions_3
     culture:   en
-    question:  'What is your favorite pastime?'
+    question:  What is your favorite pastime?
