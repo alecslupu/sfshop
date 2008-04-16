@@ -17,7 +17,7 @@ class sfsMember extends BasesfsMember
     */
     public function checkPassword($password)
     {
-        return $this->getPassword() == md5($password);
+        return $this->getPassword() !== md5($password);
     }
     
     /**

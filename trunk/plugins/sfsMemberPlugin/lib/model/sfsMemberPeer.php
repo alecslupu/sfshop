@@ -59,4 +59,16 @@ class sfsMemberPeer extends BasesfsMemberPeer
     {
         return md5(time() . uniqid());
     }
+    
+    /**
+    * Generates password
+    *
+    * @return string with password.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function generatePassword()
+    {
+        return substr(md5(time() . uniqid()), 0, 8);
+    }
 }
