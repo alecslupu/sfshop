@@ -16,25 +16,31 @@ class sfsValidatorMember extends sfValidatorBase
    * Available options:
    *
    *  * check_login
-   *  * check_email
+   *  * check_unique_email
+   *  * check_exist_account
    *  * check_confirm_code
    *
    * Available error codes:
    *
    *  * check_login
-   *  * check_email
+   *  * check_unique_email
+   *  * check_exist_account
    *  * check_confirm_code
    *
    * @see sfValidatorBase
    */
     protected function configure($options = array(), $messages = array())
     {
-        $this->addMessage('check_login', 'You have wrong email or password.');
-        $this->addMessage('check_email', 'Accout with this email alredy exist.');
-        $this->addMessage('check_confirm_code', 'Confirm code is wrong.');
+        $this->addMessage('check_login', 'You have wrong email or password');
+        $this->addMessage('check_unique_email', 'Accout with this email alredy exist.');
+        $this->addMessage('check_exist_account', 'Accout with this email does not exist.');
+        $this->addMessage('check_secret_answer', 'The answer is wrong');
+        $this->addMessage('check_confirm_code', 'Confirm code is wrong');
         
         $this->addOption('check_login');
-        $this->addOption('check_email');
+        $this->addOption('check_unique_email');
+        $this->addOption('check_exist_account');
+        $this->addOption('check_secret_answer');
         $this->addOption('check_confirm_code');
     }
 
@@ -42,11 +48,16 @@ class sfsValidatorMember extends sfValidatorBase
     * Checks member for login, confim password, unique in database.
     * 
     * If option "check_login" is set, gets member object by email, checks password entered and password of member object. If
-    * passwords do not match set error.
+    * passwords do not match sets error.
     * 
-    * If option "check_email" is set, gets member object by email, checks email is unique.
+    * If option "check_unique_email" is set, gets member object by email, if account exists with this email sets error.
     * 
-    * If option "check_confirm_code" is set, gets member object by confirm code, if member does not exist with such confim code sets errors.
+    * If option "check_exist_account" is set, gets member object by email, if member does not exist with this email sets error.
+    * 
+    * If option "check_secret_answer" is set, gets member object by email and checks the answer on secret qustion entered by member
+    * and answer of member object, if answers do not match sets error.
+    * 
+    * If option "check_confirm_code" is set, gets member object by confirm code, if member does not exist with such confim code sets error.
     * 
     * @param  string $value email value
     * @return string $clean, value of field
@@ -63,26 +74,64 @@ class sfsValidatorMember extends sfValidatorBase
             $password = sfContext::getInstance()->getRequest()->getParameter('password');
             
             if (is_object($member)) {
-                if ($member->getCheckPassword($password)) {
-                    throw new sfValidatorError($this, 'check_login', array('value' => $value, 'check_login' => $this->getOption('check_login')));
+                if ($member->checkPassword($password)) {
+                    throw new sfValidatorError(
+                        $this, 
+                        'check_login', 
+                        array('value' => $value, 'check_login' => $this->getOption('check_login'))
+                    );
                 }
             }
             else {
-                throw new sfValidatorError($this, 'check_login', array('value' => $value, 'check_login' => $this->getOption('check_login')));
+                throw new sfValidatorError(
+                    $this, 
+                    'check_login',
+                     array('value' => $value, 'check_login' => $this->getOption('check_login'))
+                );
             }
         }
-        elseif ($this->hasOption('check_email')) {
+        elseif ($this->hasOption('check_exist_account')) {
+            $member = sfsMemberPeer::retrieveByEmail($value);
+            
+            if ($member == null) {
+                throw new sfValidatorError(
+                    $this, 
+                    'check_exist_account', 
+                    array('value' => $value, 'check_exist_account' => $this->getOption('check_exist_account'))
+                );
+            }
+        }
+        elseif ($this->hasOption('check_unique_email')) {
             $member = sfsMemberPeer::retrieveByEmail($value);
             
             if ($member !== null) {
-                throw new sfValidatorError($this, 'check_email', array('value' => $value, 'check_email' => $this->getOption('check_email')));
+                throw new sfValidatorError(
+                    $this, 'check_unique_email', 
+                    array('value' => $value, 'check_unique_email' => $this->getOption('check_unique_email'))
+                );
             }
         }
         elseif ($this->hasOption('check_confirm_code')) {
             $member = sfsMemberPeer::retrieveByConfirmCode($value);
             
             if ($member == null) {
-                throw new sfValidatorError($this, 'check_confirm_code', array('value' => $value, 'check_confirm_code' => $this->getOption('check_confirm_code')));
+                throw new sfValidatorError(
+                    $this, 
+                    'check_confirm_code', 
+                    array('value' => $value, 'check_confirm_code' => $this->getOption('check_confirm_code'))
+                );
+            }
+        }
+        elseif ($this->hasOption('check_secret_answer')) {
+            $email = sfContext::getInstance()->getRequest()->getParameter('email');
+            $member = sfsMemberPeer::retrieveByEmail($email);
+            
+            if ($member->getSecretAnswer() !== $value) {
+                throw new sfValidatorError(
+                    $this, 
+                    'check_secret_answer', 
+                    array('value' => $value, 'check_secret_answer' => $this->getOption('check_secret_answer'))
+                );
             }
         }
         

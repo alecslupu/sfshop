@@ -45,8 +45,8 @@ class sfsRegistrationForm extends sfsMemberForm
                     array('invalid' => 'This is not a valid email address')
                 ),
                 new sfsValidatorMember(
-                    array('check_email' => true),
-                    array('check_email' => 'An account with this email already exists')
+                    array('check_unique_email' => true),
+                    array('check_unique_email' => 'An account with this email already exists')
                 )
             )
         );

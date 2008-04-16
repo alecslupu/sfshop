@@ -65,6 +65,20 @@ class membersActions extends sfActions
     }
     
     /**
+    * Sets member is not authenticated.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeLogout()
+    {
+        $this->getUser()->logout();
+        $this->redirect('@homepage');
+    }
+    
+    /**
     * Checks entered data and if data is correct add new member to database.
     *
     * @param  void
@@ -134,8 +148,8 @@ class membersActions extends sfActions
     */
     public function executeConfirmRegistration()
     {
-        sfLoader::loadHelpers('I18N');
         $this->form = new sfsConfirmRegistrationForm();
+        $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code') !== null));
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
@@ -150,5 +164,98 @@ class membersActions extends sfActions
                 $this->redirect('@confirmRegistration');
             }
         }
+    }
+    
+    /**
+    * Checks exist account by entered email. Gest secret qustion for restoring password.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeForgotPasswordStepOne()
+    {
+        $this->form = new sfsForgotPasswordStepOneForm();
+        
+        if ($this->getRequest()->isMethod('post')) {
+            $this->form->bind(array('email' => $this->getRequestParameter('email')));
+            
+            if ($this->form->isValid()) {
+                $this->getUser()->setAttribute('email', $this->getRequestParameter('email'), 'member/forgot_password');
+                $this->getUser()->setAttribute('account_exist', true, 'member/forgot_password');
+                $this->redirect('@forgotPasswordStepTwo');
+            }
+        }
+    }
+    
+    /**
+    * Checks entered secret answer, if data is correct send new password to member's email.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeForgotPasswordStepTwo()
+    {
+        $email = $this->getUser()->getAttribute('email', null, 'member/forgot_password');
+        
+        if ($email != null) {
+            
+            $member = sfsMemberPeer::retrieveByEmail($email);
+            $this->secretQuestion = $member->getSecretQuestion();
+            
+            $this->form = new sfsForgotPasswordStepTwoForm();
+            $this->form->setDefaults(array('email' => $email));
+            
+            if ($this->getRequest()->isMethod('post')) {
+                $this->form->bind(
+                    array(
+                        'secret_answer' => $this->getRequestParameter('secret_answer'),
+                        'email'         => $this->getRequestParameter('email')
+                    )
+                );
+                
+                if ($this->form->isValid()) {
+                    $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::FORGOT_PASSWORD, $this->getUser()->getCulture());
+                    $password = sfsMemberPeer::generatePassword();
+                    
+                    $member->setPassword($password);
+                    $member->save();
+                    
+                    $mail = new sfsMail();
+                    $mail->addAddress($member->getEmail());
+                    $mail->setTemplate($template);
+                    $mail->setBodyParams(
+                        array(
+                            'email'    => $member->getEmail(),
+                            'password' => $password
+                        )
+                    );
+                    $mail->send();
+                    
+                    $this->getUser()->setFlash('password_sent', true);
+                    $this->getUser()->getAttributeHolder()->removeNamespace('member/forgot_password');
+                    $this->redirect('@forgotPasswordStepTwo');
+                }
+            }
+        }
+        elseif(!$this->getUser()->hasFlash('password_sent')) {
+            $this->redirect('@forgotPasswordStepOne');
+        }
+    }
+    
+    /**
+    * My profile action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeMyProfile()
+    {
+        
     }
 }
