@@ -17,8 +17,8 @@
             <div class="members_links">
                <?php  if (!$sf_user->isAuthenticated()): ?>
                   <div id="login_link">
-                    <?php //echo link_to(__('Sign in','@login')) ?>
-                    | <?php echo link_to(__('Forgot password'),'@forgotPassword') ?> | <?php echo link_to(__('Registration'),'@registration') ?>
+                    <?php echo link_to(__('Sign in'),'@login') ?>
+                    | <?php echo link_to(__('Forgot password'),'@forgotPasswordStepOne') ?> | <?php echo link_to(__('Registration'),'@registration') ?>
                   </div>
               <?php else: ?>
                 <div>
