@@ -21,8 +21,23 @@ class sfsAddressBookPeer extends BasesfsAddressBookPeer
     public static function saveAddressBook(array $fields)
     {
         $addressBook = new sfsAddressBook();
-        $addressBook->fromArray($fields);
+        $addressBook->fromArray($fields, BasePeer::TYPE_FIELDNAME);
         $addressBook->save();
         return $addressBook;
+    }
+    
+    /**
+    * Gets addresses list of member.
+    *
+    * @param  int $memberId
+    * @return mixed if member exist returns object, otherwise null.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getByMemberId($memberId)
+    {
+        $criteria = new Criteria();
+        $criteria->add(self::MEMBER_ID, $memberId);
+        return self::doSelect($criteria);
     }
 }
