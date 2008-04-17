@@ -95,7 +95,7 @@ class membersActions extends sfActions
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind($this->getRequestParameter('registration'));
-
+            
             if ($this->form->isValid()) {
                 
                 $member = $this->form->updateObject();
@@ -103,15 +103,11 @@ class membersActions extends sfActions
                 $member->save();
                 
                 $address = $this->getRequest()->getParameter('address');
-                $addressBook = new sfsAddressBook();
-                $addressBook->setMemberId($member->getId());
-                $addressBook->setCountryId($address['country_id']);
-                $addressBook->setState($address['state']);
-                $addressBook->setCity($address['city']);
-                $addressBook->setPostcode($address['postcode']);
-                $addressBook->save();
                 
-                $member->setDefaultAddressId($addressBook);
+                $address = array_merge($address, array('member_id' => $member->getId()));
+                $addressBook = sfsAddressBookPeer::saveAddressBook($address);
+                
+                $member->setDefaultAddressId($addressBook->getId());
                 $member->save();
                 
                 $controler = sfContext::getInstance()->getController();
@@ -149,7 +145,7 @@ class membersActions extends sfActions
     public function executeConfirmRegistration()
     {
         $this->form = new sfsConfirmRegistrationForm();
-        $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code') !== null));
+        $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code')));
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
