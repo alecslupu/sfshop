@@ -42,6 +42,14 @@ confirmRegistration:
   url: /confirmRegistration/*
   param: { module: members, action: confirmRegistration }
 
-profile:
-  url: /profile/:username/*
-  param: { module: members, action: profile }
+myAddressesList:
+  url: /myAddressesList/*
+  param: { module: members, action: myAddressesList }
+  
+editAddress:
+  url: /editAddress/:id
+  param: { module: members, action: editAddress }
+
+deleteAddress:
+  url: /deleteAddress/:id
+  param: { module: members, action: deleteAddress }
