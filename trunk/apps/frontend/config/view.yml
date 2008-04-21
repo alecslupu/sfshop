@@ -3,10 +3,10 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
+    title:        sfShop - online shop
+    description:  Open Source online shop e-commerce solution
+    keywords:     symfony, sfShop, online, e-commerce, open source
+    language:     en
     robots:       index, follow
 
   stylesheets:    [main]
