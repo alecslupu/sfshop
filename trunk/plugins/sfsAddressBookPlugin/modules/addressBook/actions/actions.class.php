@@ -5,17 +5,52 @@
  *
  * @package    sfShop
  * @subpackage addressBook
- * @author     Your name here
+ * @author     Dmitry Nesteruk
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class addressBookActions extends sfActions
 {
-  /**
-   * Executes index action
-   *
-   */
-  public function executeIndex()
-  {
-    $this->forward('default', 'module');
-  }
+    /**
+    * My addresses list action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeMyAddressesList()
+    {
+        $this->pager = new sfPropelPager('sfsAddressBook', 10);
+        $criteria = new Criteria();
+        $criteria->add(sfsAddressBookPeer::MEMBER_ID, $this->getUser()->getMemberId());
+        $this->pager->setCriteria($criteria);
+        $this->pager->setPage($this->getRequestParameter('page', 1));
+        $this->pager->init();
+    }
+    
+    /**
+    * Edit address action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeEditAddress()
+    {
+        
+    }
+    
+    /**
+    * Delete address action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeDeleteAddress()
+    {
+        
+    }
 }

@@ -96,7 +96,7 @@ class membersActions extends sfActions
         sfLoader::loadHelpers('I18N');
         
         $this->form = new sfsRegistrationForm();
-        $this->form->embedForm('address', new sfsAddressForm());
+        $this->form->embedForm('address', new sfsAddressBookForm());
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind($this->getRequestParameter('registration'));
@@ -259,50 +259,6 @@ class membersActions extends sfActions
     * @access public
     */
     public function executeMyProfile()
-    {
-        
-    }
-    
-    /**
-    * My addresses list action.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeMyAddressesList()
-    {
-        $this->pager = new sfPropelPager('sfsAddressBook', 10);
-        $criteria = new Criteria();
-        $criteria->add(sfsAddressBookPeer::MEMBER_ID, $this->getUser()->getMemberId());
-        $this->pager->setCriteria($criteria);
-        $this->pager->setPage($this->getRequestParameter('page', 1));
-        $this->pager->init();
-    }
-    
-    /**
-    * Edit address action.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeEditAddress()
-    {
-        
-    }
-    
-    /**
-    * Delete address action.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeDeleteAddress()
     {
         
     }
