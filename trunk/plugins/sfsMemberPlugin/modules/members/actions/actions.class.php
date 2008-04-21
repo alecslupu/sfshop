@@ -20,7 +20,7 @@ class membersActions extends sfActions
     * @access public
     */
     public function executeLogin()
-    {
+    { echo sfConfig::get('pl_sfsAddressPlugin_enable');
         $this->form = new sfsLoginForm();
         
         if ($this->getUser()->isAuthenticated()) {

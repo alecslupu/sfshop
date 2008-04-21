@@ -3,6 +3,7 @@ class sfsRegistrationForm extends sfsMemberForm
 {
     public function configure()
     {
+        
         $arrayQuestions = array();
         $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
         
@@ -20,7 +21,7 @@ class sfsRegistrationForm extends sfsMemberForm
         
         $this->setWidgets(
             array(
-                'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
+                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'email'              => new sfWidgetFormInput(),
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
@@ -163,6 +164,7 @@ class sfsRegistrationForm extends sfsMemberForm
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
         $this->getWidgetSchema()->setNameFormat('registration[%s]');
+        
         parent::configure();
     }
 }

@@ -7,6 +7,7 @@
  */ 
 class sfsMember extends BasesfsMember
 { 
+
     /**
     * Checks on match password entered and password of current member.
     *
