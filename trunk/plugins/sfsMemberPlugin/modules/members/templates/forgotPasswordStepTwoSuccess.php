@@ -3,7 +3,7 @@
 <?php if ($sf_user->hasFlash('password_sent')): ?>
     <?php echo __('Your login and password have been sent to you email.') ?>
 <?php else: ?>
-    <form action="<?php echo url_for('@forgotPasswordStepTwo'); ?>" method="post" class="form">
+    <form action="<?php echo url_for('@members_forgotPasswordStepTwo'); ?>" method="post" class="form">
         <?php echo $form['email']->render(); ?>
         <table cellspacing="0" cellpadding="3">
             <tr>

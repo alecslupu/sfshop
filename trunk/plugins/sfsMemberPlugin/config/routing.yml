@@ -2,42 +2,38 @@
 # Members
 #
 
-registration:
+members_registration:
   url: /registration
   param: { module: members, action: registration }
 
-registered:
-  url: /registered
-  param: { module: members, action: registered }
-
-forgotPasswordStepOne:
+members_forgotPasswordStepOne:
   url: /forgotPassword
   param: { module: members, action: forgotPasswordStepOne }
 
-forgotPasswordStepTwo:
+members_forgotPasswordStepTwo:
   url: /forgotPasswordStepTwo
   param: { module: members, action: forgotPasswordStepTwo }
 
-login: 
+members_login: 
   url: /login
   param: { module: members, action: login }
 
-logout:
+members_logout:
   url: /logout
   param: { module: members, action: logout }
 
-myProfile:
+members_myProfile:
   url: /myProfile
   param: { module: members, action: myProfile }
 
-editProfile:
+members_editProfile:
   url: /editProfile
   param: { module: members, action: editProfile }
 
-changePassword:
+members_changePassword:
   url: /changePassword
   param: { module: members, action: changePassword }
 
-confirmRegistration:
+members_confirmRegistration:
   url: /confirmRegistration/*
   param: { module: members, action: confirmRegistration }

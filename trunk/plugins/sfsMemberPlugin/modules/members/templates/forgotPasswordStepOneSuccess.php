@@ -1,6 +1,6 @@
 <h3><?php echo __('Forgot password step one') ?></h3>
 
-<form action="<?php echo url_for('@forgotPasswordStepOne'); ?>" method="post" class="form">
+<form action="<?php echo url_for('@members_forgotPasswordStepOne'); ?>" method="post" class="form">
     <table cellspacing="0" cellpadding="3">
         <tr>
             <td><?php echo $form['email']->renderLabel(); ?></td>

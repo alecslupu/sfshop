@@ -38,7 +38,15 @@ class addressBookActions extends sfActions
     */
     public function executeEditAddress()
     {
+        $this->form = new sfsAddressBookForm();
         
+        if ($this->getRequest()->isMethod('post')) {
+            $this->form->bind($this->getRequestParameter('address'));
+            
+            if ($this->form->isValid()) {
+                $addressBook = sfsAddressBookPeer::saveAddressBook($address);
+            }
+        }
     }
     
     /**

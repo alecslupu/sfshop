@@ -3,7 +3,7 @@
 <?php if ($sf_user->hasFlash('registered')): ?>
     <?php echo __('You are registered now. Thanks!') ?>
 <?php else: ?>
-    <form action="<?php echo url_for('@registration'); ?>" method="post" class="form">
+    <form action="<?php echo url_for('@members_registration'); ?>" method="post" class="form">
       <table cellspacing="0" cellpadding="2">
         <tr><td><b><?php echo __('Your Personal Details') ?></b></td></tr>
         <tr>

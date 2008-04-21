@@ -17,14 +17,14 @@
             <div class="members_links">
                <?php  if (!$sf_user->isAuthenticated()): ?>
                   <div id="login_link">
-                    <?php echo link_to(__('Sign in'),'@login') ?>
-                    | <?php echo link_to(__('Forgot password'),'@forgotPasswordStepOne') ?> | <?php echo link_to(__('Registration'),'@registration') ?>
+                    <?php echo link_to(__('Sign in'),'@members_login') ?>
+                    | <?php echo link_to(__('Forgot password'),'@members_forgotPasswordStepOne') ?> | <?php echo link_to(__('Registration'),'@members_registration') ?>
                   </div>
               <?php else: ?>
                 <div>
                   <?php echo __('Hello'); ?>, &nbsp;
-                  <?php echo link_to($sf_user->getMemberName(),'@myProfile'); ?>! |
-                  <?php echo link_to(__('Logout'),'@logout'); ?> &nbsp; &nbsp;
+                  <?php echo link_to($sf_user->getMemberName(),'@members_myProfile'); ?>! |
+                  <?php echo link_to(__('Logout'),'@members_logout'); ?> &nbsp; &nbsp;
                 </div>
               <?php endif; ?>
             </div>
@@ -39,7 +39,7 @@
             </div>
         </div> 
         <div class="menu">
-            <div><?php echo link_to(__('My profile'),'@myProfile'); ?></div>
+            <div><?php echo link_to(__('My profile'),'@members_myProfile'); ?></div>
         </div>
         <div class="line1"><?php //include_component_slot('sidebar') ?></div>
         <div class="line2">&nbsp;</div>
