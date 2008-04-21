@@ -22,5 +22,6 @@ class sfsForgotPasswordStepOneForm extends sfsMemberForm
         $this->setValidators(array('email' => $validatorEmail));
         
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        parent::configure();
     }
 }

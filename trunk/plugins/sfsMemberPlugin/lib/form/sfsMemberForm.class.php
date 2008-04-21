@@ -11,7 +11,8 @@ class sfsMemberForm extends BasesfsMemberForm
 {
     public function configure()
     {
-        
+        $this->getWidgetSchema()->addFormFormatter('sfs_list', new sfsWidgetFormSchemaFormatterList($this->getWidgetSchema()));
+        $this->getWidgetSchema()->setFormFormatterName('sfs_list');
     }
     
     /**

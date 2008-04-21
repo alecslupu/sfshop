@@ -27,5 +27,6 @@ class sfsForgotPasswordStepTwoForm extends sfsMemberForm
         $this->setValidators(array('secret_answer' => $validatorSecretAnswer));
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        parent::configure();
     }
 }

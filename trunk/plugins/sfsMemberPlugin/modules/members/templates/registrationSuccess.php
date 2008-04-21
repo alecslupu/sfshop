@@ -4,6 +4,7 @@
     <?php echo __('You are registered now. Thanks!') ?>
 <?php else: ?>
     <form action="<?php echo url_for('@members_registration'); ?>" method="post" class="form">
+    <?php /* ?>
       <table cellspacing="0" cellpadding="2">
         <tr><td><b><?php echo __('Your Personal Details') ?></b></td></tr>
         <tr>
@@ -61,8 +62,12 @@
             <td><?php echo $form['secret_answer']->renderError(); ?></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
-        <?php include_partial('addressBook/address_form', array('form' => $form)); ?>
+        <?php include_partial('addressBook/address_form', array('form' => $form)); 
         <tr><td colspan="2"><input type="submit" value="<?php echo __('Register') ?>" class="button"/></td></tr>
-      </table>
+      </table> */ ?>
+      <ul>
+          <?php echo $form ?>
+          <li><input type="submit" value="<?php echo __('Register') ?>" class="button"/></li>
+      </ul>
     </form>
 <?php endif; ?>

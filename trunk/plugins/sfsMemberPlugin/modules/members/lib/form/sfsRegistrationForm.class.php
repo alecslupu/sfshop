@@ -3,7 +3,6 @@ class sfsRegistrationForm extends sfsMemberForm
 {
     public function configure()
     {
-        //parent::configure();
         $arrayQuestions = array();
         $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
         
@@ -164,5 +163,6 @@ class sfsRegistrationForm extends sfsMemberForm
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
         $this->getWidgetSchema()->setNameFormat('registration[%s]');
+        parent::configure();
     }
 }

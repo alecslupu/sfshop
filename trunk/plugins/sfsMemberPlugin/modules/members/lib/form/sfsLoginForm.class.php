@@ -9,7 +9,7 @@ class sfsLoginForm extends sfsMemberForm
                 'password' => new sfWidgetFormInputPassword()
              )
         );
-
+        
         $this->setValidators(
             array(
                 'email'   => new sfValidatorAnd(
@@ -21,7 +21,8 @@ class sfsLoginForm extends sfsMemberForm
                'password' => new sfValidatorString(array('required' => true))
             )
         );
-
+        
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        parent::configure();
     }
 }

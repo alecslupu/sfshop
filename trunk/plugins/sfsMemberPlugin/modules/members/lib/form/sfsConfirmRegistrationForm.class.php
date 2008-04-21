@@ -21,5 +21,7 @@ class sfsConfirmRegistrationForm extends sfsMemberForm
         
         $this->setValidators(array('confirm_code' => $validatorConfirmCode));
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        
+        parent::configure();
     }
 }

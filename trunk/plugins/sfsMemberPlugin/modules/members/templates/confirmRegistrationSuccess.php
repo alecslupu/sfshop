@@ -3,7 +3,7 @@
 <?php if ($sf_user->hasFlash('confirmed')): ?>
     <?php echo __('You are confirmed registration. Thanks!') ?>
 <?php else: ?>
-    <form action="<?php echo url_for('@confirmRegistration'); ?>" method="post" class="form">
+    <form action="<?php echo url_for('@members_confirmRegistration'); ?>" method="post" class="form">
       <table cellspacing="0" cellpadding="2">
         <tr>
             <td><?php echo $form['confirm_code']->renderLabel(); ?></td>
