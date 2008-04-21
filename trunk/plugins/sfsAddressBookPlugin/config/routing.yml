@@ -1,0 +1,15 @@
+#
+# Address book
+#
+
+myAddressesList:
+  url: /myAddressBook/*
+  param: { module: addressBook, action: myAddressesList }
+  
+editAddress:
+  url: /editAddress/:id
+  param: { module: addressBook, action: editAddress }
+
+deleteAddress:
+  url: /deleteAddress/:id
+  param: { module: addressBook, action: deleteAddress }

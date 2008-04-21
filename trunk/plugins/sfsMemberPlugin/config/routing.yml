@@ -41,15 +41,3 @@ changePassword:
 confirmRegistration:
   url: /confirmRegistration/*
   param: { module: members, action: confirmRegistration }
-
-myAddressesList:
-  url: /myAddressesList/*
-  param: { module: members, action: myAddressesList }
-  
-editAddress:
-  url: /editAddress/:id
-  param: { module: members, action: editAddress }
-
-deleteAddress:
-  url: /deleteAddress/:id
-  param: { module: members, action: deleteAddress }

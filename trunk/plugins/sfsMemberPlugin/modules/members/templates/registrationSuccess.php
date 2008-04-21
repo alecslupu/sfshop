@@ -63,9 +63,9 @@
         <tr><td>&nbsp;</td></tr>
         <tr><td><b><?php echo __('Your Address') ?></b></td></tr>
         <tr>
-            <td><?php echo $form['address']['country_id']->renderLabel(); ?></td>
-            <td><?php echo $form['address']['country_id']->render(); ?></td>
-            <td><?php echo $form['address']['country_id']->renderError(); ?></td>
+            <td><?php echo $form['address']['country_cid']->renderLabel(); ?></td>
+            <td><?php echo $form['address']['country_cid']->render(); ?></td>
+            <td><?php echo $form['address']['country_cid']->renderError(); ?></td>
         </tr>
         <tr>
             <td><?php echo $form['address']['state']->renderLabel(); ?></td>

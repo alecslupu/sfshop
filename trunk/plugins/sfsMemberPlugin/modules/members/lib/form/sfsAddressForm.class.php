@@ -8,7 +8,7 @@ class sfsAddressForm extends sfsAddressBookForm
         
         $this->setWidgets(
             array(
-                'country_id'         => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
+                'country_cid'        => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
                 'state'              => new sfWidgetFormInput(),
                 'city'               => new sfWidgetFormInput(),
                 'street'             => new sfWidgetFormInput(),
@@ -59,11 +59,11 @@ class sfsAddressForm extends sfsAddressBookForm
         
         $this->setValidators(
             array(
-               //'country_id' => $validatorCountry,
-               'state'      => $validatorState,
-               'city'       => $validatorCity,
-               'street'     => $validatorStreet,
-               'postcode'   => $validatorPostcode
+               //'country_cid' => $validatorCountry,
+               'state'       => $validatorState,
+               'city'        => $validatorCity,
+               'street'      => $validatorStreet,
+               'postcode'    => $validatorPostcode
             )
         );
         

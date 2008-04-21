@@ -23,42 +23,47 @@ class membersActions extends sfActions
     {
         $this->form = new sfsLoginForm();
         
-        if ($this->getRequest()->isMethod('post')) {
-            
-            $this->form->bind(
-                array(
-                    'email'    => $this->getRequestParameter('email'),
-                    'password' => $this->getRequestParameter('password')
-                )
-            );
-            
-            if ($this->form->isValid()) {
+        if ($this->getUser()->isAuthenticated()) {
+            $this->redirect('@homepage');
+        }
+        else {
+            if ($this->getRequest()->isMethod('post')) {
                 
-                $member = sfsMemberPeer::retrieveByEmail($this->getRequestParameter('email'));
+                $this->form->bind(
+                    array(
+                        'email'    => $this->getRequestParameter('email'),
+                        'password' => $this->getRequestParameter('password')
+                    )
+                );
                 
-                if ($member->getIsConfirmed() == sfsMemberPeer::CONFIRMED) {
-                    $this->getUser()->login($member);
+                if ($this->form->isValid()) {
                     
-                    if ($this->getRequest()->getReferer() != $this->getRequest()->getUri()) {
-                        $redirect_to = $this->getRequest()->getReferer();
+                    $member = sfsMemberPeer::retrieveByEmail($this->getRequestParameter('email'));
+                    
+                    if ($member->getIsConfirmed() == sfsMemberPeer::CONFIRMED) {
+                        $this->getUser()->login($member);
+                        
+                        if ($this->getRequest()->getReferer() != $this->getRequest()->getUri()) {
+                            $redirect_to = $this->getRequest()->getReferer();
+                        }
+                        else {
+                            $redirect_to = $this->getRequest()->getUriPrefix() 
+                                . sfContext::getInstance()->getController()->genUrl('@myProfile');
+                        }
                     }
                     else {
-                        $redirect_to = $this->getRequest()->getUriPrefix() 
-                            . sfContext::getInstance()->getController()->genUrl('@myProfile');
+                         $redirect_to = $this->getRequest()->getUriPrefix() 
+                             . sfContext::getInstance()->getController()->genUrl('@confirmRegistration');
                     }
-                }
-                else {
-                     $redirect_to = $this->getRequest()->getUriPrefix() 
-                         . sfContext::getInstance()->getController()->genUrl('@confirmRegistration');
-                }
-                
-                if ($this->getRequest()->isXmlHttpRequest()) {
-                    $response = json_encode(array('redirect_to' => $redirect_to));
-                    $this->renderText($response);
-                    return sfView::NONE; 
-                }
-                else {
-                    $this->redirect($redirect_to);
+                    
+                    if ($this->getRequest()->isXmlHttpRequest()) {
+                        $response = json_encode(array('redirect_to' => $redirect_to));
+                        $this->renderText($response);
+                        return sfView::NONE; 
+                    }
+                    else {
+                        $this->redirect($redirect_to);
+                    }
                 }
             }
         }
@@ -123,7 +128,7 @@ class membersActions extends sfActions
                 $mail->setBodyParams(
                     array(
                         'email'                => $member->getEmail(),
-                        'password'             => $this->getRequestParameter('password'),
+                        'password'             => $this->getRequestParameter('registration[password]'),
                         'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
                         'confirm_code'         => $confirmCode
                     )
@@ -156,6 +161,7 @@ class membersActions extends sfActions
                 $member = sfsMemberPeer::retrieveByConfirmCode($this->getRequestParameter('confirm_code'));
                 $member->setIsConfirmed(sfsMemberPeer::CONFIRMED);
                 $member->save();
+                
                 $this->getUser()->login($member);
                 
                 $this->getUser()->setFlash('confirmed', true);

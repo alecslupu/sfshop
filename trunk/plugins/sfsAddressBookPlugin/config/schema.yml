@@ -1,0 +1,12 @@
+propel:
+  _attributes:          { package: plugins.sfsAddressBookPlugin.lib.model }
+
+  address_book:
+    _attributes:        { phpName: sfsAddressBook }
+    id:                 ~
+    member_id:          { type: integer, foreignTable: members, foreignReference: id, onDelete: cascade }
+    country_cid:        varchar(6)
+    state:              varchar(32)
+    city:               varchar(32)
+    street:             varchar(64)
+    postcode:           varchar(10)
