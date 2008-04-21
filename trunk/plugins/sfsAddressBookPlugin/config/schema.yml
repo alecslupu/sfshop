@@ -10,3 +10,9 @@ propel:
     city:               varchar(32)
     street:             varchar(64)
     postcode:           varchar(10)
+    
+  address_format:
+    _attributes:        { phpName: sfsAddressFormat }
+    id:                 ~
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    format:             varchar(255)
