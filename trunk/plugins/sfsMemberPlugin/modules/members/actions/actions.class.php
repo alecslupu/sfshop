@@ -48,12 +48,12 @@ class membersActions extends sfActions
                         }
                         else {
                             $redirect_to = $this->getRequest()->getUriPrefix() 
-                                . sfContext::getInstance()->getController()->genUrl('@myProfile');
+                                . sfContext::getInstance()->getController()->genUrl('@members_myProfile');
                         }
                     }
                     else {
                          $redirect_to = $this->getRequest()->getUriPrefix() 
-                             . sfContext::getInstance()->getController()->genUrl('@confirmRegistration');
+                             . sfContext::getInstance()->getController()->genUrl('@members_confirmRegistration');
                     }
                     
                     if ($this->getRequest()->isXmlHttpRequest()) {
@@ -136,7 +136,7 @@ class membersActions extends sfActions
                 $mail->send();
                 
                 $this->getUser()->setFlash('registered', true);
-                $this->redirect('@registration');
+                $this->redirect('@members_registration');
             }
         }
     }
@@ -165,7 +165,7 @@ class membersActions extends sfActions
                 $this->getUser()->login($member);
                 
                 $this->getUser()->setFlash('confirmed', true);
-                $this->redirect('@confirmRegistration');
+                $this->redirect('@members_confirmRegistration');
             }
         }
     }
@@ -188,7 +188,7 @@ class membersActions extends sfActions
             if ($this->form->isValid()) {
                 $this->getUser()->setAttribute('email', $this->getRequestParameter('email'), 'member/forgot_password');
                 $this->getUser()->setAttribute('account_exist', true, 'member/forgot_password');
-                $this->redirect('@forgotPasswordStepTwo');
+                $this->redirect('@members_forgotPasswordStepTwo');
             }
         }
     }
@@ -241,12 +241,12 @@ class membersActions extends sfActions
                     
                     $this->getUser()->setFlash('password_sent', true);
                     $this->getUser()->getAttributeHolder()->removeNamespace('member/forgot_password');
-                    $this->redirect('@forgotPasswordStepTwo');
+                    $this->redirect('@members_forgotPasswordStepTwo');
                 }
             }
         }
         elseif(!$this->getUser()->hasFlash('password_sent')) {
-            $this->redirect('@forgotPasswordStepOne');
+            $this->redirect('@members_forgotPasswordStepOne');
         }
     }
     
