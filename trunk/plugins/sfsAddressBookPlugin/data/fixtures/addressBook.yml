@@ -1,0 +1,5 @@
+---
+sfsAddressFormat: 
+  sfsAddressFormat_1: 
+    culture: en
+    format: %country%, %state%, %city%, %street%, %postcode%
