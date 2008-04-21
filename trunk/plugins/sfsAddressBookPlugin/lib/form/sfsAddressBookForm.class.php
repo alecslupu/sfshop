@@ -77,6 +77,9 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         );
         
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        $this->getWidgetSchema()->setNameFormat('address[%s]');
+        $this->getWidgetSchema()->addFormFormatter('sfs_list', new sfsWidgetFormSchemaFormatterList($this->getWidgetSchema()));
+        $this->getWidgetSchema()->setFormFormatterName('sfs_list');
         $this->validatorSchema->setOption('allow_extra_fields', true);
     }
     

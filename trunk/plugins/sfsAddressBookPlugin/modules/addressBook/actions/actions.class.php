@@ -29,6 +29,19 @@ class addressBookActions extends sfActions
     }
     
     /**
+    * Create address action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeCreateBannerAsset()
+    {
+      return $this->forward('address', 'editAddress');
+    }
+    
+    /**
     * Edit address action.
     *
     * @param  void
@@ -38,13 +51,15 @@ class addressBookActions extends sfActions
     */
     public function executeEditAddress()
     {
-        $this->form = new sfsAddressBookForm();
+        $address = $this->getAddressOrCreate();
+        $this->form = new sfsAddressBookForm($address);
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind($this->getRequestParameter('address'));
             
             if ($this->form->isValid()) {
-                $addressBook = sfsAddressBookPeer::saveAddressBook($address);
+                $address = $this->form->updateObject();
+                $address->save();
             }
         }
     }
@@ -60,5 +75,28 @@ class addressBookActions extends sfActions
     public function executeDeleteAddress()
     {
         
+    }
+    
+    /**
+    * Gets address object.
+    * 
+    * If parameter id is set, returns object with exist address, otherwise creates object for new record.
+    * 
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access protected
+    */
+    protected function getAddressOrCreate($id = 'id')
+    {
+        if (!$this->getRequestParameter($id)) {
+            $address = new sfsAddressBook();
+        }
+        else {
+            $address = sfsAddressBookPeer::retrieveByPk($this->getRequestParameter($id));
+            $this->forward404Unless($address);
+        }
+        
+        return $address;
     }
 }

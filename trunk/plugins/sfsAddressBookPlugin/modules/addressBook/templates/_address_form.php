@@ -1,9 +1,10 @@
 <tr><td><b><?php echo __('Your Address') ?></b></td></tr>
+<? echo $form ?>
 <tr>
-    <td><?php echo $form['address']['country_cid']->renderLabel(); ?></td>
-    <td><?php echo $form['address']['country_cid']->render(); ?></td>
-    <td><?php echo $form['address']['country_cid']->renderError(); ?></td>
-</tr>
+    <td><?php //echo $form['country_cid']->renderLabel(); ?></td>
+    <td><?php //echo $form['address']['country_cid']->render(); ?></td>
+    <td><?php //echo $form['address']['country_cid']->renderError(); ?></td>
+</tr><? /*
 <tr>
     <td><?php echo $form['address']['state']->renderLabel(); ?></td>
     <td><?php echo $form['address']['state']->render(); ?></td>
@@ -23,4 +24,5 @@
     <td><?php echo $form['address']['postcode']->renderLabel(); ?></td>
     <td><?php echo $form['address']['postcode']->render(); ?></td>
     <td><?php echo $form['address']['postcode']->renderError(); ?></td>
-</tr>
+</tr>*/
+?>
