@@ -53,7 +53,7 @@ class addressBookActions extends sfActions
                 $address = $this->form->updateObject();
                 $address->save();
                 
-                $this->redirect('@addressBook_myAddressesList');
+                $this->redirect('@addressBook_myList');
             }
         }
     }
