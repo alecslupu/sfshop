@@ -21,7 +21,7 @@ test:
 
 all:
   .settings:
-    enabled_modules:        [ default, members, addressBook ]
+    enabled_modules:        [ default, members, addressBook, menu ]
     standard_helpers:       [ I18N, Partial, Javascript, Date ]
     # i18n
     i18n:                   on

@@ -39,7 +39,7 @@
             </div>
         </div> 
         <div class="menu">
-            <div><?php echo link_to(__('My profile'),'@members_myProfile'); ?></div>
+            <?php include_component('menu', 'main') ?>
         </div>
         <div class="line1"><?php //include_component_slot('sidebar') ?></div>
         <div class="line2">&nbsp;</div>
