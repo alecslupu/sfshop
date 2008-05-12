@@ -5,11 +5,11 @@ sfsMenu:
     route: @addressBook_myAddressesList
     title: My address book
     pos: 1
-    type: <?php sfsMenuPeer::TYPE_PROFILE ?> 
+    type: <?php echo sfsMenuPeer::TYPE_PROFILE ?> 
   sfMenu_MAIN_EN_1: 
     culture: en
-    route: @member_myProfile
+    route: @members_myProfile
     title: My profiles
     pos: 1
-    type: <?php sfsMenuPeer::TYPE_MAIN ?> 
+    type: <?php echo sfsMenuPeer::TYPE_MAIN ?> 
 
