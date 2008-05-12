@@ -3,5 +3,5 @@
 <div>
     <?php include_partial('my_addresses_list', array('pager' => $pager)) ?>
 </div>
-<div style="float: right"><?php echo link_to(__('Add address'), '@addressBook_addAddress') ?></div>
+<div style="float: right"><?php echo link_to(__('Add address'), '@addressBook_add') ?></div>
 <br/>

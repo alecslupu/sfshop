@@ -1,9 +1,9 @@
 <?php if ($form->getObject()->isNew()): ?>
     <h3><?php echo __('Add new address') ?></h3>
-    <?php $url = '@addressBook_addAddress'; ?>
+    <?php $url = '@addressBook_add'; ?>
 <?php else: ?>
     <h3><?php echo __('Edit address') ?></h3>
-    <?php $url = '@addressBook_editAddress?id=' . $form->getObject()->getId(); ?>
+    <?php $url = '@addressBook_edit?id=' . $form->getObject()->getId(); ?>
 <?php endif; ?>
 
 <form action="<?php echo url_for($url); ?>" method="post" class="form">
