@@ -2,14 +2,18 @@
 # Address book
 #
 
-addressBook_myAddressesList:
+addressBook_myList:
   url: /myAddressBook/*
-  param: { module: addressBook, action: myAddressesList }
-  
-addressBook_editAddress:
-  url: /editAddress/:id
-  param: { module: addressBook, action: editAddress }
+  param: { module: addressBook, action: myList }
 
-addressBook_deleteAddress:
+addressBook_add:
+  url: /addAddress
+  param: { module: addressBook, action: create }
+
+addressBook_edit:
+  url: /editAddress/:id
+  param: { module: addressBook, action: edit }
+
+addressBook_delete:
   url: /deleteAddress/:id
-  param: { module: addressBook, action: deleteAddress }
+  param: { module: addressBook, action: delete }

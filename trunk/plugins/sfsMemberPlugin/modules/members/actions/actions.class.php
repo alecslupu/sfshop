@@ -119,7 +119,7 @@ class membersActions extends sfActions
                 
                 $controler = sfContext::getInstance()->getController();
                 $confirmCode = $member->getConfirmCode();
-                $urlToConfirm = $controler->genUrl('@confirmRegistration?confirm_code=' . $confirmCode);
+                $urlToConfirm = $controler->genUrl('@members_confirmRegistration?confirm_code=' . $confirmCode);
                 $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::REGISTRATION, $this->getUser()->getCulture());
                 
                 $mail = new sfsMail();

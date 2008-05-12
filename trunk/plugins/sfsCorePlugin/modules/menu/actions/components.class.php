@@ -22,4 +22,17 @@ class menuComponents extends sfComponents
     {
         $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_MAIN, $this->getUser()->getCulture());
     }
+    
+    /**
+    * Gets items for menu in the member profile.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeProfile()
+    {
+        $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_PROFILE, $this->getUser()->getCulture());
+    }
 }
