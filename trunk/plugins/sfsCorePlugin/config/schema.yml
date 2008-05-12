@@ -30,3 +30,15 @@ propel:
     culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
     subject:            varchar(255)
     body:               longvarchar
+    
+  menu:
+    _attributes:        { phpName: sfsMenu }
+    id:                 ~
+    type:               { type: integer, size: 3 }
+    route:              varchar(255)
+    
+  menu_i18n:
+    _attributes:        { phpName: sfsMenuI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: menu, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    title:              varchar(255)
