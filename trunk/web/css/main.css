@@ -353,12 +353,51 @@ textarea {
 }
 
 /*******************************/
+/* FORM */
+/*******************************/
 
 .form input {
     width: 250px;
+    float: left;
 }
 
 .form input.button {
     width: auto;
 }
 
+.form ul {
+    padding-left: 0px;
+    line-height: 18px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form li {
+    width: 200px;
+    font-weight: bold;
+    display: block;
+    clear: both;
+}
+
+.form label {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.form ul.error_list {
+    position: absolute;
+    margin-left: 260px;
+    font-weight: normal;
+    color: red;
+    padding-left: 0px;
+    font-size: 12px;
+}
+
+/*******************************/
+/* Menu */
+/*******************************/
+
+.menu_profile li {
+    list-style-type: none;
+    display: inline;
+}
