@@ -356,41 +356,54 @@ textarea {
 /* FORM */
 /*******************************/
 
-.form input {
+form.form input {
     width: 250px;
     float: left;
 }
 
-.form input.button {
+form.form li.button {
+    padding-top: 5px;
+    clear: both;
+}
+
+form.form input.button {
     width: auto;
 }
 
-.form ul {
+form.form ul {
     padding-left: 0px;
-    line-height: 18px;
+    line-height: 20px;
     font-weight: bold;
     font-size: 14px;
 }
 
-.form li {
+form.form ul.main {
+    padding-bottom: 20px;
+}
+
+form.form li {
     width: 200px;
     font-weight: bold;
     display: block;
     clear: both;
 }
 
-.form label {
+form.form label {
     font-weight: normal;
     font-size: 12px;
 }
 
-.form ul.error_list {
+form.form ul.error_list {
     position: absolute;
     margin-left: 260px;
     font-weight: normal;
     color: red;
     padding-left: 0px;
     font-size: 12px;
+}
+
+form.form ul.main ul {
+    padding-left: 15px;
 }
 
 /*******************************/

@@ -43,6 +43,8 @@ class addressBookActions extends sfActions
     */
     public function executeEdit()
     {
+        sfLoader::loadHelpers('I18N');
+        
         $address = $this->getAddressOrCreate();
         $this->form = new sfsAddressBookForm($address);
         

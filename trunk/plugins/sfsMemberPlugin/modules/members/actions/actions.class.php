@@ -96,7 +96,7 @@ class membersActions extends sfActions
         sfLoader::loadHelpers('I18N');
         
         $this->form = new sfsRegistrationForm();
-        $this->form->embedForm('address', new sfsAddressBookForm());
+        $this->form->embedForm('address', new sfsAddressBookShortForm());
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind($this->getRequestParameter('registration'));

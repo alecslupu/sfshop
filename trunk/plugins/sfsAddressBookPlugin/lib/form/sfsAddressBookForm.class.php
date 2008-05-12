@@ -15,8 +15,16 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         $c = new sfCultureInfo(sfContext::getInstance()->getUser()->getCulture());
         $arrayCountries = $c->getCountries();
         
+        $arrayGenders = array(
+            'male'   => __('Male'),
+            'female' => __('Female')
+        );
+        
         $this->setWidgets(
             array(
+                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
+                'first_name'         => new sfWidgetFormInput(),
+                'last_name'          => new sfWidgetFormInput(),
                 'country_cid'        => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
                 'state'              => new sfWidgetFormInput(),
                 'city'               => new sfWidgetFormInput(),
@@ -25,9 +33,29 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
              )
         );
         
+        $validatorGender = new sfValidatorChoice(
+            array('choices' => $arrayGenders)
+        );
+        
+        $validatorFirstName = new sfValidatorString(
+            array(
+                'required'   => true, 
+                'min_length' => 4
+            )
+        );
+        
+        $validatorLastName = new sfValidatorString(
+            array(
+                'required'   => true, 
+                'min_length' => 4
+            )
+        );
+        
         $validatorCountry = new sfValidatorChoice(
             array('choices' => $arrayCountries)
         );
+        
+        $this->formField;
         
         $validatorState = new sfValidatorString(
             array(
@@ -77,6 +105,7 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         );
         
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+        $this->widgetSchema->setLabel('country_cid', 'Country');
         $this->getWidgetSchema()->setNameFormat('address[%s]');
         $this->getWidgetSchema()->addFormFormatter('sfs_list', new sfsWidgetFormSchemaFormatterList($this->getWidgetSchema()));
         $this->getWidgetSchema()->setFormFormatterName('sfs_list');
