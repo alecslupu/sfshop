@@ -9,4 +9,8 @@
  */ 
 class sfsMenuPeer extends BasesfsMenuPeer
 {
+    const TYPE_TOP     = 1;
+    const TYPE_BOTTOM  = 2;
+    const TYPE_PROFILE = 3;
+    const TYPE_MAIN    = 4;
 }

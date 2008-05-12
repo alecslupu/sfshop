@@ -32,10 +32,11 @@ propel:
     body:               longvarchar
     
   menu:
-    _attributes:        { phpName: sfsMenu }
+    _attributes:        { phpName: sfsMenu, isI18N: true, i18nTable: menu_i18n }
     id:                 ~
     type:               { type: integer, size: 3 }
     route:              varchar(255)
+    pos:                { type: integer, default: 0 }
     
   menu_i18n:
     _attributes:        { phpName: sfsMenuI18n }
