@@ -18,7 +18,7 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeMyAddressesList()
+    public function executeMyList()
     {
         $this->pager = new sfPropelPager('sfsAddressBook', 10);
         $criteria = new Criteria();
@@ -28,17 +28,9 @@ class addressBookActions extends sfActions
         $this->pager->init();
     }
     
-    /**
-    * Create address action.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeCreateBannerAsset()
+    public function executeCreate()
     {
-      return $this->forward('address', 'editAddress');
+        return $this->forward('addressBook', 'edit');
     }
     
     /**
@@ -49,7 +41,7 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeEditAddress()
+    public function executeEdit()
     {
         $address = $this->getAddressOrCreate();
         $this->form = new sfsAddressBookForm($address);
@@ -60,6 +52,8 @@ class addressBookActions extends sfActions
             if ($this->form->isValid()) {
                 $address = $this->form->updateObject();
                 $address->save();
+                
+                $this->redirect('@addressBook_myAddressesList');
             }
         }
     }
@@ -72,7 +66,7 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeDeleteAddress()
+    public function executeDelete()
     {
         
     }
