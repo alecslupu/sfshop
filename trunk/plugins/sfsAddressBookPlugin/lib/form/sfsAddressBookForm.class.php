@@ -15,21 +15,20 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         $c = new sfCultureInfo(sfContext::getInstance()->getUser()->getCulture());
         $arrayCountries = $c->getCountries();
         
-        $arrayGenders = array(
-            'male'   => __('Male'),
-            'female' => __('Female')
-        );
+        $arrayGenders = sfsMemberPeer::getGenders();
         
         $this->setWidgets(
             array(
-                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
-                'first_name'         => new sfWidgetFormInput(),
-                'last_name'          => new sfWidgetFormInput(),
-                'country_cid'        => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
-                'state'              => new sfWidgetFormInput(),
-                'city'               => new sfWidgetFormInput(),
-                'street'             => new sfWidgetFormInput(),
-                'postcode'           => new sfWidgetFormInput()
+                'gender'      => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
+                'first_name'  => new sfWidgetFormInput(),
+                'last_name'   => new sfWidgetFormInput(),
+                'country_cid' => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
+                'state'       => new sfWidgetFormInput(),
+                'city'        => new sfWidgetFormInput(),
+                'street'      => new sfWidgetFormInput(),
+                'company'     => new sfWidgetFormInput(),
+                'postcode'    => new sfWidgetFormInput(),
+                'is_default'  => new sfWidgetFormInputCheckbox()
              )
         );
         
@@ -39,14 +38,14 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         
         $validatorFirstName = new sfValidatorString(
             array(
-                'required'   => true, 
+                'required'   => true,
                 'min_length' => 4
             )
         );
         
         $validatorLastName = new sfValidatorString(
             array(
-                'required'   => true, 
+                'required'   => true,
                 'min_length' => 4
             )
         );
@@ -96,7 +95,10 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         
         $this->setValidators(
             array(
-               //'country_cid' => $validatorCountry,
+               'gender'      => $validatorGender,
+               'first_name'  => $validatorFirstName,
+               'last_name'   => $validatorLastName,
+               'country_cid' => $validatorCountry,
                'state'       => $validatorState,
                'city'        => $validatorCity,
                'street'      => $validatorStreet,

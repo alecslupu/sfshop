@@ -10,6 +10,7 @@
 class sfsMemberPeer extends BasesfsMemberPeer
 {
     const CONFIRMED = 1;
+    const RECONFIRM = 2;
     
     protected static $member = null;
     
@@ -61,7 +62,7 @@ class sfsMemberPeer extends BasesfsMemberPeer
     }
     
     /**
-    * Generates password
+    * Generates password.
     *
     * @return string with password.
     * @author Dmitry Nesteruk
@@ -70,5 +71,20 @@ class sfsMemberPeer extends BasesfsMemberPeer
     public static function generatePassword()
     {
         return substr(md5(time() . uniqid()), 0, 8);
+    }
+    
+    /**
+    * Gets all genders avalible in the site.
+    *
+    * @return array
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getGenders()
+    {
+        return array(
+            '1' => 'Male',
+            '2' => 'Female'
+        );
     }
 }

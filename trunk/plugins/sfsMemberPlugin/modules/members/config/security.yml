@@ -1,0 +1,7 @@
+all:
+  is_secure: on
+  crendentials: member
+
+registration:
+  is_secure: off
+

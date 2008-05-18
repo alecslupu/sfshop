@@ -7,9 +7,11 @@
 <?php endif; ?>
 
 <form action="<?php echo url_for($url); ?>" method="post" class="form">
-    <ul>
+    <ul class="main">
         <?php echo $form ?>
-        <li><input type="submit" value="<?php echo __('Save') ?>" class="button"/></li>
+        <li class="button">
+            <input type="submit" value="<?php echo __('Save') ?>" class="button"/>&nbsp;<input type="button" value="<?php echo __('Cancel') ?>" class="button" onclick="window.location='<?php echo $sf_request->getReferer() ?>'"/>
+        </li>
     </ul>
 </form>
 

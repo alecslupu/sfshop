@@ -1,5 +1,9 @@
 <h3><?php echo __('My profile') ?></h3>
 
+<?php if ($sf_user->hasFlash('message')): ?>
+    <div class="message"><?php echo __($sf_user->getFlash('message')) ?></div><br/>
+<?php endif; ?>
+
 <div>
     <div class="left_content_line">
         <div class="right_content_line">

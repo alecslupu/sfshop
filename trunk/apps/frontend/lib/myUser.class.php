@@ -29,7 +29,7 @@ class myUser extends sfBasicSecurityUser
         $this->setAttribute('first_name', $member->getFirstName(), 'member');
         $this->setAttribute('last_name', $member->getLastName(), 'member');
     }
-
+    
     /**
     * Sets member unauthenticated. 
     * 
@@ -46,7 +46,7 @@ class myUser extends sfBasicSecurityUser
         $this->setAuthenticated(false);
         $this->clearCredentials();
     }
-
+    
     /**
     * Gets member's full name from session.
     *
@@ -59,7 +59,7 @@ class myUser extends sfBasicSecurityUser
     {
         return $this->getAttribute('first_name', null, 'member').' '.$this->getAttribute('lastName', null, 'member');
     }
-
+    
     /**
     * Gets member's id from session.
     *
@@ -77,7 +77,7 @@ class myUser extends sfBasicSecurityUser
             return null;
         }
     }
-
+    
     /**
     * Gets object member by member's id.
     *
@@ -94,5 +94,18 @@ class myUser extends sfBasicSecurityUser
         else {
             return null;
         }
+    }
+    
+    /**
+    * Gets member's location.
+    *
+    * @param  void
+    * @return string $location.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function getLocation()
+    {
+        return 'US';
     }
 }

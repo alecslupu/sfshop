@@ -36,4 +36,12 @@ members_changePassword:
 
 members_confirmRegistration:
   url: /confirmRegistration/*
-  param: { module: members, action: confirmRegistration }
+  param: { module: members, action: confirmEmail, confirm: 'registration' }
+  
+members_confirmNewEmail:
+  url: /confirmNewEmail/*
+  param: { module: members, action: confirmEmail, confirm: 'newEmail' }
+  
+members_changePassword:
+  url: /changePassword
+  param: { module: members, action: changePassword }

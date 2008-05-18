@@ -18,9 +18,12 @@ class sfsAddressBookPeer extends BasesfsAddressBookPeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function saveAddressBook(array $fields)
+    public static function saveAddressBook(array $fields, sfsAddressBook $addressBook = null)
     {
-        $addressBook = new sfsAddressBook();
+        if ($addressBook == null) {
+            $addressBook = new sfsAddressBook();
+        }
+        
         $addressBook->fromArray($fields, BasePeer::TYPE_FIELDNAME);
         $addressBook->save();
         return $addressBook;

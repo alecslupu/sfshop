@@ -95,63 +95,77 @@ class membersActions extends sfActions
     {
         sfLoader::loadHelpers('I18N');
         
-        $this->form = new sfsRegistrationForm();
-        $this->form->embedForm('address', new sfsAddressBookShortForm());
-        
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind($this->getRequestParameter('registration'));
+        if ($this->getUser()->isAuthenticated() && !$this->hasFlash('registered')) {
+            $this->redirect('@homepage');
+        }
+        else {
+            $this->form = new sfsRegistrationForm();
+            $this->form->embedForm('address', new sfsAddressBookFormShort());
             
-            if ($this->form->isValid()) {
+            if ($this->getRequest()->isMethod('post')) {
+                $this->form->bind($this->getRequestParameter('details'));
                 
-                $member = $this->form->updateObject();
-                $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
-                $member->save();
-                
-                $address = $this->getRequestParameter('registration[address]');
-                
-                $address = array_merge($address, array('member_id' => $member->getId()));
-                
-                //saving member address
-                $addressBook = sfsAddressBookPeer::saveAddressBook($address);
-                
-                $member->setDefaultAddressId($addressBook->getId());
-                $member->save();
-                
-                $controler = sfContext::getInstance()->getController();
-                $confirmCode = $member->getConfirmCode();
-                $urlToConfirm = $controler->genUrl('@members_confirmRegistration?confirm_code=' . $confirmCode);
-                $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::REGISTRATION, $this->getUser()->getCulture());
-                
-                $mail = new sfsMail();
-                $mail->addAddress($member->getEmail());
-                $mail->setTemplate($template);
-                $mail->setBodyParams(
-                    array(
-                        'email'                => $member->getEmail(),
-                        'password'             => $this->getRequestParameter('registration[password]'),
-                        'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
-                        'confirm_code'         => $confirmCode
-                    )
-                );
-                $mail->send();
-                
-                $this->getUser()->setFlash('registered', true);
-                $this->redirect('@members_registration');
+                if ($this->form->isValid()) {
+                    
+                    $member = $this->form->updateObject();
+                    $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
+                    $member->save();
+                    
+                    $address = $this->getRequestParameter('details[address]');
+                    
+                    $address = array_merge(
+                        $address, 
+                        array(
+                            'gender'     => $member->getGender(),
+                            'member_id'  => $member->getId(),
+                            'first_name' => $member->getFirstName(),
+                            'last_name'  => $member->getLastName()
+                        )
+                     );
+                    
+                    //saving member address
+                    $addressBook = sfsAddressBookPeer::saveAddressBook($address);
+                    
+                    $member->setDefaultAddressId($addressBook->getId());
+                    $member->save();
+                    
+                    $controler = sfContext::getInstance()->getController();
+                    $confirmCode = $member->getConfirmCode();
+                    $urlToConfirm = $controler->genUrl('@members_confirmRegistration?confirm_code=' . $confirmCode);
+                    $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::REGISTRATION, $this->getUser()->getCulture());
+                    
+                    $mail = new sfsMail();
+                    $mail->addAddress($member->getEmail());
+                    $mail->setTemplate($template);
+                    $mail->setBodyParams(
+                        array(
+                            'email'                => $member->getEmail(),
+                            'password'             => $this->getRequestParameter('details[password]'),
+                            'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
+                            'confirm_code'         => $confirmCode
+                        )
+                    );
+                    $mail->send();
+                    
+                    $this->getUser()->setFlash('message', 'You are registered now. Thanks!');
+                    $this->getUser()->setFlash('registered', true);
+                    $this->redirect('@members_registration');
+                }
             }
         }
     }
     
     /**
-    * Checks entered confirm code, if code is correct set member is confirmed.
+    * Checks entered confirm code, if code is correct set member as confirmed.
     *
     * @param  void
     * @return void
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeConfirmRegistration()
+    public function executeConfirmEmail()
     {
-        $this->form = new sfsConfirmRegistrationForm();
+        $this->form = new sfsConfirmEmailForm();
         $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code')));
         
         if ($this->getRequest()->isMethod('post')) {
@@ -164,7 +178,7 @@ class membersActions extends sfActions
                 
                 $this->getUser()->login($member);
                 
-                $this->getUser()->setFlash('confirmed', true);
+                $this->getUser()->setFlash('message', 'You are confirmed your email. Thanks!');
                 $this->redirect('@members_confirmRegistration');
             }
         }
@@ -239,7 +253,7 @@ class membersActions extends sfActions
                     );
                     $mail->send();
                     
-                    $this->getUser()->setFlash('password_sent', true);
+                    $this->getUser()->setFlash('message', 'Your login and password have been sent to you email.');
                     $this->getUser()->getAttributeHolder()->removeNamespace('member/forgot_password');
                     $this->redirect('@members_forgotPasswordStepTwo');
                 }
@@ -260,7 +274,86 @@ class membersActions extends sfActions
     */
     public function executeMyProfile()
     {
-        
+        return sfView::SUCCESS;
     }
     
+    /**
+    * Edits profile information provided in the registration.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeEditProfile()
+    {
+        $this->form = new sfsEditProfileForm($this->getUser()->getMember());
+        
+        if ($this->getRequest()->isMethod('post')) {
+            $this->form->bind($this->getRequestParameter('details'));
+            
+            if ($this->form->isValid()) {
+                $member = $this->form->getObject();
+                $email = $this->getRequestParameter('details[email]');
+                
+                if ($member->getEmail() != $email) {
+                    
+                    $member->setConfirmCode(sfsMemberPeer::generateConfirmCode());
+                    $member->setEmail($email);
+                    $member->setIsConfirmed(MemberPeer::RECONFIRM);
+                    $member->save();
+                    
+                    $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::RECONFIRM_EMAIL, $this->getUser()->getCulture());
+                    $urlToConfirm = $controler->genUrl('@members_confirmNewEmail?confirm_code=' . $confirmCode);
+                    
+                    $mail = new sfsMail();
+                    $mail->addAddress($member->getEmail());
+                    $mail->setTemplate($template);
+                    $mail->setBodyParams(
+                        array(
+                            'email'                => $member->getEmail(),
+                            'password'             => $this->getRequestParameter('details[password]'),
+                            'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
+                            'confirm_code'         => $confirmCode
+                        )
+                    );
+                    $mail->send();
+                    $this->getUser()->setFlash('message', 'You have changed email address. Please confirm new mail. ');
+                }
+                
+                $member = $this->form->updateObject();
+                $member->save();
+                
+                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . 'Your personal information have been saved.');
+                
+                $this->redirect('@members_myProfile');
+            }
+        }
+    }
+    
+    /**
+    * Changes password for logged member.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeChangePassword()
+    {
+        $this->form = new sfsChangePasswordForm($this->getUser()->getMember());
+        
+        if ($this->getRequest()->isMethod('post')) {
+            $this->form->bind($this->getRequestParameter('change_password'));
+            
+            if ($this->form->isValid()) {
+                $member = $this->form->updateObject();
+                $member->save();
+                
+                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . 'Your password was changed.');
+                
+                $this->redirect('@members_myProfile');
+            }
+        }
+    }
 }

@@ -53,6 +53,8 @@ class addressBookActions extends sfActions
             
             if ($this->form->isValid()) {
                 $address = $this->form->updateObject();
+                $address->setCompany($this->getRequestParameter('address[company]'));
+                $address->setIsDefault($this->getRequestParameter('address[is_default]'));
                 $address->save();
                 
                 $this->redirect('@addressBook_myList');
@@ -87,9 +89,15 @@ class addressBookActions extends sfActions
     {
         if (!$this->getRequestParameter($id)) {
             $address = new sfsAddressBook();
+            $address->setMemberId($this->getUser()->getMemberId());
         }
         else {
             $address = sfsAddressBookPeer::retrieveByPk($this->getRequestParameter($id));
+            
+            if ($address->getMemberId() != $this->getUser()->getMemberId()) {
+                $this->forward404();
+            }
+            
             $this->forward404Unless($address);
         }
         

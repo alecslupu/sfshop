@@ -15,9 +15,11 @@ propel:
     street:             varchar(64)
     suburb:             varchar(32)
     postcode:           varchar(10)
+    is_default:         { type: integer, size: 1 }
     
   address_format:
     _attributes:        { phpName: sfsAddressFormat }
     id:                 ~
-    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
+    location:           { type: varchar(7), required: true, primaryKey: true }
     format:             varchar(255)
+    is_default:         { type: integer, size: 1 }

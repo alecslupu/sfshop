@@ -1,0 +1,8 @@
+---
+sfsMenu: 
+  sfMenu_PROFILE_EN_1: 
+    culture: en
+    route: @addressBook_myList
+    title: My address book
+    pos: 1
+    type: <?php echo sfsMenuPeer::TYPE_PROFILE ?> 

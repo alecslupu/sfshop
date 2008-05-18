@@ -19,6 +19,7 @@ class sfsValidatorMember extends sfValidatorBase
    *  * check_unique_email
    *  * check_exist_account
    *  * check_confirm_code
+   *  * check_password
    *
    * Available error codes:
    *
@@ -35,13 +36,15 @@ class sfsValidatorMember extends sfValidatorBase
         $this->addMessage('check_unique_email', 'Accout with this email alredy exist.');
         $this->addMessage('check_exist_account', 'Accout with this email does not exist.');
         $this->addMessage('check_secret_answer', 'The answer is wrong');
-        $this->addMessage('check_confirm_code', 'Confirm code is wrong');
+        $this->addMessage('check_confirm_code', 'The confirm code is wrong');
+        $this->addMessage('check_password', 'The current password is wrong');
         
         $this->addOption('check_login');
         $this->addOption('check_unique_email');
         $this->addOption('check_exist_account');
         $this->addOption('check_secret_answer');
         $this->addOption('check_confirm_code');
+        $this->addOption('check_password');
     }
 
     /**
@@ -58,6 +61,8 @@ class sfsValidatorMember extends sfValidatorBase
     * and answer of member object, if answers do not match sets error.
     * 
     * If option "check_confirm_code" is set, gets member object by confirm code, if member does not exist with such confim code sets error.
+    * 
+    * If option "check_password" is set, checks password of current member and password inputed.
     * 
     * @param  string $value email value
     * @return string $clean, value of field
@@ -103,8 +108,16 @@ class sfsValidatorMember extends sfValidatorBase
         }
         elseif ($this->hasOption('check_unique_email')) {
             $member = sfsMemberPeer::retrieveByEmail($value);
+            $sfUser = sfContext::getInstance()->getUser();
+            $ownEmail = false;
             
-            if ($member !== null) {
+            if ($sfUser->isAuthenticated()) {
+                if ($sfUser->getMember()->getEmail() == $value && $sfUser->getMemberId() == $member->getId()) {
+                    $ownEmail = true;
+                }
+            }
+            
+            if ($member !== null && !$ownEmail) {
                 throw new sfValidatorError(
                     $this, 'check_unique_email', 
                     array('value' => $value, 'check_unique_email' => $this->getOption('check_unique_email'))
@@ -131,6 +144,17 @@ class sfsValidatorMember extends sfValidatorBase
                     $this, 
                     'check_secret_answer', 
                     array('value' => $value, 'check_secret_answer' => $this->getOption('check_secret_answer'))
+                );
+            }
+        }
+        elseif ($this->hasOption('check_password')) {
+            $member =  sfContext::getInstance()->getUser()->getMember();
+            
+            if ($member->checkPassword($value)) {
+                throw new sfValidatorError(
+                    $this, 
+                    'check_password', 
+                    array('value' => $value, 'check_password' => $this->getOption('check_password'))
                 );
             }
         }

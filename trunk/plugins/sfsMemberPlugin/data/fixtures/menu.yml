@@ -1,0 +1,21 @@
+---
+sfsMenu: 
+  sfMenu_PROFILE_EN_1: 
+    culture: en
+    route: @members_editProfile
+    title: Edit profile
+    pos: 1
+    type: <?php echo sfsMenuPeer::TYPE_PROFILE ?> 
+  sfMenu_PROFILE_EN_2: 
+    culture: en
+    route: @members_changePassword
+    title: Change password
+    pos: 1
+    type: <?php echo sfsMenuPeer::TYPE_PROFILE ?> 
+  sfMenu_MAIN_EN_1: 
+    culture: en
+    route: @members_myProfile
+    title: My profiles
+    pos: 1
+    type: <?php echo sfsMenuPeer::TYPE_MAIN ?> 
+

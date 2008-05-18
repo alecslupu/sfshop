@@ -3,7 +3,6 @@ class sfsRegistrationForm extends sfsMemberForm
 {
     public function configure()
     {
-        
         $arrayQuestions = array();
         $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
         
@@ -14,14 +13,11 @@ class sfsRegistrationForm extends sfsMemberForm
             }
         }
         
-        $arrayGenders = array(
-            'male'   => __('Male'),
-            'female' => __('Female')
-        );
+        $arrayGenders = sfsMemberPeer::getGenders();
         
         $this->setWidgets(
             array(
-                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
+                'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'email'              => new sfWidgetFormInput(),
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
@@ -148,7 +144,7 @@ class sfsRegistrationForm extends sfsMemberForm
         
         $this->setValidators(
             array(
-               //'gender'           => $validatorGender,
+               'gender'           => $validatorGender,
                'email'            => $validatorEmail,
                'password'         => $validatorPassword,
                'confirm_password' => $validatorConfirmPassword,
@@ -160,10 +156,11 @@ class sfsRegistrationForm extends sfsMemberForm
                'secret_answer'    => $validatorSecretAnswer
             )
         );
+        
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
         $this->validatorSchema->setOption('allow_extra_fields', true);
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
-        $this->getWidgetSchema()->setNameFormat('registration[%s]');
+        $this->getWidgetSchema()->setNameFormat('details[%s]');
         
         parent::configure();
     }

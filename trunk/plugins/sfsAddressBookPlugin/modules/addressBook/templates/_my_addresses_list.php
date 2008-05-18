@@ -1,4 +1,4 @@
-<?php use_helper('Date') ?>
+<?php use_helper('Date', 'AddressBook') ?>
 
 <table cellspacing="0" width="100%">
 <thead>
@@ -15,12 +15,20 @@
 </th></tr>
 </tfoot>
 <tbody>
-<?php $i = 1; foreach ($pager->getResults() as $address): ?>
-<?php $line_class = count($pager->getResults()) > $i ? 'asset_table_bottom_border' : ''?>
-<tr class="<?php echo $line_class ?>">
-    <?php include_partial('my_addresses_list_td_tabular', array('address' => $address)) ?>
-    <?php include_partial('my_addresses_list_td_actions', array('address' => $address)) ?>
-</tr>
+<?php $i = 1; foreach ($pager->getResults() as $address): $class = 'asset_table_bottom_border'; ?>
+    
+    <?php if ($pager->getNbResults() > 10 * $sf_request->getParameter('page') && $i == 10): ?>
+         <?php $class = ''; ?>
+    <?php elseif($pager->getNbResults() > 10 && 10 - ($sf_request->getParameter('page') * 10 - $pager->getNbResults()) == $i ): ?>
+         <?php $class = ''; ?>
+    <?php elseif($pager->getNbResults() == $i): ?>
+         <?php $class = ''; ?>
+    <?php endif; ?>
+    
+    <tr class="<?php echo $class ?>">
+        <?php include_partial('my_addresses_list_td_tabular', array('address' => $address)) ?>
+        <?php include_partial('my_addresses_list_td_actions', array('address' => $address)) ?>
+    </tr>
 <?php $i++; endforeach; ?>
 </tbody>
 </table>

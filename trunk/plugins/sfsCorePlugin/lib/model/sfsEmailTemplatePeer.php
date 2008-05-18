@@ -11,6 +11,7 @@ class sfsEmailTemplatePeer extends BasesfsEmailTemplatePeer
 {
     const REGISTRATION    = 'REGISTRATION';
     const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
+    const RECONFIRM_EMAIL = 'RECONFIRM_EMAIL';
     
     /**
     * Gets email template with body and subject by tamplate name and culture.
