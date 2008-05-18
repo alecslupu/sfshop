@@ -1,0 +1,14 @@
+#labels Featured
+Implemented functionality:
+
+==Member:==
+ * registration;
+ * login/logout;
+ * forgot password;
+ * edit profile details;
+ * change password;
+ * *address book:*
+   # add/edit new address (member can add unlimited addresses);
+   # view list with all addresses;
+   # delete addresses;
+   # set default address. 
