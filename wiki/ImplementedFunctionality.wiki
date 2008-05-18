@@ -3,7 +3,7 @@ Implemented functionality:
 
 ==Frontend:==
 
-===Member:===
+*Member:*
  * registration;
  * login/logout;
  * forgot password;
