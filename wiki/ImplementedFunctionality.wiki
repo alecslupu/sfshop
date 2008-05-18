@@ -1,7 +1,9 @@
 #labels Featured
 Implemented functionality:
 
-==Member:==
+==Frontend:==
+
+===Member:===
  * registration;
  * login/logout;
  * forgot password;
