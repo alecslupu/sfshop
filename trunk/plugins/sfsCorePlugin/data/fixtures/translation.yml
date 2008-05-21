@@ -1,0 +1,16 @@
+Catalogue:
+  Catalogue_ua:
+    cat_id:      1
+    name:        messages.ua
+    source_lang: en
+    target_lang: ua
+  Catalogue_ru:
+    cat_id:      2
+    name:        messages.ru
+    source_lang: en
+    target_lang: ru
+  Catalogue_en:
+    cat_id:      3
+    name:        messages.en
+    source_lang: en
+    target_lang: en
