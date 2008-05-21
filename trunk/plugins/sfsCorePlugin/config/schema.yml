@@ -3,9 +3,9 @@ propel:
   
   languages:
     _attributes:        { phpName: sfsLanguage }
-    id:                 ~
-    name:               varchar(255)
-    code:               varchar(3)
+    culture:            { type: varchar(7), required: true, primaryKey: true }
+    name_english:       varchar(255)
+    name_own:           varchar(255)
     thumbnail:          varchar(255)
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
@@ -13,9 +13,13 @@ propel:
   countries:
     _attributes:        { phpName: sfsCountry }
     id:                 ~
+    iso:                varchar(2)
+    
+  countries_i18n:
+    _attributes:        { phpName: sfsCountryI18n }
+    id:                 { type: integer, required: true, primaryKey: true, foreignTable: countries, foreignReference: id, onDelete: cascade }
+    culture:            { isCulture: true, type: varchar(7), required: true, primaryKey: true }
     name:               varchar(255)
-    iso_code_2:         varchar(2)
-    iso_code_3:         varchar(3)
     
   email_templates:
     _attributes:        { phpName: sfsEmailTemplate, isI18N: true, i18nTable: email_templates_i18n }
