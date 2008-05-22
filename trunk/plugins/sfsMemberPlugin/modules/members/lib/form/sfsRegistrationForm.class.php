@@ -4,7 +4,7 @@ class sfsRegistrationForm extends sfsMemberForm
     public function configure()
     {
         $arrayQuestions = array();
-        $questions = sfsMemberSecretQuestionsPeer::getAllQuestionsWithI18n();
+        $questions = sfsMemberSecretQuestionsPeer::getQuestionsWithI18n();
         
         if ($questions !== null) {
             $arrayQuestions[] = '';
