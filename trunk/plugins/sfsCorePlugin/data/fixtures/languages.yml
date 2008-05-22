@@ -11,4 +11,5 @@ sfsLanguage:
     culture: en
     name_english: English
     name_own: English
+    is_default: 1
 

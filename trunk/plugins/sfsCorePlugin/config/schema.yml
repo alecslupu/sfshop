@@ -9,11 +9,13 @@ propel:
     thumbnail:          varchar(255)
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
+    is_default:         { type: integer, size: 1, default: 0 }
     
   countries:
     _attributes:        { phpName: sfsCountry, isI18N: true, i18nTable: countries_i18n }
     id:                 ~
-    iso:                varchar(2)
+    iso:                { type: varchar(2), required: true }
+    name_english:       varchar(255)
     is_active:          { type: integer, size: 1, default: 0 }
     
   countries_i18n:
