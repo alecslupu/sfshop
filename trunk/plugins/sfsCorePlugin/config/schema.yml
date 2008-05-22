@@ -11,7 +11,7 @@ propel:
     updated_at:         { type: timestamp }
     
   countries:
-    _attributes:        { phpName: sfsCountry }
+    _attributes:        { phpName: sfsCountry, isI18N: true, i18nTable: countries_i18n }
     id:                 ~
     iso:                varchar(2)
     

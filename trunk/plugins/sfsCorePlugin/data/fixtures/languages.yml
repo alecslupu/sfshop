@@ -1,0 +1,14 @@
+sfsLanguage:
+  sfsLanguage_UA:
+    culture: ua
+    name_english: Ukrainian
+    name_own: Українська
+  sfsLanguage_RU:
+    culture: ru
+    name_english: Russian
+    name_own: Русский
+  sfsLanguage_EN:
+    culture: en
+    name_english: English
+    name_own: English
+
