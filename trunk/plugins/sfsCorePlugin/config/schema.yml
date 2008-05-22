@@ -14,6 +14,7 @@ propel:
     _attributes:        { phpName: sfsCountry, isI18N: true, i18nTable: countries_i18n }
     id:                 ~
     iso:                varchar(2)
+    is_active:          { type: integer, size: 1, default: 0 }
     
   countries_i18n:
     _attributes:        { phpName: sfsCountryI18n }
