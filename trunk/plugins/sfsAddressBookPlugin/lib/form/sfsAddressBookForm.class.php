@@ -12,8 +12,17 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
 {
     public function configure()
     {
-        $c = new sfCultureInfo(sfContext::getInstance()->getUser()->getCulture());
-        $arrayCountries = $c->getCountries();
+        $countries = sfsCountryPeer::getByCulture(sfContext::getInstance()->getUser()->getCulture());
+        $arrayCountries = array();
+        
+        foreach ($countries as $country) {
+            if (method_exists($country, 'getName')) {
+                $arrayCountries[] = array($country->getIso() => $country->getName());
+            }
+            else {
+                $arrayCountries[] = array($country->getIso() => $country->getNameEnglish());
+            }
+        }
         
         $arrayGenders = sfsMemberPeer::getGenders();
         

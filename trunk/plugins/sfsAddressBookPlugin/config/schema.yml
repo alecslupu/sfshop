@@ -1,6 +1,6 @@
 propel:
   _attributes:          { package: plugins.sfsAddressBookPlugin.lib.model }
-
+   
   address_book:
     _attributes:        { phpName: sfsAddressBook }
     id:                 ~
@@ -9,7 +9,7 @@ propel:
     first_name:         varchar(255)
     last_name:          varchar(255)
     company:            varchar(255)
-    country_cid:        varchar(6)
+    country_iso:        { type: integer, primaryKey: true, foreignTable: countries, foreignReference: id, onDelete: cascade }
     state:              varchar(32)
     city:               varchar(32)
     street:             varchar(64)

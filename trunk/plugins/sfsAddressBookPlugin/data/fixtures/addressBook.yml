@@ -22,7 +22,6 @@ sfsAddressBook:
     gender: 1
     first_name: Dmitry
     last_name: Nesteruk
-    country_cid: UA
     state: Zaporiga
     city: Zaporiga
     street: street 1
