@@ -16,16 +16,16 @@ sfsMember:
     confirm_code: 14ad75adde376a57cda2069a6d5902d6
     is_confirmed: 1
 
-sfsAddressBook: 
-  sfsAddressBook_1:
-    member_id: sfsMember_1
-    gender: 1
-    first_name: Dmitry
-    last_name: Nesteruk
-    state: Zaporiga
-    city: Zaporiga
-    street: street 1
-    postcode: 69000
+#sfsAddressBook: 
+#  sfsAddressBook_1:
+#    member_id: sfsMember_1
+#    gender: 1
+#    first_name: Dmitry
+#    last_name: Nesteruk
+#    state: Zaporiga
+#    city: Zaporiga
+#    street: street 1
+#    postcode: 69000
 
 sfsAddressFormat: 
   sfsAddressFormat_1: 

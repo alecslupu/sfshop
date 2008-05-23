@@ -26,7 +26,7 @@ all:
     login_module:           members
     login_action:           login
   .settings:
-    enabled_modules:        [ default, members, addressBook, menu ]
+    enabled_modules:        [ default, members, addressBook, menu, products, categories ]
     standard_helpers:       [ I18N, Partial, Javascript, Date ]
     i18n:                   on
     default_culture:        en
