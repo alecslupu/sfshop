@@ -14,8 +14,14 @@ class productsActions extends sfActions
    * Executes index action
    *
    */
-  public function executeIndex()
-  {
-    $this->forward('default', 'module');
-  }
+    public function executeIndex()
+    {
+        $this->getUser()->getAttributeHolder()->removeNamespace('assets');
+        $this->redirect('@products_list');
+    }
+    
+    public function executeList()
+    {
+        
+    }
 }

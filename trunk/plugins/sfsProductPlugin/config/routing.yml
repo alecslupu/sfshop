@@ -1,0 +1,7 @@
+#
+# Products
+#
+
+products_list:
+  url: /list/*
+  param: { module: products, action: list }
