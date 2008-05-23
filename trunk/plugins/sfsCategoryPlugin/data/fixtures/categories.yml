@@ -1,0 +1,37 @@
+---
+sfsCategory: 
+  sfsCategory_1: 
+    parent_id: 0
+    title: 1
+    description: 1
+    is_active: 1
+  sfsCategory_2: 
+    parent_id: 0
+    title: 2
+    description: 2
+    is_active: 1
+  sfsCategory_3: 
+    parent_id: 0
+    title: 3
+    description: 
+    is_active: 0
+  sfsCategory_4: 
+    parent_id: 0
+    title: 4
+    description: 
+    is_active: 0
+  sfsCategory_5: 
+    parent_id: 1
+    title: 1-5
+    description: 
+    is_active: 1
+  sfsCategory_6: 
+    parent_id: 1
+    title: 1-6
+    description: 
+    is_active: 1
+  sfsCategory_7: 
+    parent_id: 3
+    title: 3-7
+    description: 
+    is_active: 1

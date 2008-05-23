@@ -19,7 +19,7 @@ class sfsCategory extends BasesfsCategory
      * @author Dmitry Nesteruk
      * @access public
      */
-    public function getChildCategories($culture = null)
+    public function getChild($culture = null)
     {
         if ($culture == null) {
             $culture = sfContext::getInstance()->getUser()->getCulture();
@@ -27,16 +27,16 @@ class sfsCategory extends BasesfsCategory
         
         if ($this->getHasChild()) {
             $criteria = new Criteria();
-            $criteria->add(sfsCategoryPeer::IS_ACTIVE, sfsCategoryPeer::ACTIVE);
+            $criteria->add(sfsCategoryPeer::IS_ACTIVE, 1);
             $criteria->add(sfsCategoryPeer::PARENT_ID, $this->getId());
-            $criteria->addAscendingOrderByColumn(sfsCategoryPeer::TITLE);
+            $criteria->addAscendingOrderByColumn(sfsCategoryI18nPeer::TITLE);
             return sfsCategoryPeer::doSelectWithI18n($criteria, $culture);
         }
         else {
             return null;
         }
     }
-    
+    /*
     public function getAllChildCategories(&$allChildCategories)
     {
         $categories = $this->getChildCategories();
@@ -48,11 +48,11 @@ class sfsCategory extends BasesfsCategory
             }
         }
     }
-    
+    */
     /**
      * Returns array with parents series for current category.
      *
-     * @param  void
+     * @param  &$array
      * @return array
      * @author Dmitry Nesteruk
      * @access public
@@ -60,6 +60,10 @@ class sfsCategory extends BasesfsCategory
     public function getParentsSeries(&$array)
     {
         $id = $this->getParentId();
+        
+        if (empty($array)) {
+            $array[] = $this;
+        }
         
         if ($id == null) {
             $array = array_reverse($array);
@@ -73,7 +77,7 @@ class sfsCategory extends BasesfsCategory
             $category->getParentsSeries($array);
         }
     }
-    
+    /*
     public function getLastParentCategoryId()
     {
         
@@ -86,5 +90,5 @@ class sfsCategory extends BasesfsCategory
         if (!empty($this->parentTreeArray)) {
             return $this->parentTreeArray[0]->getId();
         }
-    }
+    }*/
 }
