@@ -21,20 +21,15 @@ class categoriesComponents extends sfComponents
             
             $currentCategory = sfsCategoryPeer::retrieveByPK($this->currentCategoryId);
             
-            if (is_object($currentCategory)) {
+            if ($currentCategory !== null) {
                 $this->parentTree = array();
                 
                 $currentCategory->getParentsSeries($this->parentTree);
-                /*
-                $categories = array();
-                
-                if (!empty($parentCategories)) {
-                    foreach ($parentCategories as $category) {
-                        $categories[] = $category->getId();
-                    }
-                    
-                    $this->parentTree = array_values($categories);
-                }*/
+            }
+            else {
+                $controller  = $this->getController();
+                $actionInstance = $controller->getActionStack()->getLastEntry()->getActionInstance();
+                $actionInstance->forward404('sad');
             }
         }
     }
