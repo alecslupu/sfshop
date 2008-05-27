@@ -1,2397 +1,2878 @@
 sfsCountry: 
+  sfsCountry_AF: 
+    iso:          AF
+    name_english: Afghanistan
+    is_active:    1
+  sfsCountry_AL: 
+    iso:          AL
+    name_english: Albania
+    is_active:    1
+  sfsCountry_DZ: 
+    iso:          DZ
+    name_english: Algeria
+    is_active:    1
+  sfsCountry_AS: 
+    iso:          AS
+    name_english: American Samoa
+    is_active:    1
+  sfsCountry_AD: 
+    iso:          AD
+    name_english: Andorra
+    is_active:    1 
+  sfsCountry_AO: 
+    iso:          AO
+    name_english: Angola
+    is_active:    1
+  sfsCountry_AI: 
+    iso:          AI
+    name_english: Anguilla
+    is_active:    1
+  sfsCountry_AQ: 
+    iso:          AQ
+    name_english: Antarctica
+    is_active:    1
+  sfsCountry_AG: 
+    iso:          AG
+    name_english: Antigua and Barbuda
+    is_active:    1
+  sfsCountry_AR: 
+    iso:          AR
+    name_english: Argentina
+    is_active:    1
+  sfsCountry_AM: 
+    iso:          AM
+    name_english: Armenia
+    is_active:    1
+  sfsCountry_AW: 
+    iso:          AW
+    name_english: Aruba
+    is_active:    1
+  sfsCountry_AU: 
+    iso:          AU
+    name_english: Australia
+    is_active:    1
+  sfsCountry_AT: 
+    iso:          AT
+    name_english: Austria
+    is_active:    1
+  sfsCountry_AZ: 
+    iso:          AZ
+    name_english: Azerbaijan
+    is_active:    1
+  sfsCountry_BS: 
+    iso:          BS
+    name_english: Bahamas
+    is_active:    1
+  sfsCountry_BH: 
+    iso:          BH
+    name_english: Bahrain
+    is_active:    1
+  sfsCountry_BD: 
+    iso:          BD
+    name_english: Bangladesh
+    is_active:    1
+  sfsCountry_BB: 
+    iso:          BB
+    name_english: Barbados
+    is_active:    1
+  sfsCountry_BY: 
+    iso:          BY
+    name_english: Belarus
+    is_active:    1
+  sfsCountry_BE: 
+    iso:          BE
+    name_english: Belgium
+    is_active:    1
+  sfsCountry_BZ: 
+    iso:          BZ
+    name_english: Belize
+    is_active:    1
+  sfsCountry_BJ: 
+    iso:          BJ
+    name_english: Benin
+    is_active:    1
+  sfsCountry_BM: 
+    iso:          BM
+    name_english: Bermuda
+    is_active:    1
+  sfsCountry_BT: 
+    iso:          BT
+    name_english: Bhutan
+    is_active:    1
+  sfsCountry_BO: 
+    iso:          BO
+    name_english: Bolivia
+    is_active:    1
+  sfsCountry_BA: 
+    iso:          BA
+    name_english: Bosnia and Herzegovina
+    is_active:    1
+  sfsCountry_BW: 
+    iso:          BW
+    name_english: Botswana
+    is_active:    1
+  sfsCountry_BV: 
+    iso:          BV
+    name_english: Bouvet Island
+    is_active:    1
+  sfsCountry_BR: 
+    iso:          BR
+    name_english: Brazil
+    is_active:    1
+  sfsCountry_IO: 
+    iso:          IO
+    name_english: British Indian Ocean Territory
+    is_active:    1
+  sfsCountry_VG: 
+    iso:          VG
+    name_english: British Virgin Islands
+    is_active:    1
+  sfsCountry_BN: 
+    iso:          BN
+    name_english: Brunei
+    is_active:    1
+  sfsCountry_BG: 
+    iso:          BG
+    name_english: Bulgaria
+    is_active:    1
+  sfsCountry_BF: 
+    iso:          BF
+    name_english: Burkina Faso
+    is_active:    1
+  sfsCountry_BI: 
+    iso:          BI
+    name_english: Burundi
+    is_active:    1
+  sfsCountry_KH: 
+    iso:          KH
+    name_english: Cambodia
+    is_active:    1
+  sfsCountry_CM: 
+    iso:          CM
+    name_english: Cameroon
+    is_active:    1
+  sfsCountry_CA: 
+    iso:          CA
+    name_english: Canada
+    is_active:    1
+  sfsCountry_CV: 
+    iso:          CV
+    name_english: Cape Verde
+    is_active:    1
+  sfsCountry_KY: 
+    iso:          KY
+    name_english: Cayman Islands
+    is_active:    1
+  sfsCountry_CF: 
+    iso:          CF
+    name_english: Central African Republic
+    is_active:    1
+  sfsCountry_TD: 
+    iso:          TD
+    name_english: Chad
+    is_active:    1
+  sfsCountry_CL: 
+    iso:          CL
+    name_english: Chile
+    is_active:    1
+  sfsCountry_CN: 
+    iso:          CN
+    name_english: China
+    is_active:    1
+  sfsCountry_CX: 
+    iso:          CX
+    name_english: Christmas Island
+    is_active:    1
+  sfsCountry_CC: 
+    iso:          CC
+    name_english: Cocos (Keeling) Islands
+    is_active:    1
+  sfsCountry_CO: 
+    iso:          CO
+    name_english: Colombia
+    is_active:    1
+  sfsCountry_KM: 
+    iso:          KM
+    name_english: Comoros
+    is_active:    1
+  sfsCountry_CD: 
+    iso:          CD
+    name_english: Democratic Republic of the Congo
+    is_active:    1
+  sfsCountry_CG: 
+    iso:          CG
+    name_english: Congo
+    is_active:    1
+  sfsCountry_CK: 
+    iso:          CK
+    name_english: Cook Islands
+    is_active:    1
+  sfsCountry_CR: 
+    iso:          CR
+    name_english: Costa Rica
+    is_active:    1
+  sfsCountry_CI: 
+    iso:          CI
+    name_english: Côte d’Ivoire
+    is_active:    1
+  sfsCountry_CU: 
+    iso:          CU
+    name_english: Cuba
+    is_active:    1
+  sfsCountry_CY: 
+    iso:          CY
+    name_english: Cyprus
+    is_active:    1
+  sfsCountry_CZ: 
+    iso:          CZ
+    name_english: Czech Republic
+    is_active:    1
+  sfsCountry_DK: 
+    iso:          DK
+    name_english: Denmark
+    is_active:    1
+  sfsCountry_DJ: 
+    iso:          DJ
+    name_english: Djibouti
+    is_active:    1
+  sfsCountry_DM: 
+    iso:          DM
+    name_english: Dominica
+    is_active:    1
+  sfsCountry_DO: 
+    iso:          DO
+    name_english: Dominican Republic
+    is_active:    1
+  sfsCountry_EC: 
+    iso:          EC
+    name_english: Ecuador
+    is_active:    1
+  sfsCountry_EG: 
+    iso:          EG
+    name_english: Egypt
+    is_active:    1
+  sfsCountry_SV: 
+    iso:          SV
+    name_english: El Salvador
+    is_active:    1
+  sfsCountry_GQ: 
+    iso:          GQ
+    name_english: Equatorial Guinea
+    is_active:    1
+  sfsCountry_ER: 
+    iso:          ER
+    name_english: Eritrea
+    is_active:    1
+  sfsCountry_EE: 
+    iso:          EE
+    name_english: Estonia
+    is_active:    1
+  sfsCountry_ET: 
+    iso:          ET
+    name_english: Ethiopia
+    is_active:    1
+  sfsCountry_FO: 
+    iso:          FO
+    name_english: Faroe Islands
+    is_active:    1
+  sfsCountry_FK: 
+    iso:          FK
+    name_english: Falkland Islands
+    is_active:    1
+  sfsCountry_FJ: 
+    iso:          FJ
+    name_english: Fiji
+    is_active:    1
+  sfsCountry_FI: 
+    iso:          FI
+    name_english: Finland
+    is_active:    1
+  sfsCountry_FR: 
+    iso:          FR
+    name_english: France
+    is_active:    1
+  sfsCountry_GF: 
+    iso:          GF
+    name_english: French Guiana
+    is_active:    1
+  sfsCountry_PF: 
+    iso:          PF
+    name_english: French Polynesia
+    is_active:    1
+  sfsCountry_TF: 
+    iso:          TF
+    name_english: French Southern Territories
+    is_active:    1
+  sfsCountry_GA: 
+    iso:          GA
+    name_english: Gabon
+    is_active:    1
+  sfsCountry_GM: 
+    iso:          GM
+    name_english: Gambia
+    is_active:    1
+  sfsCountry_GE: 
+    iso:          GE
+    name_english: Georgia
+    is_active:    1
+  sfsCountry_DE: 
+    iso:          DE
+    name_english: Germany
+    is_active:    1
+  sfsCountry_GH: 
+    iso:          GH
+    name_english: Ghana
+    is_active:    1
+  sfsCountry_GI: 
+    iso:          GI
+    name_english: Gibraltar
+    is_active:    1
+  sfsCountry_GR: 
+    iso:          GR
+    name_english: Greece
+    is_active:    1
+  sfsCountry_GL: 
+    iso:          GL
+    name_english: Greenland
+    is_active:    1
+  sfsCountry_GD: 
+    iso:          GD
+    name_english: Grenada
+    is_active:    1
+  sfsCountry_GP: 
+    iso:          GP
+    name_english: Guadeloupe
+    is_active:    1
+  sfsCountry_GU: 
+    iso:          GU
+    name_english: Guam
+    is_active:    1
+  sfsCountry_GT: 
+    iso:          GT
+    name_english: Guatemala
+    is_active:    1
+  sfsCountry_GN: 
+    iso:          GN
+    name_english: Guinea
+    is_active:    1
+  sfsCountry_GW: 
+    iso:          GW
+    name_english: Guinea-Bissau
+    is_active:    1
+  sfsCountry_GY: 
+    iso:          GY
+    name_english: Guyana
+    is_active:    1
+  sfsCountry_HT: 
+    iso:          HT
+    name_english: Haiti
+    is_active:    1
+  sfsCountry_HM: 
+    iso:          HM
+    name_english: Heard Island and McDonald Islands
+    is_active:    1
+  sfsCountry_VA: 
+    iso:          VA
+    name_english: Vatican
+    is_active:    1
+  sfsCountry_HN: 
+    iso:          HN
+    name_english: Honduras
+    is_active:    1
+  sfsCountry_HK: 
+    iso:          HK
+    name_english: Hong Kong S.A.R., China
+    is_active:    1
+  sfsCountry_HR: 
+    iso:          HR
+    name_english: Croatia
+    is_active:    1
+  sfsCountry_HU: 
+    iso:          HU
+    name_english: Hungary
+    is_active:    1
+  sfsCountry_IS: 
+    iso:          IS
+    name_english: Iceland
+    is_active:    1
+  sfsCountry_IN: 
+    iso:          IN
+    name_english: India
+    is_active:    1
+  sfsCountry_ID: 
+    iso:          ID
+    name_english: Indonesia
+    is_active:    1
+  sfsCountry_IR: 
+    iso:          IR
+    name_english: Iran
+    is_active:    1
+  sfsCountry_IQ: 
+    iso:          IQ
+    name_english: Iraq
+    is_active:    1
+  sfsCountry_IE: 
+    iso:          IE
+    name_english: Ireland
+    is_active:    1
+  sfsCountry_IL: 
+    iso:          IL
+    name_english: Israel
+    is_active:    1
+  sfsCountry_IT: 
+    iso:          IT
+    name_english: Italy
+    is_active:    1
+  sfsCountry_JM: 
+    iso:          JM
+    name_english: Jamaica
+    is_active:    1
+  sfsCountry_JP: 
+    iso:          JP
+    name_english: Japan
+    is_active:    1
+  sfsCountry_JO: 
+    iso:          JO
+    name_english: Jordan
+    is_active:    1
+  sfsCountry_KZ: 
+    iso:          KZ
+    name_english: Kazakhstan
+    is_active:    1
+  sfsCountry_KE: 
+    iso:          KE
+    name_english: Kenya
+    is_active:    1
+  sfsCountry_KI: 
+    iso:          KI
+    name_english: Kiribati
+    is_active:    1
+  sfsCountry_KP: 
+    iso:          KP
+    name_english: North Korea
+    is_active:    1
+  sfsCountry_KR: 
+    iso:          KR
+    name_english: South Korea
+    is_active:    1
+  sfsCountry_KW: 
+    iso:          KW
+    name_english: Kuwait
+    is_active:    1
+  sfsCountry_KG: 
+    iso:          KG
+    name_english: Kyrgyzstan
+    is_active:    1
+  sfsCountry_LA: 
+    iso:          LA
+    name_english: Laos
+    is_active:    1
+  sfsCountry_LV: 
+    iso:          LV
+    name_english: Latvia
+    is_active:    1
+  sfsCountry_LB: 
+    iso:          LB
+    name_english: Lebanon
+    is_active:    1
+  sfsCountry_LS: 
+    iso:          LS
+    name_english: Lesotho
+    is_active:    1
+  sfsCountry_LR: 
+    iso:          LR
+    name_english: Liberia
+    is_active:    1
+  sfsCountry_LY: 
+    iso:          LY
+    name_english: Libya
+    is_active:    1
+  sfsCountry_LI: 
+    iso:          LI
+    name_english: Liechtenstein
+    is_active:    1
+  sfsCountry_LT: 
+    iso:          LT
+    name_english: Lithuania
+    is_active:    1
+  sfsCountry_LU: 
+    iso:          LU
+    name_english: Luxembourg
+    is_active:    1
+  sfsCountry_MO: 
+    iso:          MO
+    name_english: Macao S.A.R., China
+    is_active:    1
+  sfsCountry_MK: 
+    iso:          MK
+    name_english: Macedonia
+    is_active:    1
+  sfsCountry_MG: 
+    iso:          MG
+    name_english: Madagascar
+    is_active:    1
+  sfsCountry_MW: 
+    iso:          MW
+    name_english: Malawi
+    is_active:    1
+  sfsCountry_MY: 
+    iso:          MY
+    name_english: Malaysia
+    is_active:    1
+  sfsCountry_MV: 
+    iso:          MV
+    name_english: Maldives
+    is_active:    1
+  sfsCountry_ML: 
+    iso:          ML
+    name_english: Mali
+    is_active:    1
+  sfsCountry_MT: 
+    iso:          MT
+    name_english: Malta
+    is_active:    1
+  sfsCountry_MH: 
+    iso:          MH
+    name_english: Marshall Islands
+    is_active:    1
+  sfsCountry_MQ: 
+    iso:          MQ
+    name_english: Martinique
+    is_active:    1
+  sfsCountry_MR: 
+    iso:          MR
+    name_english: Mauritania
+    is_active:    1
+  sfsCountry_MU: 
+    iso:          MU
+    name_english: Mauritius
+    is_active:    1
+  sfsCountry_YT: 
+    iso:          YT
+    name_english: Mayotte
+    is_active:    1
+  sfsCountry_MX: 
+    iso:          MX
+    name_english: Mexico
+    is_active:    1
+  sfsCountry_FM: 
+    iso:          FM
+    name_english: Micronesia
+    is_active:    1
+  sfsCountry_MD: 
+    iso:          MD
+    name_english: Moldova
+    is_active:    1
+  sfsCountry_MC: 
+    iso:          MC
+    name_english: Monaco
+    is_active:    1
+  sfsCountry_MN: 
+    iso:          MN
+    name_english: Mongolia
+    is_active:    1
+  sfsCountry_MS: 
+    iso:          MS
+    name_english: Montserrat
+    is_active:    1
+  sfsCountry_MA: 
+    iso:          MA
+    name_english: Morocco
+    is_active:    1
+  sfsCountry_MZ: 
+    iso:          MZ
+    name_english: Mozambique
+    is_active:    1
+  sfsCountry_MM: 
+    iso:          MM
+    name_english: Myanmar
+    is_active:    1
+  sfsCountry_NA: 
+    iso:          NA
+    name_english: Namibia
+    is_active:    1
+  sfsCountry_NR: 
+    iso:          NR
+    name_english: Nauru
+    is_active:    1
+  sfsCountry_NP: 
+    iso:          NP
+    name_english: Nepal
+    is_active:    1
+  sfsCountry_AN: 
+    iso:          AN
+    name_english: Netherlands Antilles
+    is_active:    1
+  sfsCountry_NL: 
+    iso:          NL
+    name_english: Netherlands
+    is_active:    1
+  sfsCountry_NC: 
+    iso:          NC
+    name_english: New Caledonia
+    is_active:    1
+  sfsCountry_NZ: 
+    iso:          NZ
+    name_english: New Zealand
+    is_active:    1
+  sfsCountry_NI: 
+    iso:          NI
+    name_english: Nicaragua
+    is_active:    1
+  sfsCountry_NE: 
+    iso:          NE
+    name_english: Niger
+    is_active:    1
+  sfsCountry_NG: 
+    iso:          NG
+    name_english: Nigeria
+    is_active:    1
+  sfsCountry_NU: 
+    iso:          NU
+    name_english: Niue
+    is_active:    1
+  sfsCountry_NF: 
+    iso:          NF
+    name_english: Norfolk Island
+    is_active:    1
+  sfsCountry_MP: 
+    iso:          MP
+    name_english: Northern Mariana Islands
+    is_active:    1
+  sfsCountry_NO: 
+    iso:          NO
+    name_english: Norway
+    is_active:    1
+  sfsCountry_OM: 
+    iso:          OM
+    name_english: Oman
+    is_active:    1
+  sfsCountry_PK: 
+    iso:          PK
+    name_english: Pakistan
+    is_active:    1
+  sfsCountry_PW: 
+    iso:          PW
+    name_english: Palau
+    is_active:    1
+  sfsCountry_PS: 
+    iso:          PS
+    name_english: Palestinian Territory
+    is_active:    1
+  sfsCountry_PA: 
+    iso:          PA
+    name_english: Panama
+    is_active:    1
+  sfsCountry_PG: 
+    iso:          PG
+    name_english: Papua New Guinea
+    is_active:    1
+  sfsCountry_PY: 
+    iso:          PY
+    name_english: Paraguay
+    is_active:    1
+  sfsCountry_PE: 
+    iso:          PE
+    name_english: Peru
+    is_active:    1
+  sfsCountry_PH: 
+    iso:          PH
+    name_english: Philippines
+    is_active:    1
+  sfsCountry_PN: 
+    iso:          PN
+    name_english: Pitcairn
+    is_active:    1
+  sfsCountry_PL: 
+    iso:          PL
+    name_english: Poland
+    is_active:    1
+  sfsCountry_PT: 
+    iso:          PT
+    name_english: Portugal
+    is_active:    1
+  sfsCountry_PR: 
+    iso:          PR
+    name_english: Puerto Rico
+    is_active:    1
+  sfsCountry_QA: 
+    iso:          QA
+    name_english: Qatar
+    is_active:    1
+  sfsCountry_RE: 
+    iso:          RE
+    name_english: Réunion
+    is_active:    1
+  sfsCountry_RO: 
+    iso:          RO
+    name_english: Romania
+    is_active:    1
+  sfsCountry_RU: 
+    iso:          RU
+    name_english: Russia
+    is_active:    1
+  sfsCountry_RW: 
+    iso:          RW
+    name_english: Rwanda
+    is_active:    1
+  sfsCountry_SH: 
+    iso:          SH
+    name_english: Saint Helena
+    is_active:    1
+  sfsCountry_KN: 
+    iso:          KN
+    name_english: Saint Kitts and Nevis
+    is_active:    1
+  sfsCountry_LC: 
+    iso:          LC
+    name_english: Saint Lucia
+    is_active:    1
+  sfsCountry_PM: 
+    iso:          PM
+    name_english: Saint Pierre and Miquelon
+    is_active:    1
+  sfsCountry_VC: 
+    iso:          VC
+    name_english: Saint Vincent and the Grenadines
+    is_active:    1
+  sfsCountry_WS: 
+    iso:          WS
+    name_english: Samoa
+    is_active:    1
+  sfsCountry_SM: 
+    iso:          SM
+    name_english: San Marino
+    is_active:    1
+  sfsCountry_ST: 
+    iso:          ST
+    name_english: Sao Tome and Principe
+    is_active:    1
+  sfsCountry_SA: 
+    iso:          SA
+    name_english: Saudi Arabia
+    is_active:    1
+  sfsCountry_SN: 
+    iso:          SN
+    name_english: Senegal
+    is_active:    1
+  sfsCountry_CS: 
+    iso:          CS
+    name_english: 
+    is_active:    1
+  sfsCountry_SC: 
+    iso:          SC
+    name_english: Seychelles
+    is_active:    1
+  sfsCountry_SL: 
+    iso:          SL
+    name_english: Sierra Leone
+    is_active:    1
+  sfsCountry_SG: 
+    iso:          SG
+    name_english: Singapore
+    is_active:    1
+  sfsCountry_SK: 
+    iso:          SK
+    name_english: Slovakia
+    is_active:    1
+  sfsCountry_SI: 
+    iso:          SI
+    name_english: Slovenia
+    is_active:    1
+  sfsCountry_SB: 
+    iso:          SB
+    name_english: Solomon Islands
+    is_active:    1
+  sfsCountry_SO: 
+    iso:          SO
+    name_english: Somalia
+    is_active:    1
+  sfsCountry_ZA: 
+    iso:          ZA
+    name_english: South Africa
+    is_active:    1
+  sfsCountry_GS: 
+    iso:          GS
+    name_english: South Georgia and the South Sandwich Islands
+    is_active:    1
+  sfsCountry_ES: 
+    iso:          ES
+    name_english: Spain
+    is_active:    1
+  sfsCountry_LK: 
+    iso:          LK
+    name_english: Sri Lanka
+    is_active:    1
+  sfsCountry_SD: 
+    iso:          SD
+    name_english: Sudan
+    is_active:    1
+  sfsCountry_SR: 
+    iso:          SR
+    name_english: Suriname
+    is_active:    1
+  sfsCountry_SJ: 
+    iso:          SJ
+    name_english: Svalbard and Jan Mayen
+    is_active:    1
+  sfsCountry_SZ: 
+    iso:          SZ
+    name_english: Swaziland
+    is_active:    1
+  sfsCountry_SE: 
+    iso:          SE
+    name_english: Sweden
+    is_active:    1
+  sfsCountry_CH: 
+    iso:          CH
+    name_english: Switzerland
+    is_active:    1
+  sfsCountry_SY: 
+    iso:          SY
+    name_english: Syria
+    is_active:    1
+  sfsCountry_TW: 
+    iso:          TW
+    name_english: Taiwan
+    is_active:    1
+  sfsCountry_TJ: 
+    iso:          TJ
+    name_english: Tajikistan
+    is_active:    1
+  sfsCountry_TZ: 
+    iso:          TZ
+    name_english: Tanzania
+    is_active:    1
+  sfsCountry_TH: 
+    iso:          TH
+    name_english: Thailand
+    is_active:    1
+  sfsCountry_TL: 
+    iso:          TL
+    name_english: Timor-Leste
+    is_active:    1
+  sfsCountry_TG: 
+    iso:          TG
+    name_english: Togo
+    is_active:    1
+  sfsCountry_TK: 
+    iso:          TK
+    name_english: Tokelau
+    is_active:    1
+  sfsCountry_TO: 
+    iso:          TO
+    name_english: Tonga
+    is_active:    1
+  sfsCountry_TT: 
+    iso:          TT
+    name_english: Trinidad and Tobago
+    is_active:    1
+  sfsCountry_TN: 
+    iso:          TN
+    name_english: Tunisia
+    is_active:    1
+  sfsCountry_TR: 
+    iso:          TR
+    name_english: Turkey
+    is_active:    1
+  sfsCountry_TM: 
+    iso:          TM
+    name_english: Turkmenistan
+    is_active:    1
+  sfsCountry_TC: 
+    iso:          TC
+    name_english: Turks and Caicos Islands
+    is_active:    1
+  sfsCountry_TV: 
+    iso:          TV
+    name_english: Tuvalu
+    is_active:    1
+  sfsCountry_VI: 
+    iso:          VI
+    name_english: U.S. Virgin Islands
+    is_active:    1
+  sfsCountry_UG: 
+    iso:          UG
+    name_english: Uganda
+    is_active:    1
+  sfsCountry_UA: 
+    iso:          UA
+    name_english: Ukraine
+    is_active:    1
+  sfsCountry_AE: 
+    iso:          AE
+    name_english: United Arab Emirates
+    is_active:    1
+  sfsCountry_GB: 
+    iso:          GB
+    name_english: United Kingdom
+    is_active:    1
+  sfsCountry_UM: 
+    iso:          UM
+    name_english: United States Minor Outlying Islands
+    is_active:    1
+  sfsCountry_US: 
+    iso:          US
+    name_english: United States
+    is_active:    1
+  sfsCountry_UY: 
+    iso:          UY
+    name_english: Uruguay
+    is_active:    1
+  sfsCountry_UZ: 
+    iso:          UZ
+    name_english: Uzbekistan
+    is_active:    1
+  sfsCountry_VU: 
+    iso:          VU
+    name_english: Vanuatu
+    is_active:    1
+  sfsCountry_VE: 
+    iso:          VE
+    name_english: Venezuela
+    is_active:    1
+  sfsCountry_VN: 
+    iso:          VN
+    name_english: Vietnam
+    is_active:    1
+  sfsCountry_WF: 
+    iso:          WF
+    name_english: Wallis and Futuna
+    is_active:    1
+  sfsCountry_EH: 
+    iso:          EH
+    name_english: Western Sahara
+    is_active:    1
+  sfsCountry_YE: 
+    iso:          YE
+    name_english: Yemen
+    is_active:    1
+  sfsCountry_ZM: 
+    iso:          ZM
+    name_english: Zambia
+    is_active:    1
+  sfsCountry_ZW: 
+    iso:          ZW
+    name_english: Zimbabwe
+    is_active:    1
+
+
+sfsCountryI18n:
 #
 # English
 #
-  sfsCountry_EN_AF: 
-    iso:          AF
+  sfsCountryI18n_EN_AF: 
+    id:           sfsCountry_AF
     culture:      en
-    name_english: Afghanistan
     name:         Afghanistan
-  sfsCountry_EN_AL: 
-    iso:          AL
+  sfsCountryI18n_EN_AL: 
+    id:           sfsCountry_AL
     culture:      en
-    name_english: Albania
     name:         Albania
-  sfsCountry_EN_DZ: 
-    iso:          DZ
+  sfsCountryI18n_EN_DZ: 
+    id:           sfsCountry_DZ
     culture:      en
-    name_english: Algeria
     name:         Algeria
-  sfsCountry_EN_AS: 
-    iso:          AS
+  sfsCountryI18n_EN_AS: 
+    id:           sfsCountry_AS
     culture:      en
-    name_english: American Samoa
     name:         American Samoa
-  sfsCountry_EN_AD: 
-    iso:          AD
+  sfsCountryI18n_EN_AD: 
+    id:           sfsCountry_AD
     culture:      en
-    name_english: Andorra
     name:         Andorra
-  sfsCountry_EN_AO: 
-    iso:          AO
+  sfsCountryI18n_EN_AO: 
+    id:           sfsCountry_AO
     culture:      en
-    name_english: Angola
     name:         Angola
-  sfsCountry_EN_AI: 
-    iso:          AI
+  sfsCountryI18n_EN_AI: 
+    id:           sfsCountry_AI
     culture:      en
-    name_english: Anguilla
     name:         Anguilla
-  sfsCountry_EN_AQ: 
-    iso:          AQ
+  sfsCountryI18n_EN_AQ: 
+    id:           sfsCountry_AQ
     culture:      en
-    name_english: Antarctica
     name:         Antarctica
-  sfsCountry_EN_AG: 
-    iso:          AG
+  sfsCountryI18n_EN_AG: 
+    id:           sfsCountry_AG
     culture:      en
-    name_english: Antigua and Barbuda
     name:         Antigua and Barbuda
-  sfsCountry_EN_AR: 
-    iso:          AR
+  sfsCountryI18n_EN_AR: 
+    id:           sfsCountry_AR
     culture:      en
-    name_english: Argentina
     name:         Argentina
-  sfsCountry_EN_AM: 
-    iso:          AM
+  sfsCountryI18n_EN_AM: 
+    id:           sfsCountry_AM
     culture:      en
-    name_english: Armenia
     name:         Armenia
-  sfsCountry_EN_AW: 
-    iso:          AW
+  sfsCountryI18n_EN_AW: 
+    id:           sfsCountry_AW
     culture:      en
-    name_english: Aruba
     name:         Aruba
-  sfsCountry_EN_AU: 
-    iso:          AU
+  sfsCountryI18n_EN_AU: 
+    id:           sfsCountry_AU
     culture:      en
-    name_english: Australia
     name:         Australia
-  sfsCountry_EN_AT: 
-    iso:          AT
+  sfsCountryI18n_EN_AT: 
+    id:           sfsCountry_AT
     culture:      en
-    name_english: Austria
     name:         Austria
-  sfsCountry_EN_AZ: 
-    iso:          AZ
+  sfsCountryI18n_EN_AZ: 
+    id:           sfsCountry_AZ
     culture:      en
-    name_english: Azerbaijan
     name:         Azerbaijan
-  sfsCountry_EN_BS: 
-    iso:          BS
+  sfsCountryI18n_EN_BS: 
+    id:           sfsCountry_BS
     culture:      en
-    name_english: Bahamas
     name:         Bahamas
-  sfsCountry_EN_BH: 
-    iso:          BH
+  sfsCountryI18n_EN_BH: 
+    id:           sfsCountry_BH
     culture:      en
-    name_english: Bahrain
     name:         Bahrain
-  sfsCountry_EN_BD: 
-    iso:          BD
+  sfsCountryI18n_EN_BD: 
+    id:           sfsCountry_BD
     culture:      en
-    name_english: Bangladesh
     name:         Bangladesh
-  sfsCountry_EN_BB: 
-    iso:          BB
+  sfsCountryI18n_EN_BB: 
+    id:           sfsCountry_BB
     culture:      en
-    name_english: Barbados
     name:         Barbados
-  sfsCountry_EN_BY: 
-    iso:          BY
+  sfsCountryI18n_EN_BY: 
+    id:           sfsCountry_BY
     culture:      en
-    name_english: Belarus
     name:         Belarus
-  sfsCountry_EN_BE: 
-    iso:          BE
+  sfsCountryI18n_EN_BE: 
+    id:           sfsCountry_BE
     culture:      en
-    name_english: Belgium
     name:         Belgium
-  sfsCountry_EN_BZ: 
-    iso:          BZ
+  sfsCountryI18n_EN_BZ: 
+    id:           sfsCountry_BZ
     culture:      en
-    name_english: Belize
     name:         Belize
-  sfsCountry_EN_BJ: 
-    iso:          BJ
+  sfsCountryI18n_EN_BJ: 
+    id:           sfsCountry_BJ
     culture:      en
-    name_english: Benin
     name:         Benin
-  sfsCountry_EN_BM: 
-    iso:          BM
+  sfsCountryI18n_EN_BM: 
+    id:           sfsCountry_BM
     culture:      en
-    name_english: Bermuda
     name:         Bermuda
-  sfsCountry_EN_BT: 
-    iso:          BT
+  sfsCountryI18n_EN_BT: 
+    id:           sfsCountry_BT
     culture:      en
-    name_english: Bhutan
     name:         Bhutan
-  sfsCountry_EN_BO: 
-    iso:          BO
+  sfsCountryI18n_EN_BO: 
+    id:           sfsCountry_BO
     culture:      en
-    name_english: Bolivia
     name:         Bolivia
-  sfsCountry_EN_BA: 
-    iso:          BA
+  sfsCountryI18n_EN_BA: 
+    id:           sfsCountry_BA
     culture:      en
-    name_english: Bosnia and Herzegovina
     name:         Bosnia and Herzegovina
-  sfsCountry_EN_BW: 
-    iso:          BW
+  sfsCountryI18n_EN_BW: 
+    id:           sfsCountry_BW
     culture:      en
-    name_english: Botswana
     name:         Botswana
-  sfsCountry_EN_BV: 
-    iso:          BV
+  sfsCountryI18n_EN_BV: 
+    id:           sfsCountry_BV
     culture:      en
-    name_english: Bouvet Island
     name:         Bouvet Island
-  sfsCountry_EN_BR: 
-    iso:          BR
+  sfsCountryI18n_EN_BR: 
+    id:           sfsCountry_BR
     culture:      en
-    name_english: Brazil
     name:         Brazil
-  sfsCountry_EN_IO: 
-    iso:          IO
+  sfsCountryI18n_EN_IO: 
+    id:           sfsCountry_IO
     culture:      en
-    name_english: British Indian Ocean Territory
     name:         British Indian Ocean Territory
-  sfsCountry_EN_VG: 
-    iso:          VG
+  sfsCountryI18n_EN_VG: 
+    id:           sfsCountry_VG
     culture:      en
-    name_english: British Virgin Islands
     name:         British Virgin Islands
-  sfsCountry_EN_BN: 
-    iso:          BN
+  sfsCountryI18n_EN_BN: 
+    id:           sfsCountry_BN
     culture:      en
-    name_english: Brunei
     name:         Brunei
-  sfsCountry_EN_BG: 
-    iso:          BG
+  sfsCountryI18n_EN_BG: 
+    id:           sfsCountry_BG
     culture:      en
-    name_english: Bulgaria
     name:         Bulgaria
-  sfsCountry_EN_BF: 
-    iso:          BF
+  sfsCountryI18n_EN_BF: 
+    id:           sfsCountry_BF
     culture:      en
-    name_english: Burkina Faso
     name:         Burkina Faso
-  sfsCountry_EN_BI: 
-    iso:          BI
+  sfsCountryI18n_EN_BI: 
+    id:           sfsCountry_BI
     culture:      en
-    name_english: Burundi
     name:         Burundi
-  sfsCountry_EN_KH: 
-    iso:          KH
+  sfsCountryI18n_EN_KH: 
+    id:           sfsCountry_KH
     culture:      en
-    name_english: Cambodia
     name:         Cambodia
-  sfsCountry_EN_CM: 
-    iso:          CM
+  sfsCountryI18n_EN_CM: 
+    id:           sfsCountry_CM
     culture:      en
-    name_english: Cameroon
     name:         Cameroon
-  sfsCountry_EN_CA: 
-    iso:          CA
+  sfsCountryI18n_EN_CA: 
+    id:           sfsCountry_CA
     culture:      en
-    name_english: Canada
     name:         Canada
-  sfsCountry_EN_CV: 
-    iso:          CV
+  sfsCountryI18n_EN_CV: 
+    id:           sfsCountry_CV
     culture:      en
-    name_english: Cape Verde
     name:         Cape Verde
-  sfsCountry_EN_KY: 
-    iso:          KY
+  sfsCountryI18n_EN_KY: 
+    id:           sfsCountry_KY
     culture:      en
-    name_english: Cayman Islands
     name:         Cayman Islands
-  sfsCountry_EN_CF: 
-    iso:          CF
+  sfsCountryI18n_EN_CF: 
+    id:           sfsCountry_CF
     culture:      en
-    name_english: Central African Republic
     name:         Central African Republic
-  sfsCountry_EN_TD: 
-    iso:          TD
+  sfsCountryI18n_EN_TD: 
+    id:           sfsCountry_TD
     culture:      en
-    name_english: Chad
     name:         Chad
-  sfsCountry_EN_CL: 
-    iso:          CL
+  sfsCountryI18n_EN_CL: 
+    id:           sfsCountry_CL
     culture:      en
-    name_english: Chile
     name:         Chile
-  sfsCountry_EN_CN: 
-    iso:          CN
+  sfsCountryI18n_EN_CN: 
+    id:           sfsCountry_CN
     culture:      en
-    name_english: China
     name:         China
-  sfsCountry_EN_CX: 
-    iso:          CX
+  sfsCountryI18n_EN_CX: 
+    id:           sfsCountry_CX
     culture:      en
-    name_english: Christmas Island
     name:         Christmas Island
-  sfsCountry_EN_CC: 
-    iso:          CC
+  sfsCountryI18n_EN_CC: 
+    id:           sfsCountry_CC
     culture:      en
-    name_english: Cocos (Keeling) Islands
     name:         Cocos (Keeling) Islands
-  sfsCountry_EN_CO: 
-    iso:          CO
+  sfsCountryI18n_EN_CO: 
+    id:           sfsCountry_CO
     culture:      en
-    name_english: Colombia
     name:         Colombia
-  sfsCountry_EN_KM: 
-    iso:          KM
+  sfsCountryI18n_EN_KM: 
+    id:           sfsCountry_KM
     culture:      en
-    name_english: Comoros
     name:         Comoros
-  sfsCountry_EN_CD: 
-    iso:          CD
+  sfsCountryI18n_EN_CD: 
+    id:           sfsCountry_CD
     culture:      en
-    name_english: Democratic Republic of the Congo
     name:         Democratic Republic of the Congo
-  sfsCountry_EN_CG: 
-    iso:          CG
+  sfsCountryI18n_EN_CG: 
+    id:           sfsCountry_CG
     culture:      en
-    name_english: Congo
     name:         Congo
-  sfsCountry_EN_CK: 
-    iso:          CK
+  sfsCountryI18n_EN_CK: 
+    id:           sfsCountry_CK
     culture:      en
-    name_english: Cook Islands
     name:         Cook Islands
-  sfsCountry_EN_CR: 
-    iso:          CR
+  sfsCountryI18n_EN_CR: 
+    id:           sfsCountry_CR
     culture:      en
-    name_english: Costa Rica
     name:         Costa Rica
-  sfsCountry_EN_CI: 
-    iso:          CI
+  sfsCountryI18n_EN_CI: 
+    id:           sfsCountry_CI
     culture:      en
-    name_english: Côte d’Ivoire
     name:         Côte d’Ivoire
-  sfsCountry_EN_CU: 
-    iso:          CU
+  sfsCountryI18n_EN_CU: 
+    id:           sfsCountry_CU
     culture:      en
-    name_english: Cuba
     name:         Cuba
-  sfsCountry_EN_CY: 
-    iso:          CY
+  sfsCountryI18n_EN_CY: 
+    id:           sfsCountry_CY
     culture:      en
-    name_english: Cyprus
     name:         Cyprus
-  sfsCountry_EN_CZ: 
-    iso:          CZ
+  sfsCountryI18n_EN_CZ: 
+    id:           sfsCountry_CZ
     culture:      en
-    name_english: Czech Republic
     name:         Czech Republic
-  sfsCountry_EN_DK: 
-    iso:          DK
+  sfsCountryI18n_EN_DK: 
+    id:           sfsCountry_DK
     culture:      en
-    name_english: Denmark
     name:         Denmark
-  sfsCountry_EN_DJ: 
-    iso:          DJ
+  sfsCountryI18n_EN_DJ: 
+    id:           sfsCountry_DJ
     culture:      en
-    name_english: Djibouti
     name:         Djibouti
-  sfsCountry_EN_DM: 
-    iso:          DM
+  sfsCountryI18n_EN_DM: 
+    id:           sfsCountry_DM
     culture:      en
-    name_english: Dominica
     name:         Dominica
-  sfsCountry_EN_DO: 
-    iso:          DO
+  sfsCountryI18n_EN_DO: 
+    id:           sfsCountry_DO
     culture:      en
-    name_english: Dominican Republic
     name:         Dominican Republic
-  sfsCountry_EN_EC: 
-    iso:          EC
+  sfsCountryI18n_EN_EC: 
+    id:           sfsCountry_EC
     culture:      en
-    name_english: Ecuador
     name:         Ecuador
-  sfsCountry_EN_EG: 
-    iso:          EG
+  sfsCountryI18n_EN_EG: 
+    id:           sfsCountry_EG
     culture:      en
-    name_english: Egypt
     name:         Egypt
-  sfsCountry_EN_SV: 
-    iso:          SV
+  sfsCountryI18n_EN_SV: 
+    id:           sfsCountry_SV
     culture:      en
-    name_english: El Salvador
     name:         El Salvador
-  sfsCountry_EN_GQ: 
-    iso:          GQ
+  sfsCountryI18n_EN_GQ: 
+    id:           sfsCountry_GQ
     culture:      en
-    name_english: Equatorial Guinea
     name:         Equatorial Guinea
-  sfsCountry_EN_ER: 
-    iso:          ER
+  sfsCountryI18n_EN_ER: 
+    id:           sfsCountry_ER
     culture:      en
-    name_english: Eritrea
     name:         Eritrea
-  sfsCountry_EN_EE: 
-    iso:          EE
+  sfsCountryI18n_EN_EE: 
+    id:           sfsCountry_EE
     culture:      en
-    name_english: Estonia
     name:         Estonia
-  sfsCountry_EN_ET: 
-    iso:          ET
+  sfsCountryI18n_EN_ET: 
+    id:           sfsCountry_ET
     culture:      en
-    name_english: Ethiopia
     name:         Ethiopia
-  sfsCountry_EN_FO: 
-    iso:          FO
+  sfsCountryI18n_EN_FO: 
+    id:           sfsCountry_FO
     culture:      en
-    name_english: Faroe Islands
     name:         Faroe Islands
-  sfsCountry_EN_FK: 
-    iso:          FK
+  sfsCountryI18n_EN_FK: 
+    id:           sfsCountry_FK
     culture:      en
-    name_english: Falkland Islands
     name:         Falkland Islands
-  sfsCountry_EN_FJ: 
-    iso:          FJ
+  sfsCountryI18n_EN_FJ: 
+    id:           sfsCountry_FJ
     culture:      en
-    name_english: Fiji
     name:         Fiji
-  sfsCountry_EN_FI: 
-    iso:          FI
+  sfsCountryI18n_EN_FI: 
+    id:           sfsCountry_FI
     culture:      en
-    name_english: Finland
     name:         Finland
-  sfsCountry_EN_FR: 
-    iso:          FR
+  sfsCountryI18n_EN_FR: 
+    id:           sfsCountry_FR
     culture:      en
-    name_english: France
     name:         France
-  sfsCountry_EN_GF: 
-    iso:          GF
+  sfsCountryI18n_EN_GF: 
+    id:           sfsCountry_GF
     culture:      en
-    name_english: French Guiana
     name:         French Guiana
-  sfsCountry_EN_PF: 
-    iso:          PF
+  sfsCountryI18n_EN_PF: 
+    id:           sfsCountry_PF
     culture:      en
-    name_english: French Polynesia
     name:         French Polynesia
-  sfsCountry_EN_TF: 
-    iso:          TF
+  sfsCountryI18n_EN_TF: 
+    id:           sfsCountry_TF
     culture:      en
-    name_english: French Southern Territories
     name:         French Southern Territories
-  sfsCountry_EN_GA: 
-    iso:          GA
+  sfsCountryI18n_EN_GA: 
+    id:           sfsCountry_GA
     culture:      en
-    name_english: Gabon
     name:         Gabon
-  sfsCountry_EN_GM: 
-    iso:          GM
+  sfsCountryI18n_EN_GM: 
+    id:           sfsCountry_GM
     culture:      en
-    name_english: Gambia
     name:         Gambia
-  sfsCountry_EN_GE: 
-    iso:          GE
+  sfsCountryI18n_EN_GE: 
+    id:           sfsCountry_GE
     culture:      en
-    name_english: Georgia
     name:         Georgia
-  sfsCountry_EN_DE: 
-    iso:          DE
+  sfsCountryI18n_EN_DE: 
+    id:           sfsCountry_DE
     culture:      en
-    name_english: Germany
     name:         Germany
-  sfsCountry_EN_GH: 
-    iso:          GH
+  sfsCountryI18n_EN_GH: 
+    id:           sfsCountry_GH
     culture:      en
-    name_english: Ghana
     name:         Ghana
-  sfsCountry_EN_GI: 
-    iso:          GI
+  sfsCountryI18n_EN_GI: 
+    id:           sfsCountry_GI
     culture:      en
-    name_english: Gibraltar
     name:         Gibraltar
-  sfsCountry_EN_GR: 
-    iso:          GR
+  sfsCountryI18n_EN_GR: 
+    id:           sfsCountry_GR
     culture:      en
-    name_english: Greece
     name:         Greece
-  sfsCountry_EN_GL: 
-    iso:          GL
+  sfsCountryI18n_EN_GL: 
+    id:           sfsCountry_GL
     culture:      en
-    name_english: Greenland
     name:         Greenland
-  sfsCountry_EN_GD: 
-    iso:          GD
+  sfsCountryI18n_EN_GD: 
+    id:           sfsCountry_GD
     culture:      en
-    name_english: Grenada
     name:         Grenada
-  sfsCountry_EN_GP: 
-    iso:          GP
+  sfsCountryI18n_EN_GP: 
+    id:           sfsCountry_GP
     culture:      en
-    name_english: Guadeloupe
     name:         Guadeloupe
-  sfsCountry_EN_GU: 
-    iso:          GU
+  sfsCountryI18n_EN_GU: 
+    id:           sfsCountry_GU
     culture:      en
-    name_english: Guam
     name:         Guam
-  sfsCountry_EN_GT: 
-    iso:          GT
+  sfsCountryI18n_EN_GT: 
+    id:           sfsCountry_GT
     culture:      en
-    name_english: Guatemala
     name:         Guatemala
-  sfsCountry_EN_GN: 
-    iso:          GN
+  sfsCountryI18n_EN_GN: 
+    id:           sfsCountry_GN
     culture:      en
-    name_english: Guinea
     name:         Guinea
-  sfsCountry_EN_GW: 
-    iso:          GW
+  sfsCountryI18n_EN_GW: 
+    id:           sfsCountry_GW
     culture:      en
-    name_english: Guinea-Bissau
     name:         Guinea-Bissau
-  sfsCountry_EN_GY: 
-    iso:          GY
+  sfsCountryI18n_EN_GY: 
+    id:           sfsCountry_GY
     culture:      en
-    name_english: Guyana
     name:         Guyana
-  sfsCountry_EN_HT: 
-    iso:          HT
+  sfsCountryI18n_EN_HT: 
+    id:           sfsCountry_HT
     culture:      en
-    name_english: Haiti
     name:         Haiti
-  sfsCountry_EN_HM: 
-    iso:          HM
+  sfsCountryI18n_EN_HM: 
+    id:           sfsCountry_HM
     culture:      en
-    name_english: Heard Island and McDonald Islands
     name:         Heard Island and McDonald Islands
-  sfsCountry_EN_VA: 
-    iso:          VA
+  sfsCountryI18n_EN_VA: 
+    id:           sfsCountry_VA
     culture:      en
-    name_english: Vatican
     name:         Vatican
-  sfsCountry_EN_HN: 
-    iso:          HN
+  sfsCountryI18n_EN_HN: 
+    id:           sfsCountry_HN
     culture:      en
-    name_english: Honduras
     name:         Honduras
-  sfsCountry_EN_HK: 
-    iso:          HK
+  sfsCountryI18n_EN_HK: 
+    id:           sfsCountry_HK
     culture:      en
-    name_english: Hong Kong S.A.R., China
     name:         Hong Kong S.A.R., China
-  sfsCountry_EN_HR: 
-    iso:          HR
+  sfsCountryI18n_EN_HR: 
+    id:           sfsCountry_HR
     culture:      en
-    name_english: Croatia
     name:         Croatia
-  sfsCountry_EN_HU: 
-    iso:          HU
+  sfsCountryI18n_EN_HU: 
+    id:           sfsCountry_HU
     culture:      en
-    name_english: Hungary
     name:         Hungary
-  sfsCountry_EN_IS: 
-    iso:          IS
+  sfsCountryI18n_EN_IS: 
+    id:           sfsCountry_IS
     culture:      en
-    name_english: Iceland
     name:         Iceland
-  sfsCountry_EN_IN: 
-    iso:          IN
+  sfsCountryI18n_EN_IN: 
+    id:           sfsCountry_IN
     culture:      en
-    name_english: India
     name:         India
-  sfsCountry_EN_ID: 
-    iso:          ID
+  sfsCountryI18n_EN_ID: 
+    id:           sfsCountry_ID
     culture:      en
-    name_english: Indonesia
     name:         Indonesia
-  sfsCountry_EN_IR: 
-    iso:          IR
+  sfsCountryI18n_EN_IR: 
+    id:           sfsCountry_IR
     culture:      en
-    name_english: Iran
     name:         Iran
-  sfsCountry_EN_IQ: 
-    iso:          IQ
+  sfsCountryI18n_EN_IQ: 
+    id:           sfsCountry_IQ
     culture:      en
-    name_english: Iraq
     name:         Iraq
-  sfsCountry_EN_IE: 
-    iso:          IE
+  sfsCountryI18n_EN_IE: 
+    id:           sfsCountry_IE
     culture:      en
-    name_english: Ireland
     name:         Ireland
-  sfsCountry_EN_IL: 
-    iso:          IL
+  sfsCountryI18n_EN_IL: 
+    id:           sfsCountry_IL
     culture:      en
-    name_english: Israel
     name:         Israel
-  sfsCountry_EN_IT: 
-    iso:          IT
+  sfsCountryI18n_EN_IT: 
+    id:           sfsCountry_IT
     culture:      en
-    name_english: Italy
     name:         Italy
-  sfsCountry_EN_JM: 
-    iso:          JM
+  sfsCountryI18n_EN_JM: 
+    id:           sfsCountry_JM
     culture:      en
-    name_english: Jamaica
     name:         Jamaica
-  sfsCountry_EN_JP: 
-    iso:          JP
+  sfsCountryI18n_EN_JP: 
+    id:           sfsCountry_JP
     culture:      en
-    name_english: Japan
     name:         Japan
-  sfsCountry_EN_JO: 
-    iso:          JO
+  sfsCountryI18n_EN_JO: 
+    id:           sfsCountry_JO
     culture:      en
-    name_english: Jordan
     name:         Jordan
-  sfsCountry_EN_KZ: 
-    iso:          KZ
+  sfsCountryI18n_EN_KZ: 
+    id:           sfsCountry_KZ
     culture:      en
-    name_english: Kazakhstan
     name:         Kazakhstan
-  sfsCountry_EN_KE: 
-    iso:          KE
+  sfsCountryI18n_EN_KE: 
+    id:           sfsCountry_KE
     culture:      en
-    name_english: Kenya
     name:         Kenya
-  sfsCountry_EN_KI: 
-    iso:          KI
+  sfsCountryI18n_EN_KI: 
+    id:           sfsCountry_KI
     culture:      en
-    name_english: Kiribati
     name:         Kiribati
-  sfsCountry_EN_KP: 
-    iso:          KP
+  sfsCountryI18n_EN_KP: 
+    id:           sfsCountry_KP
     culture:      en
-    name_english: North Korea
     name:         North Korea
-  sfsCountry_EN_KR: 
-    iso:          KR
+  sfsCountryI18n_EN_KR: 
+    id:           sfsCountry_KR
     culture:      en
-    name_english: South Korea
     name:         South Korea
-  sfsCountry_EN_KW: 
-    iso:          KW
+  sfsCountryI18n_EN_KW: 
+    id:           sfsCountry_KW
     culture:      en
-    name_english: Kuwait
     name:         Kuwait
-  sfsCountry_EN_KG: 
-    iso:          KG
+  sfsCountryI18n_EN_KG: 
+    id:           sfsCountry_KG
     culture:      en
-    name_english: Kyrgyzstan
     name:         Kyrgyzstan
-  sfsCountry_EN_LA: 
-    iso:          LA
+  sfsCountryI18n_EN_LA: 
+    id:           sfsCountry_LA
     culture:      en
-    name_english: Laos
     name:         Laos
-  sfsCountry_EN_LV: 
-    iso:          LV
+  sfsCountryI18n_EN_LV: 
+    id:           sfsCountry_LV
     culture:      en
-    name_english: Latvia
     name:         Latvia
-  sfsCountry_EN_LB: 
-    iso:          LB
+  sfsCountryI18n_EN_LB: 
+    id:           sfsCountry_LB
     culture:      en
-    name_english: Lebanon
     name:         Lebanon
-  sfsCountry_EN_LS: 
-    iso:          LS
+  sfsCountryI18n_EN_LS: 
+    id:           sfsCountry_LS
     culture:      en
-    name_english: Lesotho
     name:         Lesotho
-  sfsCountry_EN_LR: 
-    iso:          LR
+  sfsCountryI18n_EN_LR: 
+    id:           sfsCountry_LR
     culture:      en
-    name_english: Liberia
     name:         Liberia
-  sfsCountry_EN_LY: 
-    iso:          LY
+  sfsCountryI18n_EN_LY: 
+    id:           sfsCountry_LY
     culture:      en
-    name_english: Libya
     name:         Libya
-  sfsCountry_EN_LI: 
-    iso:          LI
+  sfsCountryI18n_EN_LI: 
+    id:           sfsCountry_LI
     culture:      en
-    name_english: Liechtenstein
     name:         Liechtenstein
-  sfsCountry_EN_LT: 
-    iso:          LT
+  sfsCountryI18n_EN_LT: 
+    id:           sfsCountry_LT
     culture:      en
-    name_english: Lithuania
     name:         Lithuania
-  sfsCountry_EN_LU: 
-    iso:          LU
+  sfsCountryI18n_EN_LU: 
+    id:           sfsCountry_LU
     culture:      en
-    name_english: Luxembourg
     name:         Luxembourg
-  sfsCountry_EN_MO: 
-    iso:          MO
+  sfsCountryI18n_EN_MO: 
+    id:           sfsCountry_MO
     culture:      en
-    name_english: Macao S.A.R., China
     name:         Macao S.A.R., China
-  sfsCountry_EN_MK: 
-    iso:          MK
+  sfsCountryI18n_EN_MK: 
+    id:           sfsCountry_MK
     culture:      en
-    name_english: Macedonia
     name:         Macedonia
-  sfsCountry_EN_MG: 
-    iso:          MG
+  sfsCountryI18n_EN_MG: 
+    id:           sfsCountry_MG
     culture:      en
-    name_english: Madagascar
     name:         Madagascar
-  sfsCountry_EN_MW: 
-    iso:          MW
+  sfsCountryI18n_EN_MW: 
+    id:           sfsCountry_MW
     culture:      en
-    name_english: Malawi
     name:         Malawi
-  sfsCountry_EN_MY: 
-    iso:          MY
+  sfsCountryI18n_EN_MY: 
+    id:           sfsCountry_MY
     culture:      en
-    name_english: Malaysia
     name:         Malaysia
-  sfsCountry_EN_MV: 
-    iso:          MV
+  sfsCountryI18n_EN_MV: 
+    id:           sfsCountry_MV
     culture:      en
-    name_english: Maldives
     name:         Maldives
-  sfsCountry_EN_ML: 
-    iso:          ML
+  sfsCountryI18n_EN_ML: 
+    id:           sfsCountry_ML
     culture:      en
-    name_english: Mali
     name:         Mali
-  sfsCountry_EN_MT: 
-    iso:          MT
+  sfsCountryI18n_EN_MT: 
+    id:           sfsCountry_MT
     culture:      en
-    name_english: Malta
     name:         Malta
-  sfsCountry_EN_MH: 
-    iso:          MH
+  sfsCountryI18n_EN_MH: 
+    id:           sfsCountry_MH
     culture:      en
-    name_english: Marshall Islands
     name:         Marshall Islands
-  sfsCountry_EN_MQ: 
-    iso:          MQ
+  sfsCountryI18n_EN_MQ: 
+    id:           sfsCountry_MQ
     culture:      en
-    name_english: Martinique
     name:         Martinique
-  sfsCountry_EN_MR: 
-    iso:          MR
+  sfsCountryI18n_EN_MR: 
+    id:           sfsCountry_MR
     culture:      en
-    name_english: Mauritania
     name:         Mauritania
-  sfsCountry_EN_MU: 
-    iso:          MU
+  sfsCountryI18n_EN_MU: 
+    id:           sfsCountry_MU
     culture:      en
-    name_english: Mauritius
     name:         Mauritius
-  sfsCountry_EN_YT: 
-    iso:          YT
+  sfsCountryI18n_EN_YT: 
+    id:           sfsCountry_YT
     culture:      en
-    name_english: Mayotte
     name:         Mayotte
-  sfsCountry_EN_MX: 
-    iso:          MX
+  sfsCountryI18n_EN_MX: 
+    id:           sfsCountry_MX
     culture:      en
-    name_english: Mexico
     name:         Mexico
-  sfsCountry_EN_FM: 
-    iso:          FM
+  sfsCountryI18n_EN_FM: 
+    id:           sfsCountry_FM
     culture:      en
-    name_english: Micronesia
     name:         Micronesia
-  sfsCountry_EN_MD: 
-    iso:          MD
+  sfsCountryI18n_EN_MD: 
+    id:           sfsCountry_MD
     culture:      en
-    name_english: Moldova
     name:         Moldova
-  sfsCountry_EN_MC: 
-    iso:          MC
+  sfsCountryI18n_EN_MC: 
+    id:           sfsCountry_MC
     culture:      en
-    name_english: Monaco
     name:         Monaco
-  sfsCountry_EN_MN: 
-    iso:          MN
+  sfsCountryI18n_EN_MN: 
+    id:           sfsCountry_MN
     culture:      en
-    name_english: Mongolia
     name:         Mongolia
-  sfsCountry_EN_MS: 
-    iso:          MS
+  sfsCountryI18n_EN_MS: 
+    id:           sfsCountry_MS
     culture:      en
-    name_english: Montserrat
     name:         Montserrat
-  sfsCountry_EN_MA: 
-    iso:          MA
+  sfsCountryI18n_EN_MA: 
+    id:           sfsCountry_MA
     culture:      en
-    name_english: Morocco
     name:         Morocco
-  sfsCountry_EN_MZ: 
-    iso:          MZ
+  sfsCountryI18n_EN_MZ: 
+    id:           sfsCountry_MZ
     culture:      en
-    name_english: Mozambique
     name:         Mozambique
-  sfsCountry_EN_MM: 
-    iso:          MM
+  sfsCountryI18n_EN_MM: 
+    id:           sfsCountry_MM
     culture:      en
-    name_english: Myanmar
     name:         Myanmar
-  sfsCountry_EN_NA: 
-    iso:          NA
+  sfsCountryI18n_EN_NA: 
+    id:           sfsCountry_NA
     culture:      en
-    name_english: Namibia
     name:         Namibia
-  sfsCountry_EN_NR: 
-    iso:          NR
+  sfsCountryI18n_EN_NR: 
+    id:           sfsCountry_NR
     culture:      en
-    name_english: Nauru
     name:         Nauru
-  sfsCountry_EN_NP: 
-    iso:          NP
+  sfsCountryI18n_EN_NP: 
+    id:           sfsCountry_NP
     culture:      en
-    name_english: Nepal
     name:         Nepal
-  sfsCountry_EN_AN: 
-    iso:          AN
+  sfsCountryI18n_EN_AN: 
+    id:           sfsCountry_AN
     culture:      en
-    name_english: Netherlands Antilles
     name:         Netherlands Antilles
-  sfsCountry_EN_NL: 
-    iso:          NL
+  sfsCountryI18n_EN_NL: 
+    id:           sfsCountry_NL
     culture:      en
-    name_english: Netherlands
     name:         Netherlands
-  sfsCountry_EN_NC: 
-    iso:          NC
+  sfsCountryI18n_EN_NC: 
+    id:           sfsCountry_NC
     culture:      en
-    name_english: New Caledonia
     name:         New Caledonia
-  sfsCountry_EN_NZ: 
-    iso:          NZ
+  sfsCountryI18n_EN_NZ: 
+    id:           sfsCountry_NZ
     culture:      en
-    name_english: New Zealand
     name:         New Zealand
-  sfsCountry_EN_NI: 
-    iso:          NI
+  sfsCountryI18n_EN_NI: 
+    id:           sfsCountry_NI
     culture:      en
-    name_english: Nicaragua
     name:         Nicaragua
-  sfsCountry_EN_NE: 
-    iso:          NE
+  sfsCountryI18n_EN_NE: 
+    id:           sfsCountry_NE
     culture:      en
-    name_english: Niger
     name:         Niger
-  sfsCountry_EN_NG: 
-    iso:          NG
+  sfsCountryI18n_EN_NG: 
+    id:           sfsCountry_NG
     culture:      en
-    name_english: Nigeria
     name:         Nigeria
-  sfsCountry_EN_NU: 
-    iso:          NU
+  sfsCountryI18n_EN_NU: 
+    id:           sfsCountry_NU
     culture:      en
-    name_english: Niue
     name:         Niue
-  sfsCountry_EN_NF: 
-    iso:          NF
+  sfsCountryI18n_EN_NF: 
+    id:           sfsCountry_NF
     culture:      en
-    name_english: Norfolk Island
     name:         Norfolk Island
-  sfsCountry_EN_MP: 
-    iso:          MP
+  sfsCountryI18n_EN_MP: 
+    id:           sfsCountry_MP
     culture:      en
-    name_english: Northern Mariana Islands
     name:         Northern Mariana Islands
-  sfsCountry_EN_NO: 
-    iso:          NO
+  sfsCountryI18n_EN_NO: 
+    id:           sfsCountry_NO
     culture:      en
-    name_english: Norway
     name:         Norway
-  sfsCountry_EN_OM: 
-    iso:          OM
+  sfsCountryI18n_EN_OM: 
+    id:           sfsCountry_OM
     culture:      en
-    name_english: Oman
     name:         Oman
-  sfsCountry_EN_PK: 
-    iso:          PK
+  sfsCountryI18n_EN_PK: 
+    id:           sfsCountry_PK
     culture:      en
-    name_english: Pakistan
     name:         Pakistan
-  sfsCountry_EN_PW: 
-    iso:          PW
+  sfsCountryI18n_EN_PW: 
+    id:           sfsCountry_PW
     culture:      en
-    name_english: Palau
     name:         Palau
-  sfsCountry_EN_PS: 
-    iso:          PS
+  sfsCountryI18n_EN_PS: 
+    id:           sfsCountry_PS
     culture:      en
-    name_english: Palestinian Territory
     name:         Palestinian Territory
-  sfsCountry_EN_PA: 
-    iso:          PA
+  sfsCountryI18n_EN_PA: 
+    id:           sfsCountry_PA
     culture:      en
-    name_english: Panama
     name:         Panama
-  sfsCountry_EN_PG: 
-    iso:          PG
+  sfsCountryI18n_EN_PG: 
+    id:           sfsCountry_PG
     culture:      en
-    name_english: Papua New Guinea
     name:         Papua New Guinea
-  sfsCountry_EN_PY: 
-    iso:          PY
+  sfsCountryI18n_EN_PY: 
+    id:           sfsCountry_PY
     culture:      en
-    name_english: Paraguay
     name:         Paraguay
-  sfsCountry_EN_PE: 
-    iso:          PE
+  sfsCountryI18n_EN_PE: 
+    id:           sfsCountry_PE
     culture:      en
-    name_english: Peru
     name:         Peru
-  sfsCountry_EN_PH: 
-    iso:          PH
+  sfsCountryI18n_EN_PH: 
+    id:           sfsCountry_PH
     culture:      en
-    name_english: Philippines
     name:         Philippines
-  sfsCountry_EN_PN: 
-    iso:          PN
+  sfsCountryI18n_EN_PN: 
+    id:           sfsCountry_PN
     culture:      en
-    name_english: Pitcairn
     name:         Pitcairn
-  sfsCountry_EN_PL: 
-    iso:          PL
+  sfsCountryI18n_EN_PL: 
+    id:           sfsCountry_PL
     culture:      en
-    name_english: Poland
     name:         Poland
-  sfsCountry_EN_PT: 
-    iso:          PT
+  sfsCountryI18n_EN_PT: 
+    id:           sfsCountry_PT
     culture:      en
-    name_english: Portugal
     name:         Portugal
-  sfsCountry_EN_PR: 
-    iso:          PR
+  sfsCountryI18n_EN_PR: 
+    id:           sfsCountry_PR
     culture:      en
-    name_english: Puerto Rico
     name:         Puerto Rico
-  sfsCountry_EN_QA: 
-    iso:          QA
+  sfsCountryI18n_EN_QA: 
+    id:           sfsCountry_QA
     culture:      en
-    name_english: Qatar
     name:         Qatar
-  sfsCountry_EN_RE: 
-    iso:          RE
+  sfsCountryI18n_EN_RE: 
+    id:           sfsCountry_RE
     culture:      en
-    name_english: Réunion
     name:         Réunion
-  sfsCountry_EN_RO: 
-    iso:          RO
+  sfsCountryI18n_EN_RO: 
+    id:           sfsCountry_RO
     culture:      en
-    name_english: Romania
     name:         Romania
-  sfsCountry_EN_RU: 
-    iso:          RU
+  sfsCountryI18n_EN_RU: 
+    id:           sfsCountry_RU
     culture:      en
-    name_english: Russia
     name:         Russia
-  sfsCountry_EN_RW: 
-    iso:          RW
+  sfsCountryI18n_EN_RW: 
+    id:           sfsCountry_RW
     culture:      en
-    name_english: Rwanda
     name:         Rwanda
-  sfsCountry_EN_SH: 
-    iso:          SH
+  sfsCountryI18n_EN_SH: 
+    id:           sfsCountry_SH
     culture:      en
-    name_english: Saint Helena
     name:         Saint Helena
-  sfsCountry_EN_KN: 
-    iso:          KN
+  sfsCountryI18n_EN_KN: 
+    id:           sfsCountry_KN
     culture:      en
-    name_english: Saint Kitts and Nevis
     name:         Saint Kitts and Nevis
-  sfsCountry_EN_LC: 
-    iso:          LC
+  sfsCountryI18n_EN_LC: 
+    id:           sfsCountry_LC
     culture:      en
-    name_english: Saint Lucia
     name:         Saint Lucia
-  sfsCountry_EN_PM: 
-    iso:          PM
+  sfsCountryI18n_EN_PM: 
+    id:           sfsCountry_PM
     culture:      en
-    name_english: Saint Pierre and Miquelon
     name:         Saint Pierre and Miquelon
-  sfsCountry_EN_VC: 
-    iso:          VC
+  sfsCountryI18n_EN_VC: 
+    id:           sfsCountry_VC
     culture:      en
-    name_english: Saint Vincent and the Grenadines
     name:         Saint Vincent and the Grenadines
-  sfsCountry_EN_WS: 
-    iso:          WS
+  sfsCountryI18n_EN_WS: 
+    id:           sfsCountry_WS
     culture:      en
-    name_english: Samoa
     name:         Samoa
-  sfsCountry_EN_SM: 
-    iso:          SM
+  sfsCountryI18n_EN_SM: 
+    id:           sfsCountry_SM
     culture:      en
-    name_english: San Marino
     name:         San Marino
-  sfsCountry_EN_ST: 
-    iso:          ST
+  sfsCountryI18n_EN_ST: 
+    id:           sfsCountry_ST
     culture:      en
-    name_english: Sao Tome and Principe
     name:         Sao Tome and Principe
-  sfsCountry_EN_SA: 
-    iso:          SA
+  sfsCountryI18n_EN_SA: 
+    id:           sfsCountry_SA
     culture:      en
-    name_english: Saudi Arabia
     name:         Saudi Arabia
-  sfsCountry_EN_SN: 
-    iso:          SN
+  sfsCountryI18n_EN_SN: 
+    id:           sfsCountry_SN
     culture:      en
-    name_english: Senegal
     name:         Senegal
-  sfsCountry_EN_CS: 
-    iso:          CS
+  sfsCountryI18n_EN_CS: 
+    id:           sfsCountry_CS
     culture:      en
-    name_english: 
     name:         Serbia and Montenegro
-  sfsCountry_EN_SC: 
-    iso:          SC
+  sfsCountryI18n_EN_SC: 
+    id:           sfsCountry_SC
     culture:      en
-    name_english: Seychelles
     name:         Seychelles
-  sfsCountry_EN_SL: 
-    iso:          SL
+  sfsCountryI18n_EN_SL: 
+    id:           sfsCountry_SL
     culture:      en
-    name_english: Sierra Leone
     name:         Sierra Leone
-  sfsCountry_EN_SG: 
-    iso:          SG
+  sfsCountryI18n_EN_SG: 
+    id:           sfsCountry_SG
     culture:      en
-    name_english: Singapore
     name:         Singapore
-  sfsCountry_EN_SK: 
-    iso:          SK
+  sfsCountryI18n_EN_SK: 
+    id:           sfsCountry_SK
     culture:      en
-    name_english: Slovakia
     name:         Slovakia
-  sfsCountry_EN_SI: 
-    iso:          SI
+  sfsCountryI18n_EN_SI: 
+    id:           sfsCountry_SI
     culture:      en
-    name_english: Slovenia
     name:         Slovenia
-  sfsCountry_EN_SB: 
-    iso:          SB
+  sfsCountryI18n_EN_SB: 
+    id:           sfsCountry_SB
     culture:      en
-    name_english: Solomon Islands
     name:         Solomon Islands
-  sfsCountry_EN_SO: 
-    iso:          SO
+  sfsCountryI18n_EN_SO: 
+    id:           sfsCountry_SO
     culture:      en
-    name_english: Somalia
     name:         Somalia
-  sfsCountry_EN_ZA: 
-    iso:          ZA
+  sfsCountryI18n_EN_ZA: 
+    id:           sfsCountry_ZA
     culture:      en
-    name_english: South Africa
     name:         South Africa
-  sfsCountry_EN_GS: 
-    iso:          GS
+  sfsCountryI18n_EN_GS: 
+    id:           sfsCountry_GS
     culture:      en
-    name_english: South Georgia and the South Sandwich Islands
     name:         South Georgia and the South Sandwich Islands
-  sfsCountry_EN_ES: 
-    iso:          ES
+  sfsCountryI18n_EN_ES: 
+    id:           sfsCountry_ES
     culture:      en
-    name_english: Spain
     name:         Spain
-  sfsCountry_EN_LK: 
-    iso:          LK
+  sfsCountryI18n_EN_LK: 
+    id:           sfsCountry_LK
     culture:      en
-    name_english: Sri Lanka
     name:         Sri Lanka
-  sfsCountry_EN_SD: 
-    iso:          SD
+  sfsCountryI18n_EN_SD: 
+    id:           sfsCountry_SD
     culture:      en
-    name_english: Sudan
     name:         Sudan
-  sfsCountry_EN_SR: 
-    iso:          SR
+  sfsCountryI18n_EN_SR: 
+    id:           sfsCountry_SR
     culture:      en
-    name_english: Suriname
     name:         Suriname
-  sfsCountry_EN_SJ: 
-    iso:          SJ
+  sfsCountryI18n_EN_SJ: 
+    id:           sfsCountry_SJ
     culture:      en
-    name_english: Svalbard and Jan Mayen
     name:         Svalbard and Jan Mayen
-  sfsCountry_EN_SZ: 
-    iso:          SZ
+  sfsCountryI18n_EN_SZ: 
+    id:           sfsCountry_SZ
     culture:      en
-    name_english: Swaziland
     name:         Swaziland
-  sfsCountry_EN_SE: 
-    iso:          SE
+  sfsCountryI18n_EN_SE: 
+    id:           sfsCountry_SE
     culture:      en
-    name_english: Sweden
     name:         Sweden
-  sfsCountry_EN_CH: 
-    iso:          CH
+  sfsCountryI18n_EN_CH: 
+    id:           sfsCountry_CH
     culture:      en
-    name_english: Switzerland
     name:         Switzerland
-  sfsCountry_EN_SY: 
-    iso:          SY
+  sfsCountryI18n_EN_SY: 
+    id:           sfsCountry_SY
     culture:      en
-    name_english: Syria
     name:         Syria
-  sfsCountry_EN_TW: 
-    iso:          TW
+  sfsCountryI18n_EN_TW: 
+    id:           sfsCountry_TW
     culture:      en
-    name_english: Taiwan
     name:         Taiwan
-  sfsCountry_EN_TJ: 
-    iso:          TJ
+  sfsCountryI18n_EN_TJ: 
+    id:           sfsCountry_TJ
     culture:      en
-    name_english: Tajikistan
     name:         Tajikistan
-  sfsCountry_EN_TZ: 
-    iso:          TZ
+  sfsCountryI18n_EN_TZ: 
+    id:           sfsCountry_TZ
     culture:      en
-    name_english: Tanzania
     name:         Tanzania
-  sfsCountry_EN_TH: 
-    iso:          TH
+  sfsCountryI18n_EN_TH: 
+    id:           sfsCountry_TH
     culture:      en
-    name_english: Thailand
     name:         Thailand
-  sfsCountry_EN_TL: 
-    iso:          TL
+  sfsCountryI18n_EN_TL: 
+    id:           sfsCountry_TL
     culture:      en
-    name_english: Timor-Leste
     name:         Timor-Leste
-  sfsCountry_EN_TG: 
-    iso:          TG
+  sfsCountryI18n_EN_TG: 
+    id:           sfsCountry_TG
     culture:      en
-    name_english: Togo
     name:         Togo
-  sfsCountry_EN_TK: 
-    iso:          TK
+  sfsCountryI18n_EN_TK: 
+    id:           sfsCountry_TK
     culture:      en
-    name_english: Tokelau
     name:         Tokelau
-  sfsCountry_EN_TO: 
-    iso:          TO
+  sfsCountryI18n_EN_TO: 
+    id:           sfsCountry_TO
     culture:      en
-    name_english: Tonga
     name:         Tonga
-  sfsCountry_EN_TT: 
-    iso:          TT
+  sfsCountryI18n_EN_TT: 
+    id:           sfsCountry_TT
     culture:      en
-    name_english: Trinidad and Tobago
     name:         Trinidad and Tobago
-  sfsCountry_EN_TN: 
-    iso:          TN
+  sfsCountryI18n_EN_TN: 
+    id:           sfsCountry_TN
     culture:      en
-    name_english: Tunisia
     name:         Tunisia
-  sfsCountry_EN_TR: 
-    iso:          TR
+  sfsCountryI18n_EN_TR: 
+    id:           sfsCountry_TR
     culture:      en
-    name_english: Turkey
     name:         Turkey
-  sfsCountry_EN_TM: 
-    iso:          TM
+  sfsCountryI18n_EN_TM: 
+    id:           sfsCountry_TM
     culture:      en
-    name_english: Turkmenistan
     name:         Turkmenistan
-  sfsCountry_EN_TC: 
-    iso:          TC
+  sfsCountryI18n_EN_TC: 
+    id:           sfsCountry_TC
     culture:      en
-    name_english: Turks and Caicos Islands
     name:         Turks and Caicos Islands
-  sfsCountry_EN_TV: 
-    iso:          TV
+  sfsCountryI18n_EN_TV: 
+    id:           sfsCountry_TV
     culture:      en
-    name_english: Tuvalu
     name:         Tuvalu
-  sfsCountry_EN_VI: 
-    iso:          VI
+  sfsCountryI18n_EN_VI: 
+    id:           sfsCountry_VI
     culture:      en
-    name_english: U.S. Virgin Islands
     name:         U.S. Virgin Islands
-  sfsCountry_EN_UG: 
-    iso:          UG
+  sfsCountryI18n_EN_UG: 
+    id:           sfsCountry_UG
     culture:      en
-    name_english: Uganda
     name:         Uganda
-  sfsCountry_EN_UA: 
-    iso:          UA
+  sfsCountryI18n_EN_UA: 
+    id:           sfsCountry_UA
     culture:      en
-    name_english: Ukraine
     name:         Ukraine
-  sfsCountry_EN_AE: 
-    iso:          AE
+  sfsCountryI18n_EN_AE: 
+    id:           sfsCountry_AE
     culture:      en
-    name_english: United Arab Emirates
     name:         United Arab Emirates
-  sfsCountry_EN_GB: 
-    iso:          GB
+  sfsCountryI18n_EN_GB: 
+    id:           sfsCountry_GB
     culture:      en
-    name_english: United Kingdom
     name:         United Kingdom
-  sfsCountry_EN_UM: 
-    iso:          UM
+  sfsCountryI18n_EN_UM: 
+    id:           sfsCountry_UM
     culture:      en
-    name_english: United States Minor Outlying Islands
     name:         United States Minor Outlying Islands
-  sfsCountry_EN_US: 
-    iso:          US
+  sfsCountryI18n_EN_US: 
+    id:           sfsCountry_US
     culture:      en
-    name_english: United States
     name:         United States
-  sfsCountry_EN_UY: 
-    iso:          UY
+  sfsCountryI18n_EN_UY: 
+    id:           sfsCountry_UY
     culture:      en
-    name_english: Uruguay
     name:         Uruguay
-  sfsCountry_EN_UZ: 
-    iso:          UZ
+  sfsCountryI18n_EN_UZ: 
+    id:           sfsCountry_UZ
     culture:      en
-    name_english: Uzbekistan
     name:         Uzbekistan
-  sfsCountry_EN_VU: 
-    iso:          VU
+  sfsCountryI18n_EN_VU: 
+    id:           sfsCountry_VU
     culture:      en
-    name_english: Vanuatu
     name:         Vanuatu
-  sfsCountry_EN_VE: 
-    iso:          VE
+  sfsCountryI18n_EN_VE: 
+    id:           sfsCountry_VE
     culture:      en
-    name_english: Venezuela
     name:         Venezuela
-  sfsCountry_EN_VN: 
-    iso:          VN
+  sfsCountryI18n_EN_VN: 
+    id:           sfsCountry_VN
     culture:      en
-    name_english: Vietnam
     name:         Vietnam
-  sfsCountry_EN_WF: 
-    iso:          WF
+  sfsCountryI18n_EN_WF: 
+    id:           sfsCountry_WF
     culture:      en
-    name_english: Wallis and Futuna
     name:         Wallis and Futuna
-  sfsCountry_EN_EH: 
-    iso:          EH
+  sfsCountryI18n_EN_EH: 
+    id:           sfsCountry_EH
     culture:      en
-    name_english: Western Sahara
     name:         Western Sahara
-  sfsCountry_EN_YE: 
-    iso:          YE
+  sfsCountryI18n_EN_YE: 
+    id:           sfsCountry_YE
     culture:      en
-    name_english: Yemen
     name:         Yemen
-  sfsCountry_EN_ZM: 
-    iso:          ZM
+  sfsCountryI18n_EN_ZM: 
+    id:           sfsCountry_ZM
     culture:      en
-    name_english: Zambia
     name:         Zambia
-  sfsCountry_EN_ZW: 
-    iso:          ZW
+  sfsCountryI18n_EN_ZW: 
+    id:           sfsCountry_ZW
     culture:      en
-    name_english: Zimbabwe
     name:         Zimbabwe
 #
 # Russian
 #
-  sfsCountry_RU_AF: 
-    iso:          AF
+  sfsCountryI18n_RU_AF: 
+    id:           sfsCountry_AF
     culture:      ru
-    name_english: Afghanistan
     name:         Афганистан
-  sfsCountry_RU_AL: 
-    iso:          AL
+  sfsCountryI18n_RU_AL: 
+    id:           sfsCountry_AL
     culture:      ru
-    name_english: Albania
     name:         Албания
-  sfsCountry_RU_DZ: 
-    iso:          DZ
+  sfsCountryI18n_RU_DZ: 
+    id:           sfsCountry_DZ
     culture:      ru
-    name_english: Algeria
     name:         Алжир
-  sfsCountry_RU_AS: 
-    iso:          AS
+  sfsCountryI18n_RU_AS: 
+    id:           sfsCountry_AS
     culture:      ru
-    name_english: American Samoa
     name:         Американское Самоа
-  sfsCountry_RU_AD: 
-    iso:          AD
+  sfsCountryI18n_RU_AD: 
+    id:           sfsCountry_AD
     culture:      ru
-    name_english: Andorra
     name:         Андорра
-  sfsCountry_RU_AO: 
-    iso:          AO
+  sfsCountryI18n_RU_AO: 
+    id:           sfsCountry_AO
     culture:      ru
-    name_english: Angola
     name:         Ангола
-  sfsCountry_RU_AI: 
-    iso:          AI
+  sfsCountryI18n_RU_AI: 
+    id:           sfsCountry_AI
     culture:      ru
-    name_english: Anguilla
     name:         Ангуилла
-  sfsCountry_RU_AQ: 
-    iso:          AQ
+  sfsCountryI18n_RU_AQ: 
+    id:           sfsCountry_AQ
     culture:      ru
-    name_english: Antarctica
     name:         Антарктида
-  sfsCountry_RU_AG: 
-    iso:          AG
+  sfsCountryI18n_RU_AG: 
+    id:           sfsCountry_AG
     culture:      ru
-    name_english: Antigua and Barbuda
     name:         Антигуа и Барбуда
-  sfsCountry_RU_AR: 
-    iso:          AR
+  sfsCountryI18n_RU_AR: 
+    id:           sfsCountry_AR
     culture:      ru
-    name_english: Argentina
     name:         Аргентина
-  sfsCountry_RU_AM: 
-    iso:          AM
+  sfsCountryI18n_RU_AM: 
+    id:           sfsCountry_AM
     culture:      ru
-    name_english: Armenia
     name:         Армения
-  sfsCountry_RU_AW: 
-    iso:          AW
+  sfsCountryI18n_RU_AW: 
+    id:           sfsCountry_AW
     culture:      ru
-    name_english: Aruba
     name:         Аруба
-  sfsCountry_RU_AU: 
-    iso:          AU
+  sfsCountryI18n_RU_AU: 
+    id:           sfsCountry_AU
     culture:      ru
-    name_english: Australia
     name:         Австралия
-  sfsCountry_RU_AT: 
-    iso:          AT
+  sfsCountryI18n_RU_AT: 
+    id:           sfsCountry_AT
     culture:      ru
-    name_english: Austria
     name:         Австрия
-  sfsCountry_RU_AZ: 
-    iso:          AZ
+  sfsCountryI18n_RU_AZ: 
+    id:           sfsCountry_AZ
     culture:      ru
-    name_english: Azerbaijan
     name:         Азербайджан
-  sfsCountry_RU_BS: 
-    iso:          BS
+  sfsCountryI18n_RU_BS: 
+    id:           sfsCountry_BS
     culture:      ru
-    name_english: Bahamas
     name:         Багамские острова
-  sfsCountry_RU_BH: 
-    iso:          BH
+  sfsCountryI18n_RU_BH: 
+    id:           sfsCountry_BH
     culture:      ru
-    name_english: Bahrain
     name:         Бахрейн
-  sfsCountry_RU_BD: 
-    iso:          BD
+  sfsCountryI18n_RU_BD: 
+    id:           sfsCountry_BD
     culture:      ru
-    name_english: Bangladesh
     name:         Бангладеш
-  sfsCountry_RU_BB: 
-    iso:          BB
+  sfsCountryI18n_RU_BB: 
+    id:           sfsCountry_BB
     culture:      ru
-    name_english: Barbados
     name:         Барбадос
-  sfsCountry_RU_BY: 
-    iso:          BY
+  sfsCountryI18n_RU_BY: 
+    id:           sfsCountry_BY
     culture:      ru
-    name_english: Belarus
     name:         Беларусь
-  sfsCountry_RU_BE: 
-    iso:          BE
+  sfsCountryI18n_RU_BE: 
+    id:           sfsCountry_BE
     culture:      ru
-    name_english: Belgium
     name:         Бельгия
-  sfsCountry_RU_BZ: 
-    iso:          BZ
+  sfsCountryI18n_RU_BZ: 
+    id:           sfsCountry_BZ
     culture:      ru
-    name_english: Belize
     name:         Белиз
-  sfsCountry_RU_BJ: 
-    iso:          BJ
+  sfsCountryI18n_RU_BJ: 
+    id:           sfsCountry_BJ
     culture:      ru
-    name_english: Benin
     name:         Бенин
-  sfsCountry_RU_BM: 
-    iso:          BM
+  sfsCountryI18n_RU_BM: 
+    id:           sfsCountry_BM
     culture:      ru
-    name_english: Bermuda
     name:         Бермудские Острова
-  sfsCountry_RU_BT: 
-    iso:          BT
+  sfsCountryI18n_RU_BT: 
+    id:           sfsCountry_BT
     culture:      ru
-    name_english: Bhutan
     name:         Бутан
-  sfsCountry_RU_BO: 
-    iso:          BO
+  sfsCountryI18n_RU_BO: 
+    id:           sfsCountry_BO
     culture:      ru
-    name_english: Bolivia
     name:         Боливия
-  sfsCountry_RU_BA: 
-    iso:          BA
+  sfsCountryI18n_RU_BA: 
+    id:           sfsCountry_BA
     culture:      ru
-    name_english: Bosnia and Herzegovina
     name:         Босния
-  sfsCountry_RU_BW: 
-    iso:          BW
+  sfsCountryI18n_RU_BW: 
+    id:           sfsCountry_BW
     culture:      ru
-    name_english: Botswana
     name:         Ботсвана
-  sfsCountry_RU_BV: 
-    iso:          BV
+  sfsCountryI18n_RU_BV: 
+    id:           sfsCountry_BV
     culture:      ru
-    name_english: Bouvet Island
     name:         Остров Буве
-  sfsCountry_RU_BR: 
-    iso:          BR
+  sfsCountryI18n_RU_BR: 
+    id:           sfsCountry_BR
     culture:      ru
-    name_english: Brazil
     name:         Бразилия
-  sfsCountry_RU_IO: 
-    iso:          IO
+  sfsCountryI18n_RU_IO: 
+    id:           sfsCountry_IO
     culture:      ru
-    name_english: British Indian Ocean Territory
     name:         Британские Территории в Индийском Океане
-  sfsCountry_RU_VG: 
-    iso:          VG
+  sfsCountryI18n_RU_VG: 
+    id:           sfsCountry_VG
     culture:      ru
-    name_english: British Virgin Islands
     name:         Британские Виргинские Острова
-  sfsCountry_RU_BN: 
-    iso:          BN
+  sfsCountryI18n_RU_BN: 
+    id:           sfsCountry_BN
     culture:      ru
-    name_english: Brunei
     name:         Бруней Даруссалам
-  sfsCountry_RU_BG: 
-    iso:          BG
+  sfsCountryI18n_RU_BG: 
+    id:           sfsCountry_BG
     culture:      ru
-    name_english: Bulgaria
     name:         Болгария
-  sfsCountry_RU_BF: 
-    iso:          BF
+  sfsCountryI18n_RU_BF: 
+    id:           sfsCountry_BF
     culture:      ru
-    name_english: Burkina Faso
     name:         Буркина Фасо
-  sfsCountry_RU_BI: 
-    iso:          BI
+  sfsCountryI18n_RU_BI: 
+    id:           sfsCountry_BI
     culture:      ru
-    name_english: Burundi
     name:         Бурунди
-  sfsCountry_RU_KH: 
-    iso:          KH
+  sfsCountryI18n_RU_KH: 
+    id:           sfsCountry_KH
     culture:      ru
-    name_english: Cambodia
     name:         Камбоджа
-  sfsCountry_RU_CM: 
-    iso:          CM
+  sfsCountryI18n_RU_CM: 
+    id:           sfsCountry_CM
     culture:      ru
-    name_english: Cameroon
     name:         Камерун
-  sfsCountry_RU_CA: 
-    iso:          CA
+  sfsCountryI18n_RU_CA: 
+    id:           sfsCountry_CA
     culture:      ru
-    name_english: Canada
     name:         Канада
-  sfsCountry_RU_CV: 
-    iso:          CV
+  sfsCountryI18n_RU_CV: 
+    id:           sfsCountry_CV
     culture:      ru
-    name_english: Cape Verde
     name:         Острова Зеленого Мыса
-  sfsCountry_RU_KY: 
-    iso:          KY
+  sfsCountryI18n_RU_KY: 
+    id:           sfsCountry_KY
     culture:      ru
-    name_english: Cayman Islands
     name:         Каймановы Острова
-  sfsCountry_RU_CF: 
-    iso:          CF
+  sfsCountryI18n_RU_CF: 
+    id:           sfsCountry_CF
     culture:      ru
-    name_english: Central African Republic
     name:         Центрально-Африканская Республика
-  sfsCountry_RU_TD: 
-    iso:          TD
+  sfsCountryI18n_RU_TD: 
+    id:           sfsCountry_TD
     culture:      ru
-    name_english: Chad
     name:         Чад
-  sfsCountry_RU_CL: 
-    iso:          CL
+  sfsCountryI18n_RU_CL: 
+    id:           sfsCountry_CL
     culture:      ru
-    name_english: Chile
     name:         Чили
-  sfsCountry_RU_CN: 
-    iso:          CN
+  sfsCountryI18n_RU_CN: 
+    id:           sfsCountry_CN
     culture:      ru
-    name_english: China
     name:         Китай
-  sfsCountry_RU_CX: 
-    iso:          CX
+  sfsCountryI18n_RU_CX: 
+    id:           sfsCountry_CX
     culture:      ru
-    name_english: Christmas Island
     name:         Остров Рождества
-  sfsCountry_RU_CC: 
-    iso:          CC
+  sfsCountryI18n_RU_CC: 
+    id:           sfsCountry_CC
     culture:      ru
-    name_english: Cocos (Keeling) Islands
     name:         Кокосовые Острова (Киилинг)
-  sfsCountry_RU_CO: 
-    iso:          CO
+  sfsCountryI18n_RU_CO: 
+    id:           sfsCountry_CO
     culture:      ru
-    name_english: Colombia
     name:         Колумбия
-  sfsCountry_RU_KM: 
-    iso:          KM
+  sfsCountryI18n_RU_KM: 
+    id:           sfsCountry_KM
     culture:      ru
-    name_english: Comoros
     name:         Коморские Острова
-  sfsCountry_RU_CD: 
-    iso:          CD
+  sfsCountryI18n_RU_CD: 
+    id:           sfsCountry_CD
     culture:      ru
-    name_english: Democratic Republic of the Congo
     name:         Конго, Демократическая Республика
-  sfsCountry_RU_CG: 
-    iso:          CG
+  sfsCountryI18n_RU_CG: 
+    id:           sfsCountry_CG
     culture:      ru
-    name_english: Congo
     name:         Конго
-  sfsCountry_RU_CK: 
-    iso:          CK
+  sfsCountryI18n_RU_CK: 
+    id:           sfsCountry_CK
     culture:      ru
-    name_english: Cook Islands
     name:         Острова Кука
-  sfsCountry_RU_CR: 
-    iso:          CR
+  sfsCountryI18n_RU_CR: 
+    id:           sfsCountry_CR
     culture:      ru
-    name_english: Costa Rica
     name:         Коста-Рика
-  sfsCountry_RU_CI: 
-    iso:          CI
+  sfsCountryI18n_RU_CI: 
+    id:           sfsCountry_CI
     culture:      ru
-    name_english: Côte d’Ivoire
     name:         Кот д’Ивуар
-  sfsCountry_RU_CU: 
-    iso:          CU
+  sfsCountryI18n_RU_CU: 
+    id:           sfsCountry_CU
     culture:      ru
-    name_english: Cuba
     name:         Куба
-  sfsCountry_RU_CY: 
-    iso:          CY
+  sfsCountryI18n_RU_CY: 
+    id:           sfsCountry_CY
     culture:      ru
-    name_english: Cyprus
     name:         Кипр
-  sfsCountry_RU_CZ: 
-    iso:          CZ
+  sfsCountryI18n_RU_CZ: 
+    id:           sfsCountry_CZ
     culture:      ru
-    name_english: Czech Republic
     name:         Чешская Республика
-  sfsCountry_RU_DK: 
-    iso:          DK
+  sfsCountryI18n_RU_DK: 
+    id:           sfsCountry_DK
     culture:      ru
-    name_english: Denmark
     name:         Дания
-  sfsCountry_RU_DJ: 
-    iso:          DJ
+  sfsCountryI18n_RU_DJ: 
+    id:           sfsCountry_DJ
     culture:      ru
-    name_english: Djibouti
     name:         Джибути
-  sfsCountry_RU_DM: 
-    iso:          DM
+  sfsCountryI18n_RU_DM: 
+    id:           sfsCountry_DM
     culture:      ru
-    name_english: Dominica
     name:         Остров Доминика
-  sfsCountry_RU_DO: 
-    iso:          DO
+  sfsCountryI18n_RU_DO: 
+    id:           sfsCountry_DO
     culture:      ru
-    name_english: Dominican Republic
     name:         Доминиканская Республика
-  sfsCountry_RU_EC: 
-    iso:          EC
+  sfsCountryI18n_RU_EC: 
+    id:           sfsCountry_EC
     culture:      ru
-    name_english: Ecuador
     name:         Эквадор
-  sfsCountry_RU_EG: 
-    iso:          EG
+  sfsCountryI18n_RU_EG: 
+    id:           sfsCountry_EG
     culture:      ru
-    name_english: Egypt
     name:         Египет
-  sfsCountry_RU_SV: 
-    iso:          SV
+  sfsCountryI18n_RU_SV: 
+    id:           sfsCountry_SV
     culture:      ru
-    name_english: El Salvador
     name:         Сальвадор
-  sfsCountry_RU_GQ: 
-    iso:          GQ
+  sfsCountryI18n_RU_GQ: 
+    id:           sfsCountry_GQ
     culture:      ru
-    name_english: Equatorial Guinea
     name:         Экваториальная Гвинея
-  sfsCountry_RU_ER: 
-    iso:          ER
+  sfsCountryI18n_RU_ER: 
+    id:           sfsCountry_ER
     culture:      ru
-    name_english: Eritrea
     name:         Эритрея
-  sfsCountry_RU_EE: 
-    iso:          EE
+  sfsCountryI18n_RU_EE: 
+    id:           sfsCountry_EE
     culture:      ru
-    name_english: Estonia
     name:         Эстония
-  sfsCountry_RU_ET: 
-    iso:          ET
+  sfsCountryI18n_RU_ET: 
+    id:           sfsCountry_ET
     culture:      ru
-    name_english: Ethiopia
     name:         Эфиопия
-  sfsCountry_RU_FO: 
-    iso:          FO
+  sfsCountryI18n_RU_FO: 
+    id:           sfsCountry_FO
     culture:      ru
-    name_english: Faroe Islands
     name:         Фарерские острова
-  sfsCountry_RU_FK: 
-    iso:          FK
+  sfsCountryI18n_RU_FK: 
+    id:           sfsCountry_FK
     culture:      ru
-    name_english: Falkland Islands
     name:         Фольклендские Острова
-  sfsCountry_RU_FJ: 
-    iso:          FJ
+  sfsCountryI18n_RU_FJ: 
+    id:           sfsCountry_FJ
     culture:      ru
-    name_english: Fiji
     name:         Фиджи
-  sfsCountry_RU_FI: 
-    iso:          FI
+  sfsCountryI18n_RU_FI: 
+    id:           sfsCountry_FI
     culture:      ru
-    name_english: Finland
     name:         Финляндия
-  sfsCountry_RU_FR: 
-    iso:          FR
+  sfsCountryI18n_RU_FR: 
+    id:           sfsCountry_FR
     culture:      ru
-    name_english: France
     name:         Франция
-  sfsCountry_RU_GF: 
-    iso:          GF
+  sfsCountryI18n_RU_GF: 
+    id:           sfsCountry_GF
     culture:      ru
-    name_english: French Guiana
     name:         Французская Гвиана
-  sfsCountry_RU_PF: 
-    iso:          PF
+  sfsCountryI18n_RU_PF: 
+    id:           sfsCountry_PF
     culture:      ru
-    name_english: French Polynesia
     name:         Французская Полинезия
-  sfsCountry_RU_TF: 
-    iso:          TF
+  sfsCountryI18n_RU_TF: 
+    id:           sfsCountry_TF
     culture:      ru
-    name_english: French Southern Territories
     name:         Французские Южные Территории
-  sfsCountry_RU_GA: 
-    iso:          GA
+  sfsCountryI18n_RU_GA: 
+    id:           sfsCountry_GA
     culture:      ru
-    name_english: Gabon
     name:         Габон
-  sfsCountry_RU_GM: 
-    iso:          GM
+  sfsCountryI18n_RU_GM: 
+    id:           sfsCountry_GM
     culture:      ru
-    name_english: Gambia
     name:         Гамбия
-  sfsCountry_RU_GE: 
-    iso:          GE
+  sfsCountryI18n_RU_GE: 
+    id:           sfsCountry_GE
     culture:      ru
-    name_english: Georgia
     name:         Грузия
-  sfsCountry_RU_DE: 
-    iso:          DE
+  sfsCountryI18n_RU_DE: 
+    id:           sfsCountry_DE
     culture:      ru
-    name_english: Germany
     name:         Германия
-  sfsCountry_RU_GH: 
-    iso:          GH
+  sfsCountryI18n_RU_GH: 
+    id:           sfsCountry_GH
     culture:      ru
-    name_english: Ghana
     name:         Гана
-  sfsCountry_RU_GI: 
-    iso:          GI
+  sfsCountryI18n_RU_GI: 
+    id:           sfsCountry_GI
     culture:      ru
-    name_english: Gibraltar
     name:         Гибралтар
-  sfsCountry_RU_GR: 
-    iso:          GR
+  sfsCountryI18n_RU_GR: 
+    id:           sfsCountry_GR
     culture:      ru
-    name_english: Greece
     name:         Греция
-  sfsCountry_RU_GL: 
-    iso:          GL
+  sfsCountryI18n_RU_GL: 
+    id:           sfsCountry_GL
     culture:      ru
-    name_english: Greenland
     name:         Гренландия
-  sfsCountry_RU_GD: 
-    iso:          GD
+  sfsCountryI18n_RU_GD: 
+    id:           sfsCountry_GD
     culture:      ru
-    name_english: Grenada
     name:         Гренада
-  sfsCountry_RU_GP: 
-    iso:          GP
+  sfsCountryI18n_RU_GP: 
+    id:           sfsCountry_GP
     culture:      ru
-    name_english: Guadeloupe
     name:         Гваделупа
-  sfsCountry_RU_GU: 
-    iso:          GU
+  sfsCountryI18n_RU_GU: 
+    id:           sfsCountry_GU
     culture:      ru
-    name_english: Guam
     name:         Гуам
-  sfsCountry_RU_GT: 
-    iso:          GT
+  sfsCountryI18n_RU_GT: 
+    id:           sfsCountry_GT
     culture:      ru
-    name_english: Guatemala
     name:         Гватемала
-  sfsCountry_RU_GN: 
-    iso:          GN
+  sfsCountryI18n_RU_GN: 
+    id:           sfsCountry_GN
     culture:      ru
-    name_english: Guinea
     name:         Гвинея
-  sfsCountry_RU_GW: 
-    iso:          GW
+  sfsCountryI18n_RU_GW: 
+    id:           sfsCountry_GW
     culture:      ru
-    name_english: Guinea-Bissau
     name:         Гвинея-Биссау
-  sfsCountry_RU_GY: 
-    iso:          GY
+  sfsCountryI18n_RU_GY: 
+    id:           sfsCountry_GY
     culture:      ru
-    name_english: Guyana
     name:         Гайана
-  sfsCountry_RU_HT: 
-    iso:          HT
+  sfsCountryI18n_RU_HT: 
+    id:           sfsCountry_HT
     culture:      ru
-    name_english: Haiti
     name:         Гаити
-  sfsCountry_RU_HM: 
-    iso:          HM
+  sfsCountryI18n_RU_HM: 
+    id:           sfsCountry_HM
     culture:      ru
-    name_english: Heard Island and McDonald Islands
     name:         Острова Херд и Мак-Дональд
-  sfsCountry_RU_VA: 
-    iso:          VA
+  sfsCountryI18n_RU_VA: 
+    id:           sfsCountry_VA
     culture:      ru
-    name_english: Vatican
     name:         Государство-город Ватикан
-  sfsCountry_RU_HN: 
-    iso:          HN
+  sfsCountryI18n_RU_HN: 
+    id:           sfsCountry_HN
     culture:      ru
-    name_english: Honduras
     name:         Гондурас
-  sfsCountry_RU_HK: 
-    iso:          HK
+  sfsCountryI18n_RU_HK: 
+    id:           sfsCountry_HK
     culture:      ru
-    name_english: Hong Kong S.A.R., China
     name:         Гонконг (Область с Особым Административным Управлением, Китай)
-  sfsCountry_RU_HR: 
-    iso:          HR
+  sfsCountryI18n_RU_HR: 
+    id:           sfsCountry_HR
     culture:      ru
-    name_english: Croatia
     name:         Хорватия
-  sfsCountry_RU_HU: 
-    iso:          HU
+  sfsCountryI18n_RU_HU: 
+    id:           sfsCountry_HU
     culture:      ru
-    name_english: Hungary
     name:         Венгрия
-  sfsCountry_RU_IS: 
-    iso:          IS
+  sfsCountryI18n_RU_IS: 
+    id:           sfsCountry_IS
     culture:      ru
-    name_english: Iceland
     name:         Исландия
-  sfsCountry_RU_IN: 
-    iso:          IN
+  sfsCountryI18n_RU_IN: 
+    id:           sfsCountry_IN
     culture:      ru
-    name_english: India
     name:         Индия
-  sfsCountry_RU_ID: 
-    iso:          ID
+  sfsCountryI18n_RU_ID: 
+    id:           sfsCountry_ID
     culture:      ru
-    name_english: Indonesia
     name:         Индонезия
-  sfsCountry_RU_IR: 
-    iso:          IR
+  sfsCountryI18n_RU_IR: 
+    id:           sfsCountry_IR
     culture:      ru
-    name_english: Iran
     name:         Иран
-  sfsCountry_RU_IQ: 
-    iso:          IQ
+  sfsCountryI18n_RU_IQ: 
+    id:           sfsCountry_IQ
     culture:      ru
-    name_english: Iraq
     name:         Ирак
-  sfsCountry_RU_IE: 
-    iso:          IE
+  sfsCountryI18n_RU_IE: 
+    id:           sfsCountry_IE
     culture:      ru
-    name_english: Ireland
     name:         Ирландия
-  sfsCountry_RU_IL: 
-    iso:          IL
+  sfsCountryI18n_RU_IL: 
+    id:           sfsCountry_IL
     culture:      ru
-    name_english: Israel
     name:         Израиль
-  sfsCountry_RU_IT: 
-    iso:          IT
+  sfsCountryI18n_RU_IT: 
+    id:           sfsCountry_IT
     culture:      ru
-    name_english: Italy
     name:         Италия
-  sfsCountry_RU_JM: 
-    iso:          JM
+  sfsCountryI18n_RU_JM: 
+    id:           sfsCountry_JM
     culture:      ru
-    name_english: Jamaica
     name:         Ямайка
-  sfsCountry_RU_JP: 
-    iso:          JP
+  sfsCountryI18n_RU_JP: 
+    id:           sfsCountry_JP
     culture:      ru
-    name_english: Japan
     name:         Япония
-  sfsCountry_RU_JO: 
-    iso:          JO
+  sfsCountryI18n_RU_JO: 
+    id:           sfsCountry_JO
     culture:      ru
-    name_english: Jordan
     name:         Иордания
-  sfsCountry_RU_KZ: 
-    iso:          KZ
+  sfsCountryI18n_RU_KZ: 
+    id:           sfsCountry_KZ
     culture:      ru
-    name_english: Kazakhstan
     name:         Казахстан
-  sfsCountry_RU_KE: 
-    iso:          KE
+  sfsCountryI18n_RU_KE: 
+    id:           sfsCountry_KE
     culture:      ru
-    name_english: Kenya
     name:         Кения
-  sfsCountry_RU_KI: 
-    iso:          KI
+  sfsCountryI18n_RU_KI: 
+    id:           sfsCountry_KI
     culture:      ru
-    name_english: Kiribati
     name:         Кирибати
-  sfsCountry_RU_KP: 
-    iso:          KP
+  sfsCountryI18n_RU_KP: 
+    id:           sfsCountry_KP
     culture:      ru
-    name_english: North Korea
     name:         Северная Корея
-  sfsCountry_RU_KR: 
-    iso:          KR
+  sfsCountryI18n_RU_KR: 
+    id:           sfsCountry_KR
     culture:      ru
-    name_english: South Korea
     name:         Южная Корея
-  sfsCountry_RU_KW: 
-    iso:          KW
+  sfsCountryI18n_RU_KW: 
+    id:           sfsCountry_KW
     culture:      ru
-    name_english: Kuwait
     name:         Кувейт
-  sfsCountry_RU_KG: 
-    iso:          KG
+  sfsCountryI18n_RU_KG: 
+    id:           sfsCountry_KG
     culture:      ru
-    name_english: Kyrgyzstan
     name:         Кыргызстан
-  sfsCountry_RU_LA: 
-    iso:          LA
+  sfsCountryI18n_RU_LA: 
+    id:           sfsCountry_LA
     culture:      ru
-    name_english: Laos
     name:         Лаос
-  sfsCountry_RU_LV: 
-    iso:          LV
+  sfsCountryI18n_RU_LV: 
+    id:           sfsCountry_LV
     culture:      ru
-    name_english: Latvia
     name:         Латвия
-  sfsCountry_RU_LB: 
-    iso:          LB
+  sfsCountryI18n_RU_LB: 
+    id:           sfsCountry_LB
     culture:      ru
-    name_english: Lebanon
     name:         Ливан
-  sfsCountry_RU_LS: 
-    iso:          LS
+  sfsCountryI18n_RU_LS: 
+    id:           sfsCountry_LS
     culture:      ru
-    name_english: Lesotho
     name:         Лесото
-  sfsCountry_RU_LR: 
-    iso:          LR
+  sfsCountryI18n_RU_LR: 
+    id:           sfsCountry_LR
     culture:      ru
-    name_english: Liberia
     name:         Либерия
-  sfsCountry_RU_LY: 
-    iso:          LY
+  sfsCountryI18n_RU_LY: 
+    id:           sfsCountry_LY
     culture:      ru
-    name_english: Libya
     name:         Ливия
-  sfsCountry_RU_LI: 
-    iso:          LI
+  sfsCountryI18n_RU_LI: 
+    id:           sfsCountry_LI
     culture:      ru
-    name_english: Liechtenstein
     name:         Лихтенштейн
-  sfsCountry_RU_LT: 
-    iso:          LT
+  sfsCountryI18n_RU_LT: 
+    id:           sfsCountry_LT
     culture:      ru
-    name_english: Lithuania
     name:         Литва
-  sfsCountry_RU_LU: 
-    iso:          LU
+  sfsCountryI18n_RU_LU: 
+    id:           sfsCountry_LU
     culture:      ru
-    name_english: Luxembourg
     name:         Люксембург
-  sfsCountry_RU_MO: 
-    iso:          MO
+  sfsCountryI18n_RU_MO: 
+    id:           sfsCountry_MO
     culture:      ru
-    name_english: Macao S.A.R., China
     name:         Макао (Область с Особым Административным Управлением, Китай)
-  sfsCountry_RU_MK: 
-    iso:          MK
+  sfsCountryI18n_RU_MK: 
+    id:           sfsCountry_MK
     culture:      ru
-    name_english: Macedonia
     name:         Македония
-  sfsCountry_RU_MG: 
-    iso:          MG
+  sfsCountryI18n_RU_MG: 
+    id:           sfsCountry_MG
     culture:      ru
-    name_english: Madagascar
     name:         Мадагаскар
-  sfsCountry_RU_MW: 
-    iso:          MW
+  sfsCountryI18n_RU_MW: 
+    id:           sfsCountry_MW
     culture:      ru
-    name_english: Malawi
     name:         Малави
-  sfsCountry_RU_MY: 
-    iso:          MY
+  sfsCountryI18n_RU_MY: 
+    id:           sfsCountry_MY
     culture:      ru
-    name_english: Malaysia
     name:         Малайзия
-  sfsCountry_RU_MV: 
-    iso:          MV
+  sfsCountryI18n_RU_MV: 
+    id:           sfsCountry_MV
     culture:      ru
-    name_english: Maldives
     name:         Мальдивы
-  sfsCountry_RU_ML: 
-    iso:          ML
+  sfsCountryI18n_RU_ML: 
+    id:           sfsCountry_ML
     culture:      ru
-    name_english: Mali
     name:         Мали
-  sfsCountry_RU_MT: 
-    iso:          MT
+  sfsCountryI18n_RU_MT: 
+    id:           sfsCountry_MT
     culture:      ru
-    name_english: Malta
     name:         Мальта
-  sfsCountry_RU_MH: 
-    iso:          MH
+  sfsCountryI18n_RU_MH: 
+    id:           sfsCountry_MH
     culture:      ru
-    name_english: Marshall Islands
     name:         Маршалловы Острова
-  sfsCountry_RU_MQ: 
-    iso:          MQ
+  sfsCountryI18n_RU_MQ: 
+    id:           sfsCountry_MQ
     culture:      ru
-    name_english: Martinique
     name:         Мартиник
-  sfsCountry_RU_MR: 
-    iso:          MR
+  sfsCountryI18n_RU_MR: 
+    id:           sfsCountry_MR
     culture:      ru
-    name_english: Mauritania
     name:         Мавритания
-  sfsCountry_RU_MU: 
-    iso:          MU
+  sfsCountryI18n_RU_MU: 
+    id:           sfsCountry_MU
     culture:      ru
-    name_english: Mauritius
     name:         Маврикий
-  sfsCountry_RU_YT: 
-    iso:          YT
+  sfsCountryI18n_RU_YT: 
+    id:           sfsCountry_YT
     culture:      ru
-    name_english: Mayotte
     name:         Майотта
-  sfsCountry_RU_MX: 
-    iso:          MX
+  sfsCountryI18n_RU_MX: 
+    id:           sfsCountry_MX
     culture:      ru
-    name_english: Mexico
     name:         Мексика
-  sfsCountry_RU_FM: 
-    iso:          FM
+  sfsCountryI18n_RU_FM: 
+    id:           sfsCountry_FM
     culture:      ru
-    name_english: Micronesia
     name:         Федеративное Государство Микронезия
-  sfsCountry_RU_MD: 
-    iso:          MD
+  sfsCountryI18n_RU_MD: 
+    id:           sfsCountry_MD
     culture:      ru
-    name_english: Moldova
     name:         Молдова
-  sfsCountry_RU_MC: 
-    iso:          MC
+  sfsCountryI18n_RU_MC: 
+    id:           sfsCountry_MC
     culture:      ru
-    name_english: Monaco
     name:         Монако
-  sfsCountry_RU_MN: 
-    iso:          MN
+  sfsCountryI18n_RU_MN: 
+    id:           sfsCountry_MN
     culture:      ru
-    name_english: Mongolia
     name:         Монголия
-  sfsCountry_RU_MS: 
-    iso:          MS
+  sfsCountryI18n_RU_MS: 
+    id:           sfsCountry_MS
     culture:      ru
-    name_english: Montserrat
     name:         Монсеррат
-  sfsCountry_RU_MA: 
-    iso:          MA
+  sfsCountryI18n_RU_MA: 
+    id:           sfsCountry_MA
     culture:      ru
-    name_english: Morocco
     name:         Марокко
-  sfsCountry_RU_MZ: 
-    iso:          MZ
+  sfsCountryI18n_RU_MZ: 
+    id:           sfsCountry_MZ
     culture:      ru
-    name_english: Mozambique
     name:         Мозамбик
-  sfsCountry_RU_MM: 
-    iso:          MM
+  sfsCountryI18n_RU_MM: 
+    id:           sfsCountry_MM
     culture:      ru
-    name_english: Myanmar
     name:         Майанмар
-  sfsCountry_RU_NA: 
-    iso:          NA
+  sfsCountryI18n_RU_NA: 
+    id:           sfsCountry_NA
     culture:      ru
-    name_english: Namibia
     name:         Намибия
-  sfsCountry_RU_NR: 
-    iso:          NR
+  sfsCountryI18n_RU_NR: 
+    id:           sfsCountry_NR
     culture:      ru
-    name_english: Nauru
     name:         Науру
-  sfsCountry_RU_NP: 
-    iso:          NP
+  sfsCountryI18n_RU_NP: 
+    id:           sfsCountry_NP
     culture:      ru
-    name_english: Nepal
     name:         Непал
-  sfsCountry_RU_AN: 
-    iso:          AN
+  sfsCountryI18n_RU_AN: 
+    id:           sfsCountry_AN
     culture:      ru
-    name_english: Netherlands Antilles
     name:         Голландские Антильские Острова
-  sfsCountry_RU_NL: 
-    iso:          NL
+  sfsCountryI18n_RU_NL: 
+    id:           sfsCountry_NL
     culture:      ru
-    name_english: Netherlands
     name:         Нидерланды
-  sfsCountry_RU_NC: 
-    iso:          NC
+  sfsCountryI18n_RU_NC: 
+    id:           sfsCountry_NC
     culture:      ru
-    name_english: New Caledonia
     name:         Новая Каледония
-  sfsCountry_RU_NZ: 
-    iso:          NZ
+  sfsCountryI18n_RU_NZ: 
+    id:           sfsCountry_NZ
     culture:      ru
-    name_english: New Zealand
     name:         Новая Зеландия
-  sfsCountry_RU_NI: 
-    iso:          NI
+  sfsCountryI18n_RU_NI: 
+    id:           sfsCountry_NI
     culture:      ru
-    name_english: Nicaragua
     name:         Никарагуа
-  sfsCountry_RU_NE: 
-    iso:          NE
+  sfsCountryI18n_RU_NE: 
+    id:           sfsCountry_NE
     culture:      ru
-    name_english: Niger
     name:         Нигер
-  sfsCountry_RU_NG: 
-    iso:          NG
+  sfsCountryI18n_RU_NG: 
+    id:           sfsCountry_NG
     culture:      ru
-    name_english: Nigeria
     name:         Нигерия
-  sfsCountry_RU_NU: 
-    iso:          NU
+  sfsCountryI18n_RU_NU: 
+    id:           sfsCountry_NU
     culture:      ru
-    name_english: Niue
     name:         Ниуе
-  sfsCountry_RU_NF: 
-    iso:          NF
+  sfsCountryI18n_RU_NF: 
+    id:           sfsCountry_NF
     culture:      ru
-    name_english: Norfolk Island
     name:         Остров Норфолк
-  sfsCountry_RU_MP: 
-    iso:          MP
+  sfsCountryI18n_RU_MP: 
+    id:           sfsCountry_MP
     culture:      ru
-    name_english: Northern Mariana Islands
     name:         Северные Марианские Острова
-  sfsCountry_RU_NO: 
-    iso:          NO
+  sfsCountryI18n_RU_NO: 
+    id:           sfsCountry_NO
     culture:      ru
-    name_english: Norway
     name:         Норвегия
-  sfsCountry_RU_OM: 
-    iso:          OM
+  sfsCountryI18n_RU_OM: 
+    id:           sfsCountry_OM
     culture:      ru
-    name_english: Oman
     name:         Оман
-  sfsCountry_RU_PK: 
-    iso:          PK
+  sfsCountryI18n_RU_PK: 
+    id:           sfsCountry_PK
     culture:      ru
-    name_english: Pakistan
     name:         Пакистан
-  sfsCountry_RU_PW: 
-    iso:          PW
+  sfsCountryI18n_RU_PW: 
+    id:           sfsCountry_PW
     culture:      ru
-    name_english: Palau
     name:         Палау
-  sfsCountry_RU_PS: 
-    iso:          PS
+  sfsCountryI18n_RU_PS: 
+    id:           sfsCountry_PS
     culture:      ru
-    name_english: Palestinian Territory
     name:         Палестинская автономия
-  sfsCountry_RU_PA: 
-    iso:          PA
+  sfsCountryI18n_RU_PA: 
+    id:           sfsCountry_PA
     culture:      ru
-    name_english: Panama
     name:         Панама
-  sfsCountry_RU_PG: 
-    iso:          PG
+  sfsCountryI18n_RU_PG: 
+    id:           sfsCountry_PG
     culture:      ru
-    name_english: Papua New Guinea
     name:         Папуа-Новая Гвинея
-  sfsCountry_RU_PY: 
-    iso:          PY
+  sfsCountryI18n_RU_PY: 
+    id:           sfsCountry_PY
     culture:      ru
-    name_english: Paraguay
     name:         Парагвай
-  sfsCountry_RU_PE: 
-    iso:          PE
+  sfsCountryI18n_RU_PE: 
+    id:           sfsCountry_PE
     culture:      ru
-    name_english: Peru
     name:         Перу
-  sfsCountry_RU_PH: 
-    iso:          PH
+  sfsCountryI18n_RU_PH: 
+    id:           sfsCountry_PH
     culture:      ru
-    name_english: Philippines
     name:         Филиппины
-  sfsCountry_RU_PN: 
-    iso:          PN
+  sfsCountryI18n_RU_PN: 
+    id:           sfsCountry_PN
     culture:      ru
-    name_english: Pitcairn
     name:         Остров Питкэрн
-  sfsCountry_RU_PL: 
-    iso:          PL
+  sfsCountryI18n_RU_PL: 
+    id:           sfsCountry_PL
     culture:      ru
-    name_english: Poland
     name:         Польша
-  sfsCountry_RU_PT: 
-    iso:          PT
+  sfsCountryI18n_RU_PT: 
+    id:           sfsCountry_PT
     culture:      ru
-    name_english: Portugal
     name:         Португалия
-  sfsCountry_RU_PR: 
-    iso:          PR
+  sfsCountryI18n_RU_PR: 
+    id:           sfsCountry_PR
     culture:      ru
-    name_english: Puerto Rico
     name:         Пуэрто-Рико
-  sfsCountry_RU_QA: 
-    iso:          QA
+  sfsCountryI18n_RU_QA: 
+    id:           sfsCountry_QA
     culture:      ru
-    name_english: Qatar
     name:         Катар
-  sfsCountry_RU_RE: 
-    iso:          RE
+  sfsCountryI18n_RU_RE: 
+    id:           sfsCountry_RE
     culture:      ru
-    name_english: Réunion
     name:         Реюньон
-  sfsCountry_RU_RO: 
-    iso:          RO
+  sfsCountryI18n_RU_RO: 
+    id:           sfsCountry_RO
     culture:      ru
-    name_english: Romania
     name:         Румыния
-  sfsCountry_RU_RU: 
-    iso:          RU
+  sfsCountryI18n_RU_RU: 
+    id:           sfsCountry_RU
     culture:      ru
-    name_english: Russia
     name:         Россия
-  sfsCountry_RU_RW: 
-    iso:          RW
+  sfsCountryI18n_RU_RW: 
+    id:           sfsCountry_RW
     culture:      ru
-    name_english: Rwanda
     name:         Руанда
-  sfsCountry_RU_SH: 
-    iso:          SH
+  sfsCountryI18n_RU_SH: 
+    id:           sfsCountry_SH
     culture:      ru
-    name_english: Saint Helena
     name:         Остров Святой Елены
-  sfsCountry_RU_KN: 
-    iso:          KN
+  sfsCountryI18n_RU_KN: 
+    id:           sfsCountry_KN
     culture:      ru
-    name_english: Saint Kitts and Nevis
     name:         Сент-Киттс и Невис
-  sfsCountry_RU_LC: 
-    iso:          LC
+  sfsCountryI18n_RU_LC: 
+    id:           sfsCountry_LC
     culture:      ru
-    name_english: Saint Lucia
     name:         Сент-Люсия
-  sfsCountry_RU_PM: 
-    iso:          PM
+  sfsCountryI18n_RU_PM: 
+    id:           sfsCountry_PM
     culture:      ru
-    name_english: Saint Pierre and Miquelon
     name:         Сен-Пьер и Микелон
-  sfsCountry_RU_VC: 
-    iso:          VC
+  sfsCountryI18n_RU_VC: 
+    id:           sfsCountry_VC
     culture:      ru
-    name_english: Saint Vincent and the Grenadines
     name:         Сент-Винсент и Гренадины
-  sfsCountry_RU_WS: 
-    iso:          WS
+  sfsCountryI18n_RU_WS: 
+    id:           sfsCountry_WS
     culture:      ru
-    name_english: Samoa
     name:         Самоа
-  sfsCountry_RU_SM: 
-    iso:          SM
+  sfsCountryI18n_RU_SM: 
+    id:           sfsCountry_SM
     culture:      ru
-    name_english: San Marino
     name:         Сан-Марино
-  sfsCountry_RU_ST: 
-    iso:          ST
+  sfsCountryI18n_RU_ST: 
+    id:           sfsCountry_ST
     culture:      ru
-    name_english: Sao Tome and Principe
     name:         Сан-Томе и Принсипи
-  sfsCountry_RU_SA: 
-    iso:          SA
+  sfsCountryI18n_RU_SA: 
+    id:           sfsCountry_SA
     culture:      ru
-    name_english: Saudi Arabia
     name:         Саудовская Аравия
-  sfsCountry_RU_SN: 
-    iso:          SN
+  sfsCountryI18n_RU_SN: 
+    id:           sfsCountry_SN
     culture:      ru
-    name_english: Senegal
     name:         Сенегал
-  sfsCountry_RU_CS: 
-    iso:          CS
+  sfsCountryI18n_RU_CS: 
+    id:           sfsCountry_CS
     culture:      ru
-    name_english: 
     name:         Serbia and Montenegro
-  sfsCountry_RU_SC: 
-    iso:          SC
+  sfsCountryI18n_RU_SC: 
+    id:           sfsCountry_SC
     culture:      ru
-    name_english: Seychelles
     name:         Сейшельские Острова
-  sfsCountry_RU_SL: 
-    iso:          SL
+  sfsCountryI18n_RU_SL: 
+    id:           sfsCountry_SL
     culture:      ru
-    name_english: Sierra Leone
     name:         Сьерра-Леоне
-  sfsCountry_RU_SG: 
-    iso:          SG
+  sfsCountryI18n_RU_SG: 
+    id:           sfsCountry_SG
     culture:      ru
-    name_english: Singapore
     name:         Сингапур
-  sfsCountry_RU_SK: 
-    iso:          SK
+  sfsCountryI18n_RU_SK: 
+    id:           sfsCountry_SK
     culture:      ru
-    name_english: Slovakia
     name:         Словакия
-  sfsCountry_RU_SI: 
-    iso:          SI
+  sfsCountryI18n_RU_SI: 
+    id:           sfsCountry_SI
     culture:      ru
-    name_english: Slovenia
     name:         Словения
-  sfsCountry_RU_SB: 
-    iso:          SB
+  sfsCountryI18n_RU_SB: 
+    id:           sfsCountry_SB
     culture:      ru
-    name_english: Solomon Islands
     name:         Соломоновы Острова
-  sfsCountry_RU_SO: 
-    iso:          SO
+  sfsCountryI18n_RU_SO: 
+    id:           sfsCountry_SO
     culture:      ru
-    name_english: Somalia
     name:         Сомали
-  sfsCountry_RU_ZA: 
-    iso:          ZA
+  sfsCountryI18n_RU_ZA: 
+    id:           sfsCountry_ZA
     culture:      ru
-    name_english: South Africa
     name:         Южная Африка
-  sfsCountry_RU_GS: 
-    iso:          GS
+  sfsCountryI18n_RU_GS: 
+    id:           sfsCountry_GS
     culture:      ru
-    name_english: South Georgia and the South Sandwich Islands
     name:         Южная Джорджия и Южные Сандвичевы Острова
-  sfsCountry_RU_ES: 
-    iso:          ES
+  sfsCountryI18n_RU_ES: 
+    id:           sfsCountry_ES
     culture:      ru
-    name_english: Spain
     name:         Испания
-  sfsCountry_RU_LK: 
-    iso:          LK
+  sfsCountryI18n_RU_LK: 
+    id:           sfsCountry_LK
     culture:      ru
-    name_english: Sri Lanka
     name:         Шри-Ланка
-  sfsCountry_RU_SD: 
-    iso:          SD
+  sfsCountryI18n_RU_SD: 
+    id:           sfsCountry_SD
     culture:      ru
-    name_english: Sudan
     name:         Судан
-  sfsCountry_RU_SR: 
-    iso:          SR
+  sfsCountryI18n_RU_SR: 
+    id:           sfsCountry_SR
     culture:      ru
-    name_english: Suriname
     name:         Суринам
-  sfsCountry_RU_SJ: 
-    iso:          SJ
+  sfsCountryI18n_RU_SJ: 
+    id:           sfsCountry_SJ
     culture:      ru
-    name_english: Svalbard and Jan Mayen
     name:         Острова Свалбард и Жан Майен
-  sfsCountry_RU_SZ: 
-    iso:          SZ
+  sfsCountryI18n_RU_SZ: 
+    id:           sfsCountry_SZ
     culture:      ru
-    name_english: Swaziland
     name:         Свазиленд
-  sfsCountry_RU_SE: 
-    iso:          SE
+  sfsCountryI18n_RU_SE: 
+    id:           sfsCountry_SE
     culture:      ru
-    name_english: Sweden
     name:         Швеция
-  sfsCountry_RU_CH: 
-    iso:          CH
+  sfsCountryI18n_RU_CH: 
+    id:           sfsCountry_CH
     culture:      ru
-    name_english: Switzerland
     name:         Швейцария
-  sfsCountry_RU_SY: 
-    iso:          SY
+  sfsCountryI18n_RU_SY: 
+    id:           sfsCountry_SY
     culture:      ru
-    name_english: Syria
     name:         Сирийская Арабская Республика
-  sfsCountry_RU_TW: 
-    iso:          TW
+  sfsCountryI18n_RU_TW: 
+    id:           sfsCountry_TW
     culture:      ru
-    name_english: Taiwan
     name:         Тайвань
-  sfsCountry_RU_TJ: 
-    iso:          TJ
+  sfsCountryI18n_RU_TJ: 
+    id:           sfsCountry_TJ
     culture:      ru
-    name_english: Tajikistan
     name:         Таджикистан
-  sfsCountry_RU_TZ: 
-    iso:          TZ
+  sfsCountryI18n_RU_TZ: 
+    id:           sfsCountry_TZ
     culture:      ru
-    name_english: Tanzania
     name:         Танзания
-  sfsCountry_RU_TH: 
-    iso:          TH
+  sfsCountryI18n_RU_TH: 
+    id:           sfsCountry_TH
     culture:      ru
-    name_english: Thailand
     name:         Таиланд
-  sfsCountry_RU_TL: 
-    iso:          TL
+  sfsCountryI18n_RU_TL: 
+    id:           sfsCountry_TL
     culture:      ru
-    name_english: Timor-Leste
     name:         Восточный Тимор
-  sfsCountry_RU_TG: 
-    iso:          TG
+  sfsCountryI18n_RU_TG: 
+    id:           sfsCountry_TG
     culture:      ru
-    name_english: Togo
     name:         Того
-  sfsCountry_RU_TK: 
-    iso:          TK
+  sfsCountryI18n_RU_TK: 
+    id:           sfsCountry_TK
     culture:      ru
-    name_english: Tokelau
     name:         Токелау
-  sfsCountry_RU_TO: 
-    iso:          TO
+  sfsCountryI18n_RU_TO: 
+    id:           sfsCountry_TO
     culture:      ru
-    name_english: Tonga
     name:         Тонга
-  sfsCountry_RU_TT: 
-    iso:          TT
+  sfsCountryI18n_RU_TT: 
+    id:           sfsCountry_TT
     culture:      ru
-    name_english: Trinidad and Tobago
     name:         Тринидад и Тобаго
-  sfsCountry_RU_TN: 
-    iso:          TN
+  sfsCountryI18n_RU_TN: 
+    id:           sfsCountry_TN
     culture:      ru
-    name_english: Tunisia
     name:         Тунис
-  sfsCountry_RU_TR: 
-    iso:          TR
+  sfsCountryI18n_RU_TR: 
+    id:           sfsCountry_TR
     culture:      ru
-    name_english: Turkey
     name:         Турция
-  sfsCountry_RU_TM: 
-    iso:          TM
+  sfsCountryI18n_RU_TM: 
+    id:           sfsCountry_TM
     culture:      ru
-    name_english: Turkmenistan
     name:         Туркменистан
-  sfsCountry_RU_TC: 
-    iso:          TC
+  sfsCountryI18n_RU_TC: 
+    id:           sfsCountry_TC
     culture:      ru
-    name_english: Turks and Caicos Islands
     name:         Острова Туркс и Кайкос
-  sfsCountry_RU_TV: 
-    iso:          TV
+  sfsCountryI18n_RU_TV: 
+    id:           sfsCountry_TV
     culture:      ru
-    name_english: Tuvalu
     name:         Тувалу
-  sfsCountry_RU_VI: 
-    iso:          VI
+  sfsCountryI18n_RU_VI: 
+    id:           sfsCountry_VI
     culture:      ru
-    name_english: U.S. Virgin Islands
     name:         Американские Виргинские Острова
-  sfsCountry_RU_UG: 
-    iso:          UG
+  sfsCountryI18n_RU_UG: 
+    id:           sfsCountry_UG
     culture:      ru
-    name_english: Uganda
     name:         Уганда
-  sfsCountry_RU_UA: 
-    iso:          UA
+  sfsCountryI18n_RU_UA: 
+    id:           sfsCountry_UA
     culture:      ru
-    name_english: Ukraine
     name:         Украина
-  sfsCountry_RU_AE: 
-    iso:          AE
+  sfsCountryI18n_RU_AE: 
+    id:           sfsCountry_AE
     culture:      ru
-    name_english: United Arab Emirates
     name:         Объединенные Арабские Эмираты
-  sfsCountry_RU_GB: 
-    iso:          GB
+  sfsCountryI18n_RU_GB: 
+    id:           sfsCountry_GB
     culture:      ru
-    name_english: United Kingdom
     name:         Великобритания
-  sfsCountry_RU_UM: 
-    iso:          UM
+  sfsCountryI18n_RU_UM: 
+    id:           sfsCountry_UM
     culture:      ru
-    name_english: United States Minor Outlying Islands
     name:         Внешние малые острова (США)
-  sfsCountry_RU_US: 
-    iso:          US
+  sfsCountryI18n_RU_US: 
+    id:           sfsCountry_US
     culture:      ru
-    name_english: United States
     name:         Соединенные Штаты
-  sfsCountry_RU_UY: 
-    iso:          UY
+  sfsCountryI18n_RU_UY: 
+    id:           sfsCountry_UY
     culture:      ru
-    name_english: Uruguay
     name:         Уругвай
-  sfsCountry_RU_UZ: 
-    iso:          UZ
+  sfsCountryI18n_RU_UZ: 
+    id:           sfsCountry_UZ
     culture:      ru
-    name_english: Uzbekistan
     name:         Узбекистан
-  sfsCountry_RU_VU: 
-    iso:          VU
+  sfsCountryI18n_RU_VU: 
+    id:           sfsCountry_VU
     culture:      ru
-    name_english: Vanuatu
     name:         Вануату
-  sfsCountry_RU_VE: 
-    iso:          VE
+  sfsCountryI18n_RU_VE: 
+    id:           sfsCountry_VE
     culture:      ru
-    name_english: Venezuela
     name:         Венесуэла
-  sfsCountry_RU_VN: 
-    iso:          VN
+  sfsCountryI18n_RU_VN: 
+    id:           sfsCountry_VN
     culture:      ru
-    name_english: Vietnam
     name:         Вьетнам
-  sfsCountry_RU_WF: 
-    iso:          WF
+  sfsCountryI18n_RU_WF: 
+    id:           sfsCountry_WF
     culture:      ru
-    name_english: Wallis and Futuna
     name:         Эллис и Футуна
-  sfsCountry_RU_EH: 
-    iso:          EH
+  sfsCountryI18n_RU_EH: 
+    id:           sfsCountry_EH
     culture:      ru
-    name_english: Western Sahara
     name:         Западная Сахара
-  sfsCountry_RU_YE: 
-    iso:          YE
+  sfsCountryI18n_RU_YE: 
+    id:           sfsCountry_YE
     culture:      ru
-    name_english: Yemen
     name:         Йемен
-  sfsCountry_RU_ZM: 
-    iso:          ZM
+  sfsCountryI18n_RU_ZM: 
+    id:           sfsCountry_ZM
     culture:      ru
-    name_english: Zambia
     name:         Замбия
-  sfsCountry_RU_ZW: 
-    iso:          ZW
+  sfsCountryI18n_RU_ZW: 
+    id:           sfsCountry_ZW
     culture:      ru
-    name_english: Zimbabwe
     name:         Зимбабве
