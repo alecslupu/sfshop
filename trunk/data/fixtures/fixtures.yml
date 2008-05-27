@@ -60,20 +60,6 @@ sfsMemberSecretQuestionsI18n:
     question:  What is your favorite pastime?
 
 #
-# Address book
-#
-sfsAddressBook: 
-  sfsAddressBook_1:
-    member_id: sfsMember_1
-    gender: 1
-    first_name: Dmitry
-    last_name: Nesteruk
-    state: Zaporiga
-    city: Zaporiga
-    street: street 1
-    postcode: 69000
-
-#
 # Categories
 #
 
