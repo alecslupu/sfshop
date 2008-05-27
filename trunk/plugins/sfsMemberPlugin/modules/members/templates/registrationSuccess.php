@@ -1,5 +1,4 @@
 <h3><?php echo __('Registration') ?></h3>
-
 <?php if ($sf_user->hasFlash('message')): ?>
     <?php echo __($sf_user->getFlash('message')) ?>
 <?php else: ?>

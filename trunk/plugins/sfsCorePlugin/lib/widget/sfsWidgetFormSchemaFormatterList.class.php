@@ -12,6 +12,6 @@ class sfsWidgetFormSchemaFormatterList extends sfWidgetFormSchemaFormatter
   protected
     $rowFormat       = "<li>\n %label%\n %error%\n %field%%help%\n%hidden_fields%</li>\n",
     $errorRowFormat  = "<li>\n%errors%</li>\n",
-    $helpFormat      = '<br />%help%',
+    $helpFormat      = '<div class="help"></div>',
     $decoratorFormat = "<ul>\n %content%</ul>";
 }

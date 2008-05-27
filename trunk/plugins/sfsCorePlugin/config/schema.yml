@@ -10,6 +10,7 @@ propel:
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
     is_default:         { type: integer, size: 1, default: 0 }
+    is_active:          { type: integer, size: 1, default: 0 }
     
   countries:
     _attributes:        { phpName: sfsCountry, isI18N: true, i18nTable: countries_i18n }

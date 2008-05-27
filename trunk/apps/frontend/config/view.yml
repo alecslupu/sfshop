@@ -9,9 +9,9 @@ default:
     language:     en
     robots:       index, follow
 
-  stylesheets:    [main]
+  stylesheets:    [ main ]
 
-  javascripts:    []
+  javascripts:    [ prototype ]
 
   has_layout:     on
   layout:         layout

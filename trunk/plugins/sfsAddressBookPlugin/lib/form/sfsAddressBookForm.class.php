@@ -17,10 +17,10 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         
         foreach ($countries as $country) {
             if (method_exists($country, 'getName')) {
-                $arrayCountries[] = array($country->getId() => $country->getName());
+                $arrayCountries[$country->getId()] = $country->getName();
             }
             else {
-                $arrayCountries[] = array($country->getId() => $country->getNameEnglish());
+                $arrayCountries[$country->getId()] = $country->getNameEnglish();
             }
         }
         
@@ -40,6 +40,8 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
                 'is_default'  => new sfWidgetFormInputCheckbox()
              )
         );
+        
+        $this->widgetSchema->setLabel('country_id', 'Country');
         
         $validatorGender = new sfValidatorChoice(
             array('choices' => $arrayGenders)
@@ -62,8 +64,6 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         $validatorCountry = new sfValidatorChoice(
             array('choices' => $arrayCountries)
         );
-        
-        $this->formField;
         
         $validatorState = new sfValidatorString(
             array(
@@ -116,7 +116,6 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         );
         
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
-        $this->widgetSchema->setLabel('country_cid', 'Country');
         $this->getWidgetSchema()->setNameFormat('address[%s]');
         $this->getWidgetSchema()->addFormFormatter('sfs_list', new sfsWidgetFormSchemaFormatterList($this->getWidgetSchema()));
         $this->getWidgetSchema()->setFormFormatterName('sfs_list');

@@ -15,8 +15,11 @@
     <div class="main_center">
         <div class="header_top_line">
             <div class="members_links">
+               <div class="languages">
+                   <?php include_component('core', 'languages') ?>
+               </div>
                <?php  if (!$sf_user->isAuthenticated()): ?>
-                  <div id="login_link">
+                  <div class="login_link">
                     <?php echo link_to(__('Sign in'),'@members_login') ?>
                     | <?php echo link_to(__('Forgot password'),'@members_forgotPasswordStepOne') ?> | <?php echo link_to(__('Registration'),'@members_registration') ?>
                   </div>

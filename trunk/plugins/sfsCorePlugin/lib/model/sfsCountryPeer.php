@@ -20,7 +20,7 @@ class sfsCountryPeer extends BasesfsCountryPeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function getByCulture($culture, $defaultCulture)
+    public static function getByCulture($culture)
     {
         $criteria = new Criteria();
         $criteria->add(self::IS_ACTIVE, 1);

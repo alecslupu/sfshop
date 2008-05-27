@@ -253,6 +253,15 @@ div.top_login_form input {
   width: 100px;
 }
 
+.languages {
+    padding-left: 10px;
+    float: left;
+}
+
+.login_link {
+    float: right;
+}
+
 img {
     border: 0px;
     text-decoration: none;
@@ -288,18 +297,6 @@ ul {
   margin: 0px;
 }
 
-input {
-  border: #000000 1px solid;
-}
-
-select {
-  border: #000000 1px solid;
-}
-
-textarea {
-  border: #787878 1px solid;
-}
-
 /**/
 
 .tag-cloud{
@@ -315,9 +312,18 @@ textarea {
 /* FORM */
 /*******************************/
 
-form.form input {
+form.form input[type="text"], input[type="password"] {
     width: 250px;
+}
+
+form.form input, select, textarea {
     float: left;
+    border: #2e425d 1px solid;
+}
+
+form.form input:focus, select:focus {
+    border: #999fa8 1px solid;
+    background: #e1e4e8;
 }
 
 form.form li.button {
@@ -368,6 +374,10 @@ form.form ul.error_list {
 
 form.form ul.main ul {
     padding-left: 15px;
+}
+
+form div.help {
+    font-size: 12px;
 }
 
 /*******************************/

@@ -10,12 +10,22 @@
  */
 class coreActions extends sfActions
 {
-  /**
-   * Executes index action
-   *
-   */
-  public function executeIndex()
-  {
-    $this->forward('default', 'module');
-  }
+    /**
+    * Change language action.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeChangeLanguage()
+    {
+        $language = sfsLanguagePeer::retrieveByPK($this->getRequestParameter('culture'));
+        
+        if ($language->isActive()) {
+            $this->getUser()->setCulture($this->getRequestParameter('culture'));
+        }
+        
+        $this->redirect($this->getRequest()->getReferer());
+    }
 }

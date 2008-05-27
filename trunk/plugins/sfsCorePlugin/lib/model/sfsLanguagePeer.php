@@ -23,4 +23,19 @@ class sfsLanguagePeer extends BasesfsLanguagePeer
         $criteria->add(self::IS_DEFAULT, 1);
         return self::doSelectOne($criteria);
     }
+    
+    /**
+    * Gets all active languages.
+    *
+    * @param  void
+    * @return object
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getAll()
+    {
+        $criteria = new Criteria();
+        $criteria->add(self::IS_ACTIVE, 1);
+        return self::doSelectOne($criteria);
+    }
 }
