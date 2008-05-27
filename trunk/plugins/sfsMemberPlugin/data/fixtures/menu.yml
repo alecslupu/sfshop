@@ -1,4 +1,3 @@
----
 sfsMenu: 
   sfMenu_PROFILE_EN_1: 
     culture: en
@@ -18,4 +17,3 @@ sfsMenu:
     title: My profiles
     pos: 1
     type: <?php echo sfsMenuPeer::TYPE_MAIN ?> 
-
