@@ -17,10 +17,10 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
         
         foreach ($countries as $country) {
             if (method_exists($country, 'getName')) {
-                $arrayCountries[] = array($country->getIso() => $country->getName());
+                $arrayCountries[] = array($country->getId() => $country->getName());
             }
             else {
-                $arrayCountries[] = array($country->getIso() => $country->getNameEnglish());
+                $arrayCountries[] = array($country->getId() => $country->getNameEnglish());
             }
         }
         
@@ -31,7 +31,7 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
                 'gender'      => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'first_name'  => new sfWidgetFormInput(),
                 'last_name'   => new sfWidgetFormInput(),
-                'country_cid' => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
+                'country_id'  => new sfWidgetFormSelect(array('choices' => $arrayCountries)),
                 'state'       => new sfWidgetFormInput(),
                 'city'        => new sfWidgetFormInput(),
                 'street'      => new sfWidgetFormInput(),
@@ -107,7 +107,7 @@ class sfsAddressBookForm extends BasesfsAddressBookForm
                'gender'      => $validatorGender,
                'first_name'  => $validatorFirstName,
                'last_name'   => $validatorLastName,
-               'country_cid' => $validatorCountry,
+               'country_id'  => $validatorCountry,
                'state'       => $validatorState,
                'city'        => $validatorCity,
                'street'      => $validatorStreet,

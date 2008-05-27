@@ -3,33 +3,33 @@
 #
 sfsMember: 
   sfsMember_1: 
-    email: nest@test.com
-    password: test
-    gender: 1
-    last_name: Dmitry
-    first_name: Nesteruk
-    phone: 32123123121
-    mobile_phone: 1231231232123
+    email:           nest@test.com
+    password:        test
+    gender:          1
+    last_name:       Dmitry
+    first_name:      Nesteruk
+    phone:           32123123121
+    mobile_phone:    1231231232123
     secret_question: What was the name of your first school?
-    secret_answer: test
-    created_at: 2007-12-17 10:17:39
-    is_deleted: 0
-    confirm_code: 14ad75adde376a57cda2069a6d5902d6
-    is_confirmed: 1
+    secret_answer:   test
+    created_at:      2007-12-17 10:17:39
+    is_deleted:      0
+    confirm_code:    14ad75adde376a57cda2069a6d5902d6
+    is_confirmed:    1
   sfsMember_2: 
-    email: test@test.com
-    password: 1234
-    gender: 1
-    last_name: Test
-    first_name: Tester
-    phone: 32123123121
-    mobile_phone: 1231231232123
+    email:           test@test.com
+    password:        1234
+    gender:          1
+    last_name:       Test
+    first_name:      Tester
+    phone:           32123123121
+    mobile_phone:    1231231232123
     secret_question: What was the name of your first school?
-    secret_answer: test
-    created_at: 2007-12-17 10:17:39
-    is_deleted: 0
-    confirm_code: 14ad75adde376a57cda2069a6d5902d6
-    is_confirmed: 1
+    secret_answer:   test
+    created_at:      2007-12-17 10:17:39
+    is_deleted:      0
+    confirm_code:    14ad75adde376a57cda2069a6d5902d6
+    is_confirmed:    1
 
 #
 # Member secret questions
@@ -297,6 +297,149 @@ sfsCategoryI18n:
     title:       Tools, Auto & Industrial
     description: 
 #
+# Ukrainian
+#
+  sfsCategoryI18n_UA_1: 
+    id:          sfsCategory_1
+    culture:     ua
+    title:       Книги
+    description: 
+  sfsCategoryI18n_UA_2: 
+    id:          sfsCategory_2
+    culture:     ua
+    title:       Біографія
+    description: 
+  sfsCategoryI18n_UA_3: 
+    id:          sfsCategory_3
+    culture:     ua
+    title:       Мистецтво та література
+    description: 
+  sfsCategoryI18n_UA_4: 
+    id:          sfsCategory_4
+    culture:     ua
+    title:       Етнічні
+    description: 
+  sfsCategoryI18n_UA_5: 
+    id:          sfsCategory_5
+    culture:     ua
+    title:       Сімя та дитина
+    description: 
+  sfsCategoryI18n_UA_6:
+    id:          sfsCategory_6
+    culture:     ua
+    title:       Історичні
+    description: 
+  sfsCategoryI18n_UA_7: 
+    id:          sfsCategory_7
+    culture:     ua
+    title:       Справки
+    description: 
+  sfsCategoryI18n_UA_8: 
+    id:          sfsCategory_8
+    culture:     ua
+    title:       Подорожі
+    description: 
+  sfsCategoryI18n_UA_9: 
+    id:          sfsCategory_9
+    culture:     ua
+    title:       Фільми, музика та ігры
+    description: 
+  sfsCategoryI18n_UA_10: 
+    id:          sfsCategory_10
+    culture:     ua
+    title:       Фільми та програми
+    description: 
+  sfsCategoryI18n_UA_11: 
+    id:          sfsCategory_11
+    culture:     ua
+    title:       Музыка
+    description: 
+  sfsCategoryI18n_UA_12: 
+    id:          sfsCategory_12
+    culture:     ua
+    title:       Музичні інструменти
+    description: 
+  sfsCategoryI18n_UA_13: 
+    id:          sfsCategory_13
+    culture:     ua
+    title:       Відео ігри
+    description: 
+  sfsCategoryI18n_UA_14: 
+    id:          sfsCategory_14
+    culture:     ua
+    title:       Анімаційні
+    description: 
+  sfsCategoryI18n_UA_15: 
+    id:          sfsCategory_15
+    culture:     ua
+    title:       Аніме
+    description: 
+  sfsCategoryI18n_UA_16:
+    id:          sfsCategory_16
+    culture:     ua
+    title:       Сімейні
+    description: 
+  sfsCategoryI18n_UA_17:
+    id:          sfsCategory_17
+    culture:     ua
+    title:       Хрестиянські
+    description: 
+  sfsCategoryI18n_UA_18:
+    id:          sfsCategory_18
+    culture:     ua
+    title:       Класика
+    description: 
+  sfsCategoryI18n_UA_19:
+    id:          sfsCategory_19
+    culture:     ua
+    title:       Комедії
+    description: 
+  sfsCategoryI18n_UA_20:
+    id:          sfsCategory_20
+    culture:     ua
+    title:       Документальні
+    description: 
+  sfsCategoryI18n_UA_21:
+    id:          sfsCategory_21
+    culture:     ua
+    title:       Електроника та компьютери
+    description: 
+  sfsCategoryI18n_UA_22:
+    id:          sfsCategory_22
+    culture:     ua
+    title:       Будинок та садок
+    description: 
+  sfsCategoryI18n_UA_23:
+    id:          sfsCategory_23
+    culture:     ua
+    title:       Бакалея
+    description: 
+  sfsCategoryI18n_UA_24:
+    id:          sfsCategory_24
+    culture:     ua
+    title:       Іграшки для дітей
+    description: 
+  sfsCategoryI18n_UA_25:
+    id:          sfsCategory_25
+    culture:     ua
+    title:       Прикраси та коштовності
+    description: 
+  sfsCategoryI18n_UA_26:
+    id:          sfsCategory_26
+    culture:     ua
+    title:       Здоров'я та краса
+    description: 
+  sfsCategoryI18n_UA_27:
+    id:          sfsCategory_27
+    culture:     ua
+    title:       Спорт та туризм
+    description: 
+  sfsCategoryI18n_UA_28:
+    id:          sfsCategory_28
+    culture:     ua
+    title:       Індустрія, інструменти
+    description: 
+#
 # Russian
 #
   sfsCategoryI18n_RU_1: 
@@ -438,147 +581,4 @@ sfsCategoryI18n:
     id:          sfsCategory_28
     culture:     ru
     title:       Индустрия, инструменты
-    description: 
-#
-# Ukrainian
-#
-  sfsCategoryI18n_UA_1: 
-    id:          sfsCategory_1
-    culture:     ua
-    title:       Книги
-    description: 
-  sfsCategoryI18n_UA_2: 
-    id:          sfsCategory_2
-    culture:     ua
-    title:       Біографія
-    description: 
-  sfsCategoryI18n_UA_3: 
-    id:          sfsCategory_3
-    culture:     ua
-    title:       Мистецтво та література
-    description: 
-  sfsCategoryI18n_UA_4: 
-    id:          sfsCategory_4
-    culture:     ua
-    title:       Етнічні
-    description: 
-  sfsCategoryI18n_UA_5: 
-    id:          sfsCategory_5
-    culture:     ua
-    title:       Сімя та дитина
-    description: 
-  sfsCategoryI18n_UA_6:
-    id:          sfsCategory_6
-    culture:     ua
-    title:       Історичні
-    description: 
-  sfsCategoryI18n_UA_7: 
-    id:          sfsCategory_7
-    culture:     ua
-    title:       Справки
-    description: 
-  sfsCategoryI18n_UA_8: 
-    id:          sfsCategory_8
-    culture:     ua
-    title:       Подорожі
-    description: 
-  sfsCategoryI18n_UA_9: 
-    id:          sfsCategory_9
-    culture:     ua
-    title:       Фільми, музика та ігры
-    description: 
-  sfsCategoryI18n_UA_10: 
-    id:          sfsCategory_10
-    culture:     ua
-    title:       Фільми та програми
-    description: 
-  sfsCategoryI18n_UA_11: 
-    id:          sfsCategory_11
-    culture:     ua
-    title:       Музыка
-    description: 
-  sfsCategoryI18n_UA_12: 
-    id:          sfsCategory_12
-    culture:     ua
-    title:       Музичні інструменти
-    description: 
-  sfsCategoryI18n_UA_13: 
-    id:          sfsCategory_13
-    culture:     ua
-    title:       Відео ігри
-    description: 
-  sfsCategoryI18n_UA_14: 
-    id:          sfsCategory_14
-    culture:     ua
-    title:       Анімаційні
-    description: 
-  sfsCategoryI18n_UA_15: 
-    id:          sfsCategory_15
-    culture:     ua
-    title:       Аніме
-    description: 
-  sfsCategoryI18n_UA_16:
-    id:          sfsCategory_16
-    culture:     ua
-    title:       Сімейні
-    description: 
-  sfsCategoryI18n_UA_17:
-    id:          sfsCategory_17
-    culture:     ua
-    title:       Хрестиянські
-    description: 
-  sfsCategoryI18n_UA_18:
-    id:          sfsCategory_18
-    culture:     ua
-    title:       Класика
-    description: 
-  sfsCategoryI18n_UA_19:
-    id:          sfsCategory_19
-    culture:     ua
-    title:       Комедії
-    description: 
-  sfsCategoryI18n_UA_20:
-    id:          sfsCategory_20
-    culture:     ua
-    title:       Документальні
-    description: 
-  sfsCategoryI18n_UA_21:
-    id:          sfsCategory_21
-    culture:     ua
-    title:       Електроника та компьютери
-    description: 
-  sfsCategoryI18n_UA_22:
-    id:          sfsCategory_22
-    culture:     ua
-    title:       Будинок та садок
-    description: 
-  sfsCategoryI18n_UA_23:
-    id:          sfsCategory_23
-    culture:     ua
-    title:       Бакалея
-    description: 
-  sfsCategoryI18n_UA_24:
-    id:          sfsCategory_24
-    culture:     ua
-    title:       Іграшки для дітей
-    description: 
-  sfsCategoryI18n_UA_25:
-    id:          sfsCategory_25
-    culture:     ua
-    title:       Прикраси та коштовності
-    description: 
-  sfsCategoryI18n_UA_26:
-    id:          sfsCategory_26
-    culture:     ua
-    title:       Здоровьє та краса
-    description: 
-  sfsCategoryI18n_UA_27:
-    id:          sfsCategory_27
-    culture:     ua
-    title:       Спорт та туризм
-    description: 
-  sfsCategoryI18n_UA_28:
-    id:          sfsCategory_28
-    culture:     ua
-    title:       Індустрія, інструменти
     description: 

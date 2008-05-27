@@ -956,7 +956,6 @@ sfsCountry:
     name_english: Zimbabwe
     is_active:    1
 
-
 sfsCountryI18n:
 #
 # English
@@ -1917,6 +1916,966 @@ sfsCountryI18n:
     id:           sfsCountry_ZW
     culture:      en
     name:         Zimbabwe
+#
+# Ukrainian
+#
+  sfsCountryI18n_UA_AF: 
+    id:           sfsCountry_AF
+    culture:      ua
+    name:         Афганістан
+  sfsCountryI18n_UA_AL: 
+    id:           sfsCountry_AL
+    culture:      ua
+    name:         Албанія
+  sfsCountryI18n_UA_DZ: 
+    id:           sfsCountry_DZ
+    culture:      ua
+    name:         Алжир
+  sfsCountryI18n_UA_AS: 
+    id:           sfsCountry_AS
+    culture:      ua
+    name:         Американське Самоа
+  sfsCountryI18n_UA_AD: 
+    id:           sfsCountry_AD
+    culture:      ua
+    name:         Андорра
+  sfsCountryI18n_UA_AO: 
+    id:           sfsCountry_AO
+    culture:      ua
+    name:         Ангола
+  sfsCountryI18n_UA_AI: 
+    id:           sfsCountry_AI
+    culture:      ua
+    name:         Ангуілла
+  sfsCountryI18n_UA_AQ: 
+    id:           sfsCountry_AQ
+    culture:      ua
+    name:         Антарктида
+  sfsCountryI18n_UA_AG: 
+    id:           sfsCountry_AG
+    culture:      ua
+    name:         Антигуа та Барбуда
+  sfsCountryI18n_UA_AR: 
+    id:           sfsCountry_AR
+    culture:      ua
+    name:         Аргентина
+  sfsCountryI18n_UA_AM: 
+    id:           sfsCountry_AM
+    culture:      ua
+    name:         Армения
+  sfsCountryI18n_UA_AW: 
+    id:           sfsCountry_AW
+    culture:      ua
+    name:         Аруба
+  sfsCountryI18n_UA_AU: 
+    id:           sfsCountry_AU
+    culture:      ua
+    name:         Австралія
+  sfsCountryI18n_UA_AT: 
+    id:           sfsCountry_AT
+    culture:      ua
+    name:         Австрия
+  sfsCountryI18n_UA_AZ: 
+    id:           sfsCountry_AZ
+    culture:      ua
+    name:         Азербайджан
+  sfsCountryI18n_UA_BS: 
+    id:           sfsCountry_BS
+    culture:      ua
+    name:         Багамскі острова
+  sfsCountryI18n_UA_BH: 
+    id:           sfsCountry_BH
+    culture:      ua
+    name:         Бахрейн
+  sfsCountryI18n_UA_BD: 
+    id:           sfsCountry_BD
+    culture:      ua
+    name:         Бангладеш
+  sfsCountryI18n_UA_BB: 
+    id:           sfsCountry_BB
+    culture:      ua
+    name:         Барбадос
+  sfsCountryI18n_UA_BY: 
+    id:           sfsCountry_BY
+    culture:      ua
+    name:         Біларусія
+  sfsCountryI18n_UA_BE: 
+    id:           sfsCountry_BE
+    culture:      ua
+    name:         Бельгія
+  sfsCountryI18n_UA_BZ: 
+    id:           sfsCountry_BZ
+    culture:      ua
+    name:         Белиз
+  sfsCountryI18n_UA_BJ: 
+    id:           sfsCountry_BJ
+    culture:      ua
+    name:         Бенин
+  sfsCountryI18n_UA_BM: 
+    id:           sfsCountry_BM
+    culture:      ua
+    name:         Бермудскі Острова
+  sfsCountryI18n_UA_BT: 
+    id:           sfsCountry_BT
+    culture:      ua
+    name:         Бутан
+  sfsCountryI18n_UA_BO: 
+    id:           sfsCountry_BO
+    culture:      ua
+    name:         Болівія
+  sfsCountryI18n_UA_BA: 
+    id:           sfsCountry_BA
+    culture:      ua
+    name:         Босния
+  sfsCountryI18n_UA_BW: 
+    id:           sfsCountry_BW
+    culture:      ua
+    name:         Ботсвана
+  sfsCountryI18n_UA_BV: 
+    id:           sfsCountry_BV
+    culture:      ua
+    name:         Остров Буве
+  sfsCountryI18n_UA_BR: 
+    id:           sfsCountry_BR
+    culture:      ua
+    name:         Бразилія
+  sfsCountryI18n_UA_IO: 
+    id:           sfsCountry_IO
+    culture:      ua
+    name:         Британські Території в Індійськом Океані
+  sfsCountryI18n_UA_VG: 
+    id:           sfsCountry_VG
+    culture:      ua
+    name:         Британські Віргінські Острова
+  sfsCountryI18n_UA_BN: 
+    id:           sfsCountry_BN
+    culture:      ua
+    name:         Бруней Даруссалам
+  sfsCountryI18n_UA_BG: 
+    id:           sfsCountry_BG
+    culture:      ua
+    name:         Болгарія
+  sfsCountryI18n_UA_BF: 
+    id:           sfsCountry_BF
+    culture:      ua
+    name:         Буркина Фасо
+  sfsCountryI18n_UA_BI: 
+    id:           sfsCountry_BI
+    culture:      ua
+    name:         Бурунді
+  sfsCountryI18n_UA_KH: 
+    id:           sfsCountry_KH
+    culture:      ua
+    name:         Камбоджа
+  sfsCountryI18n_UA_CM: 
+    id:           sfsCountry_CM
+    culture:      ua
+    name:         Камерун
+  sfsCountryI18n_UA_CA: 
+    id:           sfsCountry_CA
+    culture:      ua
+    name:         Канада
+  sfsCountryI18n_UA_CV: 
+    id:           sfsCountry_CV
+    culture:      ua
+    name:         Острова Зеленого Мису
+  sfsCountryI18n_UA_KY: 
+    id:           sfsCountry_KY
+    culture:      ua
+    name:         Кайманові Острова
+  sfsCountryI18n_UA_CF: 
+    id:           sfsCountry_CF
+    culture:      ua
+    name:         Центрально-Африканськя Республіка
+  sfsCountryI18n_UA_TD: 
+    id:           sfsCountry_TD
+    culture:      ua
+    name:         Чад
+  sfsCountryI18n_UA_CL: 
+    id:           sfsCountry_CL
+    culture:      ua
+    name:         Чилі
+  sfsCountryI18n_UA_CN: 
+    id:           sfsCountry_CN
+    culture:      ua
+    name:         Китай
+  sfsCountryI18n_UA_CX: 
+    id:           sfsCountry_CX
+    culture:      ua
+    name:         Остров Різдва
+  sfsCountryI18n_UA_CC: 
+    id:           sfsCountry_CC
+    culture:      ua
+    name:         Кокосові Острова (Киилінг)
+  sfsCountryI18n_UA_CO: 
+    id:           sfsCountry_CO
+    culture:      ua
+    name:         Колумбія
+  sfsCountryI18n_UA_KM: 
+    id:           sfsCountry_KM
+    culture:      ua
+    name:         Коморскі Острова
+  sfsCountryI18n_UA_CD: 
+    id:           sfsCountry_CD
+    culture:      ua
+    name:         Конго, Демократична Республіка
+  sfsCountryI18n_UA_CG: 
+    id:           sfsCountry_CG
+    culture:      ua
+    name:         Конго
+  sfsCountryI18n_UA_CK: 
+    id:           sfsCountry_CK
+    culture:      ua
+    name:         Острова Кука
+  sfsCountryI18n_UA_CR: 
+    id:           sfsCountry_CR
+    culture:      ua
+    name:         Коста-Ріка
+  sfsCountryI18n_UA_CI: 
+    id:           sfsCountry_CI
+    culture:      ua
+    name:         Кот д’Івуар
+  sfsCountryI18n_UA_CU: 
+    id:           sfsCountry_CU
+    culture:      ua
+    name:         Куба
+  sfsCountryI18n_UA_CY: 
+    id:           sfsCountry_CY
+    culture:      ua
+    name:         Кіпр
+  sfsCountryI18n_UA_CZ: 
+    id:           sfsCountry_CZ
+    culture:      ua
+    name:         Чешська Республіка
+  sfsCountryI18n_UA_DK: 
+    id:           sfsCountry_DK
+    culture:      ua
+    name:         Данія
+  sfsCountryI18n_UA_DJ: 
+    id:           sfsCountry_DJ
+    culture:      ua
+    name:         Джибути
+  sfsCountryI18n_UA_DM: 
+    id:           sfsCountry_DM
+    culture:      ua
+    name:         Остров Домініка
+  sfsCountryI18n_UA_DO: 
+    id:           sfsCountry_DO
+    culture:      ua
+    name:         Домініканська Республіка
+  sfsCountryI18n_UA_EC: 
+    id:           sfsCountry_EC
+    culture:      ua
+    name:         Еквадор
+  sfsCountryI18n_UA_EG: 
+    id:           sfsCountry_EG
+    culture:      ua
+    name:         Египет
+  sfsCountryI18n_UA_SV: 
+    id:           sfsCountry_SV
+    culture:      ua
+    name:         Сальвадор
+  sfsCountryI18n_UA_GQ: 
+    id:           sfsCountry_GQ
+    culture:      ua
+    name:         Екваторіальна Гвінея
+  sfsCountryI18n_UA_ER: 
+    id:           sfsCountry_ER
+    culture:      ua
+    name:         Еритрея
+  sfsCountryI18n_UA_EE: 
+    id:           sfsCountry_EE
+    culture:      ua
+    name:         Естонія
+  sfsCountryI18n_UA_ET: 
+    id:           sfsCountry_ET
+    culture:      ua
+    name:         Ефіопія
+  sfsCountryI18n_UA_FO: 
+    id:           sfsCountry_FO
+    culture:      ua
+    name:         Фарерскі острова
+  sfsCountryI18n_UA_FK: 
+    id:           sfsCountry_FK
+    culture:      ua
+    name:         Фольклендскі Острова
+  sfsCountryI18n_UA_FJ: 
+    id:           sfsCountry_FJ
+    culture:      ua
+    name:         Фіджи
+  sfsCountryI18n_UA_FI: 
+    id:           sfsCountry_FI
+    culture:      ua
+    name:         Фінляндія
+  sfsCountryI18n_UA_FR: 
+    id:           sfsCountry_FR
+    culture:      ua
+    name:         Франція
+  sfsCountryI18n_UA_GF: 
+    id:           sfsCountry_GF
+    culture:      ua
+    name:         Французька Гвіана
+  sfsCountryI18n_UA_PF: 
+    id:           sfsCountry_PF
+    culture:      ua
+    name:         Французька Полінезія
+  sfsCountryI18n_UA_TF: 
+    id:           sfsCountry_TF
+    culture:      ua
+    name:         Французька Південні Території
+  sfsCountryI18n_UA_GA: 
+    id:           sfsCountry_GA
+    culture:      ua
+    name:         Габон
+  sfsCountryI18n_UA_GM: 
+    id:           sfsCountry_GM
+    culture:      ua
+    name:         Гамбія
+  sfsCountryI18n_UA_GE: 
+    id:           sfsCountry_GE
+    culture:      ua
+    name:         Грузія
+  sfsCountryI18n_UA_DE: 
+    id:           sfsCountry_DE
+    culture:      ua
+    name:         Германія
+  sfsCountryI18n_UA_GH: 
+    id:           sfsCountry_GH
+    culture:      ua
+    name:         Гана
+  sfsCountryI18n_UA_GI: 
+    id:           sfsCountry_GI
+    culture:      ua
+    name:         Гібралтар
+  sfsCountryI18n_UA_GR: 
+    id:           sfsCountry_GR
+    culture:      ua
+    name:         Греція
+  sfsCountryI18n_UA_GL: 
+    id:           sfsCountry_GL
+    culture:      ua
+    name:         Гренландія
+  sfsCountryI18n_UA_GD: 
+    id:           sfsCountry_GD
+    culture:      ua
+    name:         Гренада
+  sfsCountryI18n_UA_GP: 
+    id:           sfsCountry_GP
+    culture:      ua
+    name:         Гваделупа
+  sfsCountryI18n_UA_GU: 
+    id:           sfsCountry_GU
+    culture:      ua
+    name:         Гуам
+  sfsCountryI18n_UA_GT: 
+    id:           sfsCountry_GT
+    culture:      ua
+    name:         Гватемала
+  sfsCountryI18n_UA_GN: 
+    id:           sfsCountry_GN
+    culture:      ua
+    name:         Гвінея
+  sfsCountryI18n_UA_GW: 
+    id:           sfsCountry_GW
+    culture:      ua
+    name:         Гвінея-Бісау
+  sfsCountryI18n_UA_GY: 
+    id:           sfsCountry_GY
+    culture:      ua
+    name:         Гайана
+  sfsCountryI18n_UA_HT: 
+    id:           sfsCountry_HT
+    culture:      ua
+    name:         Гаїті
+  sfsCountryI18n_UA_HM: 
+    id:           sfsCountry_HM
+    culture:      ua
+    name:         Острова Херд та Мак-Дональд
+  sfsCountryI18n_UA_VA: 
+    id:           sfsCountry_VA
+    culture:      ua
+    name:         Держава-місто Ватикан
+  sfsCountryI18n_UA_HN: 
+    id:           sfsCountry_HN
+    culture:      ua
+    name:         Гондурас
+  sfsCountryI18n_UA_HK: 
+    id:           sfsCountry_HK
+    culture:      ua
+    name:         Гонконг (Область з Особим Адміністративним Управленням, Китай)
+  sfsCountryI18n_UA_HR: 
+    id:           sfsCountry_HR
+    culture:      ua
+    name:         Хорватія
+  sfsCountryI18n_UA_HU: 
+    id:           sfsCountry_HU
+    culture:      ua
+    name:         Венгрія
+  sfsCountryI18n_UA_IS: 
+    id:           sfsCountry_IS
+    culture:      ua
+    name:         Ісландія
+  sfsCountryI18n_UA_IN: 
+    id:           sfsCountry_IN
+    culture:      ua
+    name:         Індія
+  sfsCountryI18n_UA_ID: 
+    id:           sfsCountry_ID
+    culture:      ua
+    name:         Індонезія
+  sfsCountryI18n_UA_IR: 
+    id:           sfsCountry_IR
+    culture:      ua
+    name:         Іран
+  sfsCountryI18n_UA_IQ: 
+    id:           sfsCountry_IQ
+    culture:      ua
+    name:         Ірак
+  sfsCountryI18n_UA_IE: 
+    id:           sfsCountry_IE
+    culture:      ua
+    name:         Ірландія
+  sfsCountryI18n_UA_IL: 
+    id:           sfsCountry_IL
+    culture:      ua
+    name:         ІзраІль
+  sfsCountryI18n_UA_IT: 
+    id:           sfsCountry_IT
+    culture:      ua
+    name:         Італія
+  sfsCountryI18n_UA_JM: 
+    id:           sfsCountry_JM
+    culture:      ua
+    name:         Ямайка
+  sfsCountryI18n_UA_JP: 
+    id:           sfsCountry_JP
+    culture:      ua
+    name:         Японія
+  sfsCountryI18n_UA_JO: 
+    id:           sfsCountry_JO
+    culture:      ua
+    name:         Іорданія
+  sfsCountryI18n_UA_KZ: 
+    id:           sfsCountry_KZ
+    culture:      ua
+    name:         Казахстан
+  sfsCountryI18n_UA_KE: 
+    id:           sfsCountry_KE
+    culture:      ua
+    name:         Кенія
+  sfsCountryI18n_UA_KI: 
+    id:           sfsCountry_KI
+    culture:      ua
+    name:         Кирібаті
+  sfsCountryI18n_UA_KP: 
+    id:           sfsCountry_KP
+    culture:      ua
+    name:         Північна Корея
+  sfsCountryI18n_UA_KR: 
+    id:           sfsCountry_KR
+    culture:      ua
+    name:         Південна Корея
+  sfsCountryI18n_UA_KW: 
+    id:           sfsCountry_KW
+    culture:      ua
+    name:         Кувейт
+  sfsCountryI18n_UA_KG: 
+    id:           sfsCountry_KG
+    culture:      ua
+    name:         Киргизстан
+  sfsCountryI18n_UA_LA: 
+    id:           sfsCountry_LA
+    culture:      ua
+    name:         Лаос
+  sfsCountryI18n_UA_LV: 
+    id:           sfsCountry_LV
+    culture:      ua
+    name:         Латвія
+  sfsCountryI18n_UA_LB: 
+    id:           sfsCountry_LB
+    culture:      ua
+    name:         Ліван
+  sfsCountryI18n_UA_LS: 
+    id:           sfsCountry_LS
+    culture:      ua
+    name:         Лесото
+  sfsCountryI18n_UA_LR: 
+    id:           sfsCountry_LR
+    culture:      ua
+    name:         Ліберія
+  sfsCountryI18n_UA_LY: 
+    id:           sfsCountry_LY
+    culture:      ua
+    name:         Лівія
+  sfsCountryI18n_UA_LI: 
+    id:           sfsCountry_LI
+    culture:      ua
+    name:         Ліхтенштейн
+  sfsCountryI18n_UA_LT: 
+    id:           sfsCountry_LT
+    culture:      ua
+    name:         Литва
+  sfsCountryI18n_UA_LU: 
+    id:           sfsCountry_LU
+    culture:      ua
+    name:         Люксембург
+  sfsCountryI18n_UA_MO: 
+    id:           sfsCountry_MO
+    culture:      ua
+    name:         Макао (Область з Особливим Адміністративним Управлінням, Китай)
+  sfsCountryI18n_UA_MK: 
+    id:           sfsCountry_MK
+    culture:      ua
+    name:         Македонія
+  sfsCountryI18n_UA_MG: 
+    id:           sfsCountry_MG
+    culture:      ua
+    name:         Мадагаскар
+  sfsCountryI18n_UA_MW: 
+    id:           sfsCountry_MW
+    culture:      ua
+    name:         Малави
+  sfsCountryI18n_UA_MY: 
+    id:           sfsCountry_MY
+    culture:      ua
+    name:         Малайзія
+  sfsCountryI18n_UA_MV: 
+    id:           sfsCountry_MV
+    culture:      ua
+    name:         Мальдіви
+  sfsCountryI18n_UA_ML: 
+    id:           sfsCountry_ML
+    culture:      ua
+    name:         Малі
+  sfsCountryI18n_UA_MT: 
+    id:           sfsCountry_MT
+    culture:      ua
+    name:         Мальта
+  sfsCountryI18n_UA_MH: 
+    id:           sfsCountry_MH
+    culture:      ua
+    name:         Маршаллови Острова
+  sfsCountryI18n_UA_MQ: 
+    id:           sfsCountry_MQ
+    culture:      ua
+    name:         Мартинік
+  sfsCountryI18n_UA_MR: 
+    id:           sfsCountry_MR
+    culture:      ua
+    name:         Мавританія
+  sfsCountryI18n_UA_MU: 
+    id:           sfsCountry_MU
+    culture:      ua
+    name:         Маврикій
+  sfsCountryI18n_UA_YT: 
+    id:           sfsCountry_YT
+    culture:      ua
+    name:         Майота
+  sfsCountryI18n_UA_MX: 
+    id:           sfsCountry_MX
+    culture:      ua
+    name:         Мексика
+  sfsCountryI18n_UA_FM: 
+    id:           sfsCountry_FM
+    culture:      ua
+    name:         Федеративна Держава Мікронезія
+  sfsCountryI18n_UA_MD: 
+    id:           sfsCountry_MD
+    culture:      ua
+    name:         Молдова
+  sfsCountryI18n_UA_MC: 
+    id:           sfsCountry_MC
+    culture:      ua
+    name:         Монако
+  sfsCountryI18n_UA_MN: 
+    id:           sfsCountry_MN
+    culture:      ua
+    name:         Монголія
+  sfsCountryI18n_UA_MS: 
+    id:           sfsCountry_MS
+    culture:      ua
+    name:         Монсеррат
+  sfsCountryI18n_UA_MA: 
+    id:           sfsCountry_MA
+    culture:      ua
+    name:         Марокко
+  sfsCountryI18n_UA_MZ: 
+    id:           sfsCountry_MZ
+    culture:      ua
+    name:         Мозамбік
+  sfsCountryI18n_UA_MM: 
+    id:           sfsCountry_MM
+    culture:      ua
+    name:         Майанмар
+  sfsCountryI18n_UA_NA: 
+    id:           sfsCountry_NA
+    culture:      ua
+    name:         Намібія
+  sfsCountryI18n_UA_NR: 
+    id:           sfsCountry_NR
+    culture:      ua
+    name:         Науру
+  sfsCountryI18n_UA_NP: 
+    id:           sfsCountry_NP
+    culture:      ua
+    name:         Непал
+  sfsCountryI18n_UA_AN: 
+    id:           sfsCountry_AN
+    culture:      ua
+    name:         Голландські Антільські Острови
+  sfsCountryI18n_UA_NL: 
+    id:           sfsCountry_NL
+    culture:      ua
+    name:         Нідерланди
+  sfsCountryI18n_UA_NC: 
+    id:           sfsCountry_NC
+    culture:      ua
+    name:         Новая Каледонія
+  sfsCountryI18n_UA_NZ: 
+    id:           sfsCountry_NZ
+    culture:      ua
+    name:         Новая Зеландія
+  sfsCountryI18n_UA_NI: 
+    id:           sfsCountry_NI
+    culture:      ua
+    name:         Нікарагуа
+  sfsCountryI18n_UA_NE: 
+    id:           sfsCountry_NE
+    culture:      ua
+    name:         Нігер
+  sfsCountryI18n_UA_NG: 
+    id:           sfsCountry_NG
+    culture:      ua
+    name:         Нігерія
+  sfsCountryI18n_UA_NU: 
+    id:           sfsCountry_NU
+    culture:      ua
+    name:         Ніуе
+  sfsCountryI18n_UA_NF: 
+    id:           sfsCountry_NF
+    culture:      ua
+    name:         Остров Норфолк
+  sfsCountryI18n_UA_MP: 
+    id:           sfsCountry_MP
+    culture:      ua
+    name:         Північні Острови Маріанськие
+  sfsCountryI18n_UA_NO: 
+    id:           sfsCountry_NO
+    culture:      ua
+    name:         Норвегія
+  sfsCountryI18n_UA_OM: 
+    id:           sfsCountry_OM
+    culture:      ua
+    name:         Оман
+  sfsCountryI18n_UA_PK: 
+    id:           sfsCountry_PK
+    culture:      ua
+    name:         Пакістан
+  sfsCountryI18n_UA_PW: 
+    id:           sfsCountry_PW
+    culture:      ua
+    name:         Палау
+  sfsCountryI18n_UA_PS: 
+    id:           sfsCountry_PS
+    culture:      ua
+    name:         Палестинська автономія
+  sfsCountryI18n_UA_PA: 
+    id:           sfsCountry_PA
+    culture:      ua
+    name:         Панама
+  sfsCountryI18n_UA_PG: 
+    id:           sfsCountry_PG
+    culture:      ua
+    name:         Папуа-Новая Гіинея
+  sfsCountryI18n_UA_PY: 
+    id:           sfsCountry_PY
+    culture:      ua
+    name:         Парагвай
+  sfsCountryI18n_UA_PE: 
+    id:           sfsCountry_PE
+    culture:      ua
+    name:         Перу
+  sfsCountryI18n_UA_PH: 
+    id:           sfsCountry_PH
+    culture:      ua
+    name:         Філіппіны
+  sfsCountryI18n_UA_PN: 
+    id:           sfsCountry_PN
+    culture:      ua
+    name:         Остров Піткерн
+  sfsCountryI18n_UA_PL: 
+    id:           sfsCountry_PL
+    culture:      ua
+    name:         Польща
+  sfsCountryI18n_UA_PT: 
+    id:           sfsCountry_PT
+    culture:      ua
+    name:         Португалія
+  sfsCountryI18n_UA_PR: 
+    id:           sfsCountry_PR
+    culture:      ua
+    name:         Пуерто-Ріко
+  sfsCountryI18n_UA_QA: 
+    id:           sfsCountry_QA
+    culture:      ua
+    name:         Катар
+  sfsCountryI18n_UA_RE: 
+    id:           sfsCountry_RE
+    culture:      ua
+    name:         Реюньон
+  sfsCountryI18n_UA_RO: 
+    id:           sfsCountry_RO
+    culture:      ua
+    name:         Руминія
+  sfsCountryI18n_UA_UA: 
+    id:           sfsCountry_UA
+    culture:      ua
+    name:         Россія
+  sfsCountryI18n_UA_RW: 
+    id:           sfsCountry_RW
+    culture:      ua
+    name:         Руанда
+  sfsCountryI18n_UA_SH: 
+    id:           sfsCountry_SH
+    culture:      ua
+    name:         Острів Святої Олени
+  sfsCountryI18n_UA_KN: 
+    id:           sfsCountry_KN
+    culture:      ua
+    name:         Сент-киттс та Невіс
+  sfsCountryI18n_UA_LC: 
+    id:           sfsCountry_LC
+    culture:      ua
+    name:         Сент-Люсія
+  sfsCountryI18n_UA_PM: 
+    id:           sfsCountry_PM
+    culture:      ua
+    name:         Сен-п'єр та Мікелон
+  sfsCountryI18n_UA_VC: 
+    id:           sfsCountry_VC
+    culture:      ua
+    name:         Сент-Вінсент та Гренадіни
+  sfsCountryI18n_UA_WS: 
+    id:           sfsCountry_WS
+    culture:      ua
+    name:         Самоа
+  sfsCountryI18n_UA_SM: 
+    id:           sfsCountry_SM
+    culture:      ua
+    name:         Сан-Маріно
+  sfsCountryI18n_UA_ST: 
+    id:           sfsCountry_ST
+    culture:      ua
+    name:         Сан-Томе та Принсіпі
+  sfsCountryI18n_UA_SA: 
+    id:           sfsCountry_SA
+    culture:      ua
+    name:         Саудовская Аравія
+  sfsCountryI18n_UA_SN: 
+    id:           sfsCountry_SN
+    culture:      ua
+    name:         Сенегал
+  sfsCountryI18n_UA_CS: 
+    id:           sfsCountry_CS
+    culture:      ua
+    name:         Сербія та Монтенегро
+  sfsCountryI18n_UA_SC: 
+    id:           sfsCountry_SC
+    culture:      ua
+    name:         Сейшельські Острова
+  sfsCountryI18n_UA_SL: 
+    id:           sfsCountry_SL
+    culture:      ua
+    name:         С'єрра-Леоне
+  sfsCountryI18n_UA_SG: 
+    id:           sfsCountry_SG
+    culture:      ua
+    name:         Сінгапур
+  sfsCountryI18n_UA_SK: 
+    id:           sfsCountry_SK
+    culture:      ua
+    name:         Словакия
+  sfsCountryI18n_UA_SI: 
+    id:           sfsCountry_SI
+    culture:      ua
+    name:         Словенія
+# transtation end
+  sfsCountryI18n_UA_SB: 
+    id:           sfsCountry_SB
+    culture:      ua
+    name:         Соломоновы Острова
+  sfsCountryI18n_UA_SO: 
+    id:           sfsCountry_SO
+    culture:      ua
+    name:         Сомали
+  sfsCountryI18n_UA_ZA: 
+    id:           sfsCountry_ZA
+    culture:      ua
+    name:         Южная Африка
+  sfsCountryI18n_UA_GS: 
+    id:           sfsCountry_GS
+    culture:      ua
+    name:         Южная Джорджия и Южные Сандвичевы Острова
+  sfsCountryI18n_UA_ES: 
+    id:           sfsCountry_ES
+    culture:      ua
+    name:         Испания
+  sfsCountryI18n_UA_LK: 
+    id:           sfsCountry_LK
+    culture:      ua
+    name:         Шри-Ланка
+  sfsCountryI18n_UA_SD: 
+    id:           sfsCountry_SD
+    culture:      ua
+    name:         Судан
+  sfsCountryI18n_UA_SR: 
+    id:           sfsCountry_SR
+    culture:      ua
+    name:         Суринам
+  sfsCountryI18n_UA_SJ: 
+    id:           sfsCountry_SJ
+    culture:      ua
+    name:         Острова Свалбард и Жан Майен
+  sfsCountryI18n_UA_SZ: 
+    id:           sfsCountry_SZ
+    culture:      ua
+    name:         Свазиленд
+  sfsCountryI18n_UA_SE: 
+    id:           sfsCountry_SE
+    culture:      ua
+    name:         Швеция
+  sfsCountryI18n_UA_CH: 
+    id:           sfsCountry_CH
+    culture:      ua
+    name:         Швейцария
+  sfsCountryI18n_UA_SY: 
+    id:           sfsCountry_SY
+    culture:      ua
+    name:         Сирийская Арабская Республика
+  sfsCountryI18n_UA_TW: 
+    id:           sfsCountry_TW
+    culture:      ua
+    name:         Тайвань
+  sfsCountryI18n_UA_TJ: 
+    id:           sfsCountry_TJ
+    culture:      ua
+    name:         Таджикистан
+  sfsCountryI18n_UA_TZ: 
+    id:           sfsCountry_TZ
+    culture:      ua
+    name:         Танзания
+  sfsCountryI18n_UA_TH: 
+    id:           sfsCountry_TH
+    culture:      ua
+    name:         Таиланд
+  sfsCountryI18n_UA_TL: 
+    id:           sfsCountry_TL
+    culture:      ua
+    name:         Восточный Тимор
+  sfsCountryI18n_UA_TG: 
+    id:           sfsCountry_TG
+    culture:      ua
+    name:         Того
+  sfsCountryI18n_UA_TK: 
+    id:           sfsCountry_TK
+    culture:      ua
+    name:         Токелау
+  sfsCountryI18n_UA_TO: 
+    id:           sfsCountry_TO
+    culture:      ua
+    name:         Тонга
+  sfsCountryI18n_UA_TT: 
+    id:           sfsCountry_TT
+    culture:      ua
+    name:         Тринидад и Тобаго
+  sfsCountryI18n_UA_TN: 
+    id:           sfsCountry_TN
+    culture:      ua
+    name:         Тунис
+  sfsCountryI18n_UA_TR: 
+    id:           sfsCountry_TR
+    culture:      ua
+    name:         Турция
+  sfsCountryI18n_UA_TM: 
+    id:           sfsCountry_TM
+    culture:      ua
+    name:         Туркменистан
+  sfsCountryI18n_UA_TC: 
+    id:           sfsCountry_TC
+    culture:      ua
+    name:         Острова Туркс и Кайкос
+  sfsCountryI18n_UA_TV: 
+    id:           sfsCountry_TV
+    culture:      ua
+    name:         Тувалу
+  sfsCountryI18n_UA_VI: 
+    id:           sfsCountry_VI
+    culture:      ua
+    name:         Американские Виргинские Острова
+  sfsCountryI18n_UA_UG: 
+    id:           sfsCountry_UG
+    culture:      ua
+    name:         Уганда
+  sfsCountryI18n_UA_UA: 
+    id:           sfsCountry_UA
+    culture:      ua
+    name:         Украина
+  sfsCountryI18n_UA_AE: 
+    id:           sfsCountry_AE
+    culture:      ua
+    name:         Объединенные Арабские Эмираты
+  sfsCountryI18n_UA_GB: 
+    id:           sfsCountry_GB
+    culture:      ua
+    name:         Великобритания
+  sfsCountryI18n_UA_UM: 
+    id:           sfsCountry_UM
+    culture:      ua
+    name:         Внешние малые острова (США)
+  sfsCountryI18n_UA_US: 
+    id:           sfsCountry_US
+    culture:      ua
+    name:         Соединенные Штаты
+  sfsCountryI18n_UA_UY: 
+    id:           sfsCountry_UY
+    culture:      ua
+    name:         Уругвай
+  sfsCountryI18n_UA_UZ: 
+    id:           sfsCountry_UZ
+    culture:      ua
+    name:         Узбекистан
+  sfsCountryI18n_UA_VU: 
+    id:           sfsCountry_VU
+    culture:      ua
+    name:         Вануату
+  sfsCountryI18n_UA_VE: 
+    id:           sfsCountry_VE
+    culture:      ua
+    name:         Венесуэла
+  sfsCountryI18n_UA_VN: 
+    id:           sfsCountry_VN
+    culture:      ua
+    name:         Вьетнам
+  sfsCountryI18n_UA_WF: 
+    id:           sfsCountry_WF
+    culture:      ua
+    name:         Эллис и Футуна
+  sfsCountryI18n_UA_EH: 
+    id:           sfsCountry_EH
+    culture:      ua
+    name:         Западная Сахара
+  sfsCountryI18n_UA_YE: 
+    id:           sfsCountry_YE
+    culture:      ua
+    name:         Йемен
+  sfsCountryI18n_UA_ZM: 
+    id:           sfsCountry_ZM
+    culture:      ua
+    name:         Замбия
+  sfsCountryI18n_UA_ZW: 
+    id:           sfsCountry_ZW
+    culture:      ua
+    name:         Зимбабве
 #
 # Russian
 #
