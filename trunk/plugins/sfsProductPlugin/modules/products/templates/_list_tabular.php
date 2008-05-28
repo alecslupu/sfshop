@@ -4,7 +4,6 @@
         <div style="margin-left: 1px; margin-right: 1px; padding-right: 20px">
             <table width="100%"  border="0" cellspacing="0" cellpadding="0" style="padding: 10px">
                 <tr align="left" valign="top">
-                    
                     <?php /*$urlToThumbnail = $asset->getUrlToThumbnail(PhotoPeer::MEDIUM);
                         if ($urlToThumbnail): ?>
                         <td width="110"><?php echo link_to(image_tag($urlToThumbnail, array('width' => '100', 'height' => '80')), '@assetDetails?id=' . $asset->getId()); ?></td>

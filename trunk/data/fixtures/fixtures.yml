@@ -62,7 +62,6 @@ sfsMemberSecretQuestionsI18n:
 #
 # Categories
 #
-
 sfsCategory: 
   sfsCategory_1:
     parent_id:   0
@@ -893,3 +892,37 @@ sfsProduct2Category:
   sfsProduct2Category_7:
     product_id:  sfsProduct_7
     category_id: sfsCategory_16
+    
+#
+# Thumbnails types
+#
+sfsThumbnailType:
+  sfsThumbnailType_1:
+    asset_type_id: 1
+    name:          small
+    is_active:     1
+  sfsThumbnailType_2:
+    asset_type_id: 1
+    name:          medium
+    is_active:     1
+  sfsThumbnailType_3:
+    asset_type_id: 1
+    name:          large
+    is_active:     1
+    
+sfsThumbnailSize:
+  sfsThumbnailSize_1:
+    thumbnail_type_id: sfsThumbnailType_1
+    width:             90
+    height:            120
+    is_active:         1
+  sfsThumbnailSize_2:
+    thumbnail_type_id: sfsThumbnailType_2
+    width:             200
+    height:            240
+    is_active:         1
+  sfsThumbnailSize_3:
+    thumbnail_type_id: sfsThumbnailType_2
+    width:             400
+    height:            600
+    is_active:         1
