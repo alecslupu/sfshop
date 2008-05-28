@@ -2699,31 +2699,30 @@ sfsCountryI18n:
     id:           sfsCountry_SI
     culture:      ua
     name:         Словенія
-# transtation end
   sfsCountryI18n_UA_SB: 
     id:           sfsCountry_SB
     culture:      ua
-    name:         Соломоновы Острова
+    name:         Соломонові Острова
   sfsCountryI18n_UA_SO: 
     id:           sfsCountry_SO
     culture:      ua
-    name:         Сомали
+    name:         Сомалі
   sfsCountryI18n_UA_ZA: 
     id:           sfsCountry_ZA
     culture:      ua
-    name:         Южная Африка
+    name:         Північна Африка
   sfsCountryI18n_UA_GS: 
     id:           sfsCountry_GS
     culture:      ua
-    name:         Южная Джорджия и Южные Сандвичевы Острова
+    name:         Північна Джорджия та Північна Сандвічеви Острова
   sfsCountryI18n_UA_ES: 
     id:           sfsCountry_ES
     culture:      ua
-    name:         Испания
+    name:         Іспанія
   sfsCountryI18n_UA_LK: 
     id:           sfsCountry_LK
     culture:      ua
-    name:         Шри-Ланка
+    name:         Шрі-Ланка
   sfsCountryI18n_UA_SD: 
     id:           sfsCountry_SD
     culture:      ua
@@ -2731,27 +2730,27 @@ sfsCountryI18n:
   sfsCountryI18n_UA_SR: 
     id:           sfsCountry_SR
     culture:      ua
-    name:         Суринам
+    name:         Сурінам
   sfsCountryI18n_UA_SJ: 
     id:           sfsCountry_SJ
     culture:      ua
-    name:         Острова Свалбард и Жан Майен
+    name:         Острова Свалбард та Жан Майєн
   sfsCountryI18n_UA_SZ: 
     id:           sfsCountry_SZ
     culture:      ua
-    name:         Свазиленд
+    name:         Свазіленд
   sfsCountryI18n_UA_SE: 
     id:           sfsCountry_SE
     culture:      ua
-    name:         Швеция
+    name:         Швеція
   sfsCountryI18n_UA_CH: 
     id:           sfsCountry_CH
     culture:      ua
-    name:         Швейцария
+    name:         Швейцарія
   sfsCountryI18n_UA_SY: 
     id:           sfsCountry_SY
     culture:      ua
-    name:         Сирийская Арабская Республика
+    name:         Сирійска Арабска Республіка
   sfsCountryI18n_UA_TW: 
     id:           sfsCountry_TW
     culture:      ua
@@ -2759,7 +2758,7 @@ sfsCountryI18n:
   sfsCountryI18n_UA_TJ: 
     id:           sfsCountry_TJ
     culture:      ua
-    name:         Таджикистан
+    name:         Таджикістан
   sfsCountryI18n_UA_TZ: 
     id:           sfsCountry_TZ
     culture:      ua
@@ -2767,11 +2766,11 @@ sfsCountryI18n:
   sfsCountryI18n_UA_TH: 
     id:           sfsCountry_TH
     culture:      ua
-    name:         Таиланд
+    name:         Тайланд
   sfsCountryI18n_UA_TL: 
     id:           sfsCountry_TL
     culture:      ua
-    name:         Восточный Тимор
+    name:         Східний Тімор
   sfsCountryI18n_UA_TG: 
     id:           sfsCountry_TG
     culture:      ua
@@ -2787,23 +2786,23 @@ sfsCountryI18n:
   sfsCountryI18n_UA_TT: 
     id:           sfsCountry_TT
     culture:      ua
-    name:         Тринидад и Тобаго
+    name:         Трінідад та Тобаго
   sfsCountryI18n_UA_TN: 
     id:           sfsCountry_TN
     culture:      ua
-    name:         Тунис
+    name:         Туніс
   sfsCountryI18n_UA_TR: 
     id:           sfsCountry_TR
     culture:      ua
-    name:         Турция
+    name:         Турція
   sfsCountryI18n_UA_TM: 
     id:           sfsCountry_TM
     culture:      ua
-    name:         Туркменистан
+    name:         Туркменістан
   sfsCountryI18n_UA_TC: 
     id:           sfsCountry_TC
     culture:      ua
-    name:         Острова Туркс и Кайкос
+    name:         Острова Туркс та Кайкос
   sfsCountryI18n_UA_TV: 
     id:           sfsCountry_TV
     culture:      ua
@@ -2811,7 +2810,7 @@ sfsCountryI18n:
   sfsCountryI18n_UA_VI: 
     id:           sfsCountry_VI
     culture:      ua
-    name:         Американские Виргинские Острова
+    name:         Американські Віргінські Острова
   sfsCountryI18n_UA_UG: 
     id:           sfsCountry_UG
     culture:      ua
@@ -2819,23 +2818,23 @@ sfsCountryI18n:
   sfsCountryI18n_UA_UA: 
     id:           sfsCountry_UA
     culture:      ua
-    name:         Украина
+    name:         Украіна
   sfsCountryI18n_UA_AE: 
     id:           sfsCountry_AE
     culture:      ua
-    name:         Объединенные Арабские Эмираты
+    name:         Об'єдиненные Арабскі Емірати
   sfsCountryI18n_UA_GB: 
     id:           sfsCountry_GB
     culture:      ua
-    name:         Великобритания
+    name:         Великобританія
   sfsCountryI18n_UA_UM: 
     id:           sfsCountry_UM
     culture:      ua
-    name:         Внешние малые острова (США)
+    name:         Зовнішні малі острова (США)
   sfsCountryI18n_UA_US: 
     id:           sfsCountry_US
     culture:      ua
-    name:         Соединенные Штаты
+    name:         Об'єнані Штати
   sfsCountryI18n_UA_UY: 
     id:           sfsCountry_UY
     culture:      ua
@@ -2843,7 +2842,7 @@ sfsCountryI18n:
   sfsCountryI18n_UA_UZ: 
     id:           sfsCountry_UZ
     culture:      ua
-    name:         Узбекистан
+    name:         Узбекістан
   sfsCountryI18n_UA_VU: 
     id:           sfsCountry_VU
     culture:      ua
@@ -2851,19 +2850,19 @@ sfsCountryI18n:
   sfsCountryI18n_UA_VE: 
     id:           sfsCountry_VE
     culture:      ua
-    name:         Венесуэла
+    name:         Венесуела
   sfsCountryI18n_UA_VN: 
     id:           sfsCountry_VN
     culture:      ua
-    name:         Вьетнам
+    name:         В'єтнам
   sfsCountryI18n_UA_WF: 
     id:           sfsCountry_WF
     culture:      ua
-    name:         Эллис и Футуна
+    name:         Елліс та Футуна
   sfsCountryI18n_UA_EH: 
     id:           sfsCountry_EH
     culture:      ua
-    name:         Западная Сахара
+    name:         Західна Сахара
   sfsCountryI18n_UA_YE: 
     id:           sfsCountry_YE
     culture:      ua
@@ -2871,11 +2870,11 @@ sfsCountryI18n:
   sfsCountryI18n_UA_ZM: 
     id:           sfsCountry_ZM
     culture:      ua
-    name:         Замбия
+    name:         Замбія
   sfsCountryI18n_UA_ZW: 
     id:           sfsCountry_ZW
     culture:      ua
-    name:         Зимбабве
+    name:         Зімбабве
 #
 # Russian
 #
