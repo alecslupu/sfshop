@@ -6,7 +6,7 @@
 </td>
 <td valign="top" width="100%">
     <?php //include_partial('search_form'); ?>
-    <?php //include_partial('list', array('action' => '@assetsList', 'pager' => $pager,)) ?>
+    <?php include_partial('list', array('action' => '@products_list', 'pager' => $pager,)) ?>
 </td></tr></table>
 <br/>
     <?php //include_component('tags', 'popular'); ?>
