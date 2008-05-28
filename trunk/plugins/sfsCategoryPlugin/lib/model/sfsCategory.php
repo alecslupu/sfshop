@@ -19,11 +19,9 @@ class sfsCategory extends BasesfsCategory
      * @author Dmitry Nesteruk
      * @access public
      */
-    public function getChild($culture = null)
+    public function getChild()
     {
-        if ($culture == null) {
-            $culture = sfContext::getInstance()->getUser()->getCulture();
-        }
+        $culture = sfContext::getInstance()->getUser()->getCulture();
         
         if ($this->getHasChild()) {
             $criteria = new Criteria();
@@ -36,19 +34,30 @@ class sfsCategory extends BasesfsCategory
             return null;
         }
     }
-    /*
-    public function getAllChildCategories(&$allChildCategories)
+    
+    /**
+    * Recursive function for gets all child categories.
+    * 
+    * @param  &$childCategories
+    * @return null
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function getChildSeries(&$childCategories)
     {
-        $categories = $this->getChildCategories();
+        $categories = $this->getChild();
         
-        if (is_array($categories) && !empty($categories)) {
+        if ($categories != null) {
             foreach ($categories as $category) {
-                $allChildCategories[] = $category;
-                $category->getAllChildCategories($allChildCategories);
+                $childCategories[] = $category;
+                $category->getChildSeries($childCategories);
             }
         }
+        else {
+            return null;
+        }
     }
-    */
+    
     /**
      * Returns array with parents series for current category.
      *

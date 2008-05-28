@@ -1,3 +1,5 @@
 all:
   categories:
     url_separator: '_'
+    cache_life_time: 84600
+    cache_dir: %SF_CACHE_DIR%/categories
