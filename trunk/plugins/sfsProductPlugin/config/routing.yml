@@ -4,4 +4,4 @@
 
 products_list:
   url: /list/*
-  param: { module: products, action: list }
+  param: { module: products, action: products }

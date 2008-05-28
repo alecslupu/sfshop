@@ -19,13 +19,17 @@ propel:
     _attributes:        { phpName: sfsProduct, isI18N: true, i18nTable: products_i18n }
     id:                 ~
     manufacture_id:     { type: integer, required: true, foreignTable: manufactures, foreignReference: id, onDelete: cascade }
-    category_id:        { type: integer, required: true, foreignTable: categories, foreignReference: id, onDelete: cascade }
-    thumbnail:          varchar(255)
+    thumbnail_path:     varchar(255)
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
     price:              { type: decimal }
     quantity:           { type: integer }
     is_active:          { type: integer, size: 1 }
+
+  products2categories:
+    _attributes:        { phpName: sfsProducts2Categories }
+    product_id:         { type: integer, required: true, foreignTable: products, foreignReference: id, onDelete: cascade }
+    category_id:        { type: integer, required: true, foreignTable: categories, foreignReference: id, onDelete: cascade }
 
   products_i18n:
     _attributes:        { phpName: sfsProductI18n }
