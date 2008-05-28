@@ -77,7 +77,7 @@ class productsActions extends sfActions
         sfLoader::loadHelpers('sfsCategory');
         
         if ($categoryId = getCurrentCategoryId()) {
-            $criteria->addJoin(sfsProducts2CategoriesPeer::CATEGORY_ID, $category_id);
+            $criteria->addJoin(sfsProduct2CategoryPeer::PRODUCT_ID, sfsProductPeer::ID);
             $criteria->addJoin(AssetPeer::CATEGORY_ID, $category_id);
             
             $cache = new sfArrayCache(sfConfig::get('app_dirs_categories_cache', 'categories'));

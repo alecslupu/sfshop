@@ -7,6 +7,6 @@
  *
  * @package plugins.sfsProductPlugin.lib.model
  */ 
-class sfsProducts2Categories extends BasesfsProducts2Categories
+class sfsProduct2Category extends BasesfsProduct2Category
 {
 }
