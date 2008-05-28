@@ -134,6 +134,19 @@ function getLevelCatalog($cPath)
     
     return $level;
 }
+
+function getCurrentCategoryId()
+{
+    $request = sfContext::getInstance()->getRequest();
+    
+    if ($this->hasRequestParameter('cPath')) {
+        $c = explode(sfConfig::get('app_category_url_separator', '_'), $$request->getParameter('cPath'));
+        return $c[count($c)-1];
+    }
+    else {
+        return false;
+    }
+}
 /*
 function getChildSelectCategories($category)
 {

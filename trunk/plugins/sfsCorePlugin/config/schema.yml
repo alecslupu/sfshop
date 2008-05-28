@@ -1,6 +1,12 @@
 propel:
   _attributes:          { package: plugins.sfsCorePlugin.lib.model }
   
+  assets_types:
+    _attributes:        { phpName: sfsAssetsTypes }
+    id:                 ~
+    name:               varchar(255)
+    has_thumbnail:      { type: integer, size: 1, default: 0 }
+  
   languages:
     _attributes:        { phpName: sfsLanguage }
     culture:            { type: varchar(7), required: true, primaryKey: true }

@@ -1,0 +1,30 @@
+propel:
+  _attributes:          { package: plugins.sfsThumbnailPlugin.lib.model }
+
+  thumbnails_types:
+    _attributes:        { phpName: sfsThumbnailType }
+    id:                 ~
+    asset_type_id:      { type: integer, required: true, primaryKey: true, foreignTable: assets_types, foreignReference: id, onDelete: cascade }
+    name:               varchar(100)
+    is_active:          { type: integer, size: 1, default: 0 }
+
+  thumbnails_sizes:
+    _attributes:        { phpName: sfsThumbnailSize }
+    id:                 ~
+    thumbnail_type_id:  { type: integer, required: true, foreignTable: thumbnails_types, foreignReference: id, onDelete: cascade }
+    width:              { type: integer }
+    height:             { type: integer }
+    is_active:          { type: integer, size: 1, default: 0 }
+
+  thumbnails2assets:
+    _attributes:        { phpName: sfsThumbnails2Assets }
+    id:                 ~
+    asset_id:           { type: integer }
+    asset_model:        varchar(100)
+    thumbnail_type:     varchar(100)
+    width:              { type: integer }
+    height:             { type: integer }
+    created_at:         { type: timestamp }
+    updated_at:         { type: timestamp }
+    is_original:        { type: integer, size: 1, default: 0 }
+    is_converted:       { type: integer, size: 1, default: 0 }
