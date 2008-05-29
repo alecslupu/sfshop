@@ -1,0 +1,248 @@
+#
+# Catelogue
+#
+
+Catalogue:
+  Catalogue_ua:
+    cat_id:      1
+    name:        messages.ua
+    source_lang: en
+    target_lang: ua
+  Catalogue_ru:
+    cat_id:      2
+    name:        messages.ru
+    source_lang: en
+    target_lang: ru
+  Catalogue_en:
+    cat_id:      3
+    name:        messages.en
+    source_lang: en
+    target_lang: en
+
+#
+# Trans Unit
+#
+TransUnit:
+  # Ukrainian
+  TransUnit_UA_1:
+    cat_id:     Catalogue_ua
+    source:     Sign in
+    target:     Вхід
+    translated: 1
+  TransUnit_UA_2:
+    cat_id:     Catalogue_ua
+    source:     Forgot password
+    target:     Забув пароль
+    translated: 1
+  TransUnit_UA_3:
+    cat_id:     Catalogue_ua
+    source:     Registration
+    target:     Регістрація
+    translated: 1
+  TransUnit_UA_4:
+    cat_id:     Catalogue_ua
+    source:     Hello
+    target:     Привіт
+    translated: 1
+  TransUnit_UA_5:
+    cat_id:     Catalogue_ua
+    source:     Logout
+    target:     Вихід
+    translated: 1
+  TransUnit_UA_6:
+    cat_id:     Catalogue_ua
+    source:     Gender
+    target:     Стать
+    translated: 1
+  TransUnit_UA_7:
+    cat_id:     Catalogue_ua
+    source:     Email
+    target:     Електрона пошта
+    translated: 1
+  TransUnit_UA_8:
+    cat_id:     Catalogue_ua
+    source:     First name
+    target:     Имя та побатькові
+    translated: 1
+  TransUnit_UA_9:
+    cat_id:     Catalogue_ua
+    source:     Last name
+    target:     Призвище
+    translated: 1
+  TransUnit_UA_10:
+    cat_id:     Catalogue_ua
+    source:     Phone
+    target:     Телефон
+    translated: 1
+  TransUnit_UA_11:
+    cat_id:     Catalogue_ua
+    source:     Mobile phone
+    target:     Мобільний телефон
+    translated: 1
+  TransUnit_UA_12:
+    cat_id:     Catalogue_ua
+    source:     Password
+    target:     Пароль
+    translated: 1
+  TransUnit_UA_13:
+    cat_id:     Catalogue_ua
+    source:     Confirm password
+    target:     Підтвердження паролю
+    translated: 1
+  TransUnit_UA_14:
+    cat_id:     Catalogue_ua
+    source:     Secret question
+    target:     Секретне питання
+    translated: 1
+  TransUnit_UA_15:
+    cat_id:     Catalogue_ua
+    source:     Secret answer
+    target:     Відповідь на секретне питання
+    translated: 1
+  TransUnit_UA_16:
+    cat_id:     Catalogue_ua
+    source:     Address
+    target:     Адреса
+    translated: 1
+  TransUnit_UA_17:
+    cat_id:     Catalogue_ua
+    source:     Country
+    target:     Країна
+    translated: 1
+  TransUnit_UA_18:
+    cat_id:     Catalogue_ua
+    source:     State
+    target:     Область
+    translated: 1
+  TransUnit_UA_19:
+    cat_id:     Catalogue_ua
+    source:     City
+    target:     Місто
+    translated: 1
+  TransUnit_UA_20:
+    cat_id:     Catalogue_ua
+    source:     Street
+    target:     Вулиця / будинок
+    translated: 1
+  TransUnit_UA_21:
+    cat_id:     Catalogue_ua
+    source:     Company
+    target:     Компанія
+    translated: 1
+  TransUnit_UA_22:
+    cat_id:     Catalogue_ua
+    source:     Postcode
+    target:     Індекс
+    translated: 1
+
+  # Russian
+  TransUnit_RU_1:
+    cat_id:     Catalogue_ru
+    source:     Sign in
+    target:     Вход
+    translated: 1
+  TransUnit_RU_2:
+    cat_id:     Catalogue_ru
+    source:     Forgot password
+    target:     Забыл пароль
+    translated: 1
+  TransUnit_RU_3:
+    cat_id:     Catalogue_ru
+    source:     Registration
+    target:     Регистрация
+    translated: 1
+  TransUnit_RU_4:
+    cat_id:     Catalogue_ru
+    source:     Hello
+    target:     Привет
+    translated: 1
+  TransUnit_RU_5:
+    cat_id:     Catalogue_ru
+    source:     Logout
+    target:     Выход
+    translated: 1
+  TransUnit_RU_6:
+    cat_id:     Catalogue_ru
+    source:     Gender
+    target:     Пол
+    translated: 1
+  TransUnit_RU_7:
+    cat_id:     Catalogue_ru
+    source:     Email
+    target:     Електронна почта
+    translated: 1
+  TransUnit_RU_8:
+    cat_id:     Catalogue_ru
+    source:     First name
+    target:     Имя, отчество
+    translated: 1
+  TransUnit_RU_9:
+    cat_id:     Catalogue_ru
+    source:     Last name
+    target:     Фамилия
+    translated: 1
+  TransUnit_RU_10:
+    cat_id:     Catalogue_ru
+    source:     Phone
+    target:     Телефон
+    translated: 1
+  TransUnit_RU_11:
+    cat_id:     Catalogue_ru
+    source:     Mobile phone
+    target:     Мобильный телефон
+    translated: 1
+  TransUnit_RU_12:
+    cat_id:     Catalogue_ru
+    source:     Password
+    target:     Пароль
+    translated: 1
+  TransUnit_RU_13:
+    cat_id:     Catalogue_ru
+    source:     Confirm password
+    target:     Подтверджение пароля
+    translated: 1
+  TransUnit_RU_14:
+    cat_id:     Catalogue_ru
+    source:     Secret question
+    target:     Секретный вопрос
+    translated: 1
+  TransUnit_RU_15:
+    cat_id:     Catalogue_ru
+    source:     Secret answer
+    target:     Отвыт на секретный вопрос
+    translated: 1
+  TransUnit_RU_16:
+    cat_id:     Catalogue_ru
+    source:     Address
+    target:     Адресс
+    translated: 1
+  TransUnit_RU_17:
+    cat_id:     Catalogue_ru
+    source:     Country
+    target:     Странна
+    translated: 1
+  TransUnit_RU_18:
+    cat_id:     Catalogue_ru
+    source:     State
+    target:     Область
+    translated: 1
+  TransUnit_RU_19:
+    cat_id:     Catalogue_ru
+    source:     City
+    target:     Город
+    translated: 1
+  TransUnit_RU_20:
+    cat_id:     Catalogue_ru
+    source:     Street
+    target:     Улица / дом
+    translated: 1
+  TransUnit_RU_21:
+    cat_id:     Catalogue_ru
+    source:     Company
+    target:     Компания
+    translated: 1
+  TransUnit_RU_22:
+    cat_id:     Catalogue_ru
+    source:     Postcode
+    target:     Индекс
+    translated: 1

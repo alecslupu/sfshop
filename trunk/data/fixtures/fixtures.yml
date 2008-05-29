@@ -1,4 +1,15 @@
 #
+# Asset types
+#
+sfsAssetsTypes:
+  sfsAssetsTypes_1:
+    name:          products
+    has_thumbnail: 1
+  sfsAssetsTypes_2:
+    name:          categories
+    has_thumbnail: 1
+
+#
 # Members
 #
 sfsMember: 
@@ -898,15 +909,15 @@ sfsProduct2Category:
 #
 sfsThumbnailType:
   sfsThumbnailType_1:
-    asset_type_id: 1
+    asset_type_id: sfsAssetsTypes_1
     name:          small
     is_active:     1
   sfsThumbnailType_2:
-    asset_type_id: 1
+    asset_type_id: sfsAssetsTypes_1
     name:          medium
     is_active:     1
   sfsThumbnailType_3:
-    asset_type_id: 1
+    asset_type_id: sfsAssetsTypes_1
     name:          large
     is_active:     1
     
