@@ -1,4 +1,4 @@
-<?php use_helper('Date', 'AddressBook') ?>
+<?php use_helper('Date', 'sfsAddressBook') ?>
 
 <table cellspacing="0" width="100%">
 <thead>

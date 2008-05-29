@@ -16,5 +16,6 @@ class defaultActions extends sfActions
    */
   public function executeIndex()
   {
+      //$this->getUser()->setCulture('ua');
   }
 }

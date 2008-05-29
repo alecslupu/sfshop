@@ -165,21 +165,27 @@ class membersActions extends sfActions
     */
     public function executeConfirmEmail()
     {
-        $this->form = new sfsConfirmEmailForm();
-        $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code')));
-        
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
+        if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('confirmed')) {
+            $this->redirect('@homepage');
+        }
+        else {
+            $this->form = new sfsConfirmEmailForm();
+            $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code')));
             
-            if ($this->form->isValid()) {
-                $member = sfsMemberPeer::retrieveByConfirmCode($this->getRequestParameter('confirm_code'));
-                $member->setIsConfirmed(sfsMemberPeer::CONFIRMED);
-                $member->save();
+            if ($this->getRequest()->isMethod('post')) {
+                $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
                 
-                $this->getUser()->login($member);
-                
-                $this->getUser()->setFlash('message', 'You are confirmed your email. Thanks!');
-                $this->redirect('@members_confirmRegistration');
+                if ($this->form->isValid()) {
+                    $member = sfsMemberPeer::retrieveByConfirmCode($this->getRequestParameter('confirm_code'));
+                    $member->setIsConfirmed(sfsMemberPeer::CONFIRMED);
+                    $member->save();
+                    
+                    $this->getUser()->login($member);
+                    
+                    $this->getUser()->setFlash('message', 'You are confirmed your email. Thanks!');
+                    $this->getUser()->setFlash('confirmed', true);
+                    $this->redirect('@members_confirmRegistration');
+                }
             }
         }
     }

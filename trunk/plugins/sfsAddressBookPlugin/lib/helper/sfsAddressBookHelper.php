@@ -16,7 +16,7 @@ function format_address($address)
         $array = array(
             '%first_name%' => $address->getFirstName(),
             '%last_name%'  => $address->getLastName(),
-            '%country%'    => format_country($address->getCountryCid()),
+            '%country%'    => sfsCountryPeer::retrieveByPK($address->getCountryId())->getName(),
             '%state%'      => $address->getState(),
             '%city%'       => $address->getCity(),
             '%street%'     => $address->getStreet(),

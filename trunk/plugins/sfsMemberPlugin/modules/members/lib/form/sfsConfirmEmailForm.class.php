@@ -1,5 +1,5 @@
 <?php
-class sfsConfirmRegistrationForm extends sfsMemberForm
+class sfsConfirmEmailForm extends sfsMemberForm
 {
     public function configure()
     {
