@@ -4,7 +4,7 @@ class sfsRegistrationForm extends sfsMemberForm
     public function configure()
     {
         $arrayQuestions = array();
-        $questions = sfsMemberSecretQuestionsPeer::getQuestionsWithI18n();
+        $questions = sfsMemberSecretQuestionsPeer::getAllAvaliable();
         
         if ($questions !== null) {
             $arrayQuestions[] = '';
@@ -75,6 +75,10 @@ class sfsRegistrationForm extends sfsMemberForm
             array(
                 'required'   => true, 
                 'min_length' => 4
+            ),
+            array(
+                'min_length' => 'First name can not be less 4 characters',
+                'max_length' => 'First name number can not be more 255 characters',
             )
         );
         
@@ -82,6 +86,10 @@ class sfsRegistrationForm extends sfsMemberForm
             array(
                 'required'   => true, 
                 'min_length' => 4
+            ),
+            array(
+                'min_length' => 'Last name can not be less 4 characters',
+                'max_length' => 'Last name can not be more 255 characters',
             )
         );
         
@@ -92,7 +100,7 @@ class sfsRegistrationForm extends sfsMemberForm
                         'required' => false,
                         'pattern'  => '/^[0-9()]{1,}$/i'
                     ),
-                    array('invalid'  => 'Phone number must contain only numerals and "()"')
+                    array('invalid'  => 'Phone number must contain only numerals and "()" symbols')
                 ),
                 new sfValidatorString(
                     array(
@@ -114,7 +122,7 @@ class sfsRegistrationForm extends sfsMemberForm
                         'required' => false,
                         'pattern'  => '/^[0-9()]{1,}$/i'
                     ),
-                    array('invalid'  => 'Mobile phone number must contain only numerals and "()"')
+                    array('invalid'  => 'Mobile phone number must contain only numerals and "()" symbols')
                 ),
                 new sfValidatorString(
                     array(

@@ -21,15 +21,23 @@ class sfsEmailTemplatePeer extends BasesfsEmailTemplatePeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function getTemplate($name, $culture)
+    public static function retrieveByName($name)
     {
         $criteria = new Criteria();
         $criteria->add(self::NAME, $name);
-        $objects = self::doSelectWithI18n($criteria, $culture);
+        $criteria->setLimit(1);
+        
+        $objects = self::doSelectWithTranslation($criteria);
         
         if ($objects) {
             return $objects[0];
         }
+        else {
+            if ($template == null) {
+                throw new sfStorageException(sprintf('The template with name "%s" does not exist, you should add this template to database', $name));
+            }
+        }
+        
         return null;
     }
 }

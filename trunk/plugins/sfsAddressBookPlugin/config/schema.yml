@@ -9,7 +9,7 @@ propel:
     first_name:         varchar(255)
     last_name:          varchar(255)
     company:            varchar(255)
-    country_id:         { type: integer, primaryKey: true, foreignTable: countries, foreignReference: id, onUpdate: cascade, onDelete: cascade }
+    country_id:         { type: integer, foreignTable: countries, foreignReference: id, onUpdate: cascade, onDelete: cascade }
     state:              varchar(32)
     city:               varchar(32)
     street:             varchar(64)

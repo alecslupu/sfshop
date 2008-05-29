@@ -94,11 +94,9 @@ class addressBookActions extends sfActions
         else {
             $address = sfsAddressBookPeer::retrieveByPk($this->getRequestParameter($id));
             
-            if ($address->getMemberId() != $this->getUser()->getMemberId()) {
+            if ($address == null || $address->getMemberId() != $this->getUser()->getMemberId()) {
                 $this->forward404();
             }
-            
-            $this->forward404Unless($address);
         }
         
         return $address;

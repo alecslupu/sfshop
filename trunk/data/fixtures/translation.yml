@@ -57,7 +57,7 @@ TransUnit:
   TransUnit_UA_7:
     cat_id:     Catalogue_ua
     source:     Email
-    target:     Електрона пошта
+    target:     Електронна пошта
     translated: 1
   TransUnit_UA_8:
     cat_id:     Catalogue_ua
@@ -67,7 +67,7 @@ TransUnit:
   TransUnit_UA_9:
     cat_id:     Catalogue_ua
     source:     Last name
-    target:     Призвище
+    target:     Прізвище
     translated: 1
   TransUnit_UA_10:
     cat_id:     Catalogue_ua
@@ -133,6 +133,172 @@ TransUnit:
     cat_id:     Catalogue_ua
     source:     Postcode
     target:     Індекс
+    translated: 1
+
+  TransUnit_UA_22:
+    cat_id:     Catalogue_ua
+    source:     Language
+    target:     Мова
+    translated: 1
+  TransUnit_UA_23:
+    cat_id:     Catalogue_ua
+    source:     Categories
+    target:     Категорії
+    translated: 1
+  TransUnit_UA_24:
+    cat_id:     Catalogue_ua
+    source:     Register
+    target:     Зареєструватися
+    translated: 1
+  TransUnit_UA_25:
+    cat_id:     Catalogue_ua
+    source:     Required.
+    target:     Поле обов'язкове
+    translated: 1
+  TransUnit_UA_25:
+    cat_id:     Catalogue_ua
+    source:     This is not a valid email address
+    target:     Ви ввели не вірний адрес електронної пошти
+    translated: 1
+  TransUnit_UA_26:
+    cat_id:     Catalogue_ua
+    source:     Phone number can not be less 4 numerals
+    target:     Номер телефону не може бути менше ніж 4 символи
+    translated: 1
+  TransUnit_UA_27:
+    cat_id:     Catalogue_ua
+    source:     Phone number must contain only numerals and "()" symbols
+    target:     Номер телефону може включати в себе тільки цифри та символи "()"
+    translated: 1
+  TransUnit_UA_28:
+    cat_id:     Catalogue_ua
+    source:     First name can not be less 4 characters
+    target:     Ім'я та побатькові не може бути менше ніж 4 символи
+    translated: 1
+  TransUnit_UA_29:
+    cat_id:     Catalogue_ua
+    source:     First name can not be more 255 characters
+    target:     Ім'я та побатькові не може бути быльше ніж 255 символи
+    translated: 1
+  TransUnit_UA_30:
+    cat_id:     Catalogue_ua
+    source:     Last name can not be less 4 characters
+    target:     Прізвище не може бути менше ніж 4 символи
+    translated: 1
+  TransUnit_UA_31:
+    cat_id:     Catalogue_ua
+    source:     Last name can not be more 4 characters
+    target:     Прізвище не може бути більше ніж 255 символи
+    translated: 1
+  TransUnit_UA_32:
+    cat_id:     Catalogue_ua
+    source:     Mobile phone number can not be less 11 characters
+    target:     Номер мобільного телефону не може бути менше ніж 11 символів
+    translated: 1
+  TransUnit_UA_33:
+    cat_id:     Catalogue_ua
+    source:     Mobile phone number can not be more 15 characters
+    target:     Номер мобьльного телефону не може бути більше ніж 15 символів
+    translated: 1
+  TransUnit_UA_34:
+    cat_id:     Catalogue_ua
+    source:     Mobile phone number must contain only numerals and "()" symbols
+    target:     Номер мобільного телефону може включати в себе тільки цифри та символи "()"
+    translated: 1
+  TransUnit_UA_35:
+    cat_id:     Catalogue_ua
+    source:     Please select secret question
+    target:     Вы повинні вказати секретне питання
+    translated: 1
+  TransUnit_UA_36:
+    cat_id:     Catalogue_ua
+    source:     An account with this email already exists
+    target:     Аккаунт з такою електронною поштою вже існує
+    translated: 1
+  TransUnit_UA_37:
+    cat_id:     Catalogue_ua
+    source:     Male
+    target:     Чоловік
+    translated: 1
+  TransUnit_UA_38:
+    cat_id:     Catalogue_ua
+    source:     Female
+    target:     Жінка
+    translated: 1
+  TransUnit_UA_39:
+    cat_id:     Catalogue_ua
+    source:     Passwords do not match
+    target:     Паролі не вспівпадають
+    translated: 1
+  TransUnit_UA_40:
+    cat_id:     Catalogue_ua
+    source:     You are registered now. Thanks!
+    target:     Поздоровляемо! Тепер ви зареєстрованний користувач.
+    translated: 1
+  TransUnit_UA_41:
+    cat_id:     Catalogue_ua
+    source:     You have wrong email or password
+    target:     Ви маєте невірний email чи пароль
+    translated: 1
+  TransUnit_UA_42:
+    cat_id:     Catalogue_ua
+    source:     Login
+    target:     Ввійти
+    translated: 1
+  TransUnit_UA_43:
+    cat_id:     Catalogue_ua
+    source:     Confirm code
+    target:     Код підтвердження
+    translated: 1
+  TransUnit_UA_44:
+    cat_id:     Catalogue_ua
+    source:     Confirm registration
+    target:     Підтвердження регістрації
+    translated: 1
+  TransUnit_UA_45:
+    cat_id:     Catalogue_ua
+    source:     Confirm
+    target:     Підтвердити
+    translated: 1
+  TransUnit_UA_46:
+    cat_id:     Catalogue_ua
+    source:     You are confirmed your email. Thanks!
+    target:     Дякуємо ви підтвердили ваш email.
+    translated: 1
+  TransUnit_UA_47:
+    cat_id:     Catalogue_ua
+    source:     My profile
+    target:     Мій профіль
+    translated: 1
+  TransUnit_UA_48:
+    cat_id:     Catalogue_ua
+    source:     My account
+    target:     Мій аккаунт
+    translated: 1
+  TransUnit_UA_49:
+    cat_id:     Catalogue_ua
+    source:     Edit profile
+    target:     Редагувати профіль
+    translated: 1
+  TransUnit_UA_50:
+    cat_id:     Catalogue_ua
+    source:     Save
+    target:     Зберегти
+    translated: 1
+  TransUnit_UA_51:
+    cat_id:     Catalogue_ua
+    source:     Cancel
+    target:     Відмінити
+    translated: 1
+  TransUnit_UA_52:
+    cat_id:     Catalogue_ua
+    source:     Current password
+    target:     Поточний пароль
+    translated: 1
+  TransUnit_UA_53:
+    cat_id:     Catalogue_ua
+    source:     Change password
+    target:     Змінити
     translated: 1
 
   # Russian

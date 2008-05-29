@@ -16,8 +16,8 @@ class sfsMemberSecretQuestionsPeer extends BasesfsMemberSecretQuestionsPeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function getQuestionsWithI18n()
+    public static function getAllAvaliable()
     {
-        return self::doSelectWithI18n(new Criteria());
+        return self::doSelectWithTranslation(new Criteria());
     }
 }
