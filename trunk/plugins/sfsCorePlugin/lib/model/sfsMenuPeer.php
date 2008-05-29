@@ -28,6 +28,6 @@ class sfsMenuPeer extends BasesfsMenuPeer
         $criteria = new Criteria();
         $criteria->add(self::TYPE, $type);
         $criteria->addAscendingOrderByColumn(self::POS);
-        return self::doSelectWithI18n($criteria, $culture);
+        return self::doSelectWithTranslation($criteria, $culture);
     }
 }

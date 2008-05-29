@@ -20,7 +20,7 @@ class menuComponents extends sfComponents
     */
     public function executeMain()
     {
-        $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_MAIN, $this->getUser()->getCulture());
+        $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_MAIN);
     }
     
     /**
@@ -33,6 +33,6 @@ class menuComponents extends sfComponents
     */
     public function executeProfile()
     {
-        $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_PROFILE, $this->getUser()->getCulture());
+        $this->items = sfsMenuPeer::getItemsByType(sfsMenuPeer::TYPE_PROFILE);
     }
 }
