@@ -32,10 +32,10 @@ class sfsLanguagePeer extends BasesfsLanguagePeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function getAll()
+    public static function getAllAvailable()
     {
         $criteria = new Criteria();
         $criteria->add(self::IS_ACTIVE, 1);
-        return self::doSelectOne($criteria);
+        return self::doSelect($criteria);
     }
 }

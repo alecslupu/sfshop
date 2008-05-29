@@ -11,6 +11,6 @@ class coreComponents extends sfComponents {
 
     public function executeLanguages()
     {
-        $this->languages = sfsLanguagePeer::getAll();
+        $this->languages = sfsLanguagePeer::getAllAvailable();
     }
 }

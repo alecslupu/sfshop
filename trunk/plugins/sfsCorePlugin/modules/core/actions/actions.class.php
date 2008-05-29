@@ -22,7 +22,7 @@ class coreActions extends sfActions
     {
         $language = sfsLanguagePeer::retrieveByPK($this->getRequestParameter('culture'));
         
-        if ($language->isActive()) {
+        if ($language !==null && $language->getIsActive()) {
             $this->getUser()->setCulture($this->getRequestParameter('culture'));
         }
         

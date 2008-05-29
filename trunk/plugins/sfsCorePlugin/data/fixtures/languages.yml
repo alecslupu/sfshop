@@ -1,15 +1,18 @@
 sfsLanguage:
-  sfsLanguage_UA:
-    culture: ua
-    name_english: Ukrainian
-    name_own: Українська
-  sfsLanguage_RU:
-    culture: ru
-    name_english: Russian
-    name_own: Русский
   sfsLanguage_EN:
-    culture: en
+    culture:      en
     name_english: English
-    name_own: English
-    is_default: 1
+    name_own:     English
+    is_default:   1
+    is_active:    1
+  sfsLanguage_UA:
+    culture:      ua
+    name_english: Ukrainian
+    name_own:     Українська
+    is_active:    1
+  sfsLanguage_RU:
+    culture:      ru
+    name_english: Russian
+    name_own:     Русский
+    is_active:    1
 
