@@ -2,9 +2,9 @@
 
 <?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
 <br/>
-<?php $i = 1; foreach ($pager->getResults() as $asset): ?>
+<?php $i = 1; foreach ($pager->getResults() as $product): ?>
 
-<?php include_partial('list_tabular', array('asset' => $asset)) ?>
+<?php include_partial('list_tabular', array('product' => $product)) ?>
 
 <?php $i++; endforeach; ?>
 <br/>

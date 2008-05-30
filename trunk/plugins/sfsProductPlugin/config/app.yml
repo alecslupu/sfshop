@@ -1,3 +1,2 @@
 all:
   products:
-    thumbnail_path: '/thumbnails/'

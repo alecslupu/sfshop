@@ -12,8 +12,8 @@ class sfsProductPeer extends BasesfsProductPeer
     /**
     * Gets criteria for get all avaliable products.
     * 
-    * @param  $criteria
-    * @return $criteria
+    * @param  object $criteria
+    * @return object $criteria
     * @author Dmitry Nesteruk
     * @access public
     */

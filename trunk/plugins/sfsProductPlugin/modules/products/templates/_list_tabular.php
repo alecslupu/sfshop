@@ -4,17 +4,15 @@
         <div style="margin-left: 1px; margin-right: 1px; padding-right: 20px">
             <table width="100%"  border="0" cellspacing="0" cellpadding="0" style="padding: 10px">
                 <tr align="left" valign="top">
-                    <?php /*$urlToThumbnail = $asset->getUrlToThumbnail(PhotoPeer::MEDIUM);
-                        if ($urlToThumbnail): ?>
-                        <td width="110"><?php echo link_to(image_tag($urlToThumbnail, array('width' => '100', 'height' => '80')), '@assetDetails?id=' . $asset->getId()); ?></td>
-                    <?php endif; */?>
+                    <?php $thumbnail = $product->getThumbnail(sfsThumbnailPeer::MEDIUM); ?>
+                    <td width="110"><?php echo link_to(image_tag($thumbnail->getUrl(), array('width' => $thumbnail->getWidth(), 'height' => $thumbnail->getHeight())), '@products_details?id=' . $product->getId()); ?></td>
                     <td>
-                        <?php echo link_to($asset->getTitle(),'@products_details?id=' . $asset->getId(), array('class' => 'asset_title')); ?><br/><br/>
-                        <?php echo $asset->getDescriptionShort(); ?>
+                        <?php echo link_to($product->getTitle(),'@products_details?id=' . $product->getId(), array('class' => 'asset_title')); ?><br/><br/>
+                        <?php echo $product->getDescriptionShort(); ?>
                     </td>
                 </tr>
             </table>
-            &nbsp;&nbsp;<b><?php echo __('Added at') ?>:</b> <?php echo $asset->getCreatedAt() ?><br/>
+            &nbsp;&nbsp;<b><?php echo __('Added at') ?>:</b> <?php echo $product->getCreatedAt() ?><br/>
             <br/> <br/>
          </div>
         <div class="top_bottom_content_line"></div>

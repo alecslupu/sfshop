@@ -4,7 +4,7 @@ propel:
   thumbnails_types:
     _attributes:        { phpName: sfsThumbnailType }
     id:                 ~
-    asset_type_id:      { type: integer, required: true, primaryKey: true, foreignTable: assets_types, foreignReference: id, onDelete: cascade }
+    asset_type_id:      { type: integer, required: true, foreignTable: assets_types, foreignReference: id, onDelete: cascade }
     name:               varchar(100)
     is_active:          { type: integer, size: 1, default: 0 }
 
@@ -19,9 +19,13 @@ propel:
   thumbnails:
     _attributes:        { phpName: sfsThumbnail }
     id:                 ~
+    parent_id:          { type: integer, required: false, foreignTable: thumbnails, foreignReference: id, onDelete: cascade }
+    uuid:               varchar(100)
     asset_id:           { type: integer }
+    thumbnail_size_id:  { type: integer, required: false, foreignTable: thumbnails_sizes, foreignReference: id, onDelete: cascade }
     asset_model:        varchar(100)
     thumbnail_type:     varchar(100)
+    path:               varchar(100)
     width:              { type: integer }
     height:             { type: integer }
     created_at:         { type: timestamp }

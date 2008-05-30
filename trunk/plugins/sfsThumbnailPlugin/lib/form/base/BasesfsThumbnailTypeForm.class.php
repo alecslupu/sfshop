@@ -13,14 +13,14 @@ class BasesfsThumbnailTypeForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
-      'asset_type_id' => new sfWidgetFormInputHidden(),
+      'asset_type_id' => new sfWidgetFormPropelSelect(array('model' => 'sfsAssetsTypes', 'add_empty' => false)),
       'name'          => new sfWidgetFormInput(),
       'is_active'     => new sfWidgetFormInput(),
     ));
 
     $this->setValidators(array(
       'id'            => new sfValidatorPropelChoice(array('model' => 'sfsThumbnailType', 'column' => 'id', 'required' => false)),
-      'asset_type_id' => new sfValidatorPropelChoice(array('model' => 'sfsAssetsTypes', 'column' => 'id', 'required' => false)),
+      'asset_type_id' => new sfValidatorPropelChoice(array('model' => 'sfsAssetsTypes', 'column' => 'id')),
       'name'          => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'is_active'     => new sfValidatorInteger(array('required' => false)),
     ));
