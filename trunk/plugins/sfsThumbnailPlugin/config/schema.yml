@@ -16,8 +16,8 @@ propel:
     height:             { type: integer }
     is_active:          { type: integer, size: 1, default: 0 }
 
-  thumbnails2assets:
-    _attributes:        { phpName: sfsThumbnails2Assets }
+  thumbnails:
+    _attributes:        { phpName: sfsThumbnail }
     id:                 ~
     asset_id:           { type: integer }
     asset_model:        varchar(100)

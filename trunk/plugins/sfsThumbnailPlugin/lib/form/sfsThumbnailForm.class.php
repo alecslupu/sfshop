@@ -1,13 +1,13 @@
 <?php
 
 /**
- * sfsThumbnails2Assets form.
+ * sfsThumbnail form.
  *
  * @package    form
- * @subpackage thumbnails2assets
+ * @subpackage thumbnails
  * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
  */
-class sfsThumbnails2AssetsForm extends BasesfsThumbnails2AssetsForm
+class sfsThumbnailForm extends BasesfsThumbnailForm
 {
   public function configure()
   {
