@@ -1,9 +1,24 @@
-<?php use_helper('Date') ?>
+<?php use_helper('Date', 'sfsThumbnail') ?>
 <?php include_component('categories', 'headerProductList'); ?>
 <?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
-<?php $i = 1; foreach ($pager->getResults() as $product): ?>
+
+<?php foreach ($pager->getResults() as $product): ?>
     <?php include_partial('list_tabular', array('product' => $product)) ?>
-<?php $i++; endforeach; ?>
+<?php endforeach; ?>
+
+<?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
+<?php  if ($pager->getNbResults() == 0 ) : ?>
+    <div class="left_content_line">
+        <div class="right_content_line">
+            <div style="margin-left: 1px; margin-right: 1px; padding-right: 20px; height: 50px; text-align: center; background: #f8f9f3">
+                <br/>
+                <?php echo __('Category is empty'); ?>
+             </div>
+            <div class="top_bottom_content_line"></div>
+        </div>
+    </div>
+    
+<?php endif; ?>
 
 <div class="left_content_line">
     <div class="right_content_line">
@@ -11,15 +26,3 @@
         <div class="top_bottom_content_line"></div>
     </div>
 </div>
-
-
-
-<br/>
-<?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
-<div style="width: 100%; text-align: center">
-    <?php  if ($pager->getNbResults() == 0 ) : ?>
-        <?php echo __('category is empty'); ?>
-        <br/><br/>
-    <?php endif; ?>
-</div>
-

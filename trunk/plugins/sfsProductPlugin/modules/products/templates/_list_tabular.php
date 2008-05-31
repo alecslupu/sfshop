@@ -4,7 +4,7 @@
             <table width="100%"  border="0" cellspacing="0" cellpadding="0" style="padding: 10px">
                 <tr align="left" valign="top">
                     <?php $thumbnail = $product->getThumbnail(sfsThumbnailPeer::SMALL); ?>
-                    <td width="110"><?php echo link_to(image_tag($thumbnail->getUrl(), array('width' => $thumbnail->getWidth(), 'height' => $thumbnail->getHeight())), '@products_details?id=' . $product->getId()); ?></td>
+                    <td width="110"><?php echo link_to(thumbnail_tag($thumbnail, $product->getTitle()), '@products_details?id=' . $product->getId()); ?></td>
                     <td>
                         <?php echo link_to($product->getTitle(),'@products_details?id=' . $product->getId(), array('class' => 'product_title')); ?><br/><br/>
                         <?php echo $product->getDescriptionShort(); ?>

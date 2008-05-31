@@ -942,6 +942,20 @@ sfsThumbnailSize:
     is_active:         1
     
 #
+# Thumbnails mime types
+#
+sfsThumbnailMime:
+  sfsThumbnailMime_1:
+    extensions:        jpg, jpe, jpeg
+    mime:              image/jpeg
+  sfsThumbnailMime_2:
+    extensions:        gif
+    mime:              image/gif
+  sfsThumbnailMime_3:
+    extensions:        png
+    mime:              image/png
+
+#
 # Thumbnails
 #
 sfsThumbnail:
@@ -950,47 +964,63 @@ sfsThumbnail:
     asset_model:      sfsProduct
     uuid:             aca3e094f1a299c8d391b59da9101938
     path:             products/2008/05/15
+    mime:             image/jpeg
+    extension:        jpg
     is_original:      1
   sfsThumbnail_2:
     asset_id:         2
     asset_model:      sfsProduct
     uuid:             4a72f1a978827089e22165ad7a14541b
     path:             products/2008/05/15
+    mime:             image/jpeg
+    extension:        jpg
     is_original:      1
   sfsThumbnail_3:
     asset_id:          3
     asset_model:       sfsProduct
     uuid:              14ea8db540768eab3316fee26ce49523
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original:       1
   sfsThumbnail_4:
     asset_id:          4
     asset_model:       sfsProduct
     uuid:              41a3fe21e8024df4914caa565f03c754
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original:       1
   sfsThumbnail_5:
     asset_id:          5
     asset_model:       sfsProduct
     uuid:              6938e974816abe16de60c621794326cc
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original: 1
   sfsThumbnail_6:
     asset_id:          6
     asset_model:       sfsProduct
     uuid:              ca2ef18591f5aa2b80605e131d3403f6
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original:       1
   sfsThumbnail_7:
     asset_id:          7
     asset_model:       sfsProduct
     uuid:              6587c10f609be743ee4ff7717e0dae86
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original:       1
   sfsThumbnail_8:
     asset_model:       sfsProduct
     uuid:              c4c888785158b3582986d9e96958b8b5
     path:              products/2008/05/15
+    mime:              image/jpeg
+    extension:         jpg
     is_original:       1
     is_blank:          1
     
@@ -1004,6 +1034,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_10:
     asset_id:          2
     parent_id:         sfsThumbnail_2
@@ -1014,6 +1046,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_11:
     asset_id:          3
     parent_id:         sfsThumbnail_3
@@ -1024,6 +1058,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_12:
     asset_id:          4
     parent_id:         sfsThumbnail_4
@@ -1034,6 +1070,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_13:
     asset_id:          5
     parent_id:         sfsThumbnail_5
@@ -1044,6 +1082,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_14:
     asset_id:          6
     parent_id:         sfsThumbnail_6
@@ -1054,6 +1094,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_15:
     asset_id:          7
     parent_id:         sfsThumbnail_7
@@ -1064,6 +1106,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_1
     width:             90
     height:            120
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_16:
     parent_id:         sfsThumbnail_8
     asset_model:       sfsProduct
@@ -1074,6 +1118,8 @@ sfsThumbnail:
     width:             90
     height:            120
     is_blank:          1
+    mime:              image/jpeg
+    extension:         jpg
    
   sfsThumbnail_17:
     asset_id:          1
@@ -1085,6 +1131,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_18:
     asset_id:          2
     parent_id:         sfsThumbnail_2
@@ -1095,6 +1143,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_19:
     asset_id:          3
     parent_id:         sfsThumbnail_3
@@ -1105,6 +1155,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_21:
     asset_id:          4
     parent_id:         sfsThumbnail_4
@@ -1115,6 +1167,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_22:
     asset_id:          5
     parent_id:         sfsThumbnail_5
@@ -1125,6 +1179,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_23:
     asset_id:          6
     parent_id:         sfsThumbnail_6
@@ -1135,6 +1191,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_24:
     asset_id:          7
     parent_id:         sfsThumbnail_7
@@ -1145,6 +1203,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_2
     width:             200
     height:            240
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_25:
     parent_id:         sfsThumbnail_8
     asset_model:       sfsProduct
@@ -1155,6 +1215,8 @@ sfsThumbnail:
     width:             200
     height:            240
     is_blank:          1
+    mime:              image/jpeg
+    extension:         jpg
     
   sfsThumbnail_26:
     asset_id:          1
@@ -1166,6 +1228,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_27:
     asset_id:          2
     parent_id:         sfsThumbnail_2
@@ -1176,6 +1240,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_28:
     asset_id:          3
     parent_id:         sfsThumbnail_3
@@ -1186,6 +1252,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_29:
     asset_id:          4
     parent_id:         sfsThumbnail_4
@@ -1196,6 +1264,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_30:
     asset_id:          5
     parent_id:         sfsThumbnail_5
@@ -1206,6 +1276,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_31:
     asset_id:          6
     parent_id:         sfsThumbnail_6
@@ -1216,6 +1288,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_32:
     asset_id:          7
     parent_id:         sfsThumbnail_7
@@ -1226,6 +1300,8 @@ sfsThumbnail:
     thumbnail_size_id: sfsThumbnailSize_3
     width:             400
     height:            600
+    mime:              image/jpeg
+    extension:         jpg
   sfsThumbnail_33:
     parent_id:         sfsThumbnail_8
     asset_model:       sfsProduct
@@ -1236,3 +1312,5 @@ sfsThumbnail:
     width:             400
     height:            600
     is_blank:          1
+    mime:              image/jpeg
+    extension:         jpg

@@ -17,19 +17,27 @@ propel:
     is_active:          { type: integer, size: 1, default: 0 }
 
   thumbnails:
-    _attributes:        { phpName: sfsThumbnail }
+    _attributes:             { phpName: sfsThumbnail }
+    id:                      ~
+    parent_id:               { type: integer, required: false, foreignTable: thumbnails, foreignReference: id, onDelete: cascade }
+    uuid:                    varchar(100)
+    asset_id:                { type: integer }
+    asset_model:             varchar(100)
+    thumbnail_size_id:       { type: integer, required: false, foreignTable: thumbnails_sizes, foreignReference: id, onDelete: cascade }
+    mime:                    varchar(100)
+    extension:               varchar(10)
+    thumbnail_type:          varchar(100)
+    path:                    varchar(100)
+    width:                   { type: integer }
+    height:                  { type: integer }
+    created_at:              { type: timestamp }
+    updated_at:              { type: timestamp }
+    is_original:             { type: integer, size: 1, default: 0 }
+    is_blank:                { type: integer, size: 1, default: 0 }
+    is_converted:            { type: integer, size: 1, default: 0 }
+    
+  thumbnails_mime:
+    _attributes:        { phpName: sfsThumbnailMime }
     id:                 ~
-    parent_id:          { type: integer, required: false, foreignTable: thumbnails, foreignReference: id, onDelete: cascade }
-    uuid:               varchar(100)
-    asset_id:           { type: integer }
-    thumbnail_size_id:  { type: integer, required: false, foreignTable: thumbnails_sizes, foreignReference: id, onDelete: cascade }
-    asset_model:        varchar(100)
-    thumbnail_type:     varchar(100)
-    path:               varchar(100)
-    width:              { type: integer }
-    height:             { type: integer }
-    created_at:         { type: timestamp }
-    updated_at:         { type: timestamp }
-    is_original:        { type: integer, size: 1, default: 0 }
-    is_blank:           { type: integer, size: 1, default: 0 }
-    is_converted:       { type: integer, size: 1, default: 0 }
+    extensions:         varchar(255)
+    mime:               varchar(100)

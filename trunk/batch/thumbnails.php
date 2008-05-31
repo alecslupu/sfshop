@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 /**
@@ -35,7 +36,7 @@ if ($thumbnails !== null) {
             . $originalThumbnail->getPath() 
             . DIRECTORY_SEPARATOR;
         
-        $originalFile = $origDir . $originalThumbnail->getUuid() . '.jpg';
+        $originalFile = $origDir . $originalThumbnail->getUuid() . '.' . $thumbnail->getExtension();
         
         $thumbDir = $baseDir 
             . DIRECTORY_SEPARATOR 
@@ -44,7 +45,7 @@ if ($thumbnails !== null) {
             . $thumbnail->getPath() 
             . DIRECTORY_SEPARATOR;
             
-        $thumbFile = $thumbDir . $thumbnail->getUuid() . '.jpg';
+        $thumbFile = $thumbDir . $thumbnail->getUuid() . '.' . $thumbnail->getExtension();
         
         if (!is_dir($pathToThumbs)) {
             sfsThumbnailUtil::mkdirTree($thumbDir);
@@ -55,6 +56,6 @@ if ($thumbnails !== null) {
         
         $thumb = new sfThumbnail($thumbnail->getWidth(), $thumbnail->getHeight(), true, true, 75, 'sfGDAdapter');
         $thumb->loadFile($originalFile);
-        $thumb->save($thumbFile, 'image/jpeg');
+        $thumb->save($thumbFile, $thumbnail->getMime());
     }
 }
