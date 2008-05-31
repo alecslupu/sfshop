@@ -44,9 +44,22 @@ class sfsThumbnailPeer extends BasesfsThumbnailPeer
         $criteria = new Criteria();
         $criteria->add(self::IS_CONVERTED, 1);
         $criteria->add(self::IS_ORIGINAL, 0);
+        $criteria->add(self::IS_BLANK, 0);
         $criteria->add(self::ASSET_ID, $assetId);
         $criteria->add(self::THUMBNAIL_TYPE, $thumbnailType);
         $criteria->add(self::ASSET_MODEL, $assetModel);
-        return self::doSelectOne($criteria);
+        $thumbnail = self::doSelectOne($criteria);
+        
+        if ($thumbnail == null) {
+            $criteria = new Criteria();
+            $criteria->add(self::IS_CONVERTED, 1);
+            $criteria->add(self::IS_ORIGINAL, 0);
+            $criteria->add(self::IS_BLANK, 1);
+            $criteria->add(self::THUMBNAIL_TYPE, $thumbnailType);
+            $criteria->add(self::ASSET_MODEL, $assetModel);
+            $thumbnail = self::doSelectOne($criteria);
+        }
+        
+        return $thumbnail;
     }
 }

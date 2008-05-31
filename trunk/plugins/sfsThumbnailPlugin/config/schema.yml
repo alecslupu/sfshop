@@ -31,4 +31,5 @@ propel:
     created_at:         { type: timestamp }
     updated_at:         { type: timestamp }
     is_original:        { type: integer, size: 1, default: 0 }
+    is_blank:           { type: integer, size: 1, default: 0 }
     is_converted:       { type: integer, size: 1, default: 0 }

@@ -42,7 +42,7 @@ class productsActions extends sfActions
         $criteria = sfsProductPeer::getPublicCriteria($criteria);
         
         $this->pager = new sfPropelPager('sfsProduct', 10);
-        $this->pager->setPeerMethod('doSelect');
+        $this->pager->setPeerMethod('doSelectWithTranslation');
         $this->pager->setCriteria($criteria);
         $this->pager->setPage($this->getRequestParameter('page', 1));
         $this->pager->init();

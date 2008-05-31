@@ -268,7 +268,15 @@ img {
 }
 
 input.btn_search {
-  width: 53px
+    width: 53px
+}
+
+.product_title {
+    color: #FF4700;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* members */

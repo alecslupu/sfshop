@@ -33,4 +33,20 @@ class categoriesComponents extends sfComponents
             }
         }
     }
+    
+    /**
+    * Gets current category, draw header for product list.
+    * 
+    * @param  $criteria
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeHeaderProductList()
+    {
+        sfLoader::loadHelpers('sfsCategory');
+        $categoryId = getCurrentCategoryId();
+        
+        $this->category = sfsCategoryPeer::retrieveByPK($categoryId);
+    }
 }
