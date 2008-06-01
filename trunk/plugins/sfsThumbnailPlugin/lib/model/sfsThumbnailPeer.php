@@ -25,8 +25,8 @@ class sfsThumbnailPeer extends BasesfsThumbnailPeer
     {
         $criteria = new Criteria();
         $criteria->add(self::IS_CONVERTED, 0);
-        $criteria->add(self::IS_ORIGINAL, 0);
-        return self::doSelect($criteria);
+        $criteria->add(sfsThumbnailSizePeer::THUMBNAIL_TYPE, 'original', Criteria::NOT_EQUAL);
+        return self::doSelectJoinAllExceptsfsThumbnailRelatedByParentId($criteria);
     }
     
     /**
@@ -43,23 +43,28 @@ class sfsThumbnailPeer extends BasesfsThumbnailPeer
     {
         $criteria = new Criteria();
         $criteria->add(self::IS_CONVERTED, 1);
-        $criteria->add(self::IS_ORIGINAL, 0);
         $criteria->add(self::IS_BLANK, 0);
         $criteria->add(self::ASSET_ID, $assetId);
-        $criteria->add(self::THUMBNAIL_TYPE, $thumbnailType);
         $criteria->add(self::ASSET_MODEL, $assetModel);
-        $thumbnail = self::doSelectOne($criteria);
+        $criteria->add(sfsThumbnailSizePeer::THUMBNAIL_TYPE, $thumbnailType);
+        $criteria->setLimit(1);
+        $thumbnail = self::doSelectJoinsfsThumbnailSize($criteria);
         
-        if ($thumbnail == null) {
+        if (!$thumbnail) {
             $criteria = new Criteria();
             $criteria->add(self::IS_CONVERTED, 1);
-            $criteria->add(self::IS_ORIGINAL, 0);
             $criteria->add(self::IS_BLANK, 1);
-            $criteria->add(self::THUMBNAIL_TYPE, $thumbnailType);
             $criteria->add(self::ASSET_MODEL, $assetModel);
-            $thumbnail = self::doSelectOne($criteria);
+            $criteria->add(sfsThumbnailSizePeer::THUMBNAIL_TYPE, $thumbnailType);
+            $criteria->setLimit(1);
+            $thumbnail = self::doSelectJoinsfsThumbnailSize($criteria);
         }
         
-        return $thumbnail;
+        if ($thumbnail) {
+            return $thumbnail[0];
+        }
+        else {
+            return null;
+        }
     }
 }

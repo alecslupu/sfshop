@@ -352,7 +352,7 @@ sfsCategoryI18n:
   sfsCategoryI18n_UA_9: 
     id:          sfsCategory_9
     culture:     ua
-    title:       Фільми, музика та ігры
+    title:       Фільми, музика та ігри
     description: 
   sfsCategoryI18n_UA_10: 
     id:          sfsCategory_10
@@ -909,44 +909,72 @@ sfsProduct2Category:
 #
 sfsThumbnailType:
   sfsThumbnailType_1:
-    asset_type_id: sfsAssetsTypes_1
-    name:          small
+    name:          mini
     is_active:     1
   sfsThumbnailType_2:
-    asset_type_id: sfsAssetsTypes_1
-    name:          medium
+    name:          small
     is_active:     1
   sfsThumbnailType_3:
-    asset_type_id: sfsAssetsTypes_1
+    name:          medium
+    is_active:     1
+  sfsThumbnailType_4:
     name:          large
     is_active:     1
-    
+  sfsThumbnailType_5:
+    name:          big
+    is_active:     1
+  sfsThumbnailType_6:
+    name:          large
+    is_active:     1
+  sfsThumbnailType_7:
+    name:          original
+    is_active:     1
+
 #
-# Thumbnails sizes
+# Thumbnails Sizes
 #
 sfsThumbnailSize:
   sfsThumbnailSize_1:
     thumbnail_type_id: sfsThumbnailType_1
-    width:             90
-    height:            120
+    asset_type_id:     sfsAssetsTypes_1
+    thumbnail_type:    mini
+    width:             40
+    height:            60
     is_active:         1
   sfsThumbnailSize_2: 
     thumbnail_type_id: sfsThumbnailType_2
-    width:             200
-    height:            240
+    asset_type_id:     sfsAssetsTypes_1
+    thumbnail_type:    small
+    width:             90
+    height:            120
     is_active:         1
   sfsThumbnailSize_3: 
     thumbnail_type_id: sfsThumbnailType_3
+    asset_type_id:     sfsAssetsTypes_1
+    thumbnail_type:    medium
+    width:             200
+    height:            240
+    is_active:         1
+  sfsThumbnailSize_4: 
+    thumbnail_type_id: sfsThumbnailType_4
+    asset_type_id:     sfsAssetsTypes_1
+    thumbnail_type:    large
     width:             400
     height:            600
     is_active:         1
-    
+  sfsThumbnailSize_5: 
+    thumbnail_type_id: sfsThumbnailType_7
+    asset_type_id:     sfsAssetsTypes_1
+    thumbnail_type:    original
+    width:             0
+    height:            0
+    is_active:         1
 #
 # Thumbnails mime types
 #
 sfsThumbnailMime:
   sfsThumbnailMime_1:
-    extensions:        jpg, jpe, jpeg
+    extensions:        jpe, jpg, jpeg
     mime:              image/jpeg
   sfsThumbnailMime_2:
     extensions:        gif
@@ -959,358 +987,372 @@ sfsThumbnailMime:
 # Thumbnails
 #
 sfsThumbnail:
+  # original
   sfsThumbnail_1:
-    asset_id:         1
-    asset_model:      sfsProduct
-    uuid:             aca3e094f1a299c8d391b59da9101938
-    path:             products/2008/05/15
-    mime:             image/jpeg
-    extension:        jpg
-    is_original:      1
+    asset_id:           1
+    asset_model:        sfsProduct
+    uuid:               aca3e094f1a299c8d391b59da9101938
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_2:
-    asset_id:         2
-    asset_model:      sfsProduct
-    uuid:             4a72f1a978827089e22165ad7a14541b
-    path:             products/2008/05/15
-    mime:             image/jpeg
-    extension:        jpg
-    is_original:      1
+    asset_id:           2
+    asset_model:        sfsProduct
+    uuid:               4a72f1a978827089e22165ad7a14541b
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_3:
-    asset_id:          3
-    asset_model:       sfsProduct
-    uuid:              14ea8db540768eab3316fee26ce49523
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original:       1
+    asset_id:           3
+    asset_model:        sfsProduct
+    uuid:               14ea8db540768eab3316fee26ce49523
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_4:
-    asset_id:          4
-    asset_model:       sfsProduct
-    uuid:              41a3fe21e8024df4914caa565f03c754
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original:       1
+    asset_id:           4
+    asset_model:        sfsProduct
+    uuid:               41a3fe21e8024df4914caa565f03c754
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_5:
-    asset_id:          5
-    asset_model:       sfsProduct
-    uuid:              6938e974816abe16de60c621794326cc
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original: 1
+    asset_id:           5
+    asset_model:        sfsProduct
+    uuid:               6938e974816abe16de60c621794326cc
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_6:
-    asset_id:          6
-    asset_model:       sfsProduct
-    uuid:              ca2ef18591f5aa2b80605e131d3403f6
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original:       1
+    asset_id:           6
+    asset_model:        sfsProduct
+    uuid:               ca2ef18591f5aa2b80605e131d3403f6
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_7:
-    asset_id:          7
-    asset_model:       sfsProduct
-    uuid:              6587c10f609be743ee4ff7717e0dae86
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original:       1
+    asset_id:           7
+    asset_model:        sfsProduct
+    uuid:               6587c10f609be743ee4ff7717e0dae86
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_converted:       1
   sfsThumbnail_8:
-    asset_model:       sfsProduct
-    uuid:              c4c888785158b3582986d9e96958b8b5
-    path:              products/2008/05/15
-    mime:              image/jpeg
-    extension:         jpg
-    is_original:       1
-    is_blank:          1
+    asset_model:        sfsProduct
+    uuid:               c4c888785158b3582986d9e96958b8b5
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_5
+    extension:          jpg
+    is_blank:           1
+    is_converted:       1
     
+  # mini
   sfsThumbnail_9:
-    asset_id:          1
-    parent_id:         sfsThumbnail_1
-    asset_model:       sfsProduct
-    uuid:              dd513a7fa1a0a714b8769b3b5a4efb2a
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           1
+    parent_id:          sfsThumbnail_1
+    asset_model:        sfsProduct
+    uuid:               dd513a7fa1a0a714b8769b3b5a4efb2a
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_10:
-    asset_id:          2
-    parent_id:         sfsThumbnail_2
-    asset_model:       sfsProduct
-    uuid:              3ad9c23a71ddd36fd240b717cd1de24e
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           2
+    parent_id:          sfsThumbnail_2
+    asset_model:        sfsProduct
+    uuid:               3ad9c23a71ddd36fd240b717cd1de24e
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_11:
-    asset_id:          3
-    parent_id:         sfsThumbnail_3
-    asset_model:       sfsProduct
-    uuid:              009da6ee9eaa1f4086b24d9bf3edc620
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           3
+    parent_id:          sfsThumbnail_3
+    asset_model:        sfsProduct
+    uuid:               009da6ee9eaa1f4086b24d9bf3edc620
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_12:
-    asset_id:          4
-    parent_id:         sfsThumbnail_4
-    asset_model:       sfsProduct
-    uuid:              aa756ae26afa728178d49b0af5de812b
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           4
+    parent_id:          sfsThumbnail_4
+    asset_model:        sfsProduct
+    uuid:               aa756ae26afa728178d49b0af5de812b
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_13:
-    asset_id:          5
-    parent_id:         sfsThumbnail_5
-    asset_model:       sfsProduct
-    uuid:              9206e3ba81f3a51a8ed648ca91b0ba26
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           5
+    parent_id:          sfsThumbnail_5
+    asset_model:        sfsProduct
+    uuid:               9206e3ba81f3a51a8ed648ca91b0ba26
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_14:
-    asset_id:          6
-    parent_id:         sfsThumbnail_6
-    asset_model:       sfsProduct
-    uuid:              f6a4e658c4237d2c8faa4e767e4a27f0
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           6
+    parent_id:          sfsThumbnail_6
+    asset_model:        sfsProduct
+    uuid:               f6a4e658c4237d2c8faa4e767e4a27f0
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_15:
-    asset_id:          7
-    parent_id:         sfsThumbnail_7
-    asset_model:       sfsProduct
-    uuid:              2d66cbf9756a85b46932238422986887
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           7
+    parent_id:          sfsThumbnail_7
+    asset_model:        sfsProduct
+    uuid:               2d66cbf9756a85b46932238422986887
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    extension:          jpg
   sfsThumbnail_16:
-    parent_id:         sfsThumbnail_8
-    asset_model:       sfsProduct
-    uuid:              fd7de33464155953e99a9a6f5212ceb1
-    path:              products/2008/05/15
-    thumbnail_type:    small
-    thumbnail_size_id: sfsThumbnailSize_1
-    width:             90
-    height:            120
-    is_blank:          1
-    mime:              image/jpeg
-    extension:         jpg
+    parent_id:          sfsThumbnail_8
+    asset_model:        sfsProduct
+    uuid:               fd7de33464155953e99a9a6f5212ceb1
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_1
+    is_blank:           1
+    extension:          jpg
    
+  # small
   sfsThumbnail_17:
-    asset_id:          1
-    parent_id:         sfsThumbnail_1
-    asset_model:       sfsProduct
-    uuid:              dd513a7fa1a0a714b8769b3b5a4efb2a
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           1
+    parent_id:          sfsThumbnail_1
+    asset_model:        sfsProduct
+    uuid:               dd513a7fa1a0a714b8769b3b5a4efb2a
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_18:
-    asset_id:          2
-    parent_id:         sfsThumbnail_2
-    asset_model:       sfsProduct
-    uuid:              3ad9c23a71ddd36fd240b717cd1de24e
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           2
+    parent_id:          sfsThumbnail_2
+    asset_model:        sfsProduct
+    uuid:               3ad9c23a71ddd36fd240b717cd1de24e
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_19:
-    asset_id:          3
-    parent_id:         sfsThumbnail_3
-    asset_model:       sfsProduct
-    uuid:              009da6ee9eaa1f4086b24d9bf3edc620
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           3
+    parent_id:          sfsThumbnail_3
+    asset_model:        sfsProduct
+    uuid:               009da6ee9eaa1f4086b24d9bf3edc620
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_21:
-    asset_id:          4
-    parent_id:         sfsThumbnail_4
-    asset_model:       sfsProduct
-    uuid:              aa756ae26afa728178d49b0af5de812b
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           4
+    parent_id:          sfsThumbnail_4
+    asset_model:        sfsProduct
+    uuid:               aa756ae26afa728178d49b0af5de812b
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_22:
-    asset_id:          5
-    parent_id:         sfsThumbnail_5
-    asset_model:       sfsProduct
-    uuid:              9206e3ba81f3a51a8ed648ca91b0ba26
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           5
+    parent_id:          sfsThumbnail_5
+    asset_model:        sfsProduct
+    uuid:               9206e3ba81f3a51a8ed648ca91b0ba26
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_23:
-    asset_id:          6
-    parent_id:         sfsThumbnail_6
-    asset_model:       sfsProduct
-    uuid:              f6a4e658c4237d2c8faa4e767e4a27f0
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           6
+    parent_id:          sfsThumbnail_6
+    asset_model:        sfsProduct
+    uuid:               f6a4e658c4237d2c8faa4e767e4a27f0
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_24:
-    asset_id:          7
-    parent_id:         sfsThumbnail_7
-    asset_model:       sfsProduct
-    uuid:              2d66cbf9756a85b46932238422986887
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           7
+    parent_id:          sfsThumbnail_7
+    asset_model:        sfsProduct
+    uuid:               2d66cbf9756a85b46932238422986887
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    extension:          jpg
   sfsThumbnail_25:
-    parent_id:         sfsThumbnail_8
-    asset_model:       sfsProduct
-    uuid:              bed38ea5a00d226a4d787003a5d4bb05
-    path:              products/2008/05/15
-    thumbnail_type:    medium
-    thumbnail_size_id: sfsThumbnailSize_2
-    width:             200
-    height:            240
-    is_blank:          1
-    mime:              image/jpeg
-    extension:         jpg
+    parent_id:          sfsThumbnail_8
+    asset_model:        sfsProduct
+    uuid:               bed38ea5a00d226a4d787003a5d4bb05
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_2
+    is_blank:           1
+    extension:          jpg
     
+  # medium
   sfsThumbnail_26:
-    asset_id:          1
-    parent_id:         sfsThumbnail_1
-    asset_model:       sfsProduct
-    uuid:              421e99948432e9e7b7ef235623d10485
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           1
+    parent_id:          sfsThumbnail_1
+    asset_model:        sfsProduct
+    uuid:               421e99948432e9e7b7ef235623d10485
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_27:
-    asset_id:          2
-    parent_id:         sfsThumbnail_2
-    asset_model:       sfsProduct
-    uuid:              62d64ad34fdbe3d70ec91fccca98eff9
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           2
+    parent_id:          sfsThumbnail_2
+    asset_model:        sfsProduct
+    uuid:               62d64ad34fdbe3d70ec91fccca98eff9
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_28:
-    asset_id:          3
-    parent_id:         sfsThumbnail_3
-    asset_model:       sfsProduct
-    uuid:              eee3adacc193081c3bfb616f0fac591e
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           3
+    parent_id:          sfsThumbnail_3
+    asset_model:        sfsProduct
+    uuid:               eee3adacc193081c3bfb616f0fac591e
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_29:
-    asset_id:          4
-    parent_id:         sfsThumbnail_4
-    asset_model:       sfsProduct
-    uuid:              6fbe9c4ebcda7e61b7b8ba9916515456
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           4
+    parent_id:          sfsThumbnail_4
+    asset_model:        sfsProduct
+    uuid:               6fbe9c4ebcda7e61b7b8ba9916515456
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_30:
-    asset_id:          5
-    parent_id:         sfsThumbnail_5
-    asset_model:       sfsProduct
-    uuid:              ec90dfde35c6453b65d0c3e5c544c7af
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           5
+    parent_id:          sfsThumbnail_5
+    asset_model:        sfsProduct
+    uuid:               ec90dfde35c6453b65d0c3e5c544c7af
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_31:
-    asset_id:          6
-    parent_id:         sfsThumbnail_6
-    asset_model:       sfsProduct
-    uuid:              7b684163cab5c9d657051f9978412f72
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           6
+    parent_id:          sfsThumbnail_6
+    asset_model:        sfsProduct
+    uuid:               7b684163cab5c9d657051f9978412f72
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_32:
-    asset_id:          7
-    parent_id:         sfsThumbnail_7
-    asset_model:       sfsProduct
-    uuid:              2f6eee303ba92fdaa818923956e0d980
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    mime:              image/jpeg
-    extension:         jpg
+    asset_id:           7
+    parent_id:          sfsThumbnail_7
+    asset_model:        sfsProduct
+    uuid:               2f6eee303ba92fdaa818923956e0d980
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    extension:          jpg
   sfsThumbnail_33:
-    parent_id:         sfsThumbnail_8
-    asset_model:       sfsProduct
-    uuid:              4709a7c990e343b773d23fce692ecc15
-    path:              products/2008/05/15
-    thumbnail_type:    large
-    thumbnail_size_id: sfsThumbnailSize_3
-    width:             400
-    height:            600
-    is_blank:          1
-    mime:              image/jpeg
-    extension:         jpg
+    parent_id:          sfsThumbnail_8
+    asset_model:        sfsProduct
+    uuid:               4709a7c990e343b773d23fce692ecc15
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_3
+    is_blank:           1
+    extension:          jpg
+    
+  # large
+  sfsThumbnail_34:
+    asset_id:           1
+    parent_id:          sfsThumbnail_1
+    asset_model:        sfsProduct
+    uuid:               0913ed47dde0c9437a2f85d829f354e6
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_35:
+    asset_id:           2
+    parent_id:          sfsThumbnail_2
+    asset_model:        sfsProduct
+    uuid:               c9ed461189bbcda2b1822e44dae359a9
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_36:
+    asset_id:           3
+    parent_id:          sfsThumbnail_3
+    asset_model:        sfsProduct
+    uuid:               9b4422ae172f9c8c157dca01dcaca98c
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_37:
+    asset_id:           4
+    parent_id:          sfsThumbnail_4
+    asset_model:        sfsProduct
+    uuid:               6dd6f87c56b029d1e3d09185d70ec183
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_38:
+    asset_id:           5
+    parent_id:          sfsThumbnail_5
+    asset_model:        sfsProduct
+    uuid:               45f1337ca038c9a7211cf2aca196483d
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_39:
+    asset_id:           6
+    parent_id:          sfsThumbnail_6
+    asset_model:        sfsProduct
+    uuid:               863bb974229bb1d6be4f3cad510131b7
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_40:
+    asset_id:           7
+    parent_id:          sfsThumbnail_7
+    asset_model:        sfsProduct
+    uuid:               3948cce5609e86e937c345f27279690a
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    extension:          jpg
+  sfsThumbnail_41:
+    parent_id:          sfsThumbnail_8
+    asset_model:        sfsProduct
+    uuid:               115050c97296ea3e816a697e30ed818b
+    path:               products/2008/05/15
+    thumbnail_mime_id:  sfsThumbnailMime_1
+    thumbnail_size_id:  sfsThumbnailSize_4
+    is_blank:           1
+    extension:          jpg

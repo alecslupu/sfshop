@@ -6,8 +6,8 @@ function thumbnail_tag($thumbnail, $title)
         return image_tag(
             $thumbnail->getUrl(), 
             array(
-                'width'  => $thumbnail->getWidth(),
-                'height' => $thumbnail->getHeight(),
+                'width'  => $thumbnail->getsfsThumbnailSize()->getWidth(),
+                'height' => $thumbnail->getsfsThumbnailSize()->getHeight(),
                 'title'  => $title
             )
         );

@@ -54,8 +54,8 @@ if ($thumbnails !== null) {
         $thumbnail->setIsConverted(1);
         $thumbnail->save();
         
-        $thumb = new sfThumbnail($thumbnail->getWidth(), $thumbnail->getHeight(), true, true, 75, 'sfGDAdapter');
+        $thumb = new sfThumbnail($thumbnail->getsfsThumbnailSize()->getWidth(), $thumbnail->getsfsThumbnailSize()->getHeight(), true, true, 75, 'sfGDAdapter');
         $thumb->loadFile($originalFile);
-        $thumb->save($thumbFile, $thumbnail->getMime());
+        $thumb->save($thumbFile, $thumbnail->getsfsThumbnailMime()->getMime());
     }
 }
