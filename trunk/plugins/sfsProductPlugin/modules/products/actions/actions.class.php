@@ -59,7 +59,7 @@ class productsActions extends sfActions
     protected function getCategoryCriteria($criteria)
     {
         sfLoader::loadHelpers('sfsCategory');
-        $categoryId = getCurrentCategoryId();
+        $categoryId = get_current_category_id();
         
         if ($categoryId != null) {
             $criteria->addJoin(sfsProduct2CategoryPeer::PRODUCT_ID, sfsProductPeer::ID);

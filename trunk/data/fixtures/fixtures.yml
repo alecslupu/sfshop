@@ -8,7 +8,6 @@ sfsAssetsTypes:
   sfsAssetsTypes_2:
     name:          categories
     has_thumbnail: 1
-
 #
 # Members
 #

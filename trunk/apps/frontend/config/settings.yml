@@ -27,7 +27,7 @@ all:
     login_action:           login
   .settings:
     enabled_modules:        [ default, members, addressBook, menu, products, categories, core ]
-    standard_helpers:       [ I18N, Partial, Javascript, Date ]
+    standard_helpers:       [ I18N, Partial, Javascript, Date, sfsLanguage ]
     i18n:                   on
     default_culture:        en
     csrf_secret:            false

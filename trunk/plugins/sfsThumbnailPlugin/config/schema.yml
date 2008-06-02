@@ -1,12 +1,12 @@
 propel:
   _attributes:          { package: plugins.sfsThumbnailPlugin.lib.model }
-
+  
   thumbnails_types:
     _attributes:        { phpName: sfsThumbnailType }
     id:                 ~
     name:               varchar(100)
     is_active:          { type: integer, size: 1, default: 0 }
-
+  
   thumbnails_sizes:
     _attributes:        { phpName: sfsThumbnailSize }
     id:                 ~
@@ -16,7 +16,7 @@ propel:
     width:              { type: integer }
     height:             { type: integer }
     is_active:          { type: integer, size: 1, default: 0 }
-
+  
   thumbnails:
     _attributes:       { phpName: sfsThumbnail }
     id:                ~
@@ -32,7 +32,7 @@ propel:
     updated_at:        { type: timestamp }
     is_blank:          { type: integer, size: 1, default: 0 }
     is_converted:      { type: integer, size: 1, default: 0 }
-    
+  
   thumbnails_mime:
     _attributes:       { phpName: sfsThumbnailMime }
     id:                ~

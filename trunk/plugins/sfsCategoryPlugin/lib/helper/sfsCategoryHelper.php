@@ -50,12 +50,12 @@ function getCategoriesTreeForAsset($categories)
     }
 }
 */
-function drawCategoriesMenuTree($categories, $parentTree, $currentCategoryId = 0, $cPath, $routing)
+function draw_categories_menu_tree($categories, $parentTree, $currentCategoryId = 0, $cPath, $routing)
 {
     if ($categories !== null) {
         
         $categoriesTree = array();
-        getCategoriesTree($categories, $categoriesTree, $currentCategoryId, 0, '', $parentTree);
+        get_categories_tree($categories, $categoriesTree, $currentCategoryId, 0, '', $parentTree);
         
         $list = '';
         
@@ -83,7 +83,7 @@ function drawCategoriesMenuTree($categories, $parentTree, $currentCategoryId = 0
     }
 }
 
-function getCategoriesTree($categories, &$array, $currentCategoryId = 0, $parentId = 0, $cPath = '', $parentTree = array())
+function get_categories_tree($categories, &$array, $currentCategoryId = 0, $parentId = 0, $cPath = '', $parentTree = array())
 {
     if ($parentId != 0) {
         $cPath.= $parentId . sfConfig::get('app_categories_url_separator','_'); 
@@ -101,7 +101,7 @@ function getCategoriesTree($categories, &$array, $currentCategoryId = 0, $parent
                 $selected = false;
             }
             
-            $level = getLevelCatalog($cPath);
+            $level = get_level_catalog($cPath);
             
             $array[]=array(
                 'title'    => $category->getTitle(),
@@ -113,7 +113,7 @@ function getCategoriesTree($categories, &$array, $currentCategoryId = 0, $parent
             if ($parentTree !== null) {
                 foreach ($parentTree as $parentCategory) {
                     if ($parentCategory->getId() == $category->getId()) {
-                        getCategoriesTree($category->getChild(), $array, $currentCategoryId, $category->getId(), $cPath, $parentTree);
+                        get_categories_tree($category->getChild(), $array, $currentCategoryId, $category->getId(), $cPath, $parentTree);
                     }
                 }
             }
@@ -121,7 +121,7 @@ function getCategoriesTree($categories, &$array, $currentCategoryId = 0, $parent
     }
 }
 
-function getLevelCatalog($cPath)
+function get_level_catalog($cPath)
 {
     $ids   = explode(sfConfig::get('app_category_url_separator','_'), $cPath);
     
@@ -135,7 +135,7 @@ function getLevelCatalog($cPath)
     return $level;
 }
 
-function getCurrentCategoryId()
+function get_current_category_id()
 {
     $request = sfContext::getInstance()->getRequest();
     

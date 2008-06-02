@@ -45,7 +45,7 @@ class categoriesComponents extends sfComponents
     public function executeHeaderProductList()
     {
         sfLoader::loadHelpers('sfsCategory');
-        $categoryId = getCurrentCategoryId();
+        $categoryId = get_current_category_id();
         
         $this->category = sfsCategoryPeer::retrieveByPK($categoryId);
     }

@@ -1,0 +1,3 @@
+all:
+  languages:
+    images_dir: languages
