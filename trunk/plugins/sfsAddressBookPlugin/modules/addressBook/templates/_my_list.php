@@ -6,7 +6,7 @@
     <?php include_partial('pager', array('pager' => $pager, 'action' => '@addressBook_myAddressesList')); ?><br />
 </th></tr>
 <tr class="asset_table_bottom_border">
-    <?php include_partial('my_addresses_list_th_tabular') ?>
+    <?php include_partial('my_list_th_tabular') ?>
 </tr>
 </thead>
 <tfoot>
@@ -26,8 +26,8 @@
     <?php endif; ?>
     
     <tr class="<?php echo $class ?>">
-        <?php include_partial('my_addresses_list_td_tabular', array('address' => $address)) ?>
-        <?php include_partial('my_addresses_list_td_actions', array('address' => $address)) ?>
+        <?php include_partial('my_list_td_tabular', array('address' => $address)) ?>
+        <?php include_partial('my_list_td_actions', array('address' => $address)) ?>
     </tr>
 <?php $i++; endforeach; ?>
 </tbody>

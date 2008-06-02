@@ -2,7 +2,7 @@
 
 <?php if ($pager->getNbResults()): ?>
     <div>
-        <?php include_partial('my_addresses_list', array('pager' => $pager)) ?>
+        <?php include_partial('my_list', array('pager' => $pager)) ?>
     </div>
 <?php else: ?>
     <div style="width: 100%; text-align: center">
@@ -13,10 +13,10 @@
 
 <div style="float: right">
     <?php echo link_to(
-        image_tag('add.png', 
-            array('title' => __('Add address'), 'align' => 'absmiddle')
-        ) . __('Add address'), 
-        '@addressBook_add'
-    ) ?>
+            image_tag('add.png', 
+                array('title' => __('Add address'), 'align' => 'absmiddle')
+            ), '@addressBook_add'
+        ) ?>&nbsp;
+    <?php echo link_to(__('Add address'), '@addressBook_add') ?>
 </div>
 <br/>

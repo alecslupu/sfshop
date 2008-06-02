@@ -95,7 +95,7 @@ class membersActions extends sfActions
     {
         sfLoader::loadHelpers('I18N');
         
-        if ($this->getUser()->isAuthenticated() && !$this->hasFlash('registered')) {
+        if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('registered')) {
             $this->redirect('@homepage');
         }
         else {
@@ -243,7 +243,7 @@ class membersActions extends sfActions
                 );
                 
                 if ($this->form->isValid()) {
-                    $template = sfsEmailTemplatePeer::getTemplate(sfsEmailTemplatePeer::FORGOT_PASSWORD, $this->getUser()->getCulture());
+                    $template = sfsEmailTemplatePeer::retrieveByName(sfsEmailTemplatePeer::FORGOT_PASSWORD, $this->getUser()->getCulture());
                     $password = sfsMemberPeer::generatePassword();
                     
                     $member->setPassword($password);
@@ -266,7 +266,7 @@ class membersActions extends sfActions
                 }
             }
         }
-        elseif(!$this->getUser()->hasFlash('password_sent')) {
+        elseif(!$this->getUser()->hasFlash('message')) {
             $this->redirect('@members_forgotPasswordStepOne');
         }
     }

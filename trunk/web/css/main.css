@@ -1,16 +1,16 @@
 body {
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  background: #333333;
-  font-family: sans-serif;
-  font-size: 12px;
-  color:  #696969;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background: #333333;
+    font-family: sans-serif;
+    font-size: 12px;
+    color:  #696969;
 }
 
 a {
-  color: #696969;
+    color: #696969;
 }
 
 div.main{
@@ -307,11 +307,11 @@ ul {
 
 /**/
 
-.tag-cloud{
+.tag-cloud {
     background: #f8f9f3
 }
 
-.tag-cloud li{
+.tag-cloud li {
     list-style-type: none;
     display: inline;
 }
@@ -324,8 +324,12 @@ form.form input[type="text"], input[type="password"] {
     width: 250px;
 }
 
-form.form input, select, textarea {
+form.form input[type="text"], input[type="password"], select, textarea {
     float: left;
+    border: #2e425d 1px solid;
+}
+
+form.form input {
     border: #2e425d 1px solid;
 }
 

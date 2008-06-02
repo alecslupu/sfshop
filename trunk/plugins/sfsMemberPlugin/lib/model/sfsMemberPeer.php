@@ -82,9 +82,11 @@ class sfsMemberPeer extends BasesfsMemberPeer
     */
     public static function getGenders()
     {
+        sfLoader::loadHelpers('I18N');
+        
         return array(
-            '1' => 'Male',
-            '2' => 'Female'
+            '1' => __('Male'),
+            '2' => __('Female')
         );
     }
 }

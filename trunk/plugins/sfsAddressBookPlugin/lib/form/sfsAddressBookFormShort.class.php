@@ -23,5 +23,8 @@ class sfsAddressBookFormShort extends sfsAddressBookForm
         $this->getValidatorSchema()->offsetUnset('first_name');
         $this->getValidatorSchema()->offsetUnset('last_name');
         $this->getValidatorSchema()->offsetUnset('is_default');
+        
+        $this->getWidgetSchema()->offsetSet('is_default', new sfWidgetFormInputHidden());
+        $this->setDefault('is_default', 1);
     }
 }

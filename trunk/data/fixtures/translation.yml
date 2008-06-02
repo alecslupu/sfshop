@@ -62,7 +62,7 @@ TransUnit:
   TransUnit_UA_8:
     cat_id:     Catalogue_ua
     source:     First name
-    target:     Имя та побатькові
+    target:     Ім'я та побатькові
     translated: 1
   TransUnit_UA_9:
     cat_id:     Catalogue_ua
@@ -134,7 +134,6 @@ TransUnit:
     source:     Postcode
     target:     Індекс
     translated: 1
-
   TransUnit_UA_22:
     cat_id:     Catalogue_ua
     source:     Language
@@ -198,7 +197,7 @@ TransUnit:
   TransUnit_UA_33:
     cat_id:     Catalogue_ua
     source:     Mobile phone number can not be more 15 characters
-    target:     Номер мобьльного телефону не може бути більше ніж 15 символів
+    target:     Номер мобільного телефону не може бути більше ніж 15 символів
     translated: 1
   TransUnit_UA_34:
     cat_id:     Catalogue_ua
@@ -208,7 +207,7 @@ TransUnit:
   TransUnit_UA_35:
     cat_id:     Catalogue_ua
     source:     Please select secret question
-    target:     Вы повинні вказати секретне питання
+    target:     Ви повинні вказати секретне питання
     translated: 1
   TransUnit_UA_36:
     cat_id:     Catalogue_ua
@@ -301,6 +300,8 @@ TransUnit:
     target:     Змінити
     translated: 1
 
+
+
   # Russian
   TransUnit_RU_1:
     cat_id:     Catalogue_ru
@@ -335,7 +336,7 @@ TransUnit:
   TransUnit_RU_7:
     cat_id:     Catalogue_ru
     source:     Email
-    target:     Електронна почта
+    target:     Email
     translated: 1
   TransUnit_RU_8:
     cat_id:     Catalogue_ru
@@ -375,7 +376,7 @@ TransUnit:
   TransUnit_RU_15:
     cat_id:     Catalogue_ru
     source:     Secret answer
-    target:     Отвыт на секретный вопрос
+    target:     Ответ на секретный вопрос
     translated: 1
   TransUnit_RU_16:
     cat_id:     Catalogue_ru
@@ -411,4 +412,255 @@ TransUnit:
     cat_id:     Catalogue_ru
     source:     Postcode
     target:     Индекс
+    translated: 1
+  TransUnit_RU_22:
+    cat_id:     Catalogue_ru
+    source:     Language
+    target:     Язык
+    translated: 1
+  TransUnit_RU_23:
+    cat_id:     Catalogue_ru
+    source:     Categories
+    target:     Категории
+    translated: 1
+  TransUnit_RU_24:
+    cat_id:     Catalogue_ru
+    source:     Register
+    target:     Зарегестрироваться
+    translated: 1
+  TransUnit_RU_25:
+    cat_id:     Catalogue_ru
+    source:     Required.
+    target:     Поле обязательное
+    translated: 1
+  TransUnit_RU_25:
+    cat_id:     Catalogue_ru
+    source:     This is not a valid email address
+    target:     Вы ввели не верный адрес електроной почты
+    translated: 1
+  TransUnit_RU_26:
+    cat_id:     Catalogue_ru
+    source:     Phone number can not be less 4 numerals
+    target:     Номер телефона не может быть менше чем 4 символа
+    translated: 1
+  TransUnit_RU_27:
+    cat_id:     Catalogue_ru
+    source:     Phone number must contain only numerals and "()" symbols
+    target:     Номер телефона может включать в себе только цифры и символы "()"
+    translated: 1
+  TransUnit_RU_28:
+    cat_id:     Catalogue_ru
+    source:     First name can not be less 4 characters
+    target:     Имя и отчество не может быть меньше чем 4 символа
+    translated: 1
+  TransUnit_RU_29:
+    cat_id:     Catalogue_ru
+    source:     First name can not be more 255 characters
+    target:     Имя и отчество не может быть больше чем 255 символов
+    translated: 1
+  TransUnit_RU_30:
+    cat_id:     Catalogue_ru
+    source:     Last name can not be less 4 characters
+    target:     Фамилия не может быть меньше чем 4 символа
+    translated: 1
+  TransUnit_RU_31:
+    cat_id:     Catalogue_ru
+    source:     Last name can not be more 4 characters
+    target:     Фамилия не может быть больше чем 255 символов
+    translated: 1
+  TransUnit_RU_32:
+    cat_id:     Catalogue_ru
+    source:     Mobile phone number can not be less 11 characters
+    target:     Номер мобильного телефона не может быть меньше чем 11 символов
+    translated: 1
+  TransUnit_RU_33:
+    cat_id:     Catalogue_ru
+    source:     Mobile phone number can not be more 15 characters
+    target:     Номер мобильного телефона не может быть больше чем 15 символов
+    translated: 1
+  TransUnit_RU_34:
+    cat_id:     Catalogue_ru
+    source:     Mobile phone number must contain only numerals and "()" symbols
+    target:     Номер мобильного телефона может включать в себе только цифры и символы "()"
+    translated: 1
+  TransUnit_RU_35:
+    cat_id:     Catalogue_ru
+    source:     Please select secret question
+    target:     Вы должны указать секретный вопрос
+    translated: 1
+  TransUnit_RU_36:
+    cat_id:     Catalogue_ru
+    source:     An account with this email already exists
+    target:     Аккаунт с таким email'ом уже существует
+    translated: 1
+  TransUnit_RU_37:
+    cat_id:     Catalogue_ru
+    source:     Male
+    target:     Мужчина
+    translated: 1
+  TransUnit_RU_38:
+    cat_id:     Catalogue_ru
+    source:     Female
+    target:     Женшина
+    translated: 1
+  TransUnit_RU_39:
+    cat_id:     Catalogue_ru
+    source:     Passwords do not match
+    target:     Пароли не совпадают
+    translated: 1
+  TransUnit_RU_40:
+    cat_id:     Catalogue_ru
+    source:     You are registered now. Thanks!
+    target:     Поздравляем! Теперь вы зарегестрирован пользователь.
+    translated: 1
+  TransUnit_RU_41:
+    cat_id:     Catalogue_ru
+    source:     You have wrong email or password
+    target:     Вы ввели неверный email или пароль
+    translated: 1
+  TransUnit_RU_42:
+    cat_id:     Catalogue_ru
+    source:     Login
+    target:     Ввойти
+    translated: 1
+  TransUnit_RU_43:
+    cat_id:     Catalogue_ru
+    source:     Confirm code
+    target:     Код подтверждения
+    translated: 1
+  TransUnit_RU_44:
+    cat_id:     Catalogue_ru
+    source:     Confirm registration
+    target:     Подтверждение регистрации
+    translated: 1
+  TransUnit_RU_45:
+    cat_id:     Catalogue_ru
+    source:     Confirm
+    target:     Подтвердить
+    translated: 1
+  TransUnit_RU_46:
+    cat_id:     Catalogue_ru
+    source:     You are confirmed your email. Thanks!
+    target:     Спасибо вы подтвердили ваш email.
+    translated: 1
+  TransUnit_RU_47:
+    cat_id:     Catalogue_ru
+    source:     My profile
+    target:     Мой профайл
+    translated: 1
+  TransUnit_RU_48:
+    cat_id:     Catalogue_ru
+    source:     My account
+    target:     Мой аккаунт
+    translated: 1
+  TransUnit_RU_49:
+    cat_id:     Catalogue_ru
+    source:     Edit profile
+    target:     Редактировать профиль
+    translated: 1
+  TransUnit_RU_50:
+    cat_id:     Catalogue_ru
+    source:     Save
+    target:     Сохранить
+    translated: 1
+  TransUnit_RU_51:
+    cat_id:     Catalogue_ru
+    source:     Cancel
+    target:     Отмена
+    translated: 1
+  TransUnit_RU_52:
+    cat_id:     Catalogue_ru
+    source:     Current password
+    target:     Текущий пароль
+    translated: 1
+  TransUnit_RU_53:
+    cat_id:     Catalogue_ru
+    source:     Change password
+    target:     Изменить
+    translated: 1
+
+  TransUnit_RU_54:
+    cat_id:     Catalogue_ru
+    source:     State can not be less than 3 characters
+    target:     Область не может быть короче чем 3 символа
+    translated: 1
+  TransUnit_RU_55:
+    cat_id:     Catalogue_ru
+    source:     City can not be less than 3 characters
+    target:     Город не может быть короче чем 3 символа
+    translated: 1
+  TransUnit_RU_56:
+    cat_id:     Catalogue_ru
+    source:     Street can not be less than 5 characters
+    target:     Улица не может быть короче чем 5 символа
+    translated: 1
+  TransUnit_RU_57:
+    cat_id:     Catalogue_ru
+    source:     Forgot password step one
+    target:     Востановление пароля. Шаг 1
+    translated: 1
+  TransUnit_RU_58:
+    cat_id:     Catalogue_ru
+    source:     Forgot password step two
+    target:     Востановление пароля. Шаг 2
+    translated: 1
+  TransUnit_RU_59:
+    cat_id:     Catalogue_ru
+    source:     Send
+    target:     Отправить
+    translated: 1
+  TransUnit_RU_60:
+    cat_id:     Catalogue_ru
+    source:     Your login and password have been sent to you email.
+    target:     Ваш логин и пароль были высланны на ваш email.
+    translated: 1
+  TransUnit_RU_61:
+    cat_id:     Catalogue_ru
+    source:     The current password is wrong
+    target:     Текущий пароль неверный
+    translated: 1
+  TransUnit_RU_62:
+    cat_id:     Catalogue_ru
+    source:     Password must be 6 or more characters
+    target:     Пароль должен быть 6 или больше символов
+    translated: 1
+  TransUnit_RU_63:
+    cat_id:     Catalogue_ru
+    source:     Your password was changed.
+    target:     Новый пароль сохранен.
+    translated: 1
+  TransUnit_RU_64:
+    cat_id:     Catalogue_ru
+    source:     My address book
+    target:     Моя адресная книга
+    translated: 1
+  TransUnit_RU_65:
+    cat_id:     Catalogue_ru
+    source:     Addresses
+    target:     Адреса
+    translated: 1
+  TransUnit_RU_66:
+    cat_id:     Catalogue_ru
+    source:     Actions
+    target:     Действия
+    translated: 1
+  TransUnit_RU_67:
+    cat_id:     Catalogue_ru
+    source:     Add address
+    target:     Добавить адрес
+    translated: 1
+  TransUnit_RU_68:
+    cat_id:     Catalogue_ru
+    source:     Is default
+    target:     Адрес поумолчанию?
+    translated: 1
+  TransUnit_RU_69:
+    cat_id:     Catalogue_ru
+    source:     Add new address
+    target:     Добавить новый адрес
+    translated: 1
+  TransUnit_RU_70:
+    cat_id:     Catalogue_ru
+    source:     Category is empty
+    target:     Данная категория пуста
     translated: 1

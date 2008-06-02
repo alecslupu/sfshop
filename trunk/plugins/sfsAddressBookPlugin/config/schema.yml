@@ -22,4 +22,4 @@ propel:
     id:                 ~
     location:           { type: varchar(7), required: true, primaryKey: true }
     format:             varchar(255)
-    is_default:         { type: integer, size: 1 }
+    is_default:         { type: integer, size: 1, default: 0 }

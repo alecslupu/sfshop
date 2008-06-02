@@ -56,19 +56,33 @@ sfsMemberSecretQuestions:
     updated_at: 2007-12-17 10:23:16
 
 sfsMemberSecretQuestionsI18n:
-  sfsMemberSecretQuestionsI18n_1:
+  # English
+  sfsMemberSecretQuestionsI18n_EN_1:
     id:        sfsMemberSecretQuestions_1
     culture:   en
     question:  What was the name of your first school?
-  sfsMemberSecretQuestionsI18n_2:
+  sfsMemberSecretQuestionsI18n_EN_2:
     id:        sfsMemberSecretQuestions_2
     culture:   en
     question:  Who was your childhood hero?
-  sfsMemberSecretQuestionsI18n_3:
+  sfsMemberSecretQuestionsI18n_EN_3:
     id:        sfsMemberSecretQuestions_3
     culture:   en
     question:  What is your favorite pastime?
-
+  # Ukrainian
+  sfsMemberSecretQuestionsI18n_UA_1:
+    id:        sfsMemberSecretQuestions_1
+    culture:   ua
+    question:  What was the name of your first school?
+  sfsMemberSecretQuestionsI18n_UA_2:
+    id:        sfsMemberSecretQuestions_2
+    culture:   ua
+    question:  Who was your childhood hero?
+  sfsMemberSecretQuestionsI18n_UA_3:
+    id:        sfsMemberSecretQuestions_3
+    culture:   ua
+    question:  What is your favorite pastime?
+  
 #
 # Categories
 #
