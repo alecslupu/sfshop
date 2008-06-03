@@ -3,7 +3,7 @@
 <table cellspacing="0" width="100%">
 <thead>
 <tr><th colspan="2">
-    <?php include_partial('pager', array('pager' => $pager, 'action' => '@addressBook_myAddressesList')); ?><br />
+    <?php include_partial('pager', array('pager' => $pager, 'action' => '@addressBook_myList')); ?><br />
 </th></tr>
 <tr class="asset_table_bottom_border">
     <?php include_partial('my_list_th_tabular') ?>
@@ -11,7 +11,7 @@
 </thead>
 <tfoot>
 <tr><th colspan="2">
-    <?php include_partial('pager', array('pager' => $pager, 'action' => '@addressBook_myAddressesList')); ?><br />
+    <?php include_partial('pager', array('pager' => $pager, 'action' => '@addressBook_myList')); ?><br />
 </th></tr>
 </tfoot>
 <tbody>
