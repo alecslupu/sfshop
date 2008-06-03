@@ -297,7 +297,7 @@ TransUnit:
   TransUnit_UA_53:
     cat_id:     Catalogue_ua
     source:     Change password
-    target:     Змінити
+    target:     Змінити пароль
     translated: 1
 
 
