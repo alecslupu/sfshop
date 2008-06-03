@@ -6,7 +6,7 @@
     <?php $url = '@addressBook_edit?id=' . $form->getObject()->getId(); ?>
 <?php endif; ?>
 
-<form action="<?php echo url_for($url); ?>" method="post" class="form">
+<form action="<?php echo url_for($url); ?>" method="post" id="form" class="form">
     <ul class="main">
         <?php echo $form ?>
         <li class="button">
@@ -14,4 +14,6 @@
         </li>
     </ul>
 </form>
+
+<?php echo javascript_tag('setCheckboxValue()') ?>
 

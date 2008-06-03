@@ -22,6 +22,8 @@ class sfsAddressBook extends BasesfsAddressBook
     public function setIsDefault($value)
     {
         if ($value == 1) {
+            $con = Propel::getConnection();
+            
             $criteriaWhere = new Criteria();
             $criteriaWhere->add(sfsAddressBookPeer::MEMBER_ID, $this->getMemberId());
             $criteriaWhere->add(sfsAddressBookPeer::IS_DEFAULT, 1);
