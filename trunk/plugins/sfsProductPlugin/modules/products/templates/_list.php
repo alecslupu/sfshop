@@ -7,6 +7,7 @@
 <?php endforeach; ?>
 
 <?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
+
 <?php  if ($pager->getNbResults() == 0 ) : ?>
     <div class="left_content_line">
         <div class="right_content_line">
