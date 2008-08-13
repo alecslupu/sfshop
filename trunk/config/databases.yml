@@ -1,5 +1,0 @@
-all:
-  propel:
-    class:          sfPropelDatabase
-    param:
-      dsn:          mysql://sfshop:UtfqF:Rf9y9FwwAu@localhost/sfshop

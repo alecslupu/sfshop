@@ -1,8 +1,0 @@
-#
-# Core
-#
-
-core_changeLanguage:
-  url: /changeLanguage/:culture
-  param: { module: core, action: changeLanguage }
-
