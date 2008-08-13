@@ -1,6 +1,0 @@
-<td><?php echo link_to($product->getId() ? $product->getId() : __('-'), 'productAdmin/edit?id='.$product->getId()); ?></td>
-<td><?php echo link_to($product->getTitle() ? $product->getTitle() : __('-'), 'productAdmin/edit?id='.$product->getId()); ?></td>
-<td><?php echo $product->getTitle(); ?></td>
-<td><?php echo $product->getPrice(); ?></td>
-<td><?php echo $product->getQuantity(); ?></td>
-<td><?php echo $product->getIsActive() ? image_tag(sfConfig::get('sf_admin_web_dir').'/images/tick.png') : '&nbsp;' ?></td>

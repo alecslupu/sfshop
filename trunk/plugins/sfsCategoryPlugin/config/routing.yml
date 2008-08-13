@@ -1,6 +1,0 @@
-#
-# Category Admin
-#
-categoryAdmin_list: 
-  url: /categoryAdmin/list/*
-  param: { module: categoryAdmin, action: list }

@@ -1,7 +1,0 @@
-#
-# Delivery
-#
-
-delivery_checkout:
-  url: /checkout-delivery
-  param: { module: delivery, action: checkout }
