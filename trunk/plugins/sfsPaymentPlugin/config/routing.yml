@@ -1,0 +1,11 @@
+#
+# Payment
+#
+payment_paypal: 
+  url: /payment-paypal/:order_item_id
+  param: { module: paypal, action: index }
+
+payment_paypalCharged: 
+  url: /paypal-charged/:uuid/*
+  param: { module: paypal, action: charged }
+

@@ -1,0 +1,53 @@
+generator:
+  class:                sfAdvancedAdminGenerator
+  param:
+    model_class:        Information
+    theme:              default
+    
+    fields: 
+      title: 
+        name:           'Title'
+        help:           'Information title'
+        type:           input_tag
+        params:         size=150
+      description: 
+        name:           'Description'
+        help:           'Information description'
+        type:           textarea_tag
+        params:         size=150x10
+      meta_keywords: 
+        name:           'Keywords'
+        help:           'Meta keywords'
+        type:           textarea_tag
+        params:         size=80x10
+      meta_description: 
+        name:           'Description'
+        help:           'Meta description'
+        type:           textarea_tag
+        params:         size=80x10
+      is_active: 
+        name:           'Active'
+    
+    list: 
+      title:            'List of information pages'
+      display:          [ id, title, is_active ]
+      max_per_page:     20
+      click_action:     show
+      object_actions: 
+        _edit:          ~
+    
+    show:
+      title:            View information page
+      display: 
+        "NONE":         [ title, description ]
+        "Meta":         [ meta_keywords, meta_description ]
+    
+    edit: 
+      title:            '%%generator_edit_title%%'
+      display: 
+        "NONE":         [ title, description ]
+        "Meta":         [ meta_keywords, meta_description ]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _delete:        ~

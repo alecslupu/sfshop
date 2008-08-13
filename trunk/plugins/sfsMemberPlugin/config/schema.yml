@@ -1,0 +1,111 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsMemberPlugin.lib.model
+
+  member: 
+    _attributes: 
+      phpName: Member
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    credential: 
+      type: VARCHAR
+      size: 255
+      required: true
+      default: 'member'
+    gender: 
+      type: TINYINT
+      required: false
+    first_name: 
+      type: VARCHAR
+      size: 128
+    last_name: 
+      type: VARCHAR
+      size: 128
+    email: 
+      type: VARCHAR
+      size: 128
+    default_address_id: 
+      type: INTEGER
+      required: false
+      foreignTable: address_book
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    secret_question: 
+      type: LONGVARCHAR
+    secret_answer: 
+      type: LONGVARCHAR
+    phone: 
+      type: VARCHAR
+      size: 32
+    mobile: 
+      type: VARCHAR
+      size: 32
+    password: 
+      type: VARCHAR
+      size: 32
+      required: true
+      default: ''
+    confirm_code: 
+      type: VARCHAR
+      size: 32
+    is_confirmed: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    access_num: 
+      type: INTEGER
+      required: true
+      default: 1
+    created_at: 
+    updated_at: 
+    modified_at: 
+      type: TIMESTAMP
+    _uniques: 
+      uni_email: [email]
+
+  member_secret_question: 
+    _attributes: 
+      phpName: MemberSecretQuestion
+      isI18N: true
+      i18nTable: member_secret_question_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    created_at: 
+    updated_at: 
+
+  member_secret_question_i18n: 
+    _attributes: 
+      phpName: MemberSecretQuestionI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: member_secret_question
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    question: 
+      type: LONGVARCHAR

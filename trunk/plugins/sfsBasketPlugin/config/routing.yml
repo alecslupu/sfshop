@@ -1,0 +1,16 @@
+#
+# Basket
+#
+
+basket_add:
+  url: /add-to-cart/*
+  param: { module: basket, action: add }
+  
+basket_list:
+  url: /shopping-cart/*
+  param: { module: basket, action: list }
+  
+basket_delete:
+  url: /shopping-cart-delete/*
+  param: { module: basket, action: delete }
+

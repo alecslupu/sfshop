@@ -1,0 +1,699 @@
+/*
+  $Id: stylesheet.css,v 1.1.1.1 2004/03/04 23:42:24 ccwjr Exp $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2003 osCommerce
+
+  Released under the GNU General Public License
+*/
+.cat_description {  font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #800000; font-weight: bold }
+.boxText { font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+.errorBox { font-family : Verdana, Arial, sans-serif; font-size : 10px; background: #ffb3b5; font-weight: bold; }
+.stockWarning { font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #cc0033; }
+.productsNotifications { background: #f2fff7; }
+.orderEdit { font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #70d250; text-decoration: underline; }
+
+BODY {
+  background: #ffffff;
+  color: #000000;
+  margin: 0px;
+}
+
+A {
+ font-size: 11px;
+ font-family: Arial;
+ color: #000000;
+ text-decoration: none
+}
+
+s{
+ font-size: 13px;
+ color: #B9B9B9;
+ text-decoration: line-through;
+}
+
+A:hover {
+  color: #AABBDD;
+  text-decoration: underline;
+}
+
+FORM {
+        display: inline;
+}
+
+TR.header {
+  background: #ffffff;
+}
+
+TR.headerNavigation {
+  background: #F5F5F5;
+}
+
+TD.headerNavigation {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  background: #F5F5F5;
+  color: #000000;
+  font-weight : bold;
+}
+
+A.headerNavigation { 
+  color: #000000; 
+}
+
+span.headerNavigation{
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  color: #000000; 
+  font-size: 11px;
+}
+
+a:hover.headerNavigation {
+  color: #949494;
+}
+
+TR.headerError {
+  background: #ff0000;
+}
+
+TD.headerError {
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  background: #ff0000;
+  color: #ffffff;
+  font-weight : bold;
+  text-align : center;
+}
+
+TR.headerInfo {
+  background: #00ff00;
+}
+
+TD.headerInfo {
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  background: #00ff00;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+TR.footer {
+  background: #bbc3d3;
+}
+
+TD.footer {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  background: #bbc3d3;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.infoBox {
+}
+
+.infoBoxContents {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+.infoBoxNotice {
+  background: #FF8E90;
+}
+
+.infoBoxNoticeContents {
+  background: #FFE6E6;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+TD.infoBoxHeading {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+}
+
+TD.infoBox, SPAN.infoBox {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+TR.accountHistory-odd, TR.addressBook-odd, TR.alsoPurchased-odd, TR.payment-odd, TR.productListing-odd, TR.productReviews-odd, TR.upcomingProducts-odd, TR.shippingOptions-odd {
+
+}
+
+TR.accountHistory-even, TR.addressBook-even, TR.alsoPurchased-even, TR.payment-even, TR.productListing-even, TR.productReviews-even, TR.upcomingProducts-even, TR.shippingOptions-even {
+}
+
+TABLE.productListing {
+}
+
+.productListing-heading {
+  font-family: Verdana;
+  font-size: 12px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.productlisting-headingPrice { 
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #9a9a9a;
+}
+
+TD.productListing-data {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+A.pageResults {
+  color: #0000FF;
+}
+
+a:hover.pageResults {
+  color: #0000FF;
+  background: #FFFF33;
+}
+
+TD.pageHeading, DIV.pageHeading {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #9a9a9a;
+}
+
+TR.subBar {
+  background: #f4f7fd;
+}
+
+TD.subBar {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  color: #000000;
+}
+
+TD.main, P.main {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+TD.smallText, SPAN.smallText, P.smallText {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+TD.accountCategory {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 13px;
+}
+
+TD.fieldKey {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+TD.fieldValue {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+}
+
+TD.tableHeading {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+TD.category_desc {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+SPAN.newItemInCart {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  color: #ff0000;
+}
+
+CHECKBOX, INPUT, RADIO, SELECT {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+}
+
+TEXTAREA {
+  width: 100%;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+}
+
+SPAN.greetUser {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  color: #f0a480;
+  font-weight: bold;
+}
+
+TABLE.formArea {
+}
+
+TD.formAreaTitle {
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+SPAN.markProductOutOfStock {
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  color: #c76170;
+  font-weight: bold;
+}
+
+SPAN.productSpecialPrice {
+ font-size: 13px;
+ font-family: verdana;
+ color: #743954;
+ font-weight: bold; 
+ text-decoration: none
+}
+
+SPAN.errorText {
+  font-family: Verdana, Arial, sans-serif;
+  color: #ff0000;
+}
+
+.moduleRow { }
+.moduleRowOver { background-color: #D7E9F7; cursor: pointer; cursor: hand; }
+.moduleRowSelected { background-color: #E9F4FC; }
+
+.checkoutBarFrom, .checkoutBarTo { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #8c8c8c; }
+.checkoutBarCurrent { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #000000; }
+
+/* message box */
+
+.messageBox { font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+.messageStackError, .messageStackWarning { font-family: Verdana, Arial, sans-serif; font-size: 10px; background-color: #ffb3b5; }
+.messageStackSuccess { font-family: Verdana, Arial, sans-serif; font-size: 10px; background-color: #99ff00; }
+
+/* input requirement */
+
+.inputRequirement { font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #ff0000; }
+
+/* VJ Links Manager v1.00 begin */
+TABLE.linkListing {
+  border: 1px;
+  border-style: solid;
+  border-color: #b6b7cb;
+  border-spacing: 1px;
+}
+
+.linkListing-heading {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background: #b6b7cb;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+TD.linkListing-data {
+  border-right: 1px solid #b6b7cb;
+  border-bottom: 1px solid #b6b7cb;
+  padding: 4px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+TR.linkListing-odd {
+  background: #f8f8f9;
+}
+
+TR.linkListing-even {
+  background: #F5F5F5;
+}
+/* VJ Links Manager v1.00 end */
+.content        {BACKGROUND: none; COLOR: #000000; FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica}
+
+/* Show Cart Details */
+TR.ShowCartDetails, TD.ShowCartDetails, P.ShowCartDetails {
+/* <FONT COLOR="bbc3d3" FACE="Arial" SIZE="1"> */
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #BDCAF0;
+}
+
+ /* Show Header Page Links */
+TR.HeaderPageLinksLeft, TD.HeaderPageLinksLeft, P.HeaderPageLinksLeft {
+  background-image: url('images/button_blank_left.gif');
+}
+TR.HeaderPageLinksRight, TD.HeaderPageLinksRight, P.HeaderPageLinksRight {
+  background-image: url('images/button_blank_right.gif');
+}
+TR.HeaderPageLinks, TD.HeaderPageLinks, P.HeaderPageLinks {
+  background-image: url('images/button_blank_middle.gif');
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000
+}
+A.HeaderPageLinks {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000;
+}
+a:hover.HeaderPageLinks {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+/*  background: #00FF00; */
+  color: #00FF00;
+}
+
+TD.cookieUsage {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background: #000000;
+  color: #FFFFFF;
+}
+.yearHeader { font-family: Helvetica, Arial, Verdana; font-size: 14px; font-weight: bold; color: #000000; background-color: #FFFFFF; text-decoration: none;} .calendarMonth { background-color: #BBC3D3; cursor: default; width: 100%;}
+.calendarHeader { font-family: Helvetica, Arial, Verdana; font-size: 11px; font-weight: bold; color: #000000; background-color: #FFFFFF; text-decoration: none; height: 22px;}
+.calendarToday { font-family: Arial, Verdana; font-size: 10px; color: #000000; background-color: #FFCF00; padding-left : 3px; text-decoration: none; border:1px solid #FFFFFF; height: 22px; width: 18px;}
+.calendarWeekend { font-family: Arial, Verdana; font-size: 10px; color: #000000; background-color: #CAEEFF; padding-left : 3px; line-height: 14px; text-decoration: none; border:1px solid #FFFFFF; height: 22px; width: 18px;}
+.calendar { font-family: Arial, Verdana; font-size: 10px; color: #000000; background-color: #FFFFFF; padding-left : 3px; line-height: 14px; text-decoration: none; border:1px solid #FFFFFF; height: 22px; width: 18px; }
+.event { font-family: Arial, Verdana; font-size: 11px; color: #000000; background-color: #FFFFFF; text-decoration: none; border:1px solid #E6E6E6; }
+.empty { background-color: #F0FAFF; line-height: 14px; height: 22px; width: 18px; }
+.calendar A:hover, .calendar A:link, .calendar A:visited, .calendar A:visited:hover, .yearHeader A:hover {color: red; text-decoration: underline;}
+.calendarWeekend A:hover, .calendarWeekend A:link, .calendarWeekend A:visited, .calendarWeekend A:visited:hover {color: red; text-decoration: underline;}
+.calendarToday A:hover, .calendarToday A:link, .calendarToday A:visited, .calendarToday A:visited:hover {color: red; text-decoration: underline;}
+
+/* VJ infosystem added */
+h4.infoTitle { 
+  margin: 0;
+}
+
+p.infoBlurb { 
+  margin: 0;
+}
+
+
+TD.productPriceInListing {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  background: #d2e9fb;
+}
+
+TD.productPriceInBox {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  background: #eeeeee;
+}
+
+TD.productPriceInProdInfo {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  background: #ccffcc;
+}
+
+/* Emreys.com modified*/
+
+body{
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+background: #E6E6E6
+}
+
+ .ml1{
+ font-size: 12px;
+ font-family: Verdana;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+ .ml111{
+ font-size: 12px;
+ font-family: Verdana;
+ color: #743954;
+ text-decoration: none
+ }
+
+ .ml-logo{
+ font-size: 26px;
+ font-family: Arial;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+
+ .ml2{
+ font-size: 10px;
+ font-family: Tahoma;
+ color: #000000;
+ font-weight: bold;
+ text-decoration: none
+ }
+
+ .ml3{
+ font-size: 13px;
+ font-family: Arial;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+
+.ml3b{
+ font-size: 13px;
+ font-family: Arial;
+ color: #000000;
+ text-decoration: none
+ }
+
+
+
+ .ml4-2{
+ font-size: 11px;
+ font-family: Tahoma;
+ color: #743954;
+ text-decoration: none
+ }
+
+ .ml4-12{
+ font-size: 12px;
+ font-family: arial;
+ color: #743954;
+ text-decoration: none
+ }
+
+ .ml4{
+ font-size: 11px;
+ font-family: Arial;
+ color: #000000;
+ text-decoration: none
+ }
+
+ .ml4_{
+ font-size: 12px;
+ font-family: arial;
+ color: #484848;
+ text-decoration: none
+ }
+
+ .ml4-sp{
+ font-size: 9px;
+ font-family: Arial;
+ color: #000000;
+ text-decoration: none
+ }
+
+ .ml41{
+ font-size: 10px;
+ font-family: Arial;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+
+ .ml4-W{
+ font-size: 13px;
+ font-family: Arial;
+ color: #FFFFFF;
+ font-weight: bold;
+ text-decoration: none
+ }
+
+ .ml4-W_2{
+ font-size: 11px;
+ font-family: Arial;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+
+
+
+ .ml4-W12{
+ font-size: 12px;
+ font-family: Arial;
+ color: #FFFFFF;
+ text-decoration: none
+ }
+
+ .ml4-b12-bold{
+ font-size: 12px;
+ font-family: Arial;
+ color: #000000;
+ font-weight: bold;
+ text-decoration: none
+ }
+
+ .ml4-b12{
+ font-size: 12px;
+ font-family: Arial;
+ color: #000000;
+ text-decoration: none
+ }
+
+ .ml4-b12-b{
+ font-size: 12px;
+ font-family: Arial;
+ color: #743954;
+ font-weight: bold; 
+ text-decoration: none
+ }
+
+ .ml4-b12_1{
+ font-size: 13px;
+ font-family: verdana;
+ color: #743954;
+ font-weight: bold; 
+ text-decoration: none
+ }
+
+
+ .ml5{
+ font-size: 11px;
+ font-family: Tahoma;
+ color: #CDCFCF;
+font-weight: bold;
+ text-decoration: none
+ }
+
+.border{
+border: #D3D3D3 1px solid;
+}
+
+.border_left{
+border-left: #FFFFFF 2px solid;
+}
+
+.border-b{
+border-bottom: #B498A5 1px dotted;
+}
+
+.border-b2{
+border-bottom: #FFFFFF 2px solid;
+}
+
+ .border-top{
+border-top: #C4C4C4 1px solid;
+}
+
+.b1{
+border-bottom:1px dotted black;
+border-right:1px dotted black;
+}
+.b2{
+border-bottom:1px dotted black;
+}
+.b3{
+border-right:1px dotted black;
+}
+
+ .se2{             
+ width: 133px;
+ height: 18px;
+ font-size: 11px;
+ color: #FFFFFF;
+ background: #6B394E;
+ border: #896579 1px solid;
+ }
+
+ .se3{             
+ width: 135px;
+ height: 18px;
+ font-size: 11px;
+ color: #FFFFFF;
+ background: #803E5B;
+ border: #A15E84 1px solid;
+ }
+
+ .marks{
+ font-size: 9px;
+ font-family: Tahoma;
+ color: #FFD307;
+ text-decoration: none
+ }
+
+ .marks-S{
+ font-size: 13px;
+ color: #B9B9B9;
+ text-decoration: none
+ }
+
+ .marks-c{
+ font-size: 13px;
+ font-weight: bold;
+ color: #FFD307;
+ text-decoration: none
+ }
+
+ .m01{
+ font-size: 13px;
+ font-weight: bold;
+ color: #232323;
+ text-decoration: none
+ }
+
+ .ml02{
+ font-size: 11px;
+ color: #515151;
+ text-decoration: none
+ }
+
+ .ml03{
+ font-size: 11px;
+ color: #743954;
+ text-decoration: none
+ }
+
+.se{
+  width: 157px;
+  height: 18px;
+  font-size: 9px;
+  color: #282E3E; 
+ }
+ 
+
+ .bg1{
+ background: url(images/m002.gif);
+ background-repeat: no-repeat;
+ }
+
+ .bg3{
+ background: url(images/m003.gif);
+ background-repeat: no-repeat;
+ }
+
+ .bg2{
+ background: url(images/m004.gif);
+ }
+
+ .bg4{
+ background: url(images/m006.gif);
+ background-repeat: no-repeat;
+ }

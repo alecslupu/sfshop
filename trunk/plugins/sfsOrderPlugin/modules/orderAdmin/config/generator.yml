@@ -1,0 +1,19 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      OrderItem
+    theme:            default
+    
+    list: 
+      title:            'List of orders'
+      display:          [id, member_full_name, delivery_full_name, products_count, _total_price, status, created_at]
+      max_per_page:     20
+      
+      object_actions: 
+        view: 
+          name:         'Details of order'
+          action:       details
+          icon:         '/images/view_icon.png'
+      actions:          []
+      
+      filters:          [status_id]

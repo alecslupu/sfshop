@@ -1,0 +1,15 @@
+---
+Delivery: 
+  Delivery_1: 
+    culture:    en
+    title:      Federal Express
+    class_name: sfsFedexService
+    icon:       'fedex.gif'
+    params:     '{"account":510087020,"meter":1242414,"weight_unit":"kgs","transit":true,"envelop":false,"server":"test","residential":true,"timeout":"","insure":"","surcharge":0,"dropoff":1,"original_address":{"country_id":227,"state_id":"19","city":"Boston","address":"44 Main street","postcode":"02134","phone":"6173335555"}}' 
+    is_active:  1
+  Delivery_2: 
+    culture:    en
+    title:      Flat rate
+    class_name: sfsFlatService
+    params:     '{"title":"Best way","price":5}'
+    is_active:  1

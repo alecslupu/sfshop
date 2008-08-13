@@ -1,0 +1,181 @@
+#
+# Admins
+#
+Admin: 
+  Admin_1: 
+    credential:      'superadmin,admin'
+    username:        'superadmin'
+    password:        'superadmin'
+    first_name:      'Dmitry'
+    last_name:       'Nesteruk'
+    email:           'superadmin@ss.ict'
+    is_active:       1
+  Admin_2: 
+    credential:      'admin'
+    username:        'admin'
+    password:        'admin'
+    first_name:      'Andrey'
+    last_name:       'Kotlyarov'
+    email:           'admin@ss.ict'
+    is_active:       1
+
+#
+# AdminMenu
+#
+AdminMenu: 
+  AdminMenu_Administrator: 
+    parent_id:      null
+    credential:     ''
+    title:          'Administrator'
+    route:          ''
+    pos:            1
+    is_active:      1
+  AdminMenu_Catalog: 
+    parent_id:      null
+    credential:     ''
+    title:          'Catalog'
+    route:          ''
+    pos:            2
+    is_active:      1
+  AdminMenu_MembersOrders: 
+    parent_id:      null
+    credential:     ''
+    title:          'Members/Orders'
+    route:          ''
+    pos:            3
+    is_active:      1
+  AdminMenu_ContentManager: 
+    parent_id:      null
+    credential:     ''
+    title:          'Content Manager'
+    route:          ''
+    pos:            4
+    is_active:      1
+  AdminMenu_Localization: 
+    parent_id:      null
+    credential:     ''
+    title:          'Localization'
+    route:          ''
+    pos:            5
+    is_active:      1
+  AdminMenu_Reserv1: 
+    parent_id:      null
+    credential:     ''
+    title:          'Reserv4'
+    route:          ''
+    pos:            6
+    is_active:      0
+  AdminMenu_Reserv2: 
+    parent_id:      null
+    credential:     ''
+    title:          'Reserv5'
+    route:          ''
+    pos:            7
+    is_active:      0
+  
+  AdminMenu_Administrator_Admins: 
+    parent_id:      AdminMenu_Administrator
+    credential:     'superadmin'
+    title:          'Admins'
+    route:          'coreAdminAdmin_list'
+    pos:            1
+    is_active:      1
+  
+#  AdminMenu_Administrator_Profile: 
+#    parent_id:      AdminMenu_Administrator
+#    credential:     'superadmin,admin'
+#    title:          'My profile'
+#    route:          'coreAdmin_profile'
+#    pos:            1
+#    is_active:      1
+  AdminMenu_Administrator_Password: 
+    parent_id:      AdminMenu_Administrator
+    credential:     'superadmin,admin'
+    title:          'Change password'
+    route:          'coreAdmin_password'
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_Catalog_CP: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin,admin'
+    title:          'Categories/Products'
+    route:          'catalogAdmin_list'
+    pos:            1
+    is_active:      1
+  AdminMenu_Catalog_Categories: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin,admin'
+    title:          'Categories'
+    route:          'categoryAdmin_list'
+    pos:            1
+    is_active:      0
+  AdminMenu_Catalog_Brands: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin,admin'
+    title:          'Brands'
+    route:          'brandAdmin_list'
+    pos:            2
+    is_active:      1
+  AdminMenu_Catalog_Products: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin,admin'
+    title:          'Products'
+    route:          'productAdmin_list'
+    pos:            1
+    is_active:      0
+  AdminMenu_Catalog_OptionTypes: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin'
+    title:          'Products option types'
+    route:          'optionTypeAdmin_list'
+    pos:            2
+    is_active:      1
+    
+  AdminMenu_Catalog_OptionValues: 
+    parent_id:      AdminMenu_Catalog
+    credential:     'superadmin'
+    title:          'Products option values'
+    route:          'optionValueAdmin_list'
+    pos:            3
+    is_active:      1
+    
+  AdminMenu_MembersOrders_Members: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     'superadmin'
+    title:          'Members'
+    route:          'memberAdmin_list'
+    pos:            1
+    is_active:      1
+  AdminMenu_MembersOrders_Orders: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     'superadmin'
+    title:          'Orders'
+    route:          'orderAdmin_list'
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_ContentManager_Informations: 
+    parent_id:      AdminMenu_ContentManager
+    credential:     'superadmin, admin'
+    title:          'Information pages'
+    route:          'coreInformationAdmin_list'
+    pos:            1
+    is_active:      1
+  
+  AdminMenu_ContentManager_MailTemplates: 
+    parent_id:      AdminMenu_ContentManager
+    credential:     'superadmin, admin'
+    title:          'Email templates'
+    route:          'emailTemplateAdmin_list'
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_Localization_Currencies: 
+    parent_id:      AdminMenu_Localization
+    credential:     'superadmin, admin'
+    title:          'Currencies'
+    route:          'currencyAdmin_list'
+    pos:            1
+    is_active:      1
+ 

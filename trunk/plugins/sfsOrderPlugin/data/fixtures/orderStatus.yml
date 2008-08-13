@@ -1,0 +1,27 @@
+OrderStatus: 
+  # English
+  OrderStatus_1: 
+    culture:   en
+    name:      pending
+    title:     Pending
+    is_active: 1
+  OrderStatus_2: 
+    culture:   en
+    name:      processing
+    title:     Processing
+    is_active: 1
+  OrderStatus_3: 
+    culture:   en
+    name:      delivering
+    title:     Delivering
+    is_active: 1
+  OrderStatus_4: 
+    culture:   en
+    name:      delivered
+    title:     Delivered
+    is_active: 1
+  OrderStatus_5: 
+    culture:   en
+    name:      canceled
+    title:     Canceled
+    is_active: 1

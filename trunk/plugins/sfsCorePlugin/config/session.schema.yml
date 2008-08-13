@@ -1,0 +1,25 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsCorePlugin.lib.model.session
+
+  session: 
+    _attributes: 
+      phpName: Session
+    cid: 
+      type: CHAR
+      size: 36
+      required: true
+      primaryKey: true
+    ses_data: 
+      type: LONGVARCHAR
+      required: true
+    ses_time: 
+      type: TIMESTAMP
+#      required: true
+#      default: 0
+#    max_lifetime: 
+#      type: INTEGER
+#     required: true
+#      default: 1440

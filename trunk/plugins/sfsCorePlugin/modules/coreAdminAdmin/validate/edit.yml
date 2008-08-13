@@ -1,0 +1,58 @@
+methods: 
+  post: 
+    - "admin{username}"
+    - "admin{credential}"
+    - "admin{username}"
+    - "admin{first_name}"
+    - "admin{last_name}"
+    - "admin{email}"
+#    - "admin{is_active}"
+names: 
+  admin{username}: 
+    required:           Yes
+    required_msg:       'Please enter name for brand'
+    validators:         [nameValidator, uniqueValidator]
+  admin{credential}: 
+    required:           Yes
+    required_msg:       'Please enter credential list for admin'
+    validators:         [credentialValidator]
+  admin{first_name}: 
+    required:           Yes
+    required_msg:       'Please enter first name for admin'
+  admin{last_name}: 
+    required:           Yes
+    required_msg:       'Please enter lastst name for admin'
+  admin{email}: 
+    required:           No
+    validators:         [emailValidator]
+#  admin{is_active}: 
+#    required:           No
+fillin: 
+  activate:             on
+
+
+
+nameValidator: 
+  class:              sfsNameValidator
+  param: 
+    name_error:       'Username is not valid'
+
+uniqueValidator: 
+  class:              sfsUniqueValidator
+  param: 
+    class_name:       'Admin'
+    id_name:          'id'
+    field_name:       'USERNAME'
+    unique_error:     'Name is duplicate'
+
+credentialValidator: 
+  class:              sfsCredentialValidator
+  param: 
+    model:            'admin'
+    credential_error: 'Credential is incorrect'
+
+emailValidator: 
+  class:              sfEmailValidator
+  param: 
+    url_error:        'E-mail is not valid'
+

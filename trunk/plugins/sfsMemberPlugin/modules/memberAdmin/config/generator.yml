@@ -1,0 +1,74 @@
+generator:
+  class:              sfAdvancedAdminGenerator
+  param:
+    model_class:      Member
+    theme:            default
+
+    fields: 
+      id: 
+        name:           'ID'
+        help:           'Member id'
+      credential: 
+        name:           'Credentials'
+        help:           'Credential list for member'
+      gender: 
+        name:           'Gender'
+      gender_title: 
+        name:           'Gender'
+      first_name: 
+        name:           'First name'
+      last_name: 
+        name:           'Last name'
+      full_name: 
+        name:           'Name'
+      email: 
+        name:           'E-mail'
+      default_email_id: 
+        name:           'Address'
+      phone: 
+        name:           'Phone'
+      mobile: 
+        name:           'Mobile'
+      password: 
+        name:           'Password'
+      is_confirmed: 
+        name:           'Confirmed'
+      is_active: 
+        name:           'Active'
+      access_num: 
+        name:           'Count of access'
+      created_at: 
+        name:           'Created'
+      updated_at: 
+        name:           'Updated'
+      modified_at: 
+        name:           'Modified'
+
+    list: 
+      title:            'List of member'
+      display:          [=id, =full_name, email, gender_title, phone, mobile, is_active, is_confirmed]
+      max_per_page:     2
+      object_actions: 
+        _edit:          ~
+        #_delete:        ~
+        #change_password: 
+        #  name:             'Change password'
+        #  action:           changePassword
+        #  icon:             '/sf/sf_admin/images/edit_icon.png'
+      actions: 
+        #_create:        ~
+
+    show:
+      title:            View a member details
+      display:          [full_name, email, gender_title, phone, mobile, is_active, is_confirmed]
+
+    edit: 
+      title:            '%%generator_edit_title%%'
+      display: 
+        "NONE":         [email, credential, is_active, is_confirmed]
+        "Description":  [first_name, last_name, _gender, phone, mobile]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _save_and_add:  ~
+        #_delete:       ~

@@ -1,0 +1,61 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      Admin
+    theme:            default
+
+    fields: 
+      id: 
+        name:           'ID'
+        help:           'Admin ID'
+      username: 
+        name:           'Username'
+        help:           'Nick for login'
+      password: 
+        name:           'Password'
+      credential: 
+        name:           'Credentials'
+        help:           'Credential list for admin'
+      first_name: 
+        name:           'First name'
+      last_name: 
+        name:           'Last name'
+      full_name: 
+        name:           'Name'
+      email: 
+        name:           'E-mail'
+      is_active: 
+        name:           'Active'
+      access_num: 
+        name:           'Count of access'
+      created_at: 
+        name:           'Created'
+      updated_at: 
+        name:           'Updated'
+      modified_at: 
+        name:           'Modified'
+
+    list: 
+      title:            'List of admin'
+      display:          [=id, =full_name, credential, email, is_active]
+      max_per_page:     20
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+        change_password: 
+          name:             'Change password'
+          action:           changePassword
+          icon:             '/sf/sf_admin/images/edit_icon.png'
+      actions: 
+        _create:        ~
+
+    edit: 
+      title:            '%%generator_edit_title%%'
+      display: 
+        "NONE":         [username, credential, is_active]
+        "Description":  [first_name, last_name, email]
+      actions: 
+        _list:         ~
+        _save:         ~
+        _save_and_add: ~
+        _delete:       ~

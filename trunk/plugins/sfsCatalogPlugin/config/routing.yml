@@ -1,0 +1,6 @@
+#
+# Catalog Admin
+#
+catalogAdmin_list: 
+  url: /catalogAdmin/list/*
+  param: { module: catalogAdmin, action: list }

@@ -1,0 +1,13 @@
+all:
+  languages:
+    images_dir: languages
+  
+  
+  credentials: 
+    member: 
+      - 'member'
+    admin: 
+      - 'admin'
+      - 'superadmin'
+
+

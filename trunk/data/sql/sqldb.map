@@ -1,0 +1,14 @@
+# Sqlfile -> Database map
+plugins.sfsBasketPlugin.lib.model.schema.sql=propel
+plugins.sfsCurrencyPlugin.lib.model.schema.sql=propel
+plugins.sfsCategoryPlugin.lib.model.schema.sql=propel
+plugins.sfsCorePlugin.lib.model.common.schema.sql=propel
+plugins.sfsCorePlugin.lib.model.session.schema.sql=propel
+plugins.sfsDeliveryPlugin.lib.model.schema.sql=propel
+plugins.sfsCorePlugin.lib.model.admin.schema.sql=propel
+plugins.sfsThumbnailPlugin.lib.model.schema.sql=propel
+plugins.sfsProductPlugin.lib.model.schema.sql=propel
+plugins.sfsOrderPlugin.lib.model.schema.sql=propel
+plugins.sfsMemberPlugin.lib.model.schema.sql=propel
+plugins.sfsAddressBookPlugin.lib.model.schema.sql=propel
+plugins.sfsCorePlugin.lib.model.translation.schema.sql=propel

@@ -1,0 +1,49 @@
+generator: 
+  class:                sfAdvancedAdminGenerator
+  param: 
+    model_class:        Brand
+    theme:              default
+
+    fields: 
+      id: 
+        name:           'ID'
+        help:           'Brand id'
+      url: 
+        name:           'URL'
+        help:           'URL for brand'
+      title: 
+        name:           'Title'
+        help:           'Brand title'
+        type:           input_tag
+      description: 
+        name:           'Description'
+        help:           'Brand description'
+        type:           textarea_tag
+      created_at: 
+        name:           'Created'
+      updated_at: 
+        name:           'Updated'
+
+    list: 
+      title:            'List of brand'
+      display:          [=id, title, url, created_at, updated_at]
+      max_per_page:     20
+      click_action:     show
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+      actions: 
+        _create:        ~
+
+    show:
+      title:            View a brand details
+      display:          [title, url, description]
+
+    edit: 
+      title:            '%%_edit_caption%%'
+      display:          [title, url, description]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _save_and_add:  ~
+        _delete:        ~
