@@ -64,11 +64,19 @@ var sfsForm = Class.create({
     },
     clearErrors: function()
     {
-        var errorElements = this.form.select('.' + this.options.errorClassName);
+        var errorElements = this.form.select('ul.' + this.options.errorClassName);
         
         errorElements.each(
             function(element) {
                 element.remove();
+            }
+        );
+
+        var invalidFields = this.form.select('.' + this.options.errorClassName);
+        
+        invalidFields.each(
+            function(element) {
+                element.removeClassName('error');
             }
         );
     },
@@ -132,8 +140,16 @@ var sfsForm = Class.create({
         var element = this.getFieldByName(fieldName);
         
         if (Object.isElement(element)) {
-            var advice = '<li><ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul></li>';
             var parent = element.up('li');
+            if (Object.isElement(parent)) {
+                var advice = '<li><ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul></li>';
+            }
+            else {
+                var advice = '<ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul>';
+                parent = element;
+            }
+    
+            element.addClassName('error');
             new Insertion.Before(parent, advice);
         }
     },

@@ -593,13 +593,13 @@ form.form span.help {
     font-weight: normal;
 }
 
-form.form ul.error_list {
-    margin-left: 140px;
+form.form ul.error {
+    margin-left: 155px;
     width: 350px;
     display: block;
 }
 
-ul.error_list {
+ul.error {
     width: 170px;
     color: #f21207;
     font-size: 11px;
@@ -607,7 +607,7 @@ ul.error_list {
     margin-bottom: 4px;
 }
 
-ul.error_list li {
+ul.error li {
     font-weight: bold;
     line-height: 15px;
     padding-left: 4px;
@@ -626,7 +626,7 @@ form.form_basket ul.main {
     padding-left: 0px;
 }
 
-form.form_basket ul.error_list {
+form.form_basket ul.error {
     padding-left: 0px;
 }
 
@@ -635,7 +635,7 @@ form.form_currency label {
 }
 
 
-form.form_services ul.error_list {
+form.form_services ul.error {
     margin-left: 0px;
     width: 700px;
     display: block;

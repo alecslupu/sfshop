@@ -6,14 +6,12 @@
     <span class="action">
         [ <?php echo link_to_function(__('Edit'), 'showEditForm("container_edit_contact", "container_contact_info")') ?> ]
     </span><br/><br/>
-    <?php if ($info['phone'] != ''): ?>
-        <b><?php echo __('Phone') ?></b>: <span id="phone"><?php echo $info['phone'] ?></span><br/>
-    <?php endif; ?>
-    <?php if ($info['mobile'] != ''): ?>
-        <b><?php echo __('Mobile') ?></b>: <span id="mobile"><?php echo $info['mobile'] ?></span><br/>
-    <?php endif; ?>
+    <b><?php echo __('Primary phone') ?></b>: <span id="primary_phone"><?php echo $info['primary_phone'] ?></span><br/>
+    <span id="content_secondary_phone" <?php echo $info['secondary_phone'] !='' ? '' : 'style="display: none"' ?>>
+        <b><?php echo __('Secondary phone') ?></b>: <span id="secondary_phone"><?php echo $info['secondary_phone'] ?>
+    </span><br/>
 </div>
 
-<?php if ($info['phone'] == '' && $info['mobile'] == ''): ?>
+<?php if ($info['primary_phone'] == '' && $info['secondary_phone'] == ''): ?>
     <?php echo javascript_tag('showEditForm("container_edit_contact", "container_contact_info")') ?>
 <?php endif; ?>

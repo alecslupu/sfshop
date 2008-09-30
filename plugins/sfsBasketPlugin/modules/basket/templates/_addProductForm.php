@@ -16,8 +16,7 @@
         var basketAddForm_' . $product->getId() . ' = new sfsBasketAddProductForm(
             "form_basket_add_' . $product->getId() . '", 
             {
-                nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '",
-                errorClassName: "error_list"
+                nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '"
             });
     ') ?>
 <?php endif; ?>

@@ -1,7 +1,7 @@
 <?php include_partial('core/container_header', array('caption' => __('Order delivery methods'))) ?>
     
     <?php if (isset($errors)): ?>
-        <ul class="error_list" style="width: 100%">
+        <ul class="error" style="width: 100%">
             <?php foreach ($errors as $error): ?>
                  <li><?php echo $error ?><li>
             <?php endforeach; ?>

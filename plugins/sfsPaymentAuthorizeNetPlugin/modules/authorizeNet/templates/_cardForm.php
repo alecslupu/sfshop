@@ -1,7 +1,7 @@
 <h3><?php echo __('Edit card info') ?></h3>
 <form action="<?php echo url_for('@payment_authorizeNet?order_item_id=' . $sf_request->getParameter('order_item_id')) ?>" method="post" class="form" id="form_card_info" onsubmit="return false">
     <?php if (count($errors) > 0): ?>
-        <ul class="error_list">
+        <ul class="error">
             <?php foreach ($errors as $error): ?>
                 <li><?php echo $error ?></li>
             <?php endforeach; ?>
@@ -18,7 +18,6 @@
         "form_card_info", 
         {
             nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '",
-            errorClassName: "error_list",
             postExecute: function(response)
             {
                 if (this.isValid()) {

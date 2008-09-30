@@ -22,7 +22,6 @@
         "form_address", 
         {
             nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '",
-            errorClassName: "error_list",
             postExecute: function()
             {
                 if (this.isValid()) {
