@@ -23,8 +23,8 @@ class sfsContactForm extends MemberForm
         
         $this->setWidgets(
             array(
-                'phone'   => new sfWidgetFormInput(),
-                'mobile'  => new sfWidgetFormInput()
+                'primary_phone'   => new sfWidgetFormInput(),
+                'secondary_phone' => new sfWidgetFormInput()
              )
         );
         
@@ -34,7 +34,7 @@ class sfsContactForm extends MemberForm
             )
         );
         
-        $validatorPhone = new sfValidatorAnd(
+        $validatorPrimaryPhone = new sfValidatorAnd(
             array(
                 new sfValidatorRegex(
                     array(
@@ -57,7 +57,7 @@ class sfsContactForm extends MemberForm
             array('required' => 'Please enter a phone number')
         );
         
-        $validatorMobile = new sfValidatorAnd(
+        $validatorSecondaryPhone = new sfValidatorAnd(
             array(
                 new sfValidatorRegex(
                     array(
@@ -82,13 +82,12 @@ class sfsContactForm extends MemberForm
         
         $this->setValidators(
             array(
-               'phone'   => $validatorPhone,
-               'mobile'  => $validatorMobile
+               'primary_phone'   => $validatorPrimaryPhone,
+               'secondary_phone' => $validatorSecondaryPhone
             )
         );
         
         $this->getWidgetSchema()->setNameFormat('data[%s]');
-        
         parent::configure();
     }
 }
