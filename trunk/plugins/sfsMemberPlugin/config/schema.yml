@@ -40,10 +40,10 @@ propel:
       type: LONGVARCHAR
     secret_answer: 
       type: LONGVARCHAR
-    phone: 
+    primary_phone: 
       type: VARCHAR
       size: 32
-    mobile: 
+    secondary_phone: 
       type: VARCHAR
       size: 32
     password: 
