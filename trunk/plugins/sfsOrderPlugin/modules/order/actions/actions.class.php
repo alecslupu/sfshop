@@ -56,8 +56,8 @@ class orderActions extends sfActions
                 
                 $member = $sfUser->getUser();
                 
-                if ($member->getPhone() == '' && $member->getMobile() == '') {
-                    $this->errorContact = __('Please, input your phone number');
+                if ($member->getPrimaryPhone() == '') {
+                    $this->errorContact = __('Please, input primary phone number');
                 }
                 
                 if ($this->form->isValid() && !isset($this->errorContact)) {

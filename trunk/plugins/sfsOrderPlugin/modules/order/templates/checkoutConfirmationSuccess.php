@@ -30,8 +30,8 @@
         </tr>
         <tr>
             <td colspan="2">
-                <h3><?php echo __('Comment to your order') ?></h3>
                 <form action="<?php echo url_for('@order_checkoutConfirmation'); ?>" method="post" id="form_confirm" class="form">
+                    <h3><?php echo __('Comment to your order') ?></h3>
                     <ul class="main">
                         <li><?php echo $form['comment']->renderError() ?></li>
                         <li><?php echo $form['comment']->renderLabel() ?><?php echo $form['comment']->render(array('cols' => 50)) ?></li>
