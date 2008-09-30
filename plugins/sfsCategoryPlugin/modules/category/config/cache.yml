@@ -1,0 +1,4 @@
+_menuTree:
+  enabled:  on
+  contextual: true
+  lifetime: 3600

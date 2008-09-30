@@ -1,0 +1,20 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        'sfShop'
+    description:  'The best video on DVD.'
+    keywords:     'DVD, shop, ecommerce, video'
+    language:     'en'
+    robots:       'index, follow'
+
+  stylesheets:    [ main ]
+
+  javascripts:    [ prototype/prototype.js, prototype/scriptaculous/effects.js, functions.js, sfsAjax.js ]
+
+  has_layout:     on
+  layout:         layout
+
+  components:
+    sidebar:      []

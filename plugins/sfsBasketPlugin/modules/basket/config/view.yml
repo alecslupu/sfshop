@@ -1,0 +1,3 @@
+listSuccess:
+  javascripts:    [ prototype/window/window.js, sfsForm.js, sfsBasketManageForm.js ]
+  stylesheets:    [ window/themes/default.css, window/themes/alert.css, window/themes/sfshop.css ]
