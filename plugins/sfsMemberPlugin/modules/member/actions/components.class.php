@@ -30,7 +30,7 @@ class memberComponents extends sfComponents
     public function executeContactForm()
     {
         $this->member = $this->getUser()->getUser();
-        $this->form = new sfsContactForm($this->member);
+        $this->form = new sfsMemberContactForm($this->member);
     }
     
    /**

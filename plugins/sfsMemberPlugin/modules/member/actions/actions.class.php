@@ -31,7 +31,7 @@ class memberActions extends sfActions
     {
         sfLoader::loadHelpers(array('Url', 'I18N'));
         
-        $this->form = new sfsLoginForm();
+        $this->form = new sfsMemberLoginForm();
         
         if ($this->getUser()->isAuthenticated()) {
             $this->redirect('@homepage');
@@ -56,22 +56,22 @@ class memberActions extends sfActions
                             $this->getUser()->login($member);
                             
                             if ($this->getRequest()->getReferer() != $this->getRequest()->getUri()) {
-                                $redirect_to = $this->getRequest()->getReferer();
+                                $redirectTo = $this->getRequest()->getReferer();
                             }
                             else {
-                                $redirect_to = url_for('@member_myProfile', true);
+                                $redirectTo = url_for('@member_myProfile', true);
                             }
                         }
                         else {
-                             $redirect_to = url_for('@member_confirmRegistration', true);
+                             $redirectTo = url_for('@member_confirmRegistration', true);
                         }
                         
                         if ($this->getRequest()->isXmlHttpRequest()) {
-                            $response = array('redirect_to' => $redirect_to);
+                            $response = array('redirect_to' => $redirectTo);
                             return $this->renderText(sfsJSONPeer::createResponseSuccess($response));
                         }
                         else {
-                            $this->redirect($redirect_to);
+                            $this->redirect($redirectTo);
                         }
                     }
                     else {
@@ -112,7 +112,7 @@ class memberActions extends sfActions
             $this->redirect('@homepage');
         }
         else {
-            $this->form = new sfsRegistrationForm();
+            $this->form = new sfsMemberRegistrationForm();
             
             if (sfConfig::get('app_recaptcha_is_enabled', true)) {
                 $captchaForm = new reCaptchaForm();
@@ -225,7 +225,7 @@ class memberActions extends sfActions
     */
     public function executeForgotPasswordStepOne()
     {
-        $this->form = new sfsForgotPasswordStepOneForm();
+        $this->form = new sfsMemberForgotPasswordStepOneForm();
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind(array('email' => $this->getRequestParameter('email')));
@@ -262,7 +262,7 @@ class memberActions extends sfActions
             
             $this->secretQuestion = $member->getSecretQuestion();
             
-            $this->form = new sfsForgotPasswordStepTwoForm();
+            $this->form = new sfsMemberForgotPasswordStepTwoForm();
             $this->form->setDefaults(array('email' => $email));
             
             if ($this->getRequest()->isMethod('post')) {
@@ -389,7 +389,7 @@ class memberActions extends sfActions
     {
         sfLoader::loadHelpers(array('I18N'));
         
-        $this->form = new sfsChangePasswordForm($this->getUser()->getUser());
+        $this->form = new sfsMemberChangePasswordForm($this->getUser()->getUser());
         
         if ($this->getRequest()->isMethod('post')) {
             $this->form->bind($this->getRequestParameter('change_password'));
@@ -415,7 +415,7 @@ class memberActions extends sfActions
     public function executeEditContactInfo($request)
     {
         $this->member = $this->getUser()->getUser();
-        $this->form = new sfsContactForm($this->member);
+        $this->form = new sfsMemberContactForm($this->member);
         
         if ($request->isMethod('post')) {
             $data = $this->getRequestParameter('data');

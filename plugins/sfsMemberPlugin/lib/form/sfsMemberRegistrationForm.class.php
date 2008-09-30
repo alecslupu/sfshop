@@ -12,11 +12,11 @@
  * Member registration form.
  *
  * @package    plugin.sfsMemberPlugin
- * @subpackage modules.member.lib
+ * @subpackage lib.form
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
  */
-class sfsRegistrationForm extends MemberForm
+class sfsMemberRegistrationForm extends MemberForm
 {
     public function configure()
     {
