@@ -1,0 +1,139 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsThumbnailPlugin.lib.model
+
+  thumbnail_type: 
+    _attributes: 
+      phpName: ThumbnailType
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 128
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+
+  thumbnail_type_asset_type: 
+    _attributes: 
+      phpName: ThumbnailTypeAssetType
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    thumbnail_type_id: 
+      type: INTEGER
+      required: true
+      foreignTable: thumbnail_type
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    asset_type_id: 
+      type: INTEGER
+      required: true
+      foreignTable: asset_type
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    thumbnail_type_name: 
+      type: VARCHAR
+      size: 128
+    width: 
+      type: INTEGER
+      required: true
+      default: 0
+    height: 
+      type: INTEGER
+      required: true
+      default: 0
+    is_trim: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+
+  thumbnail: 
+    _attributes: 
+      phpName: Thumbnail
+    id:
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    parent_id: 
+      type: INTEGER
+      required: false
+      foreignTable: thumbnail
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
+    ttat_id: 
+      type: INTEGER
+      required: false
+      foreignTable: thumbnail_type_asset_type
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
+    mime_id: 
+      type: INTEGER
+      required: false
+      foreignTable: thumbnail_mime
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
+    asset_id: 
+      type: INTEGER
+      required: false
+    uuid: 
+      type: VARCHAR
+      size: 32
+      required: true
+#      index: unique
+    asset_type_model: 
+      type: VARCHAR
+      size: 128
+    mime_extension: 
+      type: VARCHAR
+      size: 8
+    path: 
+      type: VARCHAR
+      size: 255
+    is_blank: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_converted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at:
+    updated_at:
+
+  thumbnail_mime:
+    _attributes: 
+      phpName: ThumbnailMime
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    mime: 
+      type: VARCHAR
+      size: 128
+    extension: 
+      type: VARCHAR
+      size: 8
+    extensions: 
+      type: VARCHAR
+      size: 128

@@ -1,0 +1,5 @@
+all: 
+  category: 
+    url_separator: '_'
+    thumbnails_dir_name: products
+    

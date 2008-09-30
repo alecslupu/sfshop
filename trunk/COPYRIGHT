@@ -1,0 +1,17 @@
+COPYRIGHTS 
+==========
+  
+sfShop
+-------
+
+Url:       http://code.google.com/p/sfshop
+Copyright: Dmitry Nesteruk <nest@dev-zp.com>
+License:   MIT - see LICENSE file
+
+Symfony
+-------
+sfShop is based on the symfony framework.
+
+Url:       http://www.symfony-project.com/
+Copyright: Fabien Potencier <fabien.potencier@symfony-project.com>
+License:   MIT - see lib/symfony/LICENSE

@@ -1,0 +1,14 @@
+#
+# Delivery
+#
+
+delivery_checkout:
+  url: /checkout-delivery
+  param: { module: delivery, action: checkout }
+
+#
+# Delivery Admin
+#
+deliveryAdmin_list: 
+  url: /deliveryAdmin/list/*
+  param: { module: deliveryAdmin, action: list }

@@ -1,0 +1,42 @@
+methods: 
+  post: 
+    - "brand{name}"
+    - "brand{title}"
+    - "brand{url}"
+    - "brand{description}"
+names: 
+  brand{name}: 
+    required:           Yes
+    required_msg:       'Please enter name for brand'
+    validators:         [nameValidator, uniqueValidator]
+  brand{title}: 
+    required:           Yes
+    required_msg:       'Please enter title for brand'
+  brand{url}: 
+    required:           No
+    validators:         [urlValidator]
+  brand{description}: 
+    required:           No
+fillin: 
+  activate:             on
+
+
+
+nameValidator: 
+  class:              sfsNameValidator
+  param: 
+    name_error:       'Name is not value'
+
+uniqueValidator: 
+  class:              sfsUniqueValidator
+  param: 
+    class_name:       'Brand'
+    id_name:          'id'
+    unique_error:     'Name is duplicate'
+
+urlValidator: 
+  class:              sfUrlValidator
+  param: 
+    url_error:        'URL is not valid'
+
+

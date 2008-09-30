@@ -1,0 +1,18 @@
+#
+# Payment
+#
+
+payment_checkout:
+  url: /checkout-payment
+  param: { module: payment, action: checkout }
+
+payment_chargeFailed:
+  url: /charge-failed
+  param: { module: payment, action: chargeFailed }
+
+#
+# Payment Admin
+#
+paymentAdmin_list: 
+  url: /paymentAdmin/list/*
+  param: { module: paymentAdmin, action: list }

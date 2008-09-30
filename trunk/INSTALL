@@ -1,0 +1,45 @@
+Requirements:  
+1. PHP 5.2.0 and higher
+2. MySQL database 4.1.1 and higher
+3. Web server (Apache, IIS, etc.)
+
+
+1. Create virtual host:
+
+<VirtualHost *:80>
+  ServerAdmin admin@dev.ict
+  ServerName sfshop.dev
+
+  DocumentRoot "/path/to/htdocs"
+
+  ErrorLog "/path/to/log/error.log"
+  CustomLog "/path/to/log/access.log" combined
+
+  php_value error_log "/path/to/log/php.log"
+
+  RewriteEngine on
+  RewriteMap lowercase int:tolower
+
+  <Directory "/path/to/htdocs">
+    Options Includes FollowSymLinks Indexes
+    AllowOverride all
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+</VirtualHost>
+
+2. Create database with name devzpc_sfshop and user with data
+
+login: devzpc_sfUser
+password: AAsMM7Yx3:5Q.v4T
+
+3. Execute script from root directory of site
+
+./install_site
+
+4. Execute
+
+./symfony project:permissions
+
+That is all! The site should be work. 

@@ -1,0 +1,12 @@
+---
+Payment: 
+  Payment_1: 
+    culture:                 en
+    title:                   Webmoney
+    name:                    webmoney
+    accept_currencies_codes: USD,EUR,UAH,RUR
+    name_class_form_params:  sfsWebmoneyParamsForm
+    charge_route:            '@payment_webmoney'
+    icon:                    'webmoney.gif'
+    params:                 '{"webmoney_purses":{"USD":{"purse":"Z669328038116","secret_key":"de376a57cda206"},"UAH":{"purse":"U751705847785","secret_key":"de376a57111206"},"RUR":{"purse":"R702435079042","secret_key":"de376a57222206"}},"sim_mode":0}'
+    is_active:               1

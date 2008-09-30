@@ -1,0 +1,44 @@
+Menu: 
+  # English
+  sfMenu_PROFILE_EN_1: 
+    culture: 'en'
+    route:   '@homepage'
+    title:   'Home'
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_MAIN; ?> 
+  sfMenu_TOP_EN_1: 
+    culture: 'en'
+    route:   '@core_contactUs'
+    title:   'Contact us'
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_TOP; ?> 
+  sfMenu_BOTTOM_EN_1: 
+    culture: 'en'
+    route:   '@homepage'
+    title:   'Home'
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  sfMenu_BOTTOM_EN_2: 
+    culture: 'en'
+    route:   '@homepage'
+    title:   'About Us'
+    pos:     2
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  sfMenu_BOTTOM_EN_3: 
+    culture: 'en'
+    route:   '@core_informationShipping'
+    title:   'Shipping & Returns'
+    pos:     3
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  sfMenu_BOTTOM_EN_4: 
+    culture: 'en'
+    route:   '@core_informationPrivacyNotice'
+    title:   'Privacy Notice'
+    pos:     4
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  sfMenu_BOTTOM_EN_5: 
+    culture: 'en'
+    route:   '@core_informationConditionsUse'
+    title:   'Conditions of Use'
+    pos:     5
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 

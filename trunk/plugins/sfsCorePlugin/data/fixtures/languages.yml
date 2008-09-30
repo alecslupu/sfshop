@@ -1,0 +1,7 @@
+Language:
+  Language_EN:
+    culture:       en
+    title_english: English
+    title_own:     English
+    is_default:    1
+    is_active:     1
