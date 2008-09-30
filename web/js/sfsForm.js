@@ -132,22 +132,9 @@ var sfsForm = Class.create({
         var element = this.getFieldByName(fieldName);
         
         if (Object.isElement(element)) {
-            var advice = '<ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul>'
-            switch (element.type.toLowerCase())
-            {
-                //case 'checkbox':
-                case 'radio':
-                    var parent = element.parentNode;
-                    if (parent) {
-                        new Insertion.Bottom(parent, advice);
-                    }
-                    else {
-                        new Insertion.Before(element, advice);
-                    }
-                break;
-                default:
-                    new Insertion.Before(element, advice);
-            }
+            var advice = '<li><ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul></li>';
+            var parent = element.up('li');
+            new Insertion.Before(parent, advice);
         }
     },
     getFieldByName: function(fieldName)

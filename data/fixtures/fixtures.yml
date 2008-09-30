@@ -21,8 +21,7 @@ Member:
     gender:          1
     first_name:      Dmitry
     last_name:       Nesteruk
-    phone:           32123123121
-    mobile:          1231231232123
+    primary_phone:   32123123121
     secret_question: What was the name of your first school?
     secret_answer:   test
     created_at:      2007-12-17 10:17:39
@@ -36,8 +35,7 @@ Member:
     gender:          1
     first_name:      Test
     last_name:       Tester
-    phone:           32123123121
-    mobile:          1231231232123
+    primary_phone:   32123123121
     secret_question: What was the name of your first school?
     secret_answer:   test
     created_at:      2007-12-17 10:17:39
