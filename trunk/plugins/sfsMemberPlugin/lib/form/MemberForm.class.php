@@ -136,6 +136,7 @@ class MemberForm extends BaseMemberForm
                'secondary_phone'  => $validatorSecondaryPhone
             )
         );
+        
         $this->getWidgetSchema()->setNameFormat('details[%s]');
         $this->defineSfsListFormatter();
     }
