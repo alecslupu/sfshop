@@ -330,18 +330,18 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeEditProfile()
+    public function executeEditProfile($request)
     {
         sfLoader::loadHelpers(array('I18N', 'Url'));
         
-        $this->form = new sfsEditProfileForm($this->getUser()->getUser());
+        $this->form = new MemberForm($this->getUser()->getUser());
         
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind($this->getRequestParameter('details'));
+        if ($request->isMethod('post')) {
+            $this->form->bind($request->getParameter('details'));
             
             if ($this->form->isValid()) {
                 $member = $this->form->getObject();
-                $email = $this->getRequestParameter('details[email]');
+                $email = $request->getParameter('details[email]');
                 
                 if ($member->getEmail() != $email) {
                     
@@ -351,7 +351,7 @@ class memberActions extends sfActions
                     $member->save();
                     
                     $template = EmailTemplatePeer::getTemplate(EmailTemplatePeer::RECONFIRM_EMAIL, $this->getUser()->getCulture());
-                    $urlToConfirm = url_for('@member_confirmNewEmail?confirm_code=' . $confirmCode);
+                    $urlToConfirm = url_for('@member_confirmNewEmail?confirm_code=' . $confirmCode, true);
                     
                     $mail = new sfsMail();
                     $mail->addAddress($member->getEmail());
@@ -359,7 +359,6 @@ class memberActions extends sfActions
                     $mail->setBodyParams(
                         array(
                             'email'                => $member->getEmail(),
-                            'password'             => $this->getRequestParameter('details[password]'),
                             'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
                             'confirm_code'         => $confirmCode
                         )
@@ -415,23 +414,16 @@ class memberActions extends sfActions
     */
     public function executeEditContactInfo($request)
     {
-        $this->form = new sfsContactForm();
         $this->member = $this->getUser()->getUser();
-        
-        $this->form->setDefaults(array(
-            'phone'   => $this->member->getPhone(),
-            'mobile'  => $this->member->getMobile()
-        ));
+        $this->form = new sfsContactForm($this->member);
         
         if ($request->isMethod('post')) {
-            
             $data = $this->getRequestParameter('data');
             
             $this->form->bind($data);
             
             if ($this->form->isValid()) {
-                $this->member->setPhone($data['phone']);
-                $this->member->setMobile($data['mobile']);
+                $this->member = $this->form->updateObject();
                 $this->member->save();
                 
                 return $this->renderText(sfsJSONPeer::createResponseSuccess($data));

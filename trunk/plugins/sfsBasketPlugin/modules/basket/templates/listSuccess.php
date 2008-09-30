@@ -2,7 +2,7 @@
 <?php include_partial('core/container_header', array('caption' => __('Shopping cart'))) ?>
 
 <?php if (isset($deletedProducts)): ?>
-    <ul class="error_list" style="width: 100%">
+    <ul class="error" style="width: 100%">
         <?php foreach ($deletedProducts as $product): ?>
            <li><?php echo __('The product "%product_title%" was deleted', array('%product_title%' => $product->getTitle())) ?></li>
         <?php endforeach; ?>
@@ -10,7 +10,7 @@
 <?php endif; ?>
 
 <?php if (isset($insufficientlyProducts)): ?>
-    <ul class="error_list" style="width: 100%">
+    <ul class="error" style="width: 100%">
         <li><?php echo __('We dont have enough product quantity for following products') ?>:<li>
         <?php foreach ($insufficientlyProducts as $product): ?>
              <li><?php echo $product->getTitle() ?><li>
@@ -19,7 +19,7 @@
 <?php endif; ?>
 
 <?php if (isset($deliveryErrors)): ?>
-    <ul class="error_list" style="width: 100%">
+    <ul class="error" style="width: 100%">
         <li><?php echo __('Delivery errors') ?>:<li>
         <?php foreach ($deliveryErrors as $error): ?>
              <li><?php echo $error ?><li>
@@ -73,8 +73,7 @@
     var basketForm = new sfsBasketManageForm(
         "form_basket", 
         {
-            nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '", 
-            errorClassName: "error_list"
+            nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '"
         }
     );
     

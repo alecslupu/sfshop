@@ -1,7 +1,7 @@
 <h3><?php echo __('Edit contact info') ?></h3>
 <form action="<?php echo url_for('@member_editContactInfo') ?>" method="post" class="form" id="form_contact_info" onsubmit="return false">
     <?php if ($error != ''): ?>
-        <ul class="error_list">
+        <ul class="error">
             <li><?php echo $error ?></li>
         </ul>
     <?php endif; ?>
@@ -16,13 +16,20 @@
         "form_contact_info", 
         {
             nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '",
-            errorClassName: "error_list",
             postExecute: function(response)
             {
                 if (this.isValid()) {
                     var info = response.data;
-                    $("phone").update(info.phone);
-                    $("mobile").update(info.mobile);
+                    $("primary_phone").update(info.primary_phone);
+                    
+                    if (info.secondary_phone != "") {
+                        $("secondary_phone").update(info.secondary_phone);
+                        $("content_secondary_phone").show();
+                    }
+                    else {
+                        $("content_secondary_phone").hide();
+                    }
+                    
                     hideEditForm();
                 }
             }

@@ -57,8 +57,3 @@
         </tr>
     </table>
 <?php include_partial('core/container_footer') ?>
-
-<?php echo javascript_tag('
-    observeFormFields("form_confirm");
-    highlightFieldsWithError("form_confirm");
-') ?>

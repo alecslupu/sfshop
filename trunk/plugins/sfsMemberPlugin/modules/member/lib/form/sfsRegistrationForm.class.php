@@ -20,8 +20,13 @@ class sfsRegistrationForm extends MemberForm
 {
     public function configure()
     {
+        
+        parent::configure();
+        
         $arrayQuestions = array();
-        $questions = MemberSecretQuestionPeer::getAllAvaliable();
+        $criteria = new Criteria();
+        MemberSecretQuestionPeer::addPublicCriteria($criteria);
+        $questions = MemberSecretQuestionPeer::getAll($criteria);
         
         if ($questions !== null) {
             $arrayQuestions[] = '';
@@ -30,45 +35,15 @@ class sfsRegistrationForm extends MemberForm
             }
         }
         
-        $arrayGenders = MemberPeer::getGenders();
-        
-        $this->setWidgets(
+        $this->setWidgets(array_merge(
+            $this->getWidgets(),
             array(
-                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
-                'email'              => new sfWidgetFormInput(),
-                'first_name'         => new sfWidgetFormInput(),
-                'last_name'          => new sfWidgetFormInput(),
                 'password'           => new sfWidgetFormInputPassword(),
                 'confirm_password'   => new sfWidgetFormInputPassword(),
                 'secret_question'    => new sfWidgetFormSelect(array('choices' => $arrayQuestions)),
                 'secret_answer'      => new sfWidgetFormInput()
              )
-        );
-        
-        $this->getWidgetSchema()->setHelps(
-            array(
-                'email' => 'You will use email address for login',
-            )
-        );
-        
-        $validatorGender = new sfValidatorChoice(
-            array('choices' => array_keys($arrayGenders))
-        );
-        
-        $validatorEmail = new sfValidatorAnd(
-            array(
-                new sfValidatorEmail(
-                    array('required' => true),
-                    array('invalid'  => 'This is not a valid email address')
-                ),
-                new sfsValidatorMember(
-                    array('check_unique_email' => true),
-                    array('check_unique_email' => 'An account with this email already exists')
-                )
-            ),
-            array('required' => true),
-            array('required' => 'Please enter a valid email address')
-        );
+        ));
         
         $validatorPassword = new sfValidatorString(
             array(
@@ -94,32 +69,6 @@ class sfsRegistrationForm extends MemberForm
             array('invalid' => 'Passwords do not match')
         );
         
-        $validatorFirstName = new sfValidatorString(
-            array(
-                'required'   => true,
-                'min_length' => 2,
-                'max_length' => 255,
-            ),
-            array(
-                'required'   => 'First Name is a required field',
-                'min_length' => 'First Name can not be less 2 characters',
-                'max_length' => 'First Name can not be more 255 characters',
-            )
-        );
-        
-        $validatorLastName = new sfValidatorString(
-            array(
-                'required'   => true, 
-                'min_length' => 2,
-                'max_length' => 255,
-            ),
-            array(
-                'required'   => 'Last Name is a required field',
-                'min_length' => 'Last Name can not be less 2 characters',
-                'max_length' => 'Last Name can not be more 255 characters',
-            )
-        );
-        
         $validatorSecretQuestion = new sfValidatorChoice(
             array('choices' => array_keys($arrayQuestions)),
             array('invalid' => 'Please select secret question')
@@ -132,9 +81,9 @@ class sfsRegistrationForm extends MemberForm
             )
         );
         
-        $this->setValidators(
+        $this->setValidators(array_merge(
+            $this->getValidators(),
             array(
-               //'gender'           => $validatorGender,
                'email'            => $validatorEmail,
                'password'         => $validatorPassword,
                'confirm_password' => $validatorConfirmPassword,
@@ -143,12 +92,9 @@ class sfsRegistrationForm extends MemberForm
                'secret_question'  => $validatorSecretQuestion,
                'secret_answer'    => $validatorSecretAnswer
             )
-        );
+        ));
         
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
         $this->validatorSchema->setOption('allow_extra_fields', true);
-        $this->getWidgetSchema()->setNameFormat('details[%s]');
-        
-        parent::configure();
     }
 }

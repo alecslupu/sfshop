@@ -73,7 +73,7 @@ function showEditForm(containerFormId, containerInfoId)
 
 function hideEditForm()
 {
-    var errors = $(activeContainerFormId).select('.error_list');
+    var errors = $(activeContainerFormId).select('ul.error');
     
     if (errors.length == 0) {
         Effect.BlindDown(activeContainerInfoId);
@@ -122,7 +122,7 @@ function hideFieldHelp(element)
 
 function highlightFieldsWithError(formId)
 {
-    var elements = $(formId).select('ul.error_list');
+    var elements = $(formId).select('ul.error');
     elements.each(function(element) {
         element.up('li').next('li').down('input').addClassName('error');
     });

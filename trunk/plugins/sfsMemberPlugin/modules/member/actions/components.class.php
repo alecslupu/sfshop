@@ -29,16 +29,8 @@ class memberComponents extends sfComponents
     */
     public function executeContactForm()
     {
-        $this->form = new sfsContactForm();
-        
         $this->member = $this->getUser()->getUser();
-        
-        $this->form->setDefaults(
-            array(
-                'phone'   => $this->member->getPhone(),
-                'mobile'  => $this->member->getMobile()
-            )
-        );
+        $this->form = new sfsContactForm($this->member);
     }
     
    /**
@@ -54,8 +46,8 @@ class memberComponents extends sfComponents
         $this->member = $this->getUser()->getUser();
         
         $this->info = array(
-            'phone'  => $this->member->getPhone(),
-            'mobile' => $this->member->getMobile()
+            'primary_phone'    => $this->member->getPrimaryPhone(),
+            'secondary_phone'  => $this->member->getSecondaryPhone()
         );
     }
 }
