@@ -53,7 +53,6 @@ class addressBookComponents extends sfComponents
                 $member = $this->getUser()->getUser();
                 
                 if ($member !== null) {
-                    $address->setGender($member->getGender());
                     $address->setFirstName($member->getFirstName());
                     $address->setLastName($member->getLastName());
                 }

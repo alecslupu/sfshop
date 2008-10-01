@@ -19,9 +19,6 @@ propel:
       foreignReference: id
       onDelete: CASCADE
       onUpdate: RESTRICT
-    gender: 
-      type: TINYINT
-      required: false
     first_name: 
       type: VARCHAR
       size: 128

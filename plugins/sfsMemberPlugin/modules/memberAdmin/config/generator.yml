@@ -11,10 +11,6 @@ generator:
       credential: 
         name:           'Credentials'
         help:           'Credential list for member'
-      gender: 
-        name:           'Gender'
-      gender_title: 
-        name:           'Gender'
       first_name: 
         name:           'First name'
       last_name: 
@@ -25,10 +21,6 @@ generator:
         name:           'E-mail'
       default_email_id: 
         name:           'Address'
-      phone: 
-        name:           'Phone'
-      mobile: 
-        name:           'Mobile'
       password: 
         name:           'Password'
       is_confirmed: 
@@ -46,7 +38,7 @@ generator:
 
     list: 
       title:            'List of member'
-      display:          [=id, =full_name, email, gender_title, phone, mobile, is_active, is_confirmed]
+      display:          [=id, =full_name, email, primary_phone, secondary_phone, is_active, is_confirmed]
       max_per_page:     2
       object_actions: 
         _edit:          ~
@@ -60,13 +52,13 @@ generator:
 
     show:
       title:            View a member details
-      display:          [full_name, email, gender_title, phone, mobile, is_active, is_confirmed]
+      display:          [full_name, email, primary_phone, secondary_phone, is_active, is_confirmed]
 
     edit: 
       title:            '%%_edit_caption%%'
       display: 
         "NONE":         [email, credential, is_active, is_confirmed]
-        "Description":  [first_name, last_name, _gender, phone, mobile]
+        "Description":  [first_name, last_name, primary_phone, secondary_phone]
       actions: 
         _list:          ~
         _save:          ~
