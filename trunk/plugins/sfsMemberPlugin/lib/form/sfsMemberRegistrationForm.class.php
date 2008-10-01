@@ -20,13 +20,13 @@ class sfsMemberRegistrationForm extends MemberForm
 {
     public function configure()
     {
-        
         parent::configure();
         
+        $this->offsetUnset('primary_phone');
+        $this->offsetUnset('secondary_phone');
+        
         $arrayQuestions = array();
-        $criteria = new Criteria();
-        MemberSecretQuestionPeer::addPublicCriteria($criteria);
-        $questions = MemberSecretQuestionPeer::getAll($criteria);
+        $questions = MemberSecretQuestionPeer::getAll();
         
         if ($questions !== null) {
             $arrayQuestions[] = '';
@@ -35,15 +35,10 @@ class sfsMemberRegistrationForm extends MemberForm
             }
         }
         
-        $this->setWidgets(array_merge(
-            $this->getWidgets(),
-            array(
-                'password'           => new sfWidgetFormInputPassword(),
-                'confirm_password'   => new sfWidgetFormInputPassword(),
-                'secret_question'    => new sfWidgetFormSelect(array('choices' => $arrayQuestions)),
-                'secret_answer'      => new sfWidgetFormInput()
-             )
-        ));
+        $this->getWidgetSchema()->offsetSet('password', new sfWidgetFormInputPassword());
+        $this->getWidgetSchema()->offsetSet('confirm_password', new sfWidgetFormInputPassword());
+        $this->getWidgetSchema()->offsetSet('secret_question', new sfWidgetFormSelect(array('choices' => $arrayQuestions)));
+        $this->getWidgetSchema()->offsetSet('secret_answer', new sfWidgetFormInput());
         
         $validatorPassword = new sfValidatorString(
             array(
@@ -52,13 +47,15 @@ class sfsMemberRegistrationForm extends MemberForm
                 'max_length' => 20
             ),
             array(
+                'required'   => 'Password is a required field',
                 'min_length' => 'Password must be 6 or more characters',
                 'max_length' => 'Password must be 20 or less characters'
             )
         );
         
         $validatorConfirmPassword = new sfValidatorString(
-            array('required' => true)
+            array('required' => true),
+            array('required' => 'Confirm password is a required field')
         );
         
         $validatorComparePasswords = new sfValidatorSchemaCompare(
@@ -69,32 +66,29 @@ class sfsMemberRegistrationForm extends MemberForm
             array('invalid' => 'Passwords do not match')
         );
         
+        unset($arrayQuestions[0]);
+        
         $validatorSecretQuestion = new sfValidatorChoice(
-            array('choices' => array_keys($arrayQuestions)),
-            array('invalid' => 'Please select secret question')
+            array('choices'  => array_keys($arrayQuestions)),
+            array('invalid'  => 'Please select a secret question')
         );
         
         $validatorSecretAnswer = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 4
+                'min_length' => 2
+            ),
+            array(
+                'required'   => 'Secret answer is a required field',
+                'min_length' => 'Secret answer can not be less 2 characters'
             )
         );
         
-        $this->setValidators(array_merge(
-            $this->getValidators(),
-            array(
-               'email'            => $validatorEmail,
-               'password'         => $validatorPassword,
-               'confirm_password' => $validatorConfirmPassword,
-               'first_name'       => $validatorFirstName,
-               'last_name'        => $validatorLastName,
-               'secret_question'  => $validatorSecretQuestion,
-               'secret_answer'    => $validatorSecretAnswer
-            )
-        ));
+        $this->getValidatorSchema()->offsetSet('password', $validatorPassword);
+        $this->getValidatorSchema()->offsetSet('confirm_password', $validatorConfirmPassword);
+        $this->getValidatorSchema()->offsetSet('secret_question', $validatorSecretQuestion);
+        $this->getValidatorSchema()->offsetSet('secret_answer', $validatorSecretAnswer);
         
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
-        $this->validatorSchema->setOption('allow_extra_fields', true);
     }
 }

@@ -423,9 +423,14 @@ div.container_content div.corner_left {
 div.container_content div.content {
     background: url(/images/m34.gif) repeat-x;
     width: 744px;
-    padding: 10px 10px 0px 10px;
+    padding: 15px 10px 10px 10px;
     margin-left: 2px;
     margin-right: 2px;
+    font-size: 12px;
+}
+
+div.container_content div.content a {
+    color: #874161;
 }
 
 div.container_content div.corner_right {
@@ -550,7 +555,7 @@ input, select, textarea {
     background: #6B394E;
 }
 
-input.error {
+input.error, select.error {
     border: #d60d0d 1px solid;
     color: #000000;
     background: #f5a8a8;
@@ -565,20 +570,26 @@ form ul {
 form li {
     font-weight: bold;
     list-style: none;
-    //clear: both;
     line-height: 28px;
 }
 
 form.form ul.main {
-    //padding-bottom: 20px;
     height: auto;
+}
+
+form.form ul.main li.actions {
+    margin-left: 160px;
+}
+
+form.form ul.main li.captcha {
+    margin-left: 160px;
 }
 
 input.button {
     background: url(/images/bg_button.gif);
 }
 
-form.form label {
+form.form span.label {
     font-size: 12px;
     width: 150px;
     float: left;
@@ -594,7 +605,7 @@ form.form span.help {
 }
 
 form.form ul.error {
-    margin-left: 155px;
+    margin-left: 157px;
     width: 350px;
     display: block;
 }
@@ -634,7 +645,6 @@ form.form_currency label {
     width: 100px;
 }
 
-
 form.form_services ul.error {
     margin-left: 0px;
     width: 700px;
@@ -650,7 +660,11 @@ form.form_services label {
 form.form_services ul.methods_list label {
     font-weight: normal;
 }
-    
+
+form.form_confirm input.field {
+    width: 250px;
+}
+
 /********************/
 
 /*** ORDER, BASKET table ***/

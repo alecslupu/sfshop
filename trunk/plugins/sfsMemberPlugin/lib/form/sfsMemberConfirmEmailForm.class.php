@@ -21,13 +21,14 @@ class sfsMemberConfirmEmailForm extends MemberForm
     public function configure()
     {
         parent::configure();
-        $this->setWidgets(array('confirm_code'  => new sfWidgetFormInput()));
+        $this->setWidgets(array('confirm_code' => new sfWidgetFormInput()));
         
         $validatorConfirmCode= new sfValidatorString(
             array('required' => true),
-            array('invalid'  => 'Please, input confirm code')
+            array('required'  => 'Confirm code is a required field')
         );
         
         $this->setValidators(array('confirm_code' => $validatorConfirmCode));
+        $this->defineSfsListFormatter();
     }
 }

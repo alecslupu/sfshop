@@ -31,7 +31,10 @@ class sfsMemberLoginForm extends MemberForm
         
         $validatorEmail = new sfValidatorEmail(
             array('required' => true),
-            array('required' => 'Email is a required field')
+            array(
+                'required' => 'Email is a required field',
+                'invalid'  => 'This is not a valid email address'
+            )
         );
         
         $validatorPassword = new sfValidatorString(

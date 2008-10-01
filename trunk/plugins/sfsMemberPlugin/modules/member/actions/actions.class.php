@@ -117,6 +117,7 @@ class memberActions extends sfActions
                 );
                 $captchaForm->getWidgetSchema()->setFormFormatterName('sfs_hidden_list');
                 $this->form->embedForm('captcha', $captchaForm);
+                $this->form->getWidgetSchema()->setLabel('captcha', '');
             }
             
             if ($request->isMethod('post')) {
@@ -185,7 +186,7 @@ class memberActions extends sfActions
             $this->form = new sfsMemberConfirmEmailForm();
             $this->form->setDefaults(array('confirm_code' => $request->getParameter('confirm_code')));
             
-            if ($request->isMethod('post')) {
+            if ($request->isMethod('post') || $request->isMethod('get')) {
                 $this->form->bind(array('confirm_code' => $request->getParameter('confirm_code')));
                 
                 if ($this->form->isValid()) {
