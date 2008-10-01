@@ -17,9 +17,6 @@ propel:
       size: 255
       required: true
       default: 'member'
-    gender: 
-      type: TINYINT
-      required: false
     first_name: 
       type: VARCHAR
       size: 128

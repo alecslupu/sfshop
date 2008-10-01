@@ -20,8 +20,6 @@ class Member extends BaseMember
         return ($this->getPassword() == md5($password));
     }
     
-    
-    
    /**
     * Crypts password to md5.
     *
@@ -35,8 +33,6 @@ class Member extends BaseMember
         parent::setPassword(md5($value));
     }
     
-    
-    
    /**
     * Get full member name
     *
@@ -47,17 +43,5 @@ class Member extends BaseMember
     */
     public function getFullName() {
         return $this->getFirstName() . ' ' . $this->getLastName();
-    }
-    
-    public function getGenderTitle() {
-        sfLoader::loadHelpers('I18N');
-        $title = __('none');
-        foreach (MemberPeer::getGenders() as $key => $value) {
-            if ($this->getGender() == $key) {
-                $title = $value;
-                break;
-            }
-        }
-        return $title;
     }
 }

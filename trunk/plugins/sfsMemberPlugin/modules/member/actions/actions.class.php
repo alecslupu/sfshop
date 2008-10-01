@@ -27,7 +27,7 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeLogin()
+    public function executeLogin($request)
     {
         sfLoader::loadHelpers(array('Url', 'I18N'));
         
@@ -37,20 +37,15 @@ class memberActions extends sfActions
             $this->redirect('@homepage');
         }
         else {
-            if ($this->getRequest()->isMethod('post')) {
-                
-                $this->form->bind(
-                    array(
-                        'email'    => $this->getRequestParameter('email'),
-                        'password' => $this->getRequestParameter('password')
-                    )
-                );
+            if ($request->isMethod('post')) {
+                $data = $request->getParameter('data');
+                $this->form->bind($request->getParameter('data'));
                 
                 if ($this->form->isValid()) {
                     
-                    $member = MemberPeer::retrieveByEmail($this->getRequestParameter('email'));
+                    $member = MemberPeer::retrieveByEmail($data['email']);
                     
-                    if ($member !== null && $member->checkPassword($this->getRequestParameter('password'))) {
+                    if ($member !== null && $member->checkPassword($data['password'])) {
                         
                         if ($member->getIsConfirmed() == MemberPeer::CONFIRMED) {
                             $this->getUser()->login($member);
@@ -66,7 +61,7 @@ class memberActions extends sfActions
                              $redirectTo = url_for('@member_confirmRegistration', true);
                         }
                         
-                        if ($this->getRequest()->isXmlHttpRequest()) {
+                        if ($request->isXmlHttpRequest()) {
                             $response = array('redirect_to' => $redirectTo);
                             return $this->renderText(sfsJSONPeer::createResponseSuccess($response));
                         }
@@ -126,18 +121,18 @@ class memberActions extends sfActions
             
             if ($request->isMethod('post')) {
                 $holder = $request->getParameterHolder();
-                $details = $request->getParameter('details');
+                $data = $request->getParameter('data');
                 
                 if (sfConfig::get('app_recaptcha_is_enabled', true)) {
-                    $details['captcha'] = array(
+                    $data['captcha'] = array(
                         'response'  => $request->getParameter('recaptcha_response_field'),
                         'challenge' => $request->getParameter('recaptcha_challenge_field')
                     );
                     
-                    $holder->add(array('details' => $details));
+                    $holder->add(array('data' => $data));
                 }
                 
-                $this->form->bind($request->getParameter('details'));
+                $this->form->bind($request->getParameter('data'));
                 
                 if ($this->form->isValid()) {
                     
@@ -156,7 +151,7 @@ class memberActions extends sfActions
                     $mail->setBodyParams(
                         array(
                             'email'                => $member->getEmail(),
-                            'password'             => $request->getParameter('details[password]'),
+                            'password'             => $data['password'],
                             'link_to_confirm_page' => $urlToConfirm,
                             'confirm_code'         => $confirmCode
                         )
@@ -179,7 +174,7 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeConfirmEmail()
+    public function executeConfirmEmail($request)
     {
         sfLoader::loadHelpers(array('I18N'));
         
@@ -187,14 +182,14 @@ class memberActions extends sfActions
             $this->redirect('@homepage');
         }
         else {
-            $this->form = new sfsConfirmEmailForm();
-            $this->form->setDefaults(array('confirm_code' => $this->getRequestParameter('confirm_code')));
+            $this->form = new sfsMemberConfirmEmailForm();
+            $this->form->setDefaults(array('confirm_code' => $request->getParameter('confirm_code')));
             
-            if ($this->getRequest()->isMethod('post')) {
-                $this->form->bind(array('confirm_code' => $this->getRequestParameter('confirm_code')));
+            if ($request->isMethod('post')) {
+                $this->form->bind(array('confirm_code' => $request->getParameter('confirm_code')));
                 
                 if ($this->form->isValid()) {
-                    $member = MemberPeer::retrieveByConfirmCode($this->getRequestParameter('confirm_code'));
+                    $member = MemberPeer::retrieveByConfirmCode($request->getParameter('confirm_code'));
                     
                     if ($member !== null) {
                         
@@ -223,12 +218,12 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeForgotPasswordStepOne()
+    public function executeForgotPasswordStepOne($request)
     {
         $this->form = new sfsMemberForgotPasswordStepOneForm();
         
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind(array('email' => $this->getRequestParameter('email')));
+        if ($request->isMethod('post')) {
+            $this->form->bind(array('email' => $request->getParameter('email')));
             
             if ($this->form->isValid()) {
                 $this->getUser()->setAttribute('email', $this->getRequestParameter('email'), 'member/forgot_password');
@@ -246,7 +241,7 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeForgotPasswordStepTwo()
+    public function executeForgotPasswordStepTwo($request)
     {
         sfLoader::loadHelpers(array('I18N'));
         
@@ -265,17 +260,12 @@ class memberActions extends sfActions
             $this->form = new sfsMemberForgotPasswordStepTwoForm();
             $this->form->setDefaults(array('email' => $email));
             
-            if ($this->getRequest()->isMethod('post')) {
-                $this->form->bind(
-                    array(
-                        'secret_answer' => $this->getRequestParameter('secret_answer'),
-                        'email'         => $this->getRequestParameter('email')
-                    )
-                );
+            if ($request->isMethod('post')) {
+                $this->form->bind($request->getParameter('data'));
                 
                 if ($this->form->isValid()) {
                     
-                    if ($member->getSecretAnswer() == $this->getRequestParameter('secret_answer')) {
+                    if ($member->getSecretAnswer() == $request->getParameter('data[secret_answer]')) {
                         
                         $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::FORGOT_PASSWORD, $this->getUser()->getCulture());
                         $password = MemberPeer::generatePassword();
@@ -337,11 +327,11 @@ class memberActions extends sfActions
         $this->form = new MemberForm($this->getUser()->getUser());
         
         if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter('details'));
+            $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
                 $member = $this->form->getObject();
-                $email = $request->getParameter('details[email]');
+                $email = $request->getParameter('data[email]');
                 
                 if ($member->getEmail() != $email) {
                     
@@ -359,7 +349,7 @@ class memberActions extends sfActions
                     $mail->setBodyParams(
                         array(
                             'email'                => $member->getEmail(),
-                            'link_to_confirm_page' => $this->getRequest()->getUriPrefix() . $urlToConfirm,
+                            'link_to_confirm_page' => $request->getUriPrefix() . $urlToConfirm,
                             'confirm_code'         => $confirmCode
                         )
                     );
@@ -385,14 +375,14 @@ class memberActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeChangePassword()
+    public function executeChangePassword($request)
     {
         sfLoader::loadHelpers(array('I18N'));
         
         $this->form = new sfsMemberChangePasswordForm($this->getUser()->getUser());
         
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind($this->getRequestParameter('change_password'));
+        if ($request->isMethod('post')) {
+            $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
                 $member = $this->form->updateObject();
@@ -405,7 +395,7 @@ class memberActions extends sfActions
     }
     
    /**
-    * Edit contact info (phone, mobile phone number).
+    * Edit contact info (primary and secondary phone number).
     *
     * @param  void
     * @return void
@@ -418,9 +408,7 @@ class memberActions extends sfActions
         $this->form = new sfsMemberContactForm($this->member);
         
         if ($request->isMethod('post')) {
-            $data = $this->getRequestParameter('data');
-            
-            $this->form->bind($data);
+            $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
                 $this->member = $this->form->updateObject();

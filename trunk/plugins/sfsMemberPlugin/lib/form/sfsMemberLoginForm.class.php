@@ -20,6 +20,8 @@ class sfsMemberLoginForm extends MemberForm
 {
     public function configure()
     {
+        parent::configure();
+        
         $this->setWidgets(
             array(
                 'email'    => new sfWidgetFormInput(),
@@ -27,14 +29,24 @@ class sfsMemberLoginForm extends MemberForm
              )
         );
         
+        $validatorEmail = new sfValidatorEmail(
+            array('required' => true),
+            array('required' => 'Email is a required field')
+        );
+        
+        $validatorPassword = new sfValidatorString(
+            array('required' => true),
+            array('required' => 'Password is a required field')
+        );
+        
         $this->setValidators(
             array(
-                'email'    => new sfValidatorEmail(array('required' => true)),
-                'password' => new sfValidatorString(array('required' => true))
+                'email'    => $validatorEmail,
+                'password' => $validatorPassword
             )
         );
         
-        $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
-        parent::configure();
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
+        $this->defineSfsListFormatter();
     }
 }

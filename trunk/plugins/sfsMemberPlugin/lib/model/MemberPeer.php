@@ -29,8 +29,6 @@ class MemberPeer extends BaseMemberPeer
         return self::doSelectOne($criteria);
     }
     
-    
-    
    /**
     * Get member object by confirm code.
     *
@@ -50,8 +48,6 @@ class MemberPeer extends BaseMemberPeer
         }
     }
     
-    
-    
    /**
     * Generates confirm code
     *
@@ -64,8 +60,6 @@ class MemberPeer extends BaseMemberPeer
         return md5(time() . uniqid());
     }
     
-    
-    
    /**
     * Generates password.
     *
@@ -77,24 +71,4 @@ class MemberPeer extends BaseMemberPeer
     {
         return substr(md5(time() . uniqid()), 0, 8);
     }
-    
-    
-    
-   /**
-    * Gets all genders avalible in the site.
-    *
-    * @return array
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public static function getGenders()
-    {
-        sfLoader::loadHelpers('I18N');
-        
-        return array(
-            '1' => __('Male'),
-            '2' => __('Female')
-        );
-    }
-    
 }

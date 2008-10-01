@@ -12,11 +12,8 @@ class MemberForm extends BaseMemberForm
     public function configure()
     {
         
-        $arrayGenders = MemberPeer::getGenders();
-        
         $this->setWidgets(
             array(
-                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'email'              => new sfWidgetFormInput(),
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
@@ -30,10 +27,6 @@ class MemberForm extends BaseMemberForm
                 'email'         => 'You will use email address for login',
                 'secret_answer' => 'This information necessary for password recovery'
             )
-        );
-        
-        $validatorGender = new sfValidatorChoice(
-            array('choices' => array_keys($arrayGenders))
         );
         
         $validatorEmail = new sfValidatorAnd(
@@ -128,7 +121,6 @@ class MemberForm extends BaseMemberForm
         
         $this->setValidators(
             array(
-               //'gender'           => $validatorGender,
                'email'            => $validatorEmail,
                'first_name'       => $validatorFirstName,
                'last_name'        => $validatorLastName,
@@ -137,7 +129,7 @@ class MemberForm extends BaseMemberForm
             )
         );
         
-        $this->getWidgetSchema()->setNameFormat('details[%s]');
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
         $this->defineSfsListFormatter();
     }
 }
