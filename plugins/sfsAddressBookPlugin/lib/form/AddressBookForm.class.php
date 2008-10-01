@@ -31,11 +31,8 @@ class AddressBookForm extends BaseAddressBookForm
             $arrayCountriesWidget[$key] = $title;
         }
         
-        $arrayGenders = MemberPeer::getGenders();
-        
         $this->setWidgets(
             array(
-                //'gender'             => new sfWidgetFormSelect(array('choices' => $arrayGenders)),
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
                 'country_id'         => new sfWidgetFormSelect(array('choices' => $arrayCountriesWidget), array('onchange' => 'return selCountry_onChange(this.value);')),
@@ -53,10 +50,6 @@ class AddressBookForm extends BaseAddressBookForm
         $this->widgetSchema->setLabel('country_id', 'Country');
         $this->widgetSchema->setLabel('state_id', 'State');
         $this->widgetSchema->setLabel('state_title', 'State');
-        
-        $validatorGender = new sfValidatorChoice(
-            array('choices' => $arrayGenders)
-        );
         
         $validatorFirstName = new sfValidatorString(
             array(
@@ -121,7 +114,6 @@ class AddressBookForm extends BaseAddressBookForm
         
         $this->setValidators(
             array(
-               //'gender'      => $validatorGender,
                'first_name'  => $validatorFirstName,
                'last_name'   => $validatorLastName,
                'country_id'  => $validatorCountry,
