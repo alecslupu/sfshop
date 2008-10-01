@@ -1,11 +1,20 @@
 <?php
 /**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
+/**
  * 
  * Validator checks member by entered parameters.
  * 
- * @package    sfShop
- * @subpackage plugins.sfsMemberPlugin
- * @author     Dmitry Nesteruk
+ * @package    plugin.sfsMemberPlugin
+ * @subpackage lib.validator
+ * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: sfGuardUserValidator.class.php 7634 2008-02-27 18:01:40Z fabien $
  */
 class sfsValidatorMember extends sfValidatorBase

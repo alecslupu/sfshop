@@ -27,7 +27,7 @@
               <?php  if (!$sf_user->isAuthenticated()): ?>
                       <?php echo link_to(__('Sign in'),'@member_login') ?>
                       |
-                      <?php echo link_to(__('Forgot password'),'@member_forgotPasswordStepOne') ?> | <?php echo link_to(__('Registration'),'@member_registration') ?>
+                      <?php echo link_to(__('Forgot password?'),'@member_forgotPasswordStepOne') ?> | <?php echo link_to(__('Sign up'),'@member_registration') ?>
                   
               <?php else: ?>
                   

@@ -124,6 +124,15 @@ function highlightFieldsWithError(formId)
 {
     var elements = $(formId).select('ul.error');
     elements.each(function(element) {
-        element.up('li').next('li').down('input').addClassName('error');
+
+        var field = element.up('li').next('li').down('input');
+
+        if (!Object.isElement(field)) {
+            var field = element.up('li').next('li').down('select');
+        }
+
+        if (Object.isElement(field)) {
+            field.addClassName('error');
+        }
     });
 }
