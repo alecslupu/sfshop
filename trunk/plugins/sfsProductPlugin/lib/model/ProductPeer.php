@@ -64,6 +64,9 @@ class ProductPeer extends BaseProductPeer
     {
         $criteria = new Criteria();
         self::addPublicCriteria($criteria);
+        CategoryPeer::addPublicCriteria($criteria);
+        $criteria->addJoin(Product2CategoryPeer::PRODUCT_ID, self::ID);
+        $criteria->addJoin(Product2CategoryPeer::CATEGORY_ID, CategoryPeer::ID);
         $criteria->setLimit(sfConfig::get('app_product_max_recent', 5));
         $criteria->addDescendingOrderByColumn(self::CREATED_AT);
         return self::doSelectWithTranslation($criteria);
