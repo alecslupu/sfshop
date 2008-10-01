@@ -2,11 +2,10 @@ methods:
   post: 
     - "member{email}"
     - "member{credential}"
-#    - "member{gender}"
     - "member{first_name}"
     - "member{last_name}"
-    - "member{phone}"
-    - "member{mobile}"
+    - "member{primary_phone}"
+    - "member{secondary_phone}"
 #    - "member{is_active}"
 #    - "member{is_confirmed}"
 #    - "member{is_deleted}"
@@ -25,9 +24,9 @@ names:
   member{last_name}: 
     required:           Yes
     required_msg:       'Please enter lastst name for admin'
-  member{phone}: 
+  member{primary_phone}: 
     required:           No
-  member{mobile}: 
+  member{secondary_phone}: 
     required:           No
 #  member{is_active}: 
 #    required:           No
