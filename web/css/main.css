@@ -781,6 +781,13 @@ div.menu_bottom div.corner_right {
 
 ul.menu_profile li {
     list-style: none;
+    padding-left: 15px;
+}
+
+ul.menu_profile li a {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
 }
 
 /********************/
