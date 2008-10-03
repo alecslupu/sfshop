@@ -29,5 +29,6 @@ class sfsSelectCurrencyForm extends BaseCurrencyForm
         
         $this->setValidators(array('id' => $validatorCurrencyId));
         $this->getWidgetSchema()->setNameFormat('currency[%s]');
+        $this->defineSfsListFormatter();
     }
 }

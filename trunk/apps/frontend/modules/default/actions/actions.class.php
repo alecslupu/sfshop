@@ -10,11 +10,8 @@
  */
 class defaultActions extends sfActions
 {
-   /**
-    * Executes index action
-    *
-    */
     public function executeIndex()
     {
+        return sfView::SUCCESS;
     }
 }

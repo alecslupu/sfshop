@@ -10,7 +10,7 @@
  */
 class coreActions extends sfActions
 {
-    /**
+   /**
     * Change language action.
     *
     * @param  void
@@ -29,9 +29,30 @@ class coreActions extends sfActions
         $this->redirect($this->getRequest()->getReferer());
     }
     
+   /**
+    * Action for 404 error (Page not found).
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
     public function executeError404()
     {
-        exit;
+        return sfView::SUCCESS;
+    }
+    
+   /**
+    * Action for 500 error (Server inernal error).
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeError500()
+    {
+        return sfView::SUCCESS;
     }
     
    /**

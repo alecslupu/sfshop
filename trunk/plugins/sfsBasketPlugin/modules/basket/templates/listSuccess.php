@@ -69,73 +69,74 @@
 
 <?php include_partial('core/container_footer') ?>
 
-<?php echo javascript_tag('
-    var basketForm = new sfsBasketManageForm(
-        "form_basket", 
-        {
-            nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '"
-        }
-    );
-    
-    function checkout()
-    {
-        basketForm.onSubmit();
-        addressForm.onSubmit();
-        
-        if (basketForm.isValid() && addressForm.isValid()) {
-            window.location = "' . url_for('@delivery_checkout') . '";
-        }
-    }
-    
-    function updateBasket()
-    {
-        var elements = $("form_basket").select("input");
-        var isMarked = false;
-        
-        elements.each(
-            function(element) {
-                if (element.type == "checkbox" && element.checked) {
-                    isMarked = true;
-                }
+<?php if ($basket->hasProducts()): ?>
+    <?php echo javascript_tag('
+        var basketForm = new sfsBasketManageForm(
+            "form_basket", 
+            {
+                nameFormat: "' . $form->getWidgetSchema()->getNameFormat() . '"
             }
         );
         
-        if (isMarked) {
+        function checkout()
+        {
+            basketForm.onSubmit();
+            addressForm.onSubmit();
+            
+            if (basketForm.isValid() && addressForm.isValid()) {
+                window.location = "' . url_for('@delivery_checkout') . '";
+            }
+        }
+        
+        function updateBasket()
+        {
+            var elements = $("form_basket").select("input");
+            var isMarked = false;
+            
+            elements.each(
+                function(element) {
+                    if (element.type == "checkbox" && element.checked) {
+                        isMarked = true;
+                    }
+                }
+            );
+            
+            if (isMarked) {
+                Dialog.confirm(
+                    "' . __('Are you sure want remove selected products from your basket?') . '", 
+                    {
+                        top: 180,
+                        width: 300,
+                        height: 90,
+                        className: "sfshop", 
+                        okLabel: "' . __('Remove') . '", 
+                        cancelLabel:"' . __('Don`t remove') . '", 
+                        onOk: function() {
+                            basketForm.onSubmit();
+                            return true;
+                        }
+                    }
+                )
+            }
+        }
+        
+        function confirmDeleteProduct(element)
+        {
             Dialog.confirm(
-                "' . __('Are you sure want remove selected products from your basket?') . '", 
+                "' . __('Are you sure want remove this product from your basket?') . '", 
                 {
                     top: 180,
                     width: 300,
-                    height: 90,
+                    height: 80,
                     className: "sfshop", 
                     okLabel: "' . __('Remove') . '", 
                     cancelLabel:"' . __('Don`t remove') . '", 
                     onOk: function() {
-                        basketForm.onSubmit();
+                        basketForm.onDelete(null, element, true);
                         return true;
                     }
                 }
             )
         }
-    }
-    
-    function confirmDeleteProduct(element)
-    {
-        Dialog.confirm(
-            "' . __('Are you sure want remove this product from your basket?') . '", 
-            {
-                top: 180,
-                width: 300,
-                height: 80,
-                className: "sfshop", 
-                okLabel: "' . __('Remove') . '", 
-                cancelLabel:"' . __('Don`t remove') . '", 
-                onOk: function() {
-                    basketForm.onDelete(null, element, true);
-                    return true;
-                }
-            }
-        )
-    }
-') ?>
-
+    ') ?>
+<?php endif; ?>

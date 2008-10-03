@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -159,7 +158,6 @@ class memberActions extends sfActions
                     );
                     $mail->send();
                     
-                    $this->getUser()->setFlash('message', __('You are registered now. Thanks!'));
                     $this->getUser()->setFlash('registered', true);
                     $this->redirect('@member_registration');
                 }
@@ -199,7 +197,6 @@ class memberActions extends sfActions
                         
                         $this->getUser()->login($member);
                         
-                        $this->getUser()->setFlash('message', __('You are confirmed your email. Thanks!'));
                         $this->getUser()->setFlash('confirmed', true);
                         $this->redirect('@member_confirmRegistration');
                     }
@@ -341,20 +338,22 @@ class memberActions extends sfActions
                     $member->setIsConfirmed(MemberPeer::RECONFIRM);
                     $member->save();
                     
-                    $template = EmailTemplatePeer::getTemplate(EmailTemplatePeer::RECONFIRM_EMAIL, $this->getUser()->getCulture());
+                    $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::RECONFIRM_EMAIL);
                     $urlToConfirm = url_for('@member_confirmNewEmail?confirm_code=' . $confirmCode, true);
                     
-                    $mail = new sfsMail();
-                    $mail->addAddress($member->getEmail());
-                    $mail->setTemplate($template);
-                    $mail->setBodyParams(
-                        array(
-                            'email'                => $member->getEmail(),
-                            'link_to_confirm_page' => $request->getUriPrefix() . $urlToConfirm,
-                            'confirm_code'         => $confirmCode
-                        )
-                    );
-                    $mail->send();
+                    if ($template != null) {
+                        $mail = new sfsMail();
+                        $mail->addAddress($member->getEmail());
+                        $mail->setTemplate($template);
+                        $mail->setBodyParams(
+                            array(
+                                'email'                => $member->getEmail(),
+                                'link_to_confirm_page' => $request->getUriPrefix() . $urlToConfirm,
+                                'confirm_code'         => $confirmCode
+                            )
+                        );
+                        $mail->send();
+                    }
                     $this->getUser()->setFlash('message', __('You have changed email address. Please confirm new mail.'));
                 }
                 

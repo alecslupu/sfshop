@@ -267,6 +267,12 @@ div.column_center {
     margin-left: 228px;
 }
 
+div.message {
+    color: #08a208;
+    font-size: 11px;
+    font-weight: bold;
+}
+
 /*** BOX STYLES ***/
 
 div.box {
@@ -429,6 +435,15 @@ div.container_content div.content {
     font-size: 12px;
 }
 
+div.container_content div.main {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+div.container_content div.main div {
+    font-size: 12px;
+}
+
 div.container_content div.content a {
     color: #874161;
 }
@@ -577,24 +592,32 @@ form.form ul.main {
     height: auto;
 }
 
+form.form ul.main li {
+}
+
 form.form ul.main li.actions {
     margin-left: 160px;
 }
 
 form.form ul.main li.captcha {
-    margin-left: 160px;
+    margin-left: 155px;
 }
 
 input.button {
     background: url(/images/bg_button.gif);
 }
 
-form.form span.label {
+form.form div.label {
     font-size: 12px;
     width: 150px;
-    float: left;
     text-align: right;
     padding-right: 10px;
+}
+
+form.form div.field {
+    margin-top: -26px;
+    margin-left: 155px;
+    height: 28px;
 }
 
 form.form span.help {
@@ -641,7 +664,17 @@ form.form_basket ul.error {
     padding-left: 0px;
 }
 
-form.form_currency label {
+form.form_currency div.label {
+    width: 50px;
+}
+
+form.form_currency div.field {
+    margin-top: -26px;
+    margin-left: 60px;
+    height: 28px;
+}
+
+form.form_currency select {
     width: 100px;
 }
 
@@ -661,7 +694,7 @@ form.form_services ul.methods_list label {
     font-weight: normal;
 }
 
-form.form_confirm input.field {
+form.form_confirm input[type="text"] {
     width: 250px;
 }
 
@@ -781,7 +814,6 @@ div.menu_bottom div.corner_right {
 
 ul.menu_profile li {
     list-style: none;
-    padding-left: 15px;
 }
 
 ul.menu_profile li a {
