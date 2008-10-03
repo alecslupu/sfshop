@@ -1,7 +1,7 @@
 <?php use_helper('recaptcha') ?>
 <?php include_partial('core/container_header', array('caption' => __('Sign up'))) ?>
-    <?php if ($sf_user->hasFlash('message')): ?>
-        <?php echo $sf_user->getFlash('message') ?>
+    <?php if ($sf_user->hasFlash('registered')): ?>
+        <?php echo __('You are registered now. But you should to confirm your email. Please, check your email, the letter with instruction was sent to you.') ?>
     <?php else: ?>
         <form action="<?php echo url_for('@member_registration'); ?>" method="post" class="form" id="form_registration">
           <ul class="main">
@@ -17,7 +17,7 @@
     <?php endif; ?>
 <?php include_partial('core/container_footer') ?>
 
-<?php if (!$sf_user->hasFlash('message')): ?>
+<?php if (!$sf_user->hasFlash('registered')): ?>
     <?php echo javascript_tag('
         observeFormFields("form_registration");
         highlightFieldsWithError("form_registration");

@@ -34,7 +34,8 @@ class MemberForm extends BaseMemberForm
         $this->getWidgetSchema()->setHelps(
             array(
                 'email'         => 'You will use email address for login',
-                'secret_answer' => 'This information necessary for password recovery'
+                'secret_answer' => 'This information necessary for password recovery',
+                'primary_phone' => 'In some urgent cases we\'ll need to contact you quickly and directly.'
             )
         );
         

@@ -6,9 +6,13 @@ core_changeLanguage:
   url: /changeLanguage/:culture
   param: { module: core, action: changeLanguage }
 
-core_404:
+core_error404:
   url: /page-not-found
   param: { module: core, action: error404 }
+
+core_error500:
+  url: /internal-error
+  param: { module: core, action: error500 }
 
 core_contactUs:
   url: /contact-us

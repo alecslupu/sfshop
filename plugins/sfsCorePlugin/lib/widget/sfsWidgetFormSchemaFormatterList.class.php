@@ -10,9 +10,9 @@
 class sfsWidgetFormSchemaFormatterList extends sfWidgetFormSchemaFormatter
 {
   protected
-    $rowFormat              = "<li>%error%</li>\n<li>\n <span class=\"label\">%label%</span>\n %field%%help%\n%hidden_fields%</li>\n",
+    $rowFormat              = "<li>%error%</li>\n<li>\n<div class=\"label\">%label%</div>\n<div class=\"field\"> %field%%help%</div>\n%hidden_fields%</li>\n",
     $errorRowFormat         = "<li>\n%errors%</li>\n",
-    $helpFormat             = "<span class=\"help\" style=\"display: none\">%help%</span>",
+    $helpFormat             = "<span class=\"help\" style=\"display: \">%help%</span>",
     $errorListFormatInARow  = "<ul class=\"error\">\n%errors%</ul>\n",
     $decoratorFormat        = "<ul>\n %content%</ul>";
 }

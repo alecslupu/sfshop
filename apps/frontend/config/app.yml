@@ -21,8 +21,8 @@ all:
     
   recaptcha:
     is_enabled: true
-    publickey: 6LcXjwIAAAAAADl7uoxfPIB6za8FIrGJQGupED1I
-    privatekey: 6LcXjwIAAAAAAB2Mi1QLJ684fQJYEBnn-OKI3aPw
+    publickey: 6LeDhgIAAAAAAOUNYtXtoq338WnMtPUL3VetB_QH
+    privatekey: 6LeDhgIAAAAAAJu20HFBLPBMsYF4ag0eDBMH47Iu
 
   store:
     company: sfShop
@@ -35,12 +35,6 @@ all:
       postcode: '94558'
       phone: 6173335555
 
-dev:
-  
-  recaptcha:
-    publickey: 6LeDhgIAAAAAAOUNYtXtoq338WnMtPUL3VetB_QH
-    privatekey: 6LeDhgIAAAAAAJu20HFBLPBMsYF4ag0eDBMH47Iu
-    
 test:
   
   recaptcha:

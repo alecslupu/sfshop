@@ -13,7 +13,7 @@ class EmailTemplatePeer extends BaseEmailTemplatePeer
     const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
     const RECONFIRM_EMAIL = 'RECONFIRM_EMAIL';
     
-    /**
+   /**
     * Gets email template with body and subject by tamplate name and culture.
     *
     * @param  string $name
@@ -32,12 +32,7 @@ class EmailTemplatePeer extends BaseEmailTemplatePeer
         if ($objects) {
             return $objects[0];
         }
-        else {
-            if ($template == null) {
-                throw new sfStorageException(sprintf('The template with name "%s" does not exist, you should add this template to database', $name));
-            }
-        }
         
-        return null;
+        throw new PropelException('The email template with name ' . $name . ' was not found.');
     }
 }
