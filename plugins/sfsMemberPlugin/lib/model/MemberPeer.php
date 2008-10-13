@@ -22,9 +22,12 @@ class MemberPeer extends BaseMemberPeer
     * @author Dmitry Nesteruk
     * @access public
     */
-    public static function retrieveByEmail($email)
+    public static function retrieveByEmail($email, $criteria = null)
     {
-        $criteria = new Criteria();
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        
         $criteria->add(self::EMAIL, $email, Criteria::EQUAL);
         return self::doSelectOne($criteria);
     }

@@ -21,9 +21,26 @@ class sfsMemberForgotPasswordStepOneForm extends MemberForm
     public function configure()
     {
         parent::configure();
-        $this->offsetUnset('first_name');
-        $this->offsetUnset('last_name');
-        $this->offsetUnset('primary_phone');
-        $this->offsetUnset('secondary_phone');
+        
+        $this->setWidgets(array('email' => new sfWidgetFormInput()));
+        
+        $validatorEmail = new sfValidatorAnd(
+            array(
+                new sfValidatorEmail(
+                    array('required' => true),
+                    array('invalid'  => 'This is not a valid email address')
+                ),
+                new sfsValidatorMember(
+                    array('check_exist_account' => true)
+                )
+            ),
+            array('required' => true),
+            array('required' => 'Email is a required field')
+        );
+        
+        $this->setValidators(array('email' => $validatorEmail));
+        
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
+        $this->defineSfsListFormatter();
     }
 }

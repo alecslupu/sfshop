@@ -31,10 +31,12 @@ class sfsMemberForgotPasswordStepTwoForm extends MemberForm
         
         $validatorSecretAnswer = new sfValidatorString(
             array('required' => true), 
-            array('invalid' => 'You should input answer on secret question')
+            array('required' => 'Please input an answer on a secret question')
         );
         
         $this->setValidators(array('secret_answer' => $validatorSecretAnswer));
         $this->getValidatorSchema()->setOption('allow_extra_fields', true);
+        $this->defineSfsListFormatter();
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
     }
 }

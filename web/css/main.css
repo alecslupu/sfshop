@@ -703,6 +703,11 @@ form.form_confirm input[type="text"] {
     width: 250px;
 }
 
+form.forgot_password li.question {
+    padding-left: 155px;
+    font-weight: normal;
+}
+
 /********************/
 
 /*** ORDER, BASKET table ***/
