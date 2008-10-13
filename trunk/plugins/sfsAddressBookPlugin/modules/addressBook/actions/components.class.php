@@ -32,7 +32,7 @@ class addressBookComponents extends sfComponents
         $response->addJavaScript('/js/sfsForm.js');
         
         if (sfConfig::get('app_address_book_enabled', true)) {
-            $this->form = new sfsOrderSelectAddressBookForm();
+            $this->form = new sfsAddressBookSelectForm();
             
             $default = AddressBookPeer::retrieveDefaultByMemberId($this->getUser()->getUserId());
             
@@ -58,7 +58,7 @@ class addressBookComponents extends sfComponents
                 }
             }
             
-            $this->form = new sfsOrderInputAddressBookForm($address);
+            $this->form = new sfsAddressBookInputForm($address);
         }
     }
     

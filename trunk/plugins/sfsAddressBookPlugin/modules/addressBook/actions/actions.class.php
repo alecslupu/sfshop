@@ -106,10 +106,10 @@ class addressBookActions extends sfActions
     public function executeAddAddressForOrder()
     {
         if (sfConfig::get('app_address_book_enabled', true)) {
-            $this->form = new sfsOrderSelectAddressBookForm();
+            $this->form = new sfsAddressBookSelectForm();
         }
         else {
-            $this->form = new sfsOrderInputAddressBookForm();
+            $this->form = new sfsAddressBookInputForm();
         }
         
         if ($this->getRequest()->isMethod('post')) {
