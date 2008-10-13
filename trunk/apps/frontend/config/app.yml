@@ -1,6 +1,9 @@
 all:
   crypto_key: test
   
+  prototype_window:
+    theme: sfshop
+  
   mail:
     address_from: admin@localhost
     address_feedback: nesterukd@gmail.com
@@ -9,15 +12,6 @@ all:
     smtp_port: 25
     smtp_username: nest_d
     smtp_password: irew18t
-    
-  basket:
-      tax:  19.6
-  payment:
-    paypal_rate: 2.9
-    paypal_username: seller_1212764623_biz_api1.inbox.ru
-    paypal_password: 1212764627
-    paypal_signature: AW5s-AZgM7K7OL1McV49qCXFbPAJAKap7DQ9nPMD5BrcqDEBrHQS7Ox7
-    paypal_test_mode: false
     
   recaptcha:
     is_enabled: true

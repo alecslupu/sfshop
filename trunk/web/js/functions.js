@@ -17,7 +17,7 @@ function setCheckboxValue()
     }, this);
 }
 
-function selCountry_onChange(country_id) {
+function selectCountry(country_id) {
     var
         option        = null,
         states_id     = new Array(),
@@ -34,7 +34,7 @@ function selCountry_onChange(country_id) {
     }
     
     $('address_state_id').innerHTML = '';
-    option = new Element('option', { 'value': ''}).update('[select state]');
+    option = new Element('option', { 'value': ''}).update('');
     $('address_state_id').insert(option);
     
     if (states_id.length > 0) {
@@ -45,12 +45,16 @@ function selCountry_onChange(country_id) {
         }
         
         $('address_state_id').up('li').show();
+	$('address_state_id').up('li').previous('li').show();
         $('address_state_title').up('li').hide();
+	$('address_state_title').up('li').previous('li').hide();
         $('address_country_has_states').value = 1;
     }
     else {
         $('address_state_id').up('li').hide();
+	$('address_state_id').up('li').previous('li').hide();
         $('address_state_title').up('li').show();
+	$('address_state_title').up('li').previous('li').show();
         $('address_country_has_states').value = 0;
     }
 }

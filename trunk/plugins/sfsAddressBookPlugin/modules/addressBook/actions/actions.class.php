@@ -27,13 +27,14 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeMyList()
+    public function executeMyList($request)
     {
         $this->pager = new sfPropelPager('AddressBook', 10);
         $criteria = new Criteria();
         $criteria->add(AddressBookPeer::MEMBER_ID, $this->getUser()->getUserId());
+        $criteria->addDescendingOrderByColumn(AddressBookPeer::CREATED_AT);
         $this->pager->setCriteria($criteria);
-        $this->pager->setPage($this->getRequestParameter('page', 1));
+        $this->pager->setPage($request->getParameter('page', 1));
         $this->pager->init();
     }
     
@@ -58,7 +59,7 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeEdit()
+    public function executeEdit($request)
     {
         sfLoader::loadHelpers('I18N');
         
@@ -66,12 +67,27 @@ class addressBookActions extends sfActions
         $this->form = new AddressBookForm($address);
         
         if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind($this->getRequestParameter('address'));
+            $data = $request->getParameter('address');
+            $this->form->bind($data);
             
             if ($this->form->isValid()) {
                 $address = $this->form->updateObject();
-                $address->setCompany($this->getRequestParameter('address[company]'));
-                $address->setIsDefault($this->getRequestParameter('address[is_default]'));
+                $address->setCompany($data['company']);
+                
+                if (isset($data['is_default'])) {
+                    $address->setIsDefault(true);
+                }
+                else {
+                    $address->setIsDefault(false);
+                }
+                
+                if ($address->isNew()) {
+                    $this->getUser()->setFlash('message', 'New address has been added');
+                }
+                else {
+                    $this->getUser()->setFlash('message', 'Address has been saved');
+                }
+                
                 $address->save();
                 
                 $this->redirect('@addressBook_myList');

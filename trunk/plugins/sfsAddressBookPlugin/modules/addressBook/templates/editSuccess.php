@@ -10,11 +10,11 @@
 <?php endif; ?>
 
 <?php include_partial('core/container_header', array('caption' => __($caption))) ?>
-    <form action="<?php echo url_for($url); ?>" method="post" id="form" class="form">
+    <form action="<?php echo url_for($url); ?>" method="post" id="form_edit_address" class="form">
         <ul class="main">
             <?php echo $form ?>
-            <li>
-                <input type="submit" value="<?php echo __('Save') ?>" class="button"/>&nbsp;<input type="button" value="<?php echo __('Cancel') ?>" class="button" onclick="window.location='<?php echo $sf_request->getReferer() ?>'"/>
+            <li class="actions">
+                <input type="submit" value="<?php echo __('Save') ?>" class="button"/>&nbsp;<input type="button" value="<?php echo __('Cancel') ?>" class="button" onclick="window.location='<?php echo url_for('@addressBook_myList') ?>'"/>
             </li>
         </ul>
     </form>
@@ -26,7 +26,12 @@
 <?php endif; ?>
     
 <?php echo javascript_tag('
-    setCheckboxValue();
-    selCountry_onChange($F("address_country_id"));
+    $("address_country_id").observe("change", function(event) {
+        selectCountry($F("address_country_id"));
+    });
+    
+    selectCountry($F("address_country_id"));
+    
     $("address_state_id").value = "' . $stateId . '";
+    highlightFieldsWithError("form_edit_address");
 ') ?>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -25,18 +24,19 @@ class AddressBook extends BaseAddressBook
     * Unmarks old default address and marks new address as default.
     * 
     * @param  int $value 0 or 1
-    * @return object
+    * @return void
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
     public function setIsDefault($value)
     {
-        if ($value == 1) {
+        if ($value == true) {
             $con = Propel::getConnection();
             
             $criteriaWhere = new Criteria();
             $criteriaWhere->add(AddressBookPeer::MEMBER_ID, $this->getMemberId());
             $criteriaWhere->add(AddressBookPeer::IS_DEFAULT, 1);
+            $criteriaWhere->add(AddressBookPeer::ID, $this->getId(), Criteria::NOT_EQUAL);
             
             $criteriaSet = new Criteria();
             $criteriaSet->add(AddressBookPeer::IS_DEFAULT, 0);

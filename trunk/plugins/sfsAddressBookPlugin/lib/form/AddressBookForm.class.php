@@ -25,7 +25,7 @@ class AddressBookForm extends BaseAddressBookForm
         $arrayCountries = CountryPeer::getHash($criteria);
         
         $arrayCountriesWidget = array();
-        $arrayCountriesWidget[] = '[select country]';
+        $arrayCountriesWidget[] = '';
         
         foreach ($arrayCountries as $key => $title) {
             $arrayCountriesWidget[$key] = $title;
@@ -35,8 +35,8 @@ class AddressBookForm extends BaseAddressBookForm
             array(
                 'first_name'         => new sfWidgetFormInput(),
                 'last_name'          => new sfWidgetFormInput(),
-                'country_id'         => new sfWidgetFormSelect(array('choices' => $arrayCountriesWidget), array('onchange' => 'return selCountry_onChange(this.value);')),
-                'state_id'           => new sfWidgetFormSelect(array('choices' => array('' => '[select state]'))),
+                'country_id'         => new sfWidgetFormSelect(array('choices' => $arrayCountriesWidget)),
+                'state_id'           => new sfWidgetFormSelect(array('choices' => array())),
                 'state_title'        => new sfWidgetFormInput(),
                 'city'               => new sfWidgetFormInput(),
                 'street'             => new sfWidgetFormInput(),
@@ -47,33 +47,54 @@ class AddressBookForm extends BaseAddressBookForm
              )
         );
         
-        $this->widgetSchema->setLabel('country_id', 'Country');
-        $this->widgetSchema->setLabel('state_id', 'State');
-        $this->widgetSchema->setLabel('state_title', 'State');
+        $this->widgetSchema->setLabels(
+            array(
+                'country_id'  => 'Country',
+                'state_id'    => 'State',
+                'state_title' => 'State'
+            )
+        );
         
         $validatorFirstName = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 4
+                'min_length' => 2,
+                'max_length' => 255
+            ),
+            array(
+                'required'   => 'First Name is a required field',
+                'min_length' => 'First Name can not be less 2 characters',
+                'max_length' => 'First Name can not be more 255 characters',
             )
         );
         
         $validatorLastName = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 4
+                'min_length' => 2,
+                'max_length' => 255
+            ),
+            array(
+                'required'   => 'Last Name is a required field',
+                'min_length' => 'Last Name can not be less 2 characters',
+                'max_length' => 'Last Name can not be more 255 characters',
             )
         );
         
         $validatorCountry = new sfValidatorChoice(
-            array('choices' => array_keys($arrayCountries))
+            array('choices' => array_keys($arrayCountries)),
+            array('invalid' => 'Please select a country')
         );
         
         $criteria = new Criteria();
         StatePeer::addPublicCriteria($criteria);
         
         $validatorStateId = new sfValidatorChoice(
-            array('choices' => array_keys(StatePeer::getHash($criteria)))
+            array('choices' => array_keys(StatePeer::getHash($criteria))),
+            array(
+                'required' => 'Please select a state',
+                'invalid'  => 'Please select a state'
+            )
         );
         
         $validatorStateTitle = new sfValidatorString(
@@ -82,6 +103,7 @@ class AddressBookForm extends BaseAddressBookForm
                 'min_length' => 3
             ),
             array(
+                'required'   => 'State is a required field',
                 'min_length' => 'State can not be less than 3 characters'
             )
         );
@@ -92,6 +114,7 @@ class AddressBookForm extends BaseAddressBookForm
                 'min_length' => 3
             ),
             array(
+                'required'   => 'City is a required field',
                 'min_length' => 'City can not be less than 3 characters'
             )
         );
@@ -99,17 +122,17 @@ class AddressBookForm extends BaseAddressBookForm
         $validatorStreet = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 5
+                'min_length' => 3
             ),
             array(
-                'min_length' => 'Street can not be less than 5 characters'
+                'required'   => 'Street is a required field',
+                'min_length' => 'Street can not be less than 3 characters'
             )
         );
         
         $validatorPostcode = new sfValidatorString(
-            array(
-                'required'   => true
-            )
+            array('required' => true),
+            array('required' => 'Postcode is a required field')
         );
         
         $this->setValidators(
@@ -132,14 +155,12 @@ class AddressBookForm extends BaseAddressBookForm
     
     public function bind(array $taintedValues = null, array $taintedFiles = null)
     {
-        if (!empty($taintedValues['state_id'])) {
+        if (isset($taintedValues['country_has_states']) && $taintedValues['country_has_states'] == 1) {
             unset($taintedValues['state_title']);
-            //$this->getWidgetSchema()->offsetUnset('state_title');
             $this->getValidatorSchema()->offsetUnset('state_title');
         }
-        else if (!empty($taintedValues['state_title']) && !$taintedValues['country_has_states']) {
+        else if(isset($taintedValues['country_has_states'])) {
             unset($taintedValues['state_id']);
-            //$this->getWidgetSchema()->offsetUnset('state_id');
             $this->getValidatorSchema()->offsetUnset('state_id');
         }
         

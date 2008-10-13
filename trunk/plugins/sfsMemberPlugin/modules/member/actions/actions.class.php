@@ -360,7 +360,7 @@ class memberActions extends sfActions
                 $member = $this->form->updateObject();
                 $member->save();
                 
-                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . __('Your personal information have been saved'));
+                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . __('Your personal information has been saved'));
                 
                 $this->redirect('@member_myProfile');
             }

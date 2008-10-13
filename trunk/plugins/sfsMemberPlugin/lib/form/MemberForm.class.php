@@ -20,7 +20,6 @@ class MemberForm extends BaseMemberForm
 {
     public function configure()
     {
-        
         $this->setWidgets(
             array(
                 'email'              => new sfWidgetFormInput(),
@@ -54,35 +53,11 @@ class MemberForm extends BaseMemberForm
             array('required' => 'Email is a required field')
         );
         
-        $validatorPassword = new sfValidatorString(
-            array(
-                'required'   => true,
-                'min_length' => 6,
-                'max_length' => 20
-            ),
-            array(
-                'min_length' => 'Password must be 6 or more characters',
-                'max_length' => 'Password must be 20 or less characters'
-            )
-        );
-        
-        $validatorConfirmPassword = new sfValidatorString(
-            array('required' => true)
-        );
-        
-        $validatorComparePasswords = new sfValidatorSchemaCompare(
-            'password', 
-            'equal',
-            'confirm_password',
-            array(),
-            array('invalid' => 'Passwords do not match')
-        );
-        
         $validatorFirstName = new sfValidatorString(
             array(
                 'required'   => true,
                 'min_length' => 2,
-                'max_length' => 255,
+                'max_length' => 255
             ),
             array(
                 'required'   => 'First Name is a required field',
@@ -93,9 +68,9 @@ class MemberForm extends BaseMemberForm
         
         $validatorLastName = new sfValidatorString(
             array(
-                'required'   => true, 
+                'required'   => true,
                 'min_length' => 2,
-                'max_length' => 255,
+                'max_length' => 255
             ),
             array(
                 'required'   => 'Last Name is a required field',
