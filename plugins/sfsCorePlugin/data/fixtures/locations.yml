@@ -1,8 +1,3 @@
-### This file is auto generated
-### Don't change it
-
-
-
 #
 # Country
 #
@@ -1350,7 +1345,7 @@ Country:
     iso_a3:             'UKR'
     iso_n:              '804'
     title_english:      'Ukraine'
-    is_active:          0
+    is_active:          1
   Country_AE: 
     iso:                'AE'
     iso_a3:             'ARE'

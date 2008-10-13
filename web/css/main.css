@@ -271,6 +271,11 @@ div.message {
     color: #08a208;
     font-size: 11px;
     font-weight: bold;
+    width: 100%;
+    padding-top: 5px;
+    height: 18px;
+    text-align: center;
+    border: #08a208 1px solid;
 }
 
 /*** BOX STYLES ***/
