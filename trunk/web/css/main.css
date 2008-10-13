@@ -596,7 +596,7 @@ form.form ul.main li {
 }
 
 form.form ul.main li.actions {
-    margin-left: 160px;
+    margin-left: 155px;
 }
 
 form.form ul.main li.captcha {
@@ -628,7 +628,7 @@ form.form span.help {
 }
 
 form.form ul.error {
-    margin-left: 157px;
+    margin-left: 152px;
     width: 350px;
     display: block;
 }

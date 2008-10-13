@@ -40,7 +40,7 @@ class sfsValidatorMember extends sfValidatorBase
     {
         $this->addMessage('check_unique_email', 'Accout with this email alredy exist.');
         $this->addMessage('check_exist_account', 'Accout with this email does not exist.');
-        $this->addMessage('check_password', 'The current password is wrong');
+        $this->addMessage('check_password', 'Current password is wrong');
         
         $this->addOption('check_unique_email');
         $this->addOption('check_exist_account');

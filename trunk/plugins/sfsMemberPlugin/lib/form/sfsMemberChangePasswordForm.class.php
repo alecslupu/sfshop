@@ -24,16 +24,43 @@ class sfsMemberChangePasswordForm extends MemberForm
         
         $this->setWidgets(
             array(
-                'current_password' => new sfWidgetFormInputPassword()
-             ),
-             $this->getWidgets()
+                'current_password' => new sfWidgetFormInputPassword(),
+                'password'         => new sfWidgetFormInputPassword(),
+                'confirm_password' => new sfWidgetFormInputPassword()
+             )
+        );
+        
+        $this->getWidgetSchema()->setLabels(
+            array(
+                'password'         => 'New password',
+                'confirm_password' => 'Confirm new password'
+            )
         );
         
         $validatorCurrentPassword = new sfsValidatorMember(
             array(
-                'required'   => true, 
-                'check_password' => true, 
+                'required'       => true,
+                'check_password' => true
+            ),
+            array('required'   => 'Current password is a required field')
+        );
+        
+        $validatorPassword = new sfValidatorString(
+            array(
+                'required'   => true,
+                'min_length' => 6,
+                'max_length' => 20
+            ),
+            array(
+                'required'   => 'New password is a required field',
+                'min_length' => 'New password must be 6 or more characters',
+                'max_length' => 'New password must be 20 or less characters'
             )
+        );
+        
+        $validatorConfirmPassword = new sfValidatorString(
+            array('required' => true),
+            array('required' => 'Confirm new password is a required field')
         );
         
         $validatorComparePasswords = new sfValidatorSchemaCompare(
@@ -46,12 +73,14 @@ class sfsMemberChangePasswordForm extends MemberForm
         
         $this->setValidators(
             array(
-               'current_password' => $validatorCurrentPassword
-            ),
-            $this->getValidators()
+               'current_password' => $validatorCurrentPassword,
+               'password'         => $validatorPassword,
+               'confirm_password' => $validatorConfirmPassword
+            )
         );
         
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
-        $this->getWidgetSchema()->setNameFormat('change_password[%s]');
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
+        $this->defineSfsListFormatter();
     }
 }
