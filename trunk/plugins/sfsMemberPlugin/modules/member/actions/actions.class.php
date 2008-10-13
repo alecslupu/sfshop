@@ -38,7 +38,7 @@ class memberActions extends sfActions
         else {
             if ($request->isMethod('post')) {
                 $data = $request->getParameter('data');
-                $this->form->bind($request->getParameter('data'));
+                $this->form->bind($data);
                 
                 if ($this->form->isValid()) {
                     
@@ -221,10 +221,10 @@ class memberActions extends sfActions
         $this->form = new sfsMemberForgotPasswordStepOneForm();
         
         if ($request->isMethod('post')) {
-            $this->form->bind(array('email' => $request->getParameter('email')));
+            $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
-                $this->getUser()->setAttribute('email', $this->getRequestParameter('email'), 'member/forgot_password');
+                $this->getUser()->setAttribute('email', $request->getParameter('data[email]'), 'member/forgot_password');
                 $this->getUser()->setAttribute('account_exist', true, 'member/forgot_password');
                 $this->redirect('@member_forgotPasswordStepTwo');
             }
@@ -247,6 +247,8 @@ class memberActions extends sfActions
         
         if ($email !== null) {
             
+            $criteria = new Criteria();
+            MemberPeer::addPublicCriteria($criteria);
             $member = MemberPeer::retrieveByEmail($email);
             
             if ($member == null) {
@@ -265,7 +267,7 @@ class memberActions extends sfActions
                     
                     if ($member->getSecretAnswer() == $request->getParameter('data[secret_answer]')) {
                         
-                        $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::FORGOT_PASSWORD, $this->getUser()->getCulture());
+                        $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::FORGOT_PASSWORD);
                         $password = MemberPeer::generatePassword();
                         
                         $member->setPassword($password);
@@ -282,17 +284,17 @@ class memberActions extends sfActions
                         );
                         $mail->send();
                         
-                        $this->getUser()->setFlash('message', __('Your login and password have been sent to you email.'));
+                        $this->getUser()->setFlash('restored', true);
                         $this->getUser()->getAttributeHolder()->removeNamespace('member/forgot_password');
                         $this->redirect('@member_forgotPasswordStepTwo');
                     }
                     else {
-                        $this->form->defineError('email', __('The answer is wrong'));
+                        $this->form->defineError('email', __('Answer is wrong'));
                     }
                 }
             }
         }
-        elseif(!$this->getUser()->hasFlash('message')) {
+        elseif(!$this->getUser()->hasFlash('restored')) {
             $this->redirect('@member_forgotPasswordStepOne');
         }
     }
