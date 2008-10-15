@@ -354,7 +354,7 @@ class Propel {
 	 * @return     boolean True if the message was logged successfully or no logger was used.
 	 */
 	public static function log($message, $level = self::LOG_DEBUG)
-	{ 
+	{
 		if(self::hasLogger())
 		{
 			$logger = self::logger();
