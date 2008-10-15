@@ -29,6 +29,9 @@ all:
       postcode: '94558'
       phone: 6173335555
 
+  lucene:
+    index: ProductIndex
+
 test:
   
   recaptcha:

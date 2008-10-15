@@ -19,9 +19,9 @@
                     <?php include_partial('pager', array('pager' => $pager, 'action' => $action)); ?>
                     
                     <?php  if ($pager->getNbResults() == 0 ): ?>
-                            <br/>
-                            <?php echo __('Category is empty'); ?>
-                            <br/><br/>
+                        <br/>
+                        <?php echo __('Category is empty'); ?>
+                        <br/><br/>
                     <?php endif; ?>
                 </div>
             </div>

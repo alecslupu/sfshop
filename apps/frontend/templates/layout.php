@@ -50,14 +50,7 @@
             <div class="login_form">
             </div>
             <div class="search_form">
-                <table cellspacing="0" cellpadding="0">
-                 <tr>
-                  <td width="4" height="37" background="/images/m3.gif"></td>
-                  <td width="248" height="37" background="/images/m4.gif" CLASS="ML4-W" style="padding-top: 3px; ">
-                  <span  style="padding-RIGHT: 15px; padding-left:5px ">SEARCH</SPAN><input class=se2 type=text value="Search">&nbsp;<a style="padding-left: 11px" href=#><img src=/images/home4_25.gif width=24 height=19 border=0 align=absmiddle></a>
-                  </td>
-                </tr>
-              </table>
+                <?php include_component('product', 'searchShortForm') ?>
             </div>
             
         </div>

@@ -10,6 +10,10 @@ product_details:
   url: /product-details/:path/:id/*
   param: { module: product, action: details }
 
+product_search:
+  url: /product-search/*
+  param: { module: product, action: list }
+
 #
 # Brand Admin
 #
