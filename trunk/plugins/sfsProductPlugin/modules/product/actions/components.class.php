@@ -49,4 +49,17 @@ class productComponents extends sfComponents
     {
         $this->products = ProductPeer::getRecent();
     }
+    
+   /**
+    * Search short form.
+    * 
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function executeSearchShortForm()
+    {
+        $this->form = new sfsProductSearchShortForm();
+    }
 }

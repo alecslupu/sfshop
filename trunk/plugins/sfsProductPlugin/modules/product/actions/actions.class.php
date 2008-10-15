@@ -30,31 +30,34 @@ class productActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeList()
+    public function executeList($request)
     {
         $this->filter = $this->getUser()->getAttributeHolder()->getAll('product/filter');
         
-        $this->form = new sfsProductFilterForm();
+        $this->formFilter = new sfsProductFilterForm();
         $brandForm = new sfsBrandFilterForm();
         
         $criteria = new Criteria();
-        $criteria = $this->getCategoryCriteria($criteria);
+        $this->addCategoryCriteria($criteria);
+        $this->addSearchCriteria($criteria);
         
-        if ($this->getRequest()->isMethod('post')) {
+        //$this->formFilter->embedForm('brand', $brandForm);
+        
+        /*
+        if ($request->isMethod('post')) {
             
-            $this->form->bind($this->getRequestParameter('filters'));
+            $this->formFilter->bind($request->getParameter('filters'));
             
-            if ($this->form->isValid()) {
+            if ($this->formFilter->isValid()) {
                 $this->processFilters();
             }
         }
         
+        */
         if (isset($this->filter['brand']['brand_id'])) {
             $brandForm->getWidgetSchema()->offsetGet('brand_id')->setAttribute('selected', $this->filter['brand']['brand_id']);
             $brandForm->setDefault('brand_id', $this->filter['brand']['brand_id']);
         }
-        
-        $this->form->embedForm('brand', $brandForm);
         
         $criteria = $this->addFiltersCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
@@ -62,7 +65,7 @@ class productActions extends sfActions
         $this->pager = new sfPropelPager('Product', 10);
         $this->pager->setPeerMethod('doSelectWithTranslation');
         $this->pager->setCriteria($criteria);
-        $this->pager->setPage($this->getRequestParameter('page', 1));
+        $this->pager->setPage($request->getParameter('page', 1));
         $this->pager->init();
     }
     
@@ -101,7 +104,7 @@ class productActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    protected function getCategoryCriteria($criteria)
+    protected function addCategoryCriteria($criteria)
     {
         sfLoader::loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
@@ -120,6 +123,47 @@ class productActions extends sfActions
         }
         
         return $criteria;
+    }
+    
+    protected function addSearchCriteria($criteria)
+    {
+        $request = $this->getRequest();
+        
+        $this->formSearch = new sfsProductSearchForm();
+        
+        if ($request->hasParameter('data[query]')) {
+            
+            $data = $request->getParameter('data');
+            $this->formSearch->bind($data);
+            
+            if ($this->formSearch->isValid()) {
+                $queryString = $data['query'];
+                $this->getUser()->setAttribute('query', $queryString, 'products');
+            }
+        }
+        elseif($this->getUser()->getAttribute('query', null, 'products') != null) {
+            $queryString = $this->getUser()->getAttribute('query', '', 'products');
+        }
+        
+        if (isset($queryString)) {
+            
+            $this->isSearch = true;
+            
+            $query = new sfLuceneCriteria(sfLuceneToolkit::getApplicationInstance());
+            
+            $query->addSane($queryString);
+            $results = sfLuceneToolkit::getApplicationInstance()->friendlyFind($query);
+            
+            $ids = array();
+            
+            if (!empty($results) && is_object($results)) {
+                foreach($results as $res) {
+                    $ids[] =  $res->getId();
+                }
+            }
+            
+            $criteria->add(ProductPeer::ID, $ids, Criteria::IN);
+        }
     }
     
     protected function processFilters()

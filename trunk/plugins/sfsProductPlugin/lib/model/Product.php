@@ -66,10 +66,13 @@ class Product extends BaseProduct
     {
         $c = new Criteria();
         $c->addAnd(Product2CategoryPeer::PRODUCT_ID, $this->getId(), Criteria::EQUAL);
+        
         if (($p2c = Product2CategoryPeer::doSelectOne($c)) !== null) {
             return $p2c->getCategoryId();
         }
         return null;
     }
-    
 }
+
+xfPropelBehavior::register('Product', array('ProductSearchIndex'));
+
