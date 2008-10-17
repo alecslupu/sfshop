@@ -60,7 +60,12 @@
     </div>
     </form>
     <?php if ($sf_user->isAuthenticated()): ?>
-        <?php include_component('addressBook', 'orderAddressForm') ?>
+        <div id="container_select_address">
+            <?php include_component('addressBook', 'selectForm') ?>
+        </div>
+        <div id="container_edit_address" style="display: none">
+            <?php include_component('addressBook', 'inputForm', array('is_shopping_cart' => true)) ?>
+        </div>
     <?php endif; ?>
 </div>
 <?php endif ?>
