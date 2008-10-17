@@ -19,47 +19,59 @@
 class addressBookComponents extends sfComponents
 {
    /**
-    * Form for set address in the order list.
+    * Form for input address.
     *
     * @param  void
     * @return void
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeOrderAddressForm()
+    public function executeInputForm()
     {
         $response = $this->getResponse();
         $response->addJavaScript('/js/sfsForm.js');
         
-        if (sfConfig::get('app_address_book_enabled', true)) {
-            $this->form = new sfsAddressBookSelectForm();
-            
-            $default = AddressBookPeer::retrieveDefaultByMemberId($this->getUser()->getUserId());
-            
-            if ($default !== null) {
-                $defaultAddressId = $default->getId();
-                $this->form->setDefault('address_id', $default->getId());
-            }
+        $address = new AddressBook();
+        
+        if ($this->getUser()->getAttributeHolder()->hasNamespace('order/delivery/address')) {
+            $addressData = $this->getUser()->getAttributeHolder()->getAll('order/delivery/address');
+            $address->fromArray($addressData, BasePeer::TYPE_FIELDNAME);
         }
         else {
-            $address = new AddressBook();
+            $member = $this->getUser()->getUser();
             
-            if ($this->getUser()->getAttributeHolder()->hasNamespace('order/delivery/address')) {
-                $addressData = $this->getUser()->getAttributeHolder()->getAll('order/delivery/address');
-                $address->fromArray($addressData, BasePeer::TYPE_FIELDNAME);
+            if ($member !== null) {
+                $address->setFirstName($member->getFirstName());
+                $address->setLastName($member->getLastName());
             }
-            else {
-                
-                $member = $this->getUser()->getUser();
-                
-                if ($member !== null) {
-                    $address->setFirstName($member->getFirstName());
-                    $address->setLastName($member->getLastName());
-                }
-            }
-            
-            $this->form = new sfsAddressBookInputForm($address);
         }
+        
+        $this->form = new sfsAddressBookInputForm($address);
+    }
+    
+   /**
+    * Form for select exists address from address book.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @access public
+    */
+    public function executeSelectForm()
+    {
+        $response = $this->getResponse();
+        $response->addJavaScript('/js/sfsForm.js');
+        
+        $this->form = new sfsAddressBookSelectForm();
+        
+        $default = AddressBookPeer::retrieveDefaultByMemberId($this->getUser()->getUserId());
+        
+        if ($default !== null) {
+            $defaultAddressId = $default->getId();
+            $this->form->setDefault('address_id', $default->getId());
+        }
+        
+        $this->hasAddresses = AddressBookPeer::hasAddresses($this->getUser()->getUserId());
     }
     
    /**

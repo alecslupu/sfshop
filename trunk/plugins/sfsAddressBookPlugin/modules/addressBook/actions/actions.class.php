@@ -82,15 +82,42 @@ class addressBookActions extends sfActions
                 }
                 
                 if ($address->isNew()) {
-                    $this->getUser()->setFlash('message', 'New address has been added');
+                    $isNew = true;
+                    $this->getUser()->setFlash('message', __('New address has been added'));
                 }
                 else {
-                    $this->getUser()->setFlash('message', 'Address has been saved');
+                    $this->getUser()->setFlash('message', __('Address has been saved'));
                 }
                 
                 $address->save();
                 
-                $this->redirect('@addressBook_myList');
+                if ($request->isXmlHttpRequest()) {
+                    if ($isNew) {
+                        $arrayAddresses = AddressBookPeer::getHashByMemberId($this->getUser()->getUserId());
+                        
+                        $data = array(
+                            'addresses'          => $arrayAddresses,
+                            'default_address_id' => $address->getId()
+                        );
+                        
+                        return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
+                    }
+                    else {
+                        
+                    }
+                }
+                else {
+                    $this->redirect('@addressBook_myList');
+                }
+            }
+            elseif ($request->isXmlHttpRequest()) {
+                $errors = array();
+                
+                foreach ($this->form->getErrorSchema() as $field => $error) {
+                    $errors[$field] = $error->getMessage();
+                }
+                
+                return $this->renderText(sfsJSONPeer::createResponseError($errors));
             }
         }
     }

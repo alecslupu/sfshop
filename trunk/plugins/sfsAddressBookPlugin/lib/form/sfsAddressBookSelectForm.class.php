@@ -24,19 +24,18 @@ class sfsAddressBookSelectForm extends AddressBookForm
         
         $arrayAddresses = AddressBookPeer::getHashByMemberId(sfContext::getInstance()->getUser()->getUserId());
         
-        if (count($arrayAddresses) > 0) {
-            $this->setWidgets(
-                array('address_id' => new sfWidgetFormSelect(array('choices' => $arrayAddresses)))
-            );
-            
-            $this->widgetSchema->setLabel('address_id', ' ');
-            
-            $validatorAddressId = new sfValidatorChoice(
-                array('choices' => array_keys($arrayAddresses))
-            );
-            
-            $this->setValidators(array('address_id' => $validatorAddressId));
-        }
+        $this->setWidgets(
+            array('address_id' => new sfWidgetFormSelect(array('choices' => $arrayAddresses)))
+        );
+        
+        $this->widgetSchema->setLabel('address_id', ' ');
+        
+        $validatorAddressId = new sfValidatorChoice(
+            array('choices' => array_keys($arrayAddresses))
+        );
+        
+        $this->setValidators(array('address_id' => $validatorAddressId));
+        
         $this->getWidgetSchema()->setNameFormat('address[%s]');
     }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -92,5 +91,20 @@ class AddressBookPeer extends BaseAddressBookPeer
         $criteria->add(self::MEMBER_ID, $memberId);
         $criteria->add(self::IS_DEFAULT, 1);
         return self::doSelectOne($criteria);
+    }
+    
+   /**
+    * If member has addresses, return true, otherwise false.
+    *
+    * @param  int $memberId
+    * @return bool
+    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @access public
+    */
+    public static function hasAddresses($memberId)
+    {
+        $criteria = new Criteria();
+        $criteria->add(self::MEMBER_ID, $memberId);
+        return (self::doCount($criteria) > 0);
     }
 }

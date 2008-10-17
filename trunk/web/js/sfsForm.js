@@ -33,7 +33,7 @@ var sfsForm = Class.create({
             );
         }
     },
-    postExecute: function()
+    postExecute: function(response)
     {
     },
     onChecked: function(event, element)
