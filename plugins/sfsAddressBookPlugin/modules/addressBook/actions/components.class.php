@@ -74,6 +74,11 @@ class addressBookComponents extends sfComponents
         $this->hasAddresses = AddressBookPeer::hasAddresses($this->getUser()->getUserId());
     }
     
+    public function executeSelectAddress()
+    {
+        $this->hasAddresses = AddressBookPeer::hasAddresses($this->getUser()->getUserId());
+    }
+    
    /**
     * Gets details delivery address.
     * 

@@ -53,19 +53,14 @@
     <div class="basket_buttons" align="right">
         <input type="submit" value="<?php echo __('Update') ?>" class="button" onclick="updateBasket(); return false;"/>&nbsp;
         <?php if ($sf_user->isAuthenticated()): ?>
-            <input type="submit" value="<?php echo __('Checkout') ?>" class="button" onclick="checkout();"/>
+            <input type="submit" value="<?php echo __('Checkout') ?>" id="button_checkout" class="button" onclick="checkout();"/>
         <?php else: ?>
             <input type="submit" value="<?php echo __('Checkout') ?>" class="button" onclick="window.location = '<?php echo url_for('@member_login') ?>'; return false"/>
         <?php endif; ?>
     </div>
     </form>
     <?php if ($sf_user->isAuthenticated()): ?>
-        <div id="container_select_address">
-            <?php include_component('addressBook', 'selectForm') ?>
-        </div>
-        <div id="container_edit_address" style="display: none">
-            <?php include_component('addressBook', 'inputForm', array('is_shopping_cart' => true)) ?>
-        </div>
+        <?php include_component('addressBook', 'selectAddress') ?>
     <?php endif; ?>
 </div>
 <?php endif ?>

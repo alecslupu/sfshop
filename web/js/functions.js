@@ -67,8 +67,10 @@ function showEditForm(containerFormId, containerInfoId)
     activeContainerFormId = containerFormId;
     activeContainerInfoId = containerInfoId;
 
-    Effect.BlindDown(containerFormId);
     Effect.BlindUp(containerInfoId);
+    //Effect.BlindDown(containerFormId);
+    $(containerFormId).show();
+    new Effect.ScrollTo($(containerFormId).down('.actions'), {duration:1.0});
 
     if (Object.isElement($('form_confirm'))) {
         $('form_confirm').hide();
@@ -80,9 +82,10 @@ function hideEditForm()
     var errors = $(activeContainerFormId).select('ul.error');
     
     if (errors.length == 0) {
-        Effect.BlindDown(activeContainerInfoId);
+        
         Effect.BlindUp(activeContainerFormId);
-    
+        Effect.BlindDown(activeContainerInfoId);
+        
         if (Object.isElement($('form_confirm'))) {
             $('form_confirm').show();
         }
