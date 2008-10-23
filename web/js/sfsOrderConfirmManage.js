@@ -6,6 +6,10 @@ var sfsOrderConfirmManage = Class.create({
             params.deliveryAddress.containers, 
             params.deliveryAddress.options, this
         );
+        var delivery = new sfsDeliveryManage(
+            params.delivery.containers, 
+            params.delivery.options, this
+        );
         var contact = new sfsManage(
             params.contact.containers, 
             params.deliveryAddress.options, 

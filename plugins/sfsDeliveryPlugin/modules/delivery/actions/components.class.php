@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -48,5 +47,16 @@ class deliveryComponents extends sfComponents
         else {
             sfContext::getInstance()->getController()->redirect('@delivery_checkout');
         }
+    }
+    
+    public function executeSelectForm()
+    {
+        $this->form = new sfsDeliverySelectForm();
+        
+        $defaultMethodId = $this->getUser()->getAttribute('method_id', null, 'order/delivery');
+        $this->form->setDefault('method_id', $defaultMethodId);
+        
+        $this->errors = $this->form->getServiceErrors();
+        $this->sections = $this->form->getSections();
     }
 }

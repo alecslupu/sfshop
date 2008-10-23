@@ -34,7 +34,7 @@ class orderActions extends sfActions
         
         $this->basket = $sfUser->getBasket();
         
-        if (!$this->basket ->hasProducts()) {
+        if (!$this->basket->hasProducts()) {
             $this->redirect('@basket_list');
         }
         

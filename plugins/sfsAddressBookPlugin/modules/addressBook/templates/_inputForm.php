@@ -5,7 +5,8 @@
         <?php echo $form ?>
         <li class="actions">
             <input type="submit" value="<?php echo __('Submit') ?>" class="button">
-             &nbsp; <input type="button" value="<?php echo __('Cancel') ?>" class="button cancel"></li>
+             &nbsp; <input type="button" value="<?php echo __('Cancel') ?>" class="button cancel">
+        </li>
     </ul>
 </form>
 
