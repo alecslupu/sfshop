@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -31,13 +30,13 @@ class addressBookComponents extends sfComponents
         $response = $this->getResponse();
         $response->addJavaScript('/js/sfsForm.js');
         
-        $address = new AddressBook();
-        
-        if ($this->getUser()->getAttributeHolder()->hasNamespace('order/delivery/address')) {
-            $addressData = $this->getUser()->getAttributeHolder()->getAll('order/delivery/address');
-            $address->fromArray($addressData, BasePeer::TYPE_FIELDNAME);
+        if (isset($this->address)) {
+            $address = $this->address;
+            $isEditAddress = true;
         }
         else {
+            $address = new AddressBook();
+            
             $member = $this->getUser()->getUser();
             
             if ($member !== null) {
@@ -47,6 +46,11 @@ class addressBookComponents extends sfComponents
         }
         
         $this->form = new sfsAddressBookInputForm($address);
+        
+        if (isset($isEditAddress)) {
+            $this->form->getWidgetSchema()->offsetSet('id', new sfWidgetFormInputHidden());
+            $this->form->setDefault('id', $address->getId());
+        }
     }
     
    /**
@@ -89,9 +93,8 @@ class addressBookComponents extends sfComponents
     */
     public function executeDeliveryAddress()
     {
-        $address = $this->address;
-        $this->address = new AddressBook();
-        $this->address->fromArray($address, BasePeer::TYPE_FIELDNAME);
+        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
+        $this->address = AddressBookPeer::retrieveById($addressId);
     }
     
    /**
@@ -104,8 +107,7 @@ class addressBookComponents extends sfComponents
     */
     public function executeBillingAddress()
     {
-        $address = $this->address;
-        $this->address = new AddressBook();
-        $this->address->fromArray($address, BasePeer::TYPE_FIELDNAME);
+        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
+        $this->address = AddressBookPeer::retrieveById($addressId);
     }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -92,7 +91,7 @@ class addressBookActions extends sfActions
                 $address->save();
                 
                 if ($request->isXmlHttpRequest()) {
-                    if ($isNew) {
+                    if (isset($isNew)) {
                         $arrayAddresses = AddressBookPeer::getHashByMemberId($this->getUser()->getUserId());
                         
                         $data = array(
@@ -103,7 +102,7 @@ class addressBookActions extends sfActions
                         return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
                     }
                     else {
-                        
+                        return $this->renderText(sfsJSONPeer::createResponseSuccess($address->toArray(BasePeer::TYPE_FIELDNAME)));
                     }
                 }
                 else {
@@ -130,46 +129,31 @@ class addressBookActions extends sfActions
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeAddAddressForOrder()
+    public function executeSelect($request)
     {
-        if (sfConfig::get('app_address_book_enabled', true)) {
-            $this->form = new sfsAddressBookSelectForm();
-        }
-        else {
-            $this->form = new sfsAddressBookInputForm();
-        }
+        $this->form = new sfsAddressBookSelectForm();
         
-        if ($this->getRequest()->isMethod('post')) {
-            $this->form->bind($this->getRequestParameter('address'));
+        if ($request->isMethod('post')) {
+            $this->form->bind($request->getParameter('address'));
             
             if ($this->form->isValid()) {
-                if ($this->getRequest()->isXmlHttpRequest()) {
-                    
-                    if ($this->hasRequestParameter('address[address_id]')) {
-                        $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('address[address_id]'));
-                        
-                        if ($address == null) {
-                            if ($this->getRequest()->isXmlHttpRequest()) {
-                                $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_404'))));
-                            }
-                            else {
-                                $this->forward404();
-                            }
-                        }
-                        else {
-                            $addressArray = $address->toArray(BasePeer::TYPE_FIELDNAME);
-                        }
+                
+                $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('address[address_id]'));
+                
+                if ($address == null) {
+                    if ($this->getRequest()->isXmlHttpRequest()) {
+                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_404'))));
                     }
                     else {
-                        $addressArray = $this->getRequestParameter('address');
+                        $this->forward404();
                     }
-                    
-                    $this->getUser()->setAttribute('address', $addressArray, 'order/delivery');
-                    $this->getUser()->setAttribute('address', $addressArray, 'order/billing');
-                    
-                    if ($this->getRequest()->isXmlHttpRequest()) {
-                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('ok' => true)));
-                    }
+                }
+                
+                $this->getUser()->setAttribute('address_id', $address->getId(), 'order/delivery');
+                $this->getUser()->setAttribute('address_id', $address->getId(), 'order/billing');
+                
+                if ($this->getRequest()->isXmlHttpRequest()) {
+                    $this->renderText(sfsJSONPeer::createResponseSuccess(array('ok' => true)));
                 }
             }
             else {

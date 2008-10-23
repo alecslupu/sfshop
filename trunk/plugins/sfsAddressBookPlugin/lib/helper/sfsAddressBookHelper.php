@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -9,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-function format_address($address, $useNl = true)
+function format_address($address, $useNl = true, $isFieldsInContainer = false)
 {
     if (is_object($address)) {
         
@@ -44,7 +43,13 @@ function format_address($address, $useNl = true)
         );
         
         foreach ($array as $key => $value) {
-            $format = str_replace($key, $value, $format);
+            if ($isFieldsInContainer) {
+                $fieldName = str_replace('%', '', $key);
+                $format = str_replace($key, '<span class="' . $fieldName . '">' . $value . '</span>', $format);
+            }
+            else {
+                $format = str_replace($key, $value, $format);
+            }
         }
         
         if ($useNl) {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -33,10 +32,9 @@ class orderActions extends sfActions
         
         $sfUser = $this->getUser();
         
-        $this->deliveryAddressArray = $sfUser->getAttribute('address', null, 'order/delivery');
         $this->basket = $sfUser->getBasket();
         
-        if (!$this->basket ->hasProducts() || $this->deliveryAddressArray == null) {
+        if (!$this->basket ->hasProducts()) {
             $this->redirect('@basket_list');
         }
         
@@ -50,7 +48,7 @@ class orderActions extends sfActions
             }
             else {
                 
-                $data = $this->getRequestParameter('data');
+                $data = $request->getParameter('data');
                 
                 $this->form->bind($data);
                 
@@ -62,8 +60,11 @@ class orderActions extends sfActions
                 
                 if ($this->form->isValid() && !isset($this->errorContact)) {
                     
-                    $address = new AddressBook();
-                    $address->fromArray($this->deliveryAddressArray, BasePeer::TYPE_FIELDNAME);
+                    $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
+                    $billingAddress = AddressBookPeer::retrieveById($addressId);
+                    
+                    $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
+                    $deliveryAddress = AddressBookPeer::retrieveById($addressId);
                     
                     $order = new OrderItem();
                     
@@ -71,23 +72,23 @@ class orderActions extends sfActions
                     $order->setMemberFirstName($member->getFirstName());
                     $order->setMemberLastName($member->getLastName());
                     
-                    $order->setBillingFirstName($address->getFirstName());
-                    $order->setBillingLastName($address->getLastName());
-                    $order->setBillingCountryId($address->getCountryId());
-                    $order->setBillingStateId($address->getStateId());
-                    $order->setBillingStateTitle($address->getStateTitle());
-                    $order->setBillingCity($address->getCity());
-                    $order->setBillingStreet($address->getStreet());
-                    $order->setBillingPostcode($address->getPostcode());
+                    $order->setBillingFirstName($billingAddress->getFirstName());
+                    $order->setBillingLastName($billingAddress->getLastName());
+                    $order->setBillingCountryId($billingAddress->getCountryId());
+                    $order->setBillingStateId($billingAddress->getStateId());
+                    $order->setBillingStateTitle($billingAddress->getStateTitle());
+                    $order->setBillingCity($billingAddress->getCity());
+                    $order->setBillingStreet($billingAddress->getStreet());
+                    $order->setBillingPostcode($billingAddress->getPostcode());
                     
-                    $order->setDeliveryFirstName($address->getFirstName());
-                    $order->setDeliveryLastName($address->getLastName());
-                    $order->setDeliveryCountryId($address->getCountryId());
-                    $order->setDeliveryStateId($address->getStateId());
-                    $order->setDeliveryStateTitle($address->getStateTitle());
-                    $order->setDeliveryCity($address->getCity());
-                    $order->setDeliveryStreet($address->getStreet());
-                    $order->setDeliveryPostcode($address->getPostcode());
+                    $order->setDeliveryFirstName($deliveryAddress->getFirstName());
+                    $order->setDeliveryLastName($deliveryAddress->getLastName());
+                    $order->setDeliveryCountryId($deliveryAddress->getCountryId());
+                    $order->setDeliveryStateId($deliveryAddress->getStateId());
+                    $order->setDeliveryStateTitle($deliveryAddress->getStateTitle());
+                    $order->setDeliveryCity($deliveryAddress->getCity());
+                    $order->setDeliveryStreet($deliveryAddress->getStreet());
+                    $order->setDeliveryPostcode($deliveryAddress->getPostcode());
                     
                     $order->setDeliveryPrice($sfUser->getAttribute('price', null, 'order/delivery'));
                     $order->setUuid(md5(time() + rand()));
