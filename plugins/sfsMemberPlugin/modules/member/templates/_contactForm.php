@@ -7,7 +7,7 @@
     <?php endif; ?>
     <ul class="main">
         <?php echo $form ?>
-        <li><input type="submit" value="<?php echo __('Submit') ?>" class="button"> &nbsp; <input type="button" value="<?php echo __('Cancel') ?>" class="button" onClick="hideEditForm()"></li>
+        <li class="actions"><input type="submit" value="<?php echo __('Submit') ?>" class="button"> &nbsp; <input type="button" value="<?php echo __('Cancel') ?>" class="button cancel"></li>
     </ul>
 </form>
 

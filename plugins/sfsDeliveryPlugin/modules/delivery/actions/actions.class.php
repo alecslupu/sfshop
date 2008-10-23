@@ -1,5 +1,4 @@
 <?php
-
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -42,11 +41,13 @@ class deliveryActions extends sfActions
         $storeAddress['country_iso'] = CountryPeer::retrieveByPK($storeAddress['country_id'])->getIso();
         $storeAddress['state_iso'] = StatePeer::retrieveByPK($storeAddress['state_id'])->getIso();
         
-        $deliveryAddress = $sfUser->getAttribute('address', null, 'order/delivery');
+        $deliveryAddressId = $sfUser->getAttribute('address_id', null, 'order/delivery');
+        $deliveryAddress = AddressBookPeer::retrieveById($deliveryAddressId);
         
         if ($deliveryAddress != null) {
-            $deliveryAddress['country_iso'] = CountryPeer::retrieveByPK($deliveryAddress['country_id'])->getIso();
-            $deliveryAddress['state_iso'] = StatePeer::retrieveByPK($deliveryAddress['state_id'])->getIso();
+            $deliveryAddressArray = $deliveryAddress->toArray(BasePeer::TYPE_FIELDNAME);
+            $deliveryAddressArray['country_iso'] = CountryPeer::retrieveByPK($deliveryAddress->getCountryId())->getIso();
+            $deliveryAddressArray['state_iso'] = StatePeer::retrieveByPK($deliveryAddress->getStateId())->getIso();
             
             $weight = $sfUser->getBasket()->getTotalWeight();
             $price = $sfUser->getBasket()->getTotalPrice();
@@ -91,7 +92,7 @@ class deliveryActions extends sfActions
                         throw new Exception('The class for delivery rate with name ' . $className . ' not found!');
                     }
                     
-                    $service->setDeliveryAddress($deliveryAddress);
+                    $service->setDeliveryAddress($deliveryAddressArray);
                     $service->setStoreAddress($storeAddress);
                     $service->setTotalWeight($weight);
                     $service->setCube($cude);

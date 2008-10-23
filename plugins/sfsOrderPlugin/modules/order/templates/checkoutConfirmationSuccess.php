@@ -2,7 +2,7 @@
     <table cellspacing="1" cellpadding="0" width="100%" class="list">
         <tr>
           <td width="50%" valign="top">
-              <?php include_component('addressBook', 'deliveryAddress', array('address' => $sf_data->getRaw('deliveryAddressArray'))) ?>
+              <?php include_component('addressBook', 'deliveryAddress') ?>
           </td>
           <td width="50%" valign="top">
               <?php include_partial('list_products_details', 
@@ -57,3 +57,16 @@
         </tr>
     </table>
 <?php include_partial('core/container_footer') ?>
+<?php echo javascript_tag('
+    var orderManage = new sfsOrderConfirmManage(
+        {
+            deliveryAddress: {
+                containers: {info: "container_info_delivery_address", form: "container_form_delivery_address"},
+                options: {formId: "form_edit_address"}
+            },
+            contact: {
+                containers: {info: "container_info_contact", form: "container_form_contact"}
+            }
+        }
+    );
+') ?>

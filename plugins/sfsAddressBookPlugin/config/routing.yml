@@ -18,6 +18,6 @@ addressBook_delete:
   url: /delete-address/:id
   param: { module: addressBook, action: delete }
 
-addressBook_addAddressForOrder:
-  url: /checkout-add-address/*
-  param: { module: addressBook, action: addAddressForOrder }
+addressBook_select:
+  url: /select-address/*
+  param: { module: addressBook, action: select }
