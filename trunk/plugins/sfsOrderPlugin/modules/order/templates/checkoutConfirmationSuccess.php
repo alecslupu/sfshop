@@ -64,6 +64,10 @@
                 containers: {info: "container_info_delivery_address", form: "container_form_delivery_address"},
                 options: {formId: "form_edit_address"}
             },
+            delivery: {
+                containers: {info: "container_info_delivery", form: "container_form_delivery"},
+                options: {formId: "form_delivery"}
+            },
             contact: {
                 containers: {info: "container_info_contact", form: "container_form_contact"}
             }
