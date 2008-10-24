@@ -66,7 +66,7 @@
             },
             delivery: {
                 containers: {info: "container_info_delivery", form: "container_form_delivery"},
-                options: {formId: "form_delivery"}
+                options: {formId: "form_delivery", updateFormAction: "' . url_for('@delivery_updateSelectForm') . '"}
             },
             contact: {
                 containers: {info: "container_info_contact", form: "container_form_contact"}

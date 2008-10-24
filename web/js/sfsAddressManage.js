@@ -2,6 +2,7 @@ var sfsAddressManage = Class.create(sfsManage, {
     initializeForm: function()
     {
         var addressManage = this;
+        var parentObject = this.parentObject;
         var addressForm = new sfsForm(
             this.options.formId,
             {
@@ -9,8 +10,12 @@ var sfsAddressManage = Class.create(sfsManage, {
                 postExecute: function(response)
                 {
                     if (this.isValid()) {
-                        addressManage.hideForm();
                         addressManage.updateInfo(response.data);
+                        
+                        if (parentObject != null) {
+                            parentObject.onUpdateInfo();
+                        }
+                        addressManage.hideForm();
                     }
                 }
        });

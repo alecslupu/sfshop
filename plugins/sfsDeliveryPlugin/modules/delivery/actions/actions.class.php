@@ -49,7 +49,7 @@ class deliveryActions extends sfActions
                 $this->form->bind($data);
                 
                 if ($this->form->isValid()) {
-                    list($serviceId, $methodId) = explode('_', $data['method_id']);
+                    list($serviceId, $methodId) = explode('_', $data['method_id'], 2);
                     
                     $serviceMethods = $this->sections[$serviceId];
                     
@@ -89,10 +89,32 @@ class deliveryActions extends sfActions
                         $this->redirect('@payment_checkout');
                     }
                 }
+                elseif ($request->isXmlHttpRequest()) {
+                    $errors = array();
+                    
+                    foreach ($this->form->getErrorSchema() as $field => $error) {
+                        $errors[$field] = $error->getMessage();
+                    }
+                    
+                    return $this->renderText(sfsJSONPeer::createResponseError($errors));
+                }
             }
         }
         else {
             $this->redirect('@basket_list');
         }
+    }
+    
+   /**
+    * Update select form.
+    * 
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @access public
+    */
+    public function executeUpdateSelectForm()
+    {
+        $this->setLayout(false);
     }
 }

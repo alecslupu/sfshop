@@ -4,8 +4,13 @@ var sfsManage = Class.create({
         containers = {info: $(containers.info), form: $(containers.form)};
         this.containers = containers;
         this.options = options;
+        this.isActive = false;
         this.parentObject = parentObject;
-        this.containers.info.down('.action').observe('click', this.showForm.bindAsEventListener(this, containers));
+        this.containers.info.down('.action').observe('click', this.showForm.bindAsEventListener(this, this.containers));
+        this.observeFormActions();
+    },
+    observeFormActions: function()
+    {
         var cancelButton = this.containers.form.down('li.actions').down('.cancel');
         cancelButton.observe('click', this.hideForm.bindAsEventListener(this));
         this.initializeForm();
@@ -20,6 +25,7 @@ var sfsManage = Class.create({
             Effect.BlindDown(this.containers.info);
         }
         this.parentObject.onHideForm();
+        this.isActive = false;
     },
     showForm: function(e, containers)
     {
@@ -28,6 +34,7 @@ var sfsManage = Class.create({
         containers.form.show();
         new Effect.ScrollTo(containers.form.down('.actions'), {duration:1.0});
         this.parentObject.onShowForm();
+        this.isActive = true;
     },
     initializeForm: function()
     {

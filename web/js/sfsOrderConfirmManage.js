@@ -2,15 +2,15 @@ var sfsOrderConfirmManage = Class.create({
     initialize: function(params)
     {
         this.activeObject = null;
-        var deliveryAddress = new sfsAddressManage(
+        this.deliveryAddressManage = new sfsAddressManage(
             params.deliveryAddress.containers, 
             params.deliveryAddress.options, this
         );
-        var delivery = new sfsDeliveryManage(
+        this.deliveryManage = new sfsDeliveryManage(
             params.delivery.containers, 
             params.delivery.options, this
         );
-        var contact = new sfsManage(
+        this.contactManage = new sfsManage(
             params.contact.containers, 
             params.deliveryAddress.options, 
             this
@@ -26,6 +26,12 @@ var sfsOrderConfirmManage = Class.create({
     {
         if (Object.isElement($('form_confirm'))) {
             $('form_confirm').show();
+        }
+    },
+    onUpdateInfo: function()
+    {
+        if (this.deliveryAddressManage.isActive == true) {
+            this.deliveryManage.updateForm();
         }
     },
     setActiveObject: function(object)
