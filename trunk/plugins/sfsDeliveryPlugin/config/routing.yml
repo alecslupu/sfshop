@@ -5,6 +5,10 @@
 delivery_checkout:
   url: /checkout-delivery
   param: { module: delivery, action: checkout }
+  
+delivery_updateSelectForm:
+  url: /delivery-update-select-form
+  param: { module: delivery, action: updateSelectForm }
 
 #
 # Delivery Admin

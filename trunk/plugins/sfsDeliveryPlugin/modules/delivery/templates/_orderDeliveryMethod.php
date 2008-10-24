@@ -13,5 +13,7 @@
 </div>
 <div id="container_form_delivery" style="display: none">
     <h3><?php echo __('Select shipping method') ?></h3>
-    <?php include_component('delivery', 'selectForm') ?>
+    <div class="container_form">
+        <?php include_component('delivery', 'selectForm') ?>
+    </div>
 </div>

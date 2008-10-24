@@ -2,7 +2,7 @@ var sfsDeliveryManage = Class.create(sfsManage, {
     initializeForm: function()
     {
         var manage = this;
-        var form = new sfsForm(
+        this.form = new sfsForm(
             this.options.formId,
             {
                 nameFormat: "delivery",
@@ -11,6 +11,9 @@ var sfsDeliveryManage = Class.create(sfsManage, {
                     if (this.isValid()) {
                         manage.hideForm();
                         manage.updateInfo(response.data);
+                    }
+                    else {
+                        manage.showForm();
                     }
                 }
        });
@@ -26,7 +29,7 @@ var sfsDeliveryManage = Class.create(sfsManage, {
             },
             this
         );
-
+        
         var image = this.containers.info.down('.service_icon');
         
         if (data.service_icon_src != '') {
@@ -36,5 +39,14 @@ var sfsDeliveryManage = Class.create(sfsManage, {
         else {
             image.hide();
         }
+    },
+    updateForm: function()
+    {
+        var ajaxRequest = new sfsAjax.Request(this.options.updateFormAction, {});
+        var response = ajaxRequest.getResponse();
+        var form = this.containers.form.down('.container_form')
+        form.update(response);
+        this.observeFormActions();
+        this.form.onSubmit();
     }
 });
