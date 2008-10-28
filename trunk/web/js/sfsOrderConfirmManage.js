@@ -10,9 +10,13 @@ var sfsOrderConfirmManage = Class.create({
             params.delivery.containers, 
             params.delivery.options, this
         );
-        this.contactManage = new sfsManage(
+        this.paymentManage = new sfsManage(
+            params.payment.containers, 
+            params.payment.options, this
+        );
+        this.contactManage = new sfsMemberContactManage(
             params.contact.containers, 
-            params.deliveryAddress.options, 
+            params.contact.options, 
             this
         );
     },

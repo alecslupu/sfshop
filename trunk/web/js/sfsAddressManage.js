@@ -15,8 +15,11 @@ var sfsAddressManage = Class.create(sfsManage, {
                         if (parentObject != null) {
                             parentObject.onUpdateInfo();
                         }
-                        addressManage.hideForm();
-                    }
+                        
+                        if (addressManage.isActive) {
+                            addressManage.hideForm();
+                        }
+                   }
                 }
        });
     }

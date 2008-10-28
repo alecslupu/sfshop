@@ -410,7 +410,8 @@ class memberActions extends sfActions
         $this->form = new sfsMemberContactForm($this->member);
         
         if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter('data'));
+            $data = $request->getParameter('data');
+            $this->form->bind($data);
             
             if ($this->form->isValid()) {
                 $this->member = $this->form->updateObject();

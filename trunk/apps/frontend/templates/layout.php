@@ -17,7 +17,7 @@
         };
     ');
 ?>
-
+<div id="container_loading" style="display: none"><?php echo __('Loading') ?></div>
 <div class="body">
     <div>
           <div class="top_static_menu">

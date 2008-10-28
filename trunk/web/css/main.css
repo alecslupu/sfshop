@@ -489,6 +489,21 @@ div.container_info .action {
     float: right;
 }
 
+div.container_form {
+    background-color: #e5d0da;
+    padding: 5px;
+}
+
+#container_loading {
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    background-color: #f7e659;
+    height: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
 /********************/
 
 /*** PRODUCT LIST ***/

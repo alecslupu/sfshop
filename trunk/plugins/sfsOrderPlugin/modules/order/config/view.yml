@@ -1,3 +1,3 @@
 checkoutConfirmationSuccess:
-  javascripts:    [ sfsForm, sfsManage, sfsAddressManage, sfsDeliveryManage, sfsOrderConfirmManage ]
+  javascripts:    [ sfsForm, sfsManage, sfsAddressManage, sfsMemberContactManage, sfsDeliveryManage, sfsOrderConfirmManage ]
 
