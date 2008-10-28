@@ -38,52 +38,43 @@ class paymentActions extends sfActions
             $sfUser = $this->getUser();
             
             $defaultMethodId = $sfUser->getAttribute('method_id', null, 'order/payment');
-            $currencyCode = $sfUser->getBasket()->getCurrency()->getCode();
-            
-            $criteria = new Criteria();
-            PaymentPeer::addPublicCriteria($criteria);
-            $this->paymentServices = PaymentPeer::getAll($criteria);
-            
-            foreach ($this->paymentServices as $key => $paymentService) {
-                $acceptCurrenciesCodes = $paymentService->getAcceptCurrenciesCodes();
-                $arrayAcceptCurrenciesCodes = explode(',', $acceptCurrenciesCodes);
-                
-                if ($acceptCurrenciesCodes != '*' && !in_array($currencyCode, $arrayAcceptCurrenciesCodes)) {
-                    $criteria = new Criteria();
-                    CurrencyPeer::addPublicCriteria($criteria);
-                    $isExist = CurrencyPeer::checkExistenceByCodes($arrayAcceptCurrenciesCodes, $criteria);
-                }
-                else {
-                    $isExist = true;
-                }
-                
-                if (!$isExist) {
-                     if (sfConfig::get('sf_logging_enabled')) {
-                        $logger = $this->getLogger();
-                        $logger->err('Payment checkout: The service "' . $paymentService->getTitle() . '" can not be used on your store, '
-                            . 'because the currencies which accept this service is not available. '
-                            . 'Now this service has status inactive for change status you should add currency which accept this service '
-                            . 'and than you may set status active in the section payment of admin panel '
-                            . 'This service is accept following currencies: ' . str_replace(',', ', ', $acceptCurrenciesCodes));
-                    }
-                    
-                    $paymentService->setIsActive(false);
-                    $paymentService->save();
-                    
-                    unset($this->paymentServices[$key]);
-                }
-            }
-            
-            $this->form = new sfsOrderSelectPaymentForm();
+            $this->form = new sfsPaymentSelectForm();
             $this->form->setDefault('method_id', $defaultMethodId);
             
+            $this->paymentServices = $this->form->getPaymentServices();
+            
             if ($request->isMethod('post')) {
-                $data = $request->getParameter('payment');
+                $data = $request->getParameter('data');
                 $this->form->bind($data);
                 
                 if ($this->form->isValid()) {
                     $sfUser->setAttribute('method_id', $data['method_id'], 'order/payment');
-                    $this->redirect('@order_checkoutConfirmation');
+                    
+                    if ($request->isXmlHttpRequest()) {
+                        
+                        foreach ($this->paymentServices as $paymentService) {
+                            if ($paymentService->getId() == $data['method_id']) {
+                                $service = $paymentService;
+                            }
+                        }
+                        
+                        if ($service->getIcon()) {
+                            $serviceIconSrc = '/images/' . sfConfig::get('app_icons_delivery_web_dir') . '/' . $service->getIcon();
+                        }
+                        else {
+                            $serviceIconSrc = '';
+                        }
+                        
+                        $data = array(
+                            'service_title'     => $service->getTitle(),
+                            'service_icon_src'  => $serviceIconSrc
+                        );
+                        
+                        return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
+                    }
+                    else {
+                        $this->redirect('@order_checkoutConfirmation');
+                    }
                 }
             }
         }

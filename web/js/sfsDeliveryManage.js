@@ -13,7 +13,12 @@ var sfsDeliveryManage = Class.create(sfsManage, {
                         manage.updateInfo(response.data);
                     }
                     else {
-                        manage.showForm();
+                        
+                        if (!Object.isUndefined(manage.parentObject.activeObject)) {
+                            manage.parentObject.activeObject.hideForm();
+                        }
+                        
+                        manage.showForm(null, manage.containers);
                     }
                 }
        });
@@ -39,6 +44,8 @@ var sfsDeliveryManage = Class.create(sfsManage, {
         else {
             image.hide();
         }
+        
+        $('total_price').update(data.total_price);
     },
     updateForm: function()
     {

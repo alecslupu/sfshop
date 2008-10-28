@@ -66,7 +66,6 @@ class deliveryActions extends sfActions
                     
                     if ($request->isXmlHttpRequest()) {
                         
-                        $criteria = new Criteria();
                         $deliveryService = $this->sections[$serviceId]['object'];
                         
                         if ($deliveryService->getIcon()) {
@@ -80,7 +79,8 @@ class deliveryActions extends sfActions
                             'service_title'     => $deliveryService->getTitle(),
                             'service_icon_src'  => $serviceIconSrc,
                             'method_title'      => $methodSubTitle,
-                            'price'             => format_currency($methodPrice)
+                            'price'             => format_currency($methodPrice),
+                            'total_price'       => format_currency($sfUser->getBasket()->getTotalPrice() + $methodPrice)
                         );
                         
                         return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
@@ -95,7 +95,7 @@ class deliveryActions extends sfActions
                     foreach ($this->form->getErrorSchema() as $field => $error) {
                         $errors[$field] = $error->getMessage();
                     }
-                    
+                    $sfUser->setAttribute('method_id', null, 'order/delivery');
                     return $this->renderText(sfsJSONPeer::createResponseError($errors));
                 }
             }

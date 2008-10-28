@@ -37,10 +37,16 @@ sfsAjax.Request = Class.create({
                 }
                 
                 throw error;
+            },
+            onComplete: function()
+            {
+                $('container_loading').hide();
             }
         };
         
         Object.extend(this.options, options || {});
+        
+        $('container_loading').show();
         
         new Ajax.Request(
             url,

@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('payment', 'orderPaymentMethod', array()) ?>
+                <?php include_component('payment', 'orderPaymentInfo', array()) ?>
             </td>
         </tr>
         <tr>
@@ -40,9 +40,9 @@
                         <tr>
                             <td colspan="2">
                                 <div align="right">
-                                    <span class="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
-                                        $basket->getTotalPrice() + $sf_user->getAttribute('price', null, 'order/delivery') + $sf_user->getAttribute('price', null, 'order/payment')
-                                    ) ?></span>
+                                    <span class="total_price"><?php echo __('Total') ?>: <span id="total_price"><?php echo format_currency(
+                                        $basket->getTotalPrice() + $sf_user->getAttribute('price', null, 'order/delivery')
+                                    ) ?></span></span>
                                 </div>
                             </td>
                         </tr>
@@ -69,7 +69,12 @@
                 options: {formId: "form_delivery", updateFormAction: "' . url_for('@delivery_updateSelectForm') . '"}
             },
             contact: {
-                containers: {info: "container_info_contact", form: "container_form_contact"}
+                containers: {info: "container_info_member_contact", form: "container_form_member_contact"},
+                options: {formId: "form_member_contact"}
+            },
+            payment: {
+                containers: {info: "container_info_payment", form: "container_form_payment"},
+                options: {formId: "form_payment"}
             }
         }
     );

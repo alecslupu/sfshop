@@ -8,7 +8,7 @@
     
     <?php echo image_tag(sfConfig::get('app_icons_delivery_web_dir') . '/' . $deliveryService->getIcon(), array('style' => $display, 'class' => 'service_icon')) ?><br/>
     
-    <span class="method_title" <?php echo $methodSubTitle != '' ? '' : 'style="display: none"' ?>><?php echo $methodSubTitle; ?></span>
+    <span class="method_title" <?php echo $methodTitle != '' ? '' : 'style="display: none"' ?>><?php echo $methodTitle; ?>:</span>
     <span class="price"><?php echo format_currency($methodPrice) ?></span>
 </div>
 <div id="container_form_delivery" style="display: none">

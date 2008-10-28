@@ -112,10 +112,10 @@ var sfsForm = Class.create({
             var fieldName = error.key;
             var error = error.value;
             
-            if (!Object.isString(error)) {;
+            if (!Object.isString(error)) {
                 var fieldValueHash = $H(error);
                 var subFieldName = '';
-
+                
                 fieldValueHash.each(
                     function(e) {
                         subFieldName = e.key;
@@ -123,7 +123,7 @@ var sfsForm = Class.create({
                     }
                 );
             }
-
+            
             if (!Object.isUndefined(subFieldName) && subFieldName != '') {
                 fieldName = this.options.nameFormat.replace('%s', fieldName);
                 fieldName = fieldName + '[' + subFieldName + ']';
@@ -132,11 +132,11 @@ var sfsForm = Class.create({
                 fieldName = this.options.nameFormat.replace('%s', fieldName);
             }
         }
-
+        
         if (Object.isUndefined(error)) {
             var error = error.value;
         }
-
+        
         var element = this.getFieldByName(fieldName);
         
         if (Object.isElement(element)) {
@@ -148,8 +148,13 @@ var sfsForm = Class.create({
                 var advice = '<ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul>';
                 parent = element;
             }
-    
+            
             element.addClassName('error');
+            new Insertion.Before(parent, advice);
+        }
+        else {
+            var advice = '<ul class="' + this.options.errorClassName + '"><li>' + error + '</li></ul>';
+            parent = this.form.down('ul');
             new Insertion.Before(parent, advice);
         }
     },

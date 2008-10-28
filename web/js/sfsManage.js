@@ -38,6 +38,20 @@ var sfsManage = Class.create({
     },
     initializeForm: function()
     {
+        var manage = this;
+        this.form = new sfsForm(
+            this.options.formId,
+            {
+                nameFormat: "data",
+                postExecute: function(response)
+                {
+                    if (this.isValid()) {
+                        manage.hideForm();
+                        manage.updateInfo(response.data);
+                    }
+                }
+           }
+       );
     },
     updateInfo: function(data)
     {

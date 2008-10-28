@@ -8,12 +8,14 @@
 </div>
 <div id="container_form_delivery_address" style="display: none">
     <h3><?php echo __('Edit delivery address') ?></h3>
-    <?php include_component(
-        'addressBook', 
-        'inputForm', 
-        array(
-            'address' => $sf_data->getRaw('address'),
-            'action'  => url_for('@addressBook_edit?id=' . $address->getId())
-        )
-    ) ?>
+    <div class="container_form">
+        <?php include_component(
+            'addressBook', 
+            'inputForm', 
+            array(
+                'address' => $sf_data->getRaw('address'),
+                'action'  => url_for('@addressBook_edit?id=' . $address->getId())
+            )
+        ) ?>
+    </form>
 </div>

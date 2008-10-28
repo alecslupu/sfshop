@@ -61,7 +61,7 @@ class addressBookActions extends sfActions
     public function executeEdit($request)
     {
         sfLoader::loadHelpers('I18N');
-        
+        $sfUser = $this->getUser();
         $address = $this->getAddressOrCreate();
         $this->form = new AddressBookForm($address);
         
@@ -82,10 +82,10 @@ class addressBookActions extends sfActions
                 
                 if ($address->isNew()) {
                     $isNew = true;
-                    $this->getUser()->setFlash('message', __('New address has been added'));
+                    $sfUser->setFlash('message', __('New address has been added'));
                 }
                 else {
-                    $this->getUser()->setFlash('message', __('Address has been saved'));
+                    $sfUser->setFlash('message', __('Address has been saved'));
                 }
                 
                 $address->save();
