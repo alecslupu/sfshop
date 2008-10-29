@@ -897,8 +897,12 @@ div.toolbar_main div.corner_right {
 
 /*** Checkout ***/
 
-ul.delivery_list li.row {
+ul.services_list li.row {
     clear: both;
+}
+
+ul.services_list li.actions {
+    text-align: right
 }
 
 ul.methods_list {
@@ -916,6 +920,10 @@ ul.methods_list li.label {
     font-size: 11px;
 }
 
+form.form_payment_services ul.methods_list li.label {
+    width: 670px;
+    font-size: 11px;
+}
 
 ul.methods_list li.price {
     width: 100px;
@@ -924,3 +932,8 @@ ul.methods_list li.price {
 div.added_quantity {
     padding-left: 10px;
 }
+
+span.service_title {
+    padding-bottom: 5px;
+}
+
