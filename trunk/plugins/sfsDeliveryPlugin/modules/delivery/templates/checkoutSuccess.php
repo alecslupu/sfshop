@@ -9,7 +9,7 @@
     <?php endif; ?>
     
     <form action="<?php echo url_for('@delivery_checkout'); ?>" method="post" class="form form_services">
-        <ul class="delivery_list">
+        <ul class="services_list">
             <?php $radios = $form['method_id']->render(); $i = 0; ?>
             <li class="row"><?php echo $form['method_id']->renderError() ?></li>
             <?php foreach ($sections as $section): ?>

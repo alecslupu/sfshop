@@ -1,9 +1,10 @@
 var sfsManage = Class.create({
+    options: {
+    },
     initialize: function(containers, options, parentObject)
     {
-        containers = {info: $(containers.info), form: $(containers.form)};
-        this.containers = containers;
-        this.options = options;
+        this.containers = {info: $(containers.info), form: $(containers.form)};
+        Object.extend(this.options, options || {});
         this.isActive = false;
         this.parentObject = parentObject;
         this.containers.info.down('.action').observe('click', this.showForm.bindAsEventListener(this, this.containers));
@@ -12,28 +13,51 @@ var sfsManage = Class.create({
     observeFormActions: function()
     {
         var cancelButton = this.containers.form.down('li.actions').down('.cancel');
-        cancelButton.observe('click', this.hideForm.bindAsEventListener(this));
+        cancelButton.observe('click', this.onCancel.bindAsEventListener(this));
         this.initializeForm();
+    },
+    onCancel: function()
+    {
+        this.hideForm();
+        $(this.options.formId).reset();
+        this.form.clearErrors();
     },
     hideForm: function()
     {
-        this.parentObject.setActiveObject(null);
-        var errors = $(this.containers.form).select('ul.error');
-        
-        if (errors.length == 0) {
-            Effect.BlindUp(this.containers.form);
-            Effect.BlindDown(this.containers.info);
+        if (this.parentObject != null) {
+            this.parentObject.setActiveObject(null);
         }
-        this.parentObject.onHideForm();
+        
+        Effect.BlindUp(this.containers.form);
+        Effect.BlindDown(this.containers.info);
+        
+        if (this.parentObject != null) {
+            this.parentObject.onHideForm();
+        }
+        else {
+            this.onHideForm();
+        }
+        
         this.isActive = false;
     },
     showForm: function(e, containers)
     {
-        this.parentObject.setActiveObject(this);
+        
+        if (this.parentObject != null) {
+            this.parentObject.setActiveObject(this);
+        }
+        
         Effect.BlindUp(containers.info);
         containers.form.show();
         new Effect.ScrollTo(containers.form.down('.actions'), {duration:1.0});
-        this.parentObject.onShowForm();
+        
+        if (this.parentObject != null) {
+            this.parentObject.onShowForm();
+        }
+        else {
+            this.onShowForm();
+        }
+        
         this.isActive = true;
     },
     initializeForm: function()
@@ -42,7 +66,7 @@ var sfsManage = Class.create({
         this.form = new sfsForm(
             this.options.formId,
             {
-                nameFormat: "data",
+                nameFormat: "data[%s]",
                 postExecute: function(response)
                 {
                     if (this.isValid()) {
@@ -58,7 +82,7 @@ var sfsManage = Class.create({
                         }
                     }
                     else {
-                        if (!Object.isUndefined(manage.parentObject.activeObject) && !manage.isActive) {
+                        if (manage.parentObject != null &&!Object.isUndefined(manage.parentObject.activeObject) && !manage.isActive) {
                             manage.parentObject.activeObject.hideForm();
                         }
                         
@@ -79,5 +103,11 @@ var sfsManage = Class.create({
             },
             this
         );
+    },
+    onShowForm: function()
+    {
+    },
+    onHideForm: function()
+    {
     }
 });
