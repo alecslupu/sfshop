@@ -148,7 +148,7 @@ class AddressBookForm extends BaseAddressBookForm
             )
         );
         
-        $this->getWidgetSchema()->setNameFormat('address[%s]');
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
         $this->defineSfsListFormatter();
         $this->validatorSchema->setOption('allow_extra_fields', true);
     }

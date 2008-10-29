@@ -14,24 +14,25 @@
         <ul class="main">
             <?php echo $form ?>
             <li class="actions">
-                <input type="submit" value="<?php echo __('Save') ?>" class="button"/>&nbsp;<input type="button" value="<?php echo __('Cancel') ?>" class="button" onclick="window.location='<?php echo url_for('@addressBook_myList') ?>'"/>
+                <input type="submit" value="<?php echo __('Save') ?>" class="button"/>
+                &nbsp;<input type="button" value="<?php echo __('Cancel') ?>" class="button" onclick="window.location='<?php echo url_for('@addressBook_myList') ?>'"/>
             </li>
         </ul>
     </form>
 <?php include_partial('core/container_footer') ?>
-<?php if ($sf_request->hasParameter('address[state_id]')): ?>
-    <?php $stateId = $sf_request->getParameter('address[state_id]') ?>
+<?php if ($sf_request->hasParameter('data[state_id]')): ?>
+    <?php $stateId = $sf_request->getParameter('data[state_id]') ?>
 <?php else: ?>
     <?php $stateId = $form->getDefault('state_id') ?>
 <?php endif; ?>
     
 <?php echo javascript_tag('
-    $("address_country_id").observe("change", function(event) {
-        selectCountry($F("address_country_id"));
+    $("data_country_id").observe("change", function(event) {
+        selectCountry($F("data_country_id"));
     });
     
-    selectCountry($F("address_country_id"));
+    selectCountry($F("data_country_id"));
     
-    $("address_state_id").value = "' . $stateId . '";
+    $("data_state_id").value = "' . $stateId . '";
     highlightFieldsWithError("form_edit_address");
 ') ?>

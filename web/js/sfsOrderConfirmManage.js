@@ -2,7 +2,7 @@ var sfsOrderConfirmManage = Class.create({
     initialize: function(params)
     {
         this.activeObject = null;
-        this.deliveryAddressManage = new sfsAddressManage(
+        this.deliveryAddressManage = new sfsManage(
             params.deliveryAddress.containers, 
             params.deliveryAddress.options, this
         );
@@ -14,9 +14,10 @@ var sfsOrderConfirmManage = Class.create({
             params.payment.containers, 
             params.payment.options, this
         );
-        this.contactManage = new sfsMemberContactManage(
-            params.contact.containers, 
-            params.contact.options, 
+        
+        this.memberContactManage = new sfsMemberContactManage(
+            params.memberContact.containers, 
+            params.memberContact.options, 
             this
         );
     },

@@ -33,29 +33,29 @@ function selectCountry(country_id) {
         }
     }
     
-    $('address_state_id').innerHTML = '';
+    $('data_state_id').innerHTML = '';
     option = new Element('option', { 'value': ''}).update('');
-    $('address_state_id').insert(option);
+    $('data_state_id').insert(option);
     
     if (states_id.length > 0) {
         
         for (i = 0; i < states_id.length; i++) {
             option = new Element('option', { 'value': states_id[i]}).update(states_title[i]);
-            $('address_state_id').insert(option);
+            $('data_state_id').insert(option);
         }
         
-        $('address_state_id').up('li').show();
-	$('address_state_id').up('li').previous('li').show();
-        $('address_state_title').up('li').hide();
-	$('address_state_title').up('li').previous('li').hide();
-        $('address_country_has_states').value = 1;
+        $('data_state_id').up('li').show();
+        $('data_state_id').up('li').previous('li').show();
+        $('data_state_title').up('li').hide();
+        $('data_state_title').up('li').previous('li').hide();
+        $('data_country_has_states').value = 1;
     }
     else {
-        $('address_state_id').up('li').hide();
-	$('address_state_id').up('li').previous('li').hide();
-        $('address_state_title').up('li').show();
-	$('address_state_title').up('li').previous('li').show();
-        $('address_country_has_states').value = 0;
+        $('data_state_id').up('li').hide();
+        $('data_state_id').up('li').previous('li').hide();
+        $('data_state_title').up('li').show();
+        $('data_state_title').up('li').previous('li').show();
+        $('data_country_has_states').value = 0;
     }
 }
 

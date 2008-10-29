@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('delivery', 'orderDeliveryMethod', array()) ?>
+                <?php include_component('delivery', 'orderDeliveryInfo', array()) ?>
             </td>
         </tr>
         <tr>
@@ -68,7 +68,7 @@
                 containers: {info: "container_info_delivery", form: "container_form_delivery"},
                 options: {formId: "form_delivery", updateFormAction: "' . url_for('@delivery_updateSelectForm') . '"}
             },
-            contact: {
+            memberContact: {
                 containers: {info: "container_info_member_contact", form: "container_form_member_contact"},
                 options: {formId: "form_member_contact"}
             },

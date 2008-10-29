@@ -153,7 +153,7 @@ class sfsDeliverySelectForm extends BaseDeliveryForm
         
         $this->setValidators(array('method_id' => $validatorMethodId));
         
-        $this->getWidgetSchema()->setNameFormat('delivery[%s]');
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
         $this->defineSfsListFormatter();
     }
     

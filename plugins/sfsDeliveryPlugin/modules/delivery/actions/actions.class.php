@@ -45,7 +45,7 @@ class deliveryActions extends sfActions
             $this->sections = $this->form->getSections();
             
             if ($request->isMethod('post')) {
-                $data = $request->getParameter('delivery');
+                $data = $request->getParameter('data');
                 $this->form->bind($data);
                 
                 if ($this->form->isValid()) {

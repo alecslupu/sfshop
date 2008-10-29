@@ -25,7 +25,7 @@ class deliveryComponents extends sfComponents
     * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
-    public function executeOrderDeliveryMethod()
+    public function executeOrderDeliveryInfo()
     {
         $sfUser = $this->getUser();
         
@@ -49,6 +49,14 @@ class deliveryComponents extends sfComponents
         }
     }
     
+   /**
+    * Form for select some delivery service.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @access public
+    */
     public function executeSelectForm()
     {
         $this->form = new sfsDeliverySelectForm();
