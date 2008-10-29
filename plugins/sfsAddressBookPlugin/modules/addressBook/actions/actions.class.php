@@ -134,11 +134,11 @@ class addressBookActions extends sfActions
         $this->form = new sfsAddressBookSelectForm();
         
         if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter('address'));
+            $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
                 
-                $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('address[address_id]'));
+                $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('data[address_id]'));
                 
                 if ($address == null) {
                     if ($this->getRequest()->isXmlHttpRequest()) {

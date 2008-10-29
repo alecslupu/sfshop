@@ -1,5 +1,5 @@
 <?php include_partial('core/container_header', array('caption' => __('Order payment methods'))) ?>
-    <form action="<?php echo url_for('@payment_checkout'); ?>" method="post" class="form form_services">
+    <form action="<?php echo url_for('@payment_checkout'); ?>" method="post" class="form form_services form_payment_services">
         <ul class="methods_list">
             <?php $radios = $form['method_id']->render(); ?>
             <li class="row"><?php echo $form['method_id']->renderError() ?></li>

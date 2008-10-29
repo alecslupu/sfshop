@@ -44,7 +44,7 @@ var sfsForm = Class.create({
     {
         this.clearErrors();
         var elements = this.form.getElements();
-        var ajaxRequest = new sfsAjax.Request(this.form.action,{parameters: this.form.serialize()});
+        var ajaxRequest = new sfsAjax.Request(this.form.action, {parameters: this.form.serialize()});
         var response = ajaxRequest.getResponse();
         this.options.isValid = false;
         
@@ -71,7 +71,7 @@ var sfsForm = Class.create({
                 element.remove();
             }
         );
-
+        
         var invalidFields = this.form.select('.' + this.options.errorClassName);
         
         invalidFields.each(
