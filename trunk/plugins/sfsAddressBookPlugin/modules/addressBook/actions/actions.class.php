@@ -66,7 +66,7 @@ class addressBookActions extends sfActions
         $this->form = new AddressBookForm($address);
         
         if ($request->isMethod('post')) {
-            $data = $request->getParameter('address');
+            $data = $request->getParameter('data');
             $this->form->bind($data);
             
             if ($this->form->isValid()) {

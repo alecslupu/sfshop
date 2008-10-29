@@ -1,28 +1,4 @@
 var sfsDeliveryManage = Class.create(sfsManage, {
-    initializeForm: function()
-    {
-        var manage = this;
-        this.form = new sfsForm(
-            this.options.formId,
-            {
-                nameFormat: "delivery",
-                postExecute: function(response)
-                {
-                    if (this.isValid()) {
-                        manage.hideForm();
-                        manage.updateInfo(response.data);
-                    }
-                    else {
-                        
-                        if (!Object.isUndefined(manage.parentObject.activeObject)) {
-                            manage.parentObject.activeObject.hideForm();
-                        }
-                        
-                        manage.showForm(null, manage.containers);
-                    }
-                }
-       });
-    },
     updateInfo: function(data)
     {
         $H(data).each(

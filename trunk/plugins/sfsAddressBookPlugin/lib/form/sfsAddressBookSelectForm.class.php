@@ -36,6 +36,6 @@ class sfsAddressBookSelectForm extends AddressBookForm
         
         $this->setValidators(array('address_id' => $validatorAddressId));
         
-        $this->getWidgetSchema()->setNameFormat('address[%s]');
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
     }
 }

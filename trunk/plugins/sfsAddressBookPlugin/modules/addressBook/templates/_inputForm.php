@@ -10,22 +10,12 @@
     </ul>
 </form>
 
-<?php if (isset($is_shopping_cart)): ?>
-    <?php $function = 'showSelectAddress(response.data)'; ?>
-<?php else: ?>
-    <?php $function = 'updateDeliveryInfo(response.data)'; ?>
-<?php endif; ?>
-
 <?php echo javascript_tag('
-
-') ?>
-
-<?php echo javascript_tag('
-    $("address_country_id").observe("change", function(event) {
-        selectCountry($F("address_country_id"));
+    $("data_country_id").observe("change", function(event) {
+        selectCountry($F("data_country_id"));
     });
     
-    selectCountry($F("address_country_id"));
-    $("address_state_id").value = "' . $form->getDefault('state_id') . '"
+    selectCountry($F("data_country_id"));
+    $("data_state_id").value = "' . $form->getDefault('state_id') . '"
     highlightFieldsWithError("form_edit_address");
 ') ?>

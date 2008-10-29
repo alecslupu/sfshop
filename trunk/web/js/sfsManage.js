@@ -46,8 +46,23 @@ var sfsManage = Class.create({
                 postExecute: function(response)
                 {
                     if (this.isValid()) {
-                        manage.hideForm();
+                        
                         manage.updateInfo(response.data);
+                        
+                        if (manage.parentObject != null && manage.isActive) {
+                            manage.parentObject.onUpdateInfo();
+                        }
+                        
+                        if (manage.isActive) {
+                            manage.hideForm();
+                        }
+                    }
+                    else {
+                        if (!Object.isUndefined(manage.parentObject.activeObject) && !manage.isActive) {
+                            manage.parentObject.activeObject.hideForm();
+                        }
+                        
+                        manage.showForm(null, manage.containers);
                     }
                 }
            }
