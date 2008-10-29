@@ -7,7 +7,7 @@
     
     <?php $display = $paymentService->getIcon() ? '' : 'display: none' ?>
     
-    <?php echo image_tag(sfConfig::get('app_icons_payment_web_dir') . '/' . $paymentService->getIcon(), array('style' => $display, 'class' => 'service_icon')) ?><br/>
+    <?php echo image_tag(sfConfig::get('app_icons_payment_web_dir') . '/' . $paymentService->getIcon(), array('style' => $display, 'class' => 'service_icon', 'align' => 'absmiddle')) ?><br/>
 </div>
 <div id="container_form_payment" style="display: none">
     <h3><?php echo __('Select payment method') ?></h3>
