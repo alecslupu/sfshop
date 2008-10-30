@@ -91,7 +91,7 @@ class addressBookActions extends sfActions
                 $address->save();
                 
                 if ($request->isXmlHttpRequest()) {
-                    if (isset($isNew)) {
+                    if ($request->hasParameter('is_return_all_addresses')) {
                         $arrayAddresses = AddressBookPeer::getHashByMemberId($this->getUser()->getUserId());
                         
                         $data = array(

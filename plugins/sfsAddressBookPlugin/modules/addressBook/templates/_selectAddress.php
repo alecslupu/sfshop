@@ -7,13 +7,14 @@
         'addressBook', 
         'inputForm', 
         array(
+            'sufix'            => 'delivery',
             'is_shopping_cart' => true,
-            'action'           => url_for('@addressBook_add')
+            'action'           => url_for('@addressBook_add?is_return_all_addresses=1')
         )) ?>
 </div>
 <?php echo javascript_tag('
     var addressBookManage = new sfsAddressBookSelectManage(
         {form: "container_edit_address", info: "container_select_address"},
-        {formId: "form_edit_address", formSelectId: "form_select_address"}
+        {formId: "form_edit_delivery_address", formSelectId: "form_select_address"}
     );
 ') ?>

@@ -1039,7 +1039,7 @@ class sfAuthorizeNet
       }
       else 
       {
-        $response = explode("|", $response);
+        $response = explode(",", $response);
         
         $result['response'] = $response;
         
