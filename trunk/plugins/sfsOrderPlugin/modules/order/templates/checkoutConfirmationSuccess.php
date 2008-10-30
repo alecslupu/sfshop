@@ -62,7 +62,7 @@
         {
             deliveryAddress: {
                 containers: {info: "container_info_delivery_address", form: "container_form_delivery_address"},
-                options: {formId: "form_edit_address"}
+                options: {formId: "form_edit_delivery_address"}
             },
             delivery: {
                 containers: {info: "container_info_delivery", form: "container_form_delivery"},

@@ -92,11 +92,12 @@ class authorizeNetActions extends sfsPaymentActions
         $cardData = $sfUser->getAttribute('card_data', null, 'order/payment/authorizenet');
         $this->cardData = $cardData;
         
-        $billingAddress = $sfUser->getAttribute('address', null, 'order/billing');
-        $deliveryAddress = $sfUser->getAttribute('address', null, 'order/delivery');
+        $billingAddressId = $sfUser->getAttribute('address_id', null, 'order/billing');
+        $deliveryAddressId = $sfUser->getAttribute('address_id', null, 'order/delivery');
         
-        $this->billingAddress  = $billingAddress;
-        $this->deliveryAddress = $deliveryAddress;
+        $this->billingAddress  = AddressBookPeer::retrieveById($billingAddressId);
+        $this->deliveryAddress = AddressBookPeer::retrieveById($deliveryAddressId);
+        
         $orderItem = $this->getOrderItemObjectByIdOrUuid($request->getParameter('order_item_id'));
         $this->order = $orderItem;
         
@@ -127,33 +128,42 @@ class authorizeNetActions extends sfsPaymentActions
                 $authorizeNet->setCardSecurityCode($cardData['card_code']);
                 $authorizeNet->setCardExpiration($cardData['card_expire']['month'] . $cardData['card_expire']['year']);
                 
-                $authorizeNet->setBillingFirstName($billingAddress['first_name']);
-                $authorizeNet->setBillingLastName($billingAddress['last_name']);
-                $authorizeNet->setBillingCompany($billingAddress['company']);
-                $authorizeNet->setBillingAddress($billingAddress['street']);
-                $authorizeNet->setBillingCity($billingAddress['city']);
+                $authorizeNet->setBillingFirstName($this->billingAddress->getFirstName());
+                $authorizeNet->setBillingLastName($this->billingAddress->getLastName());
+                $authorizeNet->setBillingCompany($this->billingAddress->getCompany());
+                $authorizeNet->setBillingAddress($this->billingAddress->getStreet());
+                $authorizeNet->setBillingCity($this->billingAddress->getCity());
                 
-                $countryIso = CountryPeer::retrieveByPK($billingAddress['country_id'])->getIso();
-                $stateTitle = StatePeer::retrieveByPK($billingAddress['state_id'])->getIso();
+                $countryIso = CountryPeer::retrieveByPK($this->billingAddress->getCountryId())->getIso();
+                $stateTitle = StatePeer::retrieveByPK($this->billingAddress->getStateId())->getIso();
                 
                 $authorizeNet->setBillingState($stateTitle);
                 $authorizeNet->setBillingCountry($countryIso);
-                $authorizeNet->setBillingPostalCode($billingAddress['postcode']);
+                $authorizeNet->setBillingPostalCode($this->billingAddress->getPostcode());
                 
-                $authorizeNet->setShippingFirstName($deliveryAddress['first_name']);
-                $authorizeNet->setShippingLastName($deliveryAddress['last_name']);
-                $authorizeNet->setShippingCompany($deliveryAddress['company']);
-                $authorizeNet->setShippingAddress($deliveryAddress['street']);
-                $authorizeNet->setShippingCity($deliveryAddress['city']);
+                $authorizeNet->setShippingFirstName($this->deliveryAddress->getFirstName());
+                $authorizeNet->setShippingLastName($this->deliveryAddress->getLastName());
+                $authorizeNet->setShippingCompany($this->deliveryAddress->getCompany());
+                $authorizeNet->setShippingAddress($this->deliveryAddress->getStreet());
+                $authorizeNet->setShippingCity($this->deliveryAddress->getCity());
                 
-                $countryIso = CountryPeer::retrieveByPK($deliveryAddress['country_id'])->getIso();
-                $stateTitle = StatePeer::retrieveByPK($deliveryAddress['state_id'])->getIso();
+                $countryIso = CountryPeer::retrieveByPK($this->deliveryAddress->getCountryId())->getIso();
+                $stateTitle = StatePeer::retrieveByPK($this->deliveryAddress->getStateId())->getIso();
                 
                 $authorizeNet->setShippingState($stateTitle);
                 $authorizeNet->setShippingCountry($countryIso);
-                $authorizeNet->setShippingPostalCode($deliveryAddress['postcode']);
+                $authorizeNet->setShippingPostalCode($this->deliveryAddress->getPostcode());
                 
                 $result = $authorizeNet->execute();
+                
+                $orderItem->setBillingFirstName($this->billingAddress->getFirstName());
+                $orderItem->setBillingLastName($this->billingAddress->getLastName());
+                $orderItem->setBillingStreet($this->billingAddress->getStreet());
+                $orderItem->setBillingCity($this->billingAddress->getCity());
+                $orderItem->setBillingCountryId($this->billingAddress->getCountryId());
+                $orderItem->setBillingStateId($this->billingAddress->getStateId());
+                $orderItem->setBillingStateTitle($this->billingAddress->getStateTitle());
+                $orderItem->setBillingPostcode($this->billingAddress->getPostcode());
                 
                 if (isset($result['success']) && $result['success'] == 1) {
                     $this->setOrderStatusProcessing();

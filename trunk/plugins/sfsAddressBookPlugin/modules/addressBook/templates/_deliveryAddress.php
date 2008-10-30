@@ -13,6 +13,7 @@
             'addressBook', 
             'inputForm', 
             array(
+                'sufix'   => 'delivery',
                 'address' => $sf_data->getRaw('address'),
                 'action'  => url_for('@addressBook_edit?id=' . $address->getId())
             )

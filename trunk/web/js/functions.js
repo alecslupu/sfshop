@@ -59,39 +59,6 @@ function selectCountry(country_id) {
     }
 }
 
-var activeContainerFormId = null;
-var activeContainerInfoId = null;
-
-function showEditForm(containerFormId, containerInfoId)
-{
-    activeContainerFormId = containerFormId;
-    activeContainerInfoId = containerInfoId;
-
-    Effect.BlindUp(containerInfoId);
-    //Effect.BlindDown(containerFormId);
-    $(containerFormId).show();
-    new Effect.ScrollTo($(containerFormId).down('.actions'), {duration:1.0});
-
-    if (Object.isElement($('form_confirm'))) {
-        $('form_confirm').hide();
-    }
-}
-
-function hideEditForm()
-{
-    var errors = $(activeContainerFormId).select('ul.error');
-    
-    if (errors.length == 0) {
-        
-        Effect.BlindUp(activeContainerFormId);
-        Effect.BlindDown(activeContainerInfoId);
-        
-        if (Object.isElement($('form_confirm'))) {
-            $('form_confirm').show();
-        }
-    }
-}
-
 function observeFormFields(formId)
 {
     var elements = $(formId).getInputs();

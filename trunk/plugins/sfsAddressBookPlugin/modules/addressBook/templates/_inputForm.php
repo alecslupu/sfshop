@@ -1,6 +1,6 @@
 <?php use_helper('sfsCountryState') ?>
 <?php echo javascript_tag(get_states_list_in_js()) ?>
-<form action="<?php echo $action; ?>" method="post" id="form_edit_address" name="form_edit_address" class="form" onSubmit="return false">
+<form action="<?php echo $action; ?>" method="post" id="form_edit_<?php echo $sufix ?>_address" name="form_edit_address" class="form" onSubmit="return false">
     <ul class="main">
         <?php echo $form ?>
         <li class="actions">
@@ -17,5 +17,5 @@
     
     selectCountry($F("data_country_id"));
     $("data_state_id").value = "' . $form->getDefault('state_id') . '"
-    highlightFieldsWithError("form_edit_address");
+    highlightFieldsWithError("form_edit_' . $sufix . '_address");
 ') ?>
