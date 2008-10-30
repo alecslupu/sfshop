@@ -7,7 +7,7 @@ var sfsManage = Class.create({
         Object.extend(this.options, options || {});
         this.isActive = false;
         this.parentObject = parentObject;
-        this.containers.info.down('.action').observe('click', this.showForm.bindAsEventListener(this, this.containers));
+        this.containers.info.down('.action').observe('click', this.showForm.bindAsEventListener(this));
         this.observeFormActions();
     },
     observeFormActions: function()
@@ -18,38 +18,45 @@ var sfsManage = Class.create({
     },
     onCancel: function()
     {
-        this.hideForm();
+        this.hideForm(true);
         $(this.options.formId).reset();
         this.form.clearErrors();
     },
-    hideForm: function()
+    hideForm: function(isCancel)
     {
-        if (this.parentObject != null) {
-            this.parentObject.setActiveObject(null);
+        if (this.form.isValid() || isCancel) {
+            
+            if (this.parentObject != null) {
+                this.parentObject.setActiveObject(null);
+            }
+            
+            Effect.BlindUp(this.containers.form);
+            Effect.BlindDown(this.containers.info);
+            
+            if (this.parentObject != null) {
+                this.parentObject.onHideForm();
+            }
+            else {
+                this.onHideForm();
+            }
+            
+            this.isActive = false;
         }
-        
-        Effect.BlindUp(this.containers.form);
-        Effect.BlindDown(this.containers.info);
-        
-        if (this.parentObject != null) {
-            this.parentObject.onHideForm();
-        }
-        else {
-            this.onHideForm();
-        }
-        
-        this.isActive = false;
     },
-    showForm: function(e, containers)
+    showForm: function(e, isHideCancel)
     {
         
         if (this.parentObject != null) {
             this.parentObject.setActiveObject(this);
         }
         
-        Effect.BlindUp(containers.info);
-        containers.form.show();
-        new Effect.ScrollTo(containers.form.down('.actions'), {duration:1.0});
+        if (isHideCancel) {
+            this.containers.form.down('li.actions').down('.cancel').hide();
+        }
+        
+        Effect.BlindUp(this.containers.info);
+        this.containers.form.show();
+        new Effect.ScrollTo(this.containers.form.down('.actions'), {duration:1.0});
         
         if (this.parentObject != null) {
             this.parentObject.onShowForm();

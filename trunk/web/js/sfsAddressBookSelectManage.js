@@ -13,6 +13,10 @@ var sfsAddressBookSelectManage = Class.create(sfsManage, {
         
         element.value = data.default_address_id;
         $(this.options.formId).reset();
+        
+        if (Object.isElement($('notice'))) {
+            $('notice').hide();
+        }
     },
     onShowForm: function()
     {
