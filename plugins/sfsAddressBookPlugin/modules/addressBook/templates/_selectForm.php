@@ -1,5 +1,5 @@
 <form action="<?php echo url_for('@addressBook_select'); ?>" method="post" id="form_select_address" name="form_select_address" class="form" onSubmit="return false">
-    <ul class="main" <?php echo $hasAddresses ? '' : 'style="display: none"' ?>>
+    <ul class="main">
         <?php echo $form ?>
     </ul>
 </form>

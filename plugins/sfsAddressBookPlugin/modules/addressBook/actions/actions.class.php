@@ -80,18 +80,11 @@ class addressBookActions extends sfActions
                     $address->setIsDefault(false);
                 }
                 
-                if ($address->isNew()) {
-                    $isNew = true;
-                    $sfUser->setFlash('message', __('New address has been added'));
-                }
-                else {
-                    $sfUser->setFlash('message', __('Address has been saved'));
-                }
-                
                 $address->save();
                 
                 if ($request->isXmlHttpRequest()) {
                     if ($request->hasParameter('is_return_all_addresses')) {
+                        
                         $arrayAddresses = AddressBookPeer::getHashByMemberId($this->getUser()->getUserId());
                         
                         $data = array(
@@ -106,6 +99,15 @@ class addressBookActions extends sfActions
                     }
                 }
                 else {
+                    
+                    if ($address->isNew()) {
+                        $isNew = true;
+                        $sfUser->setFlash('message', __('New address has been added'));
+                    }
+                    else {
+                        $sfUser->setFlash('message', __('Address has been saved'));
+                    }
+                    
                     $this->redirect('@addressBook_myList');
                 }
             }

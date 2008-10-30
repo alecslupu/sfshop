@@ -7,7 +7,7 @@ addressBook_myList:
   param: { module: addressBook, action: myList }
 
 addressBook_add:
-  url: /add-address
+  url: /add-address/*
   param: { module: addressBook, action: create }
 
 addressBook_edit:
