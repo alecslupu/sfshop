@@ -3,7 +3,7 @@
 #
 
 core_changeLanguage:
-  url: /changeLanguage/:culture
+  url: /change-language/:culture
   param: { module: core, action: changeLanguage }
 
 core_error404:

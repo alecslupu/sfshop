@@ -21,6 +21,7 @@
 <div class="body">
     <div>
           <div class="top_static_menu">
+              <?php include_component('core', 'selectLanguage'); ?>
               <?php include_component('menu', 'top'); ?>
           </div>
           <div class="login_menu">
