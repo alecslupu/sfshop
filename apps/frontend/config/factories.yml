@@ -27,21 +27,6 @@ test:
           class: sfFileLogger
           param:
             file: %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
-  i18n:
-    class: sfI18N
-    param:
-      source: MySQL
-      database: mysql://sfshop_dmUser:#vDh|rjuvPM}@localhost/sfshop_demo
-      debug:                off
-      untranslated_prefix:  "[T]"
-      untranslated_suffix:  "[/T]"
-      cache:
-        class: sfFileCache
-        param:
-          automatic_cleaning_factor: 0
-          cache_dir:                 %SF_I18N_CACHE_DIR%
-          lifetime:                  86400
-          prefix:                    %SF_APP_DIR%
 
 all:
   storage: 
@@ -58,8 +43,7 @@ all:
   i18n:
     class: sfI18N
     param:
-      source: MySQL
-      database: mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
+      source:               gettext
       debug:                off
       untranslated_prefix:  "[T]"
       untranslated_suffix:  "[/T]"
@@ -70,6 +54,22 @@ all:
           cache_dir:                 %SF_I18N_CACHE_DIR%
           lifetime:                  86400
           prefix:                    %SF_APP_DIR%
+
+#  i18n:
+#    class: sfI18N
+#    param:
+#      source: MySQL
+#      database: mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
+#      debug:                off
+#     untranslated_prefix:  "[T]"
+#      untranslated_suffix:  "[/T]"
+#      cache:
+#        class: sfFileCache
+#        param:
+#          automatic_cleaning_factor: 0
+#          cache_dir:                 %SF_I18N_CACHE_DIR%
+#          lifetime:                  86400
+#          prefix:                    %SF_APP_DIR%
 
 #all:
 #  controller:
