@@ -7,23 +7,16 @@ propel:
   currency: 
     _attributes: 
       phpName: Currency
+      isI18N: true
+      i18nTable: currency_i18n
     id: 
       type: INTEGER
       required: true
       autoIncrement: true
       primaryKey: true
-    title: 
-      type: VARCHAR
-      size: 128
     code: 
       type: CHAR
       size: 4
-    symbol_left: 
-      type: VARCHAR
-      size: 16
-    symbol_right: 
-      type: VARCHAR
-      size: 16
     decimal_point: 
       type: CHAR
       size: 1
@@ -47,3 +40,30 @@ propel:
       default: 0
     created_at: 
     updated_at: 
+
+  currency_i18n: 
+    _attributes: 
+      phpName: CurrencyI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: currency
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 128
+    symbol_left: 
+      type: VARCHAR
+      size: 16
+    symbol_right: 
+      type: VARCHAR
+      size: 16
