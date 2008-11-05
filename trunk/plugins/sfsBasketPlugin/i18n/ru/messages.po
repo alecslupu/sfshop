@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sfShop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-04 21:13+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\sfShop\\plugins\\sfsBasketPlugin\n"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/lib/form/BasketForm.class.php:24
+msgid "Quantity"
+msgstr "Количество"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/lib/form/BasketForm.class.php:40
+msgid "Min product quantity is 1"
+msgstr "Минимальное количество 1"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/lib/form/BasketForm.class.php:41
+msgid "This products does not exist in desired quantity in our stock (Max is %max%)."
+msgstr "У нас нету в наличии достаточного количества этого продукта (Макс %max%)"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:2
+msgid "Shopping cart"
+msgstr "Корзина"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:7
+msgid "The product \"%product_title%\" was deleted"
+msgstr "Продукт \"%product_title%\" был удален"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:14
+msgid "We dont have enough product quantity for following products"
+msgstr "У нас нету в наличии достаточного количества следующих продуктов"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:23
+msgid "Delivery errors"
+msgstr ""
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:49
+msgid "Sub total"
+msgstr "Итого"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:54
+msgid "Update"
+msgstr "Обновить"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:56
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:58
+msgid "Checkout"
+msgstr "Оформить"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:68
+msgid "Your shopping cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:106
+msgid "Are you sure want remove selected products from your basket?"
+msgstr "Вы действительно хотите удалить отмеченные продукты с вашей корзины?"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:112
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:132
+msgid "Remove"
+msgstr "Удалить"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:113
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:133
+msgid "Don`t remove"
+msgstr "Не удалять"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:126
+msgid "Are you sure want remove this product from your basket?"
+msgstr "Вы действительно хотите удалить этот продукт с вашей корзины?"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_addProductForm.php:2
+msgid "You already added <span>%quantity%</span> piece of this product"
+msgstr "Вы уже добавили <span>%quantity%</span> штук этого продукта"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_addProductForm.php:10
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_list_th_tabular.php:2
+msgid "Thumbnail"
+msgstr "Изображение продукта"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_list_th_tabular.php:5
+msgid "Product title"
+msgstr "Название продукта"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_list_th_tabular.php:8
+msgid "Price"
+msgstr "Цена"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_list_th_tabular.php:14
+msgid "Total"
+msgstr "Всего"
+
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_list_th_tabular.php:17
+msgid "Actions"
+msgstr "Действия"
+
