@@ -59,7 +59,7 @@ class CurrencyPeer extends BaseCurrencyPeer
             $criteria = new Criteria();
         }
         
-        $currencies = self::doSelect($criteria);
+        $currencies = self::doSelectWithTranslation($criteria);
         
         $hash = array();
         
