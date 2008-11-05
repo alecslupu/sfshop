@@ -18,16 +18,6 @@
     </ul>
 <?php endif; ?>
 
-<?php if (isset($deliveryErrors)): ?>
-    <ul class="error" style="width: 100%">
-        <li><?php echo __('Delivery errors') ?>:<li>
-        <?php foreach ($deliveryErrors as $error): ?>
-             <li><?php echo $error ?><li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-
-
 <?php if ($basket->hasProducts()): ?>
 <div>
     <form action="<?php echo url_for('@basket_list'); ?>" method="post" class="form_basket" id="form_basket" onsubmit="return false">

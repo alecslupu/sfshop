@@ -44,12 +44,12 @@ class sfsMemberRegistrationForm extends MemberForm
             array(
                 'required'   => true,
                 'min_length' => 6,
-                'max_length' => 20
+                'max_length' => 200
             ),
             array(
                 'required'   => 'Password is a required field',
                 'min_length' => 'Password must be 6 or more characters',
-                'max_length' => 'Password must be 20 or less characters'
+                'max_length' => 'Password can not be more 200 characters'
             )
         );
         

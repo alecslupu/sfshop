@@ -28,6 +28,12 @@ class sfsAuthorizeNetChargeForm extends sfForm
              )
         );
         
+        $this->setLabels(array(
+            'card_number' => 'Credit card number',
+            'card_code'   => 'CCV2',
+            'card_expire' => 'Expiration Date'
+        ));
+        
         $validatorCardNumber = new sfValidatorAnd(
             array(
                 new sfValidatorString(
@@ -36,8 +42,8 @@ class sfsAuthorizeNetChargeForm extends sfForm
                         'max_length' => 16
                     ),
                     array(
-                        'min_length' => 'The credit card number is incorrect',
-                        'max_length' => 'The credit card number is incorrect'
+                        'min_length' => 'Credit card number is incorrect',
+                        'max_length' => 'Credit card number is incorrect'
                     )
                 ),
                 new sfValidatorRegex(
@@ -45,11 +51,11 @@ class sfsAuthorizeNetChargeForm extends sfForm
                         'required' => false,
                         'pattern'  => '/^[0-9]{1,}$/i'
                     ),
-                    array('invalid'  => 'The credit card number is incorrect')
+                    array('invalid'  => 'Credit card number is incorrect')
                 )
             ),
             array('required' => true),
-            array('required' => 'You should input credit card number')
+            array('required' => 'Credit card number is a required field')
         );
         
         $validatorCardCode = new sfValidatorAnd(
@@ -60,17 +66,17 @@ class sfsAuthorizeNetChargeForm extends sfForm
                         'max_length' => 5
                     ),
                     array(
-                        'min_length' => 'The credit card code is incorrect',
-                        'max_length' => 'The credit card code is incorrect'
+                        'min_length' => 'CCV2 security code is incorrect',
+                        'max_length' => 'CCV2 security code is incorrect'
                     )
                 ),
                 new sfValidatorNumber(
                     array('required'  => true),
-                    array('invalid'   => 'The credit card code is incorrect')
+                    array('invalid'   => 'CCV2 security code is incorrect')
                 )
             ),
             array('required' => true),
-            array('required' => 'You should input card code')
+            array('required' => 'CCV2 security code is a required field')
         );
         
         $validatorCardExpire = new sfValidatorDate(
@@ -79,7 +85,7 @@ class sfsAuthorizeNetChargeForm extends sfForm
                 'date_format' => '%month%%year%'
             ),
             array(
-                'min'  => 'The credit card has expired.'
+                'min'  => 'Credit card has expired'
             )
         );
         

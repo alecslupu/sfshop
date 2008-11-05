@@ -116,17 +116,17 @@ class webmoneyActions extends sfsPaymentActions
             $orderItem = OrderItemPeer::retrieveByUuid($request->getParameter('uuid'));
             
             if ($orderItem == null) {
-                $error = __('Error: order does not exists.');
+                $error = __('Error: order does not exists');
             }
             else {
                 
                 $amount = format_currency($orderItem->getTotalPrice(), $currencyCode, true);
                 
                 if (!$isCurrencyCorrect) {
-                    $error = __('Error: wrong currency hash.');
+                    $error = __('Error: wrong currency hash');
                 }
                 else if ($request->getParameter('LMI_PAYMENT_AMOUNT') !== $amount) {
-                    $error = __('Error: wrong amount.');
+                    $error = __('Error: wrong amount');
                 }
                 elseif($request->getParameter('LMI_PAYEE_PURSE') !== $purse) {
                     $error = __('Error: wrong purse');

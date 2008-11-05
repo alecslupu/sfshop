@@ -356,13 +356,14 @@ class memberActions extends sfActions
                         );
                         $mail->send();
                     }
-                    $this->getUser()->setFlash('message', __('You have changed email address. Please confirm new mail.'));
+                    $this->getUser()->setFlash('message', __('You have changed the email address. You should confirm a new email. 
+                    Please, check your email, the letter with instruction has been sent to you.'));
                 }
                 
                 $member = $this->form->updateObject();
                 $member->save();
                 
-                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . __('Your personal information has been saved'));
+                $this->getUser()->setFlash('message', $this->getUser()->getFlash('message') . ' ' . __('Your profile has been updated.'));
                 
                 $this->redirect('@member_myProfile');
             }

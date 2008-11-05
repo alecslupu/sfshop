@@ -21,7 +21,7 @@ msgstr ""
 
 #: D:\sfShop\plugins\sfsProductPlugin/modules/brand/templates/_product_brand.php:4
 msgid "Brand"
-msgstr ""
+msgstr "Бренд"
 
 #: D:\sfShop\plugins\sfsProductPlugin/modules/product/templates/detailsSuccess.php:15
 msgid "Price"

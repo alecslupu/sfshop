@@ -79,7 +79,7 @@ msgstr "Вы уверенны?"
 
 #: D:\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_messages.php:3
 msgid "The form is not valid because it contains some errors."
-msgstr ""
+msgstr "Форма содержит некоторые ошибки."
 
 #: D:\sfShop\plugins\sfsDeliveryPlugin/modules/odfl/templates/_rate.php:2
 msgid "Rate"
