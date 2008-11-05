@@ -457,7 +457,8 @@ abstract class sfApplicationConfiguration extends ProjectConfiguration
     $pluginDirs = glob(sfConfig::get('sf_plugins_dir').'/*/i18n');
     if (isset($pluginDirs[0]))
     {
-      $dirs[] = $pluginDirs[0];
+      $dirs = array_merge($dirs, $pluginDirs);
+      //$dirs[] = $pluginDirs[0];
     }
 
     return $dirs;

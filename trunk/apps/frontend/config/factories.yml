@@ -44,7 +44,7 @@ all:
     class: sfI18N
     param:
       source:               gettext
-      debug:                off
+      debug:                on
       untranslated_prefix:  "[T]"
       untranslated_suffix:  "[/T]"
       cache:
