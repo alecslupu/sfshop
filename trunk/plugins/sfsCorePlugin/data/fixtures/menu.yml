@@ -1,44 +1,90 @@
 Menu: 
-  # English
-  sfMenu_PROFILE_EN_1: 
-    culture: 'en'
-    route:   '@homepage'
-    title:   'Home'
+  Menu_HOME_1: 
+    route:   @homepage
     pos:     1
     type:    <?php echo MenuPeer::TYPE_MAIN; ?> 
-  sfMenu_TOP_EN_1: 
-    culture: 'en'
-    route:   '@core_contactUs'
-    title:   'Contact us'
-    pos:     1
-    type:    <?php echo MenuPeer::TYPE_TOP; ?> 
-  sfMenu_BOTTOM_EN_1: 
-    culture: 'en'
-    route:   '@homepage'
-    title:   'Home'
+  Menu_BOTTOM_1: 
+    route:   @homepage
     pos:     1
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
-  sfMenu_BOTTOM_EN_2: 
-    culture: 'en'
-    route:   '@homepage'
-    title:   'About Us'
+  Menu_BOTTOM_2: 
+    route:   @homepage
     pos:     2
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
-  sfMenu_BOTTOM_EN_3: 
-    culture: 'en'
-    route:   '@core_informationShipping'
-    title:   'Shipping & Returns'
+  Menu_BOTTOM_3: 
+    route:   @core_informationShipping
     pos:     3
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
-  sfMenu_BOTTOM_EN_4: 
-    culture: 'en'
-    route:   '@core_informationPrivacyNotice'
-    title:   'Privacy Notice'
+  Menu_BOTTOM_4: 
+    route:   @core_informationPrivacyNotice
     pos:     4
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
-  sfMenu_BOTTOM_EN_5: 
-    culture: 'en'
-    route:   '@core_informationConditionsUse'
-    title:   'Conditions of Use'
+  Menu_BOTTOM_5: 
+    route:   @core_informationConditionsUse
     pos:     5
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_6: 
+    route:   @core_contactUs
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+
+MenuI18n:
+# English
+  MenuI18n_HOME_EN_1: 
+    id:      Menu_HOME_1
+    culture: en
+    title:   Home
+  MenuI18n_BOTTOM_EN_1: 
+    id:      Menu_BOTTOM_1
+    culture: en
+    title:   Home
+  MenuI18n_BOTTOM_EN_2: 
+    id:      Menu_BOTTOM_2
+    culture: en
+    title:   About Us
+  MenuI18n_BOTTOM_EN_3: 
+    id:      Menu_BOTTOM_3
+    culture: en
+    title:   Shipping & Returns
+  MenuI18n_BOTTOM_EN_4: 
+    id:      Menu_BOTTOM_4
+    culture: en
+    title:   Privacy Notice
+  MenuI18n_BOTTOM_EN_5: 
+    id:      Menu_BOTTOM_5
+    culture: en
+    title:   Conditions of Use
+  MenuI18n_BOTTOM_EN_6: 
+    id:      Menu_BOTTOM_6
+    culture: en
+    title:   Contact us
+    
+# Russian
+  MenuI18n_HOME_RU_1: 
+    id:      Menu_HOME_1
+    culture: ru
+    title:   Главная
+  MenuI18n_BOTTOM_RU_1: 
+    id:      Menu_BOTTOM_1
+    culture: ru
+    title:   Главная
+  MenuI18n_BOTTOM_RU_2: 
+    id:      Menu_BOTTOM_2
+    culture: ru
+    title:   О нас
+  MenuI18n_BOTTOM_RU_3: 
+    id:      Menu_BOTTOM_3
+    culture: ru
+    title:   Shipping & Returns
+  MenuI18n_BOTTOM_RU_4: 
+    id:      Menu_BOTTOM_4
+    culture: ru
+    title:   Privacy Notice
+  MenuI18n_BOTTOM_RU_5: 
+    id:      Menu_BOTTOM_5
+    culture: ru
+    title:   Правила использоавания
+  MenuI18n_BOTTOM_RU_6: 
+    id:      Menu_BOTTOM_6
+    culture: ru
+    title:   Контакты
