@@ -24,7 +24,7 @@
 <fieldset id="sf_fieldset_none" class="">
 
 <div class="form-row">
-  <?php echo label_for('member[password]', __('Password: '), 'class="required" ') ?>
+  <?php echo label_for('member[password]', __('Password'), 'class="required" ') ?>
   <div class="content<?php if ($sf_request->hasError('member{password}')): ?> form-error<?php endif; ?>">
   <?php if ($sf_request->hasError('member{password}')): ?>
     <?php echo form_error('member{password}', array('class' => 'form-error-msg')) ?>

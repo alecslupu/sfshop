@@ -48,11 +48,6 @@ class basketActions extends sfActions
             $sfUser->getAttributeHolder()->removeNamespace('products/unavailability');
         }
         
-        if ($sfUser->getAttributeHolder()->hasNamespace('delivery/errors')) {
-            $this->deliveryErrors = $sfUser->getAttributeHolder()->getAll('delivery/errors');
-            $sfUser->getAttributeHolder()->removeNamespace('delivery/errors');
-        }
-        
         $this->basket = $sfUser->getBasket();
         
         $this->form = new sfForm();

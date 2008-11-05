@@ -99,7 +99,7 @@ msgstr "Телефон не может быть короче 4 символов"
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/MemberForm.class.php:97
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/MemberForm.class.php:109
 msgid "Phone number can not be more 20 characters"
-msgstr ""
+msgstr "Номер телефона не может быть больше 20 символов"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:25
 msgid "Current password"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:65
 msgid "Confirm new password is a required field"
-msgstr ""
+msgstr "Подтверждение пароля является обязательным полем"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:73
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:66
@@ -277,7 +277,7 @@ msgstr "Поздравляем, Вы зарегистрированы. Но Вы
 
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/member/templates/_contactForm.php:9
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/member/templates/_contactInfo.php:2
 msgid "Contact info"
@@ -301,7 +301,7 @@ msgstr ""
 
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/memberAdmin/templates/changePasswordSuccess.php:45
 msgid "list"
-msgstr ""
+msgstr "список"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/memberAdmin/templates/changePasswordSuccess.php:48
 msgid "save"

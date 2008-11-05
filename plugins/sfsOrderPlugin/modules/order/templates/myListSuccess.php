@@ -6,7 +6,7 @@
             </div>
         <?php else: ?>
             <div style="width: 100%; text-align: center">
-                <?php echo __('no results') ?>
+                <?php echo __('You don`t have any order') ?>
                 <br/>
             </div>
         <?php endif; ?><br/>

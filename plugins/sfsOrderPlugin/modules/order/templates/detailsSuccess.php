@@ -16,14 +16,6 @@
         </tr>
         <tr>
             <td colspan="2">
-                <h3><?php echo __('Payment') ?></h3>
-                <div>
-                    <b><?php echo __('Paypal rate') ?>:</b> <?php echo format_currency(paypal_rate($order->getTotalPrice())) ?>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
                 <h3><?php echo __('Shipping') ?></h3>
                 <?php //include_component('odfl', 'rate', array('object' => $sf_user->getBasket())) ?>
             </td>
@@ -37,10 +29,5 @@
                 </div>
             </td>
         </tr>
-        <?php if ($order->getStatusId() == OrderStatusPeer::STATUS_PENDING): ?>
-            <tr><td colspan="2" align="right">
-                <?php echo button_to(__('Pay for order'), '@payment_paypal?order_item_id=' . $order->getId(), array('class' => 'button')) ?>
-            </td></tr>
-        <?php endif; ?>
     </table>
 <?php include_partial('core/container_footer') ?>

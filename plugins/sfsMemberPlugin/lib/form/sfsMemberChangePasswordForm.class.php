@@ -49,12 +49,12 @@ class sfsMemberChangePasswordForm extends MemberForm
             array(
                 'required'   => true,
                 'min_length' => 6,
-                'max_length' => 20
+                'max_length' => 200
             ),
             array(
                 'required'   => 'New password is a required field',
                 'min_length' => 'New password must be 6 or more characters',
-                'max_length' => 'New password must be 20 or less characters'
+                'max_length' => 'New password can not be more 200 characters'
             )
         );
         
