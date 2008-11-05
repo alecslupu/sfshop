@@ -1,20 +1,43 @@
 Menu: 
-  # English
-  Menu_PROFILE_EN_1: 
-    culture: 'en'
-    route:   '@member_editProfile'
-    title:   'Edit profile'
+# English
+  Menu_PROFILE_1: 
+    route:   @member_editProfile
     pos:     1
     type:    <?php echo MenuPeer::TYPE_PROFILE; ?> 
-  Menu_PROFILE_EN_2: 
-    culture: 'en'
-    route:   '@member_changePassword'
-    title:   'Change password'
+  Menu_PROFILE_2: 
+    route:   @member_changePassword
     pos:     1
     type:    <?php echo MenuPeer::TYPE_PROFILE; ?> 
-  Menu_MAIN_EN_3: 
-    culture: 'en'
-    route:   '@member_myProfile'
-    title:   'My profile'
+  Menu_MAIN_3: 
+    route:   @member_myProfile
     pos:     2
     type:    <?php echo MenuPeer::TYPE_MAIN; ?> 
+
+MenuI18n: 
+# English
+  MenuI18n_PROFILE_EN_1: 
+    id:      Menu_PROFILE_1
+    culture: en
+    title:   Edit profile
+  MenuI18n_PROFILE_EN_2: 
+    id:      Menu_PROFILE_2
+    culture: en
+    title:   Change password
+  MenuI18n_MAIN_EN_3: 
+    id:      Menu_MAIN_3
+    culture: en
+    title:   My profile
+    
+# Russian
+  MenuI18n_PROFILE_RU_1: 
+    id:      Menu_PROFILE_1
+    culture: ru
+    title:   Редактировать профайл
+  MenuI18n_PROFILE_RU_2: 
+    id:      Menu_PROFILE_2
+    culture: ru
+    title:   Изменить пароль
+  MenuI18n_MAIN_RU_3: 
+    id:      Menu_MAIN_3
+    culture: ru
+    title:   Мой профайл
