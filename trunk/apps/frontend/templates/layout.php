@@ -44,7 +44,7 @@
         <div class="logo_container">
             <div class="logo">
                 <?php echo link_to(image_tag('logo.gif', array('width' => 90, 'height' => 53, 'align' => 'absmiddle')), '@homepage') ?>
-                <?php echo link_to(__('DVD shop'),'@homepage') ?>
+                <?php echo link_to('DVD shop','@homepage') ?>
             </div>
         </div>
         <div class="login_container">
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="copyright"><?php echo __('Copyright 2008 &copy; %link%', array('%link%' => link_to('sfShop', 'http://www.sfshop.org'))) ?></div>
+    <div class="copyright">Copyright 2008 &copy; <?php echo link_to('sfShop', 'http://www.sfshop.org') ?></div>
 </div>
 </body>
 </html>

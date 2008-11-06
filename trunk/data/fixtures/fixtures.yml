@@ -2294,28 +2294,28 @@ InformationI18n:
     description:      Error 404: page not found.
     
 # Russian
-  InformationI18n_EN_1:
+  InformationI18n_RU_1:
     id:               Information_1
     culture:          ru
     title:            Доставка и оплата
     description:      Вставьте соответствующую информацию сюда.
     meta_keywords:    доставка и оплата
     meta_description: доставка и оплата
-  InformationI18n_EN_2:
+  InformationI18n_RU_2:
     id:               Information_2
     culture:          ru
     title:            Privacy Notice
     description:      Вставьте соответствующую информацию сюда.
     meta_keywords:    Privacy Notice
     meta_description: Privacy Notice
-  InformationI18n_EN_3:
+  InformationI18n_RU_3:
     id:               Information_3
     culture:          ru
     title:            Правила использования
     description:      Вставьте соответствующую информацию сюда.
     meta_keywords:    правила использования
     meta_description: правила использования
-  InformationI18n_EN_4:
+  InformationI18n_RU_4:
     id:               Information_4
     culture:          ru
     title:            404
