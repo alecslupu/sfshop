@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-05 14:03+0200\n"
+"POT-Creation-Date: 2008-11-06 10:06+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,40 +15,43 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: D:\\sfShop\\plugins\\sfsPaymentAuthorizeNetPlugin\n"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:24
-msgid "Card number"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:32
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:21
+msgid "Credit card number"
 msgstr "Номер карты"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:25
-msgid "Card code"
-msgstr "Код"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:33
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:22
+msgid "CCV2"
+msgstr "Секретный код карты"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:26
-msgid "Card expire"
-msgstr "Действительна до"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:34
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:23
+msgid "Expiration Date"
+msgstr "Действителена до"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:44
 #: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:45
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:53
-msgid "The credit card number is incorrect"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:46
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:54
+msgid "Credit card number is incorrect"
 msgstr "Номер карты неверный"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:57
-msgid "You should input credit card number"
-msgstr ""
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:58
+msgid "Credit card number is a required field"
+msgstr "Номер карты является обязательным полем"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:68
 #: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:69
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:74
-msgid "The credit card code is incorrect"
-msgstr "Код карточки неверный"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:70
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:75
+msgid "CCV2 security code is incorrect"
+msgstr "Секретный код карты неверный"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:78
-msgid "You should input card code"
-msgstr ""
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:79
+msgid "CCV2 security code is a required field"
+msgstr "Секретный код карты является обязательным полем"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:87
-msgid "The credit card has expired"
+#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/form/sfsAthorizeNetChargeForm.class.php:88
+msgid "Credit card has expired"
 msgstr "Срок действия карты истек"
 
 #: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:1
@@ -68,18 +71,6 @@ msgstr "Данные карты"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:21
-msgid "Credit card number"
-msgstr ""
-
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:22
-msgid "CCV2"
-msgstr ""
-
-#: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:23
-msgid "Expiration Date"
-msgstr ""
-
 #: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/chargeSuccess.php:29
 msgid "Total"
 msgstr "Итого"
@@ -96,4 +87,11 @@ msgstr "Отправить"
 #: D:\sfShop\plugins\sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/templates/_cardForm.php:11
 msgid "Cancel"
 msgstr "Отмена"
+
+#~ msgid "Card number"
+#~ msgstr "Номер карты"
+#~ msgid "Card code"
+#~ msgstr "Код"
+#~ msgid "Card expire"
+#~ msgstr "Действительна до"
 
