@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-04 22:01+0200\n"
+"POT-Creation-Date: 2008-11-06 10:04+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -80,8 +80,4 @@ msgstr "Вы уверенны?"
 #: D:\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_messages.php:3
 msgid "The form is not valid because it contains some errors."
 msgstr "Форма содержит некоторые ошибки."
-
-#: D:\sfShop\plugins\sfsDeliveryPlugin/modules/odfl/templates/_rate.php:2
-msgid "Rate"
-msgstr ""
 
