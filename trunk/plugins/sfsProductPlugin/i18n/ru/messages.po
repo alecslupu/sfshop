@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-05 14:25+0200\n"
+"POT-Creation-Date: 2008-11-06 10:12+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,10 +14,6 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: D:\\sfShop\\plugins\\sfsProductPlugin\n"
-
-#: D:\sfShop\plugins\sfsProductPlugin/lib/helper/sfsBrandHelper.php:6
-msgid "[no brand]"
-msgstr ""
 
 #: D:\sfShop\plugins\sfsProductPlugin/modules/brand/templates/_product_brand.php:4
 msgid "Brand"
