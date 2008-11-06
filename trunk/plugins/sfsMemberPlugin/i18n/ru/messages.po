@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-05 11:31+0200\n"
+"POT-Creation-Date: 2008-11-06 09:59+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -101,40 +101,36 @@ msgstr "Телефон не может быть короче 4 символов"
 msgid "Phone number can not be more 20 characters"
 msgstr "Номер телефона не может быть больше 20 символов"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:25
-msgid "Current password"
-msgstr "Текущий пароль"
-
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:37
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:35
 msgid "New password"
 msgstr "Новый парль"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:38
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:36
 msgid "Confirm new password"
 msgstr "Подтверждение нового пароля"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:47
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:45
 msgid "Current password is a required field"
 msgstr "Текущий пароль является обязательным полем"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:57
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:55
 msgid "New password is a required field"
 msgstr "Новый пароль является обязательным полем "
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:58
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:56
 msgid "New password must be 6 or more characters"
 msgstr "Новый пароль не может быть короче 6 символов"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:59
-msgid "New password must be 20 or less characters"
-msgstr ""
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:57
+msgid "New password can not be more 200 characters"
+msgstr "Новый пароль не может быть больше чем 200 символов"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:65
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:63
 msgid "Confirm new password is a required field"
 msgstr "Подтверждение пароля является обязательным полем"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:73
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:66
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberChangePasswordForm.class.php:71
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:71
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
@@ -147,6 +143,7 @@ msgid "Confirm code is a required field"
 msgstr "Код подтверждения является обязательным полем "
 
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberForgotPasswordStepTwoForm.class.php:25
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:41
 msgid "Secret answer"
 msgstr "Секретный вопрос"
 
@@ -155,31 +152,43 @@ msgid "Please input an answer on a secret question"
 msgstr "Пожалуйста, ведите ответ на секретный вопрос"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberLoginForm.class.php:42
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:50
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:55
 msgid "Password is a required field"
 msgstr "Пароль является обязательным полем"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:51
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:38
+msgid "Password"
+msgstr "Пароль"
+
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:39
+msgid "Confirm password"
+msgstr "Подтверждение пароля"
+
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:40
+msgid "Secret question"
+msgstr "Секретный вопрос"
+
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:56
 msgid "Password must be 6 or more characters"
 msgstr "Пароль не может быть короче 6 символов"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:52
-msgid "Password must be 20 or less characters"
-msgstr ""
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:57
+msgid "Password can not be more 200 characters"
+msgstr "Пароль не может быть больше 200 символов"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:58
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:63
 msgid "Confirm password is a required field"
 msgstr "Подтверждение пароля является обязательным полем"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:73
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:78
 msgid "Please select a secret question"
 msgstr "Пожалуйста выберите секретный вопрос"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:82
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:87
 msgid "Secret answer is a required field"
 msgstr "Ответ на секретный пароль является обязательным полем"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:83
+#: D:\sfShop\plugins\sfsMemberPlugin/lib/form/sfsMemberRegistrationForm.class.php:88
 msgid "Secret answer can not be less 2 characters"
 msgstr "Ответ на секретный вопрос не может быть короче 2 символов"
 
@@ -196,14 +205,16 @@ msgid "Answer is wrong"
 msgstr "Ответ неверный"
 
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/member/actions/actions.class.php:359
-msgid "You have changed email address. Please confirm new mail."
-msgstr ""
+msgid ""
+"You have changed the email address. You should confirm a new email. \n"
+"                    Please, check your email, the letter with instruction has been sent to you."
+msgstr "Вы изменили адрес электронной почты. Теперь вам нужно подтвердить его.  Код подтверждения был выслан на ваш новый адрес электронной почты."
 
-#: D:\sfShop\plugins\sfsMemberPlugin/modules/member/actions/actions.class.php:365
-msgid "Your personal information has been saved"
-msgstr ""
+#: D:\sfShop\plugins\sfsMemberPlugin/modules/member/actions/actions.class.php:366
+msgid "Your profile has been updated."
+msgstr "Ваш профайл обновлен."
 
-#: D:\sfShop\plugins\sfsMemberPlugin/modules/member/actions/actions.class.php:393
+#: D:\sfShop\plugins\sfsMemberPlugin/modules/member/actions/actions.class.php:394
 msgid "Your password was changed"
 msgstr "Пароль изменен"
 
@@ -291,10 +302,6 @@ msgstr "Редактировать"
 msgid "Edit contact info"
 msgstr "Редактирование контактных данных"
 
-#: D:\sfShop\plugins\sfsMemberPlugin/modules/memberAdmin/templates/changePasswordSuccess.php:27
-msgid "Password: "
-msgstr ""
-
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/memberAdmin/templates/changePasswordSuccess.php:35
 msgid "New password for member"
 msgstr ""
@@ -314,4 +321,7 @@ msgstr ""
 #: D:\sfShop\plugins\sfsMemberPlugin/modules/memberAdmin/templates/_edit_caption.php:4
 msgid "Edit member &ldquo;%title%&rdquo;"
 msgstr ""
+
+#~ msgid "Current password"
+#~ msgstr "Текущий пароль"
 
