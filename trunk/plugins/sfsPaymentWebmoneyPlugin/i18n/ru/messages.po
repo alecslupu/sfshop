@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-05 14:21+0200\n"
+"POT-Creation-Date: 2008-11-06 10:11+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,16 +20,16 @@ msgid "Products"
 msgstr "Продукты"
 
 #: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:119
-msgid "Error: order does not exists."
-msgstr "Ошибка: заказ не существует."
+msgid "Error: order does not exists"
+msgstr "Ошибка: заказ не существует"
 
 #: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:126
-msgid "Error: wrong currency hash."
-msgstr "Ошибка: неверный хеш валюты."
+msgid "Error: wrong currency hash"
+msgstr "Ошибка: неверный хеш валюты"
 
 #: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:129
-msgid "Error: wrong amount."
-msgstr "Ошибка: неверная сумма."
+msgid "Error: wrong amount"
+msgstr "Ошибка: неверная сумма"
 
 #: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:132
 msgid "Error: wrong purse"
