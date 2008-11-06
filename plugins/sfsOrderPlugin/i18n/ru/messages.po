@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-05 13:51+0200\n"
+"POT-Creation-Date: 2008-11-06 10:10+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,7 +28,7 @@ msgid "Comment to your order"
 msgstr "Комментарий к заказу"
 
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:43
-#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:34
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:26
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_short_details.php:6
 msgid "Total"
 msgstr "Итого"
@@ -62,29 +62,17 @@ msgid "Order details"
 msgstr "Детали заказа"
 
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:19
-msgid "Payment"
-msgstr "Оплата"
-
-#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:21
-msgid "Paypal rate"
-msgstr ""
-
-#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:27
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_short_details.php:5
 msgid "Shipping"
 msgstr "Доставка"
-
-#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:42
-msgid "Pay for order"
-msgstr ""
 
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/myListSuccess.php:1
 msgid "My orders"
 msgstr "Мои заказы"
 
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/myListSuccess.php:9
-msgid "no results"
-msgstr ""
+msgid "You don`t have any order"
+msgstr "У вас нет ни одного заказа"
 
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_list_products_details.php:1
 msgid "Products"
@@ -133,4 +121,7 @@ msgstr "Сдедующая"
 #: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_pager.php:13
 msgid "Last"
 msgstr "Последняя"
+
+#~ msgid "Payment"
+#~ msgstr "Оплата"
 
