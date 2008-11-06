@@ -50,17 +50,62 @@
 <?php if ($credentials): $credentials = str_replace("\n", ' ', var_export($credentials, true)) ?>
     [?php if ($sf_user->hasCredential(<?php echo $credentials ?>)): ?]
 <?php endif; ?>
-<div class="form-row">
-  [?php echo label_for('<?php echo $this->getParameterValue("edit.fields.".$column->getName().".label_for", $this->getSingularName()."[".$column->getName()."]") ?>', __($labels['<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}']), '<?php if ($column->isNotNull()): ?>class="required" <?php endif; ?>') ?]
-  <div class="content[?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?] form-error[?php endif; ?]">
-  [?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?]
-    [?php echo form_error('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}', array('class' => 'form-error-msg')) ?]
-  [?php endif; ?]
 
-  [?php $value = <?php echo $this->getColumnEditTag($column); ?>; echo $value ? $value : '&nbsp;' ?]
-  <?php echo $this->getHelp($column, 'edit') ?>
-  </div>
-</div>
+<!-- changed by nest -->
+
+<?php $criteria = new Criteria();
+LanguagePeer::addPublicCriteria($criteria);
+$languages = LanguagePeer::getAll($criteria);
+?>
+
+<?php if (strpos($column->getName(), '_i18n')): ?>
+    
+    <?php foreach ($languages as $language): ?>
+        <?php $path = 'http://' . $_SERVER['HTTP_HOST'] .'/images/' . sfConfig::get('languages_images_dir', 'languages')
+            . '/'
+            . strtolower($language->getTitleEnglish()) 
+            . '/'
+            . 'icon.png';
+            $title = $language->getTitleOwn();
+         ?>
+        <div class="form-row">
+          [?php echo label_for('<?php echo $this->getParameterValue("edit.fields.".$column->getName().".label_for", $this->getSingularName()."[".$language->getCulture()."][".$column->getName()."]") ?>', __($labels['<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}']), '<?php if ($column->isNotNull()): ?>class="required" <?php endif; ?>') ?]
+          <div class="content[?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?] form-error[?php endif; ?]">
+          [?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() . '_' .  $language->getCulture() ?>}')): ?]
+            [?php echo form_error('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() . '_' .  $language->getCulture() ?>}', array('class' => 'form-error-msg')) ?]
+          [?php endif; ?]
+        
+          [?php echo image_tag(
+            '<?php echo $path ?>',
+            array(
+                'title' => '<?php echo $title ?>',
+                'alt'   => '<?php echo $title ?>',
+                'align' => 'top'
+            )
+          ); ?]
+        
+          [?php $value = <?php echo $this->getColumnEditTag($column, array('culture' => $language->getCulture())); ?>; echo $value ? $value : '&nbsp;' ?]
+          &nbsp; &nbsp; &nbsp;<?php echo $this->getHelp($column, 'edit') ?>
+          </div>
+        </div>
+    <?php endforeach; ?>
+
+<?php else: ?>
+    <div class="form-row">
+      [?php echo label_for('<?php echo $this->getParameterValue("edit.fields.".$column->getName().".label_for", $this->getSingularName()."[".$column->getName()."]") ?>', __($labels['<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}']), '<?php if ($column->isNotNull()): ?>class="required" <?php endif; ?>') ?]
+      <div class="content[?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?] form-error[?php endif; ?]">
+      [?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?]
+        [?php echo form_error('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}', array('class' => 'form-error-msg')) ?]
+      [?php endif; ?]
+    
+      [?php $value = <?php echo $this->getColumnEditTag($column); ?>; echo $value ? $value : '&nbsp;' ?]
+      <?php echo $this->getHelp($column, 'edit') ?>
+      </div>
+    </div>
+<?php endif ?>
+
+<!-- end -->
+
 <?php if ($credentials): ?>
     [?php endif; ?]
 <?php endif; ?>

@@ -225,6 +225,7 @@ h1.logo a {
     border-left: 1px solid #7EC6F6;
     border-right: 1px solid #7EC6F6;
     border-top: 1px solid #7EC6F6;
+    width: 1100px;
 }
 
 #sf_admin_container fieldset h2 {
