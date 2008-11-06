@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sfShop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-04 21:13+0200\n"
+"POT-Creation-Date: 2008-11-06 10:05+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,42 +39,38 @@ msgstr "Продукт \"%product_title%\" был удален"
 msgid "We dont have enough product quantity for following products"
 msgstr "У нас нету в наличии достаточного количества следующих продуктов"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:23
-msgid "Delivery errors"
-msgstr ""
-
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:49
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:39
 msgid "Sub total"
 msgstr "Итого"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:54
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:44
 msgid "Update"
 msgstr "Обновить"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:56
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:58
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:46
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:48
 msgid "Checkout"
 msgstr "Оформить"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:68
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:58
 msgid "Your shopping cart is empty"
 msgstr "Ваша корзина пуста"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:106
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:96
 msgid "Are you sure want remove selected products from your basket?"
 msgstr "Вы действительно хотите удалить отмеченные продукты с вашей корзины?"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:112
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:132
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:102
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:122
 msgid "Remove"
 msgstr "Удалить"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:113
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:133
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:103
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:123
 msgid "Don`t remove"
 msgstr "Не удалять"
 
-#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:126
+#: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/listSuccess.php:116
 msgid "Are you sure want remove this product from your basket?"
 msgstr "Вы действительно хотите удалить этот продукт с вашей корзины?"
 
