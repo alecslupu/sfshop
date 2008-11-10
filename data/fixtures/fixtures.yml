@@ -379,30 +379,30 @@ Brand:
     url:  'http://brand-3.com'
 BrandI18n:
 # English
-  Brand_en_1:
+  Brand_EN_1:
     id:      Brand_1
-    title:   'Test brand 1'
+    title:   Test brand 1
     culture: en
-  Brand_en_2:
+  Brand_EN_2:
     id:      Brand_2
-    title:   'Test brand 2'
+    title:   Test brand 2
     culture: en
-  Brand_en_3:
+  Brand_EN_3:
     id:      Brand_3
-    title:   'Test brand 3'
+    title:   Test brand 3
     culture: en
 # Russian
-  Brand_en_1:
+  Brand_RU_1:
     id:      Brand_1
-    title:   'Тестовый бренд 1'
+    title:   Тестовый бренд 1
     culture: ru
-  Brand_en_2:
+  Brand_RU_2:
     id:      Brand_2
-    title:   'Тестовый бренд 2'
+    title:   Тестовый бренд 2
     culture: ru
-  Brand_en_3:
+  Brand_RU_3:
     id:      Brand_3
-    title:   'Тестовый бренд 3'
+    title:   Тестовый бренд 3
     culture: ru
 
 #
