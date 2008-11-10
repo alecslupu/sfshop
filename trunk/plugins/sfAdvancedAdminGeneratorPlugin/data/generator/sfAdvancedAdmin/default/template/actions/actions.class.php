@@ -342,13 +342,42 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
   {
     $<?php echo $this->getSingularName() ?> = $this->getRequestParameter('<?php echo $this->getSingularName() ?>');
 
+<?php $criteria = new Criteria();
+    LanguagePeer::addPublicCriteria($criteria);
+    $languages = LanguagePeer::getAll($criteria);
+?>
+
     switch ($this->getActionName()) {
 <?php foreach (array('create', 'edit') as $action): ?>
       case '<?php echo $action; ?>':
 <?php foreach ($this->getColumnCategories($action.'.display') as $category): ?>
 <?php foreach ($this->getColumns($action.'.display', $category) as $name => $column): $type = $column->getCreoleType(); ?>
 <?php $name = $column->getName() ?>
+
 <?php if ($column->isPrimaryKey()) continue ?>
+
+<?php if (strpos($name, '_i18n')): ?>
+
+    <?php foreach ($languages as $language): ?>
+        
+        <?php $credentials = $this->getParameterValue($action.'.fields.'.$column->getName().'.credentials') ?>
+        <?php $input_type = $this->getParameterValue($action.'.fields.'.$column->getName().'.type') ?>
+        <?php if ($credentials): $credentials = str_replace("\n", ' ', var_export($credentials, true)) ?>
+              if ($this->getUser()->hasCredential(<?php echo $credentials ?>))
+              {
+        <?php endif; ?>
+     if (isset($<?php echo $this->getSingularName() ?>['<?php echo $name . '_' . $language->getCulture() ?>']))
+        {
+          <?php $methodName = str_replace('I18n', '', $column->getPhpName()); ?>
+          $this-><?php echo $this->getSingularName() ?>->set<?php echo $methodName ?>($<?php echo $this->getSingularName() ?>['<?php echo $name . '_' . $language->getCulture() ?>'], '<?php echo $language->getCulture() ?>');
+        }
+        <?php if ($credentials): ?>
+              }
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+<?php else: ?>
+
 <?php $credentials = $this->getParameterValue($action.'.fields.'.$column->getName().'.credentials') ?>
 <?php $input_type = $this->getParameterValue($action.'.fields.'.$column->getName().'.type') ?>
 <?php if ($credentials): $credentials = str_replace("\n", ' ', var_export($credentials, true)) ?>
@@ -419,7 +448,7 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
 <?php elseif ($column->isForeignKey()): ?>
           $this-><?php echo $this->getSingularName() ?>->set<?php echo $column->getPhpName() ?>($<?php echo $this->getSingularName() ?>['<?php echo $name ?>'] ? $<?php echo $this->getSingularName() ?>['<?php echo $name ?>'] : null);
 <?php else: ?>
-          $this-><?php echo $this->getSingularName() ?>->set<?php echo $column->getPhpName() ?>($<?php echo $this->getSingularName() ?>['<?php echo $name ?>']);
+              $this-><?php echo $this->getSingularName() ?>->set<?php echo $column->getPhpName() ?>($<?php echo $this->getSingularName() ?>['<?php echo $name ?>']);
 <?php endif; ?>
 <?php if ($type != CreoleTypes::BOOLEAN): ?>
         }
@@ -427,6 +456,10 @@ $column = sfPropelManyToMany::getColumn($class, $through_class);
 <?php if ($credentials): ?>
       }
 <?php endif; ?>
+
+<?php endif; ?>
+
+
 <?php endforeach; ?>
 <?php endforeach; ?>
       break;
