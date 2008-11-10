@@ -4,12 +4,6 @@ generator:
     model_class:        Category
     theme:              default
     
-    fields: 
-      title_i18n: 
-        name:           Title
-        type:           input_tag
-        params:         size=100
-    
     list: 
       display:          [ _category_title, is_active, created_at, updated_at ]
       max_per_page:     20
@@ -34,6 +28,10 @@ generator:
         _delete:       ~
         
       fields:
+        title_i18n: 
+          name:           Title
+          type:           input_tag
+          params:         size=100
         description_i18n: 
           name:           Description
           type:           textarea_tag
