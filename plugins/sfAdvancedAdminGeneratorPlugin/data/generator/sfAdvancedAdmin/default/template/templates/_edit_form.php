@@ -69,8 +69,8 @@ $languages = LanguagePeer::getAll($criteria);
             $title = $language->getTitleOwn();
          ?>
         <div class="form-row">
-          [?php echo label_for('<?php echo $this->getParameterValue("edit.fields.".$column->getName().".label_for", $this->getSingularName()."[".$language->getCulture()."][".$column->getName()."]") ?>', __($labels['<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}']), '<?php if ($column->isNotNull()): ?>class="required" <?php endif; ?>') ?]
-          <div class="content[?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}')): ?] form-error[?php endif; ?]">
+          [?php echo label_for('<?php echo $this->getParameterValue("edit.fields.".$column->getName().".label_for", $this->getSingularName()."[".$column->getName()."_".$language->getCulture()."]") ?>', __($labels['<?php echo $this->getSingularName() ?>{<?php echo $column->getName() ?>}']), '<?php if ($column->isNotNull()): ?>class="required" <?php endif; ?>') ?]
+          <div class="content[?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() . '_' . $language->getCulture() ?>}')): ?] form-error[?php endif; ?]">
           [?php if ($sf_request->hasError('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() . '_' .  $language->getCulture() ?>}')): ?]
             [?php echo form_error('<?php echo $this->getSingularName() ?>{<?php echo $column->getName() . '_' .  $language->getCulture() ?>}', array('class' => 'form-error-msg')) ?]
           [?php endif; ?]
@@ -84,7 +84,7 @@ $languages = LanguagePeer::getAll($criteria);
             )
           ); ?]
         
-          [?php $value = <?php echo $this->getColumnEditTag($column, array('culture' => $language->getCulture())); ?>; echo $value ? $value : '&nbsp;' ?]
+          [?php $value = <?php echo $this->getColumnEditTag($column, array('culture' => $language->getCulture(),'control_name' => $this->getSingularName() . '['. $column->getName() . '_' . $language->getCulture() . ']')); ?>; echo $value ? $value : '&nbsp;' ?]
           &nbsp; &nbsp; &nbsp;<?php echo $this->getHelp($column, 'edit') ?>
           </div>
         </div>
