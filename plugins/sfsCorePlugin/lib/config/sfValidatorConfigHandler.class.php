@@ -216,9 +216,10 @@ class sfValidatorConfigHandler extends sfYamlConfigHandler
         
       if (strpos($name, '_i18n')) {
           foreach ($languages as $language) {
+              $message = isset($attributes['required_msg']) ? "'" . str_replace("'", '', $attributes['required_msg']) . ' for language ' . $language->getTitleEnglish() . "'" : "''";
               $data[] = sprintf("  \$validatorManager->registerName('%s', %s, %s, %s, %s, %s);",
                                 $name . '_' . $language->getCulture(), $attributes['required'] ? 1 : 0,
-                                isset($attributes['required_msg']) ? $attributes['required_msg'] : "''",
+                                $message,
                                 $attributes['parent'], $attributes['group'],
                                 $attributes['file']);
           }

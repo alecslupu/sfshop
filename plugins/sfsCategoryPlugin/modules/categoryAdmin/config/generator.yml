@@ -5,27 +5,10 @@ generator:
     theme:              default
     
     fields: 
-      title: 
-        name:           'Title'
-        help:           'Category title'
+      title_i18n: 
+        name:           Title
         type:           input_tag
-      description: 
-        name:           'Description'
-        help:           'Category description'
-        type:           textarea_tag
-        params:         size=150x10
-      meta_keywords: 
-        name:           'Keywords'
-        help:           'Meta keywords'
-        type:           textarea_tag
-        params:         size=80x10
-      meta_description: 
-        name:           'Description'
-        help:           'Meta description'
-        type:           textarea_tag
-        params:         size=80x10
-      is_active: 
-        name:           'Active'
+        params:         size=100
     
     list: 
       display:          [ _category_title, is_active, created_at, updated_at ]
@@ -36,19 +19,32 @@ generator:
         _delete:        ~
       actions: 
         _create:
-          name:        'Create category'
+          name:        Create category
     
     edit: 
       title:            '%%_edit_caption%%'
       display: 
-        "NONE":         [ title, _parent_id, _thumbnail, is_active ]
-        "Description":  [ description ]
-        "Meta":         [ meta_keywords, meta_description ]
+        "NONE":         [ title_i18n, _parent_id, _thumbnail, is_active ]
+        "Description":  [ description_i18n ]
+        "Meta":         [ meta_keywords_i18n, meta_description_i18n ]
       actions: 
         _list:          
           action:       catalogList
         _save:         ~
         _delete:       ~
         
-      fields: 
-        edit_parent_category: { name: parent_id }
+      fields:
+        description_i18n: 
+          name:           Description
+          type:           textarea_tag
+          params:         size=130x10
+        meta_keywords_i18n: 
+          name:           Keywords
+          type:           textarea_tag
+          params:         size=80x10
+        meta_description_i18n: 
+          name:           Description
+          type:           textarea_tag
+          params:         size=80x10
+        edit_parent_category: 
+          name: parent_id
