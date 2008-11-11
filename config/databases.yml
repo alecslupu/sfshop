@@ -2,22 +2,26 @@ all:
   propel: 
     class:          sfPropelDatabase
     param: 
+      encoding:     utf8
       dsn:          mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
   
   session_storage:
     class:          sfPropelDatabase
     param:
+      encoding:     utf8
       persistent:   true
       dsn:          mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
 
 test:
   propel: 
     class:          sfPropelDatabase
-    param: 
+    param:
+      encoding:     utf8
       dsn:          mysql://sfshop_dmUser:#vDh|rjuvPM}@localhost/sfshop_demo
   
   session_storage:
     class:          sfPropelDatabase
     param:
+      encoding:     utf8
       persistent:   true
       dsn:          mysql://sfshop_dmUser:#vDh|rjuvPM}@localhost/sfshop_demo

@@ -192,7 +192,7 @@ class basketActions extends sfActions
             $product = ProductPeer::retrieveById($productId, $criteria);
             
             if ($product === null) {
-                return $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => $this->getRequest()->getReferer())));
+                return $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => $request->getReferer())));
             }
             else {
                 $optionsRequested = $request->getParameter('add_product[options]');
