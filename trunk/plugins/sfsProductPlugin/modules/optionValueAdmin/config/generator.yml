@@ -1,17 +1,11 @@
 generator:
-  class:              sfPropelAdminGenerator
+  class:              sfAdvancedAdminGenerator
   param:
     model_class:      OptionValue
     theme:            default
     
-    fields: 
-      title: 
-        name:           'Title'
-        help:           'Option title'
-        type:           input_tag
-    
     list: 
-      title:            'Option Values list'
+      title:            Option Values list
       display:          [id, title, pos, is_active, created_at]
       max_per_page:     20
       object_actions: 
@@ -20,10 +14,15 @@ generator:
       filters:          [type_id]
       
     edit: 
-      title:            '%%_edit_caption%%'
+      title:            %%_edit_caption%%
       display: 
-        "NONE":         [ name, title, type_id, is_active ]
+        "NONE":         [ name, title_i18n, type_id, is_active ]
       actions: 
-        _list:         ~
-        _save:         ~
-        _delete:       ~
+        _list:          ~
+        _save:          ~
+        _delete:        ~
+        
+      fields: 
+        title_i18n: 
+          name:         Title
+          type:         input_tag
