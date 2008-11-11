@@ -49,8 +49,8 @@ class memberActions extends sfActions
                         if ($member->getIsConfirmed() == MemberPeer::CONFIRMED) {
                             $this->getUser()->login($member);
                             
-                            if ($this->getRequest()->getReferer() != $this->getRequest()->getUri()) {
-                                $redirectTo = $this->getRequest()->getReferer();
+                            if ($request->getReferer() != $request->getUri()) {
+                                $redirectTo = $request->getReferer();
                             }
                             else {
                                 $redirectTo = url_for('@member_myProfile', true);
