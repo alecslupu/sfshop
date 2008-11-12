@@ -39,7 +39,7 @@ class ProductSearchIndex extends xfIndexSingle
             )
         ));
         $service->addRetort(new xfRetortField);
-        $service->addRetort(new xfRetortRoute('@product_details?isbn=$id$'));
+        $service->addRetort(new xfRetortRoute('@product_list'));
         
         $this->getServiceRegistry()->register($service);
   }
