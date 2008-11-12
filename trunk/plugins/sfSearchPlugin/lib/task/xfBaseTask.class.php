@@ -26,6 +26,7 @@ abstract class xfBaseTask extends sfBaseTask
   /**
    * @see sfTask
    */
+  /*
   protected function doRun(sfCommandManager $commandManager, $options)
   {
     if (!self::$done)
@@ -33,7 +34,7 @@ abstract class xfBaseTask extends sfBaseTask
       $auto = sfSimpleAutoload::getInstance();
       $auto->addDirectory(sfConfig::get('sf_lib_dir'));
       $auto->addDirectory(sfConfig::get('sf_root_dir') . '/lib');
-      $auto->addDirectory(sfConfig::get('sf_plugins_dir') . '/*/lib');
+      $auto->addDirectory(sfConfig::get('sf_plugins_dir') . '/lib');
       $auto->register();
 
       self::$done = true;
@@ -41,7 +42,7 @@ abstract class xfBaseTask extends sfBaseTask
 
     return parent::doRun($commandManager, $options);
   }
-
+*/
   /**
    * Checks to see if index exists.
    *

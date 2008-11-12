@@ -23,12 +23,18 @@ final class xfPopulateTask extends xfBaseTask
    */
   protected function configure()
   {
-    $this->addArguments(array(new sfCommandArgument('index', sfCommandArgument::REQUIRED, 'The index name to populate')));
+    $this->addArguments(
+        array(
+            new sfCommandArgument('application', sfCommandArgument::REQUIRED, 'The application name'),
+            new sfCommandArgument('index', sfCommandArgument::REQUIRED, 'The index name to populate')
+        )
+    );
 
     $this->addOptions(array(
       new sfCommandOption('optimize', 'o', sfCommandOption::PARAMETER_NONE, 'If passed, the index is optimized after population'),
+      new sfCommandOption('env', 'null', sfCommandOption::PARAMETER_REQUIRED, 'The environment', 'dev')
     ));
-
+    
     $this->namespace = 'search';
     $this->name = 'populate';
 
@@ -60,8 +66,7 @@ EOF;
     // this is a hack and will be hopefully removed
     // see http://groups.google.com/group/symfony-devs/browse_thread/thread/dc399312da49598a
     //$db = new sfDatabaseManager(new xfSearchConfiguration('cli', false, $this->configuration->getRootDir(), $this->dispatcher));
-    $db = new sfDatabaseManager(new xfSearchConfiguration('cli', false, $this->configuration->getRootDir(), $this->dispatcher));
-    
+    $db = new sfDatabaseManager($this->configuration);
     $index = new $index;
     $index->setLogger(new xfLoggerTask($this->dispatcher, $this->formatter));
     $index->populate();
