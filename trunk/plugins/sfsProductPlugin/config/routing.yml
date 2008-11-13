@@ -2,6 +2,10 @@
 # Products
 #
 
+product_index:
+  url: /product-index/*
+  param: { module: product, action: index }
+
 product_list:
   url: /product-list/*
   param: { module: product, action: list }

@@ -5,7 +5,7 @@
         <form action="<?php echo url_for('@core_contactUs'); ?>" method="post" class="form">
             <ul class="main">
                 <?php echo $form ?>
-                <li class="button"><input type="submit" value="<?php echo __('Send') ?>" class="button"/></li>
+                <li class="actions"><input type="submit" value="<?php echo __('Send') ?>" class="button"/></li>
             </ul>
         </form>
     <?php endif; ?>

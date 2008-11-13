@@ -74,5 +74,5 @@ class Product extends BaseProduct
     }
 }
 
-//xfPropelBehavior::register('Product', array('ProductSearchIndex'));
+xfPropelBehavior::register('Product', array('ProductSearchGroup'));
 
