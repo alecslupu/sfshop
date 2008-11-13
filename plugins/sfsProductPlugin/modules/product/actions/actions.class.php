@@ -1,11 +1,20 @@
 <?php
 
 /**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
+/**
  * products actions.
  *
- * @package    sfShop
- * @subpackage product
- * @author     Dmitry Nesteruk
+ * @package    plugins.sfsProductPlugin
+ * @subpackage modules.product
+ * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class productActions extends sfActions
@@ -17,7 +26,8 @@ class productActions extends sfActions
     public function executeIndex()
     {
         $this->getUser()->getAttributeHolder()->removeNamespace('assets');
-        $this->redirect('@products_list');
+        $this->getUser()->getAttributeHolder()->removeNamespace('product');
+        $this->redirect('@product_list');
     }
     
    /**
@@ -62,6 +72,7 @@ class productActions extends sfActions
         $criteria = $this->addFiltersCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
         
+        $criteria->add(ProductI18nPeer::CULTURE, 'ru');
         $this->pager = new sfPropelPager('Product', 10);
         $this->pager->setPeerMethod('doSelectWithTranslation');
         $this->pager->setCriteria($criteria);
@@ -138,27 +149,28 @@ class productActions extends sfActions
             
             if ($this->formSearch->isValid()) {
                 $queryString = $data['query'];
-                $this->getUser()->setAttribute('query', $queryString, 'products');
+                $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
-        elseif($this->getUser()->getAttribute('query', null, 'products') != null) {
-            $queryString = $this->getUser()->getAttribute('query', '', 'products');
+        elseif ($this->getUser()->getAttribute('query', null, 'product') != null) {
+            $queryString = $this->getUser()->getAttribute('query', '', 'product');
+            $this->formSearch->setDefault('query', $queryString);
         }
         
         if (isset($queryString)) {
             
             $this->isSearch = true;
+            $this->queryString = $queryString;
             
-            $query = new sfLuceneCriteria(sfLuceneToolkit::getApplicationInstance());
+            $searchCriteria = new xfCriterionPhrase($queryString, 1);
             
-            $query->addSane($queryString);
-            $results = sfLuceneToolkit::getApplicationInstance()->friendlyFind($query);
+            $results  = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
             
             $ids = array();
             
             if (!empty($results) && is_object($results)) {
                 foreach($results as $res) {
-                    $ids[] =  $res->getId();
+                    $ids[] = $res->getId();
                 }
             }
             
