@@ -20,11 +20,11 @@ class sfsSelectCurrencyForm extends BaseCurrencyForm
         $this->setWidgets(
             array('id' => new sfWidgetFormSelect(array('choices' => $arrayCurrencies), array('onchange' => 'this.form.submit()')))
         );
-        
+
         $this->widgetSchema->setLabel('id', 'Currency');
         
         $validatorCurrencyId = new sfValidatorChoice(
-            array('choices' => $arrayCurrencies)
+            array('choices' => array_keys($arrayCurrencies))
         );
         
         $this->setValidators(array('id' => $validatorCurrencyId));
