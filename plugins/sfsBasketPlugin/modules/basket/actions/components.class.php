@@ -9,6 +9,8 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+require_once(dirname(__FILE__).'/../lib/BaseBasketComponents.class.php');
+
 /**
  * Basket components.
  *
@@ -17,50 +19,7 @@
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class basketComponents extends sfComponents
+class basketComponents extends BaseBasketComponents
 {
-   /**
-    * Form for add product to shopping cart with quantity.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeAddProductForm()
-    {
-        $response = $this->getResponse();
-        $response->addJavaScript('/js/sfsForm.js');
-        $response->addJavaScript('/js/sfsBasketAddProductForm.js');
-        
-        if ($this->isShortForm) {
-            $this->form = new sfsBasketAddProductShortForm();
-        }
-        else {
-            $this->form = new sfsBasketAddProductForm();
-        }
-        
-        $this->form->setDefault('product_id', $this->product->getId());
-        
-        if ($this->product->getHasOptions()) {
-            $this->form->embedForm('options', $this->optionsForm);
-        }
-        else {
-            $validatorQuantity = $this->form->getValidatorSchema()->offsetGet('quantity');
-            $validatorQuantity->setOption('max', $this->product->getQuantity());
-            
-            $validatorQuantity->setMessage(
-                'max', 
-                str_replace('%max%', $this->product->getQuantity(), $validatorQuantity->getMessage('max'))
-            );
-            
-            $this->productQuantity = $this->product->getQuantity();
-            
-            $basketProduct = BasketProductPeer::retrieveByBasketIdAndProductId($this->getUser()->getBasket()->getId(), $this->product->getId());
-            
-            if ($basketProduct !== null) {
-                $this->addedQuantity = $basketProduct->getQuantity();
-            }
-        }
-    }
+
 }
