@@ -12,15 +12,15 @@ Menu:
     pos:     2
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
   Menu_BOTTOM_3: 
-    route:   @core_informationShipping
+    route:   @information_shipping
     pos:     3
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
   Menu_BOTTOM_4: 
-    route:   @core_informationPrivacyNotice
+    route:   @information_privacyNotice
     pos:     4
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
   Menu_BOTTOM_5: 
-    route:   @core_informationConditionsUse
+    route:   @information_conditionsUse
     pos:     5
     type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
   Menu_BOTTOM_6: 

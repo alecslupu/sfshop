@@ -9,17 +9,17 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseMenuComponents.class.php');
+require_once(dirname(__FILE__).'/../lib/BaseInformationActions.class.php');
 
 /**
- * Base menu components.
+ * Information actions.
  *
  * @package    plugin.sfsCorePlugin
- * @subpackage modules.core
+ * @subpackage modules.information
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
- * @version    SVN: $Id: components.class.php 2692 2006-11-15 21:03:55Z fabien $
+ * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class menuComponents extends BaseMenuComponents
+class informationActions extends BaseInformationActions
 {
 
 }
