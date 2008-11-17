@@ -7,8 +7,7 @@ Requirements:
 1. Create virtual host:
 
 <VirtualHost *:80>
-  ServerAdmin admin@dev.ict
-  ServerName sfshop.dev
+  ServerName somedomain
 
   DocumentRoot "/path/to/htdocs"
 
@@ -34,9 +33,10 @@ Requirements:
 login: devzpc_sfUser
 password: AAsMM7Yx3:5Q.v4T
 
-3. Execute script from root directory of site
+3. Execute from root directory of site
 
-./install_site
+./symfony propel:build-all-load frontend
+./symfony cc
 
 4. Execute
 
