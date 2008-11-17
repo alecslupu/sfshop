@@ -54,21 +54,21 @@ coreAdminAdmin_list:
 # Core Information
 #
 
-core_informationDetails:
+information_details:
   url: /information/:id
-  param: { module: coreInformation, action: details }
+  param: { module: information, action: details }
 
-core_informationShipping:
+information_shipping:
   url: /information-shipping
-  param: { module: coreInformation, action: details, id: 1 }
+  param: { module: information, action: details, id: 1 }
 
-core_informationPrivacyNotice:
+information_privacyNotice:
   url: /information-privacy-notice
-  param: { module: coreInformation, action: details, id: 2 }
+  param: { module: information, action: details, id: 2 }
 
-core_informationConditionsUse:
+information_conditionsUse:
   url: /information-conditions-of-use
-  param: { module: coreInformation, action: details, id: 3 }
+  param: { module: information, action: details, id: 3 }
 
 #
 # Core Information Admin
