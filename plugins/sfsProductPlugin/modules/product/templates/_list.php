@@ -14,7 +14,11 @@
 
 <?php  if ($pager->getNbResults() == 0 ): ?>
     <br/>
-    <?php echo __('Category is empty'); ?>
+    <?php if ($sf_request->hasParameter('is_search')): ?>
+        <?php echo __('Product is not found'); ?>
+    <?php else: ?>
+        <?php echo __('Category is empty'); ?>
+    <?php endif; ?>
     <br/><br/>
 <?php endif; ?>
 

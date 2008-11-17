@@ -4,16 +4,9 @@
     <?php include_component('category', 'headerProductList'); ?>
 <?php endif; ?>
 
-<?php /*
-<div style="clear: both">
-    <form action="<?php echo url_for('@product_list?path=' . $sf_request->getParameter('path')); ?>" method="post" class="form">
-        <ul class="main">
-            <?php echo $form ?>
-            <li class="button"><input type="submit" value="<?php echo __('Filter') ?>" class="button"/></li>
-        </ul>
-    </form>
-</div>
- */ ?>
+    <div>
+        <?php include_component('brand', 'filterList', array('filter' => $filter)) ?><br/><br/>
+    </div>
 
     <?php if (isset($isSearch)): ?>
         <form action="<?php echo url_for('@product_search'); ?>" method="post" class="form">
@@ -22,7 +15,7 @@
                 <input type="submit" value="<?php echo __('Search') ?>" class="button"/>
                 <?php echo link_to(__('Return to list'), '@product_index') ?>
             </div>
-        </form>
+        </form><br/>
         <?php $action = '@product_search' ?>
     <?php else: ?>
         <?php $action = '@product_list' ?>

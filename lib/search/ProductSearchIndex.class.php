@@ -39,7 +39,7 @@ class ProductSearchIndex extends xfIndexSingle
                 $this->setCulture(sfContext::getInstance()->getUser()->getCulture());
             }
             catch(sfException $e) {
-                
+                $this->setCulture(null);
             }
             
         }
@@ -95,11 +95,13 @@ class ProductSearchIndex extends xfIndexSingle
             array(
                 new xfField('id', xfField::STORED | xfField::INDEXED),
                 new xfField('title', xfField::TEXT),
-                new xfField('description', xfField::TEXT)
+                new xfField('description', xfField::TEXT),
+                
             )
         ));
         
         $service->addRetort(new xfRetortField);
+        $service->addRetort(new xfRetortRoute('content/index?title=$title$')); 
         
         $this->getServiceRegistry()->register($service);
     }

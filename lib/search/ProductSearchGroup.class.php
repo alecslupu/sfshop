@@ -47,9 +47,9 @@ class ProductSearchGroup extends xfIndexGroup
         $languages = LanguagePeer::getAll($criteria);
         
         foreach ($languages as $language) {
-            $productSearch1 = new ProductSearchIndex();
-            $productSearch1->setCulture($language->getCulture());
-            $this->addIndex($language->getCulture(), $productSearch1);
+            $productSearch = new ProductSearchIndex();
+            $productSearch->setCulture($language->getCulture());
+            $this->addIndex($language->getCulture(), $productSearch);
         }
     }
 }
