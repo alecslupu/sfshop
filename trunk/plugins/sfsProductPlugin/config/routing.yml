@@ -16,7 +16,7 @@ product_details:
 
 product_search:
   url: /product-search/*
-  param: { module: product, action: list }
+  param: { module: product, action: list, is_search: true }
 
 #
 # Brand Admin

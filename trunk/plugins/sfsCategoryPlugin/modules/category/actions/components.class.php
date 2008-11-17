@@ -31,12 +31,13 @@ class categoryComponents extends sfComponents
     {
         sfLoader::loadHelpers('sfsCategory');
         
+        $request = $this->getRequest();
         $this->categories = CategoryPeer::getFirstLevel();
         $this->currentCategoryId = 0;
         
         $this->parentTree = array();
         
-        if ($this->hasRequestParameter('path')) {
+        if ($request->hasParameter('path')) {
             $this->currentCategoryId = get_current_category_id();
             
             $currentCategory = CategoryPeer::retrieveByPK($this->currentCategoryId);
@@ -53,6 +54,13 @@ class categoryComponents extends sfComponents
                 $currentCategory->getParentsSeries($this->parentTree);
                 $this->parentTree = array_merge($this->parentTree, array($currentCategory));
             }
+        }
+        
+        if ($request->hasParameter('is_search')) {
+            $this->itemRouting = '@product_search';
+        }
+        else {
+            $this->itemRouting = '@product_list';
         }
     }
     

@@ -27,6 +27,8 @@ class productActions extends sfActions
     {
         $this->getUser()->getAttributeHolder()->removeNamespace('assets');
         $this->getUser()->getAttributeHolder()->removeNamespace('product');
+        $this->getUser()->getAttributeHolder()->removeNamespace('product/filter');
+        
         $this->redirect('@product_list');
     }
     
@@ -42,37 +44,18 @@ class productActions extends sfActions
     */
     public function executeList($request)
     {
-        $this->filter = $this->getUser()->getAttributeHolder()->getAll('product/filter');
+        if ($request->isMethod('post')) {
+            $this->processFilter();
+        }
         
-        $this->formFilter = new sfsProductFilterForm();
-        $brandForm = new sfsBrandFilterForm();
+        $this->filter = $this->getUser()->getAttributeHolder()->getAll('product/filter');
         
         $criteria = new Criteria();
         $this->addCategoryCriteria($criteria);
         $this->addSearchCriteria($criteria);
-        
-        //$this->formFilter->embedForm('brand', $brandForm);
-        
-        /*
-        if ($request->isMethod('post')) {
-            
-            $this->formFilter->bind($request->getParameter('filters'));
-            
-            if ($this->formFilter->isValid()) {
-                $this->processFilters();
-            }
-        }
-        
-        */
-        if (isset($this->filter['brand']['brand_id'])) {
-            $brandForm->getWidgetSchema()->offsetGet('brand_id')->setAttribute('selected', $this->filter['brand']['brand_id']);
-            $brandForm->setDefault('brand_id', $this->filter['brand']['brand_id']);
-        }
-        
-        $criteria = $this->addFiltersCriteria($criteria);
+        $criteria = $this->addFilterCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
         
-        $criteria->add(ProductI18nPeer::CULTURE, 'ru');
         $this->pager = new sfPropelPager('Product', 10);
         $this->pager->setPeerMethod('doSelectWithTranslation');
         $this->pager->setCriteria($criteria);
@@ -91,6 +74,7 @@ class productActions extends sfActions
     public function executeDetails()
     {
         sfLoader::loadHelpers('sfsCurrency');
+        
         $criteria = new Criteria();
         ProductPeer::addPublicCriteria($criteria);
         $this->product = ProductPeer::retrieveById($this->getRequestParameter('id'), $criteria, true);
@@ -152,7 +136,7 @@ class productActions extends sfActions
                 $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
-        elseif ($this->getUser()->getAttribute('query', null, 'product') != null) {
+        elseif ($request->hasParameter('is_search')) {
             $queryString = $this->getUser()->getAttribute('query', '', 'product');
             $this->formSearch->setDefault('query', $queryString);
         }
@@ -162,9 +146,8 @@ class productActions extends sfActions
             $this->isSearch = true;
             $this->queryString = $queryString;
             
-            $searchCriteria = new xfCriterionPhrase($queryString, 1);
-            
-            $results  = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
+            $searchCriteria = new xfCriterionPhrase($queryString, 2);
+            $results = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
             
             $ids = array();
             
@@ -178,20 +161,24 @@ class productActions extends sfActions
         }
     }
     
-    protected function processFilters()
+    protected function processFilter()
     {
         if ($this->hasRequestParameter('filter')) {
-            $this->filter = $this->getRequestParameter('filter');
+            $this->filter = $this->getRequestParameter('filters');
+            
+            if ($this->filter['brand_id'] == 'all') {
+                unset($this->filter['brand_id']);
+            }
+            
             $this->getUser()->getAttributeHolder()->removeNamespace('product/filter');
             $this->getUser()->getAttributeHolder()->add($this->filter, 'product/filter');
         }
     }
     
-    protected function addFiltersCriteria($criteria)
+    protected function addFilterCriteria($criteria)
     {
-        
-        if (isset($this->filter['brand']['brand_id']) && $this->filter['brand']['brand_id'] !== '') {
-            $criteria->add(ProductPeer::BRAND_ID, $this->filter['brand']['brand_id']);
+        if (isset($this->filter['brand_id']) && $this->filter['brand_id'] !== '') {
+            $criteria->add(ProductPeer::BRAND_ID, $this->filter['brand_id']);
         }
         
         return $criteria;

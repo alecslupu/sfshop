@@ -67,7 +67,7 @@
     </div>
     <div class="columns">
         <div class="column_left">
-            <?php include_component_slot('sidebar', array('item_routing' => '@product_list')) ?>
+            <?php include_component_slot('sidebar') ?>
             <div class="box_separator"></div>
             <?php include_component('currency', 'selectCurrencyForm'); ?>
         </div>
