@@ -21,24 +21,5 @@ require_once(dirname(__FILE__).'/../lib/BaseAuthorizeNetComponents.class.php');
  */
 class authorizeNetComponents extends BaseAuthorizeNetComponents
 {
-   /**
-    * Form for set credit card info.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeCardForm()
-    {
-        $response = $this->getResponse();
-        $response->addJavaScript('/js/sfsForm.js');
-        $this->form = new sfsAuthorizeNetChargeForm();
-        
-        $cardData = $this->getUser()->getAttribute('card_data', null, 'order/payment/authorizenet');
-        
-        if ($cardData != null) {
-            $this->form->setDefaults($cardData);
-        }
-    }
+
 }
