@@ -1,14 +1,37 @@
 <?php
 
 /**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
+/**
  * Subclass for representing a row from the 'admin' table.
  *
- * 
- *
- * @package plugins.sfsCorePlugin.lib.model.admin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage lib.model
+ * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @version    SVN: $Id: Admin.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class Admin extends BaseAdmin
 {
+   /**
+    * Sets credintial.
+    * Converts credintial from array to string.
+    * 
+    * @param  string $value
+    * @return void
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function setCredential($value)
+    {
+        parent::setCredential(implode(',', $value));
+    }
     
    /**
     * Crypts password to md5.
@@ -22,7 +45,6 @@ class Admin extends BaseAdmin
     {
         parent::setPassword(md5($value));
     }
-    
     
    /**
     * Get full admin name

@@ -10,9 +10,6 @@ generator:
         help:           'Admin ID'
       password: 
         name:           'Password'
-      credential: 
-        name:           'Credentials'
-        help:           'Credential list for admin'
       first_name: 
         name:           'First name'
       last_name: 
@@ -48,9 +45,7 @@ generator:
 
     edit: 
       title:            '%%_edit_caption%%'
-      display: 
-        "NONE":         [credential, is_active]
-        "Description":  [first_name, last_name, email]
+      display:          [email, first_name, last_name, _credential, is_active]
       actions: 
         _list:         ~
         _save:         ~
