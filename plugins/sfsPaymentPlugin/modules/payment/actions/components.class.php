@@ -20,44 +20,5 @@ require_once(dirname(__FILE__).'/../lib/BasePaymentComponents.class.php');
  */
 class paymentComponents extends BasePaymentComponents
 {
-   /**
-    * Payment method info.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeOrderPaymentInfo()
-    {
-        $sfUser = $this->getUser();
-        
-        $sectionsWithMethods = $sfUser->getAttribute('methods', null, 'order/payment');
-        $methodId = $sfUser->getAttribute('method_id', null, 'order/payment');
-        
-        $criteria = new Criteria();
-        $this->paymentService = PaymentPeer::retrieveById($methodId, $criteria, true);
-        
-        if ($this->paymentService == null) {
-            sfContext::getInstance()->getController()->redirect('@payment_checkout');
-        }
-    }
-    
-   /**
-    * Payment select form.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeSelectForm()
-    {
-        $this->form = new sfsPaymentSelectForm();
-        
-        $defaultMethodId = $this->getUser()->getAttribute('method_id', null, 'order/payment');
-        $this->form->setDefault('method_id', $defaultMethodId);
-        
-        $this->paymentServices = $this->form->getPaymentServices();
-    }
+
 }
