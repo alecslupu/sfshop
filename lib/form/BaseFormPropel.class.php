@@ -31,11 +31,11 @@ abstract class BaseFormPropel extends sfFormPropel
                 $this->getErrorSchema()->getValidator(),
                 $checkName,
                 array(
-                    'value' => sfContext::getInstance()->getRequest()->getParameter($fieldName),
-                    $checkName => $this->getErrorSchema()->getValidator($checkName)
+                    'value' => sfContext::getInstance()->getRequest()->getParameter($fieldName)
                 )
             )
         );
+        
     }
     
     public function defineSfsListFormatter()
