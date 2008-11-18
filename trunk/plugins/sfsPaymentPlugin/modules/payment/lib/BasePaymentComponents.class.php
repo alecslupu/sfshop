@@ -9,16 +9,14 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BasePaymentComponents.class.php');
-
 /**
- * Payment components.
+ * Base payment components.
  *
  * @package    plugins.sfsPaymentPlugin
  * @subpackage modules.payment
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  */
-class paymentComponents extends BasePaymentComponents
+class BasePaymentComponents extends sfComponents
 {
    /**
     * Payment method info.
