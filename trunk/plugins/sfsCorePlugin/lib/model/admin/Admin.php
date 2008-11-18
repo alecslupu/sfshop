@@ -23,14 +23,18 @@ class Admin extends BaseAdmin
     * Sets credintial.
     * Converts credintial from array to string.
     * 
-    * @param  string $value
+    * @param  mixed $value
     * @return void
-    * @author Dmitry Nesteruk
+    * @author Dmitry Nesteruk <nest@dev-zp.com>
     * @access public
     */
     public function setCredential($value)
     {
-        parent::setCredential(implode(',', $value));
+        if (is_array($value)) {
+            $value = implode(',', $value);
+        }
+        
+        parent::setCredential($value);
     }
     
    /**
@@ -54,7 +58,8 @@ class Admin extends BaseAdmin
     * @author Andrey Kotlyarov
     * @access public
     */
-    public function getFullName() {
+    public function getFullName()
+    {
         return $this->getFirstName() . ' ' . $this->getLastName();
     }
     

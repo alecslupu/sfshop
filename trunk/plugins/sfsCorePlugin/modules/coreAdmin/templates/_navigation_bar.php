@@ -1,7 +1,6 @@
 <?php $menu = $sf_user->getMenu(); ?>
 <?php $submenu = array(); ?>
 
-
 <?php if (count($menu) > 0): ?>
     <div class="menu">
         <ul>
