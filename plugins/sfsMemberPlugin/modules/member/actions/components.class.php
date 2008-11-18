@@ -9,6 +9,8 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+require_once(dirname(__FILE__).'/../lib/BaseMemberComponents.class.php');
+
 /**
  * Member components.
  *
@@ -17,37 +19,7 @@
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class memberComponents extends sfComponents
+class memberComponents extends BaseMemberComponents
 {
-   /**
-    * Form for set contact info.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeContactForm()
-    {
-        $this->member = $this->getUser()->getUser();
-        $this->form = new sfsMemberContactForm($this->member);
-    }
-    
-   /**
-    * Contact info.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
-    * @access public
-    */
-    public function executeContactInfo()
-    {
-        $this->member = $this->getUser()->getUser();
-        
-        $this->info = array(
-            'primary_phone'    => $this->member->getPrimaryPhone(),
-            'secondary_phone'  => $this->member->getSecondaryPhone()
-        );
-    }
+
 }
