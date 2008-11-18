@@ -34,22 +34,22 @@ coreAdmin_index:
   url: /admin-index
   param: { module: coreAdmin, action: index }
 
-
-
 coreAdmin_profile: 
   url: /coreAdmin/profile
   param: { module: coreAdmin, action: profile }
-coreAdmin_password: 
-  url: /coreAdmin/password
-  param: { module: coreAdmin, action: password }
 
 #
-# Core Admin Admin
+# administratorAdmin
 #
-coreAdminAdmin_list: 
-  url: /coreAdminAdmin/list
-  param: { module: coreAdminAdmin, action: list }
+
+administratorAdmin_list: 
+  url: /administratorAdmin/list
+  param: { module: administratorAdmin, action: list }
   
+administratorAdmin_changeMyPassword: 
+  url: /administratorAdmin/change-my-password
+  param: { module: administratorAdmin, action: changeMyPassword }
+
 #
 # Core Information
 #

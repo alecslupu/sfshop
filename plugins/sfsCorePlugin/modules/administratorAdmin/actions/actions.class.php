@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * coreAdminAdmin actions.
  *
@@ -8,13 +10,11 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
  */
-class coreAdminAdminActions extends autocoreAdminAdminActions
+class administratorAdminActions extends autoadministratorAdminActions
 {
-    
-
     public function executeChangePassword($request) {
         
-        $this->admin = $this->getAdminOrCreate();
+        $this->admin = $this->getAdministratorOrCreate();
         
         if ($request->getMethod() === sfRequest::POST) {
             $newPassword = $request->getParameter('admin[password]', null);

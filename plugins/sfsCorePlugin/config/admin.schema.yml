@@ -17,9 +17,9 @@ propel:
       size: 255
       required: true
       default: 'admin'
-    username: 
+    email: 
       type: VARCHAR
-      size: 32
+      size: 128
     password: 
       type: VARCHAR
       size: 32
@@ -27,9 +27,6 @@ propel:
       type: VARCHAR
       size: 128
     last_name: 
-      type: VARCHAR
-      size: 128
-    email: 
       type: VARCHAR
       size: 128
     is_active: 
@@ -45,7 +42,7 @@ propel:
     modified_at: 
       type: TIMESTAMP
     _uniques: 
-      uni_username: [username]
+      uni_username: [email]
 
   admin_menu: 
     _attributes: 
