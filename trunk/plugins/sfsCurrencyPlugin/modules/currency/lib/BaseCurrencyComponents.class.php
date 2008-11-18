@@ -32,5 +32,10 @@ class BaseCurrencyComponents extends sfComponents
         $this->getUser()->getBasket()->getCurrencyId();
         $this->form = new sfsSelectCurrencyForm();
         $this->form->setDefault('id', $this->getUser()->getBasket()->getCurrencyId());
+
+        // hide component, where there's nothing to select from
+        if (count($this->form->getArrayCurrencies()) <= 1) {
+            return sfView::NONE;
+        }
     }
 }
