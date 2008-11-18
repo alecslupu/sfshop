@@ -35,19 +35,19 @@ class coreAdminActions extends sfActions
             if ($this->getRequest()->isMethod('post')) {
                 $this->form->bind(
                     array(
-                        'username' => $this->getRequestParameter('username'),
+                        'email'    => $this->getRequestParameter('email'),
                         'password' => $this->getRequestParameter('password')
                     )
                 );
                 
                 if ($this->form->isValid()) {
                     
-                    $admin = AdminPeer::retrieveByUsername($this->getRequestParameter('username'));
+                    $admin = AdminPeer::retrieveByEmail($this->getRequestParameter('email'));
                     if ($admin !== null && $admin->checkPassword($this->getRequestParameter('password'))) {
                         $this->getUser()->login($admin);
                         $this->redirect('@coreAdmin_index');
                     } else {
-                        $this->form->defineError('username', 'Username or password is wrong');
+                        $this->form->defineError('email', 'Email or password is wrong');
                     }
                     
                 }

@@ -8,9 +8,6 @@ generator:
       id: 
         name:           'ID'
         help:           'Admin ID'
-      username: 
-        name:           'Username'
-        help:           'Nick for login'
       password: 
         name:           'Password'
       credential: 
@@ -52,7 +49,7 @@ generator:
     edit: 
       title:            '%%_edit_caption%%'
       display: 
-        "NONE":         [username, credential, is_active]
+        "NONE":         [credential, is_active]
         "Description":  [first_name, last_name, email]
       actions: 
         _list:         ~
