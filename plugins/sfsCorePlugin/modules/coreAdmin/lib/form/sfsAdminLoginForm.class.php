@@ -35,8 +35,7 @@ class sfsAdminLoginForm extends AdminForm
             )
         );
         
-        parent::configure();
-        
+        $this->getWidgetSchema()->setNameFormat('data[%s]');
         $this->defineSfsAdminListFormatter();
     }
 }

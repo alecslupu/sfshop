@@ -10,9 +10,10 @@
 class sfsWidgetFormSchemaFormatterAdminList extends sfWidgetFormSchemaFormatter
 {
   protected
-    $rowFormat       = "<div class=\"form-row\">\n %label%\n <div class=\"content\">%error%\n %field% %help%\n</div> %hidden_fields%</div>\n",
-    $helpFormat      = '<div class="sf_admin_edit_help">%help%</div>',
+    $rowFormat              = "<div class=\"form-row\">\n %label%\n <div class=\"content\">%error%\n %field% %help%\n</div> %hidden_fields%</div>\n",
+    $errorRowFormat         = "<div>\n%errors%</div>\n",
+    $helpFormat             = '<div class="sf_admin_edit_help">%help%</div>',
     $errorListFormatInARow  = "%errors%",
-    $errorRowFormatInARow  = "\n<div class=\"form-error\">↓ %error% ↓</div>\n",
-    $decoratorFormat = "<fieldset>\n%content%</fieldset>";
+    $errorRowFormatInARow   = "\n<div class=\"form-error\">↓ %error% ↓</div>\n",
+    $decoratorFormat        = "<fieldset>\n%content%</fieldset>";
 }

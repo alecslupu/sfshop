@@ -32,7 +32,7 @@ all:
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            false     # Unique secret to enable CSRF protection or false to disable
-    standard_helpers:       [ Partial, Cache, Form, sfsCurrency ]
+    standard_helpers:       [ Partial, Cache, Form, sfsCurrency, I18N ]
     enabled_modules:        [ default, coreAdmin, coreAdminAdmin, memberAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, coreInformationAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
 
     # Output escaping settings
