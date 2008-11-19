@@ -1,4 +1,5 @@
 <?php
+
 /**
  * sfsUniqueValidator
  *
@@ -10,14 +11,11 @@
 class sfsUniqueValidator extends sfValidator
 {
     
-    
-    
-    
     private function checkUnique($className, $id, $fieldName, $value)
     {
         $c = new Criteria();
-        $c->addAnd(constant($className . 'Peer::ID'), $id, Criteria::NOT_EQUAL);
-        $c->addAnd(constant($className . 'Peer::' . $fieldName), $value, Criteria::EQUAL);
+        $c->add(constant($className . 'Peer::ID'), $id, Criteria::NOT_EQUAL);
+        $c->add(constant($className . 'Peer::' . strtoupper($fieldName)), $value, Criteria::EQUAL);
         
         $count = call_user_func(
             array(
@@ -29,9 +27,6 @@ class sfsUniqueValidator extends sfValidator
         
         return ($count == 0);
     }
-    
-    
-    
     
    /**
     * Executes this validator.
@@ -55,9 +50,6 @@ class sfsUniqueValidator extends sfValidator
         
         return true;
     }
-    
-    
-    
     
    /**
     * Initializes this validator.
