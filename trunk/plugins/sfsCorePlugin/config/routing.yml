@@ -42,11 +42,11 @@ coreAdmin_profile:
 # administratorAdmin
 #
 
-administratorAdmin_list: 
-  url: /administratorAdmin/list
+administratorAdmin_list:
+  url: /administratorAdmin/list/*
   param: { module: administratorAdmin, action: list }
   
-administratorAdmin_changeMyPassword: 
+administratorAdmin_changeMyPassword:
   url: /administratorAdmin/change-my-password
   param: { module: administratorAdmin, action: changeMyPassword }
 

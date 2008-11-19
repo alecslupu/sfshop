@@ -37,9 +37,9 @@ generator:
         _edit:          ~
         _delete:        ~
         change_password: 
-          name:             'Change password'
-          action:           changePassword
-          icon:             '/sf/sf_admin/images/edit_icon.png'
+          name:             Change password
+          action:           resetPassword
+          icon:             /admin/images/actions/reset_password.png
       actions: 
         _create:        ~
 

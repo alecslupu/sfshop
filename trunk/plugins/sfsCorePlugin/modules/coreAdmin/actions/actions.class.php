@@ -43,10 +43,12 @@ class coreAdminActions extends sfActions
                 if ($this->form->isValid()) {
                     
                     $admin = AdminPeer::retrieveByEmail($this->getRequestParameter('email'));
+                    
                     if ($admin !== null && $admin->checkPassword($this->getRequestParameter('password'))) {
                         $this->getUser()->login($admin);
                         $this->redirect('@coreAdmin_index');
-                    } else {
+                    }
+                    else {
                         $this->form->defineError('email', 'Email or password is wrong');
                     }
                     
