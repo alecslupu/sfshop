@@ -19,31 +19,27 @@
  */
 class BaseAdministratorAdminActions extends autoadministratorAdminActions
 {
-    public function executeChangePassword($request)
+    public function executeChangeMyPassword($request)
     {
-        $this->admin = $this->getAdminOrCreate();
-        
         if ($request->getMethod() === sfRequest::POST) {
-            $newPassword = $request->getParameter('admin[password]', null);
+            $currentPassword = $request->getParameter('admin[current_password]');
             
-            if ($newPassword === null) {
-                $this->getRequest()->setError('admin{password}', 'Password not found');
-            } else {
-                $this->admin->setPassword($newPassword);
-                $this->admin->save();
-                $this->getUser()->setFlash('notice', 'Your modifications have been saved');
-                return $this->redirect('coreAdminAdmin/list?id=' . $this->admin->getId());
+            $admin = $this->getUser()->getUser();
+            
+            if ($admin->checkPassword($currentPassword)) {
+                $admin->setPassword($request->getParameter('admin[password]'));
+                $admin->save();
+                $this->getUser()->setFlash('notice', 'Your new password has been saved');
+                return $this->redirect('administratorAdmin/list');
+            }
+            else {
+                $this->getRequest()->setError('admin{current_password}', 'Current password is wrong');
             }
         }
-        
-        return sfView::SUCCESS;
     }
     
-    public function handleErrorChangePassword()
+    public function handleErrorChangeMyPassword()
     {
-        $this->preExecute();
-        $this->admin = $this->getAdminOrCreate();
-        
         return sfView::SUCCESS;
     }
     

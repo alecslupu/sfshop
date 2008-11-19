@@ -56,20 +56,6 @@ AdminMenu:
     route:          ''
     pos:            5
     is_active:      1
-  AdminMenu_Reserv1: 
-    parent_id:      null
-    credential:     ''
-    title:          'Reserv4'
-    route:          ''
-    pos:            6
-    is_active:      0
-  AdminMenu_Reserv2: 
-    parent_id:      null
-    credential:     ''
-    title:          'Reserv5'
-    route:          ''
-    pos:            7
-    is_active:      0
   
   AdminMenu_Administrator_Admins: 
     parent_id:      AdminMenu_Administrator
@@ -79,17 +65,10 @@ AdminMenu:
     pos:            1
     is_active:      1
   
-#  AdminMenu_Administrator_Profile: 
-#    parent_id:      AdminMenu_Administrator
-#    credential:     'superadmin,admin'
-#    title:          'My profile'
-#    route:          'coreAdmin_profile'
-#    pos:            1
-#    is_active:      1
   AdminMenu_Administrator_ChangePassword: 
     parent_id:      AdminMenu_Administrator
     credential:     'superadmin,admin'
-    title:          'Change password'
+    title:          'Change my password'
     route:          'administratorAdmin_changeMyPassword'
     pos:            2
     is_active:      1
@@ -192,4 +171,3 @@ AdminMenu:
     route:          'currencyAdmin_list'
     pos:            1
     is_active:      1
- 
