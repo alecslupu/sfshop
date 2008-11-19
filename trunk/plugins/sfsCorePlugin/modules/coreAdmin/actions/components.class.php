@@ -7,6 +7,6 @@
  * @subpackage core
  * @author     Dmitry Nesteruk
  */
-class coreAdminComponents extends sfComponents {
-    
+class coreAdminComponents extends sfComponents
+{
 }

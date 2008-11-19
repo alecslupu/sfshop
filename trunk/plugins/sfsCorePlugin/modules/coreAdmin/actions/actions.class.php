@@ -17,12 +17,8 @@ class coreAdminActions extends sfActions
     */
     public function executeIndex($request)
     {
-        //$this->forward('default', 'module');
-        
         return sfView::SUCCESS;
     }
-    
-    
     
     public function executeLogin($request)
     {
@@ -33,25 +29,22 @@ class coreAdminActions extends sfActions
         }
         else {
             if ($this->getRequest()->isMethod('post')) {
-                $this->form->bind(
-                    array(
-                        'email'    => $this->getRequestParameter('email'),
-                        'password' => $this->getRequestParameter('password')
-                    )
-                );
+                
+                $data = $request->getParameter('data');
+                
+                $this->form->bind($data);
                 
                 if ($this->form->isValid()) {
                     
-                    $admin = AdminPeer::retrieveByEmail($this->getRequestParameter('email'));
+                    $admin = AdminPeer::retrieveByEmail($data['email']);
                     
-                    if ($admin !== null && $admin->checkPassword($this->getRequestParameter('password'))) {
+                    if ($admin !== null && $admin->checkPassword($data['password'])) {
                         $this->getUser()->login($admin);
                         $this->redirect('@coreAdmin_index');
                     }
                     else {
                         $this->form->defineError('email', 'Email or password is wrong');
                     }
-                    
                 }
             }
         }
@@ -59,26 +52,9 @@ class coreAdminActions extends sfActions
         return sfView::SUCCESS;
     }
     
-    
-    
     public function executeLogout()
     {
         $this->getUser()->logout();
         $this->redirect('@coreAdmin_login');
     }
-    
-    
-    
-    //TODO create action for edit admin profile
-    public function executeProfile()
-    {
-        return sfView::SUCCESS;
-    }
-    
-    //TODO create action for change admin password
-    public function executePassword()
-    {
-        return sfView::SUCCESS;
-    }
-    
 }
