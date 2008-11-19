@@ -13,6 +13,7 @@ class EmailTemplatePeer extends BaseEmailTemplatePeer
     const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
     const RECONFIRM_EMAIL = 'RECONFIRM_EMAIL';
     const NEW_ADMIN_ADDED = 'NEW_ADMIN_ADDED';
+    const RESET_PASSWORD  = 'RESET_PASSWORD';
     
    /**
     * Gets email template with body and subject by tamplate name and culture.

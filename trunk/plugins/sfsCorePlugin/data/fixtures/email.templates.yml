@@ -55,3 +55,17 @@ EmailTemplate:
       Password: %password%<br/><br/>
     created_at: 2008-01-23 18:50:41
     updated_at: 2008-01-26 14:36:12
+  sfEmailTemplate_EN_5: 
+    name: RESET_PASSWORD
+    culture: en
+    subject: Your password was reset
+    body: |
+      Hello!<br/><br/>
+      Your data for login to admin panel.<br/><br/>
+      Admin panel: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a>
+      <br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12

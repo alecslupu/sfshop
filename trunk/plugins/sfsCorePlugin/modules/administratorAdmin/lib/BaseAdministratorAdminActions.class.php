@@ -30,7 +30,8 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
                 $admin->setPassword($request->getParameter('admin[password]'));
                 $admin->save();
                 $this->getUser()->setFlash('notice', 'Your new password has been saved');
-                return $this->redirect('administratorAdmin/list');
+                
+                $this->redirect('administratorAdmin/list');
             }
             else {
                 $this->getRequest()->setError('admin{current_password}', 'Current password is wrong');
@@ -41,6 +42,41 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
     public function handleErrorChangeMyPassword()
     {
         return sfView::SUCCESS;
+    }
+    
+    public function executeResetPassword($request)
+    {
+        $id = $request->getParameter('id');
+        
+        $admin = AdminPeer::retrieveById($id, new Criteria());
+        
+        if ($admin != null) {
+            sfLoader::loadHelpers(array('Url'));
+            $password = substr(md5(time() . rand(1, 10000)), 0, 8);
+            
+            $admin->setPassword($password);
+            $admin->save();
+            
+            $urlToAdminPanel = url_for('@coreAdmin_login', true);
+            
+            $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::RESET_PASSWORD);
+            
+            $mail = new sfsMail();
+            $mail->addAddress($admin->getEmail());
+            $mail->setTemplate($template);
+            $mail->setBodyParams(
+                array(
+                    'email'                => $admin->getEmail(),
+                    'password'             => $password,
+                    'link_to_admin_panel'  => $urlToAdminPanel
+                )
+            );
+            
+            $mail->send();
+            $this->getUser()->setFlash('notice', 'Password has been reset for administrator ' . $admin->getFullName());
+        }
+        
+        $this->redirect('administratorAdmin/list');
     }
     
     protected function saveAdmin($admin)
