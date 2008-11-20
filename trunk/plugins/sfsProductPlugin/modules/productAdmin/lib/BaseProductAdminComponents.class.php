@@ -49,7 +49,7 @@ class BaseProductAdminComponents extends sfComponents
         }
     }
     
-    public function executeEditFormOptionsList()
+    public function executeEditOptionsListForm()
     {
         $criteria = new Criteria();
         OptionTypePeer::addPublicCriteria($criteria);
@@ -74,6 +74,14 @@ class BaseProductAdminComponents extends sfComponents
                     unset($this->optionTypes[$key]);
                 }
             }
+            
         }
+    }
+    
+    public function executeAddOptionValueForm()
+    {
+        $criteria = new Criteria();
+        LanguagePeer::addPublicCriteria($criteria);
+        $this->languages = LanguagePeer::getAll($criteria);
     }
 }

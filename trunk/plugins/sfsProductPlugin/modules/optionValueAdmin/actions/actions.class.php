@@ -22,4 +22,48 @@ class optionValueAdminActions extends autooptionValueAdminActions
             $this->redirect('optionValueAdmin/list');
         }
     }
+    
+    public function handleErrorEdit()
+    {
+        $request = $this->getRequest();
+        
+        if ($request->isXmlHttpRequest()) {
+            
+            $errors = array();
+            
+            foreach ($request->getErrors() as $key => $error) {
+                
+                $matches = '';
+                preg_match('/option_value\{(.*?)\}/', $key, $matches);
+                
+                $errors[$matches[1]] = $error;
+            }
+            
+            return $this->renderText(sfsJSONPeer::createResponseError($errors));
+        }
+        else {
+            return parent::handleErrorEdit();
+        }
+    }
+    
+    public function handlePost($type)
+    {
+        $request = $this->getRequest();
+        
+        if ($request->isXmlHttpRequest()) {
+            $this->updateOptionValueFromRequest();
+            
+            $this->saveOptionValue($this->option_value);
+            
+            $response = array(
+                'id'    => $this->option_value->getId(),
+                'title' => $this->option_value->getTitle()
+            );
+            
+            return $this->renderText(sfsJSONPeer::createResponseSuccess($response));
+        }
+        else {
+            parent::handlePost($type);
+        }
+    }
 }

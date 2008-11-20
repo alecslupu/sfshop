@@ -245,3 +245,20 @@ h1.logo a {
     color: #000000;
 }
 
+form ul {
+    padding-left: 0px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+form li {
+    font-weight: bold;
+    list-style: none;
+    line-height: 23px;
+}
+
+form ul.error {
+    color: #f21207;
+    font-size: 11px;
+    list-style: none;
+}

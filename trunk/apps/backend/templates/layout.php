@@ -11,16 +11,24 @@
 
 </head>
 <body>
-
-    <!-- HEADER -->
-    <?php include_partial('coreAdmin/header'); ?>
-    <!-- /HEADER -->
+<div id="container_loading" style="display: none"><?php echo __('Loading') ?></div>
+<?php
+    echo javascript_tag('
+        var status = {
+            ERROR: ' . sfsJSONPeer::STATUS_ERROR . ',
+            SUCCESS: ' . sfsJSONPeer::STATUS_SUCCESS . '
+        };
+    ');
+?>
+<!-- HEADER -->
+<?php include_partial('coreAdmin/header'); ?>
+<!-- /HEADER -->
 
 <?php echo $sf_content ?>
 
-    <!-- FOOTER -->
-    <?php include_partial('coreAdmin/footer'); ?>
-    <!-- /FOOTER -->
+<!-- FOOTER -->
+<?php include_partial('coreAdmin/footer'); ?>
+<!-- /FOOTER -->
 
 </body>
 </html>
