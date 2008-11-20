@@ -18,29 +18,20 @@ generator:
         title: 
           name:        Categories/Products
           help:        Title
-
-    show:
-      title:            View a product details
-      display: 
-        "NONE":         [ title, _category_id, _brand_id, _thumbnail, is_active ]
-        "Stock":        [ price, quantity, weight, cube ]
-        "Options":      [ _edit_options_list ]
-        "Description":  [ description, description_short ]
-        "Meta":         [ meta_keywords, meta_description ]
     
     edit: 
       title:            '%%_edit_caption%%'
       display: 
-        "NONE":         [ title_i18n, _category_id, _brand_id, _thumbnail, is_active ]
+        "NONE":         [ _category_id, _brand_id, _thumbnail, is_active ]
+        "Description":  [ title_i18n, description_i18n, description_short_i18n ]
         "Stock":        [ price, quantity, weight, cube ]
         "Options":      [ _edit_options_list ]
-        "Description":  [ description_i18n, description_short_i18n ]
         "Meta":         [ meta_keywords_i18n, meta_description_i18n ]
       actions: 
         _list:          
           action:       catalogList
-        _save:         ~
-        _delete:       ~
+        _save:          ~
+        _delete:        ~
         
       fields:
         title_i18n: 
@@ -52,16 +43,16 @@ generator:
           type:           textarea_tag
           params:         size=130x10
         description_short_i18n: 
-          name:           Brief
+          name:           Short description
           type:           textarea_tag
           params:         size=80x10
         meta_keywords_i18n: 
           name:           Keywords
           type:           textarea_tag
-          params:         size=80x10
+          params:         size=80x2
         meta_description_i18n: 
           name:           Description
           type:           textarea_tag
-          params:         size=80x10
+          params:         size=80x3
         edit_options_list: 
-          name:        'Options' 
+          name:           Options
