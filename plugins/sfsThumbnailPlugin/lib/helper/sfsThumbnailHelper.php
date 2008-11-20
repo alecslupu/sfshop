@@ -1,10 +1,17 @@
 <?php
 
-function thumbnail_tag($thumbnail, $title)
+function thumbnail_tag($thumbnail, $title, $isAdminPart = false)
 {
     if ($thumbnail !== null) {
+        
+        $prefix = '';
+        
+        if ($isAdminPart) {
+            $prefix = 'http://' . sfContext::getInstance()->getRequest()->getHost() . '/images/';
+        }
+        
         return image_tag(
-            $thumbnail->getUrl(), 
+            $prefix . $thumbnail->getUrl(), 
             array(
                 'width'  => $thumbnail->getThumbnailTypeAssetType()->getWidth(),
                 'height' => $thumbnail->getThumbnailTypeAssetType()->getHeight(),

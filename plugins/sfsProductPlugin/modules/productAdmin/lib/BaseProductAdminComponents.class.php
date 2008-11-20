@@ -66,7 +66,7 @@ class BaseProductAdminComponents extends sfComponents
             
             foreach ($this->optionTypes as $key => $optionType) {
                 $optionValues = OptionValuePeer::getByTypeId($optionType->getId(), $criteria);
-                
+                print_r($optionValues);
                 if (count($optionValues) > 0) {
                     $this->optionValues[$optionType->getId()] = $optionValues;
                 }
@@ -74,7 +74,9 @@ class BaseProductAdminComponents extends sfComponents
                     unset($this->optionTypes[$key]);
                 }
             }
-            
+        }
+        else {
+            return sfView::NONE;
         }
     }
     
