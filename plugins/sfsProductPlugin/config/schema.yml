@@ -51,8 +51,6 @@ propel:
     description: 
       type: LONGVARCHAR
 
-
-
   product: 
     _attributes: 
       phpName: Product
@@ -130,8 +128,6 @@ propel:
     meta_description: 
       type: LONGVARCHAR
 
-
-
   option_type: 
     _attributes: 
       phpName: OptionType
@@ -183,8 +179,6 @@ propel:
     description: 
       type: LONGVARCHAR
 
-
-
   option_value: 
     _attributes: 
       phpName: OptionValue
@@ -212,7 +206,7 @@ propel:
     is_active: 
       type: BOOLEAN
       required: true
-      default: 1
+      default: 0
     is_deleted: 
       type: BOOLEAN
       required: true

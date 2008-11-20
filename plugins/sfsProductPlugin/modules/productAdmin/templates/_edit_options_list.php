@@ -1,1 +1,1 @@
-<?php include_component('productAdmin', 'editFormOptionsList', array('product' => $product)) ?>
+<?php include_component('productAdmin', 'editOptionsListForm', array('product' => $product)) ?>

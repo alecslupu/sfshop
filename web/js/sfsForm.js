@@ -60,7 +60,7 @@ var sfsForm = Class.create({
             alert('Unknown response');
         }
         
-        this.postExecute(response);
+        return this.postExecute(response);
     },
     clearErrors: function()
     {

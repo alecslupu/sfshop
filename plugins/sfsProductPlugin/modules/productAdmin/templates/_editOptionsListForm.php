@@ -27,7 +27,7 @@
                                 $checkedValue = 0;
                                 $prefix = '';
                             ?>
-                        
+                            
                             <?php foreach ($productOptions as $productOption): ?>
                                 <?php if ($optionValue->getId() == $productOption->getOptionValueId()): ?>
                                     <?php $price = $productOption->getPrice();
@@ -62,6 +62,19 @@
                             </td>
                          </tr>
                          <?php endforeach; ?>
+                         <tr>
+                             <td colspan="4">
+                                 <ul class="sf_admin_actions">
+                                     <li>
+                                        <?php echo button_to_function(
+                                            __('Add new value'), 
+                                           'addNewOptionValue(' . $optionType->getId() . ', this)', 
+                                            array('class' => 'sf_admin_action_create'
+                                         )) ?>
+                                     </li>
+                                 </ul>
+                             </td>
+                         </tr>
                      </table>
                 </td>
             </tr>
