@@ -93,6 +93,43 @@ class BaseProductAdminActions extends autoproductAdminActions
         $product->save();
     }
     
+    public function handlePost($type)
+    {
+        sfLoader::loadHelpers('sfsCategory');
+        
+        $this->updateProductFromRequest();
+        
+        try
+        {
+            $this->saveProduct($this->product);
+            $this->clearFrontendCache();
+        }
+        catch (PropelException $e)
+        {
+            if ( $type == 'edit' ) {
+                $this->getRequest()->setError('edit', 'Could not save the edited Products.');
+            }
+            else {
+                $this->getRequest()->setError('create', 'Could not save the created Products.');
+            }
+            
+            return $this->forward('catalogAdmin', 'list');
+        }
+        
+        $this->getUser()->setFlash('notice', 'Your modifications have been saved');
+        
+        if ($this->getRequestParameter('save_and_add'))
+        {
+            return $this->redirect('productAdmin/create');
+        }
+        else
+        {
+            list($product2Category) = $this->product->getProduct2CategorysJoinCategory();
+            $path = $product2Category->getCategory()->getPath();
+            return $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
+        }
+    }
+    
     public function executeDelete()
     {
         sfLoader::loadHelpers('sfsCategory');
