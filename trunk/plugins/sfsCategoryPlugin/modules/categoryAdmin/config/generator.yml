@@ -39,7 +39,7 @@ generator:
         meta_keywords_i18n: 
           name:           Keywords
           type:           textarea_tag
-          params:         size=80x3
+          params:         size=80x2
         meta_description_i18n: 
           name:           Description
           type:           textarea_tag
