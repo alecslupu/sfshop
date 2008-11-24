@@ -9,17 +9,15 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseCategoryAdminComponents.class.php');
-
 /**
- * Categories admin components.
+ * Base categories admin components.
  *
  * @package    plugins.sfsCategoryPlugin
  * @subpackage modules.categoriesAdmin
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: components.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
-class categoryAdminComponents extends BaseCategoryAdminComponents 
+class BaseCategoryAdminComponents extends sfComponents
 {
    /**
     * Draws categories tree.
