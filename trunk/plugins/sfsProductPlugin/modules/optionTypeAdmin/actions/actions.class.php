@@ -26,7 +26,7 @@ class optionTypeAdminActions extends autooptionTypeAdminActions
     public function executeValuesList()
     {
         sfLoader::loadHelpers('Url');
-        $this->redirect(url_for('optionValueAdmin/list', true) . '?filters[type_id]= ' . $this->getRequestParameter('id') . ' &filter=filter');
+        $this->redirect(url_for('optionValueAdmin/list', true) . '?filters[type_id]=' . $this->getRequestParameter('id') . '&filter=filter');
     }
     
     protected function addFiltersCriteria($c)
