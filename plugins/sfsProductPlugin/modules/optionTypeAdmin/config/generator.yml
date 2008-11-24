@@ -5,7 +5,7 @@ generator:
     theme:            default
     
     list: 
-      title:            List of Products options
+      title:            List of product's options
       display:          [ id, title, pos, is_active, created_at, updated_at]
       max_per_page:     20
       object_actions: 
@@ -13,7 +13,7 @@ generator:
         _delete:        ~
         values_list:
           action:       valuesList
-          icon:         options.png
+          icon:         /admin/images/actions/options_list.png
           name:         Option type values
       actions: 
         _create:        ~
