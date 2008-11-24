@@ -82,7 +82,7 @@ $languages = LanguagePeer::getAll($criteria);
                 'alt'   => '<?php echo $title ?>',
                 'align' => 'top'
             )
-          ); ?]
+          ); ?]<br/>
         
           [?php $value = <?php echo $this->getColumnEditTag($column, array('culture' => $language->getCulture(),'control_name' => $this->getSingularName() . '['. $column->getName() . '_' . $language->getCulture() . ']')); ?>; echo $value ? $value : '&nbsp;' ?]
           &nbsp; &nbsp; &nbsp;<?php echo $this->getHelp($column, 'edit') ?>

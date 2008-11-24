@@ -18,8 +18,8 @@ generator:
     edit: 
       title:            '%%_edit_caption%%'
       display: 
-        "NONE":         [ title_i18n, _parent_id, _thumbnail, is_active ]
-        "Description":  [ description_i18n ]
+        "NONE":         [ _parent_id, _thumbnail, is_active ]
+        "Description":  [ title_i18n, description_i18n ]
         "Meta":         [ meta_keywords_i18n, meta_description_i18n ]
       actions: 
         _list:          
@@ -31,18 +31,18 @@ generator:
         title_i18n: 
           name:           Title
           type:           input_tag
-          params:         size=100
+          params:         size=80
         description_i18n: 
           name:           Description
           type:           textarea_tag
-          params:         size=130x10
+          params:         size=90x10
         meta_keywords_i18n: 
           name:           Keywords
           type:           textarea_tag
-          params:         size=80x10
+          params:         size=80x3
         meta_description_i18n: 
           name:           Description
           type:           textarea_tag
-          params:         size=80x10
+          params:         size=80x3
         edit_parent_category: 
           name: parent_id

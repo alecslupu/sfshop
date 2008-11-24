@@ -67,7 +67,7 @@ class categoryAdminActions extends autocategoryAdminActions
     
     public function executeDeleteThumbnail()
     {
-        ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($this->getRequestParameter('id'), 'Product');
+        ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($this->getRequestParameter('id'), 'Category');
         $this->redirect('categoryAdmin/edit?id=' . $this->getRequestParameter('id'));
     }
     

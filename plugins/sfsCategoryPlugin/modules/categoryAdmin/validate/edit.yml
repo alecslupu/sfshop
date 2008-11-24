@@ -1,0 +1,37 @@
+methods:
+  post: 
+    - "category{thumbnail}"
+    - "category{title_i18n}"
+    - "category{description_i18n}"
+    - "category{meta_keywords_i18n}"
+    - "category{meta_description_i18n}"
+    
+fillin:
+  activate: on
+
+names: 
+  category{thumbnail}:
+    required:           No
+    file:               true
+    validators:         [thumbnailValidator]
+  category{title_i18n}: 
+    required:           Yes
+    required_msg:       Title is a required field
+  category{description_i18n}: 
+    required:           Yes
+    required_msg:       Description is a required field
+  category{meta_keywords_i18n}: 
+    required:           No
+  category{meta_description_i18n}: 
+    required:           No
+
+thumbnailValidator:
+  class: sfFileValidator
+  param:
+    mime_types:
+      - 'image/jpeg'
+      - 'image/pjpeg'
+      - 'image/png'
+      - 'image/x-png'
+      - 'image/gif'
+    mime_types_error: Only PNG, JPEG and GIF files are allowed
