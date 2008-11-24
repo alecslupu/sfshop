@@ -3,19 +3,20 @@ methods:
     - "brand{title_i18n}"
     - "brand{url}"
     - "brand{description_i18n}"
+fillin: 
+  activate: on
+
 names: 
   brand{title_i18n}: 
     required:           Yes
-    required_msg:       Please enter title
+    required_msg:       Title is a required field
+  brand{description_i18n}: 
+    required:           No
   brand{url}: 
     required:           No
     validators:         [urlValidator]
-  brand{description_i18n}: 
-    required:           No
-fillin: 
-  activate:             on
 
 urlValidator: 
   class:              sfUrlValidator
   param: 
-    url_error:        URL is not valid
+    url_error:        This is not a valid url

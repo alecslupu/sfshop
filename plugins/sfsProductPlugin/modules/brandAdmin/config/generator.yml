@@ -5,7 +5,7 @@ generator:
     theme:              default
 
     list: 
-      title:            'List of brand'
+      title:            List of brands
       display:          [=id, title, url, created_at, updated_at]
       max_per_page:     20
       click_action:     show
@@ -32,8 +32,8 @@ generator:
         title_i18n: 
           name:           Title
           type:           input_tag
-          params:         size=100
+          params:         size=80
         description_i18n: 
           name:           Description
           type:           textarea_tag
-          params:         size=130x10
+          params:         size=90x3
