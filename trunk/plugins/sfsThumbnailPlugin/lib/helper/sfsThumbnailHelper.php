@@ -9,12 +9,13 @@ function thumbnail_tag($thumbnail, $title, $isAdminPart = false)
         if ($isAdminPart) {
             $prefix = 'http://' . sfContext::getInstance()->getRequest()->getHost() . '/images/';
         }
-        
+        $width = !$thumbnail->getThumbnailTypeAssetType()->getWidth()?'':$thumbnail->getThumbnailTypeAssetType()->getWidth();
+        $height = !$thumbnail->getThumbnailTypeAssetType()->getHeight()?'':$thumbnail->getThumbnailTypeAssetType()->getHeight();
         return image_tag(
             $prefix . $thumbnail->getUrl(), 
             array(
-                'width'  => $thumbnail->getThumbnailTypeAssetType()->getWidth(),
-                'height' => $thumbnail->getThumbnailTypeAssetType()->getHeight(),
+                'width'  => $width,
+                'height' => $height,
                 'title'  => $title
             )
         );
