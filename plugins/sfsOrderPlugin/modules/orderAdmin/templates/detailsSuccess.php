@@ -22,7 +22,7 @@
                 <tr>
                     <td valign="top"><b><?php echo $i; ?>.</b>&nbsp;</td>
                     <td>
-                        <b><?php echo $orderProduct->getProduct()->getTitle() ?></b>
+                        <?php echo $orderProduct->getProduct()->getTitle() ?>
                         <?php include_component('orderAdmin', 'productOptionsList', array('orderProduct' => $orderProduct)) ?>
                     </td>
                     <td valign="top">
@@ -31,7 +31,7 @@
                     <td valign="top" align="right"><?php echo format_currency($orderProduct->getTotalPrice()) ?></td>
                 </tr>
             <?php $i++; endforeach; ?>
-                <tr><td colspan="4" align="right"><b>Total:</b> <?php echo format_currency($order->getTotalPrice()) ?></td></tr>
+                <tr><td colspan="4" align="right"><b>Subtotal:</b> <?php echo format_currency($order->getTotalPrice()) ?></td></tr>
             </table>
         </td>
     </tr>
@@ -46,7 +46,17 @@
             <?php include_component('deliveryAdmin', 'orderDeliveryInfo', array()) ?>
         </td>
     </tr>
-
+    <tr>
+        <td colspan="2">
+            <table cellspacing="0" cellpadding="0" width="100%" class="sf_admin_list">
+                <tr><th><?php echo __('Member\'s comment for order') ?></th></tr>
+                <tr><td><?php echo $order->getComment() ?></td></tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><h3><?php echo __('Total') ?>: <?php echo format_currency($order->getTotalPriceWithDeliveryPrice()) ?></h3></td>
+    </tr>
     <tr>
         <td><?php include_component('orderAdmin', 'orderStatusSelect', array('order' => $order)) ?></td>
         <td></td>
