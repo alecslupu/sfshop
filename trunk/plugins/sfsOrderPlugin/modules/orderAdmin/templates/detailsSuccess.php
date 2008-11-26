@@ -1,4 +1,4 @@
-<?php use_helper('sfsPayment', 'sfsAddressBook') ?>
+<?php use_helper('sfsAddressBook') ?>
 <div id="sf_admin_container">
 <h3>Order details</h3>
 <table cellspacing="0" cellpadding="0" width="100%" class="sf_admin_list">
@@ -9,9 +9,6 @@
                 <tr>
                     <td>
                       <?php
-                          $addressArray = $order->getDeliveryAddress();
-                          $address = new AddressBook();
-                          $address->fromArray($addressArray, BasePeer::TYPE_FIELDNAME);
                           echo format_address($address)
                       ?>
                   </td>
@@ -38,6 +35,18 @@
             </table>
         </td>
     </tr>
+    
+    <tr>
+        <td colspan="2">
+            <?php include_component('paymentAdmin', 'orderPaymentInfo', array()) ?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <?php include_component('deliveryAdmin', 'orderDeliveryInfo', array()) ?>
+        </td>
+    </tr>
+
     <tr>
         <td><?php include_component('orderAdmin', 'orderStatusSelect', array('order' => $order)) ?></td>
         <td></td>
