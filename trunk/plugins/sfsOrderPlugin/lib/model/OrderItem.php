@@ -25,9 +25,20 @@ class OrderItem extends BaseOrderItem
             $price = $price + $orderProduct->getPrice() * $orderProduct->getQuantity();
         }
         
-        $price = $price + $this->getDeliveryPrice();
-        
         return $price;
+    }
+    
+   /**
+    * Calculates sum of all products and delivery price.
+    *
+    * @param  void
+    * @return string
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public function getTotalPriceWithDeliveryPrice()
+    {
+        return $this->getTotalPrice() + $this->getDeliveryPrice();
     }
     
    /**
