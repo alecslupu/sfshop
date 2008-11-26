@@ -9,17 +9,15 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseCategoryAdminActions.class.php');
-
 /**
- * Category admin actions.
+ * Base memberAdmin actions.
  *
- * @package    plugins.sfsCategoryPlugin
- * @subpackage modules.categoryAdmin
+ * @package    plugins.sfsMemberPlugin
+ * @subpackage modules.memberAdmin
  * @author     Dmitry Nesteruk <nest@dev-zp.com>
  * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
  */
-class categoryAdminActions extends BaseCategoryAdminActions
+class BaseMemberAdminActions extends automemberAdminActions
 {
 
 }
