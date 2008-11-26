@@ -23,7 +23,7 @@ class BasePaypalActions extends sfsPaymentActions
     {
         $sfUser = $this->getUser();
         
-        $orderItem = $this->getOrderItemObjectByIdOrUuid($this->getRequestParameter('order_item_id'));
+        $orderItem = $this->getOrderItemObjectByIdOrUuid($request->getParameter('order_item_id'));
         $paymentService = $this->getPaymentServiceObject();
         $params = sfsJSONPeer::decode($paymentService->getParams());
         
