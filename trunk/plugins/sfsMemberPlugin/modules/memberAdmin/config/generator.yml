@@ -8,7 +8,7 @@ generator:
       full_name: 
         name:           Name
       access_num: 
-        name:           'Count of access'
+        name:           Count of access
 
     list: 
       title:            List of member

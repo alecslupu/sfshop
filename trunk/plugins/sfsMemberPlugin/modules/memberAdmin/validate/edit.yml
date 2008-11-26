@@ -1,62 +1,39 @@
 methods: 
   post: 
     - "member{email}"
-    - "member{credential}"
     - "member{first_name}"
     - "member{last_name}"
     - "member{primary_phone}"
     - "member{secondary_phone}"
-#    - "member{is_active}"
-#    - "member{is_confirmed}"
-#    - "member{is_deleted}"
+
+fillin: 
+  activate: on
+
 names: 
   member{email}: 
     required:           Yes
-    required_msg:       'Please enter email for member'
+    required_msg:       Email is a required field
     validators:         [emailValidator, uniqueValidator]
-  member{credential}: 
-    required:           Yes
-    required_msg:       'Please enter credential list for member'
-    validators:         [credentialValidator]
   member{first_name}: 
     required:           Yes
-    required_msg:       'Please enter first name for admin'
+    required_msg:       First Name is a required field
   member{last_name}: 
     required:           Yes
-    required_msg:       'Please enter lastst name for admin'
+    required_msg:       Last Name is a required field
   member{primary_phone}: 
-    required:           No
+    required:           Primary phone is a required field
   member{secondary_phone}: 
     required:           No
-#  member{is_active}: 
-#    required:           No
-#  member{is_confirmed}: 
-#    required:           No
-#  member{is_deleted}: 
-#    required:           No
-fillin: 
-  activate:             on
-
-
 
 emailValidator: 
   class:              sfEmailValidator
   param: 
-    url_error:        'E-mail is not valid'
+    url_error:        This is not a valid email address
 
 uniqueValidator: 
   class:              sfsUniqueValidator
   param: 
-    class_name:       'Member'
-    id_name:          'id'
-    field_name:       'EMAIL'
-    unique_error:     'E-mail is duplicate'
-
-credentialValidator: 
-  class:              sfsCredentialValidator
-  param: 
-    model:            'member'
-    credential_error: 'Credential is incorrect'
-
-
-
+    class_name:       Member
+    id_name:          id
+    field_name:       email
+    unique_error:     An account with this email already exists
