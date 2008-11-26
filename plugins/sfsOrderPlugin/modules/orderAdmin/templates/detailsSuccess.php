@@ -8,9 +8,7 @@
                 <tr><th colspan="4">Delivery address</th></tr>
                 <tr>
                     <td>
-                      <?php
-                          echo format_address($address)
-                      ?>
+                      <?php echo format_address($address) ?>
                   </td>
               </tr>
            </table>
