@@ -17,8 +17,7 @@ generator:
       object_actions: 
         _edit:          ~
         _delete:        ~
-      actions: 
-        #_create:        -
+      actions:          []
 
     show:
       title:            View a member details
