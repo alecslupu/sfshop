@@ -2,7 +2,13 @@
     <table cellspacing="1" cellpadding="0" width="100%" class="list">
         <tr>
           <td width="50%" valign="top" style="padding-right: 5px">
-              <?php include_component('addressBook', 'deliveryAddress', array('address' => $sf_data->getRaw('deliveryAddress'))) ?>
+              <?php include_component(
+                  'addressBook', 
+                  'deliveryAddress', 
+                  array(
+                      'address' => $sf_data->getRaw('deliveryAddress'),
+                  )
+              ) ?>
           </td>
           <td width="50%" valign="top">
               <?php include_partial(
@@ -16,15 +22,19 @@
         </tr>
         <tr>
             <td colspan="2">
-                <h3><?php echo __('Shipping') ?></h3>
-                <?php //include_component('odfl', 'rate', array('object' => $sf_user->getBasket())) ?>
+                <?php include_component('delivery', 'orderDeliveryInfo', array('is_edit_enabled' => false)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <?php include_component('payment', 'orderPaymentInfo', array('is_edit_enabled' => false)) ?>
             </td>
         </tr>
         <tr>
             <td colspan="2">
                 <div align="right">
                     <span class="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
-                        paypal_total_with_rate($order->getTotalPrice())
+                        $order->getTotalPriceWithDeliveryPrice()
                     ) ?></span>
                 </div>
             </td>

@@ -1,8 +1,11 @@
 <div id="container_info_delivery" class="container_info">
     <span class="caption"><?php echo __('Shipping') ?></span>
-    <span class="action">
-        [ <?php echo link_to(__('Edit'), '#') ?> ]
-    </span><br/><br/>
+    <?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
+        <span class="action">
+            [ <?php echo link_to(__('Edit'), '#') ?> ]
+        </span>
+    <?php endif; ?>
+    <br/><br/>
     <b><span class="service_title"><?php echo $deliveryService->getTitle() ?></span></b>
     <?php $display = $deliveryService->getIcon() ? '' : 'display: none' ?>
     
@@ -11,9 +14,11 @@
     <span class="method_title" <?php echo $methodTitle != '' ? '' : 'style="display: none"' ?>><?php echo $methodTitle; ?>:</span>
     <span class="price"><?php echo format_currency($methodPrice) ?></span>
 </div>
-<div id="container_form_delivery" style="display: none">
-    <h3><?php echo __('Select shipping method') ?></h3>
-    <div class="container_form">
-        <?php include_component('delivery', 'selectForm') ?>
+<?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
+    <div id="container_form_delivery" style="display: none">
+        <h3><?php echo __('Select shipping method') ?></h3>
+        <div class="container_form">
+            <?php include_component('delivery', 'selectForm') ?>
+        </div>
     </div>
-</div>
+<?php endif; ?>
