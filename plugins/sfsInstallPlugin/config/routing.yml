@@ -1,0 +1,15 @@
+installer_index:
+  url:   /install-check/*
+  param: { module: installer, action: index }
+  
+installer_configure:
+  url:   /install-configure
+  param: { module: installer, action: configure }
+  
+installer_load:
+  url:   /install-load
+  param: { module: installer, action: load }
+  
+installer_finished:
+  url:   /install-finished
+  param: { module: installer, action: finished }
