@@ -1,4 +1,4 @@
-<h2><?php echo __('Database configuration') ?></h2>
+<h2><?php echo __('Database configuration (step 2 of 3)') ?></h2>
 <br/>
 <?php if (isset($errors) && count($sf_data->getRaw('errors')) > 0): ?>
     <div class="error">

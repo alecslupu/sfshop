@@ -1,4 +1,4 @@
-<h2>Finished</h2><br/>
+<h2><?php echo __('Finished (step 3 of 3)') ?></h2><br/>
 <div class="border">
     <?php echo __('The installation and configuration was successful!') ?><br/>
     <?php echo image_tag('exclamation.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
@@ -11,7 +11,7 @@
     ) ?></span>
     <br/><br/>
     <div align="center">
-        <?php echo link_to('Catalog', str_replace('install/index.php', '', url_for('@homepage', true))) ?> &nbsp; &nbsp; &nbsp;
-        <?php echo link_to('Admin panel', str_replace('install/index.php', '', url_for('@coreAdmin_index', true))) ?>
+        <?php echo link_to('Catalog', str_replace('/install/index.php', '', url_for('@homepage', true)), array('target' => '_blank')) ?> &nbsp; &nbsp; &nbsp;
+        <?php echo link_to('Admin panel', str_replace('/install/index.php', '/admin', url_for('@coreAdmin_index', true)), array('target' => '_blank')) ?>
     </div>
 </div>
