@@ -111,7 +111,10 @@ class BaseInstallerActions extends sfActions
                      chdir(sfConfig::get('sf_root_dir'));
                      
                      $configureDatabase = new sfConfigureDatabaseTask($dispatcher, $formatter);
-                     $configureDatabase->run(array($dsn));
+                     $configureDatabase->run(array($dsn), array('--name=propel'));
+                     
+                     $configureDatabase = new sfConfigureDatabaseTask($dispatcher, $formatter);
+                     $configureDatabase->run(array($dsn), array('--name=session_storage'));
                      
                      try {
                          $databaseManager = sfContext::getInstance()->getDatabaseManager();

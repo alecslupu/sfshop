@@ -1,4 +1,4 @@
-<h2><?php echo __('Checking') ?></h2>
+<h2><?php echo __('Checking (step 1 of 3)') ?></h2>
 <br/>
 
 <?php if (!$isValidPhpVersion || count($unexistsPhpExtensions) > 0 || count($unwritablePaths) > 0): ?>
@@ -16,7 +16,7 @@
         
         <?php if (count($unwritablePaths) > 0): ?>
             <?php echo image_tag('cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
-            <?php echo __('Please, check and correct permissions files/directories.') ?>
+            <?php echo __('Please, check and correct permissions for files/directories.') ?>
         <?php endif; ?>
     </div>
     <br/>
