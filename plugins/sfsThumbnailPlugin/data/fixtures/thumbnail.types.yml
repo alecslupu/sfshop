@@ -1,0 +1,103 @@
+#
+# Asset types
+#
+AssetType:
+  AssetType_product:
+    name:          product
+    model:         Product
+    has_thumbnail: 1
+  AssetType_category:
+    name:          category
+    model:         Category
+    has_thumbnail: 1
+
+#
+# Thumbnails types
+#
+ThumbnailType:
+  ThumbnailType_1:
+    name:          mini
+    is_active:     1
+  ThumbnailType_2:
+    name:          small
+    is_active:     1
+  ThumbnailType_3:
+    name:          medium
+    is_active:     1
+  ThumbnailType_4:
+    name:          large
+    is_active:     1
+  ThumbnailType_5:
+    name:          big
+    is_active:     1
+  ThumbnailType_6:
+    name:          large
+    is_active:     1
+  ThumbnailType_7:
+    name:          original
+    is_active:     1
+
+#
+# Thumbnail Type Asset Type
+#
+ThumbnailTypeAssetType:
+  ThumbnailTypeAssetType_1:
+    thumbnail_type_id:      ThumbnailType_1
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    mini
+    width:                  40
+    height:                 60
+    is_active:              1
+  ThumbnailTypeAssetType_2: 
+    thumbnail_type_id:      ThumbnailType_2
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    small
+    width:                  90
+    height:                 120
+    is_active:              1
+  ThumbnailTypeAssetType_3: 
+    thumbnail_type_id:      ThumbnailType_3
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    medium
+    width:                  252
+    height:                 254
+    is_active:              1
+  ThumbnailTypeAssetType_4: 
+    thumbnail_type_id:      ThumbnailType_4
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    large
+    width:                  400
+    height:                 600
+    is_active:              1
+  ThumbnailTypeAssetType_5: 
+    thumbnail_type_id:      ThumbnailType_7
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    original
+    width:                  0
+    height:                 0
+    is_active:              1
+  
+  ThumbnailTypeAssetType_6: 
+    thumbnail_type_id:      ThumbnailType_2
+    asset_type_id:          AssetType_category
+    thumbnail_type_name:    small
+    width:                  100
+    height:                 103
+    is_active:              1
+    is_trim:                1
+  ThumbnailTypeAssetType_7: 
+    thumbnail_type_id:      ThumbnailType_3
+    asset_type_id:          AssetType_category
+    thumbnail_type_name:    medium
+    width:                  252
+    height:                 254
+    is_active:              1
+    is_trim:                1
+  ThumbnailTypeAssetType_8: 
+    thumbnail_type_id:      ThumbnailType_7
+    asset_type_id:          AssetType_category
+    thumbnail_type_name:    original
+    width:                  0
+    height:                 0
+    is_active:              1
+    is_trim:                0
