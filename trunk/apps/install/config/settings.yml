@@ -3,6 +3,7 @@ prod:
     no_script_name:         off
     logging_enabled:        off
     cache:                  off
+    etag:                   off
 
 dev:
   .settings:

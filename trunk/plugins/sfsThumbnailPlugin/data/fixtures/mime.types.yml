@@ -1,0 +1,16 @@
+#
+# Thumbnails mime types
+#
+ThumbnailMime:
+  ThumbnailMime_1:
+    mime:              image/jpeg
+    extension:         jpg
+    extensions:        jpe, jpg, jpeg
+  ThumbnailMime_2:
+    mime:              image/gif
+    extension:         gif
+    extensions:        gif
+  ThumbnailMime_3:
+    mime:              image/png
+    extension:         png
+    extensions:        png

@@ -43,7 +43,8 @@ class BaseInstallerActions extends sfActions
                 if (!is_writable($path)) {
                     $unwritablePaths[] = $path;
                 }
-                else {
+                
+                if (!in_array($path, $this->paths)) {
                     $this->paths[] = $path;
                 }
             }
@@ -115,6 +116,9 @@ class BaseInstallerActions extends sfActions
                      
                      $configureDatabase = new sfConfigureDatabaseTask($dispatcher, $formatter);
                      $configureDatabase->run(array($dsn), array('--name=session_storage'));
+                     
+                     $cacheClear = new sfCacheClearTask($dispatcher, $formatter);
+                     $cacheClear->run();
                      
                      try {
                          $databaseManager = sfContext::getInstance()->getDatabaseManager();
