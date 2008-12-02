@@ -1,0 +1,14 @@
+generator:
+  class:                sfAdvancedAdminGenerator
+  param:
+    model_class:      Payment
+    theme:            default
+
+    list: 
+      title:            'List of payment services'
+      display:          [ title, is_active, created_at, updated_at ]
+      max_per_page:     20
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+      actions:          []

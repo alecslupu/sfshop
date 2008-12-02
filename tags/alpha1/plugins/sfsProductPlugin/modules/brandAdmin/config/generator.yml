@@ -1,0 +1,39 @@
+generator: 
+  class:                sfAdvancedAdminGenerator
+  param: 
+    model_class:        Brand
+    theme:              default
+
+    list: 
+      title:            List of brands
+      display:          [=id, title, url, created_at, updated_at]
+      max_per_page:     20
+      click_action:     show
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+      actions: 
+        _create:        ~
+
+    show:
+      title:            View a brand details
+      display:          [title, url, description]
+
+    edit: 
+      title:            '%%_edit_caption%%'
+      display:          [title_i18n, url, description_i18n]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _save_and_add:  ~
+        _delete:        ~
+      
+      fields: 
+        title_i18n: 
+          name:           Title
+          type:           input_tag
+          params:         size=80
+        description_i18n: 
+          name:           Description
+          type:           textarea_tag
+          params:         size=90x3

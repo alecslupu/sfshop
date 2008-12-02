@@ -1,0 +1,59 @@
+methods:
+  post: 
+    - "product{thumbnail}"
+    - "product{title_i18n}"
+    - "product{description_i18n}"
+    - "product{meta_keywords_i18n}"
+    - "product{meta_description_i18n}"
+    - "product{price}"
+    - "product{quantity}"
+    - "product{weight}"
+    - "product{cube}"
+    
+fillin:
+  activate: on
+
+names: 
+  product{thumbnail}:
+    required:           No
+    file:               true
+    validators:         [thumbnailValidator]
+  product{title_i18n}: 
+    required:           Yes
+    required_msg:       Title is a required field
+  product{description_i18n}: 
+    required:           Yes
+    required_msg:       Description is a required field
+  product{meta_keywords_i18n}: 
+    required:           No
+  product{meta_description_i18n}: 
+    required:           No
+  product{price}: 
+    required:           Yes
+    required_msg:       Price is a required field
+    validators:         [numberValidator]
+  product{quantity}: 
+    required:           No
+    validators:         [numberValidator]
+  product{weight}: 
+    required:           No
+    validators:         [numberValidator]
+  product{cube}: 
+    required:           No
+    validators:         [numberValidator]
+    
+numberValidator:
+  class: sfNumberValidator
+  param:
+    nan_error:      This is not a number
+
+thumbnailValidator:
+  class: sfFileValidator
+  param:
+    mime_types:
+      - 'image/jpeg'
+      - 'image/pjpeg'
+      - 'image/png'
+      - 'image/x-png'
+      - 'image/gif'
+    mime_types_error: Only PNG, JPEG and GIF files are allowed

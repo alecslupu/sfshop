@@ -1,0 +1,3 @@
+editSuccess:
+  javascripts:    [ ../../js/prototype/window/window.js, ../../js/sfsForm.js, ../../js/sfsAjax.js ]
+  stylesheets:    [ window/themes/default.css, window/themes/lighting.css ]

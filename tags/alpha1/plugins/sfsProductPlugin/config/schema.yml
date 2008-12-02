@@ -1,0 +1,299 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsProductPlugin.lib.model
+
+  brand: 
+    _attributes: 
+      phpName: Brand
+      isI18N: true
+      i18nTable: brand_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 128
+      required: true
+    url: 
+      type: VARCHAR
+      size: 255
+    created_at: 
+    updated_at: 
+    #_indexes: 
+    #  my_index: [id, name]
+    _uniques: 
+      uni_name: [name]
+
+  brand_i18n: 
+    _attributes: 
+      phpName: BrandI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: brand
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+  product: 
+    _attributes: 
+      phpName: Product
+      isI18N: true
+      i18nTable: product_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    brand_id: 
+      type: INTEGER
+      required: false
+      foreignTable: brand
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    price: 
+      type: DECIMAL
+      size: 10
+      scale: 2
+    quantity: 
+      type: INTEGER
+      required: true
+      default: 0
+    weight: 
+      type: DECIMAL
+      size: 10
+      scale: 3
+    cube: 
+      type: DECIMAL
+      size: 10
+      scale: 3
+    has_options:
+      type: TINYINT
+      size: 1
+      default: 0
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 1
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+    updated_at: 
+
+  product_i18n: 
+    _attributes: 
+      phpName: ProductI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description_short: 
+      type: LONGVARCHAR
+    description: 
+      type: LONGVARCHAR
+    meta_keywords: 
+      type: LONGVARCHAR
+    meta_description: 
+      type: LONGVARCHAR
+
+  option_type: 
+    _attributes: 
+      phpName: OptionType
+      isI18N: true
+      i18nTable: option_type_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 34
+    pos: 
+      type: INTEGER
+      required: true
+      default: 1
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 1
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+    updated_at: 
+
+  option_type_i18n: 
+    _attributes: 
+      phpName: OptionTypeI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: option_type
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+  option_value: 
+    _attributes: 
+      phpName: OptionValue
+      isI18N: true
+      i18nTable: option_value_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    type_id: 
+      type: INTEGER
+      required: true
+      foreignTable: option_type
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
+    name: 
+      type: VARCHAR
+      size: 34
+    pos: 
+      type: INTEGER
+      required: true
+      default: 1
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 1
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+    updated_at: 
+
+  option_value_i18n: 
+    _attributes: 
+      phpName: OptionValueI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: option_value
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+  option_product: 
+    _attributes: 
+      phpName: OptionProduct
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    option_value_id: 
+      type: INTEGER
+      required: true
+      foreignTable: option_value
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    product_id: 
+      type: INTEGER
+      required: true
+      foreignTable: product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    price_type: 
+      type: TINYINT
+      required: true
+      default: 0
+    price: 
+      type: DECIMAL
+      size: 10
+      scale: 2
+    quantity: 
+      type: INTEGER
+      required: true
+      default: 0
+    created_at: 
+
+  product2category: 
+    _attributes: 
+      phpName: Product2Category
+    product_id:
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    category_id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: category
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    pos: 
+      type: INTEGER
+      required: true
+      default: 0
+    created_at: 

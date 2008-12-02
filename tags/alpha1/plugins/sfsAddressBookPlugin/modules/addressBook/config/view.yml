@@ -1,0 +1,3 @@
+myListSuccess:
+  javascripts:    [ prototype/window/window.js ]
+  stylesheets:    [ window/themes/default.css, window/themes/alert.css, window/themes/sfshop.css ]

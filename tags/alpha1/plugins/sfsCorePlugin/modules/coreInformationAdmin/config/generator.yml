@@ -1,0 +1,43 @@
+generator:
+  class:                sfAdvancedAdminGenerator
+  param:
+    model_class:        Information
+    theme:              default
+    
+    fields: 
+      title_i18n: 
+        name:           Title
+        type:           input_tag
+        params:         size=130
+    
+    list: 
+      title:            List of information pages
+      display:          [ id, title, is_active ]
+      max_per_page:     20
+      click_action:     show
+      object_actions: 
+        _edit:          ~
+    
+    edit: 
+      title:            '%%_edit_caption%%'
+      display: 
+        "NONE":         [ title_i18n, description_i18n ]
+        "Meta":         [ meta_keywords_i18n, meta_description_i18n ]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _delete:        ~
+    
+      fields: 
+        description_i18n: 
+          name:           Description
+          type:           textarea_tag
+          params:         'disabled=false rich=true tinymce_options=height:250,width:600,plugins:"paste",theme_advanced_buttons1:"bold,italic,strikethrough,underline,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,undo,redo,separator,forecolor,separator,pasteword,separator,link,unlink",theme_advanced_buttons2:"",theme_advanced_buttons3:""'
+        meta_keywords_i18n: 
+          name:           Keywords
+          type:           textarea_tag
+          params:         size=80x10
+        meta_description_i18n: 
+          name:           Description
+          type:           textarea_tag
+          params:         size=80x10

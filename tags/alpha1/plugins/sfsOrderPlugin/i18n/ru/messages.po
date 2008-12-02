@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sfShop v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-06 10:10+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\sfShop\\plugins\\sfsOrderPlugin\n"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/actions/actions.class.php:58
+msgid "Please, input primary phone number"
+msgstr "Пожалуйста, введите первичный телефон"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:1
+msgid "Order confirmation"
+msgstr "Подтверждение заказа"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:34
+msgid "Comment to your order"
+msgstr "Комментарий к заказу"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:43
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:26
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_short_details.php:6
+msgid "Total"
+msgstr "Итого"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:50
+msgid "Back"
+msgstr "Вернуться"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutConfirmationSuccess.php:52
+msgid "Confirm order"
+msgstr "Подтвердить заказ"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutFinishedSuccess.php:1
+msgid "Checkout finished"
+msgstr "Заказ оформлен"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutFinishedSuccess.php:3
+msgid "Thank you! Your order in processing"
+msgstr "Спасибо, ваш заказ обрабатываеться"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutSuspendSuccess.php:1
+msgid "Checkout suspend"
+msgstr "Оформление заказа приостановлено"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/checkoutSuspendSuccess.php:3
+msgid "You did not paid for order and your order in status pending. You can finished the payment through your orders history."
+msgstr "Вы не оплатили ваш заказа, ваш заказ имеет статус ожидания."
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:1
+msgid "Order details"
+msgstr "Детали заказа"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/detailsSuccess.php:19
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_short_details.php:5
+msgid "Shipping"
+msgstr "Доставка"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/myListSuccess.php:1
+msgid "My orders"
+msgstr "Мои заказы"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/myListSuccess.php:9
+msgid "You don`t have any order"
+msgstr "У вас нет ни одного заказа"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_list_products_details.php:1
+msgid "Products"
+msgstr "Продукты"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_list_products_details.php:16
+msgid "SubTotal"
+msgstr "Всего"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:2
+msgid "Order ID"
+msgstr "Номер заказа"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:5
+msgid "Delivering to"
+msgstr "Доставка к"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:8
+msgid "Products count"
+msgstr "Кол. продуктов"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:11
+msgid "Created at"
+msgstr "Создан"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:14
+msgid "Status"
+msgstr "Статус"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_my_list_th_tabular.php:17
+msgid "Actions"
+msgstr "Действия"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_pager.php:3
+msgid "First"
+msgstr "Первая"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_pager.php:4
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_pager.php:12
+msgid "Next"
+msgstr "Сдедующая"
+
+#: D:\sfShop\plugins\sfsOrderPlugin/modules/order/templates/_pager.php:13
+msgid "Last"
+msgstr "Последняя"
+
+#~ msgid "Payment"
+#~ msgstr "Оплата"
+

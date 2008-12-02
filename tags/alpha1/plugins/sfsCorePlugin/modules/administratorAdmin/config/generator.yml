@@ -1,0 +1,33 @@
+generator:
+  class:                sfPropelAdminGenerator
+  param:
+    model_class:        Admin
+    theme:              default
+    
+    list: 
+      title:            List of admins
+      display:          [=id, =full_name, credential, email, is_active]
+      max_per_page:     20
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+        reset_password: 
+          name:         Reset password
+          action:       resetPassword
+          icon:         /admin/images/actions/reset_password.png
+          params:       confirm=Are you sure want reset password for this administrator?
+      actions: 
+        _create:        ~
+      
+      fields: 
+        full_name: 
+          name:         Name
+    
+    edit: 
+      title:            '%%_edit_caption%%'
+      display:          [email, first_name, last_name, _credential, is_active]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _save_and_add:  ~
+        _delete:        ~

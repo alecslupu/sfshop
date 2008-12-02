@@ -1,0 +1,43 @@
+methods: 
+  post: 
+    - "admin{email}"
+    - "admin{credential}"
+    - "admin{first_name}"
+    - "admin{last_name}"
+fillin: 
+  activate: on
+
+names: 
+  admin{email}: 
+    required:           Yes
+    required_msg:       Email is a required field
+    validators:         [emailValidator, uniqueValidator]
+  admin{credential}: 
+    required:           Yes
+    required_msg:       Credential is a required field
+    validators:         [credentialValidator]
+  admin{first_name}: 
+    required:           Yes
+    required_msg:       First Name is a required field
+  admin{last_name}: 
+    required:           Yes
+    required_msg:       Last Name is a required field
+
+uniqueValidator: 
+  class:              sfsUniqueValidator
+  param: 
+    class_name:       Admin
+    id_name:          id
+    field_name:       email
+    unique_error:     An account with this email already exists
+
+credentialValidator: 
+  class:              sfsCredentialValidator
+  param: 
+    model:            admin
+    credential_error: Credential is incorrect
+
+emailValidator: 
+  class:              sfEmailValidator
+  param: 
+    url_error:        This is not a valid email address

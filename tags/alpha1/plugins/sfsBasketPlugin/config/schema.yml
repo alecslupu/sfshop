@@ -1,0 +1,86 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsBasketPlugin.lib.model
+
+  basket: 
+    _attributes: 
+      phpName: Basket
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    member_id: 
+      type: INTEGER
+      required: false
+      foreignTable: member
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    currency_id: 
+      type: INTEGER
+      required: false
+      foreignTable: currency
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    access_num: 
+      type: INTEGER
+      required: true
+      default: 1
+    created_at: 
+    updated_at: 
+
+  basket_product: 
+    _attributes: 
+      phpName: BasketProduct
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    basket_id: 
+      type: INTEGER
+      required: true
+      foreignTable: basket
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    product_id: 
+      type: INTEGER
+      required: true
+      foreignTable: product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    options_list:
+      type: VARCHAR
+      size: 128
+    quantity: 
+      type: INTEGER
+      required: true
+      default: 0
+    created_at: 
+
+  basket_product2option_product: 
+    _attributes: 
+      phpName: BasketProduct2OptionProduct
+    basket_product_id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: basket_product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    option_product_id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: option_product
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    created_at: 

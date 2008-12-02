@@ -1,0 +1,71 @@
+EmailTemplate: 
+  sfEmailTemplate_EN_1: 
+    name: REGISTRATION
+    culture: en
+    subject: Registration
+    body: |
+      Hello!<br/><br/>
+      Thanks for registration on our site. You should confirm registration.<br/><br/>
+      Click to link for confirm regisration <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Confirmation code:
+      %confirm_code%<br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12
+  sfEmailTemplate_EN_2: 
+    name: FORGOT_PASSWORD
+    culture: en
+    subject: Restoring password
+    body: |
+      Hello!<br/><br/>
+      Thanks for using our site. From our site was sent request for restoring password.<br/><br/>
+      Your new data for login:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12
+  sfEmailTemplate_EN_3: 
+    name: RECONFIRM_EMAIL
+    culture: en
+    subject: Email was changed
+    body: |
+      Hello!<br/><br/>
+      Thanks for using our site. You should confirm your new email.<br/><br/>
+      Click to link for confirm email <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Confirmation code:
+      %confirm_code%<br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12
+  sfEmailTemplate_EN_4: 
+    name: NEW_ADMIN_ADDED
+    culture: en
+    subject: You added to administrators
+    body: |
+      Hello!<br/><br/>
+      Your data for login to admin panel.<br/><br/>
+      Admin panel: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a>
+      <br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12
+  sfEmailTemplate_EN_5: 
+    name: RESET_PASSWORD
+    culture: en
+    subject: Your password was reset
+    body: |
+      Hello!<br/><br/>
+      Your data for login to admin panel.<br/><br/>
+      Admin panel: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a>
+      <br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+    created_at: 2008-01-23 18:50:41
+    updated_at: 2008-01-26 14:36:12

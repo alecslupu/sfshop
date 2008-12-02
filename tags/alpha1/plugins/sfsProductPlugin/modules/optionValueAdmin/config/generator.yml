@@ -1,0 +1,28 @@
+generator:
+  class:              sfAdvancedAdminGenerator
+  param:
+    model_class:      OptionValue
+    theme:            default
+    
+    list: 
+      title:            Option Values list
+      display:          [id, title, pos, is_active, created_at]
+      max_per_page:     20
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+      filters:          [type_id]
+      
+    edit: 
+      title:            %%_edit_caption%%
+      display: 
+        "NONE":         [ name, title_i18n, type_id, is_active ]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _delete:        ~
+        
+      fields: 
+        title_i18n: 
+          name:         Title
+          type:         input_tag

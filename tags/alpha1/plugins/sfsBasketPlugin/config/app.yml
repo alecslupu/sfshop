@@ -1,0 +1,9 @@
+all:
+  basket:
+    coo_name:   basket_id
+    coo_expire: 604800
+
+dev:
+  basket:
+    coo_name:   basket_id
+    coo_expire: 604800

@@ -1,0 +1,11 @@
+---
+Delivery: 
+  Delivery_1: 
+    culture:                 en
+    title:                   Flat rate
+    accept_currencies_codes: '*'
+    name_class_service:      sfsFlatService
+    name_class_form_params:  sfsFlatParamsForm
+    params:                  '{"title":"Best way","price":5}'
+    is_active:               1
+

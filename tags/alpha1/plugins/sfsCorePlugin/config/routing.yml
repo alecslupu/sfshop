@@ -1,0 +1,87 @@
+#
+# Core
+#
+
+core_changeLanguage:
+  url: /change-language/:culture
+  param: { module: core, action: changeLanguage }
+
+core_error404:
+  url: /page-not-found
+  param: { module: core, action: error404 }
+
+core_error500:
+  url: /internal-error
+  param: { module: core, action: error500 }
+
+core_contactUs:
+  url: /contact-us
+  param: { module: core, action: contactUs }
+
+#
+# Core Admin
+#
+
+coreAdmin_login: 
+  url: /admin-login
+  param: { module: coreAdmin, action: login }
+
+coreAdmin_logout: 
+  url: /admin-logout
+  param: { module: coreAdmin, action: logout }
+
+coreAdmin_index: 
+  url: /admin-index
+  param: { module: coreAdmin, action: index }
+
+coreAdmin_profile: 
+  url: /coreAdmin/profile
+  param: { module: coreAdmin, action: profile }
+
+#
+# administratorAdmin
+#
+
+administratorAdmin_list:
+  url: /administratorAdmin/list/*
+  param: { module: administratorAdmin, action: list }
+  
+administratorAdmin_changeMyPassword:
+  url: /administratorAdmin/change-my-password
+  param: { module: administratorAdmin, action: changeMyPassword }
+
+#
+# Core Information
+#
+
+information_details:
+  url: /information/:id
+  param: { module: information, action: details }
+
+information_shipping:
+  url: /information-shipping
+  param: { module: information, action: details, id: 1 }
+
+information_privacyNotice:
+  url: /information-privacy-notice
+  param: { module: information, action: details, id: 2 }
+
+information_conditionsUse:
+  url: /information-conditions-of-use
+  param: { module: information, action: details, id: 3 }
+
+#
+# Core Information Admin
+#
+
+coreInformationAdmin_list:
+  url: /coreInformationAdmin/list/*
+  param: { module: coreInformationAdmin, action: list }
+
+#
+# Email Templates Admin
+#
+
+emailTemplateAdmin_list:
+  url: /emailTemplateAdmin/list/*
+  param: { module: emailTemplateAdmin, action: list }
