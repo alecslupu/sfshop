@@ -1,0 +1,12 @@
+#
+# Asset types
+#
+AssetType:
+  AssetType_product:
+    name:          product
+    model:         Product
+    has_thumbnail: 1
+  AssetType_category:
+    name:          category
+    model:         Category
+    has_thumbnail: 1
