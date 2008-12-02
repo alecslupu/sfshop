@@ -3,25 +3,12 @@ all:
     class:          sfPropelDatabase
     param: 
       encoding:     utf8
-      dsn:          mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
+      dsn:          mysql://root@localhost/sfshop
   
   session_storage:
     class:          sfPropelDatabase
     param:
       encoding:     utf8
       persistent:   true
-      dsn:          mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
+      dsn:          mysql://root@localhost/sfshop
 
-test:
-  propel: 
-    class:          sfPropelDatabase
-    param:
-      encoding:     utf8
-      dsn:          mysql://sfshop_dmUser:#vDh|rjuvPM}@localhost/sfshop_demo
-  
-  session_storage:
-    class:          sfPropelDatabase
-    param:
-      encoding:     utf8
-      persistent:   true
-      dsn:          mysql://sfshop_dmUser:#vDh|rjuvPM}@localhost/sfshop_demo
