@@ -1,0 +1,81 @@
+#
+# Currency
+#
+Currency:
+  Currency_USD:
+    code:            USD
+    decimal_point:   '.'
+    thousands_point: ','
+    decimal_places:  2
+    value:           1.00000000
+    is_default:      1
+    is_active:       1
+  Currency_EUR:
+    code:            EUR
+    decimal_point:   '.'
+    thousands_point: ','
+    decimal_places:  2
+    value:           0.72529998
+    is_default:      0
+    is_active:       1
+  Currency_UAH:
+    code:            UAH
+    decimal_point:   '.'
+    thousands_point: ','
+    decimal_places:  2
+    value:           4.70000
+    is_default:      0
+    is_active:       1
+  Currency_RUR:
+    code:            RUR
+    decimal_point:   '.'
+    thousands_point: ','
+    decimal_places:  2
+    value:           25.00000
+    is_default:      0
+    is_active:       1
+    
+CurrencyI18n:
+# English
+  CurrencyI18n_EN_USD:
+    id:           Currency_USD
+    culture:      en
+    title:        Dollars
+    symbol_left:  $
+  CurrencyI18n_EN_EUR:
+    id:           Currency_EUR
+    culture:      en
+    title:        Euro
+    symbol_right: EUR
+  CurrencyI18n_EN_UAH:
+    id:           Currency_UAH
+    culture:      en
+    title:        Hryvnia
+    symbol_right: UAH
+  CurrencyI18n_EN_RUR:
+    id:           Currency_RUR
+    culture:      en
+    title:        Rubles
+    symbol_right: RUR
+    
+# Russian
+  CurrencyI18n_RU_USD:
+    id:           Currency_USD
+    culture:      ru
+    title:        Dollars
+    symbol_left:  $
+  CurrencyI18n_RU_EUR:
+    id:           Currency_EUR
+    culture:      ru
+    title:        Euro
+    symbol_right: евро
+  CurrencyI18n_RU_UAH:
+    id:           Currency_UAH
+    culture:      ru
+    title:        Hryvnia
+    symbol_right: грн
+  CurrencyI18n_RU_RUR:
+    id:           Currency_RUR
+    culture:      ru
+    title:        Rubles
+    symbol_right: руб
