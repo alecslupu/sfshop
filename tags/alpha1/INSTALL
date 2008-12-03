@@ -3,43 +3,34 @@ Requirements:
 2. MySQL database 4.1.1 and higher
 3. Web server (Apache, IIS, etc.)
 
+1. Download a latest version of platform.
 
-1. Create virtual host:
+2. Extract archive to directory when you want to install the platform.
 
-<VirtualHost *:80>
-  ServerName somedomain
+3. Create virtual host:
 
-  DocumentRoot "/path/to/htdocs"
+  <VirtualHost *:80>
+    ServerName somedomain
 
-  ErrorLog "/path/to/log/error.log"
-  CustomLog "/path/to/log/access.log" combined
+    DocumentRoot "/path/to/htdocs"
 
-  php_value error_log "/path/to/log/php.log"
+    ErrorLog "/path/to/log/error.log"
+    CustomLog "/path/to/log/access.log" combined
 
-  RewriteEngine on
-  RewriteMap lowercase int:tolower
+    php_value error_log "/path/to/log/php.log"
 
-  <Directory "/path/to/htdocs">
-    Options Includes FollowSymLinks Indexes
-    AllowOverride all
-    Order allow,deny
-    Allow from all
-  </Directory>
+    RewriteEngine on
+    RewriteMap lowercase int:tolower
 
-</VirtualHost>
+    <Directory "/path/to/htdocs">
+      Options Includes FollowSymLinks Indexes
+      AllowOverride all
+      Order allow,deny
+      Allow from all
+    </Directory>
 
-2. Create database with name devzpc_sfshop and user with data
+  </VirtualHost>
 
-login: devzpc_sfUser
-password: AAsMM7Yx3:5Q.v4T
+3. Change permission for cache dirsctory to world-writeable (chmod 777).
 
-3. Execute from root directory of site
-
-./symfony propel:build-all-load frontend
-./symfony cc
-
-4. Execute
-
-./symfony project:permissions
-
-That is all! The site should be work. 
+4. Go to http://somedomain/install/ via web browser and following instructions.
