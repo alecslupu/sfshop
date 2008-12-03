@@ -15,8 +15,8 @@ all:
     
   recaptcha:
     is_enabled: true
-    publickey: 6LeDhgIAAAAAAOUNYtXtoq338WnMtPUL3VetB_QH
-    privatekey: 6LeDhgIAAAAAAJu20HFBLPBMsYF4ag0eDBMH47Iu
+    publickey:  6LdiKQQAAAAAAJS8Yaz_bEBYkiIQHHBO3IaK-iIZ 
+    privatekey: 6LdiKQQAAAAAACeDjQKCFBU1sIOeVzph4bsgRGUv
 
   store:
     company: sfShop
