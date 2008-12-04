@@ -61,6 +61,11 @@ class sfsPeerBuilder extends SfPeerBuilder
         \$criteria->addAnd(self::IS_ACTIVE, 1);
     ";
     }
+    if ($this->getTable()->getColumn('is_parent_active')) {
+    $script .="
+        \$criteria->addAnd(self::IS_PARENT_ACTIVE, 1);
+    ";
+    }
     $script .="
     }
     

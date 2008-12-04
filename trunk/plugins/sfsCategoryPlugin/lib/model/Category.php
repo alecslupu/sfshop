@@ -141,17 +141,35 @@ class Category extends BaseCategory
     public function save($con = null)
     {
         $changedParent = false;
-        
+        $changedActive = false;
+
+        if ($this->isNew()) {
+            if ($this->getParentId() == null) {
+                $this->setIsParentActive(1);
+            } else {
+                $parent = CategoryPeer::retrieveById($this->getParentId());
+                $this->setIsParentActive($parent->getIsActive() && $parent->getIsParentActive() ? 1 : 0);
+            }
+        }
+
         if (in_array(CategoryPeer::PARENT_ID, $this->modifiedColumns)) {
             $changedParent = true;
         }
-        
+
+        if (in_array(CategoryPeer::IS_ACTIVE, $this->modifiedColumns)) {
+            $changedActive = true;
+        }
+
         parent::save();
         
         if ($changedParent) {
             CategoryPeer::determinePathForCategoryAndChild($this);
         }
-        
+
+        if ($changedActive) {
+            CategoryPeer::determineIsParentActive($this);
+        }
+
         CategoryPeer::determineHasChild();
     }
 }

@@ -39,6 +39,10 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
+    is_parent_active:
+      type: BOOLEAN
+      required: true
+      default: 0
     is_deleted: 
       type: BOOLEAN
       required: true
