@@ -62,20 +62,20 @@ CurrencyI18n:
   CurrencyI18n_RU_USD:
     id:           Currency_USD
     culture:      ru
-    title:        Dollars
+    title:        Доллары
     symbol_left:  $
   CurrencyI18n_RU_EUR:
     id:           Currency_EUR
     culture:      ru
-    title:        Euro
+    title:        Евро
     symbol_right: евро
   CurrencyI18n_RU_UAH:
     id:           Currency_UAH
     culture:      ru
-    title:        Hryvnia
+    title:        Гривны
     symbol_right: грн
   CurrencyI18n_RU_RUR:
     id:           Currency_RUR
     culture:      ru
-    title:        Rubles
+    title:        Рубли
     symbol_right: руб

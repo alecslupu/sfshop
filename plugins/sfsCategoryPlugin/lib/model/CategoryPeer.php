@@ -193,23 +193,27 @@ class CategoryPeer extends BaseCategoryPeer
      * @author Michal Gorny
      * @access public
      */
-    public static function determineIsParentActive($category) {
+    public static function determineIsParentActive($category)
+    {
         $criteriaWhere = new Criteria();
         $criteriaSet = new Criteria();
-
+        
         $criteriaWhere->add(self::PARENT_ID, $category->getId());
         $criteriaSet->add(self::IS_PARENT_ACTIVE, $category->getIsActive() && $category->getIsParentActive());
-
+        
         BasePeer::doUpdate($criteriaWhere, $criteriaSet, Propel::getConnection(self::DATABASE_NAME));
-
+        
         $childs = array();
         $childs = $category->getChild();
-        foreach($childs as $child) {
-            if ($child->getHasChild() == 0) {
-                continue;
+        
+        if ($childs != null) {
+            foreach($childs as $child) {
+                if ($child->getHasChild() == 0) {
+                    continue;
+                }
+                
+                self::determineIsParentActive($child);
             }
-
-            self::determineIsParentActive($child);
         }
     }
 }
