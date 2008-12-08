@@ -15,7 +15,7 @@ all:
     
   recaptcha:
     is_enabled: true
-    publickey:  6LdiKQQAAAAAAJS8Yaz_bEBYkiIQHHBO3IaK-iIZ 
+    publickey:  6LdiKQQAAAAAAJS8Yaz_bEBYkiIQHHBO3IaK-iIZ
     privatekey: 6LdiKQQAAAAAACeDjQKCFBU1sIOeVzph4bsgRGUv
 
   store:
