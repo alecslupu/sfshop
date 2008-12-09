@@ -41,7 +41,6 @@ propel:
       type: VARCHAR
       size: 7
       required: true
-      primaryKey: true
     title_english: 
       type: VARCHAR
       size: 128

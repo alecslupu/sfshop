@@ -177,6 +177,35 @@ class sfsPeerBuilder extends SfPeerBuilder
     ";
     }
     
+    protected function addUpdateCulture(&$script)
+    {
+        $table = $this->getTable();
+        
+        foreach ($table->getReferrers() as $fk) {
+            $tblFK = $fk->getTable();
+            
+            if ($tblFK->getName() == $table->getAttribute('i18nTable')) {
+                $i18nClassName = $tblFK->getPhpName();
+                $i18nPeerClassName = $i18nClassName.'Peer';
+            }
+        }
+        
+        if (isset($i18nPeerClassName)) {
+    $script.="
+    public static function updateCulture(\$oldCulture, \$newCulture)
+    {
+        \$criteriaWhere = new Criteria();
+        \$criteriaSet = new Criteria();
+        
+        \$criteriaWhere->add(" .$i18nPeerClassName . "::CULTURE, \$oldCulture);
+        \$criteriaSet->add(" .$i18nPeerClassName . "::CULTURE, \$newCulture);
+        
+        BasePeer::doUpdate(\$criteriaWhere, \$criteriaSet, Propel::getConnection(self::DATABASE_NAME));
+    }
+    ";
+        }
+    }
+    
     /**
      * Closes class.
      * @param string &$script The script will be modified in this method.
@@ -195,6 +224,7 @@ class sfsPeerBuilder extends SfPeerBuilder
         if ($this->getTable()->getAttribute('isI18n')) {
             $this->addGetAllI18n($script);
             $this->addDoSelectWithTranslation($script);
+            $this->addUpdateCulture($script);
         }
         else {
             $this->addGetAll($script);

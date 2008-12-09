@@ -17,7 +17,7 @@ names:
   product{thumbnail}:
     required:           No
     file:               true
-    validators:         [thumbnailValidator]
+    validators:         thumbnailValidator
   product{title_i18n}: 
     required:           Yes
     required_msg:       Title is a required field
@@ -31,16 +31,16 @@ names:
   product{price}: 
     required:           Yes
     required_msg:       Price is a required field
-    validators:         [numberValidator]
+    validators:         numberValidator
   product{quantity}: 
     required:           No
-    validators:         [numberValidator]
+    validators:         numberValidator
   product{weight}: 
     required:           No
-    validators:         [numberValidator]
+    validators:         numberValidator
   product{cube}: 
     required:           No
-    validators:         [numberValidator]
+    validators:         numberValidator
     
 numberValidator:
   class: sfNumberValidator
