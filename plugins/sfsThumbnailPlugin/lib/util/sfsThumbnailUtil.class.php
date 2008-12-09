@@ -17,7 +17,7 @@ class sfsThumbnailUtil
         foreach ($dirs as $subdir)
         {
             $dir .= '/'.$subdir;
-            if (!file_exists($dir)) { //echo $dir;exit;
+            if (!file_exists($dir)) {
                 if (!mkdir($dir, $rights)) {
                     return false;
                 }
