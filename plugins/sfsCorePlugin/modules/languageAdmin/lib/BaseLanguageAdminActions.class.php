@@ -19,8 +19,18 @@
  */
 class BaseLanguageAdminActions extends autolanguageAdminActions
 {
+    
     protected function saveLanguage($language)
     {
+        $isNew = false;
+        
+        if ($language->isNew()) {
+            $isNew = true;
+        }
+        else {
+            $oldCulture = LanguagePeer::retrieveById($language->getId())->getCulture();
+        }
+        
         $language->save();
         
         if ($this->getRequest()->hasFile('language[icon]')) {
@@ -45,5 +55,18 @@ class BaseLanguageAdminActions extends autolanguageAdminActions
             
             unlink($path . 'icon' . $fileExtension);
         }
+        
+        if (!$isNew) {
+            $criteria = new Criteria();
+            $criteria->add(AssetTypePeer::HAS_I18N, true);
+            $assetTypes = AssetTypePeer::getAll($criteria);
+            
+            foreach ($assetTypes as $assetType) {
+                if (is_callable($assetType->getModel() . 'Peer::updateCulture') && $oldCulture != $language->getCulture()) {
+                    call_user_func($assetType->getModel() . 'Peer::updateCulture', $oldCulture, $language->getCulture());
+                }
+            }
+        }
+        
     }
 }

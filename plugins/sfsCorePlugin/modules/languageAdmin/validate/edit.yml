@@ -1,5 +1,6 @@
 methods:
   post: 
+    - "language{icon}"
     - "language{culture}"
     - "language{title_own}"
     - "language{title_english}"
@@ -8,6 +9,10 @@ fillin:
   activate: on
 
 names: 
+  language{icon}:
+    required:           false
+    file:               true
+    validators:         iconValidator
   language{culture}: 
     required:           Yes
     required_msg:       Code is a required field
@@ -24,5 +29,16 @@ cultureValidator:
     param:
       min:        2
       min_error:  Culture must be 2 or more characters
-      max:        2
+      max:        7
       max_error:  Culture can not be more 7 characters
+      
+iconValidator:
+  class: sfFileValidator
+  param:
+    mime_types:
+      - 'image/jpeg'
+      - 'image/pjpeg'
+      - 'image/png'
+      - 'image/x-png'
+      - 'image/gif'
+    mime_types_error: Only PNG, JPEG and GIF files are allowed
