@@ -12,16 +12,14 @@ propel:
       required: true
       autoIncrement: true
       primaryKey: true
-    name: 
-      type: VARCHAR
-      size: 128
-#    title: 
-#      type: VARCHAR
-#      size: 128
     model: 
       type: VARCHAR
       size: 128
     has_thumbnail: 
+      type: TINYINT
+      size: 1
+      default: 0
+    has_i18n: 
       type: TINYINT
       size: 1
       default: 0
@@ -31,6 +29,11 @@ propel:
   language: 
     _attributes: 
       phpName: Language
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
     culture: 
       type: VARCHAR
       size: 7

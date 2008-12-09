@@ -85,3 +85,11 @@ coreInformationAdmin_list:
 emailTemplateAdmin_list:
   url: /emailTemplateAdmin/list/*
   param: { module: emailTemplateAdmin, action: list }
+
+#
+# Language Admin
+#
+
+languageAdmin_list:
+  url: /languageAdmin/list/*
+  param: { module: languageAdmin, action: list }

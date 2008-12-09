@@ -1,0 +1,28 @@
+methods:
+  post: 
+    - "language{culture}"
+    - "language{title_own}"
+    - "language{title_english}"
+
+fillin:
+  activate: on
+
+names: 
+  language{culture}: 
+    required:           Yes
+    required_msg:       Code is a required field
+    validators:         cultureValidator
+  language{title_own}: 
+    required:           Yes
+    required_msg:       Title own is a required field
+  language{title_english}: 
+    required:           Yes
+    required_msg:       Title english is a required field
+
+cultureValidator:
+    class: sfStringValidator
+    param:
+      min:        2
+      min_error:  Culture must be 2 or more characters
+      max:        2
+      max_error:  Culture can not be more 7 characters
