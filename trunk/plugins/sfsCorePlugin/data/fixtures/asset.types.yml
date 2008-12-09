@@ -11,7 +11,7 @@ AssetType:
     model:         Information
     has_i18n:      1
   AssetType_menu:
-    name:           menu
+    name:          menu
     model:         Menu
     has_i18n:      1
   AssetType_state:

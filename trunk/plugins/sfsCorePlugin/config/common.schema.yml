@@ -12,6 +12,9 @@ propel:
       required: true
       autoIncrement: true
       primaryKey: true
+    name: 
+      type: CHAR
+      size: 32
     model: 
       type: VARCHAR
       size: 128

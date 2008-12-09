@@ -1,0 +1,8 @@
+#
+# Asset types
+#
+AssetType:
+  AssetType_delivery:
+    name:          delivery
+    model:         Delivery
+    has_i18n:      1
