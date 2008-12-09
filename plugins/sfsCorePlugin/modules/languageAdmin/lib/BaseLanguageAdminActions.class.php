@@ -33,7 +33,7 @@ class BaseLanguageAdminActions extends autolanguageAdminActions
         
         $language->save();
         
-        if ($this->getRequest()->hasFile('language[icon]')) {
+        if ($this->getRequest()->hasFiles()) {
             $fileExtension = $this->getRequest()->getFileExtension('language[icon]');
             
             $path = str_replace('icon.png', '', $language->getIconPath());
@@ -42,18 +42,18 @@ class BaseLanguageAdminActions extends autolanguageAdminActions
                 mkdir($path);
             }
             
-            $this->getRequest()->moveFile('language[icon]', $path . 'icon' . $fileExtension);
-            $size = getimagesize($path . 'icon' . $fileExtension);
-            
-            if (file_exists($language->getIconPath())) {
-                unlink($language->getIconPath());
+            if ($this->getRequest()->moveFile('language[icon]', $path . 'icon' . $fileExtension)) {
+                $size = getimagesize($path . 'icon' . $fileExtension);
+                
+                if (file_exists($language->getIconPath())) {
+                    unlink($language->getIconPath());
+                }
+                
+                $thumb = new sfThumbnail($size[0], $size[1], true, true, 75, 'sfGDAdapter');
+                $thumb->loadFile($path . 'icon' . $fileExtension);
+                $thumb->save($language->getIconPath(), 'image/png');
+                unlink($path . 'icon' . $fileExtension);
             }
-            
-            $thumb = new sfThumbnail($size[0], $size[1], true, true, 75, 'sfGDAdapter');
-            $thumb->loadFile($path . 'icon' . $fileExtension);
-            $thumb->save($language->getIconPath(), 'image/png');
-            
-            unlink($path . 'icon' . $fileExtension);
         }
         
         if (!$isNew) {
