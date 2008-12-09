@@ -164,3 +164,11 @@ AdminMenu:
     route:          currencyAdmin_list
     pos:            1
     is_active:      1
+  
+  AdminMenu_Localization_Languages: 
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          Languages
+    route:          languageAdmin_list
+    pos:            1
+    is_active:      1

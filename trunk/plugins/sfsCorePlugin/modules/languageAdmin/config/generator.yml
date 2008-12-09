@@ -1,0 +1,21 @@
+generator:
+  class:              sfAdvancedAdminGenerator
+  param:
+    model_class:      Language
+    theme:            default
+    
+    list:
+      title:            List of languages
+      display:          [ title_english, title_own, culture, is_default, is_active ]
+      max_per_page:     20
+      object_actions: 
+        _edit:          ~
+        _delete:        ~
+        
+    edit: 
+      title:            '%%_edit_caption%%'
+      display:          [ _icon, title_english, title_own, culture, is_default, is_active ]
+      actions: 
+        _list:          ~
+        _save:          ~
+        _delete:        ~
