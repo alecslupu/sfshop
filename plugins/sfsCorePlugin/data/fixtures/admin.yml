@@ -145,7 +145,7 @@ AdminMenu:
     parent_id:      AdminMenu_ContentManager
     credential:     superadmin, admin
     title:          Information pages
-    route:          coreInformationAdmin_list
+    route:          informationAdmin_list
     pos:            1
     is_active:      1
   

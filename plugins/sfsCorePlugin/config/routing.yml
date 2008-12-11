@@ -71,12 +71,12 @@ information_conditionsUse:
   param: { module: information, action: details, id: 3 }
 
 #
-# Core Information Admin
+# Information Admin
 #
 
-coreInformationAdmin_list:
-  url: /coreInformationAdmin/list/*
-  param: { module: coreInformationAdmin, action: list }
+informationAdmin_list:
+  url: /informationAdmin/list/*
+  param: { module: informationAdmin, action: list }
 
 #
 # Email Templates Admin
