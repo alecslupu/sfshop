@@ -1,3 +1,4 @@
+<?php if (sfConfig::get('sf_environment', 'dev') != 'dev'): ?>
 #
 # Asset types
 #
@@ -101,3 +102,5 @@ ThumbnailTypeAssetType:
     height:                 0
     is_active:              1
     is_trim:                0
+    
+<?php endif; ?>

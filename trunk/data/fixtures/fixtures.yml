@@ -1,3 +1,4 @@
+<?php if (sfConfig::get('sf_environment', 'dev') == 'dev'): ?>
 #
 # Asset types
 #
@@ -6,10 +7,12 @@ AssetType:
     name:          product
     model:         Product
     has_thumbnail: 1
+    has_i18n:      1
   AssetType_category:
     name:          category
     model:         Category
     has_thumbnail: 1
+    has_i18n:      1
 #
 # Members
 #
@@ -2168,3 +2171,5 @@ Thumbnail:
     is_blank:           1
     mime_extension:     'jpg'
     is_converted:       1
+    
+<?php endif; ?>

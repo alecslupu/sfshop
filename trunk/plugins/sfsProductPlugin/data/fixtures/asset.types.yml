@@ -2,11 +2,11 @@
 # Asset types
 #
 AssetType:
-  AssetType_product:
-    name:          product
-    model:         Product
-    has_thumbnail: 1
-    has_i18n:      1
+#  AssetType_product:
+#    name:          product
+#    model:         Product
+#    has_thumbnail: 1
+#    has_i18n:      1
   AssetType_brand:
     name:          brand
     model:         Brand

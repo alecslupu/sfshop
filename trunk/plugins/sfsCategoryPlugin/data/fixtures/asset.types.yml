@@ -1,9 +1,9 @@
 #
 # Asset types
 #
-AssetType:
-  AssetType_category:
-    name:          category
-    model:         Category
-    has_thumbnail: 1
-    has_i18n:      1
+#AssetType:
+#  AssetType_category:
+#    name:          category
+#    model:         Category
+#    has_thumbnail: 1
+#    has_i18n:      1
