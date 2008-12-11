@@ -6,8 +6,13 @@
 
     <h1>Change my password</h1>
     
-    <div id="sf_admin_content">
+    <?php if ($sf_user->hasFlash('notice')): ?>
+        <div class="save-ok">
+           <h2><?php echo __($sf_user->getFlash('notice')) ?></h2>
+        </div>
+    <?php endif; ?>
     
+    <div id="sf_admin_content">
         
         <?php echo form_tag('administratorAdmin/changeMyPassword', array(
             'id'        => 'sf_admin_change_password_form',
@@ -54,10 +59,7 @@
             </fieldset>
             
             <ul class="sf_admin_actions">
-                <li><?php echo button_to(__('list'), 'coreAdminAdmin/list', array (
-              'class' => 'sf_admin_action_list',
-            )) ?></li>
-                <li><?php echo submit_tag(__('save'), array (
+                <li><?php echo submit_tag(__('change'), array (
               'name' => 'save',
               'class' => 'sf_admin_action_save',
             )) ?></li>
