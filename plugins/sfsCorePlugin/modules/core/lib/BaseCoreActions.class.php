@@ -27,15 +27,17 @@ class BaseCoreActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeChangeLanguage()
+    public function executeChangeLanguage($request)
     {
-        $language = LanguagePeer::retrieveByPK($this->getRequestParameter('culture'));
+        $criteria = new Criteria();
+        LanguagePeer::addPublicCriteria($criteria);
+        $language = LanguagePeer::retrieveByCulture($request->getParameter('culture'), $criteria);
         
-        if ($language !==null && $language->getIsActive()) {
-            $this->getUser()->setCulture($this->getRequestParameter('culture'));
+        if ($language !== null) {
+            $this->getUser()->setCulture($request->getParameter('culture'));
         }
         
-        $this->redirect($this->getRequest()->getReferer());
+        $this->redirect($request->getReferer());
     }
     
    /**

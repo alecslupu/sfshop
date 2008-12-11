@@ -9,7 +9,7 @@
  */ 
 class LanguagePeer extends BaseLanguagePeer
 {
-    /**
+   /**
     * Gets default language
     *
     * @param  void
@@ -24,7 +24,25 @@ class LanguagePeer extends BaseLanguagePeer
         return self::doSelectOne($criteria);
     }
     
-    /**
+   /**
+    * Get language object by culture.
+    *
+    * @param  string $culture
+    * @return mixed if language exist returns object, otherwise null.
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function retrieveByCulture($culture, $criteria = null)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        
+        $criteria->add(self::CULTURE, $culture, Criteria::EQUAL);
+        return self::doSelectOne($criteria);
+    }
+    
+   /**
     * Gets all languages.
     *
     * @param  object $criteria
