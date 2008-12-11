@@ -29,9 +29,9 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
             if ($admin->checkPassword($currentPassword)) {
                 $admin->setPassword($request->getParameter('admin[password]'));
                 $admin->save();
-                $this->getUser()->setFlash('notice', 'Your new password has been saved');
                 
-                $this->redirect('administratorAdmin/list');
+                $this->getUser()->setFlash('notice', 'Your new password has been saved');
+                $this->redirect('administratorAdmin/changeMyPassword');
             }
             else {
                 $this->getRequest()->setError('admin{current_password}', 'Current password is wrong');
