@@ -19,12 +19,14 @@
  */
 class catalogAdminActions extends sfActions
 {
-    public function executeList()
+    public function executeList($request)
     {
         $this->getContext()->getConfigCache()->import('modules/categoryAdmin/config/generator.yml', false, true);
         $this->getContext()->getController()->getAction('categoryAdmin', 'list');
         
         $this->getContext()->getConfigCache()->import('modules/productAdmin/config/generator.yml', false, true);
         $this->getContext()->getController()->getAction('productAdmin', 'list');
+        
+        $this->path = $request->hasParameter('path') ? '?path=' . $request->getParameter('path') : '';
     }
 }
