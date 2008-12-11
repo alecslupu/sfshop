@@ -35,7 +35,7 @@ class CategoryPeer extends BaseCategoryPeer
         }
         
         $criteria->add(self::PARENT_ID, null, Criteria::ISNULL);
-        $criteria->addAscendingOrderByColumn(CategoryI18nPeer::TITLE);
+        $criteria->addAscendingOrderByColumn(CategoryPeer::POS);
         return self::doSelectWithI18n($criteria);
     }
     

@@ -50,9 +50,9 @@ class Category extends BaseCategory
         
         if ($this->getHasChild()) {
             $criteria->add(CategoryPeer::PARENT_ID, $this->getId());
-            
+            $criteria->addAscendingOrderByColumn(CategoryPeer::POS);
+
             if ($withI18n) {
-                $criteria->addAscendingOrderByColumn(CategoryI18nPeer::TITLE);
                 return CategoryPeer::doSelectWithI18n($criteria);
             }
             else {
