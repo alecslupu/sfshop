@@ -5,7 +5,7 @@
     
     <?php if ($sf_user->hasFlash('notice')): ?>
         <div class="save-ok">
-         <h2><?php echo __($sf_user->getFlash('notice')) ?></h2>
+            <h2><?php echo __($sf_user->getFlash('notice')) ?></h2>
         </div>
     <?php endif; ?>
     
@@ -19,6 +19,9 @@
         <?php include_component('categoryAdmin', 'list', array('item_routing' => 'catalogAdmin/list')); ?>
         <?php include_component('productAdmin', 'list', array('item_routing' => 'catalogAdmin/list')); ?>
     </table>
-    <?php include_partial('categoryAdmin/list_actions') ?>
-    <?php include_partial('productAdmin/list_actions') ?>
+    
+    <ul class="sf_admin_actions">
+        <li><?php echo button_to(__('Create product'), 'productAdmin/create' . $path, array('class' => 'sf_admin_action_create')) ?></li>
+        <li>&nbsp;<?php echo button_to(__('Create category'), 'categoryAdmin/create' . $path, array('class' => 'sf_admin_action_create')) ?></li>
+    </ul>
 </div>
