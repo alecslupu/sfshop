@@ -1,0 +1,11 @@
+indexSuccess:
+  metas:
+    title: Install sfShop - Step 1 (Checking server capabilities)
+    
+configureSuccess:
+  metas:
+    title: Install sfShop - Step 2 (Configuration)
+    
+finishedSuccess:
+  metas:
+    title: Install sfShop - Step 3 (Successfully installed)
