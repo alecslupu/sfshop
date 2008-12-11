@@ -1,8 +1,14 @@
 <?php use_helper('I18N', 'Date') ?>
 <div id="sf_admin_container">
-
-<h1><?php echo __('Categories/Products') ?></h1>
-
+    
+    <h1><?php echo __('Categories/Products') ?></h1>
+    
+    <?php if ($sf_user->hasFlash('notice')): ?>
+        <div class="save-ok">
+         <h2><?php echo __($sf_user->getFlash('notice')) ?></h2>
+        </div>
+    <?php endif; ?>
+    
     <table cellspacing="0" class="sf_admin_list">
         <thead>
             <tr>
