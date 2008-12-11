@@ -10,6 +10,9 @@
         array('%files%' => sfConfig::get('sf_config_dir') . '/databases.yml, ' . sfConfig::get('sf_config_dir') . '/propel.ini')
     ) ?></span>
     <br/><br/>
+    <h3><?php echo __('Data for login in the Admin panel') ?></h3>
+    <b><?php echo __('Login') ?>:</b> admin@localhost<br/>
+    <b><?php echo __('Password') ?>:</b> superadmin<br/><br/>
     <div align="center">
         <?php echo link_to('Catalog', str_replace('/install/index.php', '', url_for('@homepage', true)), array('target' => '_blank')) ?> &nbsp; &nbsp; &nbsp;
         <?php echo link_to('Admin panel', str_replace('/install/index.php', '/admin', url_for('@coreAdmin_index', true)), array('target' => '_blank')) ?>
