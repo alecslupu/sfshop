@@ -24,8 +24,9 @@ generator:
       actions: 
         _list:          
           action:       catalogList
-        _save:         ~
-        _delete:       ~
+        _save:          ~
+        _delete:        ~
+        _save_and_add:  ~
         
       fields:
         title_i18n: 

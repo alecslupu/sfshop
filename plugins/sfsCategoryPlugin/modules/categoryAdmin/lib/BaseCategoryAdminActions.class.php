@@ -24,8 +24,14 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
         sfLoader::loadHelpers('sfsCategory');
         
         $category = CategoryPeer::retrieveByPK($this->getRequestParameter('id'));
-        $path = $category->getPath();
-        $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
+        
+        if ($category != null) {
+            $path = $category->getPath();
+            $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
+        }
+        else {
+            $this->redirect('catalogAdmin/list');
+        }
     }
     
     public function executeDelete()
@@ -73,7 +79,6 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
     
     protected function saveCategory($category)
     {
-        sfLoader::loadHelpers('sfsCategory');
         $category->save();
         
         if ($this->getRequest()->hasFile('category[thumbnail]')) {
@@ -90,15 +95,48 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
                 sfsThumbnailUtil::convert();
             }
         }
+    }
+    
+    public function handlePost($type)
+    {
+        sfLoader::loadHelpers('sfsCategory');
         
-        if ($category->getCategoryRelatedByParentId()) {
-            $path = $category->getCategoryRelatedByParentId()->getPath();
-            $redirectTo = 'catalogAdmin/list?path=' . generate_category_path_for_url($path);
+        $this->updateCategoryFromRequest();
+        
+        try {
+            $this->saveCategory($this->category);
+            //adde by nest
+            $this->clearFrontendCache();
+        }
+        catch (PropelException $e) {
+            if ( $type == 'edit' ) {
+                $this->getRequest()->setError('edit', 'Could not save the edited Categorys.');
+            }
+            else {
+                $this->getRequest()->setError('create', 'Could not save the created Categorys.');
+            }
+            
+            return $this->forward('catalogAdmin', 'list');
+        }
+        
+        $this->getUser()->setFlash('notice', 'Your modifications have been saved');
+        
+        if ($this->getRequestParameter('save_and_add')) {
+            return $this->redirect('categoryAdmin/create');
         }
         else {
-            $redirectTo = 'catalogAdmin/list';
+            
+            $this->getUser()->setFlash('notice', 'Your modifications have been saved');
+            
+            if ($this->category->getCategoryRelatedByParentId()) {
+                $path = $this->category->getCategoryRelatedByParentId()->getPath();
+                $redirectTo = 'catalogAdmin/list?path=' . generate_category_path_for_url($path);
+            }
+            else {
+                $redirectTo = 'catalogAdmin/list';
+            }
+            
+            return $this->redirect($redirectTo);
         }
-        
-        $this->redirect($redirectTo);
     }
 }

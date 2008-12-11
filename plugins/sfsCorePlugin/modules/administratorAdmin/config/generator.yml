@@ -1,5 +1,5 @@
 generator:
-  class:                sfPropelAdminGenerator
+  class:                sfAdvancedAdminGenerator
   param:
     model_class:        Admin
     theme:              default
