@@ -61,11 +61,7 @@ $languages = LanguagePeer::getAll($criteria);
 <?php if (strpos($column->getName(), '_i18n')): ?>
     
     <?php foreach ($languages as $language): ?>
-        <?php $path = 'http://' . $_SERVER['HTTP_HOST'] .'/images/' . sfConfig::get('languages_images_dir', 'languages')
-            . '/'
-            . strtolower($language->getTitleEnglish()) 
-            . '/'
-            . 'icon.png';
+        <?php $path = 'http://' . $_SERVER['HTTP_HOST'] . $language->getIconUrl();
             $title = $language->getTitleOwn();
          ?>
         <div class="form-row">
