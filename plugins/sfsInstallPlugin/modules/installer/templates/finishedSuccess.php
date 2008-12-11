@@ -1,4 +1,4 @@
-<h2><?php echo __('Finished (step 3 of 3)') ?></h2><br/>
+<h2><?php echo __('Successfully installed (step 3 of 3)') ?></h2><br/>
 <div class="border">
     <?php echo __('The installation and configuration was successful!') ?><br/>
     <?php echo image_tag('exclamation.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>

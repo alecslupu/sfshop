@@ -1,4 +1,4 @@
-<h2><?php echo __('Checking (step 1 of 3)') ?></h2>
+<h2><?php echo __('Checking server capabilities (step 1 of 3)') ?></h2>
 <br/>
 
 <?php if (!$isValidPhpVersion || count($unexistsPhpExtensions) > 0 || count($unwritablePaths) > 0): ?>

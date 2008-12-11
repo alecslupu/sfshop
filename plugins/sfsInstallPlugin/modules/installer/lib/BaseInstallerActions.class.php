@@ -26,7 +26,8 @@ class BaseInstallerActions extends sfActions
             sfConfig::get('sf_cache_dir'),
             sfConfig::get('sf_data_dir') . '/index/ProductSearchIndex/',
             sfConfig::get('sf_log_dir'),
-            sfConfig::get('sf_web_dir') . '/images/thumbnails/',
+            sfConfig::get('sf_web_dir') . '/images/thumbnails/original',
+            sfConfig::get('sf_web_dir') . '/images/thumbnails/converted',
             sfConfig::get('sf_config_dir') . '/databases.yml',
             sfConfig::get('sf_config_dir') . '/propel.ini'
         );
