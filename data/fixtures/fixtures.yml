@@ -1334,14 +1334,6 @@ ThumbnailTypeAssetType:
     is_active:              1
     is_trim:                1
   ThumbnailTypeAssetType_7: 
-    thumbnail_type_id:      ThumbnailType_3
-    asset_type_id:          AssetType_category
-    thumbnail_type_name:    medium
-    width:                  252
-    height:                 254
-    is_active:              1
-    is_trim:                1
-  ThumbnailTypeAssetType_8: 
     thumbnail_type_id:      ThumbnailType_7
     asset_type_id:          AssetType_category
     thumbnail_type_name:    original
@@ -1509,8 +1501,8 @@ Thumbnail:
     is_converted:       1
   Thumbnail_original_16:
     asset_type_model:   Product
-    uuid:               c4c888785158b3582986d9e96958b8b5
-    path:               products/2008/05/15
+    uuid:               product_blank_thumbnail
+    path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_5
     mime_extension:     jpg

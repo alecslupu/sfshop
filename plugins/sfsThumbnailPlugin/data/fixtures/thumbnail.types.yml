@@ -87,14 +87,6 @@ ThumbnailTypeAssetType:
     is_active:              1
     is_trim:                1
   ThumbnailTypeAssetType_7: 
-    thumbnail_type_id:      ThumbnailType_3
-    asset_type_id:          AssetType_category
-    thumbnail_type_name:    medium
-    width:                  252
-    height:                 254
-    is_active:              1
-    is_trim:                1
-  ThumbnailTypeAssetType_8: 
     thumbnail_type_id:      ThumbnailType_7
     asset_type_id:          AssetType_category
     thumbnail_type_name:    original
