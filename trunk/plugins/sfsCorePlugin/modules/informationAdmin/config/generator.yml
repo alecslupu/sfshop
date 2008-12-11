@@ -26,7 +26,7 @@ generator:
       actions: 
         _list:          ~
         _save:          ~
-        _delete:        ~
+        _save_and_add:  ~
     
       fields: 
         description_i18n: 
