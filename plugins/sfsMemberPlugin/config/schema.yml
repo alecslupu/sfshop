@@ -62,7 +62,7 @@ propel:
     is_active: 
       type: BOOLEAN
       required: true
-      default: 0
+      default: 1
     access_num: 
       type: INTEGER
       required: true
@@ -71,8 +71,6 @@ propel:
     updated_at: 
     modified_at: 
       type: TIMESTAMP
-    _uniques: 
-      uni_email: [email]
 
   member_secret_question: 
     _attributes: 

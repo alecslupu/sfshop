@@ -1,4 +1,5 @@
 <?php
+
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
@@ -77,7 +78,9 @@ class sfsValidatorMember extends sfValidatorBase
             }
         }
         elseif ($this->hasOption('check_unique_email')) {
-            $member = MemberPeer::retrieveByEmail($value);
+            $criteria = new Criteria();
+            $criteria->add(MemberPeer::IS_DELETED, false);
+            $member = MemberPeer::retrieveByEmail($value, $criteria);
             $sfUser = sfContext::getInstance()->getUser();
             $ownEmail = false;
             

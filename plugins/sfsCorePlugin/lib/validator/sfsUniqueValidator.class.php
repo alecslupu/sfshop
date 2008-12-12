@@ -15,6 +15,11 @@ class sfsUniqueValidator extends sfValidator
     {
         $c = new Criteria();
         $c->add(constant($className . 'Peer::ID'), $id, Criteria::NOT_EQUAL);
+        
+        if (method_exists($className, 'getIsDeleted')) {
+            $c->add(constant($className . 'Peer::IS_DELETED'), 0, Criteria::EQUAL);
+        }
+        
         $c->add(constant($className . 'Peer::' . strtoupper($fieldName)), $value, Criteria::EQUAL);
         
         $count = call_user_func(

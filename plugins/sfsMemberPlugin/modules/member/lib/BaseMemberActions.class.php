@@ -43,30 +43,37 @@ class BaseMemberActions extends sfActions
                 
                 if ($this->form->isValid()) {
                     
-                    $member = MemberPeer::retrieveByEmail($data['email']);
+                    $criteria = new Criteria();
+                    $criteria->add(MemberPeer::IS_DELETED, false);
+                    $member = MemberPeer::retrieveByEmail($data['email'], $criteria);
                     
                     if ($member !== null && $member->checkPassword($data['password'])) {
                         
-                        if ($member->getIsConfirmed() == MemberPeer::CONFIRMED) {
-                            $this->getUser()->login($member);
-                            
-                            if ($request->getReferer() != $request->getUri()) {
-                                $redirectTo = $request->getReferer();
+                        if ($member->getIsActive()) {
+                            if ($member->getIsConfirmed() == MemberPeer::CONFIRMED) {
+                                $this->getUser()->login($member);
+                                
+                                if ($request->getReferer() != $request->getUri()) {
+                                    $redirectTo = $request->getReferer();
+                                }
+                                else {
+                                    $redirectTo = url_for('@member_myProfile', true);
+                                }
                             }
                             else {
-                                $redirectTo = url_for('@member_myProfile', true);
+                                 $redirectTo = url_for('@member_confirmRegistration', true);
+                            }
+                            
+                            if ($request->isXmlHttpRequest()) {
+                                $response = array('redirect_to' => $redirectTo);
+                                return $this->renderText(sfsJSONPeer::createResponseSuccess($response));
+                            }
+                            else {
+                                $this->redirect($redirectTo);
                             }
                         }
                         else {
-                             $redirectTo = url_for('@member_confirmRegistration', true);
-                        }
-                        
-                        if ($request->isXmlHttpRequest()) {
-                            $response = array('redirect_to' => $redirectTo);
-                            return $this->renderText(sfsJSONPeer::createResponseSuccess($response));
-                        }
-                        else {
-                            $this->redirect($redirectTo);
+                            $this->form->defineError('email', __('You account is inactive, please contact to administrator for getting more information'));
                         }
                     }
                     else {
