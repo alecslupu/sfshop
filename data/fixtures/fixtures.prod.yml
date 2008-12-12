@@ -1,4 +1,4 @@
-<?php if (sfConfig::get('sf_environment', 'dev') != 'dev'): ?>
+<?php if (sfConfig::get('sf_environment', 'dev') == 'prod'): ?>
 #
 # Asset types
 #
@@ -7,10 +7,12 @@ AssetType:
     name:          product
     model:         Product
     has_thumbnail: 1
+    has_i18n:      1
   AssetType_category:
     name:          category
     model:         Category
     has_thumbnail: 1
+    has_i18n:      1
 
 #
 # Thumbnails types
@@ -94,5 +96,85 @@ ThumbnailTypeAssetType:
     height:                 0
     is_active:              1
     is_trim:                0
+  
+#
+# Thumbnails mime types
+#
+ThumbnailMime:
+  ThumbnailMime_1:
+    mime:              image/jpeg
+    extension:         jpg
+    extensions:        jpe, jpg, jpeg
+  ThumbnailMime_2:
+    mime:              image/gif
+    extension:         gif
+    extensions:        gif
+  ThumbnailMime_3:
+    mime:              image/png
+    extension:         png
+    extensions:        png
+
+#
+# Thumbnails
+#
+Thumbnail:
+  # original
+  Thumbnail_original_blank:
+    asset_type_model:   Product
+    uuid:               product_blank_original_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_blank:           1
+    is_converted:       1
+  
+  # mini
+  Thumbnail_mini_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_mini_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+   
+  # small
+  Thumbnail_small_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_small_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+    
+  # medium
+  Thumbnail_medium_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_medium_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+  
+  # large
+  Thumbnail_large_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_large_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
     
 <?php endif; ?>
