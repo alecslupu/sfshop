@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -16,7 +16,7 @@ require_once(dirname(__FILE__).'/../lib/BaseCurrencyActions.class.php');
  *
  * @package    plugin.sfsCurrencyPlugin
  * @subpackage modules.currency
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
 class currencyActions extends BaseCurrencyActions

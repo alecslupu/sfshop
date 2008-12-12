@@ -1,7 +1,7 @@
 <?php
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -13,7 +13,7 @@
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage modules.addressBook
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  */
 class BaseAddressBookComponents extends sfComponents
 {
@@ -22,7 +22,7 @@ class BaseAddressBookComponents extends sfComponents
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeInputForm()
@@ -58,7 +58,7 @@ class BaseAddressBookComponents extends sfComponents
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeSelectForm()
@@ -88,7 +88,7 @@ class BaseAddressBookComponents extends sfComponents
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeDeliveryAddress()
@@ -102,7 +102,7 @@ class BaseAddressBookComponents extends sfComponents
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeBillingAddress()

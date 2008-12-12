@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsCategoryPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: Category.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class Category extends BaseCategory
@@ -39,7 +39,7 @@ class Category extends BaseCategory
      *
      * @param  void
      * @return array
-     * @author Dmitry Nesteruk <nest@dev-zp.com>
+     * @author Dmitry Nesteruk <nesterukd@gmail.com>
      * @access public
      */
     public function getChild($criteria = null, $withI18n = false)
@@ -69,7 +69,7 @@ class Category extends BaseCategory
     * 
     * @param  &$childCategories
     * @return null
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function getChildSeries(&$childCategories, $withI18n = false)
@@ -92,7 +92,7 @@ class Category extends BaseCategory
      *
      * @param  &$array
      * @return array
-     * @author Dmitry Nesteruk <nest@dev-zp.com>
+     * @author Dmitry Nesteruk <nesterukd@gmail.com>
      * @access public
      */
     public function getParentsSeries(&$array)
@@ -117,7 +117,7 @@ class Category extends BaseCategory
      *
      * @param  void
      * @return array
-     * @author Dmitry Nesteruk <nest@dev-zp.com>
+     * @author Dmitry Nesteruk <nesterukd@gmail.com>
      * @access public
      */
     public function getPath()
@@ -135,7 +135,7 @@ class Category extends BaseCategory
      *
      * @param  void
      * @return void
-     * @author Dmitry Nesteruk <nest@dev-zp.com>
+     * @author Dmitry Nesteruk <nesterukd@gmail.com>
      * @access public
      */
     public function save($con = null)

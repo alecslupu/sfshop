@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsCategoryPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: CategoryPeer.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class CategoryPeer extends BaseCategoryPeer
@@ -25,7 +25,7 @@ class CategoryPeer extends BaseCategoryPeer
     *
     * @param  void
     * @return array with objects, otherwise null.
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getFirstLevel($criteria = null)
@@ -46,7 +46,7 @@ class CategoryPeer extends BaseCategoryPeer
     * 
     * @param  $categoryId
     * @return array with ids
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getAllChildIds($categoryId)
@@ -68,7 +68,7 @@ class CategoryPeer extends BaseCategoryPeer
     * 
     * @param  $categoryId
     * @return array with ids
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getAllChild($categoryId)
@@ -92,7 +92,7 @@ class CategoryPeer extends BaseCategoryPeer
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function determineHasChild()
@@ -127,7 +127,7 @@ class CategoryPeer extends BaseCategoryPeer
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function determinePathForCategoryAndChild($category)
@@ -168,7 +168,7 @@ class CategoryPeer extends BaseCategoryPeer
     * 
     * @param  array $ids
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function deleteByIds($ids)

@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugins.sfsOrderPlugin
  * @subpackage modules.orderAdmin
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
  */
 class BaseOrderAdminActions extends autoorderAdminActions

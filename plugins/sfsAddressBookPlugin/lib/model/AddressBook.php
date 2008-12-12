@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: AddressBook.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class AddressBook extends BaseAddressBook
@@ -26,7 +26,7 @@ class AddressBook extends BaseAddressBook
     * 
     * @param  int $value 0 or 1
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function setIsDefault($value)

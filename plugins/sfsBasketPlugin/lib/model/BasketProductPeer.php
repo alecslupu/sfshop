@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsBasketPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>, Andrey Kotlyarov
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andrey Kotlyarov
  * @version    SVN: $Id: BasketProduct.php 6174 2007-11-27 06:22:40Z fabien $
  */
 class BasketProductPeer extends BaseBasketProductPeer
@@ -25,7 +25,7 @@ class BasketProductPeer extends BaseBasketProductPeer
     * @param  int $basketId
     * @param  int $productId
     * @return object
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function retrieveByBasketIdAndProductId($basketId, $productId, $optionsList = null)
@@ -46,7 +46,7 @@ class BasketProductPeer extends BaseBasketProductPeer
     *
     * @param  int $productId
     * @return int
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function retrieveQuantityByProductId($productId)
@@ -74,7 +74,7 @@ class BasketProductPeer extends BaseBasketProductPeer
     *
     * @param  int $basketId
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function deleteAllProductsByBasketId($basketId)

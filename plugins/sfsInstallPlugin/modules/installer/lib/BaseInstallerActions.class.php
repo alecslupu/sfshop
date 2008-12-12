@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugins.sfsInstallPlugin
  * @subpackage modules.installer
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class BaseInstallerActions extends sfActions
@@ -155,7 +155,7 @@ class BaseInstallerActions extends sfActions
          }
          else {
              $dispatcher = sfContext::getInstance()->getEventDispatcher();
-             $formatter = new sfAnsiColorFormatter();
+             $formatter = new sfsWebColorFormatter();
              
              chdir(sfConfig::get('sf_root_dir'));
              
@@ -167,7 +167,7 @@ class BaseInstallerActions extends sfActions
              $loadData = new sfPropelLoadDataTask($dispatcher, $formatter);
              $loadData->run(array('install'), array());
              
-             $this->redirect('@installer_finished');
+             //$this->redirect('@installer_finished');
          }
     }
     
