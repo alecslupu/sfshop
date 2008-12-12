@@ -1499,9 +1499,9 @@ Thumbnail:
     ttat_id:            ThumbnailTypeAssetType_5
     mime_extension:     jpg
     is_converted:       1
-  Thumbnail_original_16:
+  Thumbnail_original_blank:
     asset_type_model:   Product
-    uuid:               product_blank_thumbnail
+    uuid:               product_blank_original_thumbnail
     path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_5
@@ -1662,11 +1662,11 @@ Thumbnail:
     mime_extension:     jpg
     is_converted:       1
 
-  Thumbnail_mini_16:
-    parent_id:          Thumbnail_original_16
+  Thumbnail_mini_blank:
+    parent_id:          Thumbnail_original_blank
     asset_type_model:   Product
-    uuid:               fd7de33464155953e99a9a6f5212ceb1
-    path:               products/2008/05/15
+    uuid:               product_blank_mini_thumbnail
+    path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_1
     is_blank:           1
@@ -1826,11 +1826,11 @@ Thumbnail:
     mime_extension:     jpg
     is_converted:       1
     
-  Thumbnail_small_16:
-    parent_id:          Thumbnail_original_16
+  Thumbnail_small_blank:
+    parent_id:          Thumbnail_original_blank
     asset_type_model:   Product
-    uuid:               bed38ea5a00d226a4d787003a5d4bb02
-    path:               products/2008/05/15
+    uuid:               product_blank_small_thumbnail
+    path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_2
     is_blank:           1
@@ -1989,11 +1989,11 @@ Thumbnail:
     ttat_id:            ThumbnailTypeAssetType_3
     mime_extension:     jpg
     is_converted:       1
-  Thumbnail_medium_16:
-    parent_id:          Thumbnail_original_16
+  Thumbnail_medium_blank:
+    parent_id:          Thumbnail_original_blank
     asset_type_model:   Product
-    uuid:               4709a7c990e343b773d23fce692ecc15
-    path:               products/2008/05/15
+    uuid:               product_blank_medium_thumbnail
+    path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_3
     is_blank:           1
@@ -2153,15 +2153,16 @@ Thumbnail:
     mime_extension:     jpg
     is_converted:       1
     
-  Thumbnail_large_16:
-    parent_id:          Thumbnail_original_16
+  # large
+  Thumbnail_large_blank:
+    parent_id:          Thumbnail_original_blank
     asset_type_model:   Product
-    uuid:               115050c97296ea3e816a697e30ed818b
-    path:               products/2008/05/15
+    uuid:               product_blank_large_thumbnail
+    path:               products
     mime_id:            ThumbnailMime_1
     ttat_id:            ThumbnailTypeAssetType_4
     is_blank:           1
-    mime_extension:     'jpg'
+    mime_extension:     jpg
     is_converted:       1
     
 <?php endif; ?>
