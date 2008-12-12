@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugins.sfsCategoryPlugin
  * @subpackage modules.categoriesAdmin
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: components.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class BaseCategoryAdminComponents extends sfComponents
@@ -24,7 +24,7 @@ class BaseCategoryAdminComponents extends sfComponents
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeTree()
@@ -54,7 +54,7 @@ class BaseCategoryAdminComponents extends sfComponents
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeList()

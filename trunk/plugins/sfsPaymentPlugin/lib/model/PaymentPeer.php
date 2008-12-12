@@ -14,7 +14,7 @@ class PaymentPeer extends BasePaymentPeer
     *
     * @param  string $name
     * @return mixed if service exist returns object, otherwise null.
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function retrieveByName($name)

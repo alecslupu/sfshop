@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    lib
  * @subpackage search
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
 class ProductSearchIndex extends xfIndexSingle
@@ -26,7 +26,7 @@ class ProductSearchIndex extends xfIndexSingle
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     protected function initialize()
@@ -50,7 +50,7 @@ class ProductSearchIndex extends xfIndexSingle
     *
     * @param  string $value
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function setCulture($value)
@@ -63,7 +63,7 @@ class ProductSearchIndex extends xfIndexSingle
     *
     * @param  void
     * @return string
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function getCulture()
@@ -76,7 +76,7 @@ class ProductSearchIndex extends xfIndexSingle
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     protected function configure()

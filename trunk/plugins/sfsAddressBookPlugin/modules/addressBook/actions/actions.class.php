@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -16,7 +16,7 @@ require_once(dirname(__FILE__).'/../lib/BaseAddressBookActions.class.php');
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage modules.addressBook
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class addressBookActions extends BaseAddressBookActions

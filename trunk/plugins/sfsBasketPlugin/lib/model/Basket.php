@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsBasketPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>, Andrey Kotlyarov
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andrey Kotlyarov
  * @version    SVN: $Id: Basket.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class Basket extends BaseBasket
@@ -38,7 +38,7 @@ class Basket extends BaseBasket
     *
     * @param  void
     * @return string
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function getTotalPrice()
@@ -59,7 +59,7 @@ class Basket extends BaseBasket
     *
     * @param  void
     * @return bool
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function checkProductsAvailability()
@@ -93,7 +93,7 @@ class Basket extends BaseBasket
     *
     * @param  void
     * @return array
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function getUnavailabilityProducts()
@@ -169,7 +169,7 @@ class Basket extends BaseBasket
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function clear()

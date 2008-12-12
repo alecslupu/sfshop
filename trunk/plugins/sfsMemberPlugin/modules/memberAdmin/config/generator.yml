@@ -3,26 +3,26 @@ generator:
   param:
     model_class:      Member
     theme:            default
-
+    
     fields: 
       full_name: 
         name:           Name
       access_num: 
         name:           Count of access
-
+    
     list: 
       title:            List of member
       display:          [=id, =full_name, email, primary_phone, secondary_phone, is_active, is_confirmed]
-      max_per_page:     2
+      max_per_page:     10
       object_actions: 
         _edit:          ~
         _delete:        ~
       actions:          []
-
+    
     show:
       title:            View a member details
       display:          [full_name, email, primary_phone, secondary_phone, is_active, is_confirmed]
-
+    
     edit: 
       title:            '%%_edit_caption%%'
       display: 

@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -16,7 +16,7 @@ require_once(dirname(__FILE__).'/../lib/BasePaymentAdminComponents.class.php');
  *
  * @package    plugins.sfsPaymentPlugin
  * @subpackage modules.paymentAdmin
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  */
 class paymentAdminComponents extends BasePaymentAdminComponents
 {

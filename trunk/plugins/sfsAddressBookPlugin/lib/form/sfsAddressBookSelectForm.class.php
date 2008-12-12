@@ -1,7 +1,7 @@
 <?php
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -13,7 +13,7 @@
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage lib.form
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: sfsAddressBookSelectForm.class.php 6174 2007-11-27 06:22:40Z fabien $
  */
 class sfsAddressBookSelectForm extends AddressBookForm

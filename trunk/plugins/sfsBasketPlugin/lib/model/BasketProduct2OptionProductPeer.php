@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsBasketPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>, Andrey Kotlyarov
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andrey Kotlyarov
  * @version    SVN: $Id: BasketProduct.php 6174 2007-11-27 06:22:40Z fabien $
  */
 class BasketProduct2OptionProductPeer extends BaseBasketProduct2OptionProductPeer

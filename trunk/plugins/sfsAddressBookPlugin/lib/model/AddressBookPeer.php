@@ -1,7 +1,7 @@
 <?php
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -13,7 +13,7 @@
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage lib.model
- * @author     Dmitry Nesteruk <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: AddressBookPeer.php 6174 2007-11-27 06:22:40Z fabien $
  */ 
 class AddressBookPeer extends BaseAddressBookPeer
@@ -23,7 +23,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     *
     * @param  array $field associate array with values of address book.
     * @return object
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function saveAddressBook(array $fields, AddressBook $addressBook = null)
@@ -42,7 +42,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     *
     * @param  int $memberId
     * @return mixed if member exist returns object, otherwise null.
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getByMemberId($memberId)
@@ -57,7 +57,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     *
     * @param  int $memberId
     * @return array
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getHashByMemberId($memberId)
@@ -82,7 +82,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     *
     * @param  int $memberId
     * @return object
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function retrieveDefaultByMemberId($memberId)
@@ -98,7 +98,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     *
     * @param  int $memberId
     * @return bool
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function hasAddresses($memberId)

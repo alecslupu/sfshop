@@ -2,7 +2,7 @@
 
 /**
  * sfShop, open source e-commerce solutions.
- * (c) 2008 Dmitry Nesteruk <nest@dev-zp.com>
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
  * 
  * Released under the MIT License.
  * 
@@ -14,7 +14,7 @@
  *
  * @package    plugin.sfsAddressBookPlugin
  * @subpackage modules.addressBook
- * @author     Dmitry Nesteruk  <nest@dev-zp.com>
+ * @author     Dmitry Nesteruk  <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class BaseAddressBookActions extends sfActions
@@ -24,7 +24,7 @@ class BaseAddressBookActions extends sfActions
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeMyList($request)
@@ -43,7 +43,7 @@ class BaseAddressBookActions extends sfActions
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeCreate()
@@ -56,7 +56,7 @@ class BaseAddressBookActions extends sfActions
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeEdit($request)
@@ -134,7 +134,7 @@ class BaseAddressBookActions extends sfActions
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeSelect($request)
@@ -183,7 +183,7 @@ class BaseAddressBookActions extends sfActions
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public function executeDelete()
@@ -204,7 +204,7 @@ class BaseAddressBookActions extends sfActions
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nest@dev-zp.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access protected
     */
     protected function getAddressOrCreate($id = 'id')
