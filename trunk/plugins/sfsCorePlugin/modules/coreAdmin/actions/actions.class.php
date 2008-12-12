@@ -22,6 +22,8 @@ class coreAdminActions extends sfActions
     
     public function executeLogin($request)
     {
+        sfLoader::loadHelpers(array('I18N'));
+        
         $this->form = new sfsAdminLoginForm();
         
         if ($this->getUser()->isAuthenticated()) {
@@ -39,11 +41,16 @@ class coreAdminActions extends sfActions
                     $admin = AdminPeer::retrieveByEmail($data['email']);
                     
                     if ($admin !== null && $admin->checkPassword($data['password'])) {
-                        $this->getUser()->login($admin);
-                        $this->redirect('@coreAdmin_index');
+                        if ($admin->getIsActive()) {
+                            $this->getUser()->login($admin);
+                            $this->redirect('@coreAdmin_index');
+                        }
+                        else {
+                            $this->form->defineError('email', __('You account is inactive, please contact to administrator for getting more information'));
+                        }
                     }
                     else {
-                        $this->form->defineError('email', 'Email or password is wrong');
+                        $this->form->defineError('email', __('Email or password is wrong'));
                     }
                 }
             }
