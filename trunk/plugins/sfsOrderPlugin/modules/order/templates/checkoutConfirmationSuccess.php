@@ -2,7 +2,7 @@
     <table cellspacing="1" cellpadding="0" width="100%" class="list">
         <tr>
           <td width="50%" valign="top">
-              <?php include_component('addressBook', 'deliveryAddress') ?>
+              <?php include_component('addressBook', 'deliveryAddress', array('is_edit_enabled' => true)) ?>
           </td>
           <td width="50%" valign="top">
               <?php include_partial('list_products_details', 
@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('payment', 'orderPaymentInfo', array()) ?>
+                <?php include_component('payment', 'orderPaymentInfo', array('is_edit_enabled' => true)) ?>
             </td>
         </tr>
         <tr>

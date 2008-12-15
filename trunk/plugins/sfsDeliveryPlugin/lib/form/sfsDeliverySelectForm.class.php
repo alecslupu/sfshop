@@ -36,14 +36,20 @@ class sfsDeliverySelectForm extends BaseDeliveryForm
         $storeAddress = sfConfig::get('app_store_address');
         
         $storeAddress['country_iso'] = CountryPeer::retrieveByPK($storeAddress['country_id'])->getIso();
-        $storeAddress['state_iso'] = StatePeer::retrieveByPK($storeAddress['state_id'])->getIso();
+        
+        if (isset($storeAddress['state_iso']) && $storeAddress['state_iso'] != '') {
+            $storeAddress['state_iso'] = StatePeer::retrieveByPK($storeAddress['state_id'])->getIso();
+        }
         
         $deliveryAddressId = $sfUser->getAttribute('address_id', null, 'order/delivery');
         $deliveryAddress = AddressBookPeer::retrieveById($deliveryAddressId);
         
         $deliveryAddressArray = $deliveryAddress->toArray(BasePeer::TYPE_FIELDNAME);
         $deliveryAddressArray['country_iso'] = CountryPeer::retrieveByPK($deliveryAddress->getCountryId())->getIso();
-        $deliveryAddressArray['state_iso'] = StatePeer::retrieveByPK($deliveryAddress->getStateId())->getIso();
+        
+        if ($deliveryAddress->getStateId()) {
+            $deliveryAddressArray['state_iso'] = StatePeer::retrieveByPK($deliveryAddress->getStateId())->getIso();
+        }
         
         $weight = $sfUser->getBasket()->getTotalWeight();
         $price = $sfUser->getBasket()->getTotalPrice();
