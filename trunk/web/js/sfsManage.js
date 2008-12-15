@@ -53,6 +53,9 @@ var sfsManage = Class.create({
         if (isHideCancel) {
             this.containers.form.down('li.actions').down('.cancel').hide();
         }
+        else {
+            this.containers.form.down('li.actions').down('.cancel').show();
+        }
         
         Effect.BlindUp(this.containers.info);
         this.containers.form.show();

@@ -1,18 +1,3 @@
 all: 
-  icons:
-    delivery_dir: images/services/delivery
-    delivery_web_dir: services/delivery
-    
-  shipping_odfl: 
-    oZip:             '27262'
-    oCity:            'High Point'
-    oState:           'NC'
-    oCountry:         'USA'
-    inboundOutbound:  'o'
-    discountRate:     '0'
-    user:             'none'
-    pWord:            'none'
-    account:          'none'
-    intTerminal:      'none'
-    currency:         'USD'
-    refNumber:        'N'
+  delivery:
+    icons_dir: services/delivery

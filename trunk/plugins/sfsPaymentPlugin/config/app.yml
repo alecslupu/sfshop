@@ -1,5 +1,4 @@
 all: 
-  icons:
-    payment_dir: images/services/payment
-    payment_web_dir: services/payment
+  payment:
+    icons_dir: services/payment
 
