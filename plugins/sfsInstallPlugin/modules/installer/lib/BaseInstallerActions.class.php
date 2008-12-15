@@ -76,10 +76,18 @@ class BaseInstallerActions extends sfActions
     public function executeConfigure($request)
     {
          $isChecked = $this->getUser()->getAttribute('is_checked', false, 'install');
+         $this->isConfigured = false;
          
          if ($isChecked) {
              
              require_once(dirname(__FILE__).'/../lib/sfsConfigureForm.class.php');
+             
+             $errors = array();
+             
+             if ($this->getUser()->hasFlash('error')) {
+                 sfLoader::loadHelpers(array('I18N'));
+                 $errors[] = $this->getUser()->getFlash('error') . ' ' . __('Try again.');
+             }
              
              $this->form = new sfsConfigureForm();
              
@@ -88,8 +96,6 @@ class BaseInstallerActions extends sfActions
                  $this->form->bind($data);
                  
                  if ($this->form->isValid()) {
-                     
-                     $this->errors = array();
                      
                      $dsn = 'mysql://';
                      
@@ -108,6 +114,7 @@ class BaseInstallerActions extends sfActions
                      $dsn .= $data['database_name'];
                      
                      $dispatcher = sfContext::getInstance()->getEventDispatcher();
+                     
                      $formatter = new sfAnsiColorFormatter();
                      
                      chdir(sfConfig::get('sf_root_dir'));
@@ -127,52 +134,102 @@ class BaseInstallerActions extends sfActions
                          sfContext::getInstance()->getDatabaseConnection('propel');
                      }
                      catch (Exception $e) {
-                         $this->errors[] = $e;
+                         $errors[] = $e;
                      }
                      
                      if (count($this->errors) == 0) {
                          $this->getUser()->setAttribute('is_configured', true, 'install');
-                         $this->redirect('@installer_load');
+                         $this->isConfigured = true;
                      }
                  }
              }
+             else {
+                 $database = $this->context->getDatabaseManager()->getDatabase('propel');
+                 $this->form->setDefault('database_name', $database->getParameter('database'));
+                 $this->form->setDefault('database_username', $database->getParameter('username'));
+                 $this->form->setDefault('database_password', $database->getParameter('password'));
+             }
+             
+             $this->errors = $errors;
+             
          }
          else {
              $this->redirect('@installer_index');
          }
     }
     
-    public function executeLoad()
+    public function executeLoadSql($request)
     {
-         $isChecked = $this->getUser()->getAttribute('is_checked', false, 'install');
-         $isConfigured = $this->getUser()->getAttribute('is_configured', false, 'install');
-         
-         if (!$isChecked) {
-             $this->redirect('@installer_index');
-         }
-         elseif (!$isConfigured) {
-             $this->redirect('@installer_configure');
-         }
-         else {
-             $dispatcher = sfContext::getInstance()->getEventDispatcher();
-             $formatter = new sfsWebColorFormatter();
-             
-             chdir(sfConfig::get('sf_root_dir'));
-             
-             // insert sql
-             $insertSql = new sfsInstallInsertSqlTask($dispatcher, $formatter);
-             $insertSql->run(array(), array());
-             
-             // load default data
-             $loadData = new sfPropelLoadDataTask($dispatcher, $formatter);
-             $loadData->run(array('install'), array());
-             
-             //$this->redirect('@installer_finished');
-         }
+        if ($request->isXmlHttpRequest()) {
+            sfLoader::loadHelpers(array('Partial'));
+            
+            $dispatcher = sfContext::getInstance()->getEventDispatcher();
+            $formatter = new sfAnsiColorFormatter();
+            
+            chdir(sfConfig::get('sf_root_dir'));
+            
+            //FIXME
+            slot('build');
+            // insert sql
+            $insertSql = new sfsInstallInsertSqlTask($dispatcher, $formatter);
+            $insertSql->run(array(), array());
+            end_slot();
+            
+            $this->getUser()->setAttribute('is_sql_loaded', true, 'install');
+            return $this->renderText(sfsJSONPeer::createResponseSuccess(array()));
+        }
+        else {
+            return sfView::NONE;
+        }
+    }
+    
+    public function executeLoadData($request)
+    {
+        if ($request->isXmlHttpRequest()) {
+            sfLoader::loadHelpers(array('Partial'));
+            $dispatcher = sfContext::getInstance()->getEventDispatcher();
+            $formatter = new sfAnsiColorFormatter();
+            
+            chdir(sfConfig::get('sf_root_dir'));
+            
+            //FIXME
+            slot('build');
+            // load default data
+            $loadData = new sfPropelLoadDataTask($dispatcher, $formatter);
+            $loadData->run(array('install'), array());
+            end_slot();
+            
+            $this->getUser()->setAttribute('is_data_loaded', true, 'install');
+            return $this->renderText(sfsJSONPeer::createResponseSuccess(array()));
+        }
+        else {
+            return sfView::NONE;
+        }
     }
     
     public function executeFinished()
     {
+        sfLoader::loadHelpers(array('I18N'));
+        $sfUser = $this->getUser();
+        
+        $isDataLoaded = $sfUser->getAttribute('is_data_loaded', false, 'install');
+        $isSqlLoaded = $sfUser->getAttribute('is_sql_loaded', false, 'install');
+        
+        $error = '';
+        
+        if (!$isSqlLoaded) {
+            $error = __('Sql is not loaded.');
+        }
+        
+        if (!$isDataLoaded) {
+            $error.= ' ' . __('Data is not loaded.');
+        }
+        
+        if ($error != '') {
+            $this->getUser()->setFlash('error', $error);
+            $this->redirect('@installer_configure');
+        }
+        
         return sfView::SUCCESS;
     }
 }
