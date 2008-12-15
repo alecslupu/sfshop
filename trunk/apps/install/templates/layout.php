@@ -11,6 +11,16 @@
 
 </head>
 <body>
+
+<?php
+    echo javascript_tag('
+        var status = {
+            ERROR: ' . sfsJSONPeer::STATUS_ERROR . ',
+            SUCCESS: ' . sfsJSONPeer::STATUS_SUCCESS . '
+        };
+    ');
+?>
+
     <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
         <tr><td style="background: url(/install/images/m13.gif) repeat-x" height="106"></td></tr>
         <tr><td height="100%" valign="top" align="center">

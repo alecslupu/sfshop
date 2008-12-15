@@ -14,7 +14,7 @@
     <b><?php echo __('Login') ?>:</b> admin@localhost<br/>
     <b><?php echo __('Password') ?>:</b> superadmin<br/><br/>
     <div align="center">
-        <?php echo link_to('Catalog', str_replace('/install/index.php', '', url_for('@homepage', true)), array('target' => '_blank')) ?> &nbsp; &nbsp; &nbsp;
-        <?php echo link_to('Admin panel', str_replace('/install/index.php', '/admin', url_for('@coreAdmin_index', true)), array('target' => '_blank')) ?>
+        <?php echo link_to('Catalog', str_replace('/install/', '', url_for('@homepage', true)), array('target' => '_blank')) ?> &nbsp; &nbsp; &nbsp;
+        <?php echo link_to('Admin panel', str_replace('/install/', '/admin/', url_for('@coreAdmin_index', true)), array('target' => '_blank')) ?>
     </div>
 </div>
