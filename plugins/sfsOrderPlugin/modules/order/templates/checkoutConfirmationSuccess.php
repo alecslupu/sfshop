@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('delivery', 'orderDeliveryInfo', array()) ?>
+                <?php include_component('delivery', 'orderDeliveryInfo', array('is_edit_enabled' => true)) ?>
             </td>
         </tr>
         <tr>
