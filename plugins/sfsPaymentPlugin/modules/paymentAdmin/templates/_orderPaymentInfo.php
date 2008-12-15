@@ -5,6 +5,6 @@
 	    
 	    <?php $display = $paymentService->getIcon() ? '' : 'display: none' ?>
 	    
-	    <?php echo image_tag('http://' . sfContext::getInstance()->getRequest()->getHost() . '/images/' . sfConfig::get('app_icons_payment_web_dir') . '/' . $paymentService->getIcon(), array('style' => $display, 'class' => 'service_icon', 'align' => 'absmiddle')) ?><br/>
+	    <?php echo image_tag('http://' . sfContext::getInstance()->getRequest()->getHost() . '/images/' . sfConfig::get('app_payment_icons_dir') . '/' . $paymentService->getIcon(), array('style' => $display, 'class' => 'service_icon', 'align' => 'absmiddle')) ?><br/>
     </td></tr>
 </table>

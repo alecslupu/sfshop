@@ -60,7 +60,7 @@ class BasePaymentActions extends sfActions
                         }
                         
                         if ($service->getIcon()) {
-                            $serviceIconSrc = '/images/' . sfConfig::get('app_icons_delivery_web_dir') . '/' . $service->getIcon();
+                            $serviceIconSrc = '/images/' . sfConfig::get('app_payment_icons_dir') . '/' . $service->getIcon();
                         }
                         else {
                             $serviceIconSrc = '';

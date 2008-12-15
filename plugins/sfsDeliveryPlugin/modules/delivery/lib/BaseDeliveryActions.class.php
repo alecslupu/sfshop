@@ -70,7 +70,7 @@ class BaseDeliveryActions extends sfActions
                         $deliveryService = $this->sections[$serviceId]['object'];
                         
                         if ($deliveryService->getIcon()) {
-                            $serviceIconSrc = '/images/' . sfConfig::get('app_icons_delivery_web_dir') . '/' . $deliveryService->getIcon();
+                            $serviceIconSrc = '/images/' . sfConfig::get('app_delivery_icons_dir') . '/' . $deliveryService->getIcon();
                         }
                         else {
                             $serviceIconSrc = '';

@@ -6,7 +6,7 @@
             <li class="row">
                 <?php echo $section['object']->getTitle() ?>
                 <?php if ($section['object']->getIcon()): ?>
-                    <?php echo image_tag(sfConfig::get('app_icons_delivery_web_dir') . '/' . $section['object']->getIcon(), array('align' => 'absmiddle')); ?>
+                    <?php echo image_tag(sfConfig::get('app_delivery_icons_dir') . '/' . $section['object']->getIcon(), array('align' => 'absmiddle')); ?>
                 <?php endif; ?>
             </li>
             <li>
