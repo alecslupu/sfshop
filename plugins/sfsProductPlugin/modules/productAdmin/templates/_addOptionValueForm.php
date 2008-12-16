@@ -49,7 +49,7 @@
         Dialog.confirm(
             html,
             {
-                 className:"bluelighting", 
+                 className: "' . sfConfig::get('app_prototype_window_theme', 'bluelighting') . '",
                  width: 400,
                  height: 155,
                  okLabel: "Add",
