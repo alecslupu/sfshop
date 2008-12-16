@@ -98,7 +98,7 @@
                         top: 180,
                         width: 300,
                         height: 90,
-                        className: "sfshop", 
+                        className: "' . sfConfig::get('app_prototype_window_theme', 'sfshop') . '", 
                         okLabel: "' . __('Remove') . '", 
                         cancelLabel:"' . __('Don`t remove') . '", 
                         onOk: function() {

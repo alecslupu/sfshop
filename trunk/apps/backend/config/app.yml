@@ -1,2 +1,6 @@
 # default values
-#all:
+
+all:
+  prototype_window:
+    theme: bluelighting
+    css: lighting

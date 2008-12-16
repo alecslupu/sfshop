@@ -3,6 +3,7 @@ all:
   
   prototype_window:
     theme: sfshop
+    css: sfshop
   
   mail:
     address_from: admin@localhost
