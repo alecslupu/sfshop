@@ -45,7 +45,7 @@ class BaseProductAdminActions extends autoproductAdminActions
     {
         $product->save();
         
-        if ($this->getRequest()->hasFile('product[thumbnail]')) {
+        if ($this->getRequest()->hasFile('product[thumbnail]') && $this->getRequest()->getFileError('product[thumbnail]') == 0) {
             $originalThumbnail = ThumbnailPeer::generate($product->getId(), sfConfig::get('app_product_thumbnails_dir_name'), 'Product');
             $fileInfo = sfsThumbnailUtil::uploadFile('product[thumbnail]', $originalThumbnail->getStoragePath());
             
