@@ -81,7 +81,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
     {
         $category->save();
         
-        if ($this->getRequest()->hasFile('category[thumbnail]')) {
+        if ($this->getRequest()->hasFile('category[thumbnail]') && $this->getRequest()->getFileError('category[thumbnail]') == 0) {
             $originalThumbnail = ThumbnailPeer::generate($category->getId(), sfConfig::get('app_category_thumbnails_dir_name'), 'Category');
             $fileInfo = sfsThumbnailUtil::uploadFile('category[thumbnail]', $originalThumbnail->getStoragePath());
             
