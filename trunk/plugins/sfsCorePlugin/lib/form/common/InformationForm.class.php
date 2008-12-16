@@ -9,7 +9,14 @@
  */
 class InformationForm extends BaseInformationForm
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+        $this->setWidgets(array(
+            'is_active'  => new sfWidgetFormInputCheckbox(),
+            'is_deleted' => new sfWidgetFormInputCheckbox()
+        ));
+        
+        $this->embedI18n(sfContext::getInstance()->getUser()->getCultures());
+        
+    }
 }
