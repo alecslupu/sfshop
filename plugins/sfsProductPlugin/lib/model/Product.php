@@ -32,7 +32,7 @@ class Product extends BaseProduct
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function getBrand($con = null)
+    public function getBrand(PropelPDO $con = null)
     {
         if ($this->getBrandId() !== null) {
             

@@ -14,6 +14,11 @@ cli:
     class: sfConsoleResponse
 
 #test:
+  response:
+    class: sfWebResponse
+    param:
+      send_http_headers: false
+
 #  storage:
 #    class: sfSessionTestStorage
 #    param:
@@ -23,16 +28,16 @@ cli:
 
 all: 
 
-  storage: 
-    class: sfMySQLSessionStorage
-    param: 
-      database:                 propel
-      db_table:                 session
-      db_id_col:                cid
-      db_data_col:              ses_data
-      db_time_col:              ses_time
-      session_name:             sesscid
-      #session_cookie_lifetime: 10000
+#  storage: 
+#    class: sfMySQLSessionStorage
+#    param: 
+#      database:                 propel
+#      db_table:                 session
+#      db_id_col:                cid
+#      db_data_col:              ses_data
+#      db_time_col:              ses_time
+#      session_name:             sesscid
+#      #session_cookie_lifetime: 10000
 
 
 

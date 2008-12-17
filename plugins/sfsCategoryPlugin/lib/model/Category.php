@@ -138,7 +138,7 @@ class Category extends BaseCategory
      * @author Dmitry Nesteruk <nesterukd@gmail.com>
      * @access public
      */
-    public function save($con = null)
+    public function save(PropelPDO $con = null)
     {
         $changedParent = false;
         $changedActive = false;

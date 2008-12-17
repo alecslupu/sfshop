@@ -2,9 +2,13 @@
 
 html { height: 100%; font-size: 62.5% }
 
+html {
+    background-color: #454545 !important;
+}
+
 body {
+    padding: 0px !important;
     height: 100%;
-    background-color: #454545;
     font: 1.2em Verdana, Arial, Helvetica, sans-serif;
 }
 
@@ -98,7 +102,7 @@ h1.logo a {
 
 #auth_bar {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 8px;
     z-index: 3;
 }
@@ -180,68 +184,6 @@ h1.logo a {
     padding: 12px 16px 0 0;
     margin: 0;
     line-height: 1.6;
-}
-
-/* SF admin css */
-
-#sf_admin_container h1
-{
-    margin: 8px 0;
-    padding: 3px;
-    padding-left: 0px;
-    color: #1473B0;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 1.6em;
-}
-
-#sf_admin_container .sf_admin_list {
-    border-top: 1px solid #7EC6F6;
-    border-left: 1px solid #7EC6F6;
-}
-
-
-#sf_admin_container .sf_admin_list th {
-    background-color: #E3F4FF;
-    padding:2px;
-    text-align:left;
-    border-bottom: 1px solid #7EC6F6;
-    border-right: 1px solid #7EC6F6;
-}
-
-#sf_admin_container .sf_admin_list td {
-    border-bottom: 1px solid #7EC6F6;
-    border-right: 1px solid #7EC6F6;
-}
-
-#sf_admin_container .sf_admin_row_1 td {
-    background-color: #f2faff;
-}
-
-#sf_admin_container .form-row {
-    border-bottom: 1px solid #7EC6F6;
-}
-
-#sf_admin_container fieldset {
-    border-left: 1px solid #7EC6F6;
-    border-right: 1px solid #7EC6F6;
-    border-top: 1px solid #7EC6F6;
-}
-
-#sf_admin_container fieldset h2 {
-    background-color: #E3F4FF;
-    border-bottom: 1px solid #7EC6F6;
-}
-
-#sf_admin_container td {
-    font-size: 12px;
-}
-
-#sf_admin_container input, #sf_admin_container textarea, #sf_admin_container select {
-    font-size:12px;
-}
-
-#sf_admin_container label {
-    color: #000000;
 }
 
 form ul {
