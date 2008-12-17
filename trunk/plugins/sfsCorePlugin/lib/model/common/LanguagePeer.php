@@ -42,21 +42,4 @@ class LanguagePeer extends BaseLanguagePeer
         return self::doSelectOne($criteria);
     }
     
-    
-   /**
-    * Gets all languages available for public using.
-    *
-    * @param  object $criteria
-    * @return array
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    /*
-    public function getAllPublic()
-    {
-        $criteria = new Criteria();
-        self::addPublicCriteria($criteria);
-        return self::getAll($criteria);
-    }
-*/
 }
