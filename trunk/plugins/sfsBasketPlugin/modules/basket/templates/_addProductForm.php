@@ -7,7 +7,7 @@
       <ul class="main">
           <?php echo $form ?>
           <li class="button" style="padding-top: 4px">
-              <?php echo link_to(__('Add to cart'), '#', array('class' => 'add_to_cart', 'onclick' => 'basketAddForm_' . $product->getId() . ' . onSubmit(); return false')) ?>
+              <?php echo link_to_function(__('Add to cart'), 'basketAddForm_' . $product->getId() . ' . onSubmit(); return false', array('class' => 'add_to_cart')) ?>
           </li>
       </ul>
     </form>

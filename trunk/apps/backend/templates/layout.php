@@ -29,6 +29,5 @@
 <!-- FOOTER -->
 <?php include_partial('coreAdmin/footer'); ?>
 <!-- /FOOTER -->
-
 </body>
 </html>

@@ -18,6 +18,11 @@ prod:
             file: %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
 
 test:
+  response:
+    class: sfWebResponse
+    param:
+      send_http_headers: false
+
   logger:
     class: sfAggregateLogger
     param:
@@ -29,16 +34,16 @@ test:
             file: %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
 
 all:
-  storage: 
-    class: sfMySQLSessionStorage
-    param: 
-      database:                 session_storage
-      db_table:                 session
-      db_id_col:                cid
-      db_data_col:              ses_data
-      db_time_col:              ses_time
-      session_name:             sesscid
-      #session_cookie_lifetime: 10000
+#  storage: 
+#    class: sfMySQLSessionStorage
+#    param: 
+#      database:                 session_storage
+#      db_table:                 session
+#      db_id_col:                cid
+#      db_data_col:              ses_data
+#      db_time_col:              ses_time
+#      session_name:             sesscid
+#      #session_cookie_lifetime: 10000
 
   i18n:
     class: sfI18N
