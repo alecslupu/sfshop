@@ -47,6 +47,7 @@ h1.logo {
     position: relative;
     z-index: 2;
     border-bottom: 0px;
+    margin: 0px !important;
 }
 
 h1.logo a {
@@ -102,9 +103,10 @@ h1.logo a {
 
 #auth_bar {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 8px;
     z-index: 3;
+    margin: 0px !important;
 }
 
 #auth_bar li {
@@ -140,6 +142,10 @@ h1.logo a {
     padding-top: 40px;
     padding-left: 10px;
     border-bottom: 1px solid #FFFFFF;
+}
+
+.menu ul {
+    margin: 0px !important;
 }
 
 .menu ul li {
@@ -202,4 +208,24 @@ form ul.error {
     color: #f21207;
     font-size: 11px;
     list-style: none;
+}
+
+div.sf_admin_list table {
+    width: 100%;
+}
+
+#sf_admin_list_batch_actions {
+    width: 20px;
+}
+
+th.sf_admin_text {
+    
+}
+
+#sf_admin_list_th_actions {
+    width: 130px;
+}
+
+th.sf_admin_boolean {
+    width: 20px;
 }
