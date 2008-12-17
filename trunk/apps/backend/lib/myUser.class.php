@@ -92,9 +92,7 @@ class myUser extends sfsSecurityUser
         $cultures = $this->getAttribute('cultures', array());
         
         if (count($cultures) == 0) {
-            $criteria = new Criteria();
-            LanguagePeer::addPublicCriteria($criteria);
-            $languages = LanguagePeer::getAll($criteria);
+            $languages = LanguagePeer::getAllPublic();
             
             foreach ($languages as $language) {
                 $cultures[] = $language->getCulture();
