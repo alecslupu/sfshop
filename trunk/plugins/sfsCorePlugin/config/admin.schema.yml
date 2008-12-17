@@ -67,6 +67,12 @@ propel:
     title: 
       type: VARCHAR
       size: 128
+    module: 
+      type: VARCHAR
+      size: 128
+    action: 
+      type: VARCHAR
+      size: 128
     route: 
       type: VARCHAR
       size: 128

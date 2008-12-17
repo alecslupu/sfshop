@@ -12,14 +12,16 @@ class AdminMenuPeer extends BaseAdminMenuPeer
     public static function getItem($module, $action)
     {
         $c1 = new Criteria();
-        $c1->addAnd(self::ROUTE, $module . '_' . $action, Criteria::EQUAL);
+        $c1->addAnd(self::MODULE, $module, Criteria::EQUAL);
+        $c1->addAnd(self::ACTION, $action, Criteria::EQUAL);
         
         $c2 = new Criteria();
-        $c2->addAnd(self::ROUTE, $module . '_%', Criteria::LIKE);
+        $c2->addAnd(self::MODULE, $module, Criteria::EQUAL);
         
-        if (self::doCount($c2) > 1) {
+        if (self::doCount($c1) > 0) {
             $item = self::doSelectOne($c1);
-        } else {
+        }
+        else {
             $item = self::doSelectOne($c2);
         }
         

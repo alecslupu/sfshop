@@ -10,13 +10,13 @@
  */
 
 /**
- * Base information actions.
+ * InformationAdmin module helper.
  *
  * @package    plugin.sfsCorePlugin
  * @subpackage modules.informationAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id: helper.php 12474 2008-10-31 10:41:27Z fabien $
  */
-class BaseInformationAdminActions extends autoinformationAdminActions
+class InformationAdminGeneratorHelper extends BaseInformationAdminGeneratorHelper
 {
 }
