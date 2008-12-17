@@ -1,38 +1,24 @@
 generator:
-  class:                sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:        EmailTemplate
-    theme:              default
-    
-    fields: 
-      subject: 
-        name:           'Subject'
-        help:           'Subject of letter'
-        type:           input_tag
-        params:         size=150
-      body: 
-        name:           'Body'
-        help:           'Body of letter'
-        type:           textarea_tag
-        params:         size=150x10
-    
-    list: 
-      title:            'Email templates list'
-      display:          [ name, subject, created_at, updated_at ]
-      max_per_page:     20
-      click_action:     show
-      object_actions: 
-        _edit:          ~
-      actions:          []
-      
-    edit: 
-      title:            '%%_edit_caption%%'
-      display:          [ name, subject, body ]
-      actions: 
-        _list:         ~
-        _save:         ~
-        
-      fields:
-        name:
-          params:
-            disabled=true
+    model_class:           EmailTemplate
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          emailTemplateAdmin
+    with_propel_route:     1
+
+    config:
+      actions: []
+      fields:  ~
+      list:
+        title:        Email templates
+        display:      [subject]
+        max_per_page: 20
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit email template "%%name%%"

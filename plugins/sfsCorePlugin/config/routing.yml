@@ -78,6 +78,15 @@ informationAdmin_list:
   url: /informationAdmin/list/*
   param: { module: informationAdmin, action: list }
 
+informationAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Information
+    module:               informationAdmin
+    prefix_path:          informationAdmin
+    column:               id
+    with_wildcard_routes: true
+
 #
 # Email Templates Admin
 #
@@ -85,6 +94,15 @@ informationAdmin_list:
 emailTemplateAdmin_list:
   url: /emailTemplateAdmin/list/*
   param: { module: emailTemplateAdmin, action: list }
+
+emailTemplateAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                EmailTemplate
+    module:               emailTemplateAdmin
+    prefix_path:          emailTemplateAdmin
+    column:               id
+    with_wildcard_routes: true
 
 #
 # Language Admin

@@ -10,6 +10,8 @@
  */
 
 require_once(dirname(__FILE__).'/../lib/BaseInformationAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorHelper.class.php';
 
 /**
  * Information actions.
@@ -21,5 +23,4 @@ require_once(dirname(__FILE__).'/../lib/BaseInformationAdminActions.class.php');
  */
 class informationAdminActions extends BaseInformationAdminActions
 {
-
 }
