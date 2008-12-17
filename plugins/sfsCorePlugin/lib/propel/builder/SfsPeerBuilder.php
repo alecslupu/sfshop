@@ -145,6 +145,8 @@ class sfsPeerBuilder extends SfPeerBuilder
             \$criteria = new Criteria();
         }
         
+        self::addAdminCriteria(\$criteria);
+        
         if (\$withI18n) {
             return self::doSelectWithI18n(\$criteria);
         }
@@ -171,6 +173,33 @@ class sfsPeerBuilder extends SfPeerBuilder
         if (\$criteria == null) {
             \$criteria = new Criteria();
         }
+        
+        self::addAdminCriteria(\$criteria);
+        
+        return self::doSelect(\$criteria);
+    }
+    ";
+    }
+    
+    
+    protected function addGetAllPublic(&$script)
+    {
+    $script .= "
+   /**
+    * Gets all languages available for public using.
+    * 
+    * @param  \$criteria
+    * @return array
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getAllPublic(\$criteria = null)
+    {
+        if (\$criteria == null) {
+            \$criteria = new Criteria();
+        }
+        
+        self::addPublicCriteria(\$criteria);
         
         return self::doSelect(\$criteria);
     }
