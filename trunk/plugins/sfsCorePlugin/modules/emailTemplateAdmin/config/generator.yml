@@ -9,14 +9,17 @@ generator:
     plural:                ~
     route_prefix:          emailTemplateAdmin
     with_propel_route:     1
-
+    
     config:
-      actions: []
+      actions: ~
       fields:  ~
       list:
         title:        Email templates
         display:      [subject]
         max_per_page: 20
+        object_actions:
+          _edit: ~
+        actions: []
       filter:
         class: false
       form:    ~
