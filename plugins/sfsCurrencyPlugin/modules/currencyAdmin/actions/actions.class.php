@@ -10,12 +10,14 @@
  */
 
 require_once(dirname(__FILE__).'/../lib/BaseCurrencyAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/CurrencyAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/CurrencyAdminGeneratorHelper.class.php';
 
 /**
  * currencyAdmin actions.
  *
  * @package    pugins.sfsCurrencyPlugin
- * @subpackage modules.currencyAdmin
+ * @subpackage modules.currencyAdmin.lib
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
  */

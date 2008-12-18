@@ -1,44 +1,26 @@
 generator:
-  class:              sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:      Currency
-    theme:            default
+    model_class:           Currency
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          currencyAdmin
+    with_propel_route:     1
 
-    list:
-      title:            List of currencies
-      display:          [ id, title, code, value, symbol_left, symbol_right, is_active, is_default ]
-      max_per_page:     20
-      object_actions: 
-        _edit:          ~
-        _delete:        ~
-
-    edit: 
-      title:            '%%_edit_caption%%'
-      display:          [ code, value, title_i18n, symbol_left_i18n, symbol_right_i18n, decimal_point, thousands_point, decimal_places, is_active ]
-      actions: 
-        _list:          ~
-        _save:          ~
-        _delete:        ~
-      
-      fields: 
-        title_i18n: 
-          name:           Title
-          type:           input_tag
-          params:         size=80
-        symbol_left_i18n: 
-          name:           Symbol left
-          type:           input_tag
-          params:         size=5
-        symbol_right_i18n: 
-          name:           Symbol right
-          type:           input_tag
-          params:         size=5
-        decimal_point:
-          type:           input_tag
-          params:         size=5
-        thousands_point:
-          type:           input_tag
-          params:         size=5
-        decimal_places:
-          type:           input_tag
-          params:         size=5
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Currencies
+        display: [title, code, value, symbol_left, symbol_right, is_active, is_default]
+        max_per_page: 20
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit currency
+      new:
+        title: New currency
