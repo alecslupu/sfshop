@@ -99,6 +99,11 @@ emailTemplateAdmin:
 # Language Admin
 #
 
-languageAdmin_list:
-  url: /languageAdmin/list/*
-  param: { module: languageAdmin, action: list }
+languageAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Language
+    module:               languageAdmin
+    prefix_path:          languageAdmin
+    column:               id
+    with_wildcard_routes: true
