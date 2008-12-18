@@ -9,6 +9,11 @@ currency_setSelected:
 # Currency Admin
 #
 
-currencyAdmin_list: 
-  url: /currencyAdmin/list
-  param: { module: currencyAdmin, action: list }
+currencyAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Currency
+    module:               currencyAdmin
+    prefix_path:          currencyAdmin
+    column:               id
+    with_wildcard_routes: true

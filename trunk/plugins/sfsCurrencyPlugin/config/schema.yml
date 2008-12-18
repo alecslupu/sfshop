@@ -24,8 +24,7 @@ propel:
       type: CHAR
       size: 1
     decimal_places: 
-      type: CHAR
-      size: 1
+      type: INTEGER
     value: 
       type: DECIMAL
       size: 10
