@@ -169,7 +169,7 @@ AdminMenu:
   AdminMenu_Localization_Languages: 
     parent_id:      AdminMenu_Localization
     credential:     superadmin, admin
-    title:          Languages
-    route:          languageAdmin_list
+    title:          LanguageAdmin
+    route:          languageAdmin
     pos:            1
     is_active:      1

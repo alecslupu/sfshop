@@ -21,23 +21,10 @@ class EmailTemplateI18nForm extends BaseEmailTemplateI18nForm
 {
     public function configure()
     {
-        $this->setWidgets(array(
-            'id'      => new sfWidgetFormInputHidden(),
-            'culture' => new sfWidgetFormInputHidden(),
-            'subject' => new sfWidgetFormInput(array(), array('size' => 80)),
-            'body'    => new sfWidgetFormTextarea(
-                array(),
-                array('cols' => 110, 'rows' => 20)
-             )
-        ));
+        parent::configure();
         
-        $idValidator = new sfValidatorPropelChoice(
-            array('model' => 'EmailTemplate', 'column' => 'id', 'required' => false)
-        );
-        
-        $cultureValidator = new sfValidatorPropelChoice(
-            array('model' => 'EmailTemplateI18n', 'column' => 'culture', 'required' => false)
-        );
+        $this->setWidget('subject', new sfWidgetFormInput(array(), array('size' => 80)));
+        $this->setWidget('body', new sfWidgetFormTextarea(array(), array('cols' => 110, 'rows' => 20)));
         
         $subjectValidator = new sfValidatorString(
             array(
@@ -55,13 +42,7 @@ class EmailTemplateI18nForm extends BaseEmailTemplateI18nForm
             array('required' => 'Body is a required field')
         );
         
-        $this->setValidators(array(
-            'id'      => $idValidator,
-            'culture' => $cultureValidator,
-            'subject' => $subjectValidator,
-            'body'    => $bodyValidator,
-        ));
-        
-        $this->widgetSchema->setNameFormat('email_template_i18n[%s]');
+        $this->setValidator('subject', $subjectValidator);
+        $this->setValidator('body', $bodyValidator);
     }
 }
