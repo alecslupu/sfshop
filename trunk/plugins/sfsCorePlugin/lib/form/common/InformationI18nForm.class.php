@@ -21,28 +21,31 @@ class InformationI18nForm extends BaseInformationI18nForm
 {
     public function configure()
     {
-        $this->setWidgets(array(
-          'id'               => new sfWidgetFormInputHidden(),
-          'culture'          => new sfWidgetFormInputHidden(),
-          'title'            => new sfWidgetFormInput(array(), array('size' => 80)),
-          'description'      => new sfWidgetFormTextarea(
-              array(),
-              array(
-                  'cols'  => 110,
-                  'rows'  => 20,
-                  'class' => 'mce-editor'
-              )),
-          'meta_keywords'    => new sfWidgetFormTextarea(array(), array('cols' => 80, 'rows' => 2)),
-          'meta_description' => new sfWidgetFormTextarea(array(), array('cols' => 80, 'rows' => 5)),
-        ));
+        parent::configure();
         
-        $idValidator = new sfValidatorPropelChoice(
-            array('model' => 'Information', 'column' => 'id', 'required' => false)
+        $widgetDescription = new sfWidgetFormTextarea(
+            array(),
+            array(
+              'cols'  => 110,
+              'rows'  => 20,
+              'class' => 'mce-editor'
+            )
         );
         
-        $cultureValidator = new sfValidatorPropelChoice(
-            array('model' => 'InformationI18n', 'column' => 'culture', 'required' => false)
+        $metaKeywordsWidget = new sfWidgetFormTextarea(
+            array(),
+            array('cols' => 80, 'rows' => 2)
         );
+        
+        $metaDescriptionWidget = new sfWidgetFormTextarea(
+            array(),
+            array('cols' => 80, 'rows' => 5)
+        );
+        
+        $this->setWidget('title', new sfWidgetFormInput(array(), array('size' => 80)));
+        $this->setWidget('description', $widgetDescription);
+        $this->setWidget('meta_keywords', $metaKeywordsWidget);
+        $this->setWidget('meta_description', $metaDescriptionWidget);
         
         $titleValidator = new sfValidatorString(
             array(
@@ -60,15 +63,7 @@ class InformationI18nForm extends BaseInformationI18nForm
             array('required' => 'Description is a required field')
         );
         
-        $this->setValidators(array(
-            'id'               => $idValidator,
-            'culture'          => $cultureValidator,
-            'title'            => $titleValidator,
-            'description'      => $descriptionValidator,
-            'meta_keywords'    => new sfValidatorString(array('required' => false)),
-            'meta_description' => new sfValidatorString(array('required' => false)),
-        ));
-        
-        $this->getWidgetSchema()->setNameFormat('information_i18n[%s]');
+        $this->setValidator('title', $titleValidator);
+        $this->setValidator('description', $descriptionValidator);
     }
 }
