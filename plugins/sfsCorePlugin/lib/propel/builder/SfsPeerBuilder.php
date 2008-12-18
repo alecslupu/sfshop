@@ -128,6 +128,36 @@ class sfsPeerBuilder extends SfPeerBuilder
     ";
     }
     
+    protected function addGetAllPublicI18n(&$script)
+    {
+    $script .= "
+   /**
+    * Gets all records.
+    * 
+    * @param  \$criteria
+    * @return array
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getAllPublic(\$criteria = null, \$withI18n = false)
+    {
+        if (\$criteria == null) {
+            \$criteria = new Criteria();
+        }";
+    if ($this->getTable()->getColumn('is_active')) {
+    $script.= "self::addPublicCriteria(\$criteria);";
+    }
+    $script.= "if (\$withI18n) {
+            return self::doSelectWithI18n(\$criteria);
+        }
+        else {
+            return self::doSelect(\$criteria);
+        }
+    }
+    ";
+    
+    }
+    
     protected function addGetAllI18n(&$script)
     {
     $script .= "
@@ -199,10 +229,12 @@ class sfsPeerBuilder extends SfPeerBuilder
     {
         if (\$criteria == null) {
             \$criteria = new Criteria();
-        }
+        }";
         
-        self::addPublicCriteria(\$criteria);
-        
+    if ($this->getTable()->getColumn('is_active')) {
+        $script .= "self::addPublicCriteria(\$criteria);";
+    }
+    $script .= "
         return self::doSelect(\$criteria);
     }
     ";
@@ -254,11 +286,13 @@ class sfsPeerBuilder extends SfPeerBuilder
         
         if ($this->getTable()->getAttribute('isI18n')) {
             $this->addGetAllI18n($script);
+            $this->addGetAllPublicI18n($script);
             $this->addDoSelectWithTranslation($script);
             $this->addUpdateCulture($script);
         }
         else {
             $this->addGetAll($script);
+            $this->addGetAllPublic($script);
         }
         
         parent::addClassClose($script);
