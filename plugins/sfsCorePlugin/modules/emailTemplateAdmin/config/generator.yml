@@ -20,6 +20,7 @@ generator:
         object_actions:
           _edit: ~
         actions: []
+        batch_actions: []
       filter:
         class: false
       form:    ~
