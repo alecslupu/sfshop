@@ -1,4 +1,5 @@
 <?php
+
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>

@@ -161,7 +161,8 @@ AdminMenu:
     parent_id:      AdminMenu_Localization
     credential:     superadmin, admin
     title:          Currencies
-    route:          currencyAdmin_list
+    module:         currencyAdmin
+    route:          currencyAdmin
     pos:            1
     is_active:      1
   
