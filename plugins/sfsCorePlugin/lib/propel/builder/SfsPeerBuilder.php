@@ -143,11 +143,11 @@ class sfsPeerBuilder extends SfPeerBuilder
     {
         if (\$criteria == null) {
             \$criteria = new Criteria();
-        }
-        
-        self::addAdminCriteria(\$criteria);
-        
-        if (\$withI18n) {
+        }";
+    if ($this->getTable()->getColumn('is_deleted')) {
+    $script.= "self::addAdminCriteria(\$criteria);";
+    }
+    $script.= "if (\$withI18n) {
             return self::doSelectWithI18n(\$criteria);
         }
         else {
@@ -155,6 +155,7 @@ class sfsPeerBuilder extends SfPeerBuilder
         }
     }
     ";
+    
     }
     
     protected function addGetAll(&$script)
@@ -172,10 +173,11 @@ class sfsPeerBuilder extends SfPeerBuilder
     {
         if (\$criteria == null) {
             \$criteria = new Criteria();
-        }
-        
-        self::addAdminCriteria(\$criteria);
-        
+        }";
+    if ($this->getTable()->getColumn('is_deleted')) {
+    $script .= "self::addAdminCriteria(\$criteria);";
+    }
+    $script .= "
         return self::doSelect(\$criteria);
     }
     ";

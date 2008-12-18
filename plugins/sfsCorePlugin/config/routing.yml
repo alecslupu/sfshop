@@ -73,11 +73,6 @@ information_conditionsUse:
 #
 # Information Admin
 #
-
-informationAdmin_list:
-  url: /informationAdmin/list/*
-  param: { module: informationAdmin, action: list }
-
 informationAdmin:
   class: sfPropelRouteCollection
   options:
@@ -90,10 +85,6 @@ informationAdmin:
 #
 # Email Templates Admin
 #
-
-emailTemplateAdmin_list:
-  url: /emailTemplateAdmin/list/*
-  param: { module: emailTemplateAdmin, action: list }
 
 emailTemplateAdmin:
   class: sfPropelRouteCollection
