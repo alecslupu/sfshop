@@ -145,7 +145,11 @@ class sfsPeerBuilder extends SfPeerBuilder
             \$criteria = new Criteria();
         }";
     if ($this->getTable()->getColumn('is_active')) {
-    $script.= "self::addPublicCriteria(\$criteria);";
+    $script.= "
+        
+        self::addPublicCriteria(\$criteria);
+        
+        ";
     }
     $script.= "if (\$withI18n) {
             return self::doSelectWithI18n(\$criteria);
@@ -175,9 +179,14 @@ class sfsPeerBuilder extends SfPeerBuilder
             \$criteria = new Criteria();
         }";
     if ($this->getTable()->getColumn('is_deleted')) {
-    $script.= "self::addAdminCriteria(\$criteria);";
+    $script.= "
+        
+        self::addAdminCriteria(\$criteria);
+        
+        ";
     }
-    $script.= "if (\$withI18n) {
+    $script.= "
+        if (\$withI18n) {
             return self::doSelectWithI18n(\$criteria);
         }
         else {
@@ -205,7 +214,10 @@ class sfsPeerBuilder extends SfPeerBuilder
             \$criteria = new Criteria();
         }";
     if ($this->getTable()->getColumn('is_deleted')) {
-    $script .= "self::addAdminCriteria(\$criteria);";
+    $script .= "
+        
+        self::addAdminCriteria(\$criteria);
+        ";
     }
     $script .= "
         return self::doSelect(\$criteria);
@@ -232,7 +244,11 @@ class sfsPeerBuilder extends SfPeerBuilder
         }";
         
     if ($this->getTable()->getColumn('is_active')) {
-        $script .= "self::addPublicCriteria(\$criteria);";
+        $script .= "
+            
+            self::addPublicCriteria(\$criteria);
+            
+            ";
     }
     $script .= "
         return self::doSelect(\$criteria);
