@@ -9,7 +9,7 @@
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
 class coreAdminActions extends sfActions
-{
+{ 
    /**
     * Executes index action
     *
