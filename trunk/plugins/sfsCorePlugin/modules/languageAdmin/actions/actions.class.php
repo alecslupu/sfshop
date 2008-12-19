@@ -13,11 +13,11 @@ require_once(dirname(__FILE__).'/../lib/BaseLanguageAdminActions.class.php');
 
 /**
  * languageAdmin actions.
- * 
+ *
  * @package    plugin.sfsCorePlugin
  * @subpackage modules.languageAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
+ * @version    SVN: $Id: $Id$ $Revision$ $Date$ $Author$ $
  */
 class languageAdminActions extends BaseLanguageAdminActions
 {
