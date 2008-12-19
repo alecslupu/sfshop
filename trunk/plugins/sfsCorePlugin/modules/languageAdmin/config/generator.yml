@@ -1,21 +1,27 @@
 generator:
-  class:              sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:      Language
-    theme:            default
-    
-    list:
-      title:            List of languages
-      display:          [ title_english, title_own, culture, is_default, is_active ]
-      max_per_page:     20
-      object_actions: 
-        _edit:          ~
-        _delete:        ~
-        
-    edit: 
-      title:            '%%_edit_caption%%'
-      display:          [ _icon, title_english, title_own, culture, is_default, is_active ]
-      actions: 
-        _list:          ~
-        _save:          ~
-        _delete:        ~
+    model_class:           Language
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          languageAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Language pages
+        display: [title_english, title_own, culture, is_default, is_active]
+        max_per_page: 20
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit language "%%title_english%%"
+        display: [culture, title_english, title_own, is_default, is_active, _preview_icon, icon]
+      new:
+        title: New language

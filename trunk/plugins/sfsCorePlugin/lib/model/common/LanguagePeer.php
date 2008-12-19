@@ -1,12 +1,22 @@
 <?php
 
 /**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
+/**
  * Subclass for performing query and update operations on the 'languages' table.
  *
- * 
- *
- * @package plugins.sfsCorePlugin.lib.model
- */ 
+ * @package    plugin.sfsCorePlugin
+ * @subpackage lib.model.common
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
+ * @version    SVN: $Id$
+ */
 class LanguagePeer extends BaseLanguagePeer
 {
    /**
@@ -14,7 +24,7 @@ class LanguagePeer extends BaseLanguagePeer
     *
     * @param  void
     * @return object
-    * @author Dmitry Nesteruk
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function getDefault()
@@ -28,8 +38,9 @@ class LanguagePeer extends BaseLanguagePeer
     * Get language object by culture.
     *
     * @param  string $culture
+    * @param  object $criteria
     * @return mixed if language exist returns object, otherwise null.
-    * @author Dmitry Nesteruk
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
     public static function retrieveByCulture($culture, $criteria = null)
@@ -41,5 +52,4 @@ class LanguagePeer extends BaseLanguagePeer
         $criteria->add(self::CULTURE, $culture, Criteria::EQUAL);
         return self::doSelectOne($criteria);
     }
-    
 }
