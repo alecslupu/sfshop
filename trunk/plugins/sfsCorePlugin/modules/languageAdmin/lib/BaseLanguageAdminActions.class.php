@@ -19,7 +19,6 @@
  */
 class BaseLanguageAdminActions extends autolanguageAdminActions
 {
-    
     protected function saveLanguage($language)
     {
         $isNew = false;
@@ -124,8 +123,6 @@ class BaseLanguageAdminActions extends autolanguageAdminActions
                     }
                 }
             }
-            
-            
             
             $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $language)));
             
