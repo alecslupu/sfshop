@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BaseLanguageAdminActions.class.php');
  * @package    plugin.sfsCorePlugin
  * @subpackage modules.languageAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: $Id$ $Revision$ $Date$ $Author$ $
+ * @version    SVN: $Id$ $Revision$ $Date$ $Author$
  */
 class languageAdminActions extends BaseLanguageAdminActions
 {
