@@ -19,4 +19,5 @@
  */
 class LanguageAdminGeneratorConfiguration extends BaseLanguageAdminGeneratorConfiguration
 {
+    
 }
