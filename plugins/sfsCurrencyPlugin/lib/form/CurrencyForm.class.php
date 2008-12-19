@@ -56,6 +56,17 @@ class CurrencyForm extends BaseCurrencyForm
         $this->setValidator('value', $valueValidator);
         $this->setValidator('decimal_places', $decimalPlaces);
         
-        $this->embedI18n(sfContext::getInstance()->getUser()->getCultures());
+        $languages = LanguagePeer::getAllPublic();
+        $cultures = array();
+        
+        foreach ($languages as $language) {
+            $cultures[] = $language->getCulture();
+        }
+        
+        $this->embedI18n($cultures);
+        
+        foreach ($languages as $language) {
+            $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
+        }
     }
 }

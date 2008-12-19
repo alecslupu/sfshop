@@ -15,7 +15,7 @@
  * @package    plugin.sfsCorePlugin
  * @subpackage lib.form.common
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class InformationForm extends BaseInformationForm
 {
@@ -26,6 +26,17 @@ class InformationForm extends BaseInformationForm
         $this->offsetUnset('created_at');
         $this->offsetUnset('updated_at');
         
-        $this->embedI18n(sfContext::getInstance()->getUser()->getCultures());
+        $languages = LanguagePeer::getAllPublic();
+        $cultures = array();
+        
+        foreach ($languages as $language) {
+            $cultures[] = $language->getCulture();
+        }
+        
+        $this->embedI18n($cultures);
+        
+        foreach ($languages as $language) {
+            $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
+        }
     }
 }

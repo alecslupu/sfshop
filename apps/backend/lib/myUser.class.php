@@ -85,22 +85,4 @@ class myUser extends sfsSecurityUser
         
         return false;
     }
-    
-    
-    public function getCultures()
-    {
-        $cultures = $this->getAttribute('cultures', array());
-        
-        if (count($cultures) == 0) {
-            $languages = LanguagePeer::getAllPublic();
-            
-            foreach ($languages as $language) {
-                $cultures[] = $language->getCulture();
-            }
-            
-            $this->setAttribute('cultures', $cultures);
-        }
-        
-        return $cultures;
-    }
 }

@@ -10,6 +10,8 @@
  */
 
 require_once(dirname(__FILE__).'/../lib/BaseLanguageAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/LanguageAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/LanguageAdminGeneratorHelper.class.php';
 
 /**
  * languageAdmin actions.
