@@ -13,7 +13,7 @@ require_once(dirname(__FILE__).'/../lib/BaseLanguageAdminActions.class.php');
 
 /**
  * languageAdmin actions.
- * 
+ *   
  * @package    plugin.sfsCorePlugin
  * @subpackage modules.languageAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
