@@ -21,14 +21,17 @@ class AdminForm extends BaseAdminForm
 {
     public function configure()
     {
-        $arrayCredentials = array('superadmin' => 'superadmin', 'admin' => 'admin');
+        $arrayCredentials = array(
+            'superadmin' => 'superadmin', 
+            'admin'      => 'admin'
+        );
         
         $this->setWidgets(array(
             'id'          => new sfWidgetFormInputHidden(),
-            'credential'  => new sfWidgetFormSelect(array('choices' => $arrayCredentials)),
-            'email'       => new sfWidgetFormInput(),
-            'first_name'  => new sfWidgetFormInput(),
-            'last_name'   => new sfWidgetFormInput(),
+            'credential'  => new sfWidgetFormSelect(array('choices' => $arrayCredentials), array('multiple' => true)),
+            'email'       => new sfWidgetFormInput(array(), array('size' => 60)),
+            'first_name'  => new sfWidgetFormInput(array(), array('size' => 60)),
+            'last_name'   => new sfWidgetFormInput(array(), array('size' => 60)),
             'is_active'   => new sfWidgetFormInputCheckbox()
         ));
         
