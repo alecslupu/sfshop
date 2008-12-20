@@ -22,7 +22,7 @@ class coreAdminActions extends sfActions
     
     public function executeLogin($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getInstance()->getConfiguration()->loadHelpers('I18N');
         
         $this->form = new sfsAdminLoginForm();
         
