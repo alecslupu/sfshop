@@ -42,10 +42,15 @@ coreAdmin_profile:
 # administratorAdmin
 #
 
-administratorAdmin_list:
-  url: /administratorAdmin/list/*
-  param: { module: administratorAdmin, action: list }
-  
+administratorAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Admin
+    module:               administratorAdmin
+    prefix_path:          administratorAdmin
+    column:               id
+    with_wildcard_routes: true
+
 administratorAdmin_changeMyPassword:
   url: /administratorAdmin/change-my-password
   param: { module: administratorAdmin, action: changeMyPassword }

@@ -1,33 +1,34 @@
 generator:
-  class:                sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:        Admin
-    theme:              default
-    
-    list: 
-      title:            List of admins
-      display:          [=id, =full_name, credential, email, is_active]
-      max_per_page:     20
-      object_actions: 
-        _edit:          ~
-        _delete:        ~
-        reset_password: 
-          name:         Reset password
-          action:       resetPassword
-          icon:         /admin/images/actions/reset_password.png
-          params:       confirm=Are you sure want reset password for this administrator?
-      actions: 
-        _create:        ~
-      
-      fields: 
-        full_name: 
-          name:         Name
-    
-    edit: 
-      title:            '%%_edit_caption%%'
-      display:          [email, first_name, last_name, _credential, is_active]
-      actions: 
-        _list:          ~
-        _save:          ~
-        _save_and_add:  ~
-        _delete:        ~
+    model_class:           Admin
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          administratorAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Administrators
+        display: [full_name, credential, email, is_active]
+        max_per_page: 20
+        object_actions: 
+          _edit:          ~
+          _delete:        ~
+          reset_password: 
+            name:         Reset password
+            action:       resetPassword
+            icon:         /admin/images/actions/reset_password.png
+            params:       confirm=Are you sure want reset password for this administrator?
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit administrator "%%email%%"
+      new:
+        title: New administrator

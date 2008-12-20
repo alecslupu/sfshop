@@ -52,7 +52,8 @@ AdminMenu:
     parent_id:      AdminMenu_Administrator
     credential:     superadmin
     title:          Administrators
-    route:          administratorAdmin_list
+    module:         administratorAdmin
+    route:          administratorAdmin
     pos:            1
     is_active:      1
   
@@ -60,6 +61,8 @@ AdminMenu:
     parent_id:      AdminMenu_Administrator
     credential:     superadmin,admin
     title:          Change my password
+    module:         administratorAdmin
+    action:         changeMyPassword
     route:          administratorAdmin_changeMyPassword
     pos:            2
     is_active:      1

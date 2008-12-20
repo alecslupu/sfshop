@@ -15,33 +15,35 @@
  * @package    plugin.sfsCorePlugin
  * @subpackage modules.administratorAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
+ * @version    SVN: $Id$
  */
 class BaseAdministratorAdminActions extends autoadministratorAdminActions
 {
+   /**
+    * Changes password for logged member.
+    *
+    * @param  void
+    * @return void
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>
+    * @access public
+    */
     public function executeChangeMyPassword($request)
     {
-        if ($request->getMethod() === sfRequest::POST) {
-            $currentPassword = $request->getParameter('admin[current_password]');
+        $this->getContext()->getInstance()->getConfiguration()->loadHelpers('I18N');
+        
+        $this->form = new sfsAdminChangePasswordForm($this->getUser()->getUser());
+        
+        if ($request->isMethod('post')) {
+            $this->form->bind($request->getParameter('data'));
             
-            $admin = $this->getUser()->getUser();
-            
-            if ($admin->checkPassword($currentPassword)) {
-                $admin->setPassword($request->getParameter('admin[password]'));
-                $admin->save();
+            if ($this->form->isValid()) {
+                $member = $this->form->updateObject();
+                $member->save();
                 
-                $this->getUser()->setFlash('notice', 'Your new password has been saved');
-                $this->redirect('administratorAdmin/changeMyPassword');
-            }
-            else {
-                $this->getRequest()->setError('admin{current_password}', 'Current password is wrong');
+                $this->getUser()->setFlash('notice', __('Your password was changed'));
+                $this->redirect('@administratorAdmin_changeMyPassword');
             }
         }
-    }
-    
-    public function handleErrorChangeMyPassword()
-    {
-        return sfView::SUCCESS;
     }
     
     public function executeResetPassword($request)
