@@ -43,6 +43,9 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
                 $this->getUser()->setFlash('notice', __('Your password was changed'));
                 $this->redirect('@administratorAdmin_changeMyPassword');
             }
+            else {
+                $this->getUser()->setFlash('error', __('The item has not been saved due to some errors.'));
+            }
         }
     }
     
@@ -53,7 +56,8 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
         $admin = AdminPeer::retrieveById($id, new Criteria());
         
         if ($admin != null) {
-            sfLoader::loadHelpers(array('Url'));
+            $this->getContext()->getInstance()->getConfiguration()->loadHelpers('Url');
+            
             $password = substr(md5(time() . rand(1, 10000)), 0, 8);
             
             $admin->setPassword($password);
@@ -78,35 +82,56 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
             $this->getUser()->setFlash('notice', 'Password has been reset for administrator ' . $admin->getFullName());
         }
         
-        $this->redirect('administratorAdmin/list');
+        $this->redirect('@administratorAdmin');
     }
     
-    protected function saveAdmin($admin)
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        if ($admin->isNew()) {
-            sfLoader::loadHelpers(array('Url'));
-            
-            $password = substr(md5(time() . rand(1, 10000)), 0, 8);
-            
-            $admin->setPassword($password);
-            
-            $urlToAdminPanel = url_for('@coreAdmin_login', true);
-            
-            $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::NEW_ADMIN_ADDED);
-            
-            $mail = new sfsMail();
-            $mail->addAddress($admin->getEmail());
-            $mail->setTemplate($template);
-            $mail->setBodyParams(
-                array(
-                    'email'                => $admin->getEmail(),
-                    'password'             => $password,
-                    'link_to_admin_panel'  => $urlToAdminPanel
-                )
-            );
-            $mail->send();
-        }
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
         
-        $admin->save();
+        if ($form->isValid()) {
+            $this->getUser()->setFlash('notice', $form->getObject()->isNew() ? 'The item was created successfully.' : 'The item was updated successfully.');
+            
+            $admin = $form->updateObject();
+            
+            if ($admin->isNew()) {
+                $password = substr(md5(time() . rand(1, 10000)), 0, 8);
+                
+                $admin->setPassword($password);
+                
+                $this->getContext()->getInstance()->getConfiguration()->loadHelpers('Url');
+                $urlToAdminPanel = url_for('@coreAdmin_login', true);
+                
+                $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::NEW_ADMIN_ADDED);
+                
+                $mail = new sfsMail();
+                $mail->addAddress($admin->getEmail());
+                $mail->setTemplate($template);
+                $mail->setBodyParams(
+                    array(
+                        'email'                => $admin->getEmail(),
+                        'password'             => $password,
+                        'link_to_admin_panel'  => $urlToAdminPanel
+                    )
+                );
+                $mail->send();
+            }
+            
+            $admin->save();
+            
+            $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $admin)));
+            
+            if ($request->hasParameter('_save_and_add')) {
+                $this->getUser()->setFlash('notice', $this->getUser()->getFlash('notice').' You can add another one below.');
+                
+                $this->redirect('@administratorAdmin_new');
+            }
+            else {
+                $this->redirect('@administratorAdmin_edit?id='.$admin->getId());
+            }
+        }
+        else {
+            $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.');
+        }
     }
 }
