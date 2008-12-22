@@ -132,7 +132,8 @@ AdminMenu:
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
     title:          Delivery
-    route:          deliveryAdmin_list
+    module:         deliveryAdmin
+    route:          deliveryAdmin
     pos:            3
     is_active:      1
   

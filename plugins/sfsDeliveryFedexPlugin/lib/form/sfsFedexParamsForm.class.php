@@ -156,7 +156,6 @@ class sfsFedexParamsForm extends DeliveryForm
              )
         );
         
-        $this->defineSfsAdminListFormatter();
         $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

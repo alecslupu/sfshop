@@ -339,6 +339,7 @@ class sfsPeerBuilder extends SfPeerBuilder
         if ($this->getTable()->getAttribute('isI18n')) {
             $this->addGetAllI18n($script);
             $this->addGetAllPublicI18n($script);
+            $this->addGetCountAll($script);
             $this->addDoSelectWithTranslation($script);
             $this->addUpdateCulture($script);
         }
