@@ -101,6 +101,9 @@ class BaseOrderActions extends sfActions
                     $order->setDeliveryId($serviceId);
                     $order->setDeliveryMethodTitle($methodTitle);
                     
+                    $paymentId = $sfUser->getAttribute('method_id', null, 'order/payment');
+                    $order->setPaymentId($paymentId);
+                    
                     $order->setComment($data['comment']);
                     $order->save();
                     

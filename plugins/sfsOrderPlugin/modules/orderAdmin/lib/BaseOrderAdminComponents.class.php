@@ -39,25 +39,4 @@ class BaseOrderAdminComponents extends sfComponents
             }
         }
     }
-    
-   /**
-    * Gets order statuses.
-    * 
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeOrderStatusSelect()
-    {
-         $criteria = new Criteria();
-         OrderStatusPeer::addAdminCriteria($criteria);
-         $statuses = OrderStatusPeer::getAll($criteria, true);
-         $this->options = array();
-         $this->selected = $this->order->getStatusId();
-         
-         foreach ($statuses as $status) {
-             $this->options[$status->getId()] = $status->getTitle();
-         }
-    }
 }

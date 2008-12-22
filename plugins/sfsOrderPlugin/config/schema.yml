@@ -24,6 +24,13 @@ propel:
       foreignReference: id
       onDelete: CASCADE
       onUpdate: RESTRICT
+    payment_id: 
+      type: INTEGER
+      required: false
+      foreignTable: payment
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
     delivery_method_title: 
       type: VARCHAR
       size: 255

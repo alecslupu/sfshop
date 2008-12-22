@@ -18,11 +18,12 @@ generator:
         display: [id, _member_full_name, delivery_full_name, products_count, _total_price, status, created_at]
         max_per_page: 20
         object_actions: 
-          view: 
-            name:         Details of order
-            action:       details
-            icon:         /images/actions/order_details.png
-        actions:          []
+          details: 
+            name:       Details
+            action:     details
+            icon:       /images/actions/order_details.png
+        actions:        []
+        batch_actions:  []
       filter:
         display:  [status_id]
       form:    ~
