@@ -44,7 +44,7 @@ class sfsOrderChangeStatusForm extends BaseOrderItemForm
             )
         );
         
-        $this->defineSfsListFormatter();
         $this->getWidgetSchema()->setNameFormat('order_item[%s]');
+        $this->defineSfsAdminListFormatter();
     }
 }

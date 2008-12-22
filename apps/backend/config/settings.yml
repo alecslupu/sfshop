@@ -26,7 +26,7 @@ all:
     #error_404_module:       default
     #error_404_action:       error404
     
-    login_module:           coreAdmin
+    login_module:           administratorAdmin
     login_action:           login
     
   .settings:

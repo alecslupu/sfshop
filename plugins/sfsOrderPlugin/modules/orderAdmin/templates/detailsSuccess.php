@@ -1,4 +1,7 @@
 <?php use_helper('sfsAddressBook', 'Form') ?>
+<?php include_stylesheets_for_form($form) ?>
+<?php include_javascripts_for_form($form) ?>
+
 <div id="sf_admin_container">
 <h1><?php echo __('Order details') ?></h1>
 <?php include_partial('orderAdmin/flashes') ?>
@@ -67,7 +70,9 @@
         <tr>
             <td>
                 <?php echo form_tag('@orderAdmin_details?id=' . $order->getId()) ?>
-                    <?php echo $form ?>
+                    <fieldset id="sf_fieldset">
+                        <?php echo $form ?>
+                    </fieldset>
                     <?php echo submit_tag('Set status') ?>
                 </form>
             </td>

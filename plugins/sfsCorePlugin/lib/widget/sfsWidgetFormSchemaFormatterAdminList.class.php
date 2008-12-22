@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
 /**
  * 
  *
@@ -10,10 +20,8 @@
 class sfsWidgetFormSchemaFormatterAdminList extends sfWidgetFormSchemaFormatter
 {
   protected
-    $rowFormat              = "<div class=\"form-row\">\n %label%\n <div class=\"content\">%error%\n %field% %help%\n</div> %hidden_fields%</div>\n",
-    $errorRowFormat         = "<div>\n%errors%</div>\n",
-    $helpFormat             = '<div class="sf_admin_edit_help">%help%</div>',
-    $errorListFormatInARow  = "%errors%",
-    $errorRowFormatInARow   = "\n<div class=\"form-error\">↓ %error% ↓</div>\n",
-    $decoratorFormat        = "<fieldset>\n%content%</fieldset>";
+    $rowFormat              = "<div class=\"sf_admin_form_row sf_admin_text sf_admin_form_field\">\n %error%\n <div>%label% %field%</div> %hidden_fields%</div>\n",
+    $errorRowFormat         = "\n%errors%\n",
+    $errorListFormatInARow  = "<ul class=\"error\">\n%errors%</ul>\n",
+    $decoratorFormat        = "\n%content%";
 }
