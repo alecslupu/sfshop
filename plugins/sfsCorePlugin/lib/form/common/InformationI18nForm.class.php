@@ -32,22 +32,22 @@ class InformationI18nForm extends BaseInformationI18nForm
             )
         );
         
-        $metaKeywordsWidget = new sfWidgetFormTextarea(
+        $widgetMetaKeywords = new sfWidgetFormTextarea(
             array(),
             array('cols' => 80, 'rows' => 2)
         );
         
-        $metaDescriptionWidget = new sfWidgetFormTextarea(
+        $widgetMetaDescription = new sfWidgetFormTextarea(
             array(),
             array('cols' => 80, 'rows' => 5)
         );
         
         $this->setWidget('title', new sfWidgetFormInput(array(), array('size' => 80)));
         $this->setWidget('description', $widgetDescription);
-        $this->setWidget('meta_keywords', $metaKeywordsWidget);
-        $this->setWidget('meta_description', $metaDescriptionWidget);
+        $this->setWidget('meta_keywords', $widgetMetaKeywords);
+        $this->setWidget('meta_description', $widgetMetaDescription);
         
-        $titleValidator = new sfValidatorString(
+        $validatorTitle = new sfValidatorString(
             array(
                 'required'   => true,
                 'max_length' => 255
@@ -58,12 +58,12 @@ class InformationI18nForm extends BaseInformationI18nForm
             )
         );
         
-        $descriptionValidator = new sfValidatorString(
+        $validatorDescription = new sfValidatorString(
             array('required' => true),
             array('required' => 'Description is a required field')
         );
         
-        $this->setValidator('title', $titleValidator);
-        $this->setValidator('description', $descriptionValidator);
+        $this->setValidator('title', $validatorTitle);
+        $this->setValidator('description', $validatorDescription);
     }
 }
