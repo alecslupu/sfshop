@@ -82,6 +82,5 @@ class sfsAdminChangePasswordForm extends AdminForm
         
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
         $this->getWidgetSchema()->setNameFormat('data[%s]');
-        $this->defineSfsListFormatter();
     }
 }

@@ -134,4 +134,49 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
             $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.');
         }
     }
+    
+    public function executeLogin($request)
+    {
+        $this->getContext()->getInstance()->getConfiguration()->loadHelpers('I18N');
+        
+        $this->form = new sfsAdminLoginForm();
+        
+        if ($this->getUser()->isAuthenticated()) {
+            $this->redirect('@administratorAdmin_login');
+        }
+        else {
+            if ($request->isMethod('post')) {
+                
+                $data = $request->getParameter('admin');
+                
+                $this->form->bind($data);
+                
+                if ($this->form->isValid()) {
+                    
+                    $admin = AdminPeer::retrieveByEmail($data['email']);
+                    
+                    if ($admin !== null && $admin->checkPassword($data['password'])) {
+                        if ($admin->getIsActive()) {
+                            $this->getUser()->login($admin);
+                            $this->redirect('@coreAdmin_index');
+                        }
+                        else {
+                            $this->form->defineError('email', __('You account is inactive, please contact to administrator for getting more information'));
+                        }
+                    }
+                    else {
+                        $this->form->defineError('email', __('Email or password is wrong'));
+                    }
+                }
+            }
+        }
+        
+        return sfView::SUCCESS;
+    }
+    
+    public function executeLogout()
+    {
+        $this->getUser()->logout();
+        $this->redirect('@administratorAdmin_login');
+    }
 }
