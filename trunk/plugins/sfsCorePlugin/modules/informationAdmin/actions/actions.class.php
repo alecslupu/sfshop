@@ -9,7 +9,7 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseInformationAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/BaseInformationAdminActions.class.php';
 require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorConfiguration.class.php';
 require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorHelper.class.php';
 
