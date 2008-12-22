@@ -15,7 +15,7 @@
  * @package    plugin.sfsCorePlugin
  * @subpackage lib.form.common
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class EmailTemplateI18nForm extends BaseEmailTemplateI18nForm
 {
