@@ -26,7 +26,7 @@ class EmailTemplateI18nForm extends BaseEmailTemplateI18nForm
         $this->setWidget('subject', new sfWidgetFormInput(array(), array('size' => 80)));
         $this->setWidget('body', new sfWidgetFormTextarea(array(), array('cols' => 110, 'rows' => 20)));
         
-        $subjectValidator = new sfValidatorString(
+        $validatorSubject = new sfValidatorString(
             array(
                 'required'   => true,
                 'max_length' => 255
@@ -37,12 +37,12 @@ class EmailTemplateI18nForm extends BaseEmailTemplateI18nForm
             )
         );
         
-        $bodyValidator = new sfValidatorString(
+        $validatorBody = new sfValidatorString(
             array('required' => true),
             array('required' => 'Body is a required field')
         );
         
-        $this->setValidator('subject', $subjectValidator);
-        $this->setValidator('body', $bodyValidator);
+        $this->setValidator('subject', $validatorSubject);
+        $this->setValidator('body', $validatorBody);
     }
 }

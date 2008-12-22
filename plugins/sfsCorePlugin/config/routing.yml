@@ -17,27 +17,15 @@ core_error500:
 core_contactUs:
   url: /contact-us
   param: { module: core, action: contactUs }
-
+  
 #
 # Core Admin
 #
-
-coreAdmin_login: 
-  url: /admin-login
-  param: { module: coreAdmin, action: login }
-
-coreAdmin_logout: 
-  url: /admin-logout
-  param: { module: coreAdmin, action: logout }
-
-coreAdmin_index: 
+coreAdmin_index:
   url: /admin-index
   param: { module: coreAdmin, action: index }
-
-coreAdmin_profile: 
-  url: /coreAdmin/profile
-  param: { module: coreAdmin, action: profile }
-
+  
+  
 #
 # administratorAdmin
 #
@@ -54,6 +42,14 @@ administratorAdmin:
 administratorAdmin_changeMyPassword:
   url: /administratorAdmin/change-my-password
   param: { module: administratorAdmin, action: changeMyPassword }
+
+administratorAdmin_login:
+  url: /admin-login
+  param: { module: administratorAdmin, action: login }
+
+administratorAdmin_logout: 
+  url: /admin-logout
+  param: { module: administratorAdmin, action: logout }
 
 #
 # Core Information

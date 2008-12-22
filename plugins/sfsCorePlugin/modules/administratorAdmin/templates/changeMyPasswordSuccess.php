@@ -1,4 +1,4 @@
-<?php use_helper('I18N', 'Date', 'Form') ?>
+<?php use_helper('Form') ?>
 <?php include_stylesheets_for_form($form) ?>
 <?php include_javascripts_for_form($form) ?>
 

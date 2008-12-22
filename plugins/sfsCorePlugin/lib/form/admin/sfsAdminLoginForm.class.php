@@ -21,6 +21,8 @@ class sfsAdminLoginForm extends AdminForm
 {
     public function configure()
     {
+        parent::configure();
+        
         $this->setWidgets(
             array(
                 'email'    => new sfWidgetFormInput(),
@@ -28,14 +30,24 @@ class sfsAdminLoginForm extends AdminForm
              )
         );
         
+        $validatorEmail = new sfValidatorString(
+            array('required' => true),
+            array('required' => 'Email is a required field')
+        );
+        
+        
+        $validatorPassword = new sfValidatorString(
+            array('required' => true),
+            array('required' => 'Password is a required field')
+        );
+        
         $this->setValidators(
             array(
-                'email'     => new sfValidatorString(array('required' => true)),
-                'password'  => new sfValidatorString(array('required' => true))
+                'email'     => $validatorEmail,
+                'password'  => $validatorPassword
             )
         );
         
-        $this->getWidgetSchema()->setNameFormat('data[%s]');
-        $this->defineSfsAdminListFormatter();
+        $this->getWidgetSchema()->setNameFormat('admin[%s]');
     }
 }

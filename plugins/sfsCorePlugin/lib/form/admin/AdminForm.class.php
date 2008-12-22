@@ -78,12 +78,12 @@ class AdminForm extends BaseAdminForm
         );
         
         $this->setValidators(array(
-          'id'          => new sfValidatorPropelChoice(array('model' => 'Admin', 'column' => 'id', 'required' => false)),
-          'credential'  => $validatorCredential,
-          'email'       => $validatorEmail,
-          'first_name'  => $validatorFirstName,
-          'last_name'   => $validatorLastName,
-          'is_active'   => new sfValidatorBoolean()
+            'id'          => new sfValidatorPropelChoice(array('model' => 'Admin', 'column' => 'id', 'required' => false)),
+            'credential'  => $validatorCredential,
+            'email'       => $validatorEmail,
+            'first_name'  => $validatorFirstName,
+            'last_name'   => $validatorLastName,
+            'is_active'   => new sfValidatorBoolean()
         ));
         
         $this->getWidgetSchema()->setNameFormat('admin[%s]');
