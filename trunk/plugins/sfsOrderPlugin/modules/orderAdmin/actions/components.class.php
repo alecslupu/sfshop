@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BaseOrderAdminComponents.class.php');
  * @package    plugins.sfsOrderPlugin
  * @subpackage modules.orderAdmin
  * @author     Dmitry Nesteruk
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id$
  */
 class orderAdminComponents extends BaseOrderAdminComponents
 {
