@@ -26,18 +26,8 @@ class BasePaymentAdminComponents extends sfComponents
     * @author Dmitry Nesteruk <nesterukd@gmail.com>
     * @access public
     */
-    public function executeOrderPaymentInfo()
+    public function executePaymentInfo()
     {
-        $sfUser = $this->getUser();
-        
-        $sectionsWithMethods = $sfUser->getAttribute('methods', null, 'order/payment');
-        $methodId = $sfUser->getAttribute('method_id', null, 'order/payment');
-        
-        $criteria = new Criteria();
-        $this->paymentService = PaymentPeer::retrieveById($methodId, $criteria, true);
-        
-        if ($this->paymentService == null) {
-            sfContext::getInstance()->getController()->redirect('@payment_checkout');
-        }
+        $this->paymentService = PaymentPeer::retrieveById($this->id, new Criteria(), true);
     }
 }

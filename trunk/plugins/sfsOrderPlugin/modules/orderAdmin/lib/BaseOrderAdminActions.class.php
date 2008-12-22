@@ -35,29 +35,18 @@ class BaseOrderAdminActions extends autoorderAdminActions
         $addressArray = $this->order->getDeliveryAddress();
         $this->address = new AddressBook();
         $this->address->fromArray($addressArray, BasePeer::TYPE_FIELDNAME);
-    }
-    
-   /**
-    * Change status details.
-    * 
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeChangeStatus()
-    {
-        if ($this->getRequest()->isMethod('post')) {
-            $order = OrderItemPeer::retrieveById($this->getRequestParameter('id'));
-            $order->setStatusId($this->getRequestParameter('status_id'));
-            $order->save();
-        }
         
-        $this->redirect($this->getRequest()->getReferer());
-    }
-    
-    protected function addFiltersCriteria($c)
-    {
-        parent::addFiltersCriteria($c);
+        $this->form = new sfsOrderChangeStatusForm($this->order);
+        
+        if ($request->isMethod('post')) {
+            $data = $request->getParameter('order_item');
+            
+            $this->form->bind($data);
+            
+            if ($this->form->isValid()) {
+                $this->form->save();
+                $this->getUser()->setFlash('notice', 'The status was changed successfully.');
+            }
+        }
     }
 }

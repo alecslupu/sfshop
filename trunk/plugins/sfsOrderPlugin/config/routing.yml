@@ -37,3 +37,7 @@ orderAdmin:
     prefix_path:          orderAdmin
     column:               id
     with_wildcard_routes: true
+    
+orderAdmin_details:
+  url: /orderAdmin/details/:id
+  param: { module: orderAdmin, action: details }
