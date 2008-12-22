@@ -9,17 +9,14 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseDeliveryActions.class.php');
-
 /**
- * delivery actions.
+ * DeliveryAdmin module configuration.
  *
- * @package    plugins.sfsDeliveryPlugin
- * @subpackage modules.delivery
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.deliveryAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class deliveryActions extends BaseDeliveryActions
+class DeliveryAdminGeneratorConfiguration extends BaseDeliveryAdminGeneratorConfiguration
 {
-
 }

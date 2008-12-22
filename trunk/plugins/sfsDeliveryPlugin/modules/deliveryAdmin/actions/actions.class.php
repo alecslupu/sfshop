@@ -9,7 +9,10 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseDeliveryAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/BaseDeliveryAdminActions.class.php';
+require_once dirname(__FILE__).'/../lib/DeliveryAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/DeliveryAdminGeneratorHelper.class.php';
+
 
 /**
  * deliveryAdmin actions.
@@ -17,9 +20,8 @@ require_once(dirname(__FILE__).'/../lib/BaseDeliveryAdminActions.class.php');
  * @package    plugin.sfsDeliveryPlugin
  * @subpackage modules.deliveryAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
+ * @version    SVN: $Id$
  */
 class deliveryAdminActions extends BaseDeliveryAdminActions
 {
-
 }

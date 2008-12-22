@@ -15,23 +15,18 @@
  * @package    plugin.sfsDeliveryPlugin
  * @subpackage modules.deliveryAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
+ * @version    SVN: $Id$
  */
 class BaseDeliveryAdminActions extends autodeliveryAdminActions
 {
-    public function executeEdit()
+    public function executeEdit(sfWebRequest $request)
     {
-        $request = $this->getRequest();
-        
         $criteria = new Criteria();
         DeliveryPeer::addAdminCriteria($criteria);
         $this->delivery = DeliveryPeer::retrieveById($request->getParameter('id'), $criteria);
         $this->forward404Unless($this->delivery);
         
-        $this->form = new DeliveryForm();
-        $this->form->setDefault('title', $this->delivery->getTitle());
-        $this->form->setDefault('description', $this->delivery->getDescription());
-        $this->form->setDefault('is_active', $this->delivery->getIsActive());
+        $this->form = new DeliveryForm($this->delivery);
         
         $params = sfsJSONPeer::decode($this->delivery->getParams());
         
@@ -47,9 +42,9 @@ class BaseDeliveryAdminActions extends autodeliveryAdminActions
         $this->labels = $formParams->getWidgetSchema()->getLabels();
         $this->form->embedForm('params', $formParams);
         
-        if ($this->getRequest()->isMethod('post')) {
+        if ($request->isMethod('post')) {
             
-            $data = $request->getParameter('data');
+            $data = $request->getParameter('delivery');
             $this->form->bind($data);
             
             if ($this->form->isValid()) {
@@ -92,14 +87,44 @@ class BaseDeliveryAdminActions extends autodeliveryAdminActions
                     $this->delivery->setIsActive(false);
                 }
                 else {
-                    $this->getUser()->setFlash('notice', 'Your modifications have been saved');
+                    $this->getUser()->setFlash('notice', 'The item was updated successfully.');
                 }
                 
                 $this->delivery->setParams($params);
                 $this->delivery->save();
-                
-                $this->redirect('deliveryAdmin/list');
             }
         }
+    }
+    
+    public function executeDelete(sfWebRequest $request)
+    {
+        $request->checkCSRFProtection();
+        
+        $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $this->getRoute()->getObject())));
+        
+        $this->getRoute()->getObject()->setIsDeleted(true);
+        $this->getRoute()->getObject()->save();
+        
+        $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+        $this->redirect('@deliveryAdmin');
+    }
+    
+    protected function executeBatchDelete(sfWebRequest $request)
+    {
+        $ids = $request->getParameter('ids');
+        
+        $criteria = new Criteria();
+        $criteria->add(DeliveryPeer::ID, $ids, Criteria::IN);
+        
+        $deliveries = DeliveryPeer::getAll($criteria);
+        
+        foreach ($deliveries as $delivery) {
+            $delivery->setIsDeleted(true);
+            $delivery->save();
+        }
+        
+        $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
+        
+        $this->redirect('@deliveryAdmin');
     }
 }

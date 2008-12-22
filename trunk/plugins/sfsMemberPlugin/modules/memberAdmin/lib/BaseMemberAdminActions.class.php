@@ -37,7 +37,7 @@ class BaseMemberAdminActions extends automemberAdminActions
         $ids = $request->getParameter('ids');
         
         $criteria = new Criteria();
-        $criteria->add('member.ID', $ids, Criteria::IN);
+        $criteria->add(MemberPeer::ID, $ids, Criteria::IN);
         
         $members = MemberPeer::getAll($criteria);
         

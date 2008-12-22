@@ -13,6 +13,11 @@ delivery_updateSelectForm:
 #
 # Delivery Admin
 #
-deliveryAdmin_list: 
-  url: /deliveryAdmin/list/*
-  param: { module: deliveryAdmin, action: list }
+deliveryAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Delivery
+    module:               deliveryAdmin
+    prefix_path:          deliveryAdmin
+    column:               id
+    with_wildcard_routes: true

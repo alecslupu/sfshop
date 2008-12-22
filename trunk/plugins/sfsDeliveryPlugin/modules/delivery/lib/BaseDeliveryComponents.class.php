@@ -15,7 +15,7 @@
  * @package    plugins.sfsDeliveryPlugin
  * @subpackage modules.delivery
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: components.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id$
  */
 class BaseDeliveryComponents extends sfComponents
 {

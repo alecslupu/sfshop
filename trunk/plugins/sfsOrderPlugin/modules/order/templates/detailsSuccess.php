@@ -28,8 +28,8 @@
                     array(
                         'is_edit_enabled' => false,
                         'id'              => $order->getDeliveryId(),
-                        'method_title'  => $order->getDeliveryMethodTitle(),
-                        'method_price'  => $order->getDeliveryPrice()
+                        'method_title'    => $order->getDeliveryMethodTitle(),
+                        'method_price'    => $order->getDeliveryPrice()
                     )
                 ) ?>
             </td>
