@@ -5,7 +5,7 @@
  * @package    symfony
  * @subpackage plugin.sfsCorePlugin.widget
  * @author     Dmitry Nesteruk
- * @version    SVN: $Id: sfsWidgetFormSchemaFormatterList.class.php 5995 2007-11-13 15:50:03Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsWidgetFormSchemaFormatterHiddenList extends sfWidgetFormSchemaFormatter
 {
