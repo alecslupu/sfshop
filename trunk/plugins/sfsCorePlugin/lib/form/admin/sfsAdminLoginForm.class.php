@@ -49,5 +49,6 @@ class sfsAdminLoginForm extends AdminForm
         );
         
         $this->getWidgetSchema()->setNameFormat('admin[%s]');
+        $this->defineSfsAdminListFormatter();
     }
 }

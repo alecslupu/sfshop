@@ -12,22 +12,8 @@
   <div id="sf_admin_content">
     <div class="sf_admin_form">
       <?php echo form_tag('@administratorAdmin_changeMyPassword') ?>
-        <?php echo $form->renderHiddenFields() ?>
-    
-        <?php if ($form->hasGlobalErrors()): ?>
-          <?php echo $form->renderGlobalErrors() ?>
-        <?php endif; ?>
-        
         <fieldset id="sf_fieldset">
-            <?php foreach (array('current_password', 'password', 'confirm_password') as $name): ?>
-              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field <?php $form[$name]->hasError() and print ' errors' ?>">
-                <?php echo $form[$name]->renderError() ?>
-                <div>
-                  <?php echo $form[$name]->renderLabel() ?>
-                  <?php echo $form[$name]->render() ?>
-                </div>
-              </div>
-            <?php endforeach; ?>
+            <?php echo $form ?>
         </fieldset>
         
         <ul class="sf_admin_actions">
