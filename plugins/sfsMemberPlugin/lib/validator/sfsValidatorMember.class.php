@@ -16,7 +16,7 @@
  * @package    plugin.sfsMemberPlugin
  * @subpackage lib.validator
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfGuardUserValidator.class.php 7634 2008-02-27 18:01:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsValidatorMember extends sfValidatorBase
 {
@@ -84,10 +84,13 @@ class sfsValidatorMember extends sfValidatorBase
             $sfUser = sfContext::getInstance()->getUser();
             $ownEmail = false;
             
-            if ($sfUser->isAuthenticated()) {
-                if ($sfUser->getUser()->getEmail() == $value && $sfUser->getUserId() == $member->getId()) {
-                    $ownEmail = true;
-                }
+            if ($member != null
+                && (
+                    ($sfUser->isAuthenticated() && $sfUser->getUser()->getEmail() == $value && $sfUser->getUserId() == $member->getId())
+                    || ($member->getId() == sfContext::getInstance()->getRequest()->getParameter('data[id]') && sfConfig::get('sf_app') == 'backend')
+                )
+            ) {
+                $ownEmail = true;
             }
             
             if ($member !== null && !$ownEmail) {

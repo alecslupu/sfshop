@@ -15,7 +15,7 @@
  * @package    plugin.sfsMemberPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsMemberRegistrationForm extends MemberForm
 {
@@ -25,6 +25,7 @@ class sfsMemberRegistrationForm extends MemberForm
         
         $this->offsetUnset('primary_phone');
         $this->offsetUnset('secondary_phone');
+        $this->offsetUnset('is_active');
         
         $arrayQuestions = array();
         $questions = MemberSecretQuestionPeer::getAll();
@@ -36,10 +37,18 @@ class sfsMemberRegistrationForm extends MemberForm
             }
         }
         
-        $this->getWidgetSchema()->offsetSet('password', new sfWidgetFormInputPassword());
-        $this->getWidgetSchema()->offsetSet('confirm_password', new sfWidgetFormInputPassword());
-        $this->getWidgetSchema()->offsetSet('secret_question', new sfWidgetFormSelect(array('choices' => $arrayQuestions)));
-        $this->getWidgetSchema()->offsetSet('secret_answer', new sfWidgetFormInput());
+        $this->setWidget('password', new sfWidgetFormInputPassword());
+        $this->setWidget('confirm_password', new sfWidgetFormInputPassword());
+        $this->setWidget('secret_question', new sfWidgetFormSelect(array('choices' => $arrayQuestions)));
+        $this->setWidget('secret_answer', new sfWidgetFormInput());
+        
+        $this->getWidgetSchema()->setHelps(
+            array(
+                'email'         => 'You will use email address for login',
+                'secret_answer' => 'This information necessary for password recovery',
+                'primary_phone' => 'In some urgent cases we\'ll need to contact you quickly and directly.'
+            )
+        );
         
         $validatorPassword = new sfValidatorString(
             array(
@@ -85,10 +94,10 @@ class sfsMemberRegistrationForm extends MemberForm
             )
         );
         
-        $this->getValidatorSchema()->offsetSet('password', $validatorPassword);
-        $this->getValidatorSchema()->offsetSet('confirm_password', $validatorConfirmPassword);
-        $this->getValidatorSchema()->offsetSet('secret_question', $validatorSecretQuestion);
-        $this->getValidatorSchema()->offsetSet('secret_answer', $validatorSecretAnswer);
+        $this->setValidator('password', $validatorPassword);
+        $this->setValidator('confirm_password', $validatorConfirmPassword);
+        $this->setValidator('secret_question', $validatorSecretQuestion);
+        $this->setValidator('secret_answer', $validatorSecretAnswer);
         
         $this->validatorSchema->setPostValidator($validatorComparePasswords);
     }
