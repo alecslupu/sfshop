@@ -115,7 +115,8 @@ AdminMenu:
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
     title:          Members
-    route:          memberAdmin_list
+    module:         memberAdmin
+    route:          memberAdmin
     pos:            1
     is_active:      1
   AdminMenu_MembersOrders_Orders: 

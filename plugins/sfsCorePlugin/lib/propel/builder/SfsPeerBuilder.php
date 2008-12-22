@@ -1,14 +1,23 @@
 <?php
 
 /**
+ * sfShop, open source e-commerce solutions.
+ * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
+ * 
+ * Released under the MIT License.
+ * 
+ * For the full copyright and license information, please view the LICENSE file.
+ */
+
+/**
  * This class is an extension to the Symfony Peer Builder, which is itself an extension
  * to the Propel peer builder class.  
  *
- * @package plugins.sfsCorePlugin.lib
- * @author  Dmitry Nesteruk
- * @version $Id:$
+ * @package    plugins.sfsCorePlugin
+ * @subpackage lib.propel.builder
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>
+ * @version    SVN: $Id$
  **/
-
 class sfsPeerBuilder extends SfPeerBuilder
 {
 
@@ -101,7 +110,7 @@ class sfsPeerBuilder extends SfPeerBuilder
     {
     $script .= "
    /**
-    * Get object by \$id.
+    * Gets object by \$id.
     * 
     * @param  int \$id
     * @return object
@@ -132,7 +141,7 @@ class sfsPeerBuilder extends SfPeerBuilder
     {
     $script .= "
    /**
-    * Gets all records.
+    * Gets all public availabel records.
     * 
     * @param  \$criteria
     * @return array
@@ -225,6 +234,33 @@ class sfsPeerBuilder extends SfPeerBuilder
     ";
     }
     
+    protected function addGetCountAll(&$script)
+    {
+    $script .= "
+   /**
+    * Gets count items of all records.
+    * 
+    * @param  \$criteria
+    * @return array
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    public static function getCountAll(\$criteria = null)
+    {
+        if (\$criteria == null) {
+            \$criteria = new Criteria();
+        }";
+    if ($this->getTable()->getColumn('is_deleted')) {
+    $script .= "
+        
+        self::addAdminCriteria(\$criteria);
+        ";
+    }
+    $script .= "
+        return self::doCount(\$criteria);
+    }
+    ";
+    }
     
     protected function addGetAllPublic(&$script)
     {
@@ -308,6 +344,7 @@ class sfsPeerBuilder extends SfPeerBuilder
         }
         else {
             $this->addGetAll($script);
+            $this->addGetCountAll($script);
             $this->addGetAllPublic($script);
         }
         
