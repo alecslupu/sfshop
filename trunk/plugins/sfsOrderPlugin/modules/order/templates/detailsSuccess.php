@@ -22,12 +22,28 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('delivery', 'orderDeliveryInfo', array('is_edit_enabled' => false)) ?>
+                <?php include_component(
+                    'delivery', 
+                    'deliveryInfo', 
+                    array(
+                        'is_edit_enabled' => false,
+                        'id'              => $order->getDeliveryId(),
+                        'method_title'  => $order->getDeliveryMethodTitle(),
+                        'method_price'  => $order->getDeliveryPrice()
+                    )
+                ) ?>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('payment', 'orderPaymentInfo', array('is_edit_enabled' => false)) ?>
+                <?php include_component(
+                    'payment', 
+                    'paymentInfo', 
+                    array(
+                        'is_edit_enabled' => false,
+                        'id'              => $order->getPaymentId()
+                    )
+                ) ?>
             </td>
         </tr>
         <tr>

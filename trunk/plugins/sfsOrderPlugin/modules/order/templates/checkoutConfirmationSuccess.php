@@ -15,12 +15,12 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('payment', 'orderPaymentInfo', array('is_edit_enabled' => true)) ?>
+                <?php include_component('payment', 'paymentInfo', array('is_edit_enabled' => true)) ?>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('delivery', 'orderDeliveryInfo', array('is_edit_enabled' => true)) ?>
+                <?php include_component('delivery', 'deliveryInfo', array('is_edit_enabled' => true)) ?>
             </td>
         </tr>
         <tr>
