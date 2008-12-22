@@ -15,7 +15,7 @@
  * @package    plugins.sfsMemberPlugin
  * @subpackage modules.member
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
+ * @version    SVN: $Id$
  */
 class BaseMemberActions extends sfActions
 {

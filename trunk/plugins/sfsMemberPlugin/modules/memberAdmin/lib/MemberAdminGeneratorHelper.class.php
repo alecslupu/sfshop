@@ -9,17 +9,14 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseMemberComponents.class.php');
-
 /**
- * Member components.
+ * MemberAdmin module helper.
  *
- * @package    plugins.sfsMemberPlugin
- * @subpackage modules.member
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.memberAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class memberComponents extends BaseMemberComponents
+class MemberAdminGeneratorHelper extends BaseMemberAdminGeneratorHelper
 {
-
 }

@@ -15,7 +15,7 @@
  * @package    plugin.sfsMemberPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class MemberForm extends BaseMemberForm
 {
@@ -23,20 +23,14 @@ class MemberForm extends BaseMemberForm
     {
         $this->setWidgets(
             array(
-                'email'              => new sfWidgetFormInput(),
-                'first_name'         => new sfWidgetFormInput(),
-                'last_name'          => new sfWidgetFormInput(),
-                'primary_phone'      => new sfWidgetFormInput(),
-                'secondary_phone'    => new sfWidgetFormInput()
+                'id'              => new sfWidgetFormInputHidden(),
+                'email'           => new sfWidgetFormInput(),
+                'first_name'      => new sfWidgetFormInput(),
+                'last_name'       => new sfWidgetFormInput(),
+                'primary_phone'   => new sfWidgetFormInput(),
+                'secondary_phone' => new sfWidgetFormInput(),
+                'is_active'       => new sfWidgetFormInputCheckbox()
              )
-        );
-        
-        $this->getWidgetSchema()->setHelps(
-            array(
-                'email'         => 'You will use email address for login',
-                'secret_answer' => 'This information necessary for password recovery',
-                'primary_phone' => 'In some urgent cases we\'ll need to contact you quickly and directly.'
-            )
         );
         
         $validatorEmail = new sfValidatorAnd(
@@ -107,11 +101,13 @@ class MemberForm extends BaseMemberForm
         
         $this->setValidators(
             array(
+               'id'               => new sfValidatorPropelChoice(array('model' => 'Member', 'column' => 'id', 'required' => false)),
                'email'            => $validatorEmail,
                'first_name'       => $validatorFirstName,
                'last_name'        => $validatorLastName,
                'primary_phone'    => $validatorPrimaryPhone,
-               'secondary_phone'  => $validatorSecondaryPhone
+               'secondary_phone'  => $validatorSecondaryPhone,
+               'is_active'        => new sfValidatorBoolean()
             )
         );
         

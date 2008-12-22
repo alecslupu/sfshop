@@ -53,6 +53,11 @@ member_editContactInfo:
 #
 # Member Admin
 #
-memberAdmin_list: 
-  url: /memberAdmin/list
-  param: { module: memberAdmin, action: list }
+memberAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Member
+    module:               memberAdmin
+    prefix_path:          memberAdmin
+    column:               id
+    with_wildcard_routes: true
