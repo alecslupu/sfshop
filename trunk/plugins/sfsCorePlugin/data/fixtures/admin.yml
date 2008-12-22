@@ -123,7 +123,8 @@ AdminMenu:
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
     title:          Orders
-    route:          orderAdmin_list
+    module:         orderAdmin
+    route:          orderAdmin
     pos:            2
     is_active:      1
   

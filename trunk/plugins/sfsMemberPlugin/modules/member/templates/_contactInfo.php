@@ -1,7 +1,7 @@
 <div id="container_info_member_contact" class="container_info">
     <span class="caption"><?php echo __('Contact info') ?></span>
     <span class="action">
-        [ <?php echo link_to(__('Edit'), '#') ?> ]
+        [ <?php echo link_to_function(__('Edit'), 'return false') ?> ]
     </span><br/><br/>
     <b><?php echo __('Primary phone') ?></b>: <span id="primary_phone"><?php echo $info['primary_phone'] ?></span><br/>
     <span id="content_secondary_phone" <?php echo $info['secondary_phone'] !='' ? '' : 'style="display: none"' ?>>

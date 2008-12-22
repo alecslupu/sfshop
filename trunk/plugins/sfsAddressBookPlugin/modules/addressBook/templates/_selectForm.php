@@ -7,7 +7,7 @@
     <?php slot('hasAddresses') ?>yes<?php end_slot() ?>
 <?php endif; ?>
 
-<?php echo link_to(__('Add new address'), '#', array('class' => 'action')); ?>
+<?php echo link_to_function(__('Add new address'), 'return false', array('class' => 'action')); ?>
 
 <?php echo javascript_tag('
     var addressForm = new sfsForm(

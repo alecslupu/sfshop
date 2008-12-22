@@ -20,16 +20,16 @@
 class BaseOrderAdminActions extends autoorderAdminActions
 {
    /**
-    * Order detail.
+    * Order details.
     * 
     * @param  void
     * @return void
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeDetails()
+    public function executeDetails($request)
     {
-        $this->order = OrderItemPeer::retrieveById($this->getRequestParameter('id'));
+        $this->order = OrderItemPeer::retrieveById($request->getParameter('id'));
         $this->forward404Unless($this->order);
         
         $addressArray = $this->order->getDeliveryAddress();
@@ -59,11 +59,5 @@ class BaseOrderAdminActions extends autoorderAdminActions
     protected function addFiltersCriteria($c)
     {
         parent::addFiltersCriteria($c);
-        /*
-        if (isset($this->filters['member_full_name']) && $this->filters['member_full_name'] != '') {
-            $m = "CONCAT(" . OrderItemPeer::MEMBER_FIRST_NAME . ", ' ', " . OrderItemPeer::MEMBER_LAST_NAME . ")";
-            $c->add($m, $this->filters['member_full_name'], Criteria::LIKE);
-        }
-*/
     }
 }
