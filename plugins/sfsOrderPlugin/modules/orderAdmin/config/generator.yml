@@ -1,19 +1,28 @@
 generator:
-  class:              sfPropelAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:      OrderItem
-    theme:            default
-    
-    list: 
-      title:            List of orders
-      display:          [id, _member_full_name, delivery_full_name, products_count, _total_price, status, created_at]
-      max_per_page:     20
-      
-      object_actions: 
-        view: 
-          name:         Details of order
-          action:       details
-          icon:         /images/actions/order_details.png
-      actions:          []
-      
-      filters:          [status_id]
+    model_class:           OrderItem
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          orderAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Orders
+        display: [id, _member_full_name, delivery_full_name, products_count, _total_price, status, created_at]
+        max_per_page: 20
+        object_actions: 
+          view: 
+            name:         Details of order
+            action:       details
+            icon:         /images/actions/order_details.png
+        actions:          []
+      filter:
+        display:  [status_id]
+      form:    ~

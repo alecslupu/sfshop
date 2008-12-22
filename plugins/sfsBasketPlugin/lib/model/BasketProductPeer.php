@@ -58,12 +58,12 @@ class BasketProductPeer extends BaseBasketProductPeer
         $criteria->addGroupByColumn(self::PRODUCT_ID);
         $criteria2 = $criteria->getNewCriterion(self::PRODUCT_ID, $productId);
         $criteria->addHaving($criteria2);
-        $rs = self::doSelectRS($criteria);
+        $stmt = self::doSelectStmt($criteria);
         
         $sum = 0;
         
-        while ($rs->next()) {
-            $sum = $rs->getString(1);
+        while ($res = $stmt->fetchColumn(1)) {
+            $sum = $res;
         }
         
         return $sum;

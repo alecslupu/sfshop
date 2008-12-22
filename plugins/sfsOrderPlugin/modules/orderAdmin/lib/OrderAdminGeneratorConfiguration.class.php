@@ -9,18 +9,14 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once dirname(__FILE__).'/../lib/BaseOrderAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/OrderAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/OrderAdminGeneratorHelper.class.php';
-
 /**
- * orderAdmin actions.
+ * OrderAdmin module configuration.
  *
- * @package    plugins.sfsOrderPlugin
+ * @package    plugin.sfsOrderPlugin
  * @subpackage modules.orderAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class orderAdminActions extends BaseOrderAdminActions
+class OrderAdminGeneratorConfiguration extends BaseOrderAdminGeneratorConfiguration
 {
 }

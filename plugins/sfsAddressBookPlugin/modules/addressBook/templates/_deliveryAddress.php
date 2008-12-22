@@ -3,7 +3,7 @@
     <span class="caption"><?php echo __('Delivery address') ?></span>
     <?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
         <span class="action">
-            [ <?php echo link_to(__('Edit'), '#') ?> ]
+            [ <?php echo link_to_function(__('Edit'), 'return false') ?> ]
         </span>
     <?php endif; ?>
     <br/><br/>

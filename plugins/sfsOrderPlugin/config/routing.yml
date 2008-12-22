@@ -29,6 +29,11 @@ order_details:
 #
 # Order Admin
 #
-orderAdmin_list: 
-  url: /orderAdmin/list
-  param: { module: orderAdmin, action: list }
+orderAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OrderItem
+    module:               orderAdmin
+    prefix_path:          orderAdmin
+    column:               id
+    with_wildcard_routes: true

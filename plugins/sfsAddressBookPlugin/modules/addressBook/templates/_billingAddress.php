@@ -2,7 +2,7 @@
 <div id="container_info_billing_address" class="container_info">
     <span class="caption"><?php echo __('Billing address') ?></span>
     <span class="action">
-        [ <?php echo link_to(__('Edit'), '#') ?> ]
+        [ <?php echo link_to_function(__('Edit'), 'return false') ?> ]
     </span><br/><br/>
     <?php echo format_address($address, true, true) ?>
 </div>
