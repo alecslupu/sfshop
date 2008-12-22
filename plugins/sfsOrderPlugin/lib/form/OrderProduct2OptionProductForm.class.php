@@ -5,7 +5,7 @@
  *
  * @package    form
  * @subpackage order_product2option_product
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class OrderProduct2OptionProductForm extends BaseOrderProduct2OptionProductForm
 {
