@@ -25,9 +25,9 @@ class sfsAdminChangePasswordForm extends AdminForm
         
         $this->setWidgets(
             array(
-                'current_password' => new sfWidgetFormInputPassword(array(), array('size' => 50)),
-                'password'         => new sfWidgetFormInputPassword(array(), array('size' => 50)),
-                'confirm_password' => new sfWidgetFormInputPassword(array(), array('size' => 50))
+                'current_password' => new sfWidgetFormInputPassword(array(), array('size' => 30)),
+                'password'         => new sfWidgetFormInputPassword(array(), array('size' => 30)),
+                'confirm_password' => new sfWidgetFormInputPassword(array(), array('size' => 30))
              )
         );
         
