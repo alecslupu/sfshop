@@ -15,7 +15,7 @@
  * @package    plugin.sfsPaymentWebmoneyPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsWebmoneyParamsForm extends PaymentForm
 {
@@ -63,9 +63,6 @@ class sfsWebmoneyParamsForm extends PaymentForm
             
             if (in_array($code, $arraySuppordedCurrencise)) {
                 $subForm = new sfsWebmoneyPurseParamsForm();
-                $validatorPurse = $subForm->getValidatorSchema()->offsetGet('purse');
-                $message = str_replace('%currency_title%', $currency->getTitle(), $validatorPurse->getMessage('required'));
-                $validatorPurse->setMessage('required', $message);
                 $pursesForm->embedForm($code, $subForm);
             }
         }

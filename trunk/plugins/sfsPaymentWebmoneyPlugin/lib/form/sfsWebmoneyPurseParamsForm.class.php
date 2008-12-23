@@ -15,7 +15,7 @@
  * @package    plugin.sfsPaymentWebmoneyPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsWebmoneyPurseParamsForm extends PaymentForm
 {
@@ -29,12 +29,12 @@ class sfsWebmoneyPurseParamsForm extends PaymentForm
         
         $validatorPurse = new sfValidatorString(
             array('required' => true),
-            array('required' => 'Please, enter your purse for currency %currency_title%')
+            array('required' => 'Purse is a required field')
         );
         
         $validatorSecretKey = new sfValidatorString(
             array('required' => true),
-            array('required'  => 'Please, enter a secret key for this purse')
+            array('required'  => 'Secret key is a required field')
         );
         
         $this->setValidators(
