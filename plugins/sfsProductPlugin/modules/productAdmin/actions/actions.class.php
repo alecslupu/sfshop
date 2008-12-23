@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BaseProductAdminActions.class.php');
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.productAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 2288 2006-10-02 15:22:13Z fabien $
+ * @version    SVN: $Id$
  */
 class productAdminActions extends BaseProductAdminActions
 {
