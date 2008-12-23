@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BasePaypalActions.class.php');
  * @package    plugins.sfsPaymentPaypalPlugin
  * @subpackage modules.paypal
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id$
  */
 class paypalActions extends BasePaypalActions
 {

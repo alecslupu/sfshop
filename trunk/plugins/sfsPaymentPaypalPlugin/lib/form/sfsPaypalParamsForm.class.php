@@ -15,7 +15,7 @@
  * @package    plugin.sfsPaymentPaypalPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsPaypalParamsForm extends PaymentForm
 {
@@ -24,48 +24,35 @@ class sfsPaypalParamsForm extends PaymentForm
         
         $this->setWidgets(
             array(
-                'username'    => new sfWidgetFormInput(),
-                'password'    => new sfWidgetFormInput(),
-                'signature'   => new sfWidgetFormInput(),
+                'username'    => new sfWidgetFormInput(array(), array('size' => 40)),
+                'password'    => new sfWidgetFormInput(array(), array('size' => 40)),
+                'signature'   => new sfWidgetFormInput(array(), array('size' => 70)),
                 'test_mode'   => new sfWidgetFormInputCheckbox()
              )
         );
         
         $validatorUsername = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input username'
-            )
+            array('required' => true),
+            array('required' => 'Username is a required field')
         );
         
         $validatorPassword = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input password'
-            )
+            array('required' => true),
+            array('required' => 'Password is a required field')
         );
         
         $validatorSignature = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input signature'
-            )
+            array('required' => true),
+            array('required' => 'Signature is a required field')
         );
         
         $this->setValidators(
             array(
                 'username'    => $validatorUsername,
                 'password'    => $validatorPassword,
-                'signature'   => $validatorSignature
+                'signature'   => $validatorSignature,
+                'test_mode'   => new sfValidatorBoolean()
              )
         );
-        
-        $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

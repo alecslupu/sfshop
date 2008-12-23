@@ -27,13 +27,13 @@ class PaymentI18nForm extends BasePaymentI18nForm
         $validatorTitle = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 1,
+                'min_length' => 4,
                 'max_length' => 100
             ),
             array(
-                'required'   => 'You must input title',
-                'min_length' => 'Title must be 1 or more characters',
-                'max_length' => 'Title must be 100 or less characters'
+                'required'   => 'Title is a required field',
+                'min_length' => 'Title must be 4 or more characters',
+                'max_length' => 'Title can not be more 100 characters'
             )
         );
         
@@ -43,7 +43,7 @@ class PaymentI18nForm extends BasePaymentI18nForm
                 'max_length' => 200
             ),
             array(
-                'max_length' => 'Title must be 200 or less characters'
+                'max_length' => 'Description can not be more 200 characters'
             )
         );
         
