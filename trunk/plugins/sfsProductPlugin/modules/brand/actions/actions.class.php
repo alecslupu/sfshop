@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BaseBrandActions.class.php');
  * @package    pugins.sfsProductsPlugin
  * @subpackage modules.brand
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id$
  */
 class brandActions extends BaseBrandActions
 {

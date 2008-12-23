@@ -17,7 +17,7 @@ require_once(dirname(__FILE__).'/../lib/BaseProductComponents.class.php');
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.product
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @version    SVN: $Id$
  */
 class productComponents extends BaseProductComponents
 {
