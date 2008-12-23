@@ -53,9 +53,14 @@ class BaseDeliveryAdminActions extends autodeliveryAdminActions
             
             $acceptCurrenciesCodes = $delivery->getAcceptCurrenciesCodes();
             
-            $criteria = new Criteria();
-            CurrencyPeer::addPublicCriteria($criteria);
-            $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
+            if ($acceptCurrenciesCodes != '*') {
+                $criteria = new Criteria();
+                CurrencyPeer::addPublicCriteria($criteria);
+                $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
+            }
+            else {
+                $isExist = true;
+            }
             
             if (!$isExist) {
                 $this->getUser()->setFlash('notice', 'Your modifications have been saved, 
