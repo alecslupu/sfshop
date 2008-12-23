@@ -64,7 +64,5 @@ class sfsAuthorizeNetParamsForm extends PaymentForm
                 'is_test_server'  => new sfValidatorBoolean()
             )
         );
-        
-        $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

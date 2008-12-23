@@ -15,7 +15,7 @@
  * @package    plugin.sfsDeliveryFedexPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsFedexParamsForm extends DeliveryForm
 {
@@ -49,8 +49,8 @@ class sfsFedexParamsForm extends DeliveryForm
         
         $this->setWidgets(
             array(
-                'key'            => new sfWidgetFormInput(),
-                'password'       => new sfWidgetFormInput(),
+                'key'            => new sfWidgetFormInput(array(), array('size' => 40)),
+                'password'       => new sfWidgetFormInput(array(), array('size' => 40)),
                 'account'        => new sfWidgetFormInput(),
                 'meter'          => new sfWidgetFormInput(),
                 'weight_unit'    => new sfWidgetFormSelect(array('choices' => $arrayWeightUnit)),
@@ -81,7 +81,7 @@ class sfsFedexParamsForm extends DeliveryForm
                 'required' => true
             ),
             array(
-                'required' => 'Enter the fedex key assigned to you'
+                'required' => 'Fedex key is a required field'
             )
         );
         
@@ -90,7 +90,7 @@ class sfsFedexParamsForm extends DeliveryForm
                 'required' => true
             ),
             array(
-                'required' => 'Enter the fedex password assigned to you'
+                'required' => 'Fedex password is a required field'
             )
         );
         
@@ -99,7 +99,7 @@ class sfsFedexParamsForm extends DeliveryForm
                 'required' => true
             ),
             array(
-                'required' => 'Enter the fedex Account Number assigned to you',
+                'required' => 'Account number is a required field',
                 'invalid'  => 'Account number must contain only numerals'
             )
         );
@@ -155,7 +155,5 @@ class sfsFedexParamsForm extends DeliveryForm
                 'dropoff'        => $validatorDropoff,
              )
         );
-        
-        $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

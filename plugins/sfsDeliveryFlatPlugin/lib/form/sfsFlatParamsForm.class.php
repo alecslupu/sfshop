@@ -15,7 +15,7 @@
  * @package    plugin.sfsDeliveryFlatPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsFlatParamsForm extends DeliveryForm
 {
@@ -23,26 +23,20 @@ class sfsFlatParamsForm extends DeliveryForm
     {
         $this->setWidgets(
             array(
-                'title'       => new sfWidgetFormInput(),
-                'price'       => new sfWidgetFormInput()
+                'title' => new sfWidgetFormInput(),
+                'price' => new sfWidgetFormInput()
              )
         );
         
         $this->getWidgetSchema()->setLabel('title', 'Method title');
         
         $validatorTitle = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input method title'
-            )
+            array('required' => true),
+            array('required' => 'Method title is a required field')
         );
         
         $validatorPrice = new sfValidatorNumber(
-            array(
-                'required' => true,
-            ),
+            array('required' => true),
             array('invalid'  => 'Price must contain only numerals')
         );
         
@@ -52,7 +46,5 @@ class sfsFlatParamsForm extends DeliveryForm
                 'price' => $validatorPrice
              )
         );
-        
-        $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

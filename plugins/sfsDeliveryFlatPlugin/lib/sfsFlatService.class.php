@@ -15,7 +15,7 @@
  * @package    plugins.sfDeliveryFlatPlugin
  * @subpackage lib
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfAction.class.php 9477 2008-06-09 09:41:14Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsFlatService extends sfsBaseDeliveryService
 {
