@@ -66,7 +66,6 @@ class sfsPaypalParamsForm extends PaymentForm
              )
         );
         
-        $this->defineSfsAdminListFormatter();
         $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

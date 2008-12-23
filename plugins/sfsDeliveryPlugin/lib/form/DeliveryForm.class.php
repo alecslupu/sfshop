@@ -35,6 +35,7 @@ class DeliveryForm extends BaseDeliveryForm
             )
         );
         
+        //embed i18n form
         $languages = LanguagePeer::getAllPublic();
         $cultures = array();
         
@@ -47,5 +48,19 @@ class DeliveryForm extends BaseDeliveryForm
         foreach ($languages as $language) {
             $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
         }
+        
+        //embed params form
+        $params = sfsJSONPeer::decode($this->getObject()->getParams());
+        $className = $this->getObject()->getNameClassFormParams();
+        
+        $formParams = new $className();
+        
+        foreach ($params as $key => $value) {
+            $formParams->setDefault($key, $value);
+        }
+        
+        $this->embedForm('_params', $formParams);
+        
+        $this->getWidgetSchema()->setNameFormat('delivery[%s]');
     }
 }

@@ -15,7 +15,7 @@
  * @package    plugin.sfsPaymentAuthorizeNetPlugin
  * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id: sfPropelFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @version    SVN: $Id$
  */
 class sfsAuthorizeNetParamsForm extends PaymentForm
 {
@@ -42,21 +42,13 @@ class sfsAuthorizeNetParamsForm extends PaymentForm
         );
         
         $validatorUsername = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input username'
-            )
+            array('required' => true),
+            array('required' => 'Username is a required field')
         );
         
         $validatorTransactionKey = new sfValidatorString(
-            array(
-                'required' => true
-            ),
-            array(
-                'required' => 'You should input transaction key'
-            )
+            array('required' => true),
+            array('required' => 'Transaction key is a required field')
         );
         
         $validatorType = new sfValidatorChoice(
@@ -67,11 +59,12 @@ class sfsAuthorizeNetParamsForm extends PaymentForm
             array(
                 'username'        => $validatorUsername,
                 'transaction_key' => $validatorTransactionKey,
-                'type'            => $validatorType
+                'type'            => $validatorType,
+                'is_test_mode'    => new sfValidatorBoolean(),
+                'is_test_server'  => new sfValidatorBoolean()
             )
         );
         
-        $this->defineSfsAdminListFormatter();
         $this->getValidatorSchema()->setOption('allow_extra_fields', true);
     }
 }

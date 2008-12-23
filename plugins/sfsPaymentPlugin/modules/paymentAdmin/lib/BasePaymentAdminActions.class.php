@@ -13,92 +13,98 @@
  * paymentAdmin actions.
  *
  * @package    plugin.sfsPaymentPlugin
- * @subpackage modules.paymentAdmin
+ * @subpackage modules.paymentAdmin.lib
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
 class BasePaymentAdminActions extends autopaymentAdminActions
 {
-    public function executeEdit()
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $request = $this->getRequest();
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+        
+        if ($form->isValid()) {
+            
+            $payment = $form->updateObject();
+            
+            $params = sfsJSONPeer::decode($payment->getParams());
+            
+            $data = $request->getParameter($form->getName());
+            $newParams = $data['_params'];
+            
+            foreach ($params as $key => $value) {
+                if (!isset($newParams[$key]) && !is_bool($value)) {
+                    $newParams[$key] = $value;
+                }
+                else {
+                    if (isset($newParams[$key]) && $newParams[$key] == 'on' && is_bool($value)) {
+                        $newParams[$key] = true;
+                    }
+                    else if(!isset($newParams[$key]) && is_bool($value)) {
+                        $newParams[$key] = false;
+                    }
+                }
+            }
+            
+            $params = sfsJSONPeer::encode($newParams);
+            $payment->setParams($params);
+            
+            $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $payment)));
+            
+            $acceptCurrenciesCodes = $payment->getAcceptCurrenciesCodes();
+            
+            $criteria = new Criteria();
+            CurrencyPeer::addPublicCriteria($criteria);
+            $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
+            
+            if (!$isExist) {
+                $this->getUser()->setFlash('notice', 'Your modifications have been saved, 
+                    but this service is inactive, because your store does not use currencies which accept this service.
+                    This service is accept following currencies: ' . str_replace(',', ', ', $acceptCurrenciesCodes));
+                $payment->setIsActive(false);
+            }
+            else {
+                $this->getUser()->setFlash('notice', 'The item was updated successfully.');
+            }
+            
+            $payment->save();
+            
+            $this->redirect('@paymentAdmin_edit?id='.$payment->getId());
+        }
+        else {
+            $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.');
+        }
+    }
+    
+    public function executeDelete(sfWebRequest $request)
+    {
+        $request->checkCSRFProtection();
+        
+        $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $this->getRoute()->getObject())));
+        
+        $this->getRoute()->getObject()->setIsDeleted(true);
+        $this->getRoute()->getObject()->save();
+        
+        $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+        $this->redirect('@paymentAdmin');
+    }
+    
+    protected function executeBatchDelete(sfWebRequest $request)
+    {
+        $ids = $request->getParameter('ids');
         
         $criteria = new Criteria();
-        PaymentPeer::addAdminCriteria($criteria);
-        $this->payment = PaymentPeer::retrieveById($request->getParameter('id'), $criteria);
-        $this->forward404Unless($this->payment);
+        $criteria->add(PaymentPeer::ID, $ids, Criteria::IN);
         
-        $this->form = new PaymentForm();
-        $this->form->setDefault('title', $this->payment->getTitle());
-        $this->form->setDefault('description', $this->payment->getDescription());
-        $this->form->setDefault('is_active', $this->payment->getIsActive());
+        $payments = PaymentPeer::getAll($criteria);
         
-        $params = sfsJSONPeer::decode($this->payment->getParams());
-        $className = $this->payment->getNameClassFormParams();
-        $formParams = new $className();
-        
-        $this->form->setDefault('id', $request->getParameter('id'));
-        
-        foreach ($params as $key => $value) {
-            $formParams->setDefault($key, $value);
+        foreach ($payments as $payment) {
+            $payment->setIsDeleted(true);
+            $payment->save();
         }
         
-        $this->labels = $formParams->getWidgetSchema()->getLabels();
-        $this->form->embedForm('params', $formParams);
+        $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
         
-        if ($this->getRequest()->isMethod('post')) {
-            
-            $data = $request->getParameter('data');
-            $this->form->bind($data);
-            
-            if ($this->form->isValid()) {
-                
-                foreach ($params as $key => $value) {
-                    if (!isset($data['params'][$key]) && !is_bool($value)) {
-                        $data['params'][$key] = $value;
-                    }
-                    else {
-                        if (isset($data['params'][$key]) && $data['params'][$key] == 'on' && is_bool($value)) {
-                            $data['params'][$key] = true;
-                        }
-                        else if(!isset($data['params'][$key]) && is_bool($value)) {
-                            $data['params'][$key] = false;
-                        }
-                    }
-                }
-                
-                $params = sfsJSONPeer::encode($data['params']);
-                
-                $this->payment->setTitle($data['title']);
-                $this->payment->setDescription($data['description']);
-                
-                if (isset($data['is_active'])) {
-                    $this->payment->setIsActive(true);
-                }
-                else {
-                    $this->payment->setIsActive(false);
-                }
-                
-                $acceptCurrenciesCodes = $this->payment->getAcceptCurrenciesCodes();
-                $criteria = new Criteria();
-                CurrencyPeer::addPublicCriteria($criteria);
-                $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
-                
-                if (!$isExist) {
-                    $this->getUser()->setFlash('notice', 'Your modifications have been saved, 
-                        but this service is inactive, because your store does not use currencies which accept this service.
-                        This service is accept following currencies: ' . str_replace(',', ', ', $acceptCurrenciesCodes));
-                    $this->payment->setIsActive(false);
-                }
-                else {
-                    $this->getUser()->setFlash('notice', 'Your modifications have been saved');
-                }
-                
-                $this->payment->setParams($params);
-                $this->payment->save();
-                
-                $this->redirect('paymentAdmin/list');
-            }
-        }
+        $this->redirect('@paymentAdmin');
     }
 }

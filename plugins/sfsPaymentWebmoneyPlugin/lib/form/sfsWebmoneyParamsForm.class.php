@@ -51,8 +51,6 @@ class sfsWebmoneyParamsForm extends PaymentForm
              )
         );
         
-        $this->defineSfsAdminListFormatter();
-        
         $criteria = new Criteria();
         CurrencyPeer::addPublicCriteria($criteria);
         $arrayCurrencies = CurrencyPeer::getAll($criteria);

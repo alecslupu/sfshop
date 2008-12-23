@@ -1,14 +1,31 @@
 generator:
-  class:                sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:      Payment
-    theme:            default
+    model_class:           Payment
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          paymentAdmin
+    with_propel_route:     1
 
-    list: 
-      title:            'List of payment services'
-      display:          [ title, is_active, created_at, updated_at ]
-      max_per_page:     20
-      object_actions: 
-        _edit:          ~
-        _delete:        ~
-      actions:          []
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:             Payment services
+        display:           [title, is_active]
+        max_per_page:      20
+        peer_method:       getAll
+        peer_count_method: getCountAll
+        actions:           []
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit payment service
+        actions:
+          _delete:  ~
+          _list:    ~
+          _save:    ~

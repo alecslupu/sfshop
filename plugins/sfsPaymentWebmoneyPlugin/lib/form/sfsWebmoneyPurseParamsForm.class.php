@@ -43,7 +43,5 @@ class sfsWebmoneyPurseParamsForm extends PaymentForm
                 'secret_key' => $validatorSecretKey
              )
         );
-        
-        $this->defineSfsAdminListFormatter();
     }
 }
