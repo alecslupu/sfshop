@@ -22,7 +22,7 @@ class DeliveryI18nForm extends BaseDeliveryI18nForm
     public function configure()
     {
         $this->setWidget('title', new sfWidgetFormInput(array(), array('size' => 80)));
-        $this->setWidget('description', new sfWidgetFormInput(array(), array('size' => 80)));
+        $this->setWidget('description', new sfWidgetFormTextarea(array(), array('cols' => 70, 'rows' => 4)));
         
         $validatorTitle = new sfValidatorString(
             array(

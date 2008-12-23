@@ -9,7 +9,9 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BasePaymentAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/BasePaymentAdminActions.class.php';
+require_once dirname(__FILE__).'/../lib/PaymentAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/PaymentAdminGeneratorHelper.class.php';
 
 /**
  * paymentAdmin actions.
@@ -21,5 +23,4 @@ require_once(dirname(__FILE__).'/../lib/BasePaymentAdminActions.class.php');
  */
 class paymentAdminActions extends BasePaymentAdminActions
 {
-
 }

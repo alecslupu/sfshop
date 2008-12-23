@@ -13,6 +13,11 @@ payment_chargeFailed:
 #
 # Payment Admin
 #
-paymentAdmin_list: 
-  url: /paymentAdmin/list/*
-  param: { module: paymentAdmin, action: list }
+paymentAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Payment
+    module:               paymentAdmin
+    prefix_path:          paymentAdmin
+    column:               id
+    with_wildcard_routes: true

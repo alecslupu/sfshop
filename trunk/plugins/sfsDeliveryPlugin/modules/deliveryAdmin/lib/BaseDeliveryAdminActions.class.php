@@ -19,80 +19,60 @@
  */
 class BaseDeliveryAdminActions extends autodeliveryAdminActions
 {
-    public function executeEdit(sfWebRequest $request)
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $criteria = new Criteria();
-        DeliveryPeer::addAdminCriteria($criteria);
-        $this->delivery = DeliveryPeer::retrieveById($request->getParameter('id'), $criteria);
-        $this->forward404Unless($this->delivery);
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
         
-        $this->form = new DeliveryForm($this->delivery);
-        
-        $params = sfsJSONPeer::decode($this->delivery->getParams());
-        
-        $className = $this->delivery->getNameClassFormParams();
-        $formParams = new $className();
-        
-        $this->form->setDefault('id', $request->getParameter('id'));
-        
-        foreach ($params as $key => $value) {
-            $formParams->setDefault($key, $value);
-        }
-        
-        $this->labels = $formParams->getWidgetSchema()->getLabels();
-        $this->form->embedForm('params', $formParams);
-        
-        if ($request->isMethod('post')) {
+        if ($form->isValid()) {
             
-            $data = $request->getParameter('delivery');
-            $this->form->bind($data);
+            $delivery = $form->updateObject();
             
-            if ($this->form->isValid()) {
-                
-                foreach ($params as $key => $value) {
-                    if (!isset($data['params'][$key]) && !is_bool($value)) {
-                        $data['params'][$key] = $value;
-                    }
-                    else {
-                        if (isset($data['params'][$key]) && $data['params'][$key] == 'on' && is_bool($value)) {
-                            $data['params'][$key] = true;
-                        }
-                        else if(!isset($data['params'][$key]) && is_bool($value)) {
-                            $data['params'][$key] = false;
-                        }
-                    }
-                }
-                
-                $params = sfsJSONPeer::encode($data['params']);
-                
-                $this->delivery->setTitle($data['title']);
-                $this->delivery->setDescription($data['description']);
-                
-                if (isset($data['is_active'])) {
-                    $this->delivery->setIsActive(true);
+            $params = sfsJSONPeer::decode($delivery->getParams());
+            
+            $data = $request->getParameter($form->getName());
+            $newParams = $data['_params'];
+            
+            foreach ($params as $key => $value) {
+                if (!isset($newParams[$key]) && !is_bool($value)) {
+                    $newParams[$key] = $value;
                 }
                 else {
-                    $this->delivery->setIsActive(false);
+                    if (isset($newParams[$key]) && $newParams[$key] == 'on' && is_bool($value)) {
+                        $newParams[$key] = true;
+                    }
+                    else if(!isset($newParams[$key]) && is_bool($value)) {
+                        $newParams[$key] = false;
+                    }
                 }
-                
-                $acceptCurrenciesCodes = $this->delivery->getAcceptCurrenciesCodes();
-                $criteria = new Criteria();
-                CurrencyPeer::addPublicCriteria($criteria);
-                $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
-                
-                if (!$isExist) {
-                    $this->getUser()->setFlash('notice', 'Your modifications have been saved, 
-                        but this service is inactive, because your store does not use currencies which accept this service.
-                        This service is accept following currencies: ' . str_replace(',', ', ', $acceptCurrenciesCodes));
-                    $this->delivery->setIsActive(false);
-                }
-                else {
-                    $this->getUser()->setFlash('notice', 'The item was updated successfully.');
-                }
-                
-                $this->delivery->setParams($params);
-                $this->delivery->save();
             }
+            
+            $params = sfsJSONPeer::encode($newParams);
+            $delivery->setParams($params);
+            
+            $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $delivery)));
+            
+            $acceptCurrenciesCodes = $delivery->getAcceptCurrenciesCodes();
+            
+            $criteria = new Criteria();
+            CurrencyPeer::addPublicCriteria($criteria);
+            $isExist = CurrencyPeer::checkExistenceByCodes(explode(',', $acceptCurrenciesCodes), $criteria);
+            
+            if (!$isExist) {
+                $this->getUser()->setFlash('notice', 'Your modifications have been saved, 
+                    but this service is inactive, because your store does not use currencies which accept this service.
+                    This service is accept following currencies: ' . str_replace(',', ', ', $acceptCurrenciesCodes));
+                $delivery->setIsActive(false);
+            }
+            else {
+                $this->getUser()->setFlash('notice', 'The item was updated successfully.');
+            }
+            
+            $delivery->save();
+            
+            $this->redirect('@deliveryAdmin_edit?id='.$delivery->getId());
+        }
+        else {
+            $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.');
         }
     }
     
