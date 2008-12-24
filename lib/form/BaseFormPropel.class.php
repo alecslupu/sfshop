@@ -8,9 +8,8 @@
  */
 abstract class BaseFormPropel extends sfFormPropel
 {
-    
    /**
-    * Define error
+    * Define custom error for form.
     *
     * @author Dmitry Nesteruk, Andrey Kotlyarov
     * @param string $fieldName
@@ -35,13 +34,26 @@ abstract class BaseFormPropel extends sfFormPropel
         
     }
     
+   /**
+    * Define list formatter for frontend.
+    *
+    * @author Dmitry Nesteruk
+    * @param  void
+    * @return void
+    */
     public function defineSfsListFormatter()
     {
         $this->getWidgetSchema()->addFormFormatter('sfs_list', new sfsWidgetFormSchemaFormatterList($this->getWidgetSchema()));
         $this->getWidgetSchema()->setFormFormatterName('sfs_list');
     }
     
-    
+   /**
+    * Define list formatter for backend.
+    *
+    * @author Dmitry Nesteruk
+    * @param  void
+    * @return void
+    */
     public function defineSfsAdminListFormatter()
     {
         $this->getWidgetSchema()->addFormFormatter('sfs_admin_list', new sfsWidgetFormSchemaFormatterAdminList($this->getWidgetSchema()));
@@ -52,14 +64,20 @@ abstract class BaseFormPropel extends sfFormPropel
     {
         $rows = array();
         
-        foreach ($inputs as $input)
-        {
+        foreach ($inputs as $input) {
             $rows[] = array('input'=> $input['input'], 'label'=> $input['label']);
         }
         
         return $rows;
     }
     
+   /**
+    * Embeds I18n forms for all cultures.
+    *
+    * @author Dmitry Nesteruk
+    * @param  void
+    * @return void
+    */
     public function embedI18nForAllCultures()
     {
         $languages = LanguagePeer::getAllPublic();
