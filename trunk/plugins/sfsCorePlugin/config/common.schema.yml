@@ -26,8 +26,6 @@ propel:
       type: TINYINT
       size: 1
       default: 0
-    created_at: 
-    updated_at: 
 
   language: 
     _attributes: 
@@ -55,8 +53,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   country: 
     _attributes: 
@@ -87,8 +83,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   country_i18n:
     _attributes: 
@@ -139,8 +133,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   state_i18n: 
     _attributes: 
@@ -219,8 +211,6 @@ propel:
     pos: 
       type: INTEGER
       default: 0
-    created_at: 
-    updated_at: 
 
   menu_i18n: 
     _attributes: 
