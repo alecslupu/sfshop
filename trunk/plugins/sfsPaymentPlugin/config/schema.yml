@@ -42,8 +42,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   payment_i18n: 
     _attributes: 

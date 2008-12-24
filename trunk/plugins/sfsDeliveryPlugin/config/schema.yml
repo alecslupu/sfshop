@@ -39,8 +39,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   delivery_i18n: 
     _attributes: 
