@@ -35,20 +35,7 @@ class PaymentForm extends BasePaymentForm
             )
         );
         
-        //embed i18n form
-        $languages = LanguagePeer::getAllPublic();
-        $cultures = array();
-        
-        foreach ($languages as $language) {
-            $cultures[] = $language->getCulture();
-        }
-        
-        $this->embedI18n($cultures);
-        
-        foreach ($languages as $language) {
-            $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
-        }
-        
+        $this->embedI18nForAllCultures();
         
         //embed params form
         $params = sfsJSONPeer::decode($this->getObject()->getParams());
