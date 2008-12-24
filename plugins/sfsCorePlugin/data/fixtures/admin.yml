@@ -99,15 +99,16 @@ AdminMenu:
   AdminMenu_Catalog_OptionTypes: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
-    title:          Products option types
-    route:          optionTypeAdmin_list
+    title:          Option types
+    module:         optionTypeAdmin
+    route:          optionTypeAdmin
     pos:            2
     is_active:      1
     
   AdminMenu_Catalog_OptionValues: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
-    title:          Products option values
+    title:          Option values
     route:          optionValueAdmin_list
     pos:            3
     is_active:      1

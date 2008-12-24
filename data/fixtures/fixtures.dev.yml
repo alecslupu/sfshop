@@ -1033,12 +1033,11 @@ Product2Category:
 #
 OptionType:
   OptionType_1:
-    name: image
+    pos: 1
   OptionType_2:
-    name: language
+    pos: 1
   OptionType_3:
-    name: format
-
+    pos: 1
 #
 # Options Types I18n
 #

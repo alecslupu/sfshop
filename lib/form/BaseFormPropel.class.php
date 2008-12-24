@@ -8,9 +8,6 @@
  */
 abstract class BaseFormPropel extends sfFormPropel
 {
-    public function setup()
-    {
-    }
     
    /**
     * Define error
@@ -61,5 +58,21 @@ abstract class BaseFormPropel extends sfFormPropel
         }
         
         return $rows;
+    }
+    
+    public function embedI18nForAllCultures()
+    {
+        $languages = LanguagePeer::getAllPublic();
+        $cultures = array();
+        
+        foreach ($languages as $language) {
+            $cultures[] = $language->getCulture();
+        }
+        
+        $this->embedI18n($cultures);
+        
+        foreach ($languages as $language) {
+            $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
+        }
     }
 }
