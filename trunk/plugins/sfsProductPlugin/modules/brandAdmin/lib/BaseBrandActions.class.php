@@ -19,5 +19,4 @@
  */
 class BaseBrandAdminActions extends autobrandAdminActions
 {
-
 }
