@@ -21,9 +21,14 @@ product_search:
 #
 # Brand Admin
 #
-brandAdmin_list: 
-  url: brandAdmin/list
-  param: { module: brandAdmin, action: list }
+brandAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Brand
+    module:               brandAdmin
+    prefix_path:          brandAdmin
+    column:               id
+    with_wildcard_routes: true
 
 #
 # Product Admin
