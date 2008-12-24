@@ -29,7 +29,7 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
         $this->getRoute()->getObject()->save();
         
         $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
-        $this->redirect('@memberAdmin');
+        $this->redirect('@optionTypeAdmin');
     }
     
     protected function executeBatchDelete(sfWebRequest $request)
@@ -48,7 +48,7 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
         
         $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
         
-        $this->redirect('@memberAdmin');
+        $this->redirect('@optionTypeAdmin');
     }
     
     public function executeValuesList()

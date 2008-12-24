@@ -14,9 +14,11 @@ generator:
       actions: ~
       fields:  ~
       list:
-        title: Option types
-        display: [title, is_active]
-        max_per_page: 20
+        title:             Option types
+        display:           [title, is_active]
+        max_per_page:      20
+        peer_method:       getAll
+        peer_count_method: getCountAll
       filter:
         class: false
       form:    ~
