@@ -28,22 +28,22 @@ class PaymentI18nForm extends BasePaymentI18nForm
             array(
                 'required'   => true,
                 'min_length' => 4,
-                'max_length' => 100
+                'max_length' => 255
             ),
             array(
                 'required'   => 'Title is a required field',
                 'min_length' => 'Title must be 4 or more characters',
-                'max_length' => 'Title can not be more 100 characters'
+                'max_length' => 'Title can not be more 255 characters'
             )
         );
         
         $validatorDescription = new sfValidatorString(
             array(
                 'required'   => false,
-                'max_length' => 200
+                'max_length' => 300
             ),
             array(
-                'max_length' => 'Description can not be more 200 characters'
+                'max_length' => 'Description can not be more 300 characters'
             )
         );
         

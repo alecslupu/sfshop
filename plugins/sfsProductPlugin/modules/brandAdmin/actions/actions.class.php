@@ -9,7 +9,9 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseBrandActions.class.php');
+require_once dirname(__FILE__).'/../lib/BaseBrandActions.class.php';
+require_once dirname(__FILE__).'/../lib/BrandAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/BrandAdminGeneratorHelper.class.php';
 
 /**
  * Brand admin actions.
@@ -21,5 +23,4 @@ require_once(dirname(__FILE__).'/../lib/BaseBrandActions.class.php');
  */
 class brandAdminActions extends BaseBrandAdminActions
 {
-
 }

@@ -372,14 +372,12 @@ CategoryI18n:
 #
 Brand:
   Brand_1:
-    name: 'brand-1'
-    url:  'http://brand-1.com'
+    url:  http://brand-1.com
   Brand_2:
-    name: 'brand-2'
-    url:  'http://brand-2.com'
+    url:  http://brand-2.com
   Brand_3:
-    name: 'brand-3'
-    url:  'http://brand-3.com'
+    url:  http://brand-3.com
+
 BrandI18n:
 # English
   Brand_EN_1:

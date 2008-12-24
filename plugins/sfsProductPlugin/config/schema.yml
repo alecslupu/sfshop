@@ -14,19 +14,9 @@ propel:
       required: true
       autoIncrement: true
       primaryKey: true
-    name: 
-      type: VARCHAR
-      size: 128
-      required: true
     url: 
       type: VARCHAR
       size: 255
-    created_at: 
-    updated_at: 
-    #_indexes: 
-    #  my_index: [id, name]
-    _uniques: 
-      uni_name: [name]
 
   brand_i18n: 
     _attributes: 
