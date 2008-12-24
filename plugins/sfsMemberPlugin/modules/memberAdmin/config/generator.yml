@@ -15,11 +15,16 @@ generator:
       fields:  ~
       list:
         title: Members
-        display: [full_name, email, primary_phone, secondary_phone, is_active, is_confirmed]
+        display: [full_name, email, primary_phone, secondary_phone, created_at, updated_at, is_active, is_confirmed]
         max_per_page: 20
         peer_method: getAll
         peer_count_method: getCountAll
         actions: []
+        fields:
+          created_at:
+            date_format: dd/mm/yyyy
+          updated_at:
+            date_format: dd/mm/yyyy
       filter:
         class: false
       form:    ~

@@ -15,7 +15,7 @@ generator:
       fields:  ~
       list:
         title: Administrators
-        display: [full_name, credential, email, is_active]
+        display: [full_name, credential, email, created_at, updated_at, is_active]
         max_per_page: 20
         object_actions: 
           _edit:          ~
@@ -25,6 +25,11 @@ generator:
             action:       resetPassword
             icon:         /admin/images/actions/reset_password.png
             params:       confirm=Are you sure want reset password for this administrator?
+        fields:
+          created_at:
+            date_format: dd/mm/yyyy
+          updated_at:
+            date_format: dd/mm/yyyy
       filter:
         class: false
       form:    ~
