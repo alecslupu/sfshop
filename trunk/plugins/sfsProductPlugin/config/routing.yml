@@ -41,9 +41,14 @@ productAdmin_list:
 # Product Options Admin
 #
 
-optionTypeAdmin_list: 
-  url: /optionTypeAdmin/list
-  param: { module: optionTypeAdmin, action: list }
+optionTypeAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OptionType
+    module:               optionTypeAdmin
+    prefix_path:          optionTypeAdmin
+    column:               id
+    with_wildcard_routes: true
 
 optionValueAdmin_list:
   url: /optionValueAdmin/list

@@ -9,7 +9,9 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseOptionTypeAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/BaseOptionTypeAdminActions.class.php';
+require_once dirname(__FILE__).'/../lib/OptionTypeAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/OptionTypeAdminGeneratorHelper.class.php';
 
 /**
  * OptionType admin actions.
@@ -21,5 +23,4 @@ require_once(dirname(__FILE__).'/../lib/BaseOptionTypeAdminActions.class.php');
  */
 class optionTypeAdminActions extends BaseOptionTypeAdminActions
 {
-
 }

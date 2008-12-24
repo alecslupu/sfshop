@@ -128,9 +128,6 @@ propel:
       required: true
       autoIncrement: true
       primaryKey: true
-    name: 
-      type: VARCHAR
-      size: 34
     pos: 
       type: INTEGER
       required: true
@@ -143,8 +140,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   option_type_i18n: 
     _attributes: 

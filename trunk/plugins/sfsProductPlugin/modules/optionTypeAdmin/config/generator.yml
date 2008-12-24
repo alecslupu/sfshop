@@ -1,37 +1,26 @@
 generator:
-  class:              sfAdvancedAdminGenerator
+  class: sfPropelGenerator
   param:
-    model_class:      OptionType
-    theme:            default
-    
-    list: 
-      title:            List of product's options
-      display:          [ id, title, pos, is_active, created_at, updated_at]
-      max_per_page:     20
-      object_actions: 
-        _edit:          ~
-        _delete:        ~
-        values_list:
-          action:       valuesList
-          icon:         /admin/images/actions/options_list.png
-          name:         Option type values
-      actions: 
-        _create:        ~
-    
-    edit: 
-      title:            %%_edit_caption%%
-      display: 
-        "NONE":         [ name, title_i18n, is_active ]
-      actions: 
-        _list:          ~
-        _save:          ~
-        _delete:        ~
-        
-      fields: 
-    
-    fields: 
-        title_i18n: 
-          name:         Title
-          type:         input_tag
-        edit_parent_category: 
-          name:         parent_id
+    model_class:           OptionType
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          optionTypeAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Option types
+        display: [title, is_active]
+        max_per_page: 20
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit option type
+      new:
+        title: New option type

@@ -26,17 +26,6 @@ class InformationForm extends BaseInformationForm
         $this->offsetUnset('created_at');
         $this->offsetUnset('updated_at');
         
-        $languages = LanguagePeer::getAllPublic();
-        $cultures = array();
-        
-        foreach ($languages as $language) {
-            $cultures[] = $language->getCulture();
-        }
-        
-        $this->embedI18n($cultures);
-        
-        foreach ($languages as $language) {
-            $this->getWidgetSchema()->setLabel($language->getCulture(), $language->getTitleEnglish());
-        }
+        $this->embedI18nForAllCultures();
     }
 }

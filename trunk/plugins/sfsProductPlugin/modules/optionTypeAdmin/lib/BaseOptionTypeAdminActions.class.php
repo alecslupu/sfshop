@@ -19,27 +19,41 @@
  */
 class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
 {
-    public function executeDelete()
+    public function executeDelete(sfWebRequest $request)
     {
-        if ($this->hasRequestParameter('id')) {
-            $option = OptionTypePeer::retrieveByPK($this->getRequestParameter('id'));
-            $this->forward404Unless($option);
-            
-            $option->setIsDeleted(1);
-            $option->save();
-            
-            $this->redirect('optionTypeAdmin/list');
+        $request->checkCSRFProtection();
+        
+        $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $this->getRoute()->getObject())));
+        
+        $this->getRoute()->getObject()->setIsDeleted(true);
+        $this->getRoute()->getObject()->save();
+        
+        $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+        $this->redirect('@memberAdmin');
+    }
+    
+    protected function executeBatchDelete(sfWebRequest $request)
+    {
+        $ids = $request->getParameter('ids');
+        
+        $criteria = new Criteria();
+        $criteria->add(OptionTypePeer::ID, $ids, Criteria::IN);
+        
+        $optionTypes = OptionTypePeer::getAll($criteria);
+        
+        foreach ($optionTypes as $optionType) {
+            $optionType->setIsDeleted(true);
+            $optionType->save();
         }
+        
+        $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
+        
+        $this->redirect('@memberAdmin');
     }
     
     public function executeValuesList()
     {
         sfLoader::loadHelpers('Url');
         $this->redirect(url_for('optionValueAdmin/list', true) . '?filters[type_id]=' . $this->getRequestParameter('id') . '&filter=filter');
-    }
-    
-    protected function addFiltersCriteria($c)
-    {
-        parent::addFiltersCriteria($c);
     }
 }

@@ -10,21 +10,13 @@
  */
 
 /**
- * OptionType form.
+ * OptionTypeAdmin module configuration.
  *
  * @package    plugin.sfsProductPlugin
  * @subpackage modules.optionTypeAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OptionTypeForm extends BaseOptionTypeForm
+class OptionTypeAdminGeneratorConfiguration extends BaseOptionTypeAdminGeneratorConfiguration
 {
-    public function configure()
-    {
-        parent::configure();
-        
-        $this->offsetUnset('is_deleted');
-        
-        $this->embedI18nForAllCultures();
-    }
 }
