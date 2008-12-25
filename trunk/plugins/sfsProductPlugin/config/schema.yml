@@ -196,8 +196,6 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
-    created_at: 
-    updated_at: 
 
   option_value_i18n: 
     _attributes: 
@@ -256,7 +254,6 @@ propel:
       type: INTEGER
       required: true
       default: 0
-    created_at: 
 
   product2category: 
     _attributes: 
@@ -281,4 +278,3 @@ propel:
       type: INTEGER
       required: true
       default: 0
-    created_at: 

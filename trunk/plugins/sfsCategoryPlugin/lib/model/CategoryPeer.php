@@ -181,7 +181,7 @@ class CategoryPeer extends BaseCategoryPeer
         
         BasePeer::doUpdate($criteriaWhere, $criteriaSet, Propel::getConnection(self::DATABASE_NAME));
     }
-
+    
     /**
      * Determines is parent active for each child of category and all childs
      * of his child.

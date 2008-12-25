@@ -17,6 +17,12 @@ generator:
         title:             Option types
         display:           [title, is_active]
         max_per_page:      20
+        object_actions: 
+          _edit:          ~
+          _delete:        ~
+          values_list:
+            name:   Values list
+            action: valuesList
         peer_method:       getAll
         peer_count_method: getCountAll
       filter:

@@ -9,7 +9,9 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once(dirname(__FILE__).'/../lib/BaseOptionValueAdminActions.class.php');
+require_once dirname(__FILE__).'/../lib/BaseOptionValueAdminActions.class.php';
+require_once dirname(__FILE__).'/../lib/OptionValueAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/OptionValueAdminGeneratorHelper.class.php';
 
 /**
  * OptionValue admin actions.
@@ -19,7 +21,7 @@ require_once(dirname(__FILE__).'/../lib/BaseOptionValueAdminActions.class.php');
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class optionValueAdminActions extends autooptionValueAdminActions
+class optionValueAdminActions extends BaseOptionValueAdminActions
 {
 
 }

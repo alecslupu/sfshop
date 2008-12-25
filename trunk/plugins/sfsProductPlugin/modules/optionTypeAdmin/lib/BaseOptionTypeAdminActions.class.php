@@ -11,7 +11,7 @@
 
 /**
  * OptionTypeAdmin actions.
- *
+ * 
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.optionTypeAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
@@ -27,6 +27,8 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
         
         $this->getRoute()->getObject()->setIsDeleted(true);
         $this->getRoute()->getObject()->save();
+        
+        OptionValuePeer::deleteByTypeId($this->getRoute()->getObject()->getId());
         
         $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
         $this->redirect('@optionTypeAdmin');
@@ -44,6 +46,8 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
         foreach ($optionTypes as $optionType) {
             $optionType->setIsDeleted(true);
             $optionType->save();
+            
+            OptionValuePeer::deleteByTypeId($optionType->getId());
         }
         
         $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
@@ -54,6 +58,6 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
     public function executeValuesList()
     {
         sfLoader::loadHelpers('Url');
-        $this->redirect(url_for('optionValueAdmin/list', true) . '?filters[type_id]=' . $this->getRequestParameter('id') . '&filter=filter');
+        $this->redirect(url_for('optionValueAdmin/filter', true) . '?option_value_filters[type_id]=' . $this->getRequestParameter('id'));
     }
 }
