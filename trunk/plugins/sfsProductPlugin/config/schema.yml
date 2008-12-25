@@ -181,9 +181,6 @@ propel:
       foreignReference: id
       onDelete: RESTRICT
       onUpdate: CASCADE
-    name: 
-      type: VARCHAR
-      size: 34
     pos: 
       type: INTEGER
       required: true
@@ -217,8 +214,6 @@ propel:
     title: 
       type: VARCHAR
       size: 255
-    description: 
-      type: LONGVARCHAR
 
   option_product: 
     _attributes: 

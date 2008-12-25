@@ -50,6 +50,18 @@ class BaseOptionValueAdminActions extends autooptionValueAdminActions
         $this->redirect('@optionValueAdmin');
     }
     
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        
+        $filters = $this->getFilters();
+        
+        if (isset($filters['type_id']) && $filters['type_id'] != '') {
+            $this->form->setDefault('type_id', $filters['type_id']);
+        }
+        
+        $this->option_value = $this->form->getObject();
+    }
 /*
     
     public function handleErrorEdit()
