@@ -9,17 +9,14 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-require_once dirname(__FILE__).'/../lib/BaseProductAdminActions.class.php';
-
 /**
- * ProductAdmin actions.
+ * OptionValueAdmin module helper.
  *
- * @package    plugins.sfsProductPlugin
- * @subpackage modules.productAdmin
+ * @package    plugin.sfsProductPlugin
+ * @subpackage modules.optionValueAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class productAdminActions extends BaseProductAdminActions
+class OptionValueAdminGeneratorHelper extends BaseOptionValueAdminGeneratorHelper
 {
-
 }

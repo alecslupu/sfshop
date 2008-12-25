@@ -109,7 +109,8 @@ AdminMenu:
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
     title:          Option values
-    route:          optionValueAdmin_list
+    module:         optionValueAdmin
+    route:          optionValueAdmin
     pos:            3
     is_active:      1
     

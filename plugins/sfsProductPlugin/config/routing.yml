@@ -49,7 +49,12 @@ optionTypeAdmin:
     prefix_path:          optionTypeAdmin
     column:               id
     with_wildcard_routes: true
-
-optionValueAdmin_list:
-  url: /optionValueAdmin/list
-  param: { module: optionValueAdmin, action: list }
+  
+optionValueAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OptionValue
+    module:               optionValueAdmin
+    prefix_path:          optionValueAdmin
+    column:               id
+    with_wildcard_routes: true

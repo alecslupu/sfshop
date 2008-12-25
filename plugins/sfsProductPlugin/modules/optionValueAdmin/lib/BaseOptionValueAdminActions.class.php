@@ -19,18 +19,38 @@
  */
 class BaseOptionValueAdminActions extends autooptionValueAdminActions
 {
-    public function executeDelete()
+    public function executeDelete(sfWebRequest $request)
     {
-        if ($this->hasRequestParameter('id')) {
-            $option = OptionValuePeer::retrieveByPK($this->getRequestParameter('id'));
-            $this->forward404Unless($option);
-            
-            $option->setIsDeleted(1);
-            $option->save();
-            
-            $this->redirect('optionValueAdmin/list');
-        }
+        $request->checkCSRFProtection();
+        
+        $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $this->getRoute()->getObject())));
+        
+        $this->getRoute()->getObject()->setIsDeleted(true);
+        $this->getRoute()->getObject()->save();
+        
+        $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+        $this->redirect('@optionValueAdmin');
     }
+    
+    protected function executeBatchDelete(sfWebRequest $request)
+    {
+        $ids = $request->getParameter('ids');
+        
+        $criteria = new Criteria();
+        $criteria->add(OptionValuePeer::ID, $ids, Criteria::IN);
+        
+        $optionValues = OptionValuePeer::getAll($criteria);
+        
+        foreach ($optionValues as $optionValue) {
+            $optionValue->setIsDeleted(true);
+            $optionValue->save();
+        }
+        
+        $this->getUser()->setFlash('notice', 'The selected items have been deleted successfully.');
+        $this->redirect('@optionValueAdmin');
+    }
+    
+/*
     
     public function handleErrorEdit()
     {
@@ -75,4 +95,5 @@ class BaseOptionValueAdminActions extends autooptionValueAdminActions
             parent::handlePost($type);
         }
     }
+    */
 }
