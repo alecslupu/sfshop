@@ -1076,28 +1076,28 @@ OptionTypeI18n:
 OptionValue:
   OptionValue_1:
     type_id: OptionType_1
-    name:    2.35:1
+    pos:     1
   OptionValue_2:
     type_id: OptionType_1
-    name:    6:9
+    pos:     1
   OptionValue_3:
     type_id: OptionType_1
-    name:    1.78:1
+    pos:     1
   OptionValue_4:
     type_id: OptionType_2
-    name:    English
+    pos:     1
   OptionValue_5:
     type_id: OptionType_2
-    name:    English, Ukrainian
+    pos:     1
   OptionValue_6:
     type_id: OptionType_2
-    name:    English, Russia
+    pos:     1
   OptionValue_7:
     type_id: OptionType_3
-    name:    DVD
+    pos:     1
   OptionValue_8:
     type_id: OptionType_3
-    name:    CD
+    pos:     1
 
 OptionValueI18n:
 # English

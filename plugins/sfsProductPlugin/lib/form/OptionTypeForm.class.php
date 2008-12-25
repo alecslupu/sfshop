@@ -13,7 +13,7 @@
  * OptionType form.
  *
  * @package    plugin.sfsProductPlugin
- * @subpackage modules.optionTypeAdmin
+ * @subpackage lib.form
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */

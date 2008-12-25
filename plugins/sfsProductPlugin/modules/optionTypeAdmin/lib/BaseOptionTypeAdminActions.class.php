@@ -46,7 +46,6 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
         foreach ($optionTypes as $optionType) {
             $optionType->setIsDeleted(true);
             $optionType->save();
-            
             OptionValuePeer::deleteByTypeId($optionType->getId());
         }
         
@@ -57,7 +56,6 @@ class BaseOptionTypeAdminActions extends autooptionTypeAdminActions
     
     public function executeValuesList()
     {
-        sfLoader::loadHelpers('Url');
-        $this->redirect(url_for('optionValueAdmin/filter', true) . '?option_value_filters[type_id]=' . $this->getRequestParameter('id'));
+        $this->redirect('optionValueAdmin/filter?option_value_filters[type_id]=' . $this->getRequestParameter('id'));
     }
 }
