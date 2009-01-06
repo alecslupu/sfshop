@@ -38,11 +38,13 @@ class BaseProductComponents extends sfComponents
                     (string)$this->method_for_get_options
                 ));
             
-            $this->optionsValues = array();
+            // php 5.2.0 fix
+            $optionsValues = array();
             
             foreach ($itemOptions as $itemOption) {
-                $this->optionsValues[] = $itemOption->getOptionProduct()->getOptionValueJoinOptionType();
+                $optionsValues[] = $itemOption->getOptionProduct()->getOptionValueJoinOptionType();
             }
+            $this->optionsValues = $optionsValues;
         }
     }
     

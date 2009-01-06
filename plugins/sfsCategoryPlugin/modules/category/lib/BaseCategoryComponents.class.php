@@ -35,7 +35,7 @@ class BaseCategoryComponents extends sfComponents
         $this->categories = CategoryPeer::getFirstLevel();
         $this->currentCategoryId = 0;
         
-        $this->parentTree = array();
+        $parentTree = array();
         
         if ($request->hasParameter('path')) {
             $this->currentCategoryId = get_current_category_id();
@@ -51,8 +51,8 @@ class BaseCategoryComponents extends sfComponents
             $response->addMeta('description', $currentCategory->getMetaDescription(), true);
             
             if ($currentCategory !== null) {
-                $currentCategory->getParentsSeries($this->parentTree);
-                $this->parentTree = array_merge($this->parentTree, array($currentCategory));
+                $currentCategory->getParentsSeries($parentTree);
+                $parentTree = array_merge($parentTree, array($currentCategory));
             }
         }
         
@@ -62,6 +62,7 @@ class BaseCategoryComponents extends sfComponents
         else {
             $this->itemRouting = '@product_list';
         }
+        $this->parentTree = $parentTree;
     }
     
    /**
