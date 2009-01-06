@@ -23,8 +23,6 @@ function thumbnail_tag($thumbnail, $title, $isAdminPart = false)
         return image_tag(
             $prefix . $thumbnail->getUrl(), 
             array(
-                'width'  => $width,
-                'height' => $height,
                 'title'  => $title
             )
         );
