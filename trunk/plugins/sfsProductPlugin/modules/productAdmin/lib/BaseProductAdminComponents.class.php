@@ -53,27 +53,31 @@ class BaseProductAdminComponents extends sfComponents
     {
         $criteria = new Criteria();
         OptionTypePeer::addPublicCriteria($criteria);
-        $this->optionTypes = OptionTypePeer::getAll($criteria);
         
-        $this->optionValues = array();
+        //Local array needed with php5.2.0
+        $this->optionTypes = $oTypes = OptionTypePeer::getAll($criteria);
+     
+        $this->optionValues = $oValues = array();
         
-        if (count($this->optionTypes) > 0) {
+        if (count($oTypes) > 0) {
             
             $this->productOptions = $this->product->getOptionProducts();
             
             $criteria = new Criteria();
             OptionValuePeer::addPublicCriteria($criteria);
             
-            foreach ($this->optionTypes as $key => $optionType) {
+            foreach ($oTypes as $key => $optionType) {
                 $optionValues = OptionValuePeer::getByTypeId($optionType->getId(), $criteria);
                 
                 if (count($optionValues) > 0) {
-                    $this->optionValues[$optionType->getId()] = $optionValues;
+                    $oValues[$optionType->getId()] = $optionValues;
                 }
                 else {
-                    unset($this->optionTypes[$key]);
+                    unset($oTypes[$key]);
                 }
             }
+            $this->optionValues = $oValues;
+            $this->optionTypes = $oTypes;
         }
         else {
             return sfView::NONE;
