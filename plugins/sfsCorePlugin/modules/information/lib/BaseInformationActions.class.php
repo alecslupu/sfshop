@@ -3,9 +3,9 @@
 /**
  * sfShop, open source e-commerce solutions.
  * (c) 2008 Dmitry Nesteruk <nesterukd@gmail.com>
- * 
+ *
  * Released under the MIT License.
- * 
+ *
  * For the full copyright and license information, please view the LICENSE file.
  */
 
@@ -24,8 +24,9 @@ class BaseInformationActions extends sfActions
         $criteria = new Criteria();
         InformationPeer::addPublicCriteria($criteria);
         $this->information = InformationPeer::retrieveById($this->getRequestParameter('id'), $criteria);
+        $this->description = $this->information->getDescription();
         $this->forward404Unless($this->information);
-        
+
         $response = $this->getResponse();
         $response->addMeta('keywords', $this->information->getMetaKeywords(), true);
         $response->addMeta('description', $this->information->getMetaDescription(), true);
