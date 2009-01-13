@@ -52,7 +52,8 @@ propel:
       type: VARCHAR
       size: 32
     is_confirmed: 
-      type: BOOLEAN
+      type: TINYINT
+      size: 1
       required: true
       default: 0
     is_deleted: 

@@ -342,8 +342,8 @@ class BaseMemberActions extends sfActions
                 $email = $request->getParameter('data[email]');
                 
                 if ($member->getEmail() != $email) {
-                    
-                    $member->setConfirmCode(MemberPeer::generateConfirmCode());
+                    $confirmCode = MemberPeer::generateConfirmCode();
+                    $member->setConfirmCode($confirmCode);
                     $member->setEmail($email);
                     $member->setIsConfirmed(MemberPeer::RECONFIRM);
                     $member->save();
