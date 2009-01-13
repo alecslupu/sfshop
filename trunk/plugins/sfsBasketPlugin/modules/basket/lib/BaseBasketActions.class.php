@@ -60,11 +60,9 @@ class BaseBasketActions extends sfActions
                 $subForm->setDefault('quantity', $basketProduct->getQuantity());
                 
                 if ($this->getRequest()->isMethod('post')) {
-                    //gets quantity's sum of product from all member's basket and set max available quantity which left in the stock
-                    $addedQuantity = BasketProductPeer::retrieveQuantityByProductId($basketProduct->getProductId());
                     $validatorQuantity = $subForm->getValidatorSchema()->offsetGet('quantity');
                     
-                    $max = $basketProduct->getProduct()->getQuantity() - $addedQuantity + $basketProduct->getQuantity();
+                    $max = $basketProduct->getProduct()->getQuantity();
                     $validatorQuantity->setOption('max', $max);
                     
                     $validatorQuantity->setMessage(
@@ -213,8 +211,7 @@ class BaseBasketActions extends sfActions
                 $this->form = new BasketForm();
                 $this->form->setDefault('quantity', $product->getQuantity());
                 $validatorQuantity = $this->form->getValidatorSchema()->offsetGet('quantity');
-                $addedQuantity = BasketProductPeer::retrieveQuantityByProductId($product->getId());
-                $max = $product->getQuantity() - $addedQuantity + $basketProduct->getQuantity();
+                $max = $product->getQuantity() - $basketProduct->getQuantity();
                 $validatorQuantity->setOption('max', $max);
                 
                 $validatorQuantity->setMessage(
@@ -229,7 +226,7 @@ class BaseBasketActions extends sfActions
                 
                 $this->form->bind(
                     array(
-                        'quantity' => $request->getParameter('add_product[quantity]') + $addedQuantity
+                        'quantity' => $request->getParameter('add_product[quantity]')
                     )
                 );
                 
