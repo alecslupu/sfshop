@@ -2,7 +2,7 @@
     <b><?php echo __('You already added <span>%quantity%</span> piece of this product', array('%quantity%' => isset($addedQuantity) ? $addedQuantity : 0)) ?></b><br/>
 </div>
 
-<?php if (!isset($addedQuantity) || $addedQuantity < $productQuantity): ?>
+<?php if (!isset($addedQuantity) || $addedQuantity < $productQuantity || $product->getAllowNegativeQuantity()): ?>
     <form action="<?php echo url_for('@basket_add'); ?>" method="post" id="form_basket_add_<?php echo $product->getId() ?>" class="form_basket" onsubmit="return false">
       <ul class="main">
           <?php echo $form ?>

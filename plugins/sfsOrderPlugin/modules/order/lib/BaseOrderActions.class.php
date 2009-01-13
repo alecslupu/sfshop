@@ -136,7 +136,7 @@ class BaseOrderActions extends sfActions
                         $product = $orderProduct->getProduct();
                         $product->setQuantity($product->getQuantity() - $orderProduct->getQuantity());
                         
-                        if ($product->getQuantity() == 0) {
+                        if ($product->getQuantity() <= 0 &&  !$product->getAllowNegativeQuantity()) {
                             $product->setIsActive(0);
                         }
                         
