@@ -61,14 +61,19 @@ class BaseBasketActions extends sfActions
                 
                 if ($this->getRequest()->isMethod('post')) {
                     $validatorQuantity = $subForm->getValidatorSchema()->offsetGet('quantity');
+
+                    if($basketProduct->getProduct()->getAllowNegativeQuantity()) {
+                       $validatorQuantity->setOption('max', NULL);
+                    }
+                    else {
+                      $max = $basketProduct->getProduct()->getQuantity();
+                      $validatorQuantity->setOption('max', $max);
                     
-                    $max = $basketProduct->getProduct()->getQuantity();
-                    $validatorQuantity->setOption('max', $max);
-                    
-                    $validatorQuantity->setMessage(
-                        'max', 
-                        str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
-                    );
+                      $validatorQuantity->setMessage(
+                          'max', 
+                          str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
+                      );
+                    }
                 }
                 
                 $this->form->embedForm('product_' . $basketProduct->getId(), $subForm);
@@ -211,13 +216,19 @@ class BaseBasketActions extends sfActions
                 $this->form = new BasketForm();
                 $this->form->setDefault('quantity', $product->getQuantity());
                 $validatorQuantity = $this->form->getValidatorSchema()->offsetGet('quantity');
-                $max = $product->getQuantity() - $basketProduct->getQuantity();
-                $validatorQuantity->setOption('max', $max);
                 
-                $validatorQuantity->setMessage(
-                    'max',
-                    str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
-                );
+                if($product->getAllowNegativeQuantity()) {
+                    $validatorQuantity->setOption('max', NULL);
+                }
+                else {
+                    $max = $product->getQuantity() -  $basketProduct->getQuantity();
+                    $validatorQuantity->setOption('max', $max);
+
+                    $validatorQuantity->setMessage(
+                        'max',
+                        str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
+                    );
+                }
                 
                 if ($product->getHasOptions()) {
                     $subform = new sfsProductOptionsForm($product);

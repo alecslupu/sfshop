@@ -75,7 +75,8 @@ class Basket extends BaseBasket
                     $basketProduct->delete();
                 }
                 else if($product->getQuantity() < $basketProduct->getQuantity()) {
-                    $this->unavailabilityProducts['insufficiently'] = $product->getId();
+                    if(!$product->getAllowNegativeQuantity())
+                        $this->unavailabilityProducts['insufficiently'] = $product->getId();
                 }
             }
         }
