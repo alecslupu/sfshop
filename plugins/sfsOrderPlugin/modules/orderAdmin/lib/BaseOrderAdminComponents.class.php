@@ -32,11 +32,12 @@ class BaseOrderAdminComponents extends sfComponents
         $product = $this->orderProduct->getProduct();
         
         if ($product->getHasOptions()) {
-            $this->optionsValues = array();
+            $optionsValues = array();
             
             foreach ($this->orderProduct->getOrderProduct2OptionProducts() as $itemOption) {
-                $this->optionsValues[] = $itemOption->getOptionProduct()->getOptionValueJoinOptionType();
+                $optionsValues[] = $itemOption->getOptionProduct()->getOptionValueJoinOptionType();
             }
+            $this->optionsValues = $optionsValues;
         }
     }
 }
