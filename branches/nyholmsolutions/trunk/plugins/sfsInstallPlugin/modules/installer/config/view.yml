@@ -1,0 +1,12 @@
+indexSuccess:
+  metas:
+    title: Install sfShop - Step 1 (Checking server capabilities)
+    
+configureSuccess:
+  metas:
+    title: Install sfShop - Step 2 (Configuration)
+  javascripts:    [ ../../js/prototype/prototype.js ]
+    
+finishedSuccess:
+  metas:
+    title: Install sfShop - Step 3 (Successfully installed)

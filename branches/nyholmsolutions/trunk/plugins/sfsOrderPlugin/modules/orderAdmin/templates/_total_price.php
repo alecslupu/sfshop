@@ -1,0 +1,1 @@
+<?php echo format_currency($order_item->getTotalPriceWithDeliveryPrice()) ?>

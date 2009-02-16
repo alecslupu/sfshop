@@ -1,0 +1,2165 @@
+<?php if (sfConfig::get('sf_environment', 'dev') == 'dev'): ?>
+#
+# Asset types
+#
+AssetType:
+  AssetType_product:
+    name:          product
+    model:         Product
+    has_thumbnail: 1
+    has_i18n:      1
+  AssetType_category:
+    name:          category
+    model:         Category
+    has_thumbnail: 1
+    has_i18n:      1
+#
+# Members
+#
+Member: 
+  Member_1: 
+    credential:      'member'
+    email:           nest@test.com
+    password:        test
+    first_name:      Dmitry
+    last_name:       Nesteruk
+    primary_phone:   32123123121
+    secret_question: What was the name of your first school?
+    secret_answer:   test
+    created_at:      2007-12-17 10:17:39
+    is_deleted:      0
+    confirm_code:    14ad75adde376a57cda2069a6d5902d6
+    is_confirmed:    1
+  Member_2: 
+    credential:      'member'
+    email:           test@test.com
+    password:        1234
+    first_name:      Test
+    last_name:       Tester
+    primary_phone:   32123123121
+    secret_question: What was the name of your first school?
+    secret_answer:   test
+    created_at:      2007-12-17 10:17:39
+    is_deleted:      0
+    confirm_code:    14ad75adde376a57cda2069a6d5902d6
+    is_confirmed:    1
+
+#
+# Member secret questions
+#
+MemberSecretQuestion:
+  MemberSecretQuestion_1:
+    created_at: 2007-12-17 10:17:39
+    updated_at: 2007-12-17 10:17:39
+  MemberSecretQuestion_2:
+    created_at: 2007-12-17 10:18:02
+    updated_at: 2007-12-17 10:19:23
+  MemberSecretQuestion_3:
+    created_at: 2007-12-17 10:20:20
+    updated_at: 2007-12-17 10:23:16
+
+MemberSecretQuestionI18n:
+# English
+  MemberSecretQuestionI18n_EN_1:
+    id:        MemberSecretQuestion_1
+    culture:   en
+    question:  What was the name of your first school?
+  MemberSecretQuestionI18n_EN_2:
+    id:        MemberSecretQuestion_2
+    culture:   en
+    question:  Who was your childhood hero?
+  MemberSecretQuestionI18n_EN_3:
+    id:        MemberSecretQuestion_3
+    culture:   en
+    question:  What is your favorite pastime?
+    
+# Russian
+  MemberSecretQuestionI18n_RU_1:
+    id:        MemberSecretQuestion_1
+    culture:   ru
+    question:  Как называлась ваша первая школа?
+  MemberSecretQuestionI18n_RU_2:
+    id:        MemberSecretQuestion_2
+    culture:   ru
+    question:  Кто был вашим героем в детстве?
+  MemberSecretQuestionI18n_RU_3:
+    id:        MemberSecretQuestion_3
+    culture:   ru
+    question:  Какое ваше любимое развлечение?
+
+#
+# Categories
+#
+Category: 
+  Category_1: 
+    parent_id:   NULL
+    path:        NULL
+    name:        '1'
+    pos:         1
+    is_active:   1
+    is_locked:   1
+    has_child:   1
+  Category_2: 
+    parent_id:   NULL
+    path:        NULL
+    name:        '2'
+    pos:         2
+    is_active:   1
+    is_locked:   1
+    has_child:   1
+  Category_3: 
+    parent_id:   NULL
+    path:        NULL
+    name:        '3'
+    pos:         3
+    is_active:   1
+    is_locked:   1
+    has_child:   1
+  Category_4: 
+    parent_id:   NULL
+    path:        NULL
+    name:        '4'
+    pos:         4
+    is_active:   1
+    is_locked:   1
+    has_child:   1
+  Category_5: 
+    parent_id:   Category_1
+    path:        1
+    name:        '1-1'
+    pos:         1
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_6: 
+    parent_id:   Category_1
+    path:        1
+    name:        '1-2'
+    pos:         2
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_7: 
+    parent_id:   Category_2
+    path:        2
+    name:        '2-1'
+    pos:         1
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_8: 
+    parent_id:   Category_2
+    path:        2
+    name:        '2-2'
+    pos:         2
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_9: 
+    parent_id:   Category_3
+    path:        3
+    name:        '3-1'
+    pos:         1
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_10: 
+    parent_id:   Category_3
+    path:        3
+    name:        '3-2'
+    pos:         2
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_11: 
+    parent_id:   Category_4
+    path:        4
+    name:        '4-1'
+    pos:         1
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_12: 
+    parent_id:   Category_4
+    path:        4
+    name:        '4-2'
+    pos:         2
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_13: 
+    parent_id:   Category_4
+    path:        4
+    name:        '4-3'
+    pos:         3
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_14: 
+    parent_id:   Category_4
+    path:        4
+    name:        '4-4'
+    pos:         4
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+  Category_15: 
+    parent_id:   Category_4
+    path:        4
+    name:        '4-5'
+    pos:         5
+    is_active:   1
+    is_locked:   0
+    has_child:   0
+
+CategoryI18n: 
+# English
+  CategoryI18n_EN_1: 
+    id:          Category_1
+    culture:     en
+    title:       'Movies'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_EN_2: 
+    id:          Category_2
+    culture:     en
+    title:       'Music'
+    description: '<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerila facilisi. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p><p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_EN_3: 
+    id:          Category_3
+    culture:     en
+    title:       'Video games'
+    description: '<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_EN_4: 
+    id:          Category_4
+    culture:     en
+    title:       'PC games'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p><p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci vel...</p>'
+  CategoryI18n_EN_5: 
+    id:          Category_5
+    culture:     en
+    title:       'Comedy'
+    description: 'Comedy'
+  CategoryI18n_EN_6: 
+    id:          Category_6
+    culture:     en
+    title:       'Kids & Family'
+    description: 'Kids & Family'
+  CategoryI18n_EN_7: 
+    id:          Category_7
+    culture:     en
+    title:       'Classic Rock'
+    description: 'Classic Rock'
+  CategoryI18n_EN_8: 
+    id:          Category_8
+    culture:     en
+    title:       'Country'
+    description: 'Country'
+  CategoryI18n_EN_9: 
+    id:          Category_9
+    culture:     en
+    title:       'Puzzle'
+    description: 'Puzzle'
+  CategoryI18n_EN_10: 
+    id:          Category_10
+    culture:     en
+    title:       'Simulation'
+    description: 'Simulation'
+  CategoryI18n_EN_11: 
+    id:          Category_11
+    culture:     en
+    title:       'Action'
+    description: 'Action'
+  CategoryI18n_EN_12: 
+    id:          Category_12
+    culture:     en
+    title:       'Adventure'
+    description: 'Adventure'
+  CategoryI18n_EN_13: 
+    id:          Category_13
+    culture:     en
+    title:       'Arcade'
+    description: 'Arcade'
+  CategoryI18n_EN_14: 
+    id:          Category_14
+    culture:     en
+    title:       'Cards & Casino'
+    description: 'Cards & Casino'
+  CategoryI18n_EN_15: 
+    id:          Category_15
+    culture:     en
+    title:       'Classic'
+    description: 'Classic'
+    
+# Russian
+  CategoryI18n_RU_1: 
+    id:          Category_1
+    culture:     ru
+    title:       'Фильмы'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_RU_2: 
+    id:          Category_2
+    culture:     ru
+    title:       'Музыка'
+    description: '<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerila facilisi. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p><p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_RU_3: 
+    id:          Category_3
+    culture:     ru
+    title:       'Видео игры'
+    description: '<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_RU_4: 
+    id:          Category_4
+    culture:     ru
+    title:       'Компьютерные игры'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p><p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci vel...</p>'
+  CategoryI18n_RU_5: 
+    id:          Category_5
+    culture:     ru
+    title:       'Комедии'
+    description: 'Comedy'
+  CategoryI18n_RU_6: 
+    id:          Category_6
+    culture:     ru
+    title:       'Семейные'
+    description: 'Kids & Family'
+  CategoryI18n_RU_7: 
+    id:          Category_7
+    culture:     ru
+    title:       'Класический рок'
+    description: 'Classic Rock'
+  CategoryI18n_RU_8: 
+    id:          Category_8
+    culture:     ru
+    title:       'Кантри'
+    description: 'Country'
+  CategoryI18n_RU_9: 
+    id:          Category_9
+    culture:     ru
+    title:       'Пазлы'
+    description: 'Puzzle'
+  CategoryI18n_RU_10: 
+    id:          Category_10
+    culture:     ru
+    title:       'Симуляторы'
+    description: 'Simulation'
+  CategoryI18n_RU_11: 
+    id:          Category_11
+    culture:     ru
+    title:       'Екшены'
+    description: 'Action'
+  CategoryI18n_RU_12: 
+    id:          Category_12
+    culture:     ru
+    title:       'Приключения'
+    description: 'Adventure'
+  CategoryI18n_RU_13: 
+    id:          Category_13
+    culture:     ru
+    title:       'Аркады'
+    description: 'Arcade'
+  CategoryI18n_RU_14: 
+    id:          Category_14
+    culture:     ru
+    title:       'Карточные'
+    description: 'Cards & Casino'
+  CategoryI18n_RU_15: 
+    id:          Category_15
+    culture:     ru
+    title:       'Класика'
+    description: 'Classic'
+
+#
+# Brands
+#
+Brand:
+  Brand_1:
+    url:  http://brand-1.com
+  Brand_2:
+    url:  http://brand-2.com
+  Brand_3:
+    url:  http://brand-3.com
+
+BrandI18n:
+# English
+  Brand_EN_1:
+    id:      Brand_1
+    title:   Test brand 1
+    culture: en
+  Brand_EN_2:
+    id:      Brand_2
+    title:   Test brand 2
+    culture: en
+  Brand_EN_3:
+    id:      Brand_3
+    title:   Test brand 3
+    culture: en
+# Russian
+  Brand_RU_1:
+    id:      Brand_1
+    title:   Тестовый бренд 1
+    culture: ru
+  Brand_RU_2:
+    id:      Brand_2
+    title:   Тестовый бренд 2
+    culture: ru
+  Brand_RU_3:
+    id:      Brand_3
+    title:   Тестовый бренд 3
+    culture: ru
+
+#
+# Products
+#
+Product:
+  Product_1:
+    created_at:  2008-02-11
+    updated_at:  2008-02-11
+    brand_id:    Brand_1
+    price:       0.01
+    weight:      0.070
+    cube:        0.299
+    has_options: 1
+    is_active:   1
+    quantity:    100
+  Product_2:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       35
+    weight:      0.070
+    cube:        0.399
+    quantity:    67
+    has_options: 0
+    is_active:   1
+  Product_3:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       13
+    weight:      0.070
+    cube:        0.199
+    quantity:    33
+    has_options: 1
+    is_active:   1
+  Product_4:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_2
+    price:       45
+    weight:      0.070
+    cube:        0.2
+    quantity:    2
+    has_options: 1
+    is_active:   1
+  Product_5:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_2
+    price:       41
+    weight:      0.070
+    cube:        0.4
+    quantity:    12
+    has_options: 0
+    is_active:   1
+  Product_6:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       51
+    weight:      0.070
+    cube:        1.5
+    quantity:    51
+    has_options: 0
+    is_active:   1
+  Product_7:
+    created_at:  2008-01-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       37
+    weight:      0.070
+    cube:        0.999
+    quantity:    356
+    has_options: 0
+    is_active:   1
+  Product_8:
+    created_at:  2008-02-19
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       37
+    weight:      0.070
+    cube:        0.999
+    quantity:    200
+    has_options: 0
+    is_active:   1
+  Product_9:
+    created_at:  2008-02-14
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       28
+    weight:      2.3
+    cube:        0.999
+    quantity:    50
+    has_options: 0
+    is_active:   1
+  Product_9:
+    created_at:  2008-02-18
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       27
+    weight:      0.070
+    cube:        0.999
+    quantity:    10
+    has_options: 0
+    is_active:   1
+  Product_10:
+    created_at:  2008-03-17
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       27
+    weight:      0.070
+    cube:        0.999
+    quantity:    100
+    has_options: 0
+    is_active:   1
+  Product_11:
+    created_at:  2008-03-17
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       29
+    weight:      0.070
+    cube:        0.999
+    quantity:    105
+    has_options: 0
+    is_active:   1
+  Product_12:
+    created_at:  2008-04-16
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       31
+    weight:      0.070
+    cube:        0.999
+    quantity:    125
+    has_options: 0
+    is_active:   1
+  Product_13:
+    created_at:  2008-04-14
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       30
+    weight:      0.070
+    cube:        0.999
+    quantity:    145
+    has_options: 0
+    is_active:   1
+  Product_14:
+    created_at:  2008-04-14
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       30
+    weight:      0.070
+    cube:        0.999
+    quantity:    145
+    has_options: 0
+    is_active:   1
+  Product_15:
+    created_at:  2008-04-14
+    updated_at:  2008-02-23
+    brand_id:    Brand_1
+    price:       31
+    weight:      0.070
+    cube:        0.999
+    quantity:    111
+    has_options: 0
+    is_active:   1
+    
+ProductI18n:
+# English
+  ProductI18n_EN_1:
+    id:                 Product_1
+    culture:            en
+    title:              Dan in Real Life (2007)
+    description_short: |
+      'Advice columnist and widowed father of three Dan Burns (Steve Carell) has met someone new. Marie (Juliette Binoche) is beautiful...'
+    description: |
+      Advice columnist and widowed father of three Dan Burns (Steve Carell) has met someone new. Marie (Juliette Binoche) is beautiful, 
+      she's smart and she just so happens to be the girlfriend of Dan's brother Mitch (Dane Cook). With a publicly recognized moral compass, 
+      Dan finds himself torn between reaching for happiness and keeping the peace in his family. Dianne Wiest and John Mahoney co-star in this romantic 
+      comedy from director Peter Hedges.    
+    meta_keywords:      Comedy, Romance, Steve Carell, Juliette Binoche, Dane Cook, Alison Pill, Brittany Robertson, Marlene Lawston, Dianne Wiest, John Mahoney
+    meta_description:   Dan in Real Life (2007)
+  ProductI18n_EN_2:
+    id:                 Product_2
+    culture:            en
+    title:              Juno (2007)
+    description_short: |
+      'Facing an unplanned pregnancy, teenage Juno (Ellen Page) devises a plan to locate the proverbial perfect...'
+    description: |
+      Facing an unplanned pregnancy, teenage Juno (Ellen Page) devises a plan to locate the proverbial perfect 
+      parents to adopt her baby. But the seemingly ideal couple Juno chooses still has some growing up to do. Now, everyone in 
+      Juno's world must do a little soul-searching. Michael Cera co-stars while Jason Bateman and Jennifer Garner play the pair of 
+      affluent yuppies anxious for a child in this offbeat coming-of-age comedy, which won the 2008 Oscar for Best Original Screenplay.
+    meta_keywords:      Ellen Page, Michael Cera, Jennifer Garner, Jason Bateman, Allison Janney, J.K. Simmons, Rainn Wilson
+    meta_description:   Juno (2007)
+  ProductI18n_EN_3:
+    id:                 Product_3
+    culture:            en
+    title:              Little Miss Sunshine (2006)
+    description_short: |
+      'Convinced little Olive (Abigail Breslin) is beauty queen material, parents Richard (Greg Kinnear) and Sheryl (Toni Collette)...'
+    description: |
+      Convinced little Olive (Abigail Breslin) is beauty queen material, parents Richard (Greg Kinnear) and Sheryl (Toni Collette) and the rest 
+      of the family embark on a life-altering road trip to a pageant in this madcap comedy. Struggling motivational speaker Richard pushes Olive to win, 
+      while her silent brother (Paul Dano), depressed uncle (Steve Carell) and nursing-home reject grandpa (Alan Arkin, in an Oscar-winning role) add their 
+      own quirks to the mix.
+    meta_keywords:      Gene Tierney, Rex Harrison, George Sanders, Edna Best, Vanessa Brown, Anna Lee, Robert Coote, Natalie Wood, Isobel Elsom, Victoria Horne, Stuart Holmes, Houseley Stevenson
+    meta_description:   Little Miss Sunshine (2006)
+  ProductI18n_EN_4:
+    id:                 Product_4
+    culture:            en
+    title:              The Water Horse: Legend of the Deep (2007)
+    description_short: |
+      'Angus MacMorrow (Alex Etel) watches in awe as the mysterious egg he found on the shores of a nearby loch begins to hatch into...'
+    description: |
+      Angus MacMorrow (Alex Etel) watches in awe as the mysterious egg he found on the shores of a nearby loch begins to hatch into something incredible. 
+      But how long can he keep his ever-growing secret from his mother (Emily Watson)- and an increasingly concerned Scottish government? David Morrissey 
+      co-stars in this family-friendly fantasy based on the popular children's novel by Dick King-Smith.
+    meta_keywords:      Bruce Allpress, Ben Chaplin, Brian Cox, Craig Hall, Emily Watson, Joel Tobeck, Peter Corrigan
+    meta_description:   The Water Horse: Legend of the Deep
+  ProductI18n_EN_5:
+    id:                 Product_5
+    culture:            en
+    title:              Garfield: A Tail of Two Kitties (2006)
+    description_short: |
+      'With everything, there is a sequel and the silver-screen version of Jim Davis long-running "Garfield" comic strip is no...'
+    description: |
+      With everything, there is a sequel and the silver-screen version of Jim Davis's long-running "Garfield" comic strip is no exception. While traveling 
+      in England, Jon Arbuckle (Breckin Meyer) and his girlfriend, Liz (Jennifer Love Hewitt), must rescue Garfield (voiced by Bill Murray) from the 
+      clutches of covetous Lord Dargis (Billy Connelly), who mistakes the fat cat for a royal feline with valuable property.
+    meta_keywords:      Breckin Meyer, Jennifer Love Hewitt, Billy Connolly, Bill Murray, Ian Abercrombie, Roger Rees, Veronica Alicino
+    meta_description:   Garfield: A Tail of Two Kitties (2006)
+  ProductI18n_EN_6:
+    id:                 Product_6
+    culture:            en
+    title:              Bratz (2007)
+    description_short: |
+      'Four high school students from different backgrounds and different cliques become friends when they discover they all share...'
+    description: |
+      Four high school students from different backgrounds and different cliques become friends when they discover they all share the same dreams 
+      in this live-action film based on the popular line of fashion-conscious dolls. Yasmin (Nathalia Ramos), Cloe (Skyler Shaye), Sasha (Logan Browning) 
+      and Jade (Janel Parrish) find that music, socializing and, of course, fashion can help them reach their goals. Pop legend Paula Abdul guest stars.
+    meta_keywords:      Logan Browning, Janel Parrish, Nathalia Ramos, Skyler Shaye, Malese Jow, Jon Voight, Lainie Kazan
+    meta_description:   Bratz (2007)
+  ProductI18n_EN_7:
+    id:                 Product_7
+    culture:            en
+    title:              The Santa Clause 3: The Escape Clause (2006)
+    description_short: |
+      'Tim Allen stars in the third installment of his Santa Clause franchise, which features most of the original cast...'
+    description: |
+      Tim Allen stars in the third installment of his Santa Clause franchise, which features most of the original cast (including a now-adult Eric Lloyd) 
+      and adds a few new faces to the mix. This time, Scott Calvin (Allen) alias Santa does his best to balance the birth of a new baby Claus with icy threats 
+      from fiendish Jack Frost (Martin Short), who's scheming to take over the Christmas holiday. Ann-Margret and Alan Arkin play Scott's in-laws.
+    meta_keywords:      Logan Browning, Janel Parrish, Nathalia Ramos, Skyler Shaye, Malese Jow, Jon Voight, Lainie Kazan
+    meta_description:   The Santa Clause 3: The Escape Clause (2006)
+  ProductI18n_EN_8:
+    id:                 Product_8
+    culture:            en
+    title:              Over Her Dead Body (2008)
+    description_short: |
+      'Devastated when his fiancee Kate is killed on their wedding day, Henry reluctantly agrees to consult a psychic named Ashley...'
+    description: |
+      Devastated when his fiancee Kate is killed on their wedding day, Henry reluctantly agrees to consult a psychic named Ashley at the 
+      urging of his sister Chloe. Despite his skepticism over her psychic abilities, Henry finds himself falling hard for Ashley, and vice 
+      versa. But there is a big snag. Ashley is being haunted by Kate's ghost, who considers it her heavenly duty to break up Henry and 
+      Ashley's fledgling romance, if it is the last thing she does on this earthly plane.
+    meta_keywords:      Eva Longoria Parker, Jason Biggs, Paul Rudd, Lake Bell, Lindsay Sloane, Stephen Root, William Morgan Sheppard
+    meta_description:   Over Her Dead Body (2008)
+  ProductI18n_EN_9:
+    id:                 Product_9
+    culture:            en
+    title:              Made of Honor
+    description_short: |
+      'Happy-go-lucky playboy Tom (Patrick Dempsey) finally decides to propose to his best friend, Hannah (Michelle Monaghan), when...'
+    description: |
+      Happy-go-lucky playboy Tom (Patrick Dempsey) finally decides to propose to his best friend, Hannah (Michelle Monaghan), when she 
+      returns from a trip. But when she gets home, she announces that she's engaged… and asks Tom to be in the wedding. Can Tom work 
+      his way back into her heart before it's too late? Directed by Paul Weiland, this whimsical comedy also features Sydney Pollack 
+      and Kadeem Hardison.
+    meta_keywords:      Patrick Dempsey, Michelle Monaghan, Kevin McKidd, Kadeem Hardison, Chris Messina, Kathleen Quinlan, Sydney Pollack
+    meta_description:   Made of Honor
+  ProductI18n_EN_10:
+    id:                 Product_10
+    culture:            en
+    title:              Big Stan
+    description_short: |
+      'A weak and nebbishy con man panics when he learns he going to prison for fraud. He hires a mysterious martial arts guru...'
+    description: |
+      A weak and nebbishy con man panics when he learns he's going to prison for fraud. He hires a mysterious martial arts guru, 
+      who transforms him into a kung fu expert who can fight off inmates who want to hurt him--and love him. 
+    meta_keywords:      Rob Schneider, David Carradine, Kevin Gage, David Alan Graf, Brandon Molale , Erik Betts , Chris Astoyan
+    meta_description:   Big Stan
+  ProductI18n_EN_11:
+    id:                 Product_11
+    culture:            en
+    title:              The Bucket List
+    description_short: |
+      'When corporate mogul Edward Cole (Jack Nicholson) and mechanic Carter Chambers (Morgan Freeman) wind up in the same hospital room...'
+    description: |
+      When corporate mogul Edward Cole (Jack Nicholson) and mechanic Carter Chambers (Morgan Freeman) wind up in the same hospital room, 
+      the two terminally ill men bust out of the cancer ward with a plan to experience life to the fullest before they kick the bucket. 
+      In a race against the reaper, the new friends hit the tables in Monte Carlo, down obscene amounts of caviar and tear up the road in 
+      supercharged cars. Rob Reiner directs this comic caper.
+    meta_keywords:      Jack Nicholson, Morgan Freeman, Sean Hayes, Beverly Todd, Rob Morrow , Alfonso Freeman , Rowena King
+    meta_description:   The Bucket List
+  ProductI18n_EN_12:
+    id:                 Product_12
+    culture:            en
+    title:              The Longest Yard (Discount Editions)
+    description_short: |
+      'Paul "Wrecking" Crewe (Adam Sandler) was a revered football superstar back in his day, but that time has since faded. But when...'
+    description: |
+      Paul "Wrecking" Crewe (Adam Sandler) was a revered football superstar back in his day, but that time has since faded. But when a 
+      messy drunk driving incident lands him in jail, Paul finds he was specifically requested by Warden Hazen, a duplicitous prison 
+      official well aware of Paul athletic skills. Paul has been assigned the task of assembling a team of convicts, to square off in a 
+      big football game against the sadistic guards. With the help of fellow convict Caretaker, and an old legend named Nate Scarborough 
+      to coach, Crewe is ready for what promises to be a very interesting game. Chris Rock, James Cromwell and Michael Irvin costar.
+    meta_keywords:      Adam Sandler, Rob Schneider, Chris Rock, Burt Reynolds, Nelly, Michael Irvin, Walter Williamson
+    meta_description:   The Longest Yard (Discount Editions)
+  ProductI18n_EN_13:
+    id:                 Product_13
+    culture:            en
+    title:              Fool's Gold
+    description_short: |
+      'Charming but luckless treasure hunter Ben Finnegan (Matthew McConaughey) has sacrificed his relationship with wife Tess...'
+    description: |
+      Charming but luckless treasure hunter Ben Finnegan (Matthew McConaughey) has sacrificed his relationship with wife Tess (Kate Hudson) 
+      in search of the Queen's Dowry, a legendary treasure lost at sea. When he discovers a fresh clue, hope for riches - and his 
+      marriage - is rekindled. Will they locate the loot before their rivals and rediscover love? Directed by Andy Tennant, this romantic 
+      adventure also features Donald Sutherland.
+    meta_keywords:      Matthew McConaughey, Kate Hudson, Donald Sutherland, Alexis Dziena, Ewen Bremner, Ray Winstone, Kevin Hart
+    meta_description:   Fool's Gold
+  ProductI18n_EN_14:
+    id:                 Product_14
+    culture:            en
+    title:              The Dog Problem
+    description_short: |
+      'On the advice of his therapist (Don Cheadle), depressed and down-on-his-luck writer Solo (Giovanni Ribisi) purchases a pooch...'
+    description: |
+      On the advice of his therapist (Don Cheadle), depressed and down-on-his-luck writer Solo (Giovanni Ribisi) purchases a pooch for 
+      companionship - and gets all kinds of trouble instead. With his four-legged pal dragging him forward, Solo's world expands to 
+      include a comely stripper, a short-fused loan shark, a high-society dog collector and more in this comedy of errors co-starring Lynn 
+      Collins, Kevin Corrigan and Mena Suvari.
+    meta_keywords:      Scott Caan, Mena Suvari, Giovanni Ribisi, Joanna Krupa, Lynn Collins, Kevin Corrigan, Sarah Shah 
+    meta_description:   The Dog Problem
+  ProductI18n_EN_15:
+    id:                 Product_15
+    culture:            en
+    title:              When Harry Met Sally
+    description_short: |
+      'Can men and women remain friends without sex getting in the way? Nora Ephrons episodic screenplay introduces womanizing...'
+    description: |
+      Can men and women remain friends without sex getting in the way? Nora Ephrons episodic screenplay introduces womanizing, neurotic Harry 
+      (Billy Crystal) and ambitious, equally neurotic Sally (Meg Ryan) as chums who resist sexual attraction to maintain their friendship - a 
+      relationship always teetering on the brink of love. As the two draw closer, the question resurfaces: Can they stay just pals? Carrie Fisher 
+      and Bruno Kirby co-star.
+    meta_keywords:      Billy Crystal, Meg Ryan, Carrie Fisher, Bruno Kirby, Gretchen Palmer , David Burdick, Bernie Hern  
+    meta_description:   When Harry Met Sally
+# Russian
+  ProductI18n_RU_1:
+    id:                 Product_1
+    culture:            ru
+    title:              Влюбиться в невесту брата (2007)
+    description_short: |
+      'Дэн — вдовец, отец трёх дочерей, остроумный журналист, ведущий популярной колонки полезных советов в престижной...'
+    description: |
+      Дэн — вдовец, отец трёх дочерей, остроумный журналист, ведущий популярной колонки полезных советов в престижной газете. Но когда Дэн 
+      влюбляется (и не в кого-нибудь, а в невесту собственного брата), то с удивлением для себя обнаруживает, что советы, которые на протяжении 
+      многих лет он давал своим читателям и дочерям, в его случае не действуют. Оказывается, реальная жизнь не так проста, как кажется 
+      представителям медийного гламура…
+    meta_keywords:      Comedy, Romance, Steve Carell, Juliette Binoche, Dane Cook, Alison Pill, Brittany Robertson, Marlene Lawston, Dianne Wiest, John Mahoney
+    meta_description:   Влюбиться в невесту брата (2007)
+  ProductI18n_RU_2:
+    id:                 Product_2
+    culture:            ru
+    title:              Джуно (2007)
+    description_short: |
+      'Столкнувшись с незапланированной беременностью, старшеклассница принимает необычное и аномальное решение относительно ее нерожденного ребенка…'
+    description: |
+      Когда 16-летняя школьница Джуно (Эллен Пейдж) узнает, что беременна, она принимает нетривиальное решение родить ребенка и отдать его на 
+      усыновление. Заручившись поддержкой родителей, Джуно решает самостоятельно заняться поисками мамы и папы для своего малыша и в итоге 
+      останавливает выбор на добропорядочной и состоятельной бездетной чете. Марк (Джейсон Бейтман) и Ванесса (Дженнифер Гарнер) – действительно 
+      замечательные люди и наверняка будут прекрасными родителями, однако хватит ли Джуно духу отдать своего ребенка пусть и в хорошие, но все же 
+      чужие руки?
+    meta_keywords:      Эллен Пейдж, Майкл Сера, Дженнифер Гарнер, Джейсон Бейтман, Оливия Тирлби, Дж. К. Симмонс, Эллисон Дженни, Рейн Уилсон, Лукас Макфадден, Кэндис Аккола
+    meta_description:   Джуно (2007)
+  ProductI18n_RU_3:
+    id:                 Product_3
+    culture:            ru
+    title:              Маленькая мисс Счастье (2006)
+    description_short: |
+      'Convinced little Olive (Abigail Breslin) is beauty queen material, parents Richard (Greg Kinnear) and Sheryl (Toni Collette)...'
+    description: |
+      Сам Ричард (Грег Киннер) - типичный лузер средних лет, который изобрел целую систему, помогающую любому желающему стать богатым и успешным. 
+      Как известно, только лузеры изобретают подобные системы, о которых они рассказывают другим лузерам, потому что люди, которые действительно 
+      чего-то добились в этой жизни, никакие дурацкие системы не изучают - у них нет на это времени.<br/><br/>
+      Тем не менее Ричард носится со своей системой, постоянно достает своими "шагами к успеху" всех окружающих, включая домашних, у которых эти 
+      "шаги к успеху" уже в печенках сидят, и надеется, что когда-нибудь он сам станет богатым и успешным. Тем более что один знакомый издатель 
+      Ричарда вроде как заинтересовался этой бредятиной и обещает ее выпустить отдельным изданием - авось какие-нибудь кретины и клюнут, 
+      а раз клюнут, значит, на этом можно заработать денег.<br/><br/>
+      Жена Ричарда Шэрил (Тони Коллетт) - типичная затюканная семьей и работой тетка. Денег ни на что не хватает, муж постоянно несет чушь 
+      по поводу шагов к процветанию, а тут еще новая напасть - брат Шэрил Фрэнк (Стив Кэрелл) чуть было не отъехал на морской бережок. Ну, 
+      в смысле, что чуть было не совершил самоубийство. У него тоже есть поводы быть недовольным этой жизнью, несмотря на то что Фрэнк 
+      считается (или сам себя считает) лучшим в Штатах специалистом по Прусту. А случилась у него обычная история несчастной любви
+      студент, в которого влюблен Фрэнк, ушел от него к другому лучшему в Штатах специалисту по Прусту. И теперь, после попытки суицида, 
+      Шэрил привозит Фрэнка к ним домой, чтобы он все время находился под присмотром.<br/><br/>
+      Cтарший сын Шэрил Дуэйн (Пол Дано) - жутко странный парень, который мечтает стать пилотом ВВС США. Во имя этой высокой цели он 
+      дал обет молчания. Впрочем, даже и без этой высокой цели он был не сильно разговорчив, потому что его в этой семейке все очень 
+      сильно раздражает, что неудивительно.<br/><br/>
+      Но среди всего этого скопища лузеров, суицидальных специалистов по Прусту и молчальников есть одно светлое пятно. Точнее, два 
+      светлых пятна маленькая девочка Олив (Эбигейл Бреслин) и боевой дидусь - папа Ричарда (Алан Аркин). Олив - полненькая и очень жизнерадостная 
+      девчушка, а дидусь - циничный старикан, увлекающийся кокаином и не стесняющийся в выражениях. Тем не менее у Олив с дедулей - полное \
+      взаимопонимание. Они не обращают никакого внимания на весь окружающий бедлам, а занимаются тем, что готовят выступление Олив 
+      для конкурса "Маленькая мисс Счастье".<br/><br/>
+      И когда конкурс уже совсем на носу, получается так, что все семейство загружается в старенький "Фольксваген" и везет Олив навстречу 
+      ее феноменальному выступлению.
+    meta_keywords:      Лоурен Йи, Nicole Stoehr, Sydni Stevenson-Love, Аннабелль Робертс, Шэйн Мерфи, Линдси Джордан, Дестри Джейкобс, Maliah Hudson, Kristen Holaas, Brenae Bandy, Cambria Baird, Бриттани Бейрд, Алисса Андерегг, Alexandria Alaman, Мэл Родригез, Cassandra Ashe, Джоан Элизабет, Мэтт Уинстон, Джофф Мид, Джерри Джиллз, Мэри Линн Рэжскуб, Lauren Shiohama, Wallace Langham, Бет Грант, Дин Норрис
+    meta_description:   Маленькая мисс Счастье (2006)
+  ProductI18n_RU_4:
+    id:                 Product_4
+    culture:            ru
+    title:              Мой домашний динозавр (2007)
+    description_short: |
+      'Фильм базируется на романе в стиле фентези для подростков Dick King-Smith "Водная лошадь". Речь идет об одиноком мальчике из...'
+    description: |
+      Фильм базируется на романе в стиле фентези для подростков Dick King-Smith "Водная лошадь". Речь идет об одиноком мальчике из 
+      Шотландии, который находит яйцо, из которого вылупляется "водная лошадь" - мистическое морское чудовище из шотландской легенды.
+    meta_keywords:      Джеральдин Брофи, Приянка Кси, Эмили Уотсон, Ben Van Lier, Джоэль Тобек, Эролл Шанд, William Russell, Phil Peleton, Луис Оуэн Коллинз, Эдвард Ньюборн, Маршалл Напье, Дэвид Морисси, Лоррэйн МакДональд, Эллиот Лоулесс, Megan Katherine
+    meta_description:   Мой домашний динозавр 
+  ProductI18n_RU_5:
+    id:                 Product_5
+    culture:            ru
+    title:              Гарфилд 2: История двух кошечек  (2006)
+    description_short: |
+      'Любимец всей Америки кот Гарфилд пересекает океан с целью преподнести сюрприз своему хозяину Джону Арбаклу, отправившемуся в Лондон...'
+    description: |
+      Любимец всей Америки кот Гарфилд пересекает океан с целью преподнести сюрприз своему хозяину Джону Арбаклу, отправившемуся в Лондон, 
+      чтобы сделать предложение своей возлюбленной, ветеринару Лиз Уилсон. Очутившись в Англии, Гарфилд случайно меняется местами со своим 
+      двойником - котом Принцем, принадлежащим королевской семье.
+    meta_keywords:      Билл Мюррей, Дженнифер Лав Хьюитт, Вероника Алисино Джейн Карр, Лена Кардвэлл, Люси Дэвис, Роджер Риис, Йен Эберкромби, Билли Коннолли, Брекин Мейер
+    meta_description:   Гарфилд 2: История двух кошечек (2006)
+  ProductI18n_RU_6:
+    id:                 Product_6
+    culture:            ru
+    title:              Братц (2007)
+    description_short: |
+      'История про четырех очень разных по характеру и происхождению девушек Ясмин, Хлою, Эри и Джейд — которые, несмотря на свою непохожесть...'
+    description: |
+      История про четырех очень разных по характеру и происхождению девушек Ясмин, Хлою, Эри и Джейд — которые, несмотря на свою непохожесть 
+      и разные взгляды, сходятся на почве посещения одной школы — Lewis & Clark High School. Главные героини узнают цену настоящей дружбы, в 
+      то время как на них давит школа, семья и понятия о крутости.
+      meta_keywords:    Джон Войт, Стивен Лунсфорд, Йен Нельсон, Малез Джоу, Anneliese van der Pol, Chelsea Staub, Скайлер Шэй, Наталиа Рамос, Джанель Пэрриш, Логан Браунинг
+    meta_description:   Братц (2007)
+  ProductI18n_RU_7:
+    id:                 Product_7
+    culture:            ru
+    title:              Санта Клаус (2006)
+    description_short: |
+      'Рискуя выдать тайну Северного полюса, Скотт Кэлвин, а по совместительству Санта-Клаус, приглашает своих родственников отпраздновать Рождество...'
+    description: |
+      Рискуя выдать тайну Северного полюса, Скотт Кэлвин, а по совместительству Санта-Клаус, приглашает своих родственников отпраздновать Рождество,
+      а заодно и предстоящее появление на свет сына Клауса, которого вот-вот должна родить его жена Кэрол. В итоге Скотт вместе с его большим 
+      семейством и главным эльфом Кертисом вынужден противостоять коварному злодею Джеку Фросту, который намеревается отобрать Рождество у 
+      Санта-Клауса и захватить власть на Северном полюсе…
+    meta_keywords:      Адам Томпсон, Kara R. Stribling, Cameron Scher, Енн Рейтел, Кейтлин Хендерсон, Эндрю Джон Фергюсон, Тони Бустаманте, Andrew Vo, Элизабет Смолл
+    meta_description:   Санта Клаус (2006)
+  ProductI18n_RU_8:
+    id:                 Product_8
+    culture:            ru
+    title:              Невеста с того света (2008)
+    description_short: |
+      'Дух умершей девушки мучает обстоятельными советами новую пассию своего бывшего парня, вынуждая её постоянно оказываться в конфузных ситуациях...'
+    description: |
+      Рядом с ней любимый человек, она счастлива, жизнь прекрасна! Но иногда романтические отношения омрачаются "тенью прошлых романов". 
+      В этой истории все так и случилось, в прямом смысле этого слова: к влюбленной девушке является дух бывшей подруги ее парня и начинает 
+      мучить обстоятельными советами, вынуждая тем самым постоянно оказываться в конфузных ситуациях…  
+    meta_keywords:      Eva Longoria Parker, Jason Biggs, Paul Rudd, Lake Bell, Lindsay Sloane, Stephen Root, William Morgan Sheppard
+    meta_description:   Невеста с того света (2008)
+  ProductI18n_RU_9:
+    id:                 Product_9
+    culture:            ru
+    title:              Друг невесты
+    description_short: |
+      'Том Бэйли влюблен в Клэр — свою лучшую подругу. Но Том боится обязательств и отказывается признать очевидное — ему следует открыть свои...'
+    description: |
+      Том Бэйли влюблен в Клэр — свою лучшую подругу. Но Том боится обязательств и отказывается признать очевидное — ему следует открыть свои 
+      чувства Клэр до того, как она найдет более решительного поклонника. Когда Колин, богатый шотландец, покоряет девушку и делает ей предложение, 
+      Том должен стать свидетелем ее счастья, находять от нее в непосредственной близости — потому что она выбирает его своим Другом Невесты…
+    meta_keywords:      Мишель Монагэн, Патрик Дэмпси, Кевин МакКидд, Келли Карлсон, Бузи Филиппс, Сидни Поллак, Бо Гарретт, Кэтлин Куинлан, Кевин Сассмэн, Кадим Хардисон
+    meta_description:   Друг невесты
+  ProductI18n_RU_10:
+    id:                 Product_10
+    culture:            ru
+    title:              Большой Стэн
+    description_short: |
+      'Узнав, что ему предстоит отмотать срок за мошенничество, мелкий жулик Стэн паникует и нанимает таинственного гуру восточных единоборств...'
+    description: |
+      Узнав, что ему предстоит отмотать срок за мошенничество, мелкий жулик Стэн паникует и нанимает таинственного гуру восточных единоборств, 
+      известного как Мастер. Тот делает из Стэна настоящего эксперта кун-фу, и теперь ему ни страшны никакие местные авторитеты, которые, возможно, 
+      захотят воспользоваться его "беспомощностью".
+    meta_keywords:      Роб Шнайдер, Цуёши Абе, Т.Дж. Амато, Крис Астоян, Эрик Беттс, Дэвид Кэррадайн, Барбара Додд, Федерико Дордей, Кевин Кейдж, Брендон Джексон, Сэлли Кирклэнд, Мелани Лински, Дженнифер Моррисон, Дрю Пински, Симон Ри, Боб Сэпп, М. Эммет Уолш, Скотт Уилсон
+    meta_description:   Большой Стэн
+  ProductI18n_EN_11:
+    id:                 Product_11
+    culture:            ru
+    title:              Пока не сыграл в ящик
+    description_short: |
+      'История двух неизлечимо больных раком пенсионеров, решающих перед смертью исполнить свои последние желания. Сбежав из онкологического...'
+    description: |
+      История двух неизлечимо больных раком пенсионеров, решающих перед смертью исполнить свои последние желания. Сбежав из онкологического 
+      отделения больницы, они отправляются в путешествие, программа которого включает в себя участие в автогонках, поедание гигантских порций 
+      икры и игру в покер в Монте-Карло.
+    meta_keywords:      Джек Николсон, Морган Фриман, Шон Хайес, Беверли Тодд, Роб Морроу, Альфонсо Фриман, Серена Ридер, Ян Энтони Дэйл, Никки Новак, Кристофер Стаплтон
+    meta_description:   Пока не сыграл в ящик
+  ProductI18n_RU_12:
+    id:                 Product_12
+    culture:            ru
+    title:              ВСЕ ИЛИ НИЧЕГО
+    description_short: |
+      'Профессиональный квотербек Пол Кру отбывает тюремный срок вместе с бывшим чемпионом и тренером Нэйтом Скарборо. Начальник тюрьмы Хэйзен...'
+    description: |
+      Профессиональный квотербек Пол Кру отбывает тюремный срок вместе с бывшим чемпионом и тренером Нэйтом Скарборо. Начальник тюрьмы Хэйзен, 
+      решивший организовать матч по американскому футболу между охранниками и заключенными, предлагает Кру и Скарборо собрать свою команду. 
+      При этом Хэйзен пытается уговорить Пола, чтобы тот сдал игру в обмен на скорое освобождение, но заключенные, похоже, решили пойти на принцип. 
+      И, конечно, у каждой команды есть свои герои и свои грязные приемы – ведь в такой игре все средства хороши…
+    meta_keywords:      Роб Шнайдер, Крис Рок, Адам Сэндлер, Аллек Коверт, Джеймс Кромвель, Уильям Фихтнер, Джои Диаз, Майкл Ирвин, Нелли, Берт Рейнольдс
+    meta_description:   ВСЕ ИЛИ НИЧЕГО
+  ProductI18n_RU_13:
+    id:                 Product_13
+    culture:            ru
+    title:              Золото дураков
+    description_short: |
+      'Денни "Финн" Финнеган — серфер и охотник за сокровищами, помешанный на идее отыскать легендарное королевское приданое — 40 сундуков с...'
+    description: |
+      Денни "Финн" Финнеган — серфер и охотник за сокровищами, помешанный на идее отыскать легендарное королевское приданое — 40 сундуков с 
+      сокровищами, затонувшими в 1715-м году в море. Когда в его руках оказывается заветная подсказка о местонахождения клада, начинается 
+      неслыханная гонка за сокровищами...
+    meta_keywords:      Мэттью МакКонахи, Кейт Хадсон, Валентино дель Торо, Тодд Лэсэнс, Клементин Хит, Джейсон Дандэс, Кевин Харт, Николас Купер, Мэлколм-Джамал Уорнер, Брайан Хукс, Роджер Сиберрас, Юэн Бремнер, Алексис Дзена, Рэй Уинстоун, Доналд Сазерленд
+    meta_description:   Золото дураков
+  ProductI18n_RU_14:
+    id:                 Product_14
+    culture:            ru
+    title:              Собачьи проблемы
+    description_short: |
+      'После годового курса психоанализа главный герой Соло (Рабизи), писатель-неудачник, морально и психически сломлен и находится на грани нервного...'
+    description: |
+      После годового курса психоанализа главный герой Соло (Рабизи), писатель-неудачник, морально и психически сломлен и находится на грани нервного 
+      срыва. На последнем сеансе психотерапии (Чидл), врач чьими услугами он больше не может пользоваться, дает совет Соло завести домашнее животное, 
+      которое поможет ему вновь обрести себя и твердую почву под ногами. Соло прислушивается к рекомендации врача и приобретает пса, а вместе с ним 
+      и дополнительные проблемы. Полностью отчаявшись и не имея возможности самостоятельно решить проблемы с питомцем, Соло обращается за помощью к 
+      своему лучшему другу Касперу (Каан), фотографу и любителю женщин, который в свою очередь знакомит Соло с Джулсу (Сувари), богатой девушкой, 
+      собирающей собак. Джулс сразу соглашается взять у Соло пса, но внезапно он осознает, насколько сильно он привязан к четвероногому другу и не 
+      хочет отдавать собаку. Однажды во время прогулки на площадке для собак Соло знакомится с симпатичной и привлекательной девушкой 
+      Лолой (Коллинз). Неожиданная встреча приводит Лолу, Соло и пса в ветклинику, где Соло понимает насколько в загнанном состоянии он находится. 
+      Между героями завязываются тесные отношения, которые начинают стремительно развиваться, особенно после того, как однажды ночью Соло и Каспер 
+      узнают, что Лола работает стриптизершей. И без того запутан¬ная ситуация усложняется еще и тем, что жизнь Соло оказывается в опасности из-за 
+      происков ростовщика (Карриган) и Джулс, которая заболела идеей заполучить преданного пса Соло. В довершение всего неожиданно пропадает пес..
+    meta_keywords:      Scott Caan, Mena Suvari, Giovanni Ribisi, Joanna Krupa, Lynn Collins, Kevin Corrigan, Sarah Shah 
+    meta_description:   Собачьи проблемы
+  ProductI18n_RU_15:
+    id:                 Product_15
+    culture:            ru
+    title:              Когда Гарри встретил Салли
+    description_short: |
+      'Гарри и Салли знакомы со времен сотворения мира. Они вместе учились, приходят друг другу на выручку в любых жизненных передрягах...'
+    description: |
+      Гарри и Салли знакомы со времен сотворения мира. Они вместе учились, приходят друг другу на выручку в любых жизненных передрягах, 
+      помогают в поисках близкого человека. Даже когда они теряют друг друга из виду, судьба сводит их снова и снова. Они лучшие друзья уже 
+      тысячу лет. Но их дружба постоянно находится под угрозой. Обоих настойчиво мучает вопрос: не следует ли им стать больше, чем друзьями? 
+      Могут ли мужчина и женщина дружить по-настоящему? Или такая дружба неминуемо рано или поздно заканчивается более тесными отношениями?
+    meta_keywords:      Билли Кристал, Мег Райан, Кэрри Фишер, Дэвид Бердик, Роберт Элан Бьют, Мишель Никастро, Стивен Форд, Стив Николэйдес, Лиза Джейн Перски, Гретхен Палмер, Бруно Керби 
+    meta_description:   Когда Гарри встретил Салли
+
+#
+# Products2Categories
+#
+Product2Category:
+  Product2Category_1:
+    product_id:  Product_1
+    category_id: Category_5
+  Product2Category_2:
+    product_id:  Product_2
+    category_id: Category_5
+  Product2Category_3:
+    product_id:  Product_3
+    category_id: Category_5
+  Product2Category_4:
+    product_id:  Product_4
+    category_id: Category_6
+  Product2Category_5:
+    product_id:  Product_5
+    category_id: Category_6
+  Product2Category_6:
+    product_id:  Product_6
+    category_id: Category_6
+  Product2Category_7:
+    product_id:  Product_7
+    category_id: Category_6
+  Product2Category_8:
+    product_id:  Product_8
+    category_id: Category_5
+  Product2Category_9:
+    product_id:  Product_9
+    category_id: Category_5
+  Product2Category_10:
+    product_id:  Product_10
+    category_id: Category_5
+  Product2Category_11:
+    product_id:  Product_11
+    category_id: Category_5
+  Product2Category_12:
+    product_id:  Product_12
+    category_id: Category_5
+  Product2Category_13:
+    product_id:  Product_13
+    category_id: Category_5
+  Product2Category_14:
+    product_id:  Product_14
+    category_id: Category_5
+  Product2Category_15:
+    product_id:  Product_15
+    category_id: Category_5
+
+#
+# Options Types
+#
+OptionType:
+  OptionType_1:
+    pos: 1
+  OptionType_2:
+    pos: 1
+  OptionType_3:
+    pos: 1
+#
+# Options Types I18n
+#
+OptionTypeI18n:
+# English
+  OptionTypeI18n_en_1:
+    id:      OptionType_1
+    culture: en
+    title:   Image
+  OptionTypeI18n_en_2:
+    id:      OptionType_2
+    culture: en
+    title:   Language
+  OptionTypeI18n_en_3:
+    id:      OptionType_3
+    culture: en
+    title:   Format
+    
+# Russian
+  OptionTypeI18n_ru_1:
+    id:      OptionType_1
+    culture: ru
+    title:   Картинка
+  OptionTypeI18n_ru_2:
+    id:      OptionType_2
+    culture: ru
+    title:   Язык
+  OptionTypeI18n_ru_3:
+    id:      OptionType_3
+    culture: ru
+    title:   Формат
+
+#
+# OptionValues
+#
+OptionValue:
+  OptionValue_1:
+    type_id: OptionType_1
+    pos:     1
+  OptionValue_2:
+    type_id: OptionType_1
+    pos:     1
+  OptionValue_3:
+    type_id: OptionType_1
+    pos:     1
+  OptionValue_4:
+    type_id: OptionType_2
+    pos:     1
+  OptionValue_5:
+    type_id: OptionType_2
+    pos:     1
+  OptionValue_6:
+    type_id: OptionType_2
+    pos:     1
+  OptionValue_7:
+    type_id: OptionType_3
+    pos:     1
+  OptionValue_8:
+    type_id: OptionType_3
+    pos:     1
+
+OptionValueI18n:
+# English
+  OptionValueI18n_en_1:
+    id:      OptionValue_1
+    culture: en
+    title:   2.35:1
+  OptionValueI18n_en_2:
+    id:      OptionValue_2
+    culture: en
+    title:   6:9
+  OptionValueI18n_en_3:
+    id:      OptionValue_3
+    culture: en
+    title:   1.78:1
+  OptionValueI18n_en_4:
+    id:      OptionValue_4
+    culture: en
+    title:   English
+  OptionValueI18n_en_5:
+    id:      OptionValue_5
+    culture: en
+    title:   English, Ukrainian
+  OptionValueI18n_en_6:
+    id:      OptionValue_6
+    culture: en
+    title:   English, Russia
+  OptionValueI18n_en_7:
+    id:      OptionValue_7
+    culture: en
+    title:   DVD
+  OptionValueI18n_en_8:
+    id:      OptionValue_8
+    culture: en
+    title:   CD
+    
+# Russian
+  OptionValueI18n_ru_1:
+    id:      OptionValue_1
+    culture: ru
+    title:   2.35:1
+  OptionValueI18n_ru_2:
+    id:      OptionValue_2
+    culture: ru
+    title:   6:9
+  OptionValueI18n_ru_3:
+    id:      OptionValue_3
+    culture: ru
+    title:   1.78:1
+  OptionValueI18n_ru_4:
+    id:      OptionValue_4
+    culture: ru
+    title:   Английский
+  OptionValueI18n_ru_5:
+    id:      OptionValue_5
+    culture: ru
+    title:   Английский, Украинский
+  OptionValueI18n_ru_6:
+    id:      OptionValue_6
+    culture: ru
+    title:   Английский, Русский
+  OptionValueI18n_ru_7:
+    id:      OptionValue_7
+    culture: ru
+    title:   DVD
+  OptionValueI18n_ru_8:
+    id:      OptionValue_8
+    culture: ru
+    title:   CD
+    
+#
+# Option Product
+#
+OptionProduct:
+  OptionProduct_1:
+    option_value_id:  OptionValue_1
+    product_id:       Product_1
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            1
+  OptionProduct_2:
+    option_value_id:  OptionValue_2
+    product_id:       Product_1
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            -2
+  OptionProduct_3:
+    option_value_id:  OptionValue_3
+    product_id:       Product_1
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            1
+
+  OptionProduct_4:
+    option_value_id:  OptionValue_4
+    product_id:       Product_1
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            -2
+  OptionProduct_5:
+    option_value_id:  OptionValue_5
+    product_id:       Product_1
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            2
+
+  OptionProduct_6:
+    option_value_id:  OptionValue_7
+    product_id:       Product_3
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            -3
+  OptionProduct_7:
+    option_value_id:  OptionValue_8
+    product_id:       Product_3
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            5
+    
+  OptionProduct_8:
+    option_value_id:  OptionValue_4
+    product_id:       Product_4
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            0
+  OptionProduct_9:
+    option_value_id:  OptionValue_5
+    product_id:       Product_4
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            5
+    
+  OptionProduct_10:
+    option_value_id:  OptionValue_4
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            0
+  OptionProduct_11:
+    option_value_id:  OptionValue_5
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            2
+  OptionProduct_12:
+    option_value_id:  OptionValue_7
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            1
+  OptionProduct_13:
+    option_value_id:  OptionValue_8
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            -2
+  OptionProduct_14:
+    option_value_id:  OptionValue_1
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            2
+  OptionProduct_15:
+    option_value_id:  OptionValue_1
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            1
+  OptionProduct_16:
+    option_value_id:  OptionValue_1
+    product_id:       Product_8
+    price_type:       <?php echo OptionProductPeer::PRICE_TYPE_ADD ?> 
+    price:            -2
+
+# Thumbnails types
+#
+ThumbnailType:
+  ThumbnailType_1:
+    name:          mini
+    is_active:     1
+  ThumbnailType_2:
+    name:          small
+    is_active:     1
+  ThumbnailType_3:
+    name:          medium
+    is_active:     1
+  ThumbnailType_4:
+    name:          large
+    is_active:     1
+  ThumbnailType_5:
+    name:          big
+    is_active:     1
+  ThumbnailType_6:
+    name:          large
+    is_active:     1
+  ThumbnailType_7:
+    name:          original
+    is_active:     1
+
+#
+# Thumbnail Type Asset Type
+#
+ThumbnailTypeAssetType:
+  ThumbnailTypeAssetType_1:
+    thumbnail_type_id:      ThumbnailType_1
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    mini
+    width:                  40
+    height:                 60
+    is_active:              1
+  ThumbnailTypeAssetType_2: 
+    thumbnail_type_id:      ThumbnailType_2
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    small
+    width:                  90
+    height:                 120
+    is_active:              1
+  ThumbnailTypeAssetType_3: 
+    thumbnail_type_id:      ThumbnailType_3
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    medium
+    width:                  252
+    height:                 254
+    is_active:              1
+  ThumbnailTypeAssetType_4: 
+    thumbnail_type_id:      ThumbnailType_4
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    large
+    width:                  400
+    height:                 600
+    is_active:              1
+  ThumbnailTypeAssetType_5: 
+    thumbnail_type_id:      ThumbnailType_7
+    asset_type_id:          AssetType_product
+    thumbnail_type_name:    original
+    width:                  0
+    height:                 0
+    is_active:              1
+  
+  ThumbnailTypeAssetType_6: 
+    thumbnail_type_id:      ThumbnailType_2
+    asset_type_id:          AssetType_category
+    thumbnail_type_name:    small
+    width:                  100
+    height:                 103
+    is_active:              1
+    is_trim:                1
+  ThumbnailTypeAssetType_7: 
+    thumbnail_type_id:      ThumbnailType_7
+    asset_type_id:          AssetType_category
+    thumbnail_type_name:    original
+    width:                  0
+    height:                 0
+    is_active:              1
+    is_trim:                0
+  
+#
+# Thumbnails mime types
+#
+ThumbnailMime:
+  ThumbnailMime_1:
+    mime:              image/jpeg
+    extension:         jpg
+    extensions:        jpe, jpg, jpeg
+  ThumbnailMime_2:
+    mime:              image/gif
+    extension:         gif
+    extensions:        gif
+  ThumbnailMime_3:
+    mime:              image/png
+    extension:         png
+    extensions:        png
+
+#
+# Thumbnails
+#
+Thumbnail:
+  # original
+  Thumbnail_original_1:
+    asset_id:           1
+    asset_type_model:   Product
+    uuid:               aca3e094f1a299c8d391b59da9101938
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_2:
+    asset_id:           2
+    asset_type_model:   Product
+    uuid:               4a72f1a978827089e22165ad7a14541b
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_3:
+    asset_id:           3
+    asset_type_model:   Product
+    uuid:               14ea8db540768eab3316fee26ce49523
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_4:
+    asset_id:           4
+    asset_type_model:   Product
+    uuid:               41a3fe21e8024df4914caa565f03c754
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_5:
+    asset_id:           5
+    asset_type_model:   Product
+    uuid:               6938e974816abe16de60c621794326cc
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_6:
+    asset_id:           6
+    asset_type_model:   Product
+    uuid:               ca2ef18591f5aa2b80605e131d3403f6
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_7:
+    asset_id:           7
+    asset_type_model:   Product
+    uuid:               6587c10f609be743ee4ff7717e0dae86
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_8:
+    asset_id:           8
+    asset_type_model:   Product
+    uuid:               600c081cabcf1870b54f60107d2bc751
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_9:
+    asset_id:           9
+    asset_type_model:   Product
+    uuid:               4e50f892eb91a20ef3becd9924f4e8e8
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_10:
+    asset_id:           10
+    asset_type_model:   Product
+    uuid:               84878a80fa95d0a55a3d6ce498e29968
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_11:
+    asset_id:           11
+    asset_type_model:   Product
+    uuid:               b876510e9e8e676dd560447a2e70861b
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_12:
+    asset_id:           12
+    asset_type_model:   Product
+    uuid:               2c6213929bb4ac954b0a908819e7145d
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_13:
+    asset_id:           13
+    asset_type_model:   Product
+    uuid:               12c5a21ef4f2f2fb3e37932e6e2410db
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_14:
+    asset_id:           14
+    asset_type_model:   Product
+    uuid:               adadcc6f79c0c8efecd08b47c6f6b34d
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_15:
+    asset_id:           14
+    asset_type_model:   Product
+    uuid:               c2ae4fed3a5443a42977f242fb1c0764
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_original_blank:
+    asset_type_model:   Product
+    uuid:               product_blank_original_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_5
+    mime_extension:     jpg
+    is_blank:           1
+    is_converted:       1
+  
+  # mini
+  Thumbnail_mini_1:
+    asset_id:           1
+    parent_id:          Thumbnail_original_1
+    asset_type_model:   Product
+    uuid:               dd513a7fa1a0a714b8769b3b5a4efb2a
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_2:
+    asset_id:           2
+    parent_id:          Thumbnail_original_2
+    asset_type_model:   Product
+    uuid:               3ad9c23a71ddd36fd240b717cd1de24e
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_3:
+    asset_id:           3
+    parent_id:          Thumbnail_original_3
+    asset_type_model:   Product
+    uuid:               009da6ee9eaa1f4086b24d9bf3edc620
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_4:
+    asset_id:           4
+    parent_id:          Thumbnail_original_4
+    asset_type_model:   Product
+    uuid:               aa756ae26afa728178d49b0af5de812b
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_5:
+    asset_id:           5
+    parent_id:          Thumbnail_original_5
+    asset_type_model:   Product
+    uuid:               9206e3ba81f3a51a8ed648ca91b0ba26
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_6:
+    asset_id:           6
+    parent_id:          Thumbnail_original_6
+    asset_type_model:   Product
+    uuid:               f6a4e658c4237d2c8faa4e767e4a27f0
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_7:
+    asset_id:           7
+    parent_id:          Thumbnail_original_7
+    asset_type_model:   Product
+    uuid:               2d66cbf9756a85b46932238422986887
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+    
+  Thumbnail_mini_8:
+    asset_id:           8
+    parent_id:          Thumbnail_original_8
+    asset_type_model:   Product
+    uuid:               fadb452e6f2a640ce4dbaa9793a6f413
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_9:
+    asset_id:           9
+    parent_id:          Thumbnail_original_9
+    asset_type_model:   Product
+    uuid:               544e414257f60c47cff36bcd38d75657
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_10:
+    asset_id:           10
+    parent_id:          Thumbnail_original_10
+    asset_type_model:   Product
+    uuid:               5ba63f39dfebdd971ded80625c19fd92
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_11:
+    asset_id:           11
+    parent_id:          Thumbnail_original_11
+    asset_type_model:   Product
+    uuid:               6f075166a9665e45f65e40eba1e09cf6
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_12:
+    asset_id:           12
+    parent_id:          Thumbnail_original_12
+    asset_type_model:   Product
+    uuid:               31f0d3a5927d34abedf398447271cd83
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_13:
+    asset_id:           13
+    parent_id:          Thumbnail_original_13
+    asset_type_model:   Product
+    uuid:               ee4421866d9d641b15965851a822ac1f
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_14:
+    asset_id:           14
+    parent_id:          Thumbnail_original_14
+    asset_type_model:   Product
+    uuid:               a662f97263d479556c283341cb77edaa
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_mini_15:
+    asset_id:           15
+    parent_id:          Thumbnail_original_15
+    asset_type_model:   Product
+    uuid:               3b8d68cb57f1b4249c78b0b87b6d9a3b
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    mime_extension:     jpg
+    is_converted:       1
+
+  Thumbnail_mini_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_mini_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_1
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+   
+  # small
+  Thumbnail_small_1:
+    asset_id:           1
+    parent_id:          Thumbnail_original_1
+    asset_type_model:   Product
+    uuid:               dd513a7fa1a0a714b8769b3b5a4efb22
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_2:
+    asset_id:           2
+    parent_id:          Thumbnail_original_2
+    asset_type_model:   Product
+    uuid:               3ad9c23a71ddd36fd240b717cd1de242
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_3:
+    asset_id:           3
+    parent_id:          Thumbnail_original_3
+    asset_type_model:   Product
+    uuid:               009da6ee9eaa1f4086b24d9bf3edc622
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_4:
+    asset_id:           4
+    parent_id:          Thumbnail_original_4
+    asset_type_model:   Product
+    uuid:               aa756ae26afa728178d49b0af5de8122
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_5:
+    asset_id:           5
+    parent_id:          Thumbnail_original_5
+    asset_type_model:   Product
+    uuid:               9206e3ba81f3a51a8ed648ca91b0ba22
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_6:
+    asset_id:           6
+    parent_id:          Thumbnail_original_6
+    asset_type_model:   Product
+    uuid:               f6a4e658c4237d2c8faa4e767e4a27f2
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_7:
+    asset_id:           7
+    parent_id:          Thumbnail_original_7
+    asset_type_model:   Product
+    uuid:               2d66cbf9756a85b46932238422986882
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+    
+  Thumbnail_small_8:
+    asset_id:           8
+    parent_id:          Thumbnail_original_8
+    asset_type_model:   Product
+    uuid:               a29c680bd20d6c8a0b2605d8297b03bb
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_9:
+    asset_id:           9
+    parent_id:          Thumbnail_original_9
+    asset_type_model:   Product
+    uuid:               3042ce008e6c0a959d6193f1cd06f61f
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_10:
+    asset_id:           10
+    parent_id:          Thumbnail_original_10
+    asset_type_model:   Product
+    uuid:               35b24ce8bf75e5a1366259900b8200b1
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_11:
+    asset_id:           11
+    parent_id:          Thumbnail_original_11
+    asset_type_model:   Product
+    uuid:               2de87b9bde652e127f3e48c50343f9ab
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_12:
+    asset_id:           12
+    parent_id:          Thumbnail_original_12
+    asset_type_model:   Product
+    uuid:               5025f792b8700b58a605c0b7d1ab6fa7
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_13:
+    asset_id:           13
+    parent_id:          Thumbnail_original_13
+    asset_type_model:   Product
+    uuid:               7110ee5e8acdb5f6ced59cb8c1ac0d28
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_14:
+    asset_id:           14
+    parent_id:          Thumbnail_original_14
+    asset_type_model:   Product
+    uuid:               289a3091a1201c33a6982fa3b4ff5a50
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_small_15:
+    asset_id:           15
+    parent_id:          Thumbnail_original_15
+    asset_type_model:   Product
+    uuid:               4ed200a256a63d42e6b9bf33feb2c141
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    mime_extension:     jpg
+    is_converted:       1
+    
+  Thumbnail_small_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_small_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_2
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+    
+  # medium
+  Thumbnail_medium_1:
+    asset_id:           1
+    parent_id:          Thumbnail_original_1
+    asset_type_model:   Product
+    uuid:               421e99948432e9e7b7ef235623d10485
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_2:
+    asset_id:           2
+    parent_id:          Thumbnail_original_2
+    asset_type_model:   Product
+    uuid:               62d64ad34fdbe3d70ec91fccca98eff9
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_3:
+    asset_id:           3
+    parent_id:          Thumbnail_original_3
+    asset_type_model:   Product
+    uuid:               eee3adacc193081c3bfb616f0fac591e
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_4:
+    asset_id:           4
+    parent_id:          Thumbnail_original_4
+    asset_type_model:   Product
+    uuid:               6fbe9c4ebcda7e61b7b8ba9916515456
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_5:
+    asset_id:           5
+    parent_id:          Thumbnail_original_5
+    asset_type_model:   Product
+    uuid:               ec90dfde35c6453b65d0c3e5c544c7af
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_6:
+    asset_id:           6
+    parent_id:          Thumbnail_original_6
+    asset_type_model:   Product
+    uuid:               7b684163cab5c9d657051f9978412f72
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_7:
+    asset_id:           7
+    parent_id:          Thumbnail_original_7
+    asset_type_model:   Product
+    uuid:               2f6eee303ba92fdaa818923956e0d980
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+    
+  Thumbnail_medium_8:
+    asset_id:           8
+    parent_id:          Thumbnail_original_8
+    asset_type_model:   Product
+    uuid:               f575fdeebe95fc894aa517a0dea776df
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_9:
+    asset_id:           9
+    parent_id:          Thumbnail_original_9
+    asset_type_model:   Product
+    uuid:               56d2cd075cf0fb396787206b255982e9
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_10:
+    asset_id:           10
+    parent_id:          Thumbnail_original_10
+    asset_type_model:   Product
+    uuid:               776d2b9f291404da173e9b2186b6c257
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_11:
+    asset_id:           11
+    parent_id:          Thumbnail_original_11
+    asset_type_model:   Product
+    uuid:               ccfc57e3434aec8678dda24dc00fdacb
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_12:
+    asset_id:           12
+    parent_id:          Thumbnail_original_12
+    asset_type_model:   Product
+    uuid:               7f5d7f60eebecacc2a25eeca5cd12b8d
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_13:
+    asset_id:           13
+    parent_id:          Thumbnail_original_13
+    asset_type_model:   Product
+    uuid:               2f17a8d21d3ad72effaccfd1124b983c
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_14:
+    asset_id:           14
+    parent_id:          Thumbnail_original_14
+    asset_type_model:   Product
+    uuid:               bdac5f9a014fb8f88677551129da7631
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_15:
+    asset_id:           15
+    parent_id:          Thumbnail_original_15
+    asset_type_model:   Product
+    uuid:               631b9ebb10c6347576ff6dafb1f05532
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_medium_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_medium_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_3
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+  
+  # large
+  Thumbnail_large_1:
+    asset_id:           1
+    parent_id:          Thumbnail_original_1
+    asset_type_model:   Product
+    uuid:               0913ed47dde0c9437a2f85d829f354e6
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_2:
+    asset_id:           2
+    parent_id:          Thumbnail_original_2
+    asset_type_model:   Product
+    uuid:               c9ed461189bbcda2b1822e44dae359a9
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_3:
+    asset_id:           3
+    parent_id:          Thumbnail_original_3
+    asset_type_model:   Product
+    uuid:               9b4422ae172f9c8c157dca01dcaca98c
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_4:
+    asset_id:           4
+    parent_id:          Thumbnail_original_4
+    asset_type_model:   Product
+    uuid:               6dd6f87c56b029d1e3d09185d70ec183
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_5:
+    asset_id:           5
+    parent_id:          Thumbnail_original_5
+    asset_type_model:   Product
+    uuid:               45f1337ca038c9a7211cf2aca196483d
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_6:
+    asset_id:           6
+    parent_id:          Thumbnail_original_6
+    asset_type_model:   Product
+    uuid:               863bb974229bb1d6be4f3cad510131b7
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_7:
+    asset_id:           7
+    parent_id:          Thumbnail_original_7
+    asset_type_model:   Product
+    uuid:               3948cce5609e86e937c345f27279690a
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+    
+  Thumbnail_large_8:
+    asset_id:           8
+    parent_id:          Thumbnail_original_8
+    asset_type_model:   Product
+    uuid:               e2b9ac45d9bbde746d8d5f83db74166e
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_9:
+    asset_id:           9
+    parent_id:          Thumbnail_original_9
+    asset_type_model:   Product
+    uuid:               28a19dd665487fe7c5e7f1630203ab16
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_10:
+    asset_id:           10
+    parent_id:          Thumbnail_original_10
+    asset_type_model:   Product
+    uuid:               47eac884ff87125e0c29f2af8a1fd6d7
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_11:
+    asset_id:           11
+    parent_id:          Thumbnail_original_11
+    asset_type_model:   Product
+    uuid:               efe498afb06dd2382e6ed4871c84bf7d
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_12:
+    asset_id:           12
+    parent_id:          Thumbnail_original_12
+    asset_type_model:   Product
+    uuid:               6237464cbf300277e7f88472a4802b02
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_13:
+    asset_id:           13
+    parent_id:          Thumbnail_original_13
+    asset_type_model:   Product
+    uuid:               98954171b5a114dafba6a3142d4e113f
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_14:
+    asset_id:           14
+    parent_id:          Thumbnail_original_14
+    asset_type_model:   Product
+    uuid:               e419ed231edbaf82eadca28bedbf34d0
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+  Thumbnail_large_15:
+    asset_id:           15
+    parent_id:          Thumbnail_original_15
+    asset_type_model:   Product
+    uuid:               17b983da15e8315a44180f623bf7642b
+    path:               products/2008/05/15
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    mime_extension:     jpg
+    is_converted:       1
+    
+  # large
+  Thumbnail_large_blank:
+    parent_id:          Thumbnail_original_blank
+    asset_type_model:   Product
+    uuid:               product_blank_large_thumbnail
+    path:               products
+    mime_id:            ThumbnailMime_1
+    ttat_id:            ThumbnailTypeAssetType_4
+    is_blank:           1
+    mime_extension:     jpg
+    is_converted:       1
+    
+<?php endif; ?>

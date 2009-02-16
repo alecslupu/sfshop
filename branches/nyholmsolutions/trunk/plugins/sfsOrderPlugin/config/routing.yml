@@ -1,0 +1,43 @@
+#
+# Order
+#
+
+order_checkoutConfirmation:
+  url: /checkout-confirmation
+  param: { module: order, action: checkoutConfirmation }
+
+order_checkoutFinished:
+  url: /checkout-finished
+  param: { module: order, action: checkoutFinished }
+
+order_paymentSuspend:
+  url: /checkout-suspend
+  param: { module: order, action: checkoutSuspend }
+
+order_myList:
+  url: /my-orders/*
+  param: { module: order, action: myList }
+
+order_delete:
+  url: /order-delete/:id
+  param: { module: order, action: delete }
+
+order_details:
+  url: /order-details/:id
+  param: { module: order, action: details }
+
+#
+# Order Admin
+#
+orderAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OrderItem
+    module:               orderAdmin
+    prefix_path:          orderAdmin
+    column:               id
+    with_wildcard_routes: true
+    
+orderAdmin_details:
+  url: /orderAdmin/details/:id
+  param: { module: orderAdmin, action: details }

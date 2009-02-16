@@ -1,0 +1,40 @@
+all:
+  crypto_key: test
+  
+  prototype_window:
+    theme: sfshop
+    css: sfshop
+  
+  mail:
+    address_from: admin@localhost
+    address_feedback: nesterukd@gmail.com
+    smtp: true
+    smtp_host: smtp.inbox.ru
+    smtp_port: 25
+    smtp_username: nest_d
+    smtp_password: irew18t
+    
+  recaptcha:
+    is_enabled: true
+    publickey:  6LdiKQQAAAAAAJS8Yaz_bEBYkiIQHHBO3IaK-iIZ
+    privatekey: 6LdiKQQAAAAAACeDjQKCFBU1sIOeVzph4bsgRGUv
+
+  store:
+    company: sfShop
+    owner_name: Dmitry Nesteruk
+    address:
+      country_id: 227
+      state_id: 5
+      city: Napa 
+      street: 44 Main street
+      postcode: '94558'
+      phone: 6173335555
+
+  lucene:
+    index: ProductIndex
+
+test:
+  
+  recaptcha:
+    publickey: 6Lc-SwMAAAAAAJwQAQpZ_fl-cWUF9ACyAwakzgLv
+    privatekey: 6Lc-SwMAAAAAAN48a9hzqXLD38zu-cATC1bkGxmv

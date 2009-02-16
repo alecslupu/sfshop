@@ -1,0 +1,3 @@
+chargeSuccess:
+  javascripts:    [ sfsForm.js, sfsManage.js, sfsBillingManage.js, sfsPaymentAuthorizeNetConfirmManage.js ]
+

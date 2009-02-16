@@ -1,0 +1,19 @@
+#
+# Currency
+#
+currency_setSelected: 
+  url: /set-currency
+  param: { module: currency, action: setSelected }
+
+#
+# Currency Admin
+#
+
+currencyAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Currency
+    module:               currencyAdmin
+    prefix_path:          currencyAdmin
+    column:               id
+    with_wildcard_routes: true

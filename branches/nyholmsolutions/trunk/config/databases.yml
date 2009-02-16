@@ -1,0 +1,22 @@
+all: 
+  propel: 
+    class: sfPropelDatabase
+    param:
+      dsn:        mysql:dbname=devzpc_sfshop;host=localhost
+      username:   devzpc_sfUser
+      password:   AAsMM7Yx3:5Q.v4T
+      encoding:   utf8
+      persistent: true
+      pooling:    true
+      classname:  PropelPDO
+      
+  session_storage:
+    class: sfPropelDatabase
+    param:
+      dsn:        mysql:dbname=devzpc_sfshop;host=localhost
+      username:   devzpc_sfUser
+      password:   AAsMM7Yx3:5Q.v4T
+      encoding:   utf8
+      persistent: true
+      pooling:    true
+      classname:  PropelPDO

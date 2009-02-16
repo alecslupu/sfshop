@@ -1,0 +1,85 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsCorePlugin.lib.model.admin
+
+  admin: 
+    _attributes: 
+      phpName: Admin
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    credential: 
+      type: VARCHAR
+      size: 255
+      required: true
+      default: 'admin'
+    email: 
+      type: VARCHAR
+      size: 128
+    password: 
+      type: VARCHAR
+      size: 32
+    first_name: 
+      type: VARCHAR
+      size: 128
+    last_name: 
+      type: VARCHAR
+      size: 128
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    access_num: 
+      type: INTEGER
+      required: true
+      default: 1
+    created_at: 
+    updated_at: 
+    modified_at: 
+      type: TIMESTAMP
+    _uniques: 
+      uni_username: [email]
+
+  admin_menu: 
+    _attributes: 
+      phpName: AdminMenu
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    parent_id: 
+      type: INTEGER
+      required: false
+      foreignTable: admin_menu
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
+    credential: 
+      type: VARCHAR
+      size: 255
+      required: true
+      default: 'admin'
+    title: 
+      type: VARCHAR
+      size: 128
+    module: 
+      type: VARCHAR
+      size: 128
+    action: 
+      type: VARCHAR
+      size: 128
+    route: 
+      type: VARCHAR
+      size: 128
+    pos: 
+      type: INTEGER
+      default: 0
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 1

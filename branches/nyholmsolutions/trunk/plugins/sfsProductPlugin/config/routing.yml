@@ -1,0 +1,60 @@
+#
+# Products
+#
+
+product_index:
+  url: /product-index/*
+  param: { module: product, action: index }
+
+product_list:
+  url: /product-list/*
+  param: { module: product, action: list }
+  
+product_details:
+  url: /product-details/:path/:id/*
+  param: { module: product, action: details }
+
+product_search:
+  url: /product-search/*
+  param: { module: product, action: list, is_search: true }
+
+#
+# Brand Admin
+#
+brandAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Brand
+    module:               brandAdmin
+    prefix_path:          brandAdmin
+    column:               id
+    with_wildcard_routes: true
+
+#
+# Product Admin
+#
+productAdmin_list: 
+  url: productAdmin/list
+  param: { module: productAdmin, action: list }
+
+#
+# Product Options Admin
+#
+
+optionTypeAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OptionType
+    module:               optionTypeAdmin
+    prefix_path:          optionTypeAdmin
+    column:               id
+    with_wildcard_routes: true
+  
+optionValueAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                OptionValue
+    module:               optionValueAdmin
+    prefix_path:          optionValueAdmin
+    column:               id
+    with_wildcard_routes: true

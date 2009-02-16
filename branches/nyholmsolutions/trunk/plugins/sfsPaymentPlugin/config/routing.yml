@@ -1,0 +1,23 @@
+#
+# Payment
+#
+
+payment_checkout:
+  url: /checkout-payment
+  param: { module: payment, action: checkout }
+
+payment_chargeFailed:
+  url: /charge-failed
+  param: { module: payment, action: chargeFailed }
+
+#
+# Payment Admin
+#
+paymentAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Payment
+    module:               paymentAdmin
+    prefix_path:          paymentAdmin
+    column:               id
+    with_wildcard_routes: true

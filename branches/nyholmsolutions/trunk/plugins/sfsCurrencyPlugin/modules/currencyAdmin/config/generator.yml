@@ -1,0 +1,26 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Currency
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          currencyAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Currencies
+        display: [title, code, value, symbol_left, symbol_right, is_active, is_default]
+        max_per_page: 20
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Edit currency
+      new:
+        title: New currency
