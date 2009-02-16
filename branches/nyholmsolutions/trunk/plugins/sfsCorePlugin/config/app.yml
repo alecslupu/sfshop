@@ -8,3 +8,7 @@ all:
     admin: 
       - 'admin'
       - 'superadmin'
+
+  admin:
+    algorithm_callable: 'sha1'
+      

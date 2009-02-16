@@ -1,1 +1,3 @@
-
+all:
+  member:
+    algorithm_callable: 'sha1'
