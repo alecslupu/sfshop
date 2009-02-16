@@ -159,6 +159,8 @@ class BaseAddressBookActions extends sfActions
                 
                 $this->getUser()->setAttribute('address_id', $address->getId(), 'order/delivery');
                 $this->getUser()->setAttribute('address_id', $address->getId(), 'order/billing');
+                if($address->getTaxGroupId())
+                    $this->getUser()->setAttribute('tax_group_id', $address->getTaxGroupId(), 'order/tax');
                 
                 if ($this->getRequest()->isXmlHttpRequest()) {
                     $this->renderText(sfsJSONPeer::createResponseSuccess(array('ok' => true)));

@@ -73,10 +73,86 @@ class Product extends BaseProduct
         return null;
     }
 
-    public function __toString()
+   /**
+    * Return price in database (net price)
+    * Use getProductPrice() to get price with correct tax
+    * 
+    * @param  void
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getPrice()
     {
-    	return $this->getTitle();
+       return parent::getPrice();
     }
+    
+   /**
+    * Gets gross product price
+    * Net price is returned if taxes are globally disabled
+    *
+    * @param  void
+    * @return string
+    * @author Andreas Nyholm
+    * @access public
+    */
+    public function getGrossPrice()
+    {
+        return $this->calculateGrossPrice($this->getPrice());
+    }
+    
+   /**
+    * Gets net product price
+    *
+    * @param  void
+    * @return string
+    * @author Andreas Nyholm
+    * @access public
+    */
+    public function getNetPrice()
+    {
+        return $this->getPrice();
+    }
+    
+    /**
+    * Gets product price, including or excluding taxes
+    * Net price is returned if taxes are globally disabled
+    * 
+    * @param  void
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getProductPrice()
+    {
+
+        if(!sfConfig::get('app_tax_display_prices_with_tax', false))
+            return $this->getPrice();
+
+        return $this->calculateGrossPrice($this->getPrice());
+    }
+
+   /**
+    * Calculate gross price
+    * Net price is returned if taxes are globally disabled
+    * 
+    * @param  decimal $price
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */
+     public function calculateGrossPrice($price)
+    {
+        if(!$this->getTaxTypeId() || !sfConfig::get('app_tax_is_enabled', false))
+            return $price;
+        
+        $user = sfContext::getInstance()->getUser();
+        if($user->getAttribute('tax_group_id', null, 'order/tax'))
+            return $price * TaxRatePeer::getRateForTaxGroups($this->getTaxTypeId(),$user->getTaxGroup(),true);
+        
+        return $price * TaxRatePeer::getRateForTaxGroups($this->getTaxTypeId(),sfConfig::get('app_tax_default_tax_groups', 0),true);
+    }    
+   
 }
 
 xfPropelBehavior::register('Product', array('ProductSearchGroup'));

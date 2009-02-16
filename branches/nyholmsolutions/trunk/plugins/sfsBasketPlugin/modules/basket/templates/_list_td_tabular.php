@@ -11,7 +11,7 @@
     <?php include_component('product', 'optionsList', array('itemProduct' => $basketProduct, 'method_for_get_options' => 'getBasketProduct2OptionProducts')) ?>
 </td>
 <td valign="top">
-    <?php echo format_currency($basketProduct->getPrice()) ?>
+    <?php echo format_currency($basketProduct->getProductPrice()) ?>
 </td>
 <td valign="top">
     <?php if (isset($form)): ?>

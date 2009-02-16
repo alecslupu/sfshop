@@ -38,16 +38,19 @@ class BaseMemberComponents extends sfComponents
     *
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk <nesterukd@gmail.com>
+    * @author Dmitry Nesteruk, Andreas Nyholm
     * @access public
     */
     public function executeContactInfo()
     {
-        $this->member = $this->getUser()->getUser();
-        
-        $this->info = array(
-            'primary_phone'    => $this->member->getPrimaryPhone(),
-            'secondary_phone'  => $this->member->getSecondaryPhone()
-        );
+        if(!$this->contactInfo) {
+            $this->member = $this->getUser()->getUser();
+            
+            $this->contactInfo = array(
+                'email'            => $this->member->getEmail(),
+                'primary_phone'    => $this->member->getPrimaryPhone(),
+                'secondary_phone'  => $this->member->getSecondaryPhone()
+            );
+        }
     }
 }

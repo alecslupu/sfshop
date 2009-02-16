@@ -17,69 +17,28 @@ propel:
       size: 32
       required: true
       index: unique
-    delivery_id: 
-      type: INTEGER
-      required: false
-      foreignTable: delivery
-      foreignReference: id
-      onDelete: CASCADE
-      onUpdate: RESTRICT
-    payment_id: 
-      type: INTEGER
-      required: false
-      foreignTable: payment
-      foreignReference: id
-      onDelete: CASCADE
-      onUpdate: RESTRICT
-    delivery_method_title: 
-      type: VARCHAR
-      size: 255
-    delivery_description: 
-      type: LONGVARCHAR
-    delivery_price:
-      type: DECIMAL
-      size: 10
-      scale: 2
-      default: '0.00'
     member_id: 
       type: INTEGER
-      required: true
+      required: false
       foreignTable: member
       foreignReference: id
-      onDelete: CASCADE
-      onUpdate: RESTRICT
+      onDelete: NONE
+      onUpdate: NONE
     member_first_name: 
       type: VARCHAR
       size: 128
     member_last_name: 
       type: VARCHAR
       size: 128
-    member_country_id: 
-      type: INTEGER
-      required: false
-      foreignTable: country
-      foreignReference: id
-      onDelete: CASCADE
-      onUpdate: RESTRICT
-    member_state_id: 
-      type: INTEGER
-      required: false
-      foreignTable: state
-      foreignReference: id
-      onDelete: CASCADE
-      onUpdate: RESTRICT
-    member_state_title: 
-      type: VARCHAR
-      size: 64
-    member_city: 
-      type: VARCHAR
-      size: 64
-    member_street: 
+    member_email: 
       type: VARCHAR
       size: 128
-    member_postcode: 
+    member_primary_phone: 
       type: VARCHAR
-      size: 16
+      size: 32
+    member_secondary_phone: 
+      type: VARCHAR
+      size: 32
     billing_first_name: 
       type: VARCHAR
       size: 128
@@ -91,14 +50,14 @@ propel:
       required: false
       foreignTable: country
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: RESTRICT
       onUpdate: RESTRICT
     billing_state_id: 
       type: INTEGER
       required: false
       foreignTable: state
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: RESTRICT
       onUpdate: RESTRICT
     billing_state_title: 
       type: VARCHAR
@@ -112,6 +71,36 @@ propel:
     billing_postcode: 
       type: VARCHAR
       size: 16
+    payment_id: 
+      type: INTEGER
+      required: true
+      foreignTable: payment
+      foreignReference: id
+      onDelete: NONE
+      onUpdate: NONE
+    payment_title: 
+      type: VARCHAR
+      size: 255
+    payment_price:
+      type: DECIMAL
+      size: 10
+      scale: 4
+      default: '0.00'
+    payment_tax_type_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: NONE
+      onUpdate: NONE
+    payment_tax: 
+      type: DECIMAL
+      size: 10
+      scale: 4
+    payment_tax_title: 
+      type: VARCHAR
+      size: 255
+      
     delivery_first_name: 
       type: VARCHAR
       size: 128
@@ -123,14 +112,14 @@ propel:
       required: false
       foreignTable: country
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: RESTRICT
       onUpdate: RESTRICT
     delivery_state_id: 
       type: INTEGER
       required: false
       foreignTable: state
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: RESTRICT
       onUpdate: RESTRICT
     delivery_state_title: 
       type: VARCHAR
@@ -144,8 +133,45 @@ propel:
     delivery_postcode: 
       type: VARCHAR
       size: 16
-    delivery_description: 
-      type: LONGVARCHAR
+    delivery_id: 
+      type: INTEGER
+      required: true
+      foreignTable: delivery
+      foreignReference: id
+      onDelete: NONE
+      onUpdate: NONE
+    delivery_title: 
+      type: VARCHAR
+      size: 255
+    delivery_method_title: 
+      type: VARCHAR
+      size: 255
+    delivery_price:
+      type: DECIMAL
+      size: 10
+      scale: 4
+      default: '0.00'
+    delivery_tax_type_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: NONE
+      onUpdate: NONE
+    delivery_tax: 
+      type: DECIMAL
+      size: 10
+      scale: 4
+    delivery_tax_title: 
+      type: VARCHAR
+      size: 255
+    currency_id: 
+      type: INTEGER
+      required: true
+      foreignTable: currency
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
     comment: 
       type: VARCHAR
       size: 255
@@ -154,8 +180,12 @@ propel:
       required: false
       foreignTable: order_status
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: RESTRICT
       onUpdate: RESTRICT
+    payment_at:
+      type: timestamp
+    delivery_at:
+      type: timestamp
     created_at: 
     updated_at: 
 
@@ -218,25 +248,54 @@ propel:
       required: true
       foreignTable: product
       foreignReference: id
-      onDelete: CASCADE
-      onUpdate: CASCADE
+      onDelete: NONE
+      onUpdate: NONE
+    title: 
+      type: VARCHAR
+      size: 255
     price: 
       type: DECIMAL
       size: 10
-      scale: 2
+      scale: 4
+    tax_type_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: NONE
+      onUpdate: NONE
+    tax: 
+      type: DECIMAL
+      size: 10
+      scale: 4
+    tax_title: 
+      type: VARCHAR
+      size: 255
     quantity: 
       type: INTEGER
       required: true
       default: 1
+    weight: 
+      type: DECIMAL
+      size: 10
+      scale: 3
+    cube: 
+      type: DECIMAL
+      size: 10
+      scale: 3
     created_at: 
 
   order_product2option_product: 
     _attributes: 
       phpName: OrderProduct2OptionProduct
+    id:
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
     order_product_id: 
       type: INTEGER
       required: true
-      primaryKey: true
       foreignTable: order_product
       foreignReference: id
       onDelete: CASCADE
@@ -244,9 +303,11 @@ propel:
     option_product_id: 
       type: INTEGER
       required: true
-      primaryKey: true
       foreignTable: option_product
       foreignReference: id
-      onDelete: CASCADE
-      onUpdate: CASCADE
+      onDelete: NONE
+      onUpdate: NONE
+    title: 
+      type: VARCHAR
+      size: 255
     created_at: 

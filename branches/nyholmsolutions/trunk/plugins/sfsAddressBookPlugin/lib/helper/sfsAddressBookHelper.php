@@ -8,23 +8,24 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+   /**
+    * Format address for view
+    *
+    * @param  mixed $address, bool $useNl = true, bool $isFieldsInContainer = false
+    * @return string
+    * @author Dmitry Nesteruk, Andreas Nyholm
+    */
+
 function format_address($address, $useNl = true, $isFieldsInContainer = false)
-{
-    if (is_object($address)) {
-        
-        $format = null;
-        
-        if (method_exists(sfContext::getInstance()->getUser(), 'getLocation')) {
-            $location = sfContext::getInstance()->getUser()->getLocation();
-            $format = AddressFormatPeer::retrieveByLocation($location);
+{   
+    if(is_array($address)) {
+        $array = array();
+        foreach ($address as $key => $value) {
+            $key = str_replace('%', '',$key);
+            $array['%'.$key.'%'] = $value;
         }
-        
-        if ($format == null) {
-            $format = AddressFormatPeer::retrieveDefault();
-        }
-        
-        $format = $format->getFormat();
-        
+    }
+    else if(is_object($address)) {
         if ($address->getStateId() !== null) {
             $state = StatePeer::retrieveByPK($address->getStateId())->getTitle();
         }
@@ -41,24 +42,39 @@ function format_address($address, $useNl = true, $isFieldsInContainer = false)
             '%street%'     => $address->getStreet(),
             '%postcode%'   => $address->getPostcode()
         );
-        
-        foreach ($array as $key => $value) {
-            if ($isFieldsInContainer) {
-                $fieldName = str_replace('%', '', $key);
-                $format = str_replace($key, '<span class="' . $fieldName . '">' . $value . '</span>', $format);
-            }
-            else {
-                $format = str_replace($key, $value, $format);
-            }
-        }
-        
-        if ($useNl) {
-            $format = str_replace('%nl%', '<br/>', $format);
+    }
+    else
+        throw new Exception('address is not valid format');
+    
+    $format = null;
+    
+    if (method_exists(sfContext::getInstance()->getUser(), 'getLocation')) {
+        $location = sfContext::getInstance()->getUser()->getLocation();
+        $format = AddressFormatPeer::retrieveByLocation($location);
+    }
+    
+    if ($format == null) {
+        $format = AddressFormatPeer::retrieveDefault();
+    }
+    
+    $format = $format->getFormat();
+            
+    foreach ($array as $key => $value) {
+        if ($isFieldsInContainer) {
+            $fieldName = str_replace('%', '', $key);
+            $format = str_replace($key, '<span class="' . $fieldName . '">' . $value . '</span>', $format);
         }
         else {
-            $format = str_replace('%nl%', ',', $format);
+            $format = str_replace($key, $value, $format);
         }
-        
-        return $format;
     }
+
+    if ($useNl) {
+        $format = str_replace('%nl%', '<br/>', $format);
+    }
+    else {
+        $format = str_replace('%nl%', ',', $format);
+    }
+
+    return $format;
 }

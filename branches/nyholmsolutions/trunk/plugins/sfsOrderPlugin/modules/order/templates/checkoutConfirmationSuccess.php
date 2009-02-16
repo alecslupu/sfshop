@@ -37,15 +37,30 @@
                         <li><?php echo $form['comment']->renderLabel() ?><?php echo $form['comment']->render(array('cols' => 50)) ?></li>
                     </ul>
                     <table cellpadding="0" width="100%">
+                    <?php if(sfConfig::get('app_tax_is_enabled', false)): ?>
+                        <tr>
+                            <td colspan="2">
+                                <?php include_component(
+                                    'tax',
+                                    'orderTaxInfo',
+                                    array(
+                                        'item'                 => $basket,
+                                        'itemProducts'         => $basket->getBasketProducts(), 
+                                    )
+                               ) ?>
+                            </td>
+                        </tr>
+                    <?php else: ?>
                         <tr>
                             <td colspan="2">
                                 <div align="right">
-                                    <span class="total_price"><?php echo __('Total') ?>: <span id="total_price"><?php echo format_currency(
-                                        $basket->getTotalPrice() + $sf_user->getAttribute('price', null, 'order/delivery')
-                                    ) ?></span></span>
+                                    <span class="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
+                                        $basket->getTotalPriceWithDeliveryPriceAndPaymentPrice()
+                                    ) ?></span>
                                 </div>
                             </td>
                         </tr>
+                    <?php endif; ?>
                         <tr>
                         <td><?php echo button_to(__('Back'), '@payment_checkout', array('class' => 'button')) ?></td>
                         <td align="right"><br/>

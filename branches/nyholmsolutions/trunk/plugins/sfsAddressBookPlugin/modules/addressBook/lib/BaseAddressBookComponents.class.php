@@ -93,8 +93,10 @@ class BaseAddressBookComponents extends sfComponents
     */
     public function executeDeliveryAddress()
     {
-        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
-        $this->address = AddressBookPeer::retrieveById($addressId);
+        if(!isset($this->address)) {
+            $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
+            $this->address = AddressBookPeer::retrieveById($addressId);
+      }
     }
     
    /**
@@ -107,7 +109,9 @@ class BaseAddressBookComponents extends sfComponents
     */
     public function executeBillingAddress()
     {
-        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
-        $this->address = AddressBookPeer::retrieveById($addressId);
+        if(!isset($this->address)) {
+            $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
+            $this->address = AddressBookPeer::retrieveById($addressId);
+        }
     }
 }

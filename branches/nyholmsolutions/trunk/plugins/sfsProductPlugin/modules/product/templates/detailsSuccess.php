@@ -12,7 +12,7 @@
     <div class="details">
             <b><?php echo $product->getTitle() ?></b><br/>
             <?php include_partial('brand/product_brand', array('product' => $product)) ?><br/>
-            <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getPrice()); ?></span><br/>
+            <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
             <b><?php echo __('Description') ?>:</b><br/>
             <?php echo $product->getDescription(ESC_RAW) ?>
     </div>

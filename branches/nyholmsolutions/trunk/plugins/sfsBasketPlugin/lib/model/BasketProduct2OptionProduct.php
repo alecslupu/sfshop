@@ -19,4 +19,10 @@
  */
 class BasketProduct2OptionProduct extends BaseBasketProduct2OptionProduct
 {
+    public function __toString()
+    {
+        if($this->getOptionProduct())
+            return $this->getOptionProduct()->__toString();
+        return '';
+    }    
 }

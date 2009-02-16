@@ -72,6 +72,9 @@ class BaseOrderActions extends sfActions
                     $order->setMemberId($member->getId());
                     $order->setMemberFirstName($member->getFirstName());
                     $order->setMemberLastName($member->getLastName());
+                    $order->setMemberEmail($member->getEmail());
+                    $order->setMemberPrimaryPhone($member->getPrimaryPhone()); // $data['primary_phone'] ??
+                    $order->setMemberSecondaryPhone($member->getSecondaryPhone()); // $data['secondary_phone'] ??
                     
                     $order->setBillingFirstName($billingAddress->getFirstName());
                     $order->setBillingLastName($billingAddress->getLastName());
@@ -82,6 +85,16 @@ class BaseOrderActions extends sfActions
                     $order->setBillingStreet($billingAddress->getStreet());
                     $order->setBillingPostcode($billingAddress->getPostcode());
                     
+                    $order->setPaymentPrice($sfUser->getAttribute('price', null, 'order/payment'));
+                    $order->setPaymentTaxTypeId($sfUser->getAttribute('tax_type_id', null, 'order/payment'));
+                    $order->setPaymentTax($sfUser->getAttribute('tax', null, 'order/payment'));
+                    $order->setPaymentTaxTitle($sfUser->getAttribute('tax_title', null, 'order/payment'));
+                    $methodId = $sfUser->getAttribute('method_id', null, 'order/payment');
+//                    $methodTitle = $sfUser->getAttribute('method_title', null, 'order/payment');
+                    $order->setPaymentId($methodId);
+                    $order->setPaymentTitle(PaymentPeer::retrieveById($methodId)->getTitle()); // $methodTitle
+                    
+      
                     $order->setDeliveryFirstName($deliveryAddress->getFirstName());
                     $order->setDeliveryLastName($deliveryAddress->getLastName());
                     $order->setDeliveryCountryId($deliveryAddress->getCountryId());
@@ -90,9 +103,12 @@ class BaseOrderActions extends sfActions
                     $order->setDeliveryCity($deliveryAddress->getCity());
                     $order->setDeliveryStreet($deliveryAddress->getStreet());
                     $order->setDeliveryPostcode($deliveryAddress->getPostcode());
-                    
                     $order->setDeliveryPrice($sfUser->getAttribute('price', null, 'order/delivery'));
-                    $order->setUuid(md5(time() + rand()));
+                    $order->setDeliveryTaxTypeId($sfUser->getAttribute('tax_type_id', null, 'order/delivery'));
+                    $order->setDeliveryTax($sfUser->getAttribute('tax', null, 'order/delivery'));
+                    $order->setDeliveryTaxTitle($sfUser->getAttribute('tax_title', null, 'order/delivery'));
+
+                    $order->setUuid(OrderItemPeer::generateUuid());
                     $order->setStatusId(OrderStatusPeer::STATUS_PENDING);
                     
                     $methodId = $sfUser->getAttribute('method_id', null, 'order/delivery');
@@ -100,9 +116,9 @@ class BaseOrderActions extends sfActions
                     list($serviceId, $methodId) = explode('_', $methodId);
                     $order->setDeliveryId($serviceId);
                     $order->setDeliveryMethodTitle($methodTitle);
+                    $order->setDeliveryTitle(DeliveryPeer::retrieveById($serviceId)->getTitle());
                     
-                    $paymentId = $sfUser->getAttribute('method_id', null, 'order/payment');
-                    $order->setPaymentId($paymentId);
+                    $order->setCurrencyId($this->basket->getCurrencyId());
                     
                     $order->setComment($data['comment']);
                     $order->save();
@@ -113,8 +129,15 @@ class BaseOrderActions extends sfActions
                         $orderProduct = new OrderProduct();
                         $orderProduct->setOrderItemId($order->getId());
                         $orderProduct->setProductId($basketProduct->getProductId());
-                        $orderProduct->setPrice($basketProduct->getProduct()->getPrice());
+                        $orderProduct->setPrice($basketProduct->getNetPrice());
                         $orderProduct->setQuantity($basketProduct->getQuantity());
+                        $orderProduct->setTitle($basketProduct->getProduct()->getTitle());
+                        $orderProduct->setTaxTypeId($basketProduct->getProduct()->getTaxTypeId());
+                        $orderProduct->setTax($basketProduct->getGrossPrice() - $basketProduct->getNetPrice());
+                        if($basketProduct->getProduct()->getTaxType())
+                            $orderProduct->setTaxTitle($basketProduct->getProduct()->getTaxType()->getTitle());
+                        $orderProduct->setWeight($basketProduct->getProduct()->getWeight());
+                        $orderProduct->setCube($basketProduct->getProduct()->getCube());
                         $orderProduct->save();
                         
                         if ($basketProduct->getProduct()->getHasOptions()) {
@@ -125,6 +148,7 @@ class BaseOrderActions extends sfActions
                                 $orderProduct2OptionProduct = new OrderProduct2OptionProduct();
                                 $orderProduct2OptionProduct->setOrderProductId($orderProduct->getId());
                                 $orderProduct2OptionProduct->setOptionProductId($productOption->getOptionProductId());
+                                $orderProduct2OptionProduct->setTitle($productOption->getOptionProduct()->getOptionValue()->getTitle());
                                 $orderProduct2OptionProduct->save();
                             }
                         }
@@ -136,7 +160,7 @@ class BaseOrderActions extends sfActions
                         $product = $orderProduct->getProduct();
                         $product->setQuantity($product->getQuantity() - $orderProduct->getQuantity());
                         
-                        if ($product->getQuantity() <= 0 &&  !$product->getAllowNegativeQuantity()) {
+                        if ($product->getQuantity() <= 0 &&  !$product->getAllowOutOfStock()) {
                             $product->setIsActive(0);
                         }
                         
@@ -233,5 +257,8 @@ class BaseOrderActions extends sfActions
         $this->order = OrderItemPeer::retrieveById($this->getRequestParameter('id'));
         $this->forward404Unless($this->order);
         $this->deliveryAddress = $this->order->getDeliveryAddress();
+        $this->deliveryService = $this->order->getDeliveryService();
+        $this->paymentService = $this->order->getPaymentService();
+        $this->contactInfo = $this->order->getContactInfo();
     }
 }

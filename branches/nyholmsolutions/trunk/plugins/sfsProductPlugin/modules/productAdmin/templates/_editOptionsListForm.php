@@ -16,7 +16,7 @@
                         <tr>
                             <th><?php echo __('Is used') ?>?</th>
                             <th><?php echo __('Title') ?></th>
-                            <th><?php echo __('Price') ?></th>
+                            <th><?php echo __('Price') ?> (<?php echo __('Net') ?>)</th>
                             <th><?php echo __('Prefix') ?></th>
                         </tr>
                     </thead>

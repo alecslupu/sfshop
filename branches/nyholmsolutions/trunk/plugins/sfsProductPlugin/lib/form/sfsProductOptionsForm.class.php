@@ -28,11 +28,11 @@ class sfsProductOptionsForm extends BaseProductForm
             
             $symbol = '';
             
-            if ($optionProduct->getPrice() > 0) {
+            if ($optionProduct->getProductPrice() > 0) {
                 $symbol = '+';
             }
             
-            $title = $optionValue->getTitle() . '  (' . $symbol . format_currency($optionProduct->getPrice()) . ')';
+            $title = $optionValue->getTitle() . '  (' . $symbol . format_currency($optionProduct->getProductPrice()) . ')';
             
             $choices[$optionTypeName][$optionProduct->getId()] = $title;
             $optionTypes[$optionTypeName] = $optionValue->getOptionType()->getTitle();
