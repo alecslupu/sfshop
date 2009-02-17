@@ -12,6 +12,7 @@ class myUser extends sfsSecurityUser
     protected $model    = 'member';
     protected $basket   = null;
     protected $currency = null;
+    protected $taxGroup = null;
     
     
     
@@ -79,6 +80,18 @@ class myUser extends sfsSecurityUser
         return 'US';
     }
     
+   /**
+    * Gets member's tax group
+    *
+    * @param  void
+    * @return integer $stateId.
+    * @author Andreas Nyholm
+    * @access public
+    */
+    public function getTaxGroup() 
+    {
+        return  $this->taxGroup;
+    }
     
     
    /**
