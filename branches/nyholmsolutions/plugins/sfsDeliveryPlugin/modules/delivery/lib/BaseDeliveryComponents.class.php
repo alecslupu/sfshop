@@ -29,6 +29,38 @@ class BaseDeliveryComponents extends sfComponents
     */
     public function executeDeliveryInfo()
     {
+
+        if(!$this->deliveryService) {
+            $sfUser = $this->getUser();
+            
+            $methodId = $sfUser->getAttribute('method_id', null, 'order/delivery');
+            
+            if ($methodId != null) {
+                list($methodId, $subMethodId) = $methodId;
+                
+                $criteria = new Criteria();
+                $deliveryService = DeliveryPeer::retrieveById($methodId, $criteria, true);
+                
+                if ($deliveryService == null) {
+                    sfContext::getInstance()->getController()->redirect('@delivery_checkout');
+                }
+                $this->deliveryService = array(
+                    'title'  => $deliveryService->getTitle(),
+                    'icon'   => $deliveryService->getIcon(),
+                    'price'    => $sfUser->getAttribute('price', null, 'order/delivery'),
+                    'method_title' => $sfUser->getAttribute('method_title', null, 'order/delivery')
+                );
+            }
+            else {
+                sfContext::getInstance()->getController()->redirect('@delivery_checkout');
+            }
+        }
+        else {
+            if(!isset($this->deliveryService['icon']))
+                $this->deliveryService['icon'] = '';
+        }
+    }
+ /*               
         $sfUser = $this->getUser();
         
         if (isset($this->id)) {
@@ -57,7 +89,7 @@ class BaseDeliveryComponents extends sfComponents
             }
         }
     }
-    
+   */ 
    /**
     * Form for select some delivery service.
     *

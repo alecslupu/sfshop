@@ -34,7 +34,7 @@
                     <h3><?php echo __('Comment to your order') ?></h3>
                     <ul class="main">
                         <li><?php echo $form['comment']->renderError() ?></li>
-                        <li><?php echo $form['comment']->renderLabel() ?><?php echo $form['comment']->render(array('cols' => 50)) ?></li>
+                        <li><?php echo $form['comment']->render(array('cols' => 50)) ?></li>
                     </ul>
                     <table cellpadding="0" width="100%">
                     <?php if(sfConfig::get('app_tax_is_enabled', false)): ?>
@@ -54,7 +54,7 @@
                         <tr>
                             <td colspan="2">
                                 <div align="right">
-                                    <span class="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
+                                    <span id="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
                                         $basket->getTotalPriceWithDeliveryPriceAndPaymentPrice()
                                     ) ?></span>
                                 </div>

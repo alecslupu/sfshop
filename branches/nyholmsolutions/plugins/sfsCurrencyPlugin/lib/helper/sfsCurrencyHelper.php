@@ -12,7 +12,7 @@
 function format_currency($price = 0, $currency = null, $clearValue = false, $noConversion = false)
 {
     if ($currency != null) {
-        if(is_int($currency))
+        if(is_numeric($currency))
             $currency = CurrencyPeer::retrieveByPk($currency);
         else
             $currency = CurrencyPeer::retrieveByCode($currency);

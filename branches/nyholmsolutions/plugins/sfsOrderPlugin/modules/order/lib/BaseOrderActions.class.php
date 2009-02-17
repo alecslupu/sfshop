@@ -233,7 +233,9 @@ class BaseOrderActions extends sfActions
     public function executeDelete()
     {
         if ($this->hasRequestParameter('id')) {
-            $order = OrderItemPeer::retrieveById($this->getRequestParameter('id'));
+            $criteria = new Criteria();
+            $criteria->add(OrderItemPeer::MEMBER_ID, $this->getUser()->getUserId());
+            $order = OrderItemPeer::retrieveById($this->getRequestParameter('id'),$criteria);
             $this->forward404Unless($order);
             
             if ($order->getStatusId() == OrderStatusPeer::STATUS_PENDING) {
@@ -254,7 +256,9 @@ class BaseOrderActions extends sfActions
     */
     public function executeDetails()
     {
-        $this->order = OrderItemPeer::retrieveById($this->getRequestParameter('id'));
+        $c = new Criteria();
+        $c->add(OrderItemPeer::MEMBER_ID, $this->getUser()->getUserId());
+        $this->order = OrderItemPeer::retrieveById($this->getRequestParameter('id'),$c);
         $this->forward404Unless($this->order);
         $this->deliveryAddress = $this->order->getDeliveryAddress();
         $this->deliveryService = $this->order->getDeliveryService();

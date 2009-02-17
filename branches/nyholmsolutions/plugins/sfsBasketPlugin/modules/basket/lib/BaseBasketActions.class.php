@@ -299,7 +299,7 @@ class BaseBasketActions extends sfActions
             $basket = $this->getUser()->getBasket();
             $basketProduct = BasketProductPeer::retrieveByPk($request->getParameter('id'));
             
-            if ($basketProduct !== null) {
+            if ($basketProduct !== null && $basketProduct->getBasketId() == $basket->getId()) {
                 $basketProduct->delete();
             }
         }

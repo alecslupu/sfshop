@@ -145,10 +145,7 @@ class BaseAddressBookActions extends sfActions
             $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
-                
-                $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('data[address_id]'));
-                
-                if ($address == null) {
+                if ($address == null || $address->getMemberId() != $this->getUser()->getUserId()) {
                     if ($this->getRequest()->isXmlHttpRequest()) {
                         $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_404'))));
                     }
@@ -192,7 +189,9 @@ class BaseAddressBookActions extends sfActions
     {
         if ($this->hasRequestParameter('id')) {
             $address = AddressBookPeer::retrieveByPk($this->getRequestParameter('id'));
-            $this->forward404Unless($address);
+            if ($address == null || $address->getMemberId() != $this->getUser()->getUserId()) {
+                $this->forward404();
+            }
             $address->delete();
         }
         

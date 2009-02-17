@@ -16,7 +16,7 @@
         </table>
     
     <div align="right">
-        <span class="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
+        <span id="total_price"><?php echo __('Total') ?>: <?php echo format_currency(
             $totalGross,
             $item->getCurrencyId(),
             false,
