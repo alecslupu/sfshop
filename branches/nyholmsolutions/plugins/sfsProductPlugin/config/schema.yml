@@ -83,7 +83,6 @@ propel:
       scale: 3
     has_options:
       type: TINYINT
-      size: 1
       default: 0
     allow_out_of_stock: 
       type: BOOLEAN
