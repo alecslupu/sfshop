@@ -9,9 +9,9 @@ default:
     language:     'en'
     robots:       'index, follow'
 
-  stylesheets:    [ main ]
+  stylesheets:    [ %APP_SFSHOP_CORE_CSS_DIR%main ]
 
-  javascripts:    [ prototype/prototype.js, prototype/scriptaculous/effects.js, functions.js, sfsAjax.js ]
+  javascripts:    [ prototype/prototype.js, prototype/scriptaculous/effects.js, %APP_SFSHOP_CORE_JS_DIR%functions.js, %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js ]
 
   has_layout:     on
   layout:         layout
