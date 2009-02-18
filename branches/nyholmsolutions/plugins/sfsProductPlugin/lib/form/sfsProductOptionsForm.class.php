@@ -23,7 +23,7 @@ class sfsProductOptionsForm extends BaseProductForm
         $optionTypes = array();
         
         foreach ($options as $optionProduct) {
-            $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getName();
+            $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getId();
             $optionValue = $optionProduct->getOptionValue();
             
             $symbol = '';
@@ -48,7 +48,7 @@ class sfsProductOptionsForm extends BaseProductForm
                 )
             );
             
-            $this->getWidgetSchema()->setLabel('option', $optionTypes[$key]);
+            $this->getWidgetSchema()->setLabel($key, $optionTypes[$key]);
         }
         
         $this->defineSfsListFormatter();

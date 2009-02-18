@@ -15,7 +15,7 @@
     <br/>
     <div class="button_add_address">
         <?php echo link_to(
-                image_tag('add.png', 
+                image_tag(sfConfig::get('app_sfshop_core_images_dir').'add.png', 
                     array('title' => __('Add address'), 'align' => 'absmiddle')
                 ), '@addressBook_add'
             ) ?>&nbsp;

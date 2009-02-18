@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; }
+
+html { height: 100%; font-size: 62.5% }
+
+body {
+    height: 100%;
+    font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.border {
+    border: #8dc63f 3px solid; 
+    padding: 20px;
+}
+
+div.error {
+    border: red 3px solid;
+    padding: 20px;
+}
+
+tr, th {
+    line-height: 26px;
+}
+
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+tr.error {
+    background: #f49f90;
+}
+
+ul.error_list {
+    color: #f21207;
+    font-size: 11px;
+    list-style: none;
+    margin-bottom: 4px;
+}
+
+ul.error_list li {
+    font-weight: bold;
+    line-height: 15px;
+    padding-left: 3px;
+}
+
+span.notify {
+    color: #c1c329
+}

@@ -4,18 +4,18 @@
 <?php if (!$isValidPhpVersion || count($unexistsPhpExtensions) > 0 || count($unwritablePaths) > 0): ?>
     <div class="error">
         <?php if (!$isValidPhpVersion): ?>
-            <?php echo image_tag('cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
+            <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
             <?php echo __('The platform is require 5.1 version of PHP or ealier. %version% is installed on this server now.', array('%version%' => phpversion())) ?>
             <br/>
         <?php endif; ?>
         
         <?php if (count($unexistsPhpExtensions) > 0): ?>
-            <?php echo image_tag('cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
+            <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
             <?php echo __('Some PHP extensions are not loaded.') ?><br/>
         <?php endif; ?>
         
         <?php if (count($unwritablePaths) > 0): ?>
-            <?php echo image_tag('cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
+            <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
             <?php echo __('Please, check and correct permissions for files/directories.') ?>
         <?php endif; ?>
     </div>
@@ -30,9 +30,9 @@
     <tr><td width="95%"><b><?php echo __('PHP version') ?></b>: <?php echo phpversion() ?></td>
     <td width="5%">
         <?php if ($isValidPhpVersion): ?>
-            <?php echo image_tag('ok.png', array('width' => 16, 'height' => 16)) ?>
+            <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'ok.png', array('width' => 16, 'height' => 16)) ?>
         <?php else: ?>
-            <?php echo image_tag('bad.png', array('width' => 16, 'height' => 16)) ?>
+            <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'bad.png', array('width' => 16, 'height' => 16)) ?>
         <?php endif; ?>
     </td></tr>
     <tr><td colspan="2"><b><?php echo __('Extension') ?>:</b></td></tr>
@@ -44,9 +44,9 @@
             </td>
             <td width="5%">
                 <?php if (in_array($extension, $sf_data->getRaw('unexistsPhpExtensions'))): ?>
-                    <?php echo image_tag('bad.png', array('width' => 16, 'height' => 16)) ?>
+                    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'bad.png', array('width' => 16, 'height' => 16)) ?>
                 <?php else: ?>
-                    <?php echo image_tag('ok.png', array('width' => 16, 'height' => 16)) ?>
+                    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'ok.png', array('width' => 16, 'height' => 16)) ?>
                 <?php endif; ?>
             </td>
         </tr>
@@ -64,9 +64,9 @@
             </td>
             <td width="5%">
                 <?php if (in_array($path, $sf_data->getRaw('unwritablePaths'))): ?>
-                    <?php echo image_tag('bad.png', array('width' => 16, 'height' => 16)) ?>
+                    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'bad.png', array('width' => 16, 'height' => 16)) ?>
                 <?php else: ?>
-                    <?php echo image_tag('ok.png', array('width' => 16, 'height' => 16)) ?>
+                    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'ok.png', array('width' => 16, 'height' => 16)) ?>
                 <?php endif; ?>
             </td></tr>
         <?php endforeach; ?>

@@ -23,7 +23,7 @@ generator:
           reset_password: 
             name:         Reset password
             action:       resetPassword
-            icon:         /admin/images/actions/reset_password.png
+            icon:         <?php echo sfConfig::get('app_sfshop_admin_images_dir')?>actions/reset_password.png
             params:       confirm=Are you sure want reset password for this administrator?
         fields:
           created_at:

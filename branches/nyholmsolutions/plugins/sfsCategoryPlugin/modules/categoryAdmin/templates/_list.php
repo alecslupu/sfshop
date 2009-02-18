@@ -3,7 +3,7 @@
 <?php if (isset($parentCategory) && $parentCategory !== null): ?>
     <tr>
         <td colspan="6">
-            <?php echo link_to(image_tag('go-up.png') . __('Up on one level'), 'catalogAdmin/list?path=' .generate_category_path_for_url($parentCategory->getPath())) ?>
+            <?php echo link_to(image_tag(sfConfig::get('app_sfshop_admin_images_dir').'go-up.png') . __('Up on one level'), 'catalogAdmin/list?path=' .generate_category_path_for_url($parentCategory->getPath())) ?>
         </td>
     </tr>
 <?php endif; ?>
