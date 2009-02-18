@@ -20,7 +20,7 @@
                 $thumbnail, 
                 $product->getTitle()
             ), 
-            '@product_details?path=' . $path . '&id=' . $product->getId()
+            '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId()
         ); ?>
     </div>
     <div class="details">
