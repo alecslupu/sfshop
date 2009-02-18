@@ -3,19 +3,19 @@
 #
 
 order_checkoutConfirmation:
-  url: /checkout-confirmation
+  url: /:sf_culture/checkout-confirmation
   param: { module: order, action: checkoutConfirmation }
 
 order_checkoutFinished:
-  url: /checkout-finished
+  url: /:sf_culture/checkout-finished
   param: { module: order, action: checkoutFinished }
 
 order_paymentSuspend:
-  url: /checkout-suspend
+  url: /:sf_culture/checkout-suspend
   param: { module: order, action: checkoutSuspend }
 
 order_myList:
-  url: /my-orders/*
+  url: /:sf_culture/my-orders/*
   param: { module: order, action: myList }
 
 order_delete:
@@ -23,7 +23,7 @@ order_delete:
   param: { module: order, action: delete }
 
 order_details:
-  url: /order-details/:id
+  url: /:sf_culture/order-details/:id
   param: { module: order, action: details }
 
 #

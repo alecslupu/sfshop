@@ -3,19 +3,19 @@
 #
 
 product_index:
-  url: /product-index/*
+  url: /:sf_culture/product-index/*
   param: { module: product, action: index }
 
 product_list:
-  url: /product-list/*
+  url: /:sf_culture/product-list/*
   param: { module: product, action: list }
   
 product_details:
-  url: /product-details/:path/:id/*
+  url: /:sf_culture/product-details/:path/:id/*
   param: { module: product, action: details }
 
 product_search:
-  url: /product-search/*
+  url: /:sf_culture/product-search/*
   param: { module: product, action: list, is_search: true }
 
 #
