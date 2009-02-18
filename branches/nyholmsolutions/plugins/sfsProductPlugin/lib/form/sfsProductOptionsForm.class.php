@@ -12,6 +12,8 @@ class sfsProductOptionsForm extends BaseProductForm
     public function configure()
     {
         sfLoader::loadHelpers('sfsCurrency');
+
+        unset($this['id']);
         
         $this->setWidgets(array());
         $this->setValidators(array());

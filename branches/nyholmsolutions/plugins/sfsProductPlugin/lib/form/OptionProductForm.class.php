@@ -11,5 +11,6 @@ class OptionProductForm extends BaseOptionProductForm
 {
     public function configure()
     {
+        unset($this['id'],$this['product_id']);
     }
 }

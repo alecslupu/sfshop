@@ -21,6 +21,8 @@ class BasketForm extends BaseBasketForm
 {
     public function configure()
     {
+        unset($this['id']);
+        
         $this->setWidgets(
             array(
                 'quantity'   => new sfWidgetFormInput(array(), array('size' => '5')),
