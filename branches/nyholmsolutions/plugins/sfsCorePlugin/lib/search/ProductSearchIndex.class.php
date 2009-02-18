@@ -83,7 +83,7 @@ class ProductSearchIndex extends xfIndexSingle
     {
         $culture = $this->getCulture();
         
-        $this->setEngine(new xfLuceneEngine(sfConfig::get('sf_data_dir') . '/index/ProductSearchIndex/' . $culture));
+        $this->setEngine(new xfLuceneEngine(sfConfig::get('sf_data_dir') . '/index/ProductSearchIndex/'. $culture));
         
         $propelIdentifier = new xfPropelIdentifier('Product');
         
@@ -91,10 +91,14 @@ class ProductSearchIndex extends xfIndexSingle
         $propelIdentifier->setPeerSelectMethod('doSelectWithI18n', xfPropelIdentifier::HYDRATE_COMPLETE);
         
         $service = new xfService($propelIdentifier);
+        
+        $title = new xfField('title', xfField::TEXT);
+        $title->setBoost(1.5);
+        
         $service->addBuilder(new xfPropelBuilder(
             array(
                 new xfField('id', xfField::STORED | xfField::INDEXED),
-                new xfField('title', xfField::TEXT),
+                $title,
                 new xfField('description', xfField::TEXT),
                 
             )

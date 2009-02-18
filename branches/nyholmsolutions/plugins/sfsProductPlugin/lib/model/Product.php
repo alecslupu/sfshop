@@ -156,4 +156,3 @@ class Product extends BaseProduct
 }
 
 xfPropelBehavior::register('Product', array('ProductSearchGroup'));
-
