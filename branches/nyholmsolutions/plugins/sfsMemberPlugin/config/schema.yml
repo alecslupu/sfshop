@@ -82,7 +82,7 @@ propel:
     modified_at: 
       type: TIMESTAMP
     _uniques: 
-      uni_email: [email]
+      uni_member_email: [email]
 
   member_secret_question: 
     _attributes: 

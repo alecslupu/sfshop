@@ -54,7 +54,7 @@ propel:
     modified_at: 
       type: TIMESTAMP
     _uniques: 
-      uni_email: [email]
+      uni_admin_email: [email]
 
   admin_menu: 
     _attributes: 
