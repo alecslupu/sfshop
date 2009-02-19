@@ -7,9 +7,11 @@
       <ul class="main">
         <?php //echo $form->renderGlobalErrors() ?>
         <?php echo $form['quantity']->renderRow() ?>
-        <?php foreach($form['options'] as $fieldSchema): ?>
-           <?php echo $fieldSchema->renderRow() ?>
-        <?php endforeach; ?>
+        <?php if(isset($form['options'])):?>
+          <?php foreach($form['options'] as $fieldSchema): ?>
+             <?php echo $fieldSchema->renderRow() ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
         <?php echo $form->renderHiddenFields(); ?>
 
           <li class="button" style="padding-top: 4px">
