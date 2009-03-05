@@ -27,7 +27,16 @@ class sfPaymentCIC
 	const CMCIC_PHP2_MACOK 		= 'OK';
 	const CMCIC_PHP2_MACNOTOK 	= 'Document Falsifie 0--';
 	const CMCIC_PHP2_FIELDS 	= '%s%s+%s+%s+%s+%s+%s+%s+';
-	const CMCIC_PHP1_FIELDS 	= '%s%s*%s*%s%s*%s*%s*%s*%s*%s*';  
+	const CMCIC_PHP1_FIELDS 	= '%s%s*%s*%s%s*%s*%s*%s*%s*%s*';
+	
+	// CODE_RETOUR_ACCEPTED_<ENV>
+	const CODE_RETOUR_ACCEPTED_DEV	= 'payetest';
+	const CODE_RETOUR_ACCEPTED_TEST	= 'payetest';
+	const CODE_RETOUR_ACCEPTED_PROD	= 'paiement';
+	// CODE_RETOUR_DENIED_<ENV>
+	const CODE_RETOUR_DENIED_DEV	= 'Annulation';
+	const CODE_RETOUR_DENIED_TEST	= 'Annulation';
+	const CODE_RETOUR_DENIED_PROD	= 'Annulation';	
 	
 	// Payment parameters
 	private $tpe 				= array();
@@ -67,7 +76,7 @@ class sfPaymentCIC
 		}
 		if ($this->tpe['key'] == '') {
 			throw new Exception('Missing TPE key : ' . $this->tpe['key']);
-		}		
+		}
 		
 	}
 	
