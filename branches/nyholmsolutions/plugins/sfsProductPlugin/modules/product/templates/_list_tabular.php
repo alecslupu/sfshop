@@ -3,7 +3,10 @@
 <?php else: ?>
     <?php
         list($product2category) = $product->getProduct2CategorysJoinCategory(); 
-        $path = $product2category->getCategory()->getPath();
+        if($product2category)
+           $path = $product2category->getCategory()->getPath();
+        else
+           $path = '';
     ?>
 <?php endif; ?>
 
@@ -30,7 +33,6 @@
             array('class' => 'product_title')
         ); ?><br/>
         <p><?php echo $product->getDescriptionShort(); ?></p>
-        <br/>
         <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
         <div style="line-height: 37px">
             <?php if (!$product->getHasOptions()): ?>

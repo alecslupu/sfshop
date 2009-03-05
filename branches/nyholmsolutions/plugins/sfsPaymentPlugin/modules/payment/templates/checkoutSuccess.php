@@ -8,7 +8,12 @@
                     <?php echo $radios[$i]['label'] ?>
                     <?php echo image_tag(sfConfig::get('app_payment_icons_dir') . '/' . $paymentService->getIcon(), array('align' => 'absmiddle')); ?>
                 </li>
-                <li><?php echo $radios[$i]['input'] ?>
+                <li class="price">&nbsp;
+                <?php if(isset($method['price'])):?>
+                  <?php echo format_currency($method['price']) ?>
+                <?php endif; ?>
+                </li>
+                <li><?php echo $radios[$i]['input'] ?></li>
             <?php $i++; endforeach; ?>
         </ul>
         <table cellspacing="0" cellpadding="0" width="100%" style="clear: both">

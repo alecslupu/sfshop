@@ -71,13 +71,12 @@ class BaseProductActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeDetails()
+    public function executeDetails($request)
     {
         sfLoader::loadHelpers('sfsCurrency');
-        
         $criteria = new Criteria();
         ProductPeer::addPublicCriteria($criteria);
-        $this->product = ProductPeer::retrieveById($this->getRequestParameter('id'), $criteria, true);
+        $this->product = ProductPeer::retrieveById($request->getParameter('id'), $criteria, true);
         $this->forward404Unless($this->product);
         
         $response = $this->getResponse();
@@ -85,7 +84,6 @@ class BaseProductActions extends sfActions
         $response->addMeta('description', $this->product->getMetaDescription(), true);
         
         $this->optionsForm = '';
-        
         if ($this->product->getHasOptions()) {
             $this->optionsForm = new sfsProductOptionsForm($this->product);
         }

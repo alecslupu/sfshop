@@ -1,5 +1,5 @@
 <?php use_helper('Date', 'sfsThumbnail'); ?>
-<?php include_partial('core/container_header', array('caption' => $product->getTitle())) ?>
+<?php include_partial('core/container_header', array('caption' => $product->getTitle(ESC_RAW))) ?>
 <div class="full_details">
 
     <div class="thumbnail">
@@ -15,7 +15,7 @@
             <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
             <b><?php echo __('Description') ?>:</b><br/>
             <?php echo $product->getDescription(ESC_RAW) ?>
+            <div><?php include_component('basket', 'addProductForm', array('product' => $product, 'optionsForm' => $optionsForm)); ?></div>
     </div>
 </div>
-<div><?php include_component('basket', 'addProductForm', array('product' => $product, 'optionsForm' => $optionsForm)); ?></div>
 <?php include_partial('core/container_footer') ?>

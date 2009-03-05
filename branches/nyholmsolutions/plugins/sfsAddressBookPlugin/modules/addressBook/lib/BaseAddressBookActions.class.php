@@ -139,15 +139,19 @@ class BaseAddressBookActions extends sfActions
     */
     public function executeSelect($request)
     {
+        sfLoader::loadHelpers(array('Url', 'Tag'));
+        
         $this->form = new sfsAddressBookSelectForm();
         
         if ($request->isMethod('post')) {
             $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
+                $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('data[address_id]'));
+                
                 if ($address == null || $address->getMemberId() != $this->getUser()->getUserId()) {
                     if ($this->getRequest()->isXmlHttpRequest()) {
-                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_404'))));
+                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_error404'))));
                     }
                     else {
                         $this->forward404();

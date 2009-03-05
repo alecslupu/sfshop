@@ -11,7 +11,7 @@ product_list:
   param: { module: product, action: list }
   
 product_details:
-  url: /:sf_culture/product-details/:path/:id/*
+  url: /:sf_culture/product-details/:id/*
   param: { module: product, action: details }
 
 product_search:
