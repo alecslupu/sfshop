@@ -9,4 +9,8 @@
  */ 
 class TaxType extends PluginTaxType
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

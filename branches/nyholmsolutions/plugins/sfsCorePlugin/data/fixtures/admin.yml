@@ -67,42 +67,42 @@ AdminMenu:
     pos:            2
     is_active:      1
   
-#  AdminMenu_Catalog_CP: 
-#    parent_id:      AdminMenu_Catalog
-#    credential:     superadmin,admin
-#    title:          Categories/Products
-#    route:          catalogAdmin_list
-#    pos:            1
-#    is_active:      1
+  AdminMenu_Catalog_CP: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Categories/Products
+    route:          catalogAdmin_list
+    pos:            1
+    is_active:      1
   AdminMenu_Catalog_Categories: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
     title:          Categories
-    route:          categoryAdmin_list
-    pos:            1
-    is_active:      0
+    route:          categoryAdmin
+    pos:            2
+    is_active:      1
   AdminMenu_Catalog_Brands: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
     title:          Brands
     module:         brandAdmin
     route:          brandAdmin
-    pos:            2
+    pos:            4
     is_active:      1
   AdminMenu_Catalog_Products: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
     title:          Products
-    route:          productAdmin_list
-    pos:            1
-    is_active:      0
+    route:          productAdmin
+    pos:            3
+    is_active:      1
   AdminMenu_Catalog_OptionTypes: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
     title:          Option types
     module:         optionTypeAdmin
     route:          optionTypeAdmin
-    pos:            2
+    pos:            5
     is_active:      1
     
   AdminMenu_Catalog_OptionValues: 
@@ -111,7 +111,7 @@ AdminMenu:
     title:          Option values
     module:         optionValueAdmin
     route:          optionValueAdmin
-    pos:            3
+    pos:            6
     is_active:      1
     
   AdminMenu_MembersOrders_Members: 

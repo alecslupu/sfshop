@@ -9,12 +9,15 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+require_once dirname(__FILE__).'/productAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/productAdminGeneratorHelper.class.php';
+
 /**
  * Base productAdmin actions.
  *
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.productAdmin
- * @author     Dmitry Nesteruk <nesterukd@gmail.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andreas Nyholm
  * @version    SVN: $Id$
  */
 class BaseProductAdminActions extends autoproductAdminActions
@@ -41,24 +44,44 @@ class BaseProductAdminActions extends autoproductAdminActions
         $this->redirect('productAdmin/edit?id=' . $this->getRequestParameter('id'));
     }
     
-    protected function saveProduct($product)
+
+  protected function processForm(sfWebRequest $request, sfForm $form)
+  {
+     $taintedFiles = $request->getFiles($form->getName());
+     if(!$taintedFiles['name']['thumbnail']['uuid']) {
+        unset($taintedFiles['thumbnail']);
+        $form->unsetThumbnail();
+     }
+      
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
     {
-        $product->save();
-        
-        if ($this->getRequest()->hasFile('product[thumbnail]') && $this->getRequest()->getFileError('product[thumbnail]') == 0) {
-            $originalThumbnail = ThumbnailPeer::generate($product->getId(), sfConfig::get('app_product_thumbnails_dir_name'), 'Product');
-            $fileInfo = sfsThumbnailUtil::uploadFile('product[thumbnail]', $originalThumbnail->getStoragePath());
-            
-            if ($fileInfo !== null) {
-                $thumbnailMime = ThumbnailMimePeer::retrieveByMime($fileInfo['mime']);
-                
-                $originalThumbnail->setMimeExtension(str_replace('.', '', $fileInfo['extension']));
-                $originalThumbnail->setMimeId($thumbnailMime->getId());
-                $originalThumbnail->save();
-                
-                sfsThumbnailUtil::convert();
-            }
-        }
+      $this->getUser()->setFlash('notice', $form->getObject()->isNew() ? 'The item was created successfully.' : 'The item was updated successfully.');
+
+      $product = $form->save();
+
+      $this->saveProductSettings($product,$form);
+      $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $product)));
+
+      if ($request->hasParameter('_save_and_add'))
+      {
+        $this->getUser()->setFlash('notice', $this->getUser()->getFlash('notice').' You can add another one below.');
+
+        $this->redirect('@product_new');
+      }
+      else
+      {
+        $this->redirect('@product_edit?id='.$product->getId());
+      }
+    }
+    else
+    {
+      $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.', false);
+    }
+  }
+    
+  protected function saveProductSettings($product,$form)
+    {
         
         $hasOptions = false;
         
@@ -130,7 +153,8 @@ class BaseProductAdminActions extends autoproductAdminActions
         }
     }
     
-    public function executeDelete()
+
+    public function executeDelete(sfWebRequest $request)
     {
         sfLoader::loadHelpers('sfsCategory');
         

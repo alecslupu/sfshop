@@ -1,3 +1,4 @@
+<?php use_helper('Form'); ?>
 <table cellspacing="0" cellpadding="0" class="sf_admin_list" width="100%">
     <thead>
         <tr>
@@ -21,7 +22,7 @@
                         </tr>
                     </thead>
                     <?php foreach ($optionValues[$optionType->getId()] as $optionValue): ?>
-                        <?php $price = '';
+                        <?php $price = 0;
                             $checked = false;
                             $checkedValue = 0;
                             $prefix = '';

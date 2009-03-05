@@ -8,6 +8,8 @@
  * 
  * For the full copyright and license information, please view the LICENSE file.
  */
+require_once dirname(__FILE__).'/categoryAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/categoryAdminGeneratorHelper.class.php';
 
 /**
  * categoryAdmin actions.
@@ -34,7 +36,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
         }
     }
     
-    public function executeDelete()
+    public function executeDelete(sfWebRequest $request)
     {
         sfLoader::loadHelpers('sfsCategory');
         

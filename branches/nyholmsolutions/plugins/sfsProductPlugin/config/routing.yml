@@ -33,9 +33,15 @@ brandAdmin:
 #
 # Product Admin
 #
-productAdmin_list: 
-  url: productAdmin/list
-  param: { module: productAdmin, action: list }
+productAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Product
+    module:               productAdmin
+    prefix_path:          productAdmin
+    column:               id
+    with_wildcard_routes: true
+
 
 #
 # Product Options Admin

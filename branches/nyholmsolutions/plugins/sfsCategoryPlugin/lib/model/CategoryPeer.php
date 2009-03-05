@@ -20,6 +20,7 @@
 class CategoryPeer extends BaseCategoryPeer
 {
     
+    
    /**
     * Gets all avaliable categories with parent_id 0.
     *
@@ -136,7 +137,6 @@ class CategoryPeer extends BaseCategoryPeer
         $category->getChildSeries($categories);
         
         $categories = array_merge($categories, array($category));
-        
         foreach ($categories as $category) {
             $parents = array();
             $ids = array();

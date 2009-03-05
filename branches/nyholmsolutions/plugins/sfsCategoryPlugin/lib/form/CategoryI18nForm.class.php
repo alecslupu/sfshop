@@ -21,5 +21,27 @@ class CategoryI18nForm extends BaseCategoryI18nForm
 {
   public function configure()
   {
+
+      $this->widgetSchema['description'] = new sfWidgetFormTextarea(
+            array(),
+            array(
+              'cols'  => 60,
+              'rows'  => 5
+            )
+        );
+      $this->widgetSchema['meta_keywords'] = new sfWidgetFormTextarea(
+            array(),
+            array(
+              'cols'  => 110,
+              'rows'  => 1
+            )
+        );
+      $this->widgetSchema['meta_description'] = new sfWidgetFormTextarea(
+            array(),
+            array(
+              'cols'  => 110,
+              'rows'  => 1
+            )
+        );      
   }
 }

@@ -11,6 +11,11 @@ class Product extends BaseProduct
 {
     protected $hasOptions = null;
 
+    public function __toString() 
+    {
+        return $this->getTitle();    
+    }
+    
    /**
     * Gets thumbnail object for current product.
     *

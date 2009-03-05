@@ -8,6 +8,8 @@
  * 
  * For the full copyright and license information, please view the LICENSE file.
  */
+require_once dirname(__FILE__).'/categoryAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/categoryAdminGeneratorHelper.class.php';
 
 /**
  * Base categories admin components.
@@ -82,5 +84,7 @@ class BaseCategoryAdminComponents extends sfComponents
             
             $this->categories = $this->currentCategory->getChild($criteria);
         }
+        $this->helper = new categoryAdminGeneratorHelper();
+        $this->component_list = true;
     }
 }

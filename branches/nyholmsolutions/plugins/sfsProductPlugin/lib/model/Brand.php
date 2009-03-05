@@ -9,4 +9,8 @@
  */
 class Brand extends BaseBrand
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

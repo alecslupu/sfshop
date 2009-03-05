@@ -5,8 +5,8 @@
 <?php if (!isset($addedQuantity) || $addedQuantity < $productQuantity || $product->getAllowOutOfStock()): ?>
     <form action="<?php echo url_for('@basket_add'); ?>" method="post" id="form_basket_add_<?php echo $product->getId() ?>" class="form_basket" onsubmit="return false">
       <ul class="main">
-        <?php //echo $form->renderGlobalErrors() ?>
-        <?php echo $form['quantity']->renderRow() ?>
+        <?php echo $form->renderGlobalErrors() ?>
+        <?php //echo $form['quantity']->renderRow() ?>
         <?php if(isset($form['options'])):?>
           <?php foreach($form['options'] as $fieldSchema): ?>
              <?php echo $fieldSchema->renderRow() ?>
