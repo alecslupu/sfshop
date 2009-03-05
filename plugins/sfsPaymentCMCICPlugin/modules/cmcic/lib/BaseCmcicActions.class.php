@@ -77,11 +77,19 @@ class BaseCmcicActions extends sfsPaymentActions
     {		
     	$this->payment = new sfPaymentCIC();
 		$this->bank_response = $this->payment->checkResponse();
-		$isOK = ($this->bank_response['accuseReception'] == sfPaymentCIC::CMCIC_PHP2_MACOK);
+		$isValid = ($this->bank_response['accuseReception'] == sfPaymentCIC::CMCIC_PHP2_MACOK);
 		
-		if($isOK){
-			$orderItem = OrderItemPeer::retrieveById($this->bank_response['reference']);
-			$this->setOrderStatusProcessing($orderItem->getUuid());	
+		$code_retour_accepted = constant('sfPaymentCIC::CODE_RETOUR_ACCEPTED_'.sfConfig::get('sf_environment', 'prod'));
+		$code_retour_denied = constant('sfPaymentCIC::CODE_RETOUR_DENIED_'.sfConfig::get('sf_environment', 'prod'));
+		
+		$orderItem = OrderItemPeer::retrieveById($this->bank_response['reference']);
+						
+		switch($this->bank_response['code-retour']){
+			case $code_retour_accepted:
+				$this->setOrderStatusProcessing($orderItem->getUuid());
+				break;
+			case $code_retour_denied:
+				break;
 		}
 
     	$response = $this->getResponse();
