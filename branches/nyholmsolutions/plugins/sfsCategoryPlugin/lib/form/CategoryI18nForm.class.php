@@ -32,14 +32,14 @@ class CategoryI18nForm extends BaseCategoryI18nForm
       $this->widgetSchema['meta_keywords'] = new sfWidgetFormTextarea(
             array(),
             array(
-              'cols'  => 110,
+              'cols'  => 100,
               'rows'  => 1
             )
         );
       $this->widgetSchema['meta_description'] = new sfWidgetFormTextarea(
             array(),
             array(
-              'cols'  => 110,
+              'cols'  => 100,
               'rows'  => 1
             )
         );      

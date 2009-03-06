@@ -2,7 +2,7 @@
 <?php include_javascripts_for_form($form) ?>
 
 <div class="sf_admin_form">
-  <?php echo form_tag_for($form, '@product') ?>
+  <?php echo form_tag_for($form, '@productAdmin') ?>
     <?php echo $form->renderHiddenFields() ?>
 
     <?php if ($form->hasGlobalErrors()): ?>

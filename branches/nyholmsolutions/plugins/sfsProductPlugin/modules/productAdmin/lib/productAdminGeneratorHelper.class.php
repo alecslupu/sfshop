@@ -10,8 +10,5 @@
  */
 class productAdminGeneratorHelper extends BaseProductAdminGeneratorHelper
 {
-  public function getUrlForAction($action)
-  {
-    return 'list' == $action ? 'product' : 'product_'.$action;
-  }    
+
 }

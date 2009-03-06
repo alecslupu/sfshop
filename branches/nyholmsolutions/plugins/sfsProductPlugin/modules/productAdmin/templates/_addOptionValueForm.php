@@ -1,3 +1,4 @@
+<?php use_helper('Form'); ?>
 <div id="add_option_value" style="display: none"><br/>
     <b><?php echo __('Add new option value') ?></b><br/>
     <?php echo form_tag('optionValueAdmin/create', array(
