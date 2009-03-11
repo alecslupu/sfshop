@@ -24,7 +24,7 @@ class BaseOrderAdminActions extends autoorderAdminActions
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk
+    * @author Dmitry Nesteruk, Andreas Nyholm
     * @access public
     */
     public function executeDetails($request)
@@ -32,10 +32,11 @@ class BaseOrderAdminActions extends autoorderAdminActions
         $this->order = OrderItemPeer::retrieveById($request->getParameter('id'));
         $this->forward404Unless($this->order);
         
-        $addressArray = $this->order->getDeliveryAddress();
-        $this->address = new AddressBook();
-        $this->address->fromArray($addressArray, BasePeer::TYPE_FIELDNAME);
-        
+        $this->deliveryAddress = $this->order->getDeliveryAddress();
+        $this->deliveryService = $this->order->getDeliveryService();
+        $this->paymentService = $this->order->getPaymentService();
+        $this->contactInfo = $this->order->getContactInfo();        
+
         $this->form = new sfsOrderChangeStatusForm($this->order);
         
         if ($request->isMethod('post')) {
