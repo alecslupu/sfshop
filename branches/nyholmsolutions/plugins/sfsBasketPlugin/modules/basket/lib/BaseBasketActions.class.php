@@ -225,7 +225,7 @@ class BaseBasketActions extends sfActions
 
                     $validatorQuantity->setMessage(
                         'max',
-                        str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
+                        str_replace('%max%', $max, $this->getContext()->getI18N()->__($validatorQuantity->getMessage('max')))
                     );
                 }
                 
