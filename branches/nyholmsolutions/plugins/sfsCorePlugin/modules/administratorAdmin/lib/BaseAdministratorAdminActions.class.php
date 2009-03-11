@@ -100,7 +100,7 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
                 $admin->setPassword($password);
                 
                 $this->getContext()->getInstance()->getConfiguration()->loadHelpers('Url');
-                $urlToAdminPanel = url_for('@coreAdmin_login', true);
+                $urlToAdminPanel = url_for('@administratorAdmin_login', true);
                 
                 $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::NEW_ADMIN_ADDED);
                 

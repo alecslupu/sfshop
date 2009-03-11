@@ -27,9 +27,9 @@ generator:
             params:       confirm=Are you sure want reset password for this administrator?
         fields:
           created_at:
-            date_format: dd/mm/yyyy
+            date_format: dd/MM/yyyy
           updated_at:
-            date_format: dd/mm/yyyy
+            date_format: dd/MM/yyyy
       filter:
         class: false
       form:    ~

@@ -25,7 +25,6 @@ coreAdmin_index:
   url: /admin-index
   param: { module: coreAdmin, action: index }
   
-  
 #
 # administratorAdmin
 #

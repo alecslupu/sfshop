@@ -5,7 +5,7 @@ all:
 
 # TODO replace this to preExecute
 index: 
-  credentials: [[ admin, superuser ]]
+  credentials: [[ admin, superadmin ]]
   #credentials: admin
 
 login: 

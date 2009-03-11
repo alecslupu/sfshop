@@ -25,7 +25,6 @@ class BaseInformationActions extends sfActions
         InformationPeer::addPublicCriteria($criteria);
         $this->information = InformationPeer::retrieveById($this->getRequestParameter('id'), $criteria);
         $this->forward404Unless($this->information);
-        $this->description = $this->information->getDescription();
 
         $response = $this->getResponse();
         $response->addMeta('keywords', $this->information->getMetaKeywords(), true);

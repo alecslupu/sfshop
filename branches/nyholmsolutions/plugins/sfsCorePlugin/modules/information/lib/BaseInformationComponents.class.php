@@ -24,9 +24,7 @@ class BaseInformationComponents extends sfComponents
         $criteria = new Criteria();
         InformationPeer::addPublicCriteria($criteria);
         $this->information = InformationPeer::retrieveById($this->id, $criteria);
-        if($this->information)
-            $this->description = $this->information->getDescription();
-        else
+        if(!$this->information)
             return sfView::NONE;
     }
 }
