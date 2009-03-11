@@ -28,8 +28,7 @@ class MemberForm extends BaseMemberForm
                 'first_name'      => new sfWidgetFormInput(),
                 'last_name'       => new sfWidgetFormInput(),
                 'primary_phone'   => new sfWidgetFormInput(),
-                'secondary_phone' => new sfWidgetFormInput(),
-                'is_active'       => new sfWidgetFormInputCheckbox()
+                'secondary_phone' => new sfWidgetFormInput()
              )
         );
         

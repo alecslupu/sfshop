@@ -12,7 +12,7 @@
     </span></span><br/>
     <b><?php echo __('Email') ?></b>: <span id="email"><?php echo $contactInfo['email'] ?></span><br/>
 </div>
-<?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
+<?php if (isset($is_edit_enabled) && $is_edit_enabled ): ?>
 <div id="container_form_member_contact" class="container_info" style="display: none">
     <h3><?php echo __('Edit contact info') ?></h3>
     <div class="container_form">
