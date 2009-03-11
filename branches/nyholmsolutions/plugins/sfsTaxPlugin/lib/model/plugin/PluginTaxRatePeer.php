@@ -35,10 +35,10 @@ class PluginTaxRatePeer extends BaseTaxRatePeer
         $criteria->clearSelectColumns();
         $criteria->addSelectColumn('SUM(' . TaxRatePeer::RATE . ')');
         $criteria->addGroupByColumn(TaxRatePeer::PRIORITY);
-        $rs = TaxRatePeer::doSelectRS($criteria);
+        $stmt = TaxRatePeer::doSelectStmt($criteria);
         $decimalTax = 1.0;
-        while($rs->next()) {
-           $decimalTax = $decimalTax * 1.0 + ($rs->getFloat(1) /100);  
+        while($res = $stmt->fetchColumn(0)) {
+           $decimalTax = $decimalTax * 1.0 + ($res/100);  
         }
         if($returnDecimal)
             return $decimalTax; 
