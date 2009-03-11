@@ -11,5 +11,7 @@ class CountryForm extends BaseCountryForm
 {
   public function configure()
   {
+        $this->embedI18nForAllCultures();
+      
   }
 }

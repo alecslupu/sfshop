@@ -9,6 +9,10 @@
  */ 
 class Thumbnail extends BaseThumbnail
 {
+    public function __toString() {
+        return $this->getUuid();    
+    }
+    
    /**
     * Gets url to thumbnail.
     * 

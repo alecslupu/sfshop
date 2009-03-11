@@ -11,5 +11,12 @@ class TaxTypeForm extends BaseTaxTypeForm
 {
   public function configure()
   {
+      unset( 
+        $this['id'],
+        $this['updated_at'],
+        $this['created_at']
+      );
+      
+      $this->embedI18nForAllCultures();
   }
 }
