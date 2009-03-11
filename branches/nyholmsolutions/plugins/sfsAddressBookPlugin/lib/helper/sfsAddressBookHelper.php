@@ -34,6 +34,7 @@ function format_address($address, $useNl = true, $isFieldsInContainer = false)
         }
         
         $array = array(
+            '%company%'    => $address->getCompany(),
             '%first_name%' => $address->getFirstName(),
             '%last_name%'  => $address->getLastName(),
             '%country%'    => CountryPeer::retrieveByPK($address->getCountryId())->getTitle(),

@@ -99,7 +99,8 @@ class BaseAddressBookActions extends sfActions
                         
                         $data = $address->toArray(BasePeer::TYPE_FIELDNAME);
                         $data['country'] = CountryPeer::retrieveByPK($data['country_id'])->getTitle();
-                        $data['state'] = StatePeer::retrieveByPK($data['state_id'])->getTitle();
+                        if($data['state_id'])
+                            $data['state'] = StatePeer::retrieveByPK($data['state_id'])->getTitle();
                         
                         return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
                     }

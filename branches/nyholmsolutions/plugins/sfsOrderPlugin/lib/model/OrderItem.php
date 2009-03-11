@@ -118,6 +118,7 @@ class OrderItem extends BaseOrderItem
         return array(
             'first_name'  => $this->getDeliveryFirstName(),
             'last_name'   => $this->getDeliveryLastName(),
+            'company'     => $this->getDeliveryCompany(),
             'country_id'  => $this->getDeliveryCountryId(),
             'country'     => $this->getCountryRelatedByDeliveryCountryId(),
             'state'       => $state,

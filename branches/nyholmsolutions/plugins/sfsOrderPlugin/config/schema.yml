@@ -45,6 +45,9 @@ propel:
     billing_last_name: 
       type: VARCHAR
       size: 128
+    billing_company: 
+      type: VARCHAR
+      size: 128
     billing_country_id: 
       type: INTEGER
       required: false
@@ -105,6 +108,9 @@ propel:
       type: VARCHAR
       size: 128
     delivery_last_name: 
+      type: VARCHAR
+      size: 128
+    delivery_company: 
       type: VARCHAR
       size: 128
     delivery_country_id: 

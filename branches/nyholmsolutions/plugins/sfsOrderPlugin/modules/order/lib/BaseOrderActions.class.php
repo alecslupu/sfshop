@@ -78,6 +78,7 @@ class BaseOrderActions extends sfActions
                     
                     $order->setBillingFirstName($billingAddress->getFirstName());
                     $order->setBillingLastName($billingAddress->getLastName());
+                    $order->setBillingCompany($billingAddress->getCompany());
                     $order->setBillingCountryId($billingAddress->getCountryId());
                     $order->setBillingStateId($billingAddress->getStateId());
                     $order->setBillingStateTitle($billingAddress->getStateTitle());
@@ -97,6 +98,7 @@ class BaseOrderActions extends sfActions
       
                     $order->setDeliveryFirstName($deliveryAddress->getFirstName());
                     $order->setDeliveryLastName($deliveryAddress->getLastName());
+                    $order->setDeliveryCompany($deliveryAddress->getCompany());
                     $order->setDeliveryCountryId($deliveryAddress->getCountryId());
                     $order->setDeliveryStateId($deliveryAddress->getStateId());
                     $order->setDeliveryStateTitle($deliveryAddress->getStateTitle());
