@@ -130,12 +130,12 @@ class BaseProductActions extends sfActions
             $this->formSearch->bind($data);
             
             if ($this->formSearch->isValid()) {
-                $queryString = $data['query'];
+                $queryString = trim(mb_strtolower($data['query']));
                 $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
         elseif ($request->hasParameter('is_search')) {
-            $queryString = $this->getUser()->getAttribute('query', '', 'product');
+            $queryString = trim(mb_strtolower($this->getUser()->getAttribute('query', '', 'product')));
             $this->formSearch->setDefault('query', $queryString);
         }
         

@@ -75,7 +75,7 @@ msgid "Are you sure want remove this product from your basket?"
 msgstr "Вы действительно хотите удалить этот продукт с вашей корзины?"
 
 #: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_addProductForm.php:2
-msgid "You already added <span>%quantity%</span> piece of this product"
+msgid "You have <span>%quantity%</span> piece(s) of this product in cart"
 msgstr "Вы уже добавили <span>%quantity%</span> штук этого продукта"
 
 #: D:\sfShop\plugins\sfsBasketPlugin/modules/basket/templates/_addProductForm.php:10

@@ -23,6 +23,48 @@ msgstr "Контакты"
 msgid "Send"
 msgstr "Отправить"
 
+msgid "First name is required"
+msgstr ""
+
+msgid "First name can not be less than 2 characters"
+msgstr ""
+
+msgid "First name can not be more than 255 characters"
+msgstr ""
+
+msgid "Last name is required"
+msgstr ""
+
+msgid "Last name can not be less than 2 characters"
+msgstr ""
+
+msgid "Last name can not be more than 255 characters"
+msgstr ""
+
+msgid "Email is required"
+msgstr ""
+
+msgid "This is not a valid email address"
+msgstr ""
+
+msgid "Subject is required"
+msgstr ""
+
+msgid "Subject can not be less than 5 characters"
+msgstr ""
+
+msgid "Body is required"
+msgstr ""
+
+msgid "Body can not be less than 5 characters"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/error404Success.php:1
 msgid "Page not found"
 msgstr "Страница не найдена"
