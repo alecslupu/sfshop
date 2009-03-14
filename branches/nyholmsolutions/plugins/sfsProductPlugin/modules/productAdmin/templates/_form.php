@@ -1,6 +1,47 @@
 <?php include_stylesheets_for_form($form) ?>
 <?php include_javascripts_for_form($form) ?>
 
+<?php if(sfConfig::get('app_tax_is_enabled',false)): ?>
+<script language="javascript"><!--
+<?php $tax_rates = TaxTypePeer::getTaxRatesArray(); ?>
+var tax_rates = new Array();
+<?php for($i=0; $i< count($tax_rates); $i++): ?>
+tax_rates["<?php echo $i ?>"] = "<?php echo $tax_rates[$i] ?>";
+<?php endfor; ?>
+
+function doRound(x, places) {
+  return Math.round(x * Math.pow(10, places)) / Math.pow(10, places);
+}
+
+function getTaxRate() {
+  var selected = document.getElementById('product_tax_type_id').selectedIndex;
+  if(selected >= 0)
+      return tax_rates[selected];
+  return 0;
+}
+
+function updateNetPrice() 
+{
+    var taxRate = getTaxRate();
+    var amount = document.getElementById('product_price_gross').value;
+    if (taxRate > 0) {
+        amount = amount / ((taxRate/100)+1);
+    }
+    document.getElementById('product_price').value = doRound(amount, 5);
+}
+
+function updateGrossPrice() 
+{
+    var taxRate = getTaxRate();
+    var amount = document.getElementById('product_price').value;
+    if (taxRate > 0) {
+        amount = amount * ((taxRate/100)+1);
+    }
+    document.getElementById('product_price_gross').value = doRound(amount, 5);
+}
+//--></script>
+<?php endif;?>
+
 <div class="sf_admin_form">
   <?php echo form_tag_for($form, '@productAdmin') ?>
     <?php echo $form->renderHiddenFields() ?>

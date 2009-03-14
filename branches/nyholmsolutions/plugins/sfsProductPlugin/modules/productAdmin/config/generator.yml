@@ -12,7 +12,8 @@ generator:
 
     config:
       actions: ~
-      filter:  ~
+      filter: 
+        display:          [ brand_id, is_active, product2_category_list, quantity, tax_type_id, price, allow_out_of_stock ]
       form:    ~
       new:     ~
       fields:

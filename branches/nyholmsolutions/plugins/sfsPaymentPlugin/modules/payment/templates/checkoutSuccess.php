@@ -16,7 +16,7 @@
                 <li><?php echo $radios[$i]['input'] ?></li>
             <?php $i++; endforeach; ?>
         </ul>
-        <table cellspacing="0" cellpadding="0" width="100%" style="clear: both">
+        <table cellspacing="0" cellpadding="0" width="100%" style="clear: right; margin-top:15px;">
             <tr>
                 <td><?php echo button_to(__('Back'), '@delivery_checkout', array('class' => 'button')) ?></td>
                 <td align="right"><input type="submit" value="<?php echo __('Continue') ?>" class="button"></td>

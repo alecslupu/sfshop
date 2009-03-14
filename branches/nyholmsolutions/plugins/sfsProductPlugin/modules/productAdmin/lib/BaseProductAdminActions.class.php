@@ -38,19 +38,10 @@ class BaseProductAdminActions extends autoproductAdminActions
         }
     }
     
-    public function executeDeleteThumbnail()
-    {
-        ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($this->getRequestParameter('id'), 'Product');
-        $this->redirect('@productAdmin_edit?id=' . $this->getRequestParameter('id'));
-    }
+
 
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
-     $taintedFiles = $request->getFiles($form->getName());
-     if(!$taintedFiles['name']['thumbnail']['uuid']) {
-        unset($taintedFiles['thumbnail']);
-        $form->unsetThumbnail();
-     }
       
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
