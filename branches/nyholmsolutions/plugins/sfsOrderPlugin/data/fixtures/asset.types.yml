@@ -1,8 +1,0 @@
-#
-# Asset types
-#
-AssetType:
-  AssetType_order_status:
-    name:          order_status
-    model:         OrderStatus
-    has_i18n:      1

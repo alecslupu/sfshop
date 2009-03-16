@@ -1,3 +1,0 @@
-all: 
-  delivery:
-    icons_dir: services/delivery
