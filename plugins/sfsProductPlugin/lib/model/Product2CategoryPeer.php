@@ -21,6 +21,7 @@ class Product2CategoryPeer extends BaseProduct2CategoryPeer
     {
         $criteria = new Criteria();
         $criteria->add(self::CATEGORY_ID, $categoriesIds, Criteria::IN);
+        $criteria->setDistinct();
         $products2categories = self::doSelect($criteria);
         
         $productIds = array();

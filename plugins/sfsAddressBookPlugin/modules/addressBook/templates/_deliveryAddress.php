@@ -7,7 +7,7 @@
         </span>
     <?php endif; ?>
     <br/><br/>
-    <?php echo format_address($address, true, true) ?>
+    <?php echo format_address($sf_data->getRaw('address'), true, true) ?>
 </div>
 <?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
     <div id="container_form_delivery_address" style="display: none">

@@ -28,7 +28,7 @@ class BaseAddressBookComponents extends sfComponents
     public function executeInputForm()
     {
         $response = $this->getResponse();
-        $response->addJavaScript('/js/sfsForm.js');
+        $response->addJavaScript(sfConfig::get('app_sfshop_core_js_dir').'sfsForm.js');
         
         if (isset($this->address)) {
             $address = $this->address;
@@ -64,7 +64,7 @@ class BaseAddressBookComponents extends sfComponents
     public function executeSelectForm()
     {
         $response = $this->getResponse();
-        $response->addJavaScript('/js/sfsForm.js');
+        $response->addJavaScript(sfConfig::get('app_sfshop_core_js_dir').'sfsForm.js');
         
         $this->form = new sfsAddressBookSelectForm();
         
@@ -93,8 +93,10 @@ class BaseAddressBookComponents extends sfComponents
     */
     public function executeDeliveryAddress()
     {
-        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
-        $this->address = AddressBookPeer::retrieveById($addressId);
+        if(!isset($this->address)) {
+            $addressId = $this->getUser()->getAttribute('address_id', null, 'order/delivery');
+            $this->address = AddressBookPeer::retrieveById($addressId);
+      }
     }
     
    /**
@@ -107,7 +109,9 @@ class BaseAddressBookComponents extends sfComponents
     */
     public function executeBillingAddress()
     {
-        $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
-        $this->address = AddressBookPeer::retrieveById($addressId);
+        if(!isset($this->address)) {
+            $addressId = $this->getUser()->getAttribute('address_id', null, 'order/billing');
+            $this->address = AddressBookPeer::retrieveById($addressId);
+        }
     }
 }

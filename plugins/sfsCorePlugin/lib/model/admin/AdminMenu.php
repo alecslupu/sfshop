@@ -9,4 +9,7 @@
  */ 
 class AdminMenu extends BaseAdminMenu
 {
+    public function __toString() {
+        return $this->getTitle();
+    }
 }

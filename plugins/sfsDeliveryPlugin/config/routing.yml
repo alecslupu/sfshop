@@ -3,7 +3,7 @@
 #
 
 delivery_checkout:
-  url: /checkout-delivery
+  url: /:sf_culture/checkout-delivery
   param: { module: delivery, action: checkout }
   
 delivery_updateSelectForm:

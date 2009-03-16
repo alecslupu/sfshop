@@ -37,7 +37,7 @@ class BaseCategoryComponents extends sfComponents
         
         $parentTree = array();
         
-        if ($request->hasParameter('path')) {
+        if ($request->hasParameter('path') && $request->getParameter('path')) {
             $this->currentCategoryId = get_current_category_id();
             
             $currentCategory = CategoryPeer::retrieveByPK($this->currentCategoryId);

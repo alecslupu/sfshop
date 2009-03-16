@@ -1,4 +1,4 @@
-session: 
+propel: 
   _attributes: 
     defaultIdMethod: native
     noXsd: false
@@ -16,7 +16,7 @@ session:
       type: LONGVARCHAR
       required: true
     ses_time: 
-      type: TIMESTAMP
+      type: BIGINT
 #      required: true
 #      default: 0
 #    max_lifetime: 

@@ -21,5 +21,18 @@ class CategoryForm extends BaseCategoryForm
 {
   public function configure()
   {
+      unset(
+        $this['id'],
+        $this['created_at'],
+        $this['updated_at'],
+        $this['path'],
+        $this['has_child'],
+        $this['is_parent_active'],
+        $this['is_deleted'],
+        $this['is_locked']
+        );
+      
+     $this->embedI18nForAllCultures(); 
+      
   }
 }

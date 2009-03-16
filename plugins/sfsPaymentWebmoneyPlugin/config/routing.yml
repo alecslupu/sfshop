@@ -2,17 +2,17 @@
 # Payment
 #
 payment_webmoney: 
-  url: /payment-webmoney/:order_item_id
+  url: /:sf_culture/payment-webmoney/:order_item_id
   param: { module: webmoney, action: index }
 
 payment_webmoneyCheckCharge: 
-  url: /payment-webmoney-check-charge/*
+  url: /:sf_culture/payment-webmoney-check-charge/*
   param: { module: webmoney, action: checkCharge }
 
 payment_webmoneyCharged: 
-  url: /payment-webmoney-charged/*
+  url: /:sf_culture/payment-webmoney-charged/*
   param: { module: webmoney, action: charged }
 
 payment_webmoneyChargeFailed: 
-  url: /payment-webmoney-charge-failed/*
+  url: /:sf_culture/payment-webmoney-charge-failed/*
   param: { module: webmoney, action: chargeFailed }

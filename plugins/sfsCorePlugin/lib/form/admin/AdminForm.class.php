@@ -24,7 +24,7 @@ class AdminForm extends BaseAdminForm
         $arrayCredentials = array(
             'superadmin' => 'superadmin', 
             'admin'      => 'admin'
-        );
+          );
         
         $this->setWidgets(array(
             'id'          => new sfWidgetFormInputHidden(),

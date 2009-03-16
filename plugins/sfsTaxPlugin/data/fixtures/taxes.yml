@@ -1,0 +1,99 @@
+#
+# TaxType
+#
+TaxType:
+  TaxType_1:
+    is_active: 1
+    name: VAT22
+
+TaxTypeI18n:
+# English
+  TaxTypeI18n_EN_1:
+    id:               TaxType_1
+    culture:          en
+    title:            Vat 22%
+    description:      Vat 22% for products and services
+# Finnish
+  TaxTypeI18n_FI_1:
+    id:               TaxType_1
+    culture:          fi
+    title:            ALV 22%
+    description:      ALV 22%
+# Swedish
+  TaxTypeI18n_SV_1:
+    id:               TaxType_1
+    culture:          sv
+    title:            Moms 22%
+    description:      Moms 22%
+    
+#
+# TaxGroup
+#
+TaxGroup:
+  TaxGroup_1:
+    name: Business inside EU country
+
+TaxGroupI18n:
+# English
+  TaxGroupI18n_EN_1:
+    id:               TaxGroup_1
+    culture:          en
+    title:            Business inside EU country
+    description:      For customers inside same EU-country as shop
+# Finnish
+  TaxGroupI18n_FI_1:
+    id:               TaxGroup_1
+    culture:          fi
+    title:            Suomalaiset yksityiset ja yritykset
+    description:      Suomalaiset yksityiset ja yritykset
+# Swedish
+  TaxGroupI18n_SV_1:
+    id:               TaxGroup_1
+    culture:          sv
+    title:            Finska privatpersoner och företag
+    description:      För kunder inom samma EU-land som webshoppen
+
+
+#
+# TaxRate
+#
+TaxRate:
+  TaxRate_1:
+    is_active: 1
+    priority: 0
+    rate: 22
+    name: VAT22
+    tax_type_id: TaxType_1
+    tax_group_id: TaxGroup_1
+
+TaxRateI18n:
+# English
+  TaxRateI18n_EN_1:
+    id:               TaxRate_1
+    culture:          en
+    title:            Vat 22%
+    description:      Vat 22% for products and services
+# Finnish
+  TaxRateI18n_FI_1:
+    id:               TaxRate_1
+    culture:          fi
+    title:            ALV 22%
+    description:      ALV 22%
+# Swedish
+  TaxRateI18n_SV_1:
+    id:               TaxRate_1
+    culture:          sv
+    title:            Moms 22%
+    description:      Moms 22%
+
+
+#
+# Location2TaxGroup
+#
+Location2TaxGroup:
+  Location2TaxGroup_1:
+    country_id: NULL
+#    country_id: Country_FI
+    state_id: NULL
+    tax_group_id: TaxGroup_1
+        

@@ -358,7 +358,7 @@ class BaseMemberActions extends sfActions
                         $mail->setBodyParams(
                             array(
                                 'email'                => $member->getEmail(),
-                                'link_to_confirm_page' => $request->getUriPrefix() . $urlToConfirm,
+                                'link_to_confirm_page' => $urlToConfirm,
                                 'confirm_code'         => $confirmCode
                             )
                         );

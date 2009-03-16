@@ -3,7 +3,10 @@
 <?php else: ?>
     <?php
         list($product2category) = $product->getProduct2CategorysJoinCategory(); 
-        $path = $product2category->getCategory()->getPath();
+        if($product2category)
+           $path = $product2category->getCategory()->getPath();
+        else
+           $path = '';
     ?>
 <?php endif; ?>
 
@@ -20,7 +23,7 @@
                 $thumbnail, 
                 $product->getTitle()
             ), 
-            '@product_details?path=' . $path . '&id=' . $product->getId()
+            '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId()
         ); ?>
     </div>
     <div class="details">
@@ -29,13 +32,13 @@
             '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId(), 
             array('class' => 'product_title')
         ); ?><br/>
-        <?php echo $product->getDescriptionShort(); ?><br/>
-        <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getPrice()); ?></span><br/>
-        <div style="line-height: 37px">
+        <p><?php echo $product->getDescriptionShort(); ?></p>
+        <strong><?php echo __('Price') ?>:</strong> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
+        <div >
             <?php if (!$product->getHasOptions()): ?>
                 <?php include_component('basket', 'addProductForm', array('product' => $product, 'isShortForm' => true)) ?>
             <?php else: ?>
-                <b><?php echo link_to(__('Add to cart'), '@product_details?path=' . $sf_request->getParameter('path') . '&id=' . $product->getId(), array('class' => 'add_to_cart')) ?></b>
+                <?php echo link_to(__('Add to cart'), '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId(), array('class' => 'add_to_cart')) ?>
            <?php endif; ?>
         </div>
     </div>

@@ -11,5 +11,7 @@ class MenuForm extends BaseMenuForm
 {
   public function configure()
   {
+        $this->embedI18nForAllCultures();
+      
   }
 }

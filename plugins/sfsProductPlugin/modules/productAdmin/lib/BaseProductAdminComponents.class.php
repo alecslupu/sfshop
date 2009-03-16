@@ -9,12 +9,15 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+require_once dirname(__FILE__).'/productAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/productAdminGeneratorHelper.class.php';
+
 /**
  * Base productAdmin components.
  *
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.productAdmin
- * @author     Dmitry Nesteruk <nesterukd@gmail.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andreas Nyholm
  * @version    SVN: $Id$
  */
 class BaseProductAdminComponents extends sfComponents 
@@ -47,6 +50,8 @@ class BaseProductAdminComponents extends sfComponents
             $this->pager->setPage($this->getRequestParameter('page', 1));
             $this->pager->init();
         }
+        $this->helper = new productAdminGeneratorHelper();
+        $this->component_list = true;
     }
     
     public function executeEditOptionsListForm()

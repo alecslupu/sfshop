@@ -97,7 +97,7 @@ propel:
       required: false
     uuid: 
       type: VARCHAR
-      size: 32
+      size: 64
       required: true
 #      index: unique
     asset_type_model: 

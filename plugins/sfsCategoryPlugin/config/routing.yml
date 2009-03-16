@@ -1,6 +1,13 @@
 #
 # Category Admin
 #
-categoryAdmin_list: 
-  url: /categoryAdmin/list/*
-  param: { module: categoryAdmin, action: list }
+
+categoryAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Category
+    module:               categoryAdmin
+    prefix_path:          categoryAdmin
+    column:               id
+    with_wildcard_routes: true
+  

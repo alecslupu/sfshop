@@ -71,13 +71,12 @@ class BaseProductActions extends sfActions
     * @author Dmitry Nesteruk
     * @access public
     */
-    public function executeDetails()
+    public function executeDetails($request)
     {
         sfLoader::loadHelpers('sfsCurrency');
-        
         $criteria = new Criteria();
         ProductPeer::addPublicCriteria($criteria);
-        $this->product = ProductPeer::retrieveById($this->getRequestParameter('id'), $criteria, true);
+        $this->product = ProductPeer::retrieveById($request->getParameter('id'), $criteria, true);
         $this->forward404Unless($this->product);
         
         $response = $this->getResponse();
@@ -85,7 +84,6 @@ class BaseProductActions extends sfActions
         $response->addMeta('description', $this->product->getMetaDescription(), true);
         
         $this->optionsForm = '';
-        
         if ($this->product->getHasOptions()) {
             $this->optionsForm = new sfsProductOptionsForm($this->product);
         }
@@ -132,12 +130,12 @@ class BaseProductActions extends sfActions
             $this->formSearch->bind($data);
             
             if ($this->formSearch->isValid()) {
-                $queryString = $data['query'];
+                $queryString = trim(mb_strtolower($data['query']));
                 $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
         elseif ($request->hasParameter('is_search')) {
-            $queryString = $this->getUser()->getAttribute('query', '', 'product');
+            $queryString = trim(mb_strtolower($this->getUser()->getAttribute('query', '', 'product')));
             $this->formSearch->setDefault('query', $queryString);
         }
         

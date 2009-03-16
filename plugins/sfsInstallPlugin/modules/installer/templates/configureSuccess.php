@@ -5,7 +5,7 @@
         <table cellspacing="0" cellpadding="0">
             <?php foreach ($errors as $e): ?>
                 <tr><td>
-                    <?php echo image_tag('cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
+                    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
                     <?php echo is_a($e, 'Exception') ? $e->getMessage() : $e ?>
                 </td></tr>
             <?php endforeach; ?>
@@ -27,7 +27,7 @@
 </div>
 <br/>
 <div id="loader" style="display: none">
-    <?php echo image_tag('loader.gif', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
+    <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'loader.gif', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
     <span id="loading_sql"><?php echo __('loading sql') ?>...</span>
     <span id="loading_data" style="display: none"><?php echo __('loading data') ?>...</span>
 </div>

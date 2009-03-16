@@ -99,7 +99,8 @@ class BaseAddressBookActions extends sfActions
                         
                         $data = $address->toArray(BasePeer::TYPE_FIELDNAME);
                         $data['country'] = CountryPeer::retrieveByPK($data['country_id'])->getTitle();
-                        $data['state'] = StatePeer::retrieveByPK($data['state_id'])->getTitle();
+                        if($data['state_id'])
+                            $data['state'] = StatePeer::retrieveByPK($data['state_id'])->getTitle();
                         
                         return $this->renderText(sfsJSONPeer::createResponseSuccess($data));
                     }
@@ -139,18 +140,19 @@ class BaseAddressBookActions extends sfActions
     */
     public function executeSelect($request)
     {
+        sfLoader::loadHelpers(array('Url', 'Tag'));
+        
         $this->form = new sfsAddressBookSelectForm();
         
         if ($request->isMethod('post')) {
             $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
-                
                 $address = AddressBookPeer::retrieveByPK($this->getRequestParameter('data[address_id]'));
                 
-                if ($address == null) {
+                if ($address == null || $address->getMemberId() != $this->getUser()->getUserId()) {
                     if ($this->getRequest()->isXmlHttpRequest()) {
-                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_404'))));
+                        $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => url_for('@core_error404'))));
                     }
                     else {
                         $this->forward404();
@@ -159,6 +161,8 @@ class BaseAddressBookActions extends sfActions
                 
                 $this->getUser()->setAttribute('address_id', $address->getId(), 'order/delivery');
                 $this->getUser()->setAttribute('address_id', $address->getId(), 'order/billing');
+                if($address->getTaxGroupId())
+                    $this->getUser()->setAttribute('tax_group_id', $address->getTaxGroupId(), 'order/tax');
                 
                 if ($this->getRequest()->isXmlHttpRequest()) {
                     $this->renderText(sfsJSONPeer::createResponseSuccess(array('ok' => true)));
@@ -190,7 +194,9 @@ class BaseAddressBookActions extends sfActions
     {
         if ($this->hasRequestParameter('id')) {
             $address = AddressBookPeer::retrieveByPk($this->getRequestParameter('id'));
-            $this->forward404Unless($address);
+            if ($address == null || $address->getMemberId() != $this->getUser()->getUserId()) {
+                $this->forward404();
+            }
             $address->delete();
         }
         

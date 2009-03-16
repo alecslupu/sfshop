@@ -3,51 +3,51 @@
 #
 
 member_registration:
-  url: /registration
+  url: /:sf_culture/registration
   param: { module: member, action: registration }
 
 member_forgotPasswordStepOne:
-  url: /forgot-password
+  url: /:sf_culture/forgot-password
   param: { module: member, action: forgotPasswordStepOne }
 
 member_forgotPasswordStepTwo:
-  url: /forgot-password-step-two
+  url: /:sf_culture/forgot-password-step-two
   param: { module: member, action: forgotPasswordStepTwo }
 
 member_login: 
-  url: /login
+  url: /:sf_culture/login
   param: { module: member, action: login }
 
 member_logout:
-  url: /logout
+  url: /:sf_culture/logout
   param: { module: member, action: logout }
 
 member_myProfile:
-  url: /my-profile
+  url: /:sf_culture/my-profile
   param: { module: member, action: myProfile }
 
 member_editProfile:
-  url: /edit-profile
+  url: /:sf_culture/edit-profile
   param: { module: member, action: editProfile }
 
 member_changePassword:
-  url: /change-password
+  url: /:sf_culture/change-password
   param: { module: member, action: changePassword }
 
 member_confirmRegistration:
-  url: /confirm-registration/*
+  url: /:sf_culture/confirm-registration/*
   param: { module: member, action: confirmEmail, confirm: 'registration' }
   
 member_confirmNewEmail:
-  url: /confirm-new-email/*
+  url: /:sf_culture/confirm-new-email/*
   param: { module: member, action: confirmEmail, confirm: 'newEmail' }
   
 member_changePassword:
-  url: /change-password
+  url: /:sf_culture/change-password
   param: { module: member, action: changePassword }
 
 member_editContactInfo:
-  url: /edit-contact-info
+  url: /:sf_culture/edit-contact-info
   param: { module: member, action: editContactInfo }
 
 #

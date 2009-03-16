@@ -1,5 +1,5 @@
-<?php if (isset($optionsValues)): ?><br/>
-    <?php foreach ($optionsValues as $value): ?>
-        <?php echo $value->getOptionType()->getTitle() ?>: <?php echo $value->getTitle() ?><br/>
+<?php if (isset($itemOptions)): ?><br/>
+    <?php foreach ($itemOptions as $itemOption): ?>
+        <?php echo $itemOption ?><br/>
     <?php endforeach; ?>
 <?php endif; ?>

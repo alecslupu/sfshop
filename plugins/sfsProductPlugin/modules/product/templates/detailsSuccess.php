@@ -1,5 +1,5 @@
 <?php use_helper('Date', 'sfsThumbnail'); ?>
-<?php include_partial('core/container_header', array('caption' => $product->getTitle())) ?>
+<?php include_partial('core/container_header', array('caption' => $product->getTitle(ESC_RAW))) ?>
 <div class="full_details">
 
     <div class="thumbnail">
@@ -10,12 +10,11 @@
         ?>
     </div>
     <div class="details">
-            <b><?php echo $product->getTitle() ?></b><br/>
+            <span class="product_title"><?php echo $product->getTitle() ?></span><br/>
+            <?php echo $product->getDescription(ESC_RAW) ?><br/>
             <?php include_partial('brand/product_brand', array('product' => $product)) ?><br/>
-            <b><?php echo __('Price') ?>:</b> <span class="price"><?php echo format_currency($product->getPrice()); ?></span><br/>
-            <b><?php echo __('Description') ?>:</b><br/>
-            <?php echo $product->getDescription(ESC_RAW) ?>
+            <strong><?php echo __('Price') ?>:</strong> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
+            <div><?php include_component('basket', 'addProductForm', array('product' => $product, 'optionsForm' => $optionsForm)); ?></div>
     </div>
 </div>
-<div><?php include_component('basket', 'addProductForm', array('product' => $product, 'optionsForm' => $optionsForm)); ?></div>
 <?php include_partial('core/container_footer') ?>

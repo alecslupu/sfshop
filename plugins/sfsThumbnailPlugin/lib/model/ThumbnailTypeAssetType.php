@@ -9,4 +9,7 @@
  */ 
 class ThumbnailTypeAssetType extends BaseThumbnailTypeAssetType
 {
+    public function __toString() {
+        return $this->getThumbnailTypeName();    
+    }
 }

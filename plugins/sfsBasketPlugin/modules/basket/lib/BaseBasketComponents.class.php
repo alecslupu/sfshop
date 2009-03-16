@@ -30,8 +30,8 @@ class BaseBasketComponents extends sfComponents
     public function executeAddProductForm()
     {
         $response = $this->getResponse();
-        $response->addJavaScript('/js/sfsForm.js');
-        $response->addJavaScript('/js/sfsBasketAddProductForm.js');
+        $response->addJavaScript(sfConfig::get('app_sfshop_core_js_dir').'sfsForm.js');
+        $response->addJavaScript(sfConfig::get('app_sfshop_core_js_dir').'sfsBasketAddProductForm.js');
         
         if ($this->isShortForm) {
             $this->form = new sfsBasketAddProductShortForm();

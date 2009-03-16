@@ -21,6 +21,11 @@ class Category extends BaseCategory
 {
     protected $parentTreeArray = array();
     
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+    
     /**
      * Gets thumbnail object for category.
      * 
@@ -146,6 +151,7 @@ class Category extends BaseCategory
         if ($this->isNew()) {
             if ($this->getParentId() == null) {
                 $this->setIsParentActive(1);
+                $this->setPath(null);
             } else {
                 $parent = CategoryPeer::retrieveById($this->getParentId());
                 $this->setIsParentActive($parent->getIsActive() && $parent->getIsParentActive() ? 1 : 0);

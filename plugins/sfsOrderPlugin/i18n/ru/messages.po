@@ -122,6 +122,15 @@ msgstr "Сдедующая"
 msgid "Last"
 msgstr "Последняя"
 
+msgid "Order date"
+msgstr ""
+
+msgid "Payment date"
+msgstr ""
+
+msgid "Delivery date"
+msgstr ""
+
 #~ msgid "Payment"
 #~ msgstr "Оплата"
 

@@ -9,12 +9,15 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
+require_once dirname(__FILE__).'/productAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/productAdminGeneratorHelper.class.php';
+
 /**
  * Base productAdmin actions.
  *
  * @package    plugins.sfsProductPlugin
  * @subpackage modules.productAdmin
- * @author     Dmitry Nesteruk <nesterukd@gmail.com>
+ * @author     Dmitry Nesteruk <nesterukd@gmail.com>, Andreas Nyholm
  * @version    SVN: $Id$
  */
 class BaseProductAdminActions extends autoproductAdminActions
@@ -35,30 +38,40 @@ class BaseProductAdminActions extends autoproductAdminActions
         }
     }
     
-    public function executeDeleteThumbnail()
+
+
+  protected function processForm(sfWebRequest $request, sfForm $form)
+  {
+      
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
     {
-        ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($this->getRequestParameter('id'), 'Product');
-        $this->redirect('productAdmin/edit?id=' . $this->getRequestParameter('id'));
-    }
-    
-    protected function saveProduct($product)
-    {
-        $product->save();
+      $notice = $form->getObject()->isNew() ? 'The item was created successfully.' : 'The item was updated successfully.';
         
-        if ($this->getRequest()->hasFile('product[thumbnail]') && $this->getRequest()->getFileError('product[thumbnail]') == 0) {
-            $originalThumbnail = ThumbnailPeer::generate($product->getId(), sfConfig::get('app_product_thumbnails_dir_name'), 'Product');
-            $fileInfo = sfsThumbnailUtil::uploadFile('product[thumbnail]', $originalThumbnail->getStoragePath());
-            
-            if ($fileInfo !== null) {
-                $thumbnailMime = ThumbnailMimePeer::retrieveByMime($fileInfo['mime']);
-                
-                $originalThumbnail->setMimeExtension(str_replace('.', '', $fileInfo['extension']));
-                $originalThumbnail->setMimeId($thumbnailMime->getId());
-                $originalThumbnail->save();
-                
-                sfsThumbnailUtil::convert();
-            }
-        }
+      $product = $form->save();
+
+      $this->saveProductSettings($product,$form);
+      $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $product)));
+
+      if ($request->hasParameter('_save_and_add'))
+      {
+        $this->getUser()->setFlash('notice', $notice.' You can add another one below.');
+        $this->redirect('@productAdmin_new');
+      }
+      else
+      {
+        $this->getUser()->setFlash('notice', $notice);
+        $this->redirect('@productAdmin_edit?id='.$product->getId());
+      }
+    }
+    else
+    {
+      $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.', false);
+    }
+  }
+    
+    protected function saveProductSettings($product,$form)
+    {
         
         $hasOptions = false;
         
@@ -92,56 +105,10 @@ class BaseProductAdminActions extends autoproductAdminActions
         $product->setHasOptions($hasOptions);
         $product->save();
     }
-    
-    public function handlePost($type)
+ 
+    public function executeDelete(sfWebRequest $request)
     {
-        sfLoader::loadHelpers('sfsCategory');
-        
-        $this->updateProductFromRequest();
-        
-        try
-        {
-            $this->saveProduct($this->product);
-            $this->clearFrontendCache();
-        }
-        catch (PropelException $e)
-        {
-            if ( $type == 'edit' ) {
-                $this->getRequest()->setError('edit', 'Could not save the edited Products.');
-            }
-            else {
-                $this->getRequest()->setError('create', 'Could not save the created Products.');
-            }
-            
-            return $this->forward('catalogAdmin', 'list');
-        }
-        
-        $this->getUser()->setFlash('notice', 'Your modifications have been saved');
-        
-        if ($this->getRequestParameter('save_and_add'))
-        {
-            return $this->redirect('productAdmin/create');
-        }
-        else
-        {
-            list($product2Category) = $this->product->getProduct2CategorysJoinCategory();
-            $path = $product2Category->getCategory()->getPath();
-            return $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
-        }
-    }
-    
-    public function executeDelete()
-    {
-        sfLoader::loadHelpers('sfsCategory');
-        
-        $product = ProductPeer::retrieveByPK($this->getRequestParameter('id'));
-        $this->forward404Unless($product);
-        
-        $this->deleteProduct($product);
-        
-        list($product2Category) = $product->getProduct2CategorysJoinCategory();
-        
-        $path = $product2Category->getCategory()->getPath();
-        $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
+        ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($this->getRoute()->getObject()->getId(), 'Product');
+        parent::executeDelete($request);
     }
 }

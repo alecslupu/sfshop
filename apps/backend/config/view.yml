@@ -9,9 +9,9 @@ default:
     #language:     en
     robots:       index, follow
 
-  stylesheets:    [ main ]
+  stylesheets:    [ %APP_SFSHOP_ADMIN_CSS_DIR%main ]
 
-  javascripts:    [ ../../js/prototype/prototype, functions ]
+  javascripts:    [ ../../js/prototype/prototype, %APP_SFSHOP_ADMIN_JS_DIR%functions ]
 
   has_layout:     on
   layout:         layout

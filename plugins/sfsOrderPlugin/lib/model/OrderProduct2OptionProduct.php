@@ -9,4 +9,8 @@
  */ 
 class OrderProduct2OptionProduct extends BaseOrderProduct2OptionProduct
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

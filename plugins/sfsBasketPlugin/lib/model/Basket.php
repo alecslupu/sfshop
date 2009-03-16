@@ -47,12 +47,35 @@ class Basket extends BaseBasket
         
         if ($this->hasProducts()) {
             foreach ($this->getBasketProductsJoinProduct() as $basketProduct) {
-                $price = $price + $basketProduct->getPrice() * $basketProduct->getQuantity();
+                $price = $price + $basketProduct->getTotalPrice();
             }
         }
         
         return $price;
     }
+    
+   /**
+    * Calculates sum of all products + delivery and payment price.
+    *
+    * @param  void
+    * @return string
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */
+    public function getTotalPriceWithDeliveryPriceAndPaymentPrice()
+    {
+        $price = 0;
+        
+        if ($this->hasProducts()) {
+            foreach ($this->getBasketProductsJoinProduct() as $basketProduct) {
+                $price = $price + $basketProduct->getTotalPrice();
+            }
+        }
+        $price = $price + sfContext::getInstance()->getUser()->getAttribute('price', 0, 'order/delivery') + sfContext::getInstance()->getUser()->getAttribute('tax', 0, 'order/delivery') + sfContext::getInstance()->getUser()->getAttribute('price', 0, 'order/payment') + sfContext::getInstance()->getUser()->getAttribute('tax', 0, 'order/payment');
+        return $price;
+    }
+    
+    
     
    /**
     * Checks on exist and have enough quantity all added product to basket.
@@ -75,7 +98,7 @@ class Basket extends BaseBasket
                     $basketProduct->delete();
                 }
                 else if($product->getQuantity() < $basketProduct->getQuantity()) {
-                    if(!$product->getAllowNegativeQuantity())
+                    if(!$product->getAllowOutOfStock())
                         $this->unavailabilityProducts['insufficiently'] = $product->getId();
                 }
             }

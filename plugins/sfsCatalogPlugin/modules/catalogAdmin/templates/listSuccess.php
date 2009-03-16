@@ -12,7 +12,7 @@
     <table cellspacing="0" class="sf_admin_list">
         <thead>
             <tr>
-                <?php include_partial('productAdmin/list_th_tabular') ?>
+                <?php include_partial('productAdmin/list_th_tabular', array('sort' => $sort)) ?>
                <th id="sf_admin_list_th_sf_actions"><?php echo __('Actions') ?></th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
     </table>
     
     <ul class="sf_admin_actions">
-        <li><?php echo button_to(__('Create product'), 'productAdmin/create' . $path, array('class' => 'sf_admin_action_create')) ?></li>
-        <li>&nbsp;<?php echo button_to(__('Create category'), 'categoryAdmin/create' . $path, array('class' => 'sf_admin_action_create')) ?></li>
+        <li><?php echo button_to(__('Create product'), 'productAdmin/new' . $path, array('class' => 'sf_admin_action_create')) ?></li>
+        <li>&nbsp;<?php echo button_to(__('Create category'), 'categoryAdmin/new' . $path, array('class' => 'sf_admin_action_create')) ?></li>
     </ul>
 </div>

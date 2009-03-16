@@ -3,11 +3,11 @@
 #
 
 payment_checkout:
-  url: /checkout-payment
+  url: /:sf_culture/checkout-payment
   param: { module: payment, action: checkout }
 
 payment_chargeFailed:
-  url: /charge-failed
+  url: /:sf_culture/charge-failed
   param: { module: payment, action: chargeFailed }
 
 #

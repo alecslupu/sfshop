@@ -24,7 +24,7 @@
                     <ul class="methods_list">
                         <li class="label"><?php echo $radios[$i]['label'] ?></li>
                         <li class="price"><?php echo format_currency($method['price']) ?></li>
-                        <li><?php echo $radios[$i]['input'] ?>
+                        <li><?php echo $radios[$i]['input'] ?></li>
                     </ul>
                 <?php $i++; endforeach; ?>
                 </li>

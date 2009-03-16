@@ -3,7 +3,7 @@
 #
 
 addressBook_myList:
-  url: /my-address-book/*
+  url: /:sf_culture/my-address-book/*
   param: { module: addressBook, action: myList }
 
 addressBook_add:
@@ -11,7 +11,7 @@ addressBook_add:
   param: { module: addressBook, action: create }
 
 addressBook_edit:
-  url: /edit-address/:id
+  url: /:sf_culture/edit-address/:id
   param: { module: addressBook, action: edit }
 
 addressBook_delete:
@@ -19,5 +19,5 @@ addressBook_delete:
   param: { module: addressBook, action: delete }
 
 addressBook_select:
-  url: /select-address/*
+  url: /:sf_culture/select-address/*
   param: { module: addressBook, action: select }

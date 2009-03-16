@@ -43,9 +43,19 @@ propel:
     secondary_phone: 
       type: VARCHAR
       size: 32
-    password: 
+    algorithm:
       type: VARCHAR
       size: 32
+      required: true
+      default: 'md5'
+    salt: 
+      type: VARCHAR
+      size: 128
+      required: true
+      default: ''
+    password: 
+      type: VARCHAR
+      size: 128
       required: true
       default: ''
     confirm_code: 
@@ -53,7 +63,6 @@ propel:
       size: 32
     is_confirmed: 
       type: TINYINT
-      size: 1
       required: true
       default: 0
     is_deleted: 
@@ -72,6 +81,8 @@ propel:
     updated_at: 
     modified_at: 
       type: TIMESTAMP
+    _uniques: 
+      uni_member_email: [email]
 
   member_secret_question: 
     _attributes: 
