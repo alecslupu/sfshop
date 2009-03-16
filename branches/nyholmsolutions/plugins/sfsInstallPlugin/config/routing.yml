@@ -1,0 +1,19 @@
+installer_index:
+  url:   /install-check/*
+  param: { module: installer, action: index }
+  
+installer_configure:
+  url:   /install-configure
+  param: { module: installer, action: configure }
+  
+installer_loadSql:
+  url:   /install-load-sql
+  param: { module: installer, action: loadSql }
+  
+installer_loadData:
+  url:   /install-load-data
+  param: { module: installer, action: loadData }
+  
+installer_finished:
+  url:   /install-finished
+  param: { module: installer, action: finished }

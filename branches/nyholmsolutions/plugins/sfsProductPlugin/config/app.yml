@@ -1,0 +1,7 @@
+all:
+  product:
+    thumbnails_dir_name: products
+    max_recent: 4
+    max_list: 10
+    default_tax_type_id: 0
+    

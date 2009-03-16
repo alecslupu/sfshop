@@ -1,0 +1,6 @@
+all:
+  is_secure:   on
+  credentials: member
+
+addAddressForOrder:
+  is_secure:   off

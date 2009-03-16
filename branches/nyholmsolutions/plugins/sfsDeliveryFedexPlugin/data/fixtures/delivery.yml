@@ -1,0 +1,10 @@
+Delivery: 
+  Delivery_1: 
+    culture:                 en
+    title:                   Federal Express
+    accept_currencies_codes: USD,CAD
+    name_class_service:      sfsFedexService
+    name_class_form_params:  sfsFedexParamsForm
+    icon:                   'fedex.gif'
+    params:                 '{"key":"wPKJ6om6CVXQyfpx","password":"gJwgRayaqCH2Zexk4xpdjqB4x","account":510087020,"meter":1242414,"weight_unit":"KG","dimension_unit":"CM","residential":true,"insure":"","dropoff":"REGULAR_PICKUP","packaging_type":"YOUR_PACKAGING"}'
+    is_active:              1

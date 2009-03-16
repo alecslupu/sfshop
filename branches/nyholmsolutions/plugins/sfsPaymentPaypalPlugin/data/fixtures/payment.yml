@@ -1,0 +1,11 @@
+Payment: 
+  Payment_1: 
+    culture:                 en
+    title:                   Paypal
+    name:                    paypal
+    accept_currencies_codes: USD
+    name_class_form_params:  sfsPaypalParamsForm
+    charge_route:            '@payment_paypal'
+    icon:                    'paypal.gif'
+    params:                  '{"username":"admin_1220082337_biz_api1.dev-zp.com","password":"1220082349","signature":"AyQdOC9dtPXFgg47.babEm2TNmAkAFeBWjmwEuDMgsK1fAL9Hup3Ftcw","test_mode":true,"rate":2.9}'
+    is_active:                1

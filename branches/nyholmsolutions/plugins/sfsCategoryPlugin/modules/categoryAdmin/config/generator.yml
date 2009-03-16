@@ -1,0 +1,36 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Category
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          categoryAdmin
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      filter: 
+        display:        [ name, is_active ]
+      form:    ~
+      new:     ~
+      list: 
+        display:          [ _category_title, is_active, created_at, updated_at ]
+        max_per_page:     40
+        object_actions: 
+          _edit:          ~
+          _delete:        ~
+        actions: 
+          _new:
+            label:        Create category
+#      edit:
+#        actions: 
+#          _list:          
+#            action:       catalogList
+#          _save:          ~
+#          _save_and_add:  ~
+#          _delete:        ~
+            

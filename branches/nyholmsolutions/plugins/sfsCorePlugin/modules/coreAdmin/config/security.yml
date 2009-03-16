@@ -1,0 +1,15 @@
+all: 
+  is_secure:   on
+
+
+
+# TODO replace this to preExecute
+index: 
+  credentials: [[ admin, superadmin ]]
+  #credentials: admin
+
+login: 
+  is_secure:   off
+
+logout: 
+  is_secure:   off

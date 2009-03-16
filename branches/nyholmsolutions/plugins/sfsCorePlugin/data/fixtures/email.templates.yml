@@ -1,0 +1,136 @@
+EmailTemplate: 
+  EmailTemplate_1:
+    name: REGISTRATION
+  EmailTemplate_2:
+    name: FORGOT_PASSWORD
+  EmailTemplate_3:
+    name: RECONFIRM_EMAIL
+  EmailTemplate_4:
+    name: NEW_ADMIN_ADDED
+  EmailTemplate_5:
+    name: RESET_PASSWORD
+
+EmailTemplateI18n:
+# English
+  EmailTemplateI18n_EN_1:
+    id:      EmailTemplate_1
+    culture: en
+    subject: Registration
+    body: |
+      Hello!<br/><br/>
+      Thanks for registration on our site. Using the link bellow, please confirm registration.<br/><br/>
+      <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/> 
+      Confirmation code:
+      %confirm_code%<br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+  EmailTemplateI18n_EN_2: 
+    id:      EmailTemplate_2
+    culture: en
+    subject: Restoring password
+    body: |
+      Hello!<br/><br/>
+      Thanks for using our site. From our site was sent request for restoring password.<br/><br/>
+      Your new data for login:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+  EmailTemplateI18n_EN_3: 
+    id:      EmailTemplate_3
+    culture: en
+    subject: Email was changed
+    body: |
+      Hello!<br/><br/>
+      Thanks for using our site. Using the link bellow, please a new email.<br/><br/>
+      Click to link for confirm email <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Confirmation code:
+      %confirm_code%<br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+  EmailTemplateI18n_EN_4: 
+    id:      EmailTemplate_4
+    culture: en
+    subject: You added to administrators
+    body: |
+      Hello!<br/><br/>
+      You can access the admin panel with the following password. Once you access the admin, please change your password!.<br/><br/>
+      Admin panel: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a>
+      <br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+  EmailTemplateI18n_EN_5: 
+    id:      EmailTemplate_5
+    culture: en
+    subject: Your password was reset
+    body: |
+      Hello!<br/><br/>
+      You can access the admin panel with the following password. Once you access the admin, please change your password!.<br/><br/>
+      Admin panel: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a>
+      <br/><br/>
+      Your login data:<br/>
+      Login: %email%<br/>
+      Password: %password%<br/><br/>
+      
+# Russian
+  EmailTemplateI18n_RU_1:
+    id:      EmailTemplate_1
+    culture: ru
+    subject: Регистрация
+    body: |
+      Здравствуйте!<br/><br/>
+      Спасибо за регистрацию на нашем сайте. По ссылке расположенной ниже, пожалуйста подтвердить регистрацию на нашем сайте.<br/><br/>
+      <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Код подтверждения:
+      %confirm_code%<br/><br/>
+      Ваши данные для входа:<br/>
+      Логин: %email%<br/>
+      Пароль: %password%<br/><br/>
+  EmailTemplateI18n_RU_2: 
+    id:      EmailTemplate_2
+    culture: ru
+    subject: Востановление пароля
+    body: |
+      Здравствуйте!<br/><br/>
+      Спасибо что вы используете наш сайт. Был послан запрос на востановление проля.<br/><br/>
+      Новые данные для входа:<br/>
+      Логин: %email%<br/>
+      Пароль: %password%<br/><br/>
+  EmailTemplateI18n_RU_3: 
+    id:      EmailTemplate_3
+    culture: ru
+    subject: Изменение адресса электронной почты
+    body: |
+      Здравствуйте!<br/><br/>
+      Спасибо что вы используете наш сайт. По ссылке расположенной ниже, пожалуйста подтвердить новый адрес электронной почты.<br/><br/>
+      <a href="%link_to_confirm_page%">%link_to_confirm_page%</a><br/>
+      Код подтверждения:
+      %confirm_code%<br/><br/>
+      Ваши данные для входа:<br/>
+      Логин: %email%<br/>
+      Пароль: %password%<br/><br/> 
+  EmailTemplateI18n_RU_4: 
+    id:      EmailTemplate_4
+    culture: ru
+    subject: Вы добавлены в группу администраторов
+    body: |
+      Здравствуйте!<br/><br/>
+      Как только войдете в админ часть, пожалуйста измените ваш пароль.<br/><br/>
+      Админ часть: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a><br/><br/>
+      Ваши данные для входа:<br/>
+      Логин: %email%<br/>
+      Пароль: %password%<br/>
+      <br/><br/>
+  EmailTemplateI18n_RU_5: 
+    id:      EmailTemplate_5
+    culture: ru
+    subject: Ваш пароль был сброшен
+    body: |
+      Здравствуйте!<br/><br/>
+      Как только войдете в админ часть, пожалуйста измените ваш пароль.<br/><br/>
+      Админ часть: <a href="%link_to_admin_panel%">%link_to_admin_panel%</a><br/><br/>
+      Ваши данные для входа:<br/>
+      Логин: %email%<br/>
+      Пароль: %password%<br/>
+      <br/><br/>
