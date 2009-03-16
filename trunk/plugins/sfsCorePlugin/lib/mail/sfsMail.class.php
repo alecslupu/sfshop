@@ -34,6 +34,7 @@ class sfsMail extends Mail
         $this->setFrom(sfConfig::get('app_mail_address_from', 'admin@localhost.com'));
         $this->setPriority(1);
         $this->setContentType('text/html');
+        $this->setCharset(sfConfig::get('app_mail_charset', 'iso-8859-1'));
         
         if (sfConfig::get('app_mail_smtp', false))
         {
@@ -43,7 +44,6 @@ class sfsMail extends Mail
             $this->setPassword(sfConfig::get('app_mail_smtp_password'));
         }
         
-        //$this->setCharset('utf8');
         //$this->setEncoding('utf8');
     }
     

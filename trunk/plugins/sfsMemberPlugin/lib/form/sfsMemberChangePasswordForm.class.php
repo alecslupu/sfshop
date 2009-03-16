@@ -66,7 +66,7 @@ class sfsMemberChangePasswordForm extends MemberForm
         
         $validatorComparePasswords = new sfValidatorSchemaCompare(
             'password', 
-            'equal',
+            sfValidatorSchemaCompare::EQUAL,
             'confirm_password',
             array(),
             array('invalid'  => 'Passwords do not match')

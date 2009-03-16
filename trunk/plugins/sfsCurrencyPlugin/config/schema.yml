@@ -28,7 +28,7 @@ propel:
     value: 
       type: DECIMAL
       size: 10
-      scale: 2
+      scale: 4
     is_default: 
       type: BOOLEAN
       required: true

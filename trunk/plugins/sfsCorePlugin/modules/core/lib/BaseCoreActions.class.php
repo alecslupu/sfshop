@@ -36,8 +36,7 @@ class BaseCoreActions extends sfActions
         if ($language !== null) {
             $this->getUser()->setCulture($request->getParameter('culture'));
         }
-        
-        $this->redirect($request->getReferer());
+        $this->redirect('@localized_homepage' /*$request->getReferer()*/);
     }
     
    /**

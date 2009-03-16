@@ -61,8 +61,7 @@ class BaseBasketActions extends sfActions
                 
                 if ($this->getRequest()->isMethod('post')) {
                     $validatorQuantity = $subForm->getValidatorSchema()->offsetGet('quantity');
-
-                    if($basketProduct->getProduct()->getAllowNegativeQuantity()) {
+                    if($basketProduct->getProduct()->getAllowOutOfStock()) {
                        $validatorQuantity->setOption('max', NULL);
                     }
                     else {
@@ -154,7 +153,7 @@ class BaseBasketActions extends sfActions
                     foreach ($basketProducts as $basketProduct) {
                         $products[] = array(
                             'id'           => $basketProduct->getId(),
-                            'price'        => format_currency($basketProduct->getPrice()),
+                            'price'        => format_currency($basketProduct->getProductPrice()),
                             'total_price'  => format_currency($basketProduct->getTotalPrice())
                         );
                     }
@@ -217,7 +216,7 @@ class BaseBasketActions extends sfActions
                 $this->form->setDefault('quantity', $product->getQuantity());
                 $validatorQuantity = $this->form->getValidatorSchema()->offsetGet('quantity');
                 
-                if($product->getAllowNegativeQuantity()) {
+                if($product->getAllowOutOfStock()) {
                     $validatorQuantity->setOption('max', NULL);
                 }
                 else {
@@ -226,7 +225,7 @@ class BaseBasketActions extends sfActions
 
                     $validatorQuantity->setMessage(
                         'max',
-                        str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
+                        str_replace('%max%', $max, $this->getContext()->getI18N()->__($validatorQuantity->getMessage('max')))
                     );
                 }
                 
@@ -300,7 +299,7 @@ class BaseBasketActions extends sfActions
             $basket = $this->getUser()->getBasket();
             $basketProduct = BasketProductPeer::retrieveByPk($request->getParameter('id'));
             
-            if ($basketProduct !== null) {
+            if ($basketProduct !== null && $basketProduct->getBasketId() == $basket->getId()) {
                 $basketProduct->delete();
             }
         }

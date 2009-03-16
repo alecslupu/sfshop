@@ -23,7 +23,7 @@ class sfsMemberRegistrationForm extends MemberForm
     {
         parent::configure();
 
-        $this->offsetUnset('primary_phone');
+//        $this->offsetUnset('primary_phone');
         $this->offsetUnset('secondary_phone');
         $this->offsetUnset('is_active');
 

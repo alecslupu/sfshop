@@ -56,12 +56,19 @@ propel:
       required: false
       foreignTable: brand
       foreignReference: id
-      onDelete: CASCADE
+      onDelete: SETNULL
       onUpdate: RESTRICT
     price: 
       type: DECIMAL
       size: 10
-      scale: 2
+      scale: 4
+    tax_type_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
     quantity: 
       type: INTEGER
       required: true
@@ -76,9 +83,8 @@ propel:
       scale: 3
     has_options:
       type: TINYINT
-      size: 1
       default: 0
-    allow_negative_quantity: 
+    allow_out_of_stock: 
       type: BOOLEAN
       required: true
       default: 0
@@ -248,7 +254,7 @@ propel:
     price: 
       type: DECIMAL
       size: 10
-      scale: 2
+      scale: 4
     quantity: 
       type: INTEGER
       required: true

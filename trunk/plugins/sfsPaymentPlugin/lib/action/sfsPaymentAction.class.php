@@ -84,6 +84,7 @@ class sfsPaymentActions extends sfActions
         
         $orderItem = $this->getOrderItemObjectByIdOrUuid($uuid);
         $orderItem->setStatusId(OrderStatusPeer::STATUS_PROCESSING);
+        $orderItem->setPaymentAt(time());
         $orderItem->save();
     }
     

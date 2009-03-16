@@ -7,7 +7,7 @@ core_changeLanguage:
   param: { module: core, action: changeLanguage }
 
 core_error404:
-  url: /page-not-found
+  url: /:sf_culture/page-not-found
   param: { module: core, action: error404 }
 
 core_error500:
@@ -15,7 +15,7 @@ core_error500:
   param: { module: core, action: error500 }
 
 core_contactUs:
-  url: /contact-us
+  url: /:sf_culture/contact-us
   param: { module: core, action: contactUs }
   
 #
@@ -24,7 +24,6 @@ core_contactUs:
 coreAdmin_index:
   url: /admin-index
   param: { module: coreAdmin, action: index }
-  
   
 #
 # administratorAdmin
@@ -56,19 +55,19 @@ administratorAdmin_logout:
 #
 
 information_details:
-  url: /information/:id
+  url: /:sf_culture/information/:id
   param: { module: information, action: details }
 
 information_shipping:
-  url: /information-shipping
+  url: /:sf_culture/information-shipping
   param: { module: information, action: details, id: 1 }
 
 information_privacyNotice:
-  url: /information-privacy-notice
+  url: /:sf_culture/information-privacy-notice
   param: { module: information, action: details, id: 2 }
 
 information_conditionsUse:
-  url: /information-conditions-of-use
+  url: /:sf_culture/information-conditions-of-use
   param: { module: information, action: details, id: 3 }
 
 #

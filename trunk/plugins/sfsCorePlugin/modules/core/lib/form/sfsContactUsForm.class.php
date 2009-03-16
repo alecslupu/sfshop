@@ -38,25 +38,30 @@ class sfsContactUsForm extends sfForm
                 'min_length' => 2
             ),
             array(
-                'min_length' => 'First name can not be less 2 characters',
-                'max_length' => 'First name number can not be more 255 characters',
+                'required'   => 'First name is required', 
+                'min_length' => 'First name can not be less than 2 characters',
+                'max_length' => 'First name can not be more than 255 characters',
             )
         );
         
         $validatorLastName = new sfValidatorString(
             array(
                 'required'   => true, 
-                'min_length' => 4
+                'min_length' => 2
             ),
             array(
-                'min_length' => 'Last name can not be less 4 characters',
-                'max_length' => 'Last name can not be more 255 characters',
+                'required'   => 'Last name is required', 
+                'min_length' => 'Last name can not be less than 2 characters',
+                'max_length' => 'Last name can not be more than 255 characters',
             )
         );
         
         $validatorEmail = new sfValidatorEmail(
             array('required' => true), 
-            array('invalid' => 'This is not a valid email address')
+            array(
+                'required'   => 'Email is required', 
+                'invalid' => 'This is not a valid email address'
+            )
         );
         
         $validatorSubject = new sfValidatorString(
@@ -64,15 +69,21 @@ class sfsContactUsForm extends sfForm
                 'required'   => true,
                 'min_length' => 5
             ),
-            array('min_length' => 'Subject can not be less 5 characters')
+            array(
+                'required'   => 'Subject is required', 
+                'min_length' => 'Subject can not be less than 5 characters'
+            )
         );
         
         $validatorBody = new sfValidatorString(
             array(
                 'required'   => true,
-                'min_length' => 10
+                'min_length' => 5
             ),
-            array('min_length' => 'Body can not be less 5 characters')
+            array(
+                'required'   => 'Body is required', 
+                'min_length' => 'Body can not be less than 5 characters'
+            )
         );        
         
         $this->setValidators(

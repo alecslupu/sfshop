@@ -22,5 +22,6 @@ class BaseBrandComponents extends sfComponents
     public function executeFilterList()
     {
         $this->brands = BrandPeer::getAll(new Criteria(), true);
+        //$this->brands = BrandPeer::getBrandsFromCurrentCategory();
     }
 }

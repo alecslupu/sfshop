@@ -21,7 +21,7 @@ generator:
           details: 
             name:       Details
             action:     details
-            icon:       /images/actions/order_details.png
+            icon:       <?php echo sfConfig::get('app_sfshop_admin_images_dir')?>actions/order_details.png
         actions:        []
         batch_actions:  []
       filter:

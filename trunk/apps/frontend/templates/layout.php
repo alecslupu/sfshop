@@ -43,7 +43,7 @@
       <div class="head_container">
         <div class="logo_container">
             <div class="logo">
-                <?php echo link_to(image_tag('logo.gif', array('width' => 90, 'height' => 53, 'align' => 'absmiddle')), '@homepage') ?>
+                <?php echo link_to(image_tag(sfConfig::get('app_sfshop_core_images_dir').'logo.gif', array('width' => 90, 'height' => 53, 'align' => 'absmiddle')), '@homepage') ?>
                 <?php echo link_to('DVD shop','@homepage') ?>
             </div>
         </div>

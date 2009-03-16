@@ -20,11 +20,9 @@ propel:
       size: 128
     has_thumbnail: 
       type: TINYINT
-      size: 1
       default: 0
     has_i18n: 
       type: TINYINT
-      size: 1
       default: 0
 
   language: 

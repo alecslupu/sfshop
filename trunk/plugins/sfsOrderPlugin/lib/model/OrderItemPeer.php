@@ -23,4 +23,25 @@ class OrderItemPeer extends BaseOrderItemPeer
         $criteria->add(self::UUID, $uuid, Criteria::EQUAL);
         return self::doSelectOne($criteria);
     }
+    
+   /**
+    * Generate new uuid
+    *
+    * @param  void
+    * @return string uuid
+    * @author Andreas Nyholm
+    * @access public
+    */
+    public static function generateUuid() 
+    {
+        if($method = sfConfig::get('app_order_uuid_method', false)) {
+            $methodAsStr = is_array($method) ? $method[0].'::'.$method[1] : $method;
+            if (!is_callable($methodAsStr))
+            {
+              throw new sfException(sprintf('The method "%s" is not callable.', $methodAsStr));
+            }
+            return call_user_func_array($methodAsStr,array());
+        }        
+        return md5(time() + rand());   
+    }
 }

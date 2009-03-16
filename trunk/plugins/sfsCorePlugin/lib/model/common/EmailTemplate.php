@@ -9,4 +9,9 @@
  */ 
 class EmailTemplate extends BaseEmailTemplate
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+        
 }

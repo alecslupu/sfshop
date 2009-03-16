@@ -22,11 +22,23 @@ class catalogAdminActions extends sfActions
     public function executeList($request)
     {
         $this->getContext()->getConfigCache()->import('modules/categoryAdmin/config/generator.yml', false, true);
+        $this->getContext()->getController()->getAction('categoryAdmin', 'index');
+        
+        $this->getContext()->getConfigCache()->import('modules/productAdmin/config/generator.yml', false, true);
+        $this->getContext()->getController()->getAction('productAdmin', 'index');
+
+//        if ($request->getParameter('sort')) {
+            $this->sort = array($request->getParameter('sort'), $request->getParameter('sort_type'));
+//        }        
+        $this->path = $request->hasParameter('path') ? '?path=' . $request->getParameter('path') : '';
+/*
+        $this->getContext()->getConfigCache()->import('modules/categoryAdmin/config/generator.yml', false, true);
         $this->getContext()->getController()->getAction('categoryAdmin', 'list');
         
         $this->getContext()->getConfigCache()->import('modules/productAdmin/config/generator.yml', false, true);
         $this->getContext()->getController()->getAction('productAdmin', 'list');
         
         $this->path = $request->hasParameter('path') ? '?path=' . $request->getParameter('path') : '';
+*/
     }
 }

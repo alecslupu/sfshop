@@ -24,7 +24,6 @@ class BaseInformationActions extends sfActions
         $criteria = new Criteria();
         InformationPeer::addPublicCriteria($criteria);
         $this->information = InformationPeer::retrieveById($this->getRequestParameter('id'), $criteria);
-        $this->description = $this->information->getDescription();
         $this->forward404Unless($this->information);
 
         $response = $this->getResponse();

@@ -7,7 +7,7 @@ basket_add:
   param: { module: basket, action: add }
   
 basket_list:
-  url: /shopping-cart/*
+  url: /:sf_culture/shopping-cart/*
   param: { module: basket, action: list }
   
 basket_delete:

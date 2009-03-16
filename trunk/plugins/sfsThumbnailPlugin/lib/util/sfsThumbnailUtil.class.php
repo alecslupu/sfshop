@@ -131,7 +131,7 @@ class sfsThumbnailUtil
                         sfsThumbnailUtil::mkdirTree($thumbDir);
                     }
                     
-                    $thumbnail->setMimeExtension($originalThumbnail->getMimeExtension());
+//                    $thumbnail->setMimeExtension($originalThumbnail->getMimeExtension());
                     $thumbnail->setMimeId($originalThumbnail->getMimeId());
                     $thumbnail->setIsConverted(1);
                     $thumbnail->save();

@@ -9,4 +9,9 @@
  */ 
 class Information extends BaseInformation
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+    
 }

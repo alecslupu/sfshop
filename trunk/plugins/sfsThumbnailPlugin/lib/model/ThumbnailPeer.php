@@ -108,6 +108,59 @@ class ThumbnailPeer extends BaseThumbnailPeer
     }
     
    /**
+    * Generate and convert thumbnails for some asset.
+    * TODO: This only work for onw image/asset. 
+    * This should be improved to check and possible update all thumbs for asset
+    * This also help if new ttat:s have been added
+    * 
+    * @param  string $asset Object
+    * @return void
+    * @author Andreas Nyholm
+    * @access public
+    */
+    public static function updateThumbnails($asset_object)
+    { 
+            
+        if(!$thumbnailOrig = self::retrieveByTypeAndAssetId(ThumbnailPeer::ORIGINAL, $asset_object->getId(), get_class($asset_object)))
+            return;
+        $c = new Criteria();
+        $c->add(self::PARENT_ID, $thumbnailOrig->getId());
+        $thumbnails = self::doSelect($c);
+        if($thumbnails) {
+            foreach($thumbnails as $thumbnail) {
+                $thumbnail->setIsConverted(false);
+                $thumbnail->setMimeId($thumbnailOrig->getMimeId());
+                $thumbnail->setMimeExtension($thumbnailOrig->getMimeExtension());
+                $thumbnail->save();
+            }
+        } 
+        else {
+            $assetType = AssetTypePeer::retrieveByModel($thumbnailOrig->getAssetTypeModel());
+            if($assetType)
+                $thumbnailTypesAssetTypes = ThumbnailTypeAssetTypePeer::getByAssetTypeId($assetType->getId());
+            
+            if (count($thumbnailTypesAssetTypes) > 0) {
+                foreach ($thumbnailTypesAssetTypes as $thumbnailTypeAssetType) {
+                    if($thumbnailTypeAssetType->getId() != $thumbnailOrig->getTtatId()) {
+                        $thumbnail = new Thumbnail();
+                        $thumbnail->setParentId($thumbnailOrig->getId());
+                        $thumbnail->setAssetId($thumbnailOrig->getAssetId());
+                        $thumbnail->setTtatId($thumbnailTypeAssetType->getId());
+                        $thumbnail->setPath($thumbnailOrig->getPath());
+                        $thumbnail->setMimeId($thumbnailOrig->getMimeId());
+                        $thumbnail->setMimeExtension($thumbnailOrig->getMimeExtension());
+                        $thumbnail->setUuid(md5(time() + rand()).'.'.$thumbnailOrig->getMimeExtension());
+                        $thumbnail->setAssetTypeModel($assetType->getModel());
+                        $thumbnail->save();
+                    }
+                }
+            }
+        }       
+        sfsThumbnailUtil::convert();
+    }
+    
+    
+   /**
     * Generate thumbnail queue for some asset. Returns object of original thumbnail.
     * 
     * @param  int $assetId

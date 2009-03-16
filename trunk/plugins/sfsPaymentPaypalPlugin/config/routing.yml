@@ -2,9 +2,9 @@
 # Payment
 #
 payment_paypal: 
-  url: /payment-paypal/:order_item_id
+  url: /:sf_culture/payment-paypal/:order_item_id
   param: { module: paypal, action: index }
 
 payment_paypalCharge: 
-  url: /paypal-charge/:uuid/*
+  url: /:sf_culture/paypal-charge/:uuid/*
   param: { module: paypal, action: charge }

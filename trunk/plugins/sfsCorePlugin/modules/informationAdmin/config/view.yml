@@ -1,5 +1,5 @@
 editSuccess:
-  javascripts:    [ tiny_mce/tiny_mce.js, apply_tiny_mce.js ]
+  javascripts:    [ %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js, %APP_SFSHOP_ADMIN_JS_DIR%apply_tiny_mce.js ]
   
 newSuccess:
-  javascripts:    [ tiny_mce/tiny_mce.js, apply_tiny_mce.js ]
+  javascripts:    [ %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js, %APP_SFSHOP_ADMIN_JS_DIR%apply_tiny_mce.js ]

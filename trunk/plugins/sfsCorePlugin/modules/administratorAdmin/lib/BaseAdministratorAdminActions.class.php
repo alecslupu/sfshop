@@ -34,7 +34,7 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
         $this->form = new sfsAdminChangePasswordForm($this->getUser()->getUser());
         
         if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter('data'));
+            $this->form->bind($request->getParameter('admin'));
             
             if ($this->form->isValid()) {
                 $member = $this->form->updateObject();
@@ -100,7 +100,7 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
                 $admin->setPassword($password);
                 
                 $this->getContext()->getInstance()->getConfiguration()->loadHelpers('Url');
-                $urlToAdminPanel = url_for('@coreAdmin_login', true);
+                $urlToAdminPanel = url_for('@administratorAdmin_login', true);
                 
                 $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::NEW_ADMIN_ADDED);
                 

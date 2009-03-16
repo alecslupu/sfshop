@@ -1,3 +1,4 @@
+<?php use_helper('Form'); ?>
 <table cellspacing="0" cellpadding="0" class="sf_admin_list" width="100%">
     <thead>
         <tr>
@@ -16,12 +17,12 @@
                         <tr>
                             <th><?php echo __('Is used') ?>?</th>
                             <th><?php echo __('Title') ?></th>
-                            <th><?php echo __('Price') ?></th>
+                            <th><?php echo __('Price') ?> (<?php echo __('Net') ?>)</th>
                             <th><?php echo __('Prefix') ?></th>
                         </tr>
                     </thead>
                     <?php foreach ($optionValues[$optionType->getId()] as $optionValue): ?>
-                        <?php $price = '';
+                        <?php $price = 0;
                             $checked = false;
                             $checkedValue = 0;
                             $prefix = '';

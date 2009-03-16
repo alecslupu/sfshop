@@ -1,0 +1,6 @@
+all:
+  tax:
+    is_enabled: false
+    display_prices_with_tax: false
+    default_tax_groups: 0
+    

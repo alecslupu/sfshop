@@ -16,7 +16,7 @@
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class sfsProductSearchForm extends ProductForm
+class sfsProductSearchForm extends BaseProductForm
 {
   public function configure()
   {

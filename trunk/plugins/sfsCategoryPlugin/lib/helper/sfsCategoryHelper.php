@@ -87,7 +87,7 @@ function admin_draw_categories_tree($parentTree = array(), $routing)
     }
 }
 
-function get_categories_tree_for_select($rmBranchOfCurrentCategory = true)
+function get_categories_tree_for_select($rmBranchOfCurrentCategory = true, $emptyCategory = false)
 {
     $criteria = new Criteria();
     CategoryPeer::addAdminCriteria($criteria);
@@ -99,6 +99,10 @@ function get_categories_tree_for_select($rmBranchOfCurrentCategory = true)
         get_categories_tree($categories, $categoriesTree, array(), $criteria, true, $rmBranchOfCurrentCategory);
         
         $list = array();
+        
+        if($emptyCategory) {
+	        $list[0] = '';
+        }
         
         foreach ($categoriesTree as $category) {
             

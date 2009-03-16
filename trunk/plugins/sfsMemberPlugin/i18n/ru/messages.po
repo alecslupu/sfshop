@@ -322,6 +322,6 @@ msgstr ""
 msgid "Edit member &ldquo;%title%&rdquo;"
 msgstr ""
 
-#~ msgid "Current password"
-#~ msgstr "Текущий пароль"
+msgid "Current password"
+msgstr "Текущий пароль"
 

@@ -54,6 +54,13 @@ propel:
     postcode: 
       type: VARCHAR
       size: 16
+    tax_group_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_group
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
     is_default: 
       type: BOOLEAN
       required: false

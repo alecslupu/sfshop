@@ -20,31 +20,22 @@
 class BaseProductComponents extends sfComponents
 {
    /**
-    * Gets product options list from itemProduct (BasketProduct or OrderProduct).
+    * Gets options list from itemProduct (BasketProduct or OrderProduct).
     * 
     * @param  void
     * @return void
-    * @author Dmitry Nesteruk
+    * @author Dmitry Nesteruk, Andreas Nyholm
     * @access public
     */
     public function executeOptionsList()
     {
-        $product = $this->itemProduct->getProduct();
-        
-        if ($product->getHasOptions()) {
-            $itemOptions = call_user_func(
+       
+        if ($this->itemProduct->getHasOptions()) {
+            $this->itemOptions = call_user_func(
                 array(
                     $this->itemProduct,
                     (string)$this->method_for_get_options
                 ));
-            
-            // php 5.2.0 fix
-            $optionsValues = array();
-            
-            foreach ($itemOptions as $itemOption) {
-                $optionsValues[] = $itemOption->getOptionProduct()->getOptionValueJoinOptionType();
-            }
-            $this->optionsValues = $optionsValues;
         }
     }
     

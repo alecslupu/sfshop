@@ -12,6 +12,8 @@ class sfsProductOptionsForm extends BaseProductForm
     public function configure()
     {
         sfLoader::loadHelpers('sfsCurrency');
+
+        unset($this['id']);
         
         $this->setWidgets(array());
         $this->setValidators(array());
@@ -23,16 +25,16 @@ class sfsProductOptionsForm extends BaseProductForm
         $optionTypes = array();
         
         foreach ($options as $optionProduct) {
-            $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getName();
+            $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getId();
             $optionValue = $optionProduct->getOptionValue();
             
             $symbol = '';
             
-            if ($optionProduct->getPrice() > 0) {
+            if ($optionProduct->getProductPrice() > 0) {
                 $symbol = '+';
             }
             
-            $title = $optionValue->getTitle() . '  (' . $symbol . format_currency($optionProduct->getPrice()) . ')';
+            $title = $optionValue->getTitle() . '  (' . $symbol . format_currency($optionProduct->getProductPrice()) . ')';
             
             $choices[$optionTypeName][$optionProduct->getId()] = $title;
             $optionTypes[$optionTypeName] = $optionValue->getOptionType()->getTitle();
@@ -48,7 +50,7 @@ class sfsProductOptionsForm extends BaseProductForm
                 )
             );
             
-            $this->getWidgetSchema()->setLabel('option', $optionTypes[$key]);
+            $this->getWidgetSchema()->setLabel($key, $optionTypes[$key]);
         }
         
         $this->defineSfsListFormatter();

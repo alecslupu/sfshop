@@ -9,4 +9,8 @@
  */ 
 class ThumbnailMime extends BaseThumbnailMime
 {
+    public function __toString() {
+        return $this->getMime();    
+    }
+    
 }

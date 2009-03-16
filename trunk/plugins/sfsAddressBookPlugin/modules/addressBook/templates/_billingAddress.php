@@ -1,11 +1,15 @@
 <?php use_helper('sfsAddressBook') ?>
 <div id="container_info_billing_address" class="container_info">
     <span class="caption"><?php echo __('Billing address') ?></span>
+    <?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
     <span class="action">
         [ <?php echo link_to_function(__('Edit'), 'return false') ?> ]
-    </span><br/><br/>
-    <?php echo format_address($address, true, true) ?>
+    </span>
+    <?php endif; ?>
+    <br/><br/>
+    <?php echo format_address($sf_data->getRaw('address'), true, true) ?>
 </div>
+<?php if (isset($is_edit_enabled) && $is_edit_enabled): ?>
 <div id="container_form_billing_address" style="display: none">
     <h3><?php echo __('Edit billing address') ?></h3>
     <div class="container_form">
@@ -20,3 +24,4 @@
         ) ?>
     </form>
 </div>
+<?php endif; ?>

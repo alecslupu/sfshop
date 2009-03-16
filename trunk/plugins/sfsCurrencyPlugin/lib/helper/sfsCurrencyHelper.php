@@ -9,10 +9,13 @@
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-function format_currency($price = 0, $currencyCode = null, $clearValue = false)
+function format_currency($price = 0, $currency = null, $clearValue = false, $noConversion = false)
 {
-    if ($currencyCode != null) {
-        $currency = CurrencyPeer::retrieveByCode($currencyCode);
+    if ($currency != null) {
+        if(is_numeric($currency))
+            $currency = CurrencyPeer::retrieveByPk($currency);
+        else
+            $currency = CurrencyPeer::retrieveByCode($currency);
     }
     else if (method_exists(sfContext::getInstance()->getUser(), 'getBasket')) {
         $basket = sfContext::getInstance()->getUser()->getBasket();
@@ -39,7 +42,8 @@ function format_currency($price = 0, $currencyCode = null, $clearValue = false)
         $thousandsPoint = $currency->getThousandsPoint();
     }
     
-    $price = $price * $currency->getValue();
+    if(!$noConversion)
+        $price = $price * $currency->getValue();
     
     return $symbol
         . $symbolLeft

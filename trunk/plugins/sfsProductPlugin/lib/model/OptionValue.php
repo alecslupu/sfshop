@@ -9,4 +9,8 @@
  */ 
 class OptionValue extends BaseOptionValue
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }    
 }
