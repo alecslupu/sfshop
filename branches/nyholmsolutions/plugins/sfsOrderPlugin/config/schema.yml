@@ -251,11 +251,11 @@ propel:
       onUpdate: CASCADE
     product_id: 
       type: INTEGER
-      required: true
+      required: false
       foreignTable: product
       foreignReference: id
-      onDelete: NONE
-      onUpdate: NONE
+      onDelete: SETNULL
+      onUpdate: SETNULL
     title: 
       type: VARCHAR
       size: 255
@@ -311,8 +311,8 @@ propel:
       required: true
       foreignTable: option_product
       foreignReference: id
-      onDelete: NONE
-      onUpdate: NONE
+      onDelete: SETNULL
+      onUpdate: SETNULL
     title: 
       type: VARCHAR
       size: 255
