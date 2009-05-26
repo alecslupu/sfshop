@@ -51,7 +51,19 @@ class BaseProductActions extends sfActions
         $this->filter = $this->getUser()->getAttributeHolder()->getAll('product/filter');
         
         $criteria = new Criteria();
-        $this->addCategoryCriteria($criteria);
+        
+        sfLoader::loadHelpers('sfsCategory');
+        $categoryId = get_current_category_id();
+        if ($categoryId != null && $catObj = CategoryPeer::retrieveById($categoryId)) {
+            if($catObj->getInformationId()) {
+               $this->information = $catObj->getInformation();
+               if(!sfConfig::get('app_product_show_products_with_category_information', false)) {
+                  $this->setTemplate('information');
+             	    return sfView::SUCCESS;
+               }
+            }
+            $this->addCategoryCriteria($criteria);
+        }
         $this->addSearchCriteria($criteria);
         $criteria = $this->addFilterCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
@@ -105,15 +117,19 @@ class BaseProductActions extends sfActions
         
         if ($categoryId != null) {
             $criteria->addJoin(Product2CategoryPeer::PRODUCT_ID, ProductPeer::ID);
-            $ids = CategoryPeer::getAllChildIds($categoryId);
-            
-            if ($ids !== null && count($ids) > 0) {
-                $ids = array_merge($ids, array($categoryId));
-                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
+
+            if(sfConfig::get('app_product_show_products_from_sub_categories', true)) {
+	            $ids = CategoryPeer::getAllChildIds($categoryId);
+	            if ($ids !== null && count($ids) > 0) {
+	                $ids = array_merge($ids, array($categoryId));
+	                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
+	            }
+	            else {
+	                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
+	            }
             }
-            else {
-                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
-            }
+            else
+              $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
         }
         
         return $criteria;

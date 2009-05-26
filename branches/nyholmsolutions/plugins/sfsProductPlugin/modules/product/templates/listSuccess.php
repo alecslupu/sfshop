@@ -1,3 +1,8 @@
+<?php if(isset($information)): ?>
+<?php include_partial('information/details', array('information' => $information)) ?>
+<br/>
+<?php endif; ?>
+
 <?php if (isset($isSearch)): ?>
     <?php include_partial('core/container_header', array('caption' => __('Results by search "%query%"', array('%query%' => $queryString)))) ?>
 <?php else: ?>
