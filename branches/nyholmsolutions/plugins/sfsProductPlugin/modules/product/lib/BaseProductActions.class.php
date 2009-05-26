@@ -130,7 +130,7 @@ class BaseProductActions extends sfActions
             $this->formSearch->bind($data);
             
             if ($this->formSearch->isValid()) {
-                $queryString = trim(mb_strtolower($data['query']));
+                $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
                 $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
@@ -144,7 +144,8 @@ class BaseProductActions extends sfActions
             $this->isSearch = true;
             $this->queryString = $queryString;
             
-            $searchCriteria = new xfCriterionPhrase($queryString, 2);
+//            $searchCriteria = new xfCriterionPhrase($queryString, 2);
+            $searchCriteria = new xfCriterionWildcard($queryString);
             $results = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
             
             $ids = array();
