@@ -29,9 +29,10 @@ class CategoryForm extends BaseCategoryForm
         $this['has_child'],
         $this['is_parent_active'],
         $this['is_deleted'],
-        $this['is_locked']
+        $this['is_locked'],
+        $this['product2_category_list']
         );
-      
+        
      $this->embedI18nForAllCultures(); 
       
   }
