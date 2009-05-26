@@ -40,7 +40,7 @@ class BaseCategoryComponents extends sfComponents
         if ($request->hasParameter('path') && $request->getParameter('path')) {
             $this->currentCategoryId = get_current_category_id();
             
-            $currentCategory = CategoryPeer::retrieveByPK($this->currentCategoryId);
+            $currentCategory = CategoryPeer::retrieveById($this->currentCategoryId);
             
             $controller = $this->getController();
             $actionInstance = $controller->getActionStack()->getLastEntry()->getActionInstance();
@@ -78,7 +78,7 @@ class BaseCategoryComponents extends sfComponents
         sfLoader::loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         
-        $this->category = CategoryPeer::retrieveByPK($categoryId);
+        $this->category = CategoryPeer::retrieveById($categoryId);
         
         if ($this->category !== null) {
             $response = $this->getResponse();

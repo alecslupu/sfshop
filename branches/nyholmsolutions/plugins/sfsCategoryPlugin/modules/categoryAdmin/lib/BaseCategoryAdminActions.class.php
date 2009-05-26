@@ -25,7 +25,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
     {
         sfLoader::loadHelpers('sfsCategory');
         
-        $category = CategoryPeer::retrieveByPK($this->getRequestParameter('id'));
+        $category = CategoryPeer::retrieveById($this->getRequestParameter('id'));
         
         if ($category != null) {
             $path = $category->getPath();
@@ -41,7 +41,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
         sfLoader::loadHelpers('sfsCategory');
         
         if ($request->hasParameter('id')) {
-            $category = CategoryPeer::retrieveByPK($request->getParameter('id'));
+            $category = CategoryPeer::retrieveById($request->getParameter('id'));
             $this->forward404Unless($category);
             
             $category->setIsDeleted(1);
