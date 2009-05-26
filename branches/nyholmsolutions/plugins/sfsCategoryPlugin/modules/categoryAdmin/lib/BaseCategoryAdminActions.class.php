@@ -66,7 +66,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
             ProductPeer::deleteByIds($productsIds);
             $path = $category->getCategoryRelatedByParentId()->getPath();
 */            
-            $this->clearFrontendCache();
+//            $this->clearFrontendCache();
             
             $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
         }
