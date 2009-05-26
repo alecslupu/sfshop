@@ -55,6 +55,7 @@ class BaseProductActions extends sfActions
         $this->addSearchCriteria($criteria);
         $criteria = $this->addFilterCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
+        $criteria->addAscendingOrderByColumn(ProductI18nPeer::TITLE);
         
         $this->pager = new sfPropelPager('Product', 10);
         $this->pager->setPeerMethod('doSelectWithTranslation');
