@@ -22,11 +22,11 @@ class ProductForm extends BaseProductForm
      );
 
       $this->widgetSchema['thumbnail'] = new sfWidgetFormInputFile();
-      $this->widgetSchema['product2_category_list'] = new sfWidgetFormChoiceMany(array('choices' => get_categories_tree_for_select(false)));
+      $this->widgetSchema['product2_category_list'] = new sfWidgetFormChoiceMany(array('choices' => get_categories_tree_for_select(false)), array('size' => '10'));
 
-      $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'add_empty' => true),array('onchange' => 'updateGrossPrice()'));
-      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateGrossPrice()'));// new sfsWidgetFormProductPrice($fields);
-      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice()'));// new sfsWidgetFormProductPrice($fields);
+      $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'peer_method' => 'getTaxRatesByName', 'add_empty' => true),array('onchange' => 'updateGrossPrice()'));
+      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('onkeyup' => 'updateGrossPrice()'));
+      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice()'));
 
       $this->widgetSchema->setLabels(array(
             'is_active'         => 'Active?',
@@ -40,36 +40,7 @@ class ProductForm extends BaseProductForm
       
       $this->widgetSchema->setHelp('allow_out_of_stock', 'Allow user to order product if product is out of stock?');
       
-      $this->widgetSchema->moveField('is_active', sfWidgetFormSchema::FIRST);
-      $this->widgetSchema->moveField('tax_type_id', sfWidgetFormSchema::AFTER,'is_active');
-      $this->widgetSchema->moveField('price', sfWidgetFormSchema::AFTER,'tax_type_id');
-      $this->widgetSchema->moveField('price_gross', sfWidgetFormSchema::AFTER,'price');
-      $this->widgetSchema->moveField('quantity', sfWidgetFormSchema::AFTER,'price_gross');
-      $this->widgetSchema->moveField('allow_out_of_stock', sfWidgetFormSchema::AFTER,'quantity');
-      $this->widgetSchema->moveField('product2_category_list', sfWidgetFormSchema::AFTER,'allow_out_of_stock');
 
-      
-      $this->widgetSchema->moveField('weight', sfWidgetFormSchema::AFTER,'product2_category_list');
-      $this->widgetSchema->moveField('cube', sfWidgetFormSchema::AFTER,'weight');
-      $this->widgetSchema->moveField('brand_id', sfWidgetFormSchema::AFTER,'cube');
-      /*
-      
-    $this->setValidators(array(
-      'id'                     => new sfValidatorPropelChoice(array('model' => 'Product', 'column' => 'id', 'required' => false)),
-      'brand_id'               => new sfValidatorPropelChoice(array('model' => 'Brand', 'column' => 'id', 'required' => false)),
-      'price'                  => new sfValidatorNumber(array('required' => true)),
-      'tax_type_id'            => new sfValidatorPropelChoice(array('model' => 'TaxType', 'column' => 'id', 'required' => false)),
-      'quantity'               => new sfValidatorInteger(),
-      'weight'                 => new sfValidatorNumber(array('required' => false)),
-      'cube'                   => new sfValidatorNumber(array('required' => false)),
-      'allow_out_of_stock'     => new sfValidatorBoolean(),
-      'is_active'              => new sfValidatorBoolean(),
-      'company_id'             => new sfValidatorPropelChoice(array('model' => 'Company', 'column' => 'id', 'required' => false)),
-      'product2_category_list' => new sfValidatorPropelChoiceMany(array('model' => 'Category', 'required' => false)),
-    ));
-      
-    */
-    
     
         //        $this->widgetSchema['product2_category_list'] = new sfWidgetFormPropelChoiceMany(array('model' => 'Category', 'peer_method' => 'getTreeForChoice'));
 /*
@@ -103,6 +74,22 @@ class ProductForm extends BaseProductForm
      
      $this->getValidatorSchema()->setOption('allow_extra_fields', true);
 
+      
+     $this->widgetSchema->moveField('thumbnail', sfWidgetFormSchema::FIRST);
+     $this->widgetSchema->moveField('is_active', sfWidgetFormSchema::AFTER,'thumbnail');
+     $this->widgetSchema->moveField('tax_type_id', sfWidgetFormSchema::AFTER,'is_active');
+     $this->widgetSchema->moveField('price', sfWidgetFormSchema::AFTER,'tax_type_id');
+     $this->widgetSchema->moveField('price_gross', sfWidgetFormSchema::AFTER,'price');
+     $this->widgetSchema->moveField('quantity', sfWidgetFormSchema::AFTER,'price_gross');
+     $this->widgetSchema->moveField('allow_out_of_stock', sfWidgetFormSchema::AFTER,'quantity');
+     $this->widgetSchema->moveField('product2_category_list', sfWidgetFormSchema::AFTER,'allow_out_of_stock');
+
+     $this->widgetSchema->moveField('weight', sfWidgetFormSchema::AFTER,'product2_category_list');
+     $this->widgetSchema->moveField('cube', sfWidgetFormSchema::AFTER,'weight');
+     $this->widgetSchema->moveField('brand_id', sfWidgetFormSchema::AFTER,'cube');
+     
+     
+     
      if(!sfConfig::get('app_tax_is_enabled',false)) {
         unset($this['tax_type_id']);
         unset($this['price_gross']);

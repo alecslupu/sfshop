@@ -24,6 +24,7 @@ function updateNetPrice()
 {
     var taxRate = getTaxRate();
     var amount = document.getElementById('product_price_gross').value;
+    amount = amount.replace(',','.');
     if (taxRate > 0) {
         amount = amount / ((taxRate/100)+1);
     }
@@ -34,6 +35,7 @@ function updateGrossPrice()
 {
     var taxRate = getTaxRate();
     var amount = document.getElementById('product_price').value;
+    amount = amount.replace(',','.');
     if (taxRate > 0) {
         amount = amount * ((taxRate/100)+1);
     }
