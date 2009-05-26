@@ -22,7 +22,7 @@ generator:
 
         
       list: 
-        display:          [ _product_title, is_active, created_at, updated_at ]
+        display:          [ =title, is_active, created_at, updated_at ]
         max_per_page:     20
         object_actions: 
           _edit:          ~
@@ -32,7 +32,7 @@ generator:
 #            label:        'New product'
         fields: 
           title: 
-            label:        'Categories/Products'
+            label:        'Products'
             help:         'Title'
     
  
