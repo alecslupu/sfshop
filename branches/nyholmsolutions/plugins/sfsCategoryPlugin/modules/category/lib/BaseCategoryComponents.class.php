@@ -56,12 +56,7 @@ class BaseCategoryComponents extends sfComponents
             }
         }
         
-        if ($request->hasParameter('is_search')) {
-            $this->itemRouting = '@product_search';
-        }
-        else {
-            $this->itemRouting = '@product_list';
-        }
+        $this->itemRouting = '@product_list';
         $this->parentTree = $parentTree;
     }
     
