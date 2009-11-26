@@ -37,7 +37,7 @@ class BaseTaxComponents extends sfComponents
                 'tax_type_id'   => $sfUser->getAttribute('tax_type_id', null, 'order/delivery'),
             );
             if($this->deliveryService['tax_type_id'])
-                $this->deliveryService['tax_title'] = TaxTypePeer::retriveById($this->deliveryService['tax_type_id'])->getTitle();
+                $this->deliveryService['tax_title'] = TaxTypePeer::retrieveByPK($this->deliveryService['tax_type_id'])->getTitle();
         }
         if(!$this->paymentService) {
             $this->paymentService = array(
@@ -46,7 +46,7 @@ class BaseTaxComponents extends sfComponents
                 'tax_type_id'   => $sfUser->getAttribute('tax_type_id', null, 'order/payment'),
             );
             if($this->paymentService['tax_type_id'])
-                $this->paymentService['tax_title'] = TaxTypePeer::retriveById($this->paymentService['tax_type_id'])->getTitle();
+                $this->paymentService['tax_title'] = TaxTypePeer::retrieveByPK($this->paymentService['tax_type_id'])->getTitle();
         }
         $price = array();
         $price[0] = array(
