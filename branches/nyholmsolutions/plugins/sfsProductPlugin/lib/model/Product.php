@@ -79,6 +79,49 @@ class Product extends BaseProduct
     }
 
    /**
+    * Return product quantity. Also depend on option quantity
+    * 
+    * @param  $options
+    * @return integer
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getProductQuantity($optionsList = null)
+    {
+    	if(!$this->getHasOptions() || $this->getQuantity() !== null)
+         return $this->getQuantity();
+
+      $amount = 0;
+      $options = $this->getOptionProducts();
+      foreach($options as $option) {
+      	if($optionsList) {
+      		foreach($optionsList as $ol){
+      			// return first not null value
+      			if($ol == $option->getId() && $option->getQuantity() !== null)
+      			 return $option->getQuantity();
+      		}
+      	}
+      	else
+         $amount += $option->getQuantity(); //assume user is using only one option type for quantity
+      }
+      return $amount;      
+    }
+    
+   /**
+    * Return quantity in database 
+    * Use getProductQuantity() to get quantity from options
+    * 
+    * @param  void
+    * @return integer
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getQuantity()
+    {
+       return parent::getQuantity();
+    }
+    
+   /**
     * Return price in database (net price)
     * Use getProductPrice() to get price with correct tax
     * 
@@ -134,11 +177,11 @@ class Product extends BaseProduct
         if(!sfConfig::get('app_tax_display_prices_with_tax', false))
             return $this->getPrice();
 
-        return $this->calculateGrossPrice($this->getPrice());
+        return TaxRatePeer::calculateGrossPrice($this->getPrice(),$this->getTaxTypeId());
     }
 
    /**
-    * Calculate gross price
+    * Wrapper for TaxRatePeer::calculateGrossPrice
     * Net price is returned if taxes are globally disabled
     * 
     * @param  decimal $price
@@ -148,14 +191,7 @@ class Product extends BaseProduct
     */
      public function calculateGrossPrice($price)
     {
-        if(!$this->getTaxTypeId() || !sfConfig::get('app_tax_is_enabled', false))
-            return $price;
-        
-        $user = sfContext::getInstance()->getUser();
-        if($user->getAttribute('tax_group_id', null, 'order/tax'))
-            return $price * TaxRatePeer::getRateForTaxGroups($this->getTaxTypeId(),$user->getTaxGroup(),true);
-        
-        return $price * TaxRatePeer::getRateForTaxGroups($this->getTaxTypeId(),sfConfig::get('app_tax_default_tax_groups', 0),true);
+    	  return TaxRatePeer::calculateGrossPrice($price,$this->getTaxTypeId());
     }    
    
 }
