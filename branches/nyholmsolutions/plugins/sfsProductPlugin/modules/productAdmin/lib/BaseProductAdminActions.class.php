@@ -89,11 +89,13 @@ class BaseProductAdminActions extends autoproductAdminActions
                     if ($params['prefix'] == 'minus') {
                         $price = $price * (-1);
                     }
-                    
                     $optionProduct->setPrice($price);
                     $optionProduct->setOptionValueId($key);
                     $optionProduct->setProductId($product->getId());
                     $optionProduct->setPriceType(OptionProductPeer::PRICE_TYPE_ADD);
+                    if(!is_numeric($params['quantity']))
+                      $params['quantity'] = null;
+                    $optionProduct->setQuantity($params['quantity']);
                     $optionProduct->save();
                     
                     $hasOptions = true;

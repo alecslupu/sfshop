@@ -20,26 +20,35 @@ function getTaxRate() {
   return 0;
 }
 
-function updateNetPrice() 
+function taxRateChanged() {
+	  var tags = document.getElementsByTagName('input');
+	  for(i=0; i<tags.length; i++) {
+	    var classes = " " + tags[i].className + " ";
+	    if (classes.indexOf('product_price') != -1)
+		    updateGrossPrice(tags[i].id);
+	  }
+}
+
+function updateNetPrice(element_id) 
 {
     var taxRate = getTaxRate();
-    var amount = document.getElementById('product_price_gross').value;
+    var amount = document.getElementById(element_id + '_gross').value;
     amount = amount.replace(',','.');
     if (taxRate > 0) {
         amount = amount / ((taxRate/100)+1);
     }
-    document.getElementById('product_price').value = doRound(amount, 5);
+    document.getElementById(element_id).value = doRound(amount, 5);
 }
 
-function updateGrossPrice() 
+function updateGrossPrice(element_id) 
 {
     var taxRate = getTaxRate();
-    var amount = document.getElementById('product_price').value;
+    var amount = document.getElementById(element_id).value;
     amount = amount.replace(',','.');
     if (taxRate > 0) {
         amount = amount * ((taxRate/100)+1);
     }
-    document.getElementById('product_price_gross').value = doRound(amount, 5);
+    document.getElementById(element_id +'_gross').value = doRound(amount, 5);
 }
 //--></script>
 <?php endif;?>
@@ -56,7 +65,7 @@ function updateGrossPrice()
       <?php include_partial('productAdmin/form_fieldset', array('product' => $product, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset)) ?>
     <?php endforeach; ?>
     <?php include_component('productAdmin', 'editOptionsListForm', array('product' => $product)) ?>
-    <?php include_component('productAdmin', 'addOptionValueForm') ?>
+    <?php //include_component('productAdmin', 'addOptionValueForm') ?>
     <?php include_partial('productAdmin/form_actions', array('product' => $product, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?>
   </form>
 </div>

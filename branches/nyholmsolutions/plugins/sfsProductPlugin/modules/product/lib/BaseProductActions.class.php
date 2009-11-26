@@ -161,8 +161,7 @@ class BaseProductActions extends sfActions
             $this->isSearch = true;
             $this->queryString = $queryString;
             
-//            $searchCriteria = new xfCriterionPhrase($queryString, 2);
-            $searchCriteria = new xfCriterionWildcard($queryString);
+            $searchCriteria = new xfCriterionPhrase($queryString, 10);
             $results = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
             
             $ids = array();

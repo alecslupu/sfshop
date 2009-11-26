@@ -24,10 +24,14 @@ class ProductForm extends BaseProductForm
       $this->widgetSchema['thumbnail'] = new sfWidgetFormInputFile();
       $this->widgetSchema['product2_category_list'] = new sfWidgetFormChoiceMany(array('choices' => get_categories_tree_for_select(false)), array('size' => '10'));
 
-      $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'peer_method' => 'getTaxRatesByName', 'add_empty' => true),array('onchange' => 'updateGrossPrice()'));
-      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('onkeyup' => 'updateGrossPrice()'));
-      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice()'));
+      $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'peer_method' => 'getTaxRatesByName', 'add_empty' => true),array('onchange' => 'taxRateChanged()'));
+      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('class' => 'product_price', 'onkeyup' => 'updateGrossPrice(\'product_price\')'));
+      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice(\'product_price\')'));
 
+      $this->validatorSchema['price'] = new sfValidatorNumberI18n(array('required' => true, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
+      $this->validatorSchema['weight'] = new sfValidatorNumberI18n(array('required' => false, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
+      $this->validatorSchema['quantity'] = new sfValidatorNumber(array('required' => false));
+      
       $this->widgetSchema->setLabels(array(
             'is_active'         => 'Active?',
             'tax_type_id'       => 'Tax type',
@@ -67,8 +71,9 @@ class ProductForm extends BaseProductForm
          $thumbnail->setPath(sfConfig::get('app_product_thumbnails_dir_name','products') . '/' . $path);
      }
      $thumbnailForm = new ThumbnailForm($thumbnail);
+     $thumbnailForm->widgetSchema->setLabels(array('uuid' => false ));
      $this->embedForm('thumbnail', $thumbnailForm);
-
+     
      $this->embedI18nForAllCultures(); 
      
      
@@ -103,8 +108,9 @@ class ProductForm extends BaseProductForm
       if(isset($this->taintedValues['thumbnail']['uuid_delete'])) {
           $embed = $this->getEmbeddedForms();
           ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($embed['thumbnail']->getObject()->getAssetId(), 'Product');
+//          unset($this['thumbnail']); test this
       }
-      if(!$this->taintedFiles['name']['thumbnail']['uuid']) {
+      if(!$this->taintedFiles['thumbnail']['uuid']['name']) {
           unset($this['thumbnail']);
       }
       
@@ -117,8 +123,8 @@ class ProductForm extends BaseProductForm
             parent::save($con); 
         }
         ThumbnailPeer::updateThumbnails($this->object);
-    }
-    return $this->object;
+      }
+      return $this->object;
   }
     
 }
