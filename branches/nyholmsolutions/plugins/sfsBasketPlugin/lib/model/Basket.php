@@ -92,12 +92,14 @@ class Basket extends BaseBasket
             
             foreach ($basketProducts as $basketProduct) {
                 $product = $basketProduct->getProduct();
-                
+                $optionIds = null;
+                if($basketProduct->getOptionsList() != '')
+                  $optionIds = explode(',',$basketProduct->getOptionsList());
                 if (!$product->getIsActive() || $product->getIsDeleted()) {
                     $this->unavailabilityProducts['deleted'] = $product->getId();
                     $basketProduct->delete();
                 }
-                else if($product->getQuantity() < $basketProduct->getQuantity()) {
+                else if($product->getProductQuantity($optionIds) < $basketProduct->getQuantity()) {
                     if(!$product->getAllowOutOfStock())
                         $this->unavailabilityProducts['insufficiently'] = $product->getId();
                 }

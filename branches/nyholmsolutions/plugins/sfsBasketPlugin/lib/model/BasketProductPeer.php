@@ -46,23 +46,21 @@ class BasketProductPeer extends BaseBasketProductPeer
     *
     * @param  int $productId
     * @return int
-    * @author Dmitry Nesteruk <nesterukd@gmail.com>
+    * @author Dmitry Nesteruk <nesterukd@gmail.com>, Andreas Nyholm
     * @access public
     */
-    public static function retrieveQuantityByProductId($productId)
+    public static function retrieveQuantityByProductId($productId, $basketId = null)
     {
         $criteria =new Criteria();
         $criteria->addSelectColumn('SUM(' . self::QUANTITY . ') as sum');
-        $criteria->addSelectColumn(self::QUANTITY);
-        
-        $criteria->addGroupByColumn(self::PRODUCT_ID);
-        $criteria2 = $criteria->getNewCriterion(self::PRODUCT_ID, $productId);
-        $criteria->addHaving($criteria2);
+        if($basketId)
+            $criteria->add(self::BASKET_ID,$basketId);        
+        $criteria->add(self::PRODUCT_ID,$productId);        
         $stmt = self::doSelectStmt($criteria);
         
         $sum = 0;
         
-        while ($res = $stmt->fetchColumn(1)) {
+        while ($res = $stmt->fetchColumn(0)) {
             $sum = $res;
         }
         
