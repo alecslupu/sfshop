@@ -16,9 +16,8 @@
     <?php if (isset($isSearch)): ?>
         <form action="<?php echo url_for('@product_search'); ?>" method="post" class="form">
             <div>
-                <?php echo $formSearch['query']->renderLabel() ?><?php echo $formSearch['query']->render() ?>
+                <?php echo $formSearch['query']->render() ?>
                 <input type="submit" value="<?php echo __('Search') ?>" class="button"/>
-                <?php echo link_to(__('Return to list'), '@product_index') ?>
             </div>
         </form><br/>
         <?php $action = '@product_search' ?>
