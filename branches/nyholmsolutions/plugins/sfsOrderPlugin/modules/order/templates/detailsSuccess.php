@@ -1,5 +1,6 @@
 <?php include_partial('core/container_header', array('caption' => __('Order details'))) ?>
     <table cellspacing="1" cellpadding="0" width="100%" class="list">
+      <tbody>
         <tr>
           <td width="50%" valign="top" style="padding-right: 5px">
               <?php include_component(
@@ -78,8 +79,8 @@
         <tr>
             <td colspan="2">
              <b><?php echo __('Order date') ?>:</b> <?php echo format_date($order->getCreatedAt()) ?>
-             <?php if($order->getPaymentAt()): ?><b><?php echo __('Payment date') ?>:</b> <?php echo format_date($order->getPaymentAt()) ?><?php endif; ?>
-             <?php if($order->getDeliveryAt()): ?><b><?php echo __('Delivery date') ?>:</b> <?php echo format_date($order->getDeliveryAt()) ?><?php endif; ?>
+             <?php if($order->getPaymentAt()): ?> <b><?php echo __('Payment date') ?>:</b> <?php echo format_date($order->getPaymentAt()) ?><?php endif; ?>
+             <?php if($order->getDeliveryAt()): ?> <b><?php echo __('Delivery date') ?>:</b> <?php echo format_date($order->getDeliveryAt()) ?><?php endif; ?>
            </td>
         </tr>
         <?php if(sfConfig::get('app_tax_is_enabled', false)): ?>
@@ -112,5 +113,6 @@
             </td>
         </tr>
         <?php endif; ?>
+      </tbody>
     </table>
 <?php include_partial('core/container_footer') ?>
