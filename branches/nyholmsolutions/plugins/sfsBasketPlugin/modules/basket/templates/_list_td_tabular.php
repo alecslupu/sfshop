@@ -2,9 +2,15 @@
     <?php 
         $thumbnail = $basketProduct->getProduct()->getThumbnail(ThumbnailPeer::MINI);
         $product = $basketProduct->getProduct();
+        list($product2category) = $product->getProduct2CategorysJoinCategory(); 
+        if($product2category)
+           $path = $product2category->getCategory()->getPath();
+        else
+           $path = '';
+        
         list($product2category) = $product->getProduct2CategorysJoinCategory();
     ?>
-    <?php echo link_to(thumbnail_tag($thumbnail, $basketProduct->getProduct()->getTitle()), '@product_details?path=' . generate_category_path_for_url($product2category->getCategory()->getPath()) . '&id=' . $product->getId()) ?>
+    <?php echo link_to(thumbnail_tag($thumbnail, $basketProduct->getProduct()->getTitle()), '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId()) ?>
 </td>
 <td valign="top">
     <?php echo link_to($product->getTitle(),'@product_details?path=' . generate_category_path_for_url($product2category->getCategory()->getPath()) . '&id=' . $product->getId(), array('class' => 'product_title')); ?>
