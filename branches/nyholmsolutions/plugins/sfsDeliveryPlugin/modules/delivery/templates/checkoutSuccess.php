@@ -19,11 +19,11 @@
                         <?php echo image_tag(sfConfig::get('app_delivery_icons_dir') . '/' . $section['object']->getIcon(), array('align' => 'absmiddle')); ?>
                     <?php endif; ?>
                 </li>
-                <li>
+                <li class="methods">
                 <?php foreach ($section['methods'] as $method): ?>
                     <ul class="methods_list">
                         <li class="label"><?php echo $radios[$i]['label'] ?></li>
-                        <li class="price"><?php echo format_currency($method['price']) ?></li>
+                        <li class="price"><?php echo format_currency($method['price']+$method['tax']) ?></li>
                         <li><?php echo $radios[$i]['input'] ?></li>
                     </ul>
                 <?php $i++; endforeach; ?>

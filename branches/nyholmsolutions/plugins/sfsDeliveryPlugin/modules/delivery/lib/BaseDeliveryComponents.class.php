@@ -47,7 +47,10 @@ class BaseDeliveryComponents extends sfComponents
                 $this->deliveryService = array(
                     'title'  => $deliveryService->getTitle(),
                     'icon'   => $deliveryService->getIcon(),
-                    'price'    => $sfUser->getAttribute('price', null, 'order/delivery'),
+                    'price'        => $sfUser->getAttribute('price', null, 'order/delivery'),
+                    'tax'  => $sfUser->getAttribute('tax', null, 'order/delivery'),
+                    'tax_type_id'  => $sfUser->getAttribute('tax_type_id', null, 'order/delivery'),
+                    'tax_title'  => $sfUser->getAttribute('tax_title', null, 'order/delivery'),
                     'method_title' => $sfUser->getAttribute('method_title', null, 'order/delivery')
                 );
             }
