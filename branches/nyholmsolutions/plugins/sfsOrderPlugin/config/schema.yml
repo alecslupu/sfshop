@@ -308,7 +308,7 @@ propel:
       onUpdate: CASCADE
     option_product_id: 
       type: INTEGER
-      required: true
+      required: false
       foreignTable: option_product
       foreignReference: id
       onDelete: SETNULL
