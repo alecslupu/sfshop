@@ -74,7 +74,7 @@ class CategoryPeer extends BaseCategoryPeer
     */
     public static function getAllChild($categoryId)
     {
-        $category = self::retrieveByPK($categoryId);
+        $category = self::retrieveById($categoryId);
         
         if ($category != null) {
             $childCategories = array();

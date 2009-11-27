@@ -34,6 +34,7 @@ class OptionValuePeer extends BaseOptionValuePeer
         }
         
         $criteria->add(self::TYPE_ID, $typeId);
+        $criteria->addAscendingOrderByColumn(self::POS);
         return self::doSelect($criteria);
     }
     

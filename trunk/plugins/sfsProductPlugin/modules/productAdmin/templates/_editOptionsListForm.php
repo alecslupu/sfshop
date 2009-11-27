@@ -18,29 +18,39 @@
                             <th><?php echo __('Is used') ?>?</th>
                             <th><?php echo __('Title') ?></th>
                             <th><?php echo __('Price') ?> (<?php echo __('Net') ?>)</th>
+                            <?php if(sfConfig::get('app_tax_is_enabled',false)): ?>
+                              <th><?php echo __('Price') ?> (<?php echo __('Gross') ?>)</th>
+                            <?php endif; ?>
                             <th><?php echo __('Prefix') ?></th>
+                            <th><?php echo __('Quantity') ?></th>
                         </tr>
                     </thead>
                     <?php foreach ($optionValues[$optionType->getId()] as $optionValue): ?>
-                        <?php $price = 0;
+                        <?php 
+                            $price_net = 0;
+                            $price_gross = 0;
                             $checked = false;
                             $checkedValue = 0;
                             $prefix = '';
+                            $quantity = null;
                         ?>
                         
                         <?php foreach ($productOptions as $productOption): ?>
                             <?php if ($optionValue->getId() == $productOption->getOptionValueId()): ?>
-                                <?php $price = $productOption->getPrice();
+                                <?php $price_net = $productOption->getNetPrice();
+                                      $price_gross = $productOption->getGrossPrice();
                                     $checked = true;
                                     $checkedValue = 1;
+                                    $quantity = $productOption->getQuantity();
                                 ?>
                                 
-                                <?php if ($price > 0): ?>
+                                <?php if ($price_net >= 0): ?>
                                     <?php $prefix = 'plus' ?>
                                 <?php else: ?>
                                     <?php $prefix = 'minus';
-                                    $price = $price * (-1);
-                                     ?>
+                                    $price_net = $price_gross * (-1);
+                                    $price_gross = $price_gross * (-1);
+                                    ?>
                                 <?php endif; ?>
                                 
                             <?php endif; ?>
@@ -51,8 +61,13 @@
                             <?php echo $optionValue->getTitle() ?>
                         </td>
                         <td>
-                            <?php echo input_tag('product[options][' . $optionValue->getId() . '][price]', $price, array('size' => 7)) ?>
+                            <?php echo input_tag('product[options][' . $optionValue->getId() . '][price]', $price_net, array('size' => 7,'class' => 'product_price','onkeyup' => 'updateGrossPrice(\'product_options_'.$optionValue->getId().'_price\')')) ?>
                         </td>
+                        <?php if(sfConfig::get('app_tax_is_enabled',false)): ?>
+                        <td>
+                            <?php echo input_tag('product[options][' . $optionValue->getId() . '][price_gross]', $price_gross, array('size' => 7,'onkeyup' => 'updateNetPrice(\'product_options_'.$optionValue->getId().'_price\')')) ?>
+                        </td>
+                        <?php endif; ?>
                         <td>
                             <?php echo select_tag(
                                 'product[options][' . $optionValue->getId() . '][prefix]', 
@@ -60,10 +75,13 @@
                                 array('style' => 'width: 35px')
                             ) ?>
                         </td>
+                        <td>
+                            <?php echo input_tag('product[options][' . $optionValue->getId() . '][quantity]',$quantity , array('size' => 7)) ?>
+                        </td>
                      </tr>
                      <?php endforeach; ?>
-                     <tr>
-                         <td colspan="4">
+<!--                      <tr>
+                         <td colspan="5">
                              <ul class="sf_admin_actions">
                                  <li>
                                     <?php echo button_to_function(
@@ -75,6 +93,7 @@
                              </ul>
                          </td>
                      </tr>
+                      -->
                  </table>
             </td>
         </tr>

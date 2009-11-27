@@ -30,7 +30,7 @@ class BasketPeer extends BaseBasketPeer
     public static function generate($memberId = null, $basketId = null)
     {
         $basket = null;
-        $basketById = self::retrieveByPK($basketId);
+        $basketById = self::retrieveById($basketId);
         $basketByMemberId = null;
         
         if ($memberId !== null) {

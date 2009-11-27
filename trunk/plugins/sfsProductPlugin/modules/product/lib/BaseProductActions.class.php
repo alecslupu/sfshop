@@ -51,10 +51,23 @@ class BaseProductActions extends sfActions
         $this->filter = $this->getUser()->getAttributeHolder()->getAll('product/filter');
         
         $criteria = new Criteria();
-        $this->addCategoryCriteria($criteria);
+        
+        sfLoader::loadHelpers('sfsCategory');
+        $categoryId = get_current_category_id();
+        if ($categoryId != null && $catObj = CategoryPeer::retrieveById($categoryId)) {
+            if($catObj->getInformationId()) {
+               $this->information = $catObj->getInformation();
+               if(!sfConfig::get('app_product_show_products_with_category_information', false)) {
+                  $this->setTemplate('information');
+             	    return sfView::SUCCESS;
+               }
+            }
+            $this->addCategoryCriteria($criteria);
+        }
         $this->addSearchCriteria($criteria);
         $criteria = $this->addFilterCriteria($criteria);
         ProductPeer::addPublicCriteria($criteria);
+        $criteria->addAscendingOrderByColumn(ProductI18nPeer::TITLE);
         
         $this->pager = new sfPropelPager('Product', 10);
         $this->pager->setPeerMethod('doSelectWithTranslation');
@@ -104,15 +117,19 @@ class BaseProductActions extends sfActions
         
         if ($categoryId != null) {
             $criteria->addJoin(Product2CategoryPeer::PRODUCT_ID, ProductPeer::ID);
-            $ids = CategoryPeer::getAllChildIds($categoryId);
-            
-            if ($ids !== null && count($ids) > 0) {
-                $ids = array_merge($ids, array($categoryId));
-                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
+
+            if(sfConfig::get('app_product_show_products_from_sub_categories', true)) {
+	            $ids = CategoryPeer::getAllChildIds($categoryId);
+	            if ($ids !== null && count($ids) > 0) {
+	                $ids = array_merge($ids, array($categoryId));
+	                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
+	            }
+	            else {
+	                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
+	            }
             }
-            else {
-                $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
-            }
+            else
+              $criteria->add(Product2CategoryPeer::CATEGORY_ID, $categoryId);
         }
         
         return $criteria;
@@ -130,7 +147,7 @@ class BaseProductActions extends sfActions
             $this->formSearch->bind($data);
             
             if ($this->formSearch->isValid()) {
-                $queryString = trim(mb_strtolower($data['query']));
+                $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
                 $this->getUser()->setAttribute('query', $queryString, 'product');
             }
         }
@@ -144,7 +161,7 @@ class BaseProductActions extends sfActions
             $this->isSearch = true;
             $this->queryString = $queryString;
             
-            $searchCriteria = new xfCriterionPhrase($queryString, 2);
+            $searchCriteria = new xfCriterionPhrase($queryString, 10);
             $results = xfIndexManager::get('ProductSearchIndex')->find($searchCriteria);
             
             $ids = array();

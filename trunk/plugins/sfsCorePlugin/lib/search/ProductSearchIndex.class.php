@@ -99,6 +99,7 @@ class ProductSearchIndex extends xfIndexSingle
             array(
                 new xfField('id', xfField::STORED | xfField::INDEXED),
                 $title,
+                new xfField('description_short', xfField::TEXT),
                 new xfField('description', xfField::TEXT),
                 
             )

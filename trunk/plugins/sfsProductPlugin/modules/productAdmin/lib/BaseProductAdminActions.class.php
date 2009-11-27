@@ -27,9 +27,9 @@ class BaseProductAdminActions extends autoproductAdminActions
         sfLoader::loadHelpers('sfsCategory');
         
         if ($this->getRequestParameter('id') != '') {
-            $product = ProductPeer::retrieveByPK($this->getRequestParameter('id'));
+            $product = ProductPeer::retrieveById($this->getRequestParameter('id'));
             $this->forward404Unless($product);
-            $category = CategoryPeer::retrieveByPK($product->getCategoryId());
+            $category = CategoryPeer::retrieveById($product->getCategoryId());
             $path = $category->getPath();
             $this->redirect('catalogAdmin/list?path=' . generate_category_path_for_url($path));
         }
@@ -80,7 +80,6 @@ class BaseProductAdminActions extends autoproductAdminActions
             OptionProductPeer::deleteByProductId($product->getId());
             
             $options = $this->getRequest()->getParameter('product[options]');
-            
             foreach ($options as $key => $params) {
                 if (isset($params['is_used'])) {
                     $optionProduct = new OptionProduct();
@@ -90,11 +89,13 @@ class BaseProductAdminActions extends autoproductAdminActions
                     if ($params['prefix'] == 'minus') {
                         $price = $price * (-1);
                     }
-                    
                     $optionProduct->setPrice($price);
                     $optionProduct->setOptionValueId($key);
                     $optionProduct->setProductId($product->getId());
                     $optionProduct->setPriceType(OptionProductPeer::PRICE_TYPE_ADD);
+                    if(!is_numeric($params['quantity']))
+                      $params['quantity'] = null;
+                    $optionProduct->setQuantity($params['quantity']);
                     $optionProduct->save();
                     
                     $hasOptions = true;

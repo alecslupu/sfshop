@@ -1,5 +1,5 @@
 <?php include_partial('core/container_header', array('caption' => __('Order details'))) ?>
-    <table cellspacing="1" cellpadding="0" width="100%" class="list">
+    <table width="100%" class="list">
       <tbody>
         <tr>
           <td width="50%" valign="top" style="padding-right: 5px">
@@ -20,7 +20,7 @@
           </td>
           <td width="50%" valign="top">
               <?php include_partial(
-                  'list_products_details',
+                  'order/list_products_details',
                   array(
                       'itemProducts'           => $order->getOrderProducts(), 
                       'item'                   => $order,

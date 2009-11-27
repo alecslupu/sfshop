@@ -25,7 +25,8 @@ class sfsFlatService extends sfsBaseDeliveryService
         $this->quotes = array(array(
             'id'    => 1,
             'title' => $this->params['title'],
-            'price' => $this->params['price']
+            'price' => $this->params['price'],
+            'tax_type' => $this->params['tax_type']
         ));
         return $this->quotes;
     }

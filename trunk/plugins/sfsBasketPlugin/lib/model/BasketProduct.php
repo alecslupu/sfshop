@@ -80,6 +80,10 @@ class BasketProduct extends BaseBasketProduct
             
             foreach ($basketOptions as $basketOption) {
                 $optionProduct = $basketOption->getOptionProduct();
+                if(!$optionProduct) {
+                  $this->delete();
+                  throw new Exception('basket product deleted');        	
+                }
                 $optionProducts[] = $optionProduct;
                 
                 if ($optionProduct->getPriceType() == OptionProductPeer::PRICE_TYPE_REPLACE) {

@@ -13,7 +13,7 @@
             <?php foreach ($section['methods'] as $method): ?>
                 <ul class="methods_list">
                     <li class="label"><?php echo $radios[$i]['label'] ?></li>
-                    <li class="price"><?php echo format_currency($method['price']) ?></li>
+                    <li class="price"><?php echo format_currency($method['price']+$method['tax']) ?></li>
                     <li><?php echo $radios[$i]['input'] ?>
                 </ul>
             <?php $i++; endforeach; ?>

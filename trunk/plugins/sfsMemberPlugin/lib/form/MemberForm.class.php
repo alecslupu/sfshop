@@ -21,9 +21,25 @@ class MemberForm extends BaseMemberForm
 {
     public function configure()
     {
+    	  unset(
+           $this['id'],
+           $this['credential'],
+           $this['default_address_id'],
+           $this['algorithm'],
+           $this['salt'],
+           $this['password'],
+           $this['confirm_code'],
+           $this['is_confirmed'],
+           $this['is_deleted'],
+           $this['is_active'],
+           $this['access_num'],
+           $this['created_at'],
+           $this['updated_at'],
+           $this['modified_at']
+         );
+
         $this->setWidgets(
             array(
-                'id'              => new sfWidgetFormInputHidden(),
                 'email'           => new sfWidgetFormInput(),
                 'first_name'      => new sfWidgetFormInput(),
                 'last_name'       => new sfWidgetFormInput(),
@@ -100,13 +116,11 @@ class MemberForm extends BaseMemberForm
         
         $this->setValidators(
             array(
-               'id'               => new sfValidatorPropelChoice(array('model' => 'Member', 'column' => 'id', 'required' => false)),
                'email'            => $validatorEmail,
                'first_name'       => $validatorFirstName,
                'last_name'        => $validatorLastName,
                'primary_phone'    => $validatorPrimaryPhone,
-               'secondary_phone'  => $validatorSecondaryPhone,
-               'is_active'        => new sfValidatorBoolean()
+               'secondary_phone'  => $validatorSecondaryPhone
             )
         );
         
