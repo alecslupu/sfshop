@@ -1,0 +1,67 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsPaymentPlugin.lib.model
+
+  payment: 
+    _attributes: 
+      phpName: Payment
+      isI18N: true
+      i18nTable: payment_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name:
+      type: VARCHAR
+      size: 64
+      required: true
+    accept_currencies_codes:
+      type: VARCHAR
+      size: 255
+    name_class_form_params:
+      type: VARCHAR
+      size: 64
+      required: true
+    charge_route:
+      type: VARCHAR
+      size: 128
+    icon:
+      type: VARCHAR
+      size: 100
+      required: false
+    params: 
+      type: LONGVARCHAR
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+
+  payment_i18n: 
+    _attributes: 
+      phpName: PaymentI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: payment
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR

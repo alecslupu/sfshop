@@ -1,0 +1,1 @@
+<?php echo link_to($order_item->getMemberFullName(), 'memberAdmin/edit?id=' . $order_item->getMemberId(), array('target' => '_blank')) ?>

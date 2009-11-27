@@ -1,0 +1,4 @@
+all: 
+  payment:
+    icons_dir: services/payment
+

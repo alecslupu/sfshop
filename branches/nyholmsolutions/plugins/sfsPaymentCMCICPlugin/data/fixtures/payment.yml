@@ -1,0 +1,11 @@
+Payment: 
+  Payment_1: 
+    culture:                 fr
+    title:                   CM-CIC Paiement
+    name:                    cmcic
+    accept_currencies_codes: EUR
+    name_class_form_params:  sfsCmcicParamsForm
+    charge_route:            '@payment_cmcic'
+    icon:                    'cmcic.jpg'
+    params:                  '{"toto":"titi"}' #params: '{"username":"admin_1220082337_biz_api1.dev-zp.com","password":"1220082349","signature":"AyQdOC9dtPXFgg47.babEm2TNmAkAFeBWjmwEuDMgsK1fAL9Hup3Ftcw","test_mode":true,"rate":2.9}'  
+    is_active:               1

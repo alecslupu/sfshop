@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sfShop v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-05 14:20+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\sfShop\\plugins\\sfsPaymentPlugin\n"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/lib/form/sfPaymentSelectForm.class.php:77
+msgid "Methods"
+msgstr "Методы"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/lib/form/sfPaymentSelectForm.class.php:81
+msgid "Please select a some payment method"
+msgstr "Пожалуйста, выберите метод оплаты"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/chargeFailedSuccess.php:1
+msgid "Charge failed"
+msgstr "Оплата завершилась неудачей"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/chargeFailedSuccess.php:3
+msgid "An error occured in the charge process. You can try to use other payment service. You can choose other payment service through your orders history."
+msgstr "Возникла какая-то ошибка, вы можете выбрать другой сервис для оплаты и оплатить ваш заказ."
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/checkoutSuccess.php:1
+msgid "Order payment methods"
+msgstr "Методы оплаты"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/checkoutSuccess.php:16
+msgid "Back"
+msgstr "Вернуться"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/checkoutSuccess.php:17
+msgid "Continue"
+msgstr "Продолжить"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/_orderPaymentInfo.php:2
+msgid "Payment"
+msgstr "Оптала"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/_orderPaymentInfo.php:4
+msgid "Edit"
+msgstr "Редактировать"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/_orderPaymentInfo.php:13
+msgid "Select payment method"
+msgstr ""
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/_selectForm.php:17
+msgid "Submit"
+msgstr "Отправить"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/payment/templates/_selectForm.php:18
+msgid "Cancel"
+msgstr "Отмена"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/paymentAdmin/templates/_edit_caption.php:2
+msgid "Edit payment service &ldquo;%title%&rdquo;"
+msgstr "Редактирование сервиса оплаты &ldquo;%title%&rdquo;"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/paymentAdmin/templates/_edit_form.php:6
+msgid "list"
+msgstr "список"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/paymentAdmin/templates/_edit_form.php:9
+msgid "save"
+msgstr "сохранить"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/paymentAdmin/templates/_edit_form.php:18
+msgid "delete"
+msgstr "удалить"
+
+#: D:\sfShop\plugins\sfsPaymentPlugin/modules/paymentAdmin/templates/_edit_form.php:20
+msgid "Are you sure?"
+msgstr "Вы уверенны?"
+

@@ -1,0 +1,64 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsDeliveryPlugin.lib.model
+
+  delivery: 
+    _attributes: 
+      phpName: Delivery
+      isI18N: true
+      i18nTable: delivery_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    accept_currencies_codes:
+      type: VARCHAR
+      size: 255
+    name_class_service:
+      type: VARCHAR
+      size: 64
+      required: true
+    name_class_form_params:
+      type: VARCHAR
+      size: 64
+      required: true
+    icon:
+      type: VARCHAR
+      size: 100
+      required: false
+    params: 
+      type: LONGVARCHAR
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_deleted: 
+      type: BOOLEAN
+      required: true
+      default: 0
+
+  delivery_i18n: 
+    _attributes: 
+      phpName: DeliveryI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: delivery
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR

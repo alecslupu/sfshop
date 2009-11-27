@@ -1,0 +1,21 @@
+all:
+  is_secure: on
+  crendentials: member
+  
+registration:
+  is_secure: off
+  
+login:
+  is_secure: off
+  
+logout:
+  is_secure: off
+  
+confirmEmail:
+  is_secure: off
+  
+forgotPasswordStepOne:
+  is_secure: off
+  
+forgotPasswordStepTwo:
+  is_secure: off

@@ -1,0 +1,6 @@
+all:
+  thumbnails:
+    dir: images/thumbnails
+    web_dir: thumbnails
+    original_dir_name: original
+    converted_dir_name: converted
