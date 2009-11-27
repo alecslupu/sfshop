@@ -79,7 +79,6 @@ class sfsValidatorMember extends sfValidatorBase
         }
         elseif ($this->hasOption('check_unique_email')) {
             $criteria = new Criteria();
-            $criteria->add(MemberPeer::IS_DELETED, false);
             $member = MemberPeer::retrieveByEmail($value, $criteria);
             $sfUser = sfContext::getInstance()->getUser();
             $ownEmail = false;

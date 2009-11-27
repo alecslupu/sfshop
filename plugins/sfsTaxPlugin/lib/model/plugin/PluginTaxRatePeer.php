@@ -9,6 +9,28 @@
  */ 
 class PluginTaxRatePeer extends BaseTaxRatePeer
 {
+	
+   /**
+    * Calculate gross price
+    * Net price is returned if taxes are globally disabled
+    * 
+    * @param  decimal $price
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */
+    static public function calculateGrossPrice($price,$taxTypeId)
+    {
+        if(!$taxTypeId || !sfConfig::get('app_tax_is_enabled', false))
+            return $price;
+        
+        $user = sfContext::getInstance()->getUser();
+        if($user->getAttribute('tax_group_id', null, 'order/tax'))
+            return $price * TaxRatePeer::getRateForTaxGroups($taxTypeId,$user->getTaxGroup(),true);
+        
+        return $price * TaxRatePeer::getRateForTaxGroups($taxTypeId,sfConfig::get('app_tax_default_tax_groups', 0),true);
+    } 
+    	
    /**
     * Gets tax rate from tax group(s) and tax type
     * 

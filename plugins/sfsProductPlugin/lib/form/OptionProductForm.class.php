@@ -16,6 +16,7 @@ class OptionProductForm extends BaseOptionProductForm
             $this['product_id'],
             $this['basket_product2_option_product_list']
         );
+       $this->validatorSchema['quantity'] = new sfValidatorNumber(array('required' => false));
         
     }
 }

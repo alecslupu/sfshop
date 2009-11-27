@@ -160,9 +160,19 @@ class BaseOrderActions extends sfActions
                     
                     foreach ($orderProducts as $orderProduct) {
                         $product = $orderProduct->getProduct();
-                        $product->setQuantity($product->getQuantity() - $orderProduct->getQuantity());
+                        if($product->getHasOptions() && $product->getQuantity() === null) {
+                          foreach($orderProduct->getOrderProduct2OptionProducts() as $option){
+                              $prod_option = $option->getOptionProduct();
+                              if($prod_option) {
+                                  if($prod_option->getQuantity() !== null)
+                                    $prod_option->setQuantity($prod_option->getQuantity() - $orderProduct->getQuantity());
+                              }
+                          }
+                        }
+                        else
+                          $product->setQuantity($product->getQuantity() - $orderProduct->getQuantity());
                         
-                        if ($product->getQuantity() <= 0 &&  !$product->getAllowOutOfStock()) {
+                        if ($product->getProductQuantity() <= 0 &&  !$product->getAllowOutOfStock()) {
                             $product->setIsActive(0);
                         }
                         

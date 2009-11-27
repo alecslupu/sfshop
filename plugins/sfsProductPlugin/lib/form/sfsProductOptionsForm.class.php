@@ -19,22 +19,31 @@ class sfsProductOptionsForm extends BaseProductForm
         $this->setValidators(array());
         
         $product = $this->getObject();
-        $options = $product->getOptionProductsJoinOptionValue();
+        $c = new Criteria();
+        $c->addAscendingOrderByColumn(OptionValuePeer::POS);
+        $options = $product->getOptionProductsJoinOptionValue($c);
         
         $choices = array();
         $optionTypes = array();
         
         foreach ($options as $optionProduct) {
-            $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getId();
+            if(($product->getQuantity() === null && ($optionProduct->getQuantity() == 0 && $optionProduct->getQuantity() !== null) && !$product->getAllowOutOfStock()))
+               continue; // do not display if out of stock and "allow out of stock" is false  
+        	  $optionTypeName = $optionProduct->getOptionValue()->getOptionType()->getId();
             $optionValue = $optionProduct->getOptionValue();
             
             $symbol = '';
             
+            $title = $optionValue->getTitle();
+            
             if ($optionProduct->getProductPrice() > 0) {
                 $symbol = '+';
             }
-            
-            $title = $optionValue->getTitle() . '  (' . $symbol . format_currency($optionProduct->getProductPrice()) . ')';
+            else if($optionProduct->getProductPrice() < 0) {
+                $symbol = '-';
+            }
+            if($optionProduct->getProductPrice() != 0)
+                $title .= '  (' . $symbol . format_currency($optionProduct->getProductPrice()) . ')';
             
             $choices[$optionTypeName][$optionProduct->getId()] = $title;
             $optionTypes[$optionTypeName] = $optionValue->getOptionType()->getTitle();

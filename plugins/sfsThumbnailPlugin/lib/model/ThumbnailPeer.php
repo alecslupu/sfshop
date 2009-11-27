@@ -103,6 +103,7 @@ class ThumbnailPeer extends BaseThumbnailPeer
                 }
             }
             
+            sfsThumbnailUtil::unlink($parentThumbnail->getStoragePath());
             $parentThumbnail->delete();
         }
     }

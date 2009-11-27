@@ -2,7 +2,7 @@
     <table cellspacing="1" cellpadding="0" width="100%" class="list">
         <tr>
           <td width="50%" valign="top">
-              <?php include_component('addressBook', 'deliveryAddress', array('is_edit_enabled' => true)) ?>
+              <?php include_component('addressBook', 'deliveryAddress', array('is_edit_enabled' => false)) ?>
           </td>
           <td width="50%" valign="top">
               <?php include_partial('list_products_details', 
@@ -15,12 +15,12 @@
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('payment', 'paymentInfo', array('is_edit_enabled' => true)) ?>
+                <?php include_component('payment', 'paymentInfo', array('is_edit_enabled' => false)) ?>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <?php include_component('delivery', 'deliveryInfo', array('is_edit_enabled' => true)) ?>
+                <?php include_component('delivery', 'deliveryInfo', array('is_edit_enabled' => false)) ?>
             </td>
         </tr>
         <tr>
@@ -30,13 +30,13 @@
         </tr>
         <tr>
             <td colspan="2">
+              <span class="caption"><?php echo __('Comment to your order') ?></span><br/><br/>
                 <form action="<?php echo url_for('@order_checkoutConfirmation'); ?>" method="post" id="form_confirm" class="form">
-                    <h3><?php echo __('Comment to your order') ?></h3>
                     <ul class="main">
                         <li><?php echo $form['comment']->renderError() ?></li>
                         <li><?php echo $form['comment']->render(array('cols' => 50)) ?></li>
                     </ul>
-                    <table cellpadding="0" width="100%">
+                    <table  width="100%">
                     <?php if(sfConfig::get('app_tax_is_enabled', false)): ?>
                         <tr>
                             <td colspan="2">

@@ -123,7 +123,7 @@ class sfsPeerBuilder extends SfPeerBuilder
             \$criteria = new Criteria();
         }
         
-        \$criteria->add(self::ID, \$id);
+        \$criteria->add(self::ID,(int) \$id);
         
         if (\$withI18n) {
             \$criteria->setLimit(1);

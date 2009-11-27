@@ -22,8 +22,10 @@ generator:
 
         
       list: 
-        display:          [ _product_title, is_active, created_at, updated_at ]
+        display:          [ =title, is_active, created_at, updated_at ]
         max_per_page:     20
+        peer_method:      doSelectWithTranslation
+        sort:             [updated_at, desc]
         object_actions: 
           _edit:          ~
           _delete:        ~
@@ -32,7 +34,7 @@ generator:
 #            label:        'New product'
         fields: 
           title: 
-            label:        'Categories/Products'
+            label:        'Products'
             help:         'Title'
     
  

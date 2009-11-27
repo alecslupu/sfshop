@@ -65,9 +65,12 @@ class BaseBasketActions extends sfActions
                        $validatorQuantity->setOption('max', NULL);
                     }
                     else {
-                      $max = $basketProduct->getProduct()->getQuantity();
+                      $options = null;
+                      if($basketProduct->getOptionsList() != '') {
+                          $options = explode(',',$basketProduct->getOptionsList());
+                      }
+                      $max = $basketProduct->getProduct()->getProductQuantity($options);
                       $validatorQuantity->setOption('max', $max);
-                    
                       $validatorQuantity->setMessage(
                           'max', 
                           str_replace('%max%', $max, $validatorQuantity->getMessage('max'))
@@ -213,14 +216,17 @@ class BaseBasketActions extends sfActions
                 }
                 
                 $this->form = new BasketForm();
-                $this->form->setDefault('quantity', $product->getQuantity());
+                $this->form->setDefault('quantity', $product->getProductQuantity($optionsRequested));
                 $validatorQuantity = $this->form->getValidatorSchema()->offsetGet('quantity');
                 
                 if($product->getAllowOutOfStock()) {
                     $validatorQuantity->setOption('max', NULL);
                 }
                 else {
-                    $max = $product->getQuantity() -  $basketProduct->getQuantity();
+                    if($product->getHasOptions() && $product->getQuantity() !== null) //if we are using product quantity instead of option quantity with options
+                      $max = $product->getQuantity() -  BasketProductPeer::retrieveQuantityByProductId($product->getId(),$basket->getId());
+                    else
+                      $max = $product->getProductQuantity($optionsRequested) -  $basketProduct->getQuantity();
                     $validatorQuantity->setOption('max', $max);
 
                     $validatorQuantity->setMessage(
@@ -297,7 +303,7 @@ class BaseBasketActions extends sfActions
     {
         if ($request->hasParameter('id')) {
             $basket = $this->getUser()->getBasket();
-            $basketProduct = BasketProductPeer::retrieveByPk($request->getParameter('id'));
+            $basketProduct = BasketProductPeer::retrieveById($request->getParameter('id'));
             
             if ($basketProduct !== null && $basketProduct->getBasketId() == $basket->getId()) {
                 $basketProduct->delete();

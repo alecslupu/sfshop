@@ -22,9 +22,9 @@ generator:
         actions: []
         fields:
           created_at:
-            date_format: dd/mm/yyyy
+            date_format: dd/MM/yyyy
           updated_at:
-            date_format: dd/mm/yyyy
+            date_format: dd/MM/yyyy
       filter:
         class: false
       form:    ~

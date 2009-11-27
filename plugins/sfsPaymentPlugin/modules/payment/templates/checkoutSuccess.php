@@ -6,7 +6,9 @@
             <?php $i = 0; foreach ($paymentServices as $paymentService): ?>
                 <li class="label">
                     <?php echo $radios[$i]['label'] ?>
-                    <?php echo image_tag(sfConfig::get('app_payment_icons_dir') . '/' . $paymentService->getIcon(), array('align' => 'absmiddle')); ?>
+                    <?php if($paymentService->getIcon()):?>
+                      <?php echo image_tag(sfConfig::get('app_payment_icons_dir') . '/' . $paymentService->getIcon(), array('align' => 'absmiddle')); ?>
+                    <?php endif;?>
                 </li>
                 <li class="price">&nbsp;
                 <?php if(isset($method['price'])):?>

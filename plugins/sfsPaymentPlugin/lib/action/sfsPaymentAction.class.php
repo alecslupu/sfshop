@@ -109,6 +109,7 @@ class sfsPaymentActions extends sfActions
             }
             
             $this->forward404Unless($orderItem);
+            $this->forward404Unless($orderItem->getMemberId() == $this->getUser()->getUserId());
             $this->orderItem = $orderItem;
         }
         

@@ -58,12 +58,17 @@ class BaseDeliveryActions extends sfActions
                         if ($method['id'] == $methodId) {
                             $methodSubTitle = $method['title'];
                             $methodPrice    = $method['price'];
+                            $methodTax      = TaxRatePeer::calculateGrossPrice($method['price'], $method['tax_type_id'])-$method['price'];
+                            $methodTaxType  = $method['tax_type_id'];
+                            $methodTaxTitle = $method['tax_title'];
                         }
                     }
-                    
                     $sfUser->setAttribute('method_id', $data['method_id'], 'order/delivery');
                     $sfUser->setAttribute('method_title', $methodSubTitle, 'order/delivery');
                     $sfUser->setAttribute('price', $methodPrice, 'order/delivery');
+                    $sfUser->setAttribute('tax', $methodTax, 'order/delivery');
+                    $sfUser->setAttribute('tax_type_id', $methodTaxType, 'order/delivery');
+                    $sfUser->setAttribute('tax_title', $methodTaxTitle, 'order/delivery');
                     
                     if ($request->isXmlHttpRequest()) {
                         
@@ -80,8 +85,11 @@ class BaseDeliveryActions extends sfActions
                             'service_title'     => $deliveryService->getTitle(),
                             'service_icon_src'  => $serviceIconSrc,
                             'method_title'      => $methodSubTitle,
-                            'price'             => format_currency($methodPrice),
-                            'total_price'       => format_currency($sfUser->getBasket()->getTotalPrice() + $methodPrice)
+                            'price'             => format_currency($methodPrice +$methodTax),
+/*                            'tax'               => $methodTax,
+                            'tax_type_id'       => $methodTaxType,
+                            'tax_title'         => $methodTaxTitle,
+ */                           'total_price'       => format_currency($sfUser->getBasket()->getTotalPrice() + ($methodPrice + $methodTax))
                         );
                         
                         return $this->renderText(sfsJSONPeer::createResponseSuccess($data));

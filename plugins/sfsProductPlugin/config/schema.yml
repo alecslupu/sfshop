@@ -71,8 +71,7 @@ propel:
       onUpdate: RESTRICT
     quantity: 
       type: INTEGER
-      required: true
-      default: 0
+      required: false
     weight: 
       type: DECIMAL
       size: 10
@@ -257,8 +256,7 @@ propel:
       scale: 4
     quantity: 
       type: INTEGER
-      required: true
-      default: 0
+      required: false
 
   product2category: 
     _attributes: 

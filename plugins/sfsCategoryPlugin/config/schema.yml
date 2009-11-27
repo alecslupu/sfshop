@@ -31,6 +31,13 @@ propel:
       type: INTEGER
       required: true
       default: 0
+    information_id: 
+      type: INTEGER
+      required: false
+      foreignTable: information
+      foreignReference: id
+      onDelete: SETNULL
+      onUpdate: SETNULL
     has_child: 
       type: TINYINT
       default: 0

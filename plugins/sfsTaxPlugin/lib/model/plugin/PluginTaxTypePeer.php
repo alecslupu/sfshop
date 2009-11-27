@@ -20,9 +20,16 @@ class PluginTaxTypePeer extends BaseTaxTypePeer
                 $rate = TaxRatePeer::getRateForTaxGroups($rateType->getId(),sfConfig::get('app_tax_default_tax_groups', 0));
                 if($rate)
                     $rate_array[] = $rate;
-            }            
+            }  
         }
         return $rate_array;
+    }
+    
+    static public function getTaxRatesByName()
+    {
+        $c = new Criteria();
+        $c->addAscendingOrderByColumn(TaxTypePeer::NAME);
+        return self::doSelect($c);
     }
     
 }

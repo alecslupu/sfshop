@@ -43,6 +43,19 @@ var sfsBasketManageForm = Class.create(sfsForm, {
 		    else {
 		        if (response.data.has_products) {
                     Effect.Fade(element.up('tr'));
+
+                    var ajaxRequest = new sfsAjax.Request(this.form.action, {parameters: this.form.serialize()});
+                    var response = ajaxRequest.getResponse();
+                    if (response.data.products.length > 0) {
+                        response.data.products.each(
+                            function(product) {
+                                var tr = $('basket_product_' + product.id);
+                                tr.down('.product_total_price').update(product.total_price);
+                            }
+                        );
+                        $('basket_total_price').update(response.data.total_price);
+                    }
+
 		        }
 		        else {
 			        this.form.up('div').hide();
