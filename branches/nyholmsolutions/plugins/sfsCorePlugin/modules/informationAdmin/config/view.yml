@@ -1,5 +1,0 @@
-editSuccess:
-  javascripts:    [ %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js, %APP_SFSHOP_ADMIN_JS_DIR%apply_tiny_mce.js ]
-  
-newSuccess:
-  javascripts:    [ %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js, %APP_SFSHOP_ADMIN_JS_DIR%apply_tiny_mce.js ]
