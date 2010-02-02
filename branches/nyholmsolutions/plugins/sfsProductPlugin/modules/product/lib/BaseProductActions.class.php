@@ -95,6 +95,7 @@ class BaseProductActions extends sfActions
         $response = $this->getResponse();
         $response->addMeta('keywords', $this->product->getMetaKeywords(), true);
         $response->addMeta('description', $this->product->getMetaDescription(), true);
+        $response->setTitle( $this->product->getTitle());
         
         $this->optionsForm = '';
         if ($this->product->getHasOptions()) {
