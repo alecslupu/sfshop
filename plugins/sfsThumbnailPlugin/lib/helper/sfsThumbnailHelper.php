@@ -23,7 +23,7 @@ function thumbnail_tag($thumbnail, $title, $isAdminPart = false)
         return image_tag(
             $prefix . $thumbnail->getUrl(), 
             array(
-                'title'  => $title
+                'alt_title'  => $title
             )
         );
     }
@@ -46,7 +46,7 @@ function thumbnail_lightbox_image_tag($thumbnailMedium, $thumbnailLarge, $title)
         );
         
         $linkOptions = array(
-            'title'     => $title,
+            'alt_title'     => $title,
             'slidename' => 'lightbox',
             'style'     => 'padding-left: 5px'
         );
