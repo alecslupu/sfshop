@@ -1,0 +1,10 @@
+#
+# Payment
+#
+payment_authorizeNet: 
+  url: /:sf_culture/payment-authorizeNet/:order_item_id
+  param: { module: authorizeNet, action: index }
+  
+payment_authorizeNetCharge: 
+  url: /:sf_culture/payment-authorizeNet-charge/:order_item_id
+  param: { module: authorizeNet, action: charge }

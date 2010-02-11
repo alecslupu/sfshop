@@ -1,0 +1,30 @@
+all:
+  languages:
+    images_dir: languages
+  
+  credentials: 
+    member: 
+      - 'member'
+    admin: 
+      - 'admin'
+      - 'superadmin'
+
+  admin:
+    algorithm_callable: 'sha1'
+
+  sfshop:
+    core_web_dir: '/sfsCorePlugin/'
+    core_js_dir: '/sfsCorePlugin/js/'
+    core_css_dir: '/sfsCorePlugin/css/'
+    core_images_dir: '/sfsCorePlugin/images/'
+
+    admin_web_dir: '/sfsCorePlugin/admin/'
+    admin_js_dir: '/sfsCorePlugin/admin/js/'
+    admin_css_dir: '/sfsCorePlugin/admin/css/'
+    admin_images_dir: '/sfsCorePlugin/admin/images/'
+
+    install_web_dir: '/sfsInstallPlugin/'
+    install_js_dir: '/sfsInstallPlugin/js/'
+    install_css_dir: '/sfsInstallPlugin/css/'
+    install_images_dir: '/sfsInstallPlugin/images/'
+      

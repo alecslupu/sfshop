@@ -1,0 +1,23 @@
+# default rules
+localized_homepage:
+  url:   /:sf_culture/
+  param: { module: default, action: index }
+
+localized_homepage2:
+  url:   /:sf_culture
+  param: { module: default, action: index }
+
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

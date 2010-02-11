@@ -1,0 +1,189 @@
+propel: 
+  _attributes: 
+    defaultIdMethod: native
+    noXsd: false
+    package: plugins.sfsTaxPlugin.lib.model
+
+  tax_type: 
+    _attributes: 
+      phpName: TaxType
+      isI18N: true
+      i18nTable: tax_type_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 128
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+    updated_at: 
+
+  tax_type_i18n: 
+    _attributes: 
+      phpName: TaxTypeI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+
+  tax_rate: 
+    _attributes: 
+      phpName: TaxRate
+      isI18N: true
+      i18nTable: tax_rate_i18n
+    id:
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    priority:
+      type: INTEGER
+      required: false
+      default: 0
+    rate: 
+      type: DECIMAL
+      size: 10
+      scale: 2
+    name: 
+      type: VARCHAR
+      size: 128
+    tax_type_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_type
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    tax_group_id: 
+      type: INTEGER
+      required: false
+      foreignTable: tax_group
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 0
+    created_at: 
+    updated_at: 
+
+  tax_rate_i18n: 
+    _attributes: 
+      phpName: TaxRateI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: tax_rate
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+
+
+  tax_group: 
+    _attributes: 
+      phpName: TaxGroup
+      isI18N: true
+      i18nTable: tax_group_i18n
+    id:
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    name: 
+      type: VARCHAR
+      size: 128
+    created_at: 
+    updated_at: 
+
+  tax_group_i18n: 
+    _attributes: 
+      phpName: TaxGroupI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: tax_group
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
+
+
+
+  location2tax_group: 
+    _attributes: 
+      phpName: Location2TaxGroup
+    id:
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    country_id:
+      type: INTEGER
+      required: false
+      foreignTable: country
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    state_id:
+      type: INTEGER
+      required: false
+      foreignTable: state
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    tax_group_id:
+      type: INTEGER
+      required: true
+      foreignTable: tax_group
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    created_at: 

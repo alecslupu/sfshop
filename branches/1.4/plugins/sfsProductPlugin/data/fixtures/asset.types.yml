@@ -1,0 +1,21 @@
+#
+# Asset types
+#
+AssetType:
+#  AssetType_product:
+#    name:          product
+#    model:         Product
+#    has_thumbnail: 1
+#    has_i18n:      1
+  AssetType_brand:
+    name:          brand
+    model:         Brand
+    has_i18n:      1
+  AssetType_option_type:
+    name:          option_type
+    model:         OptionType
+    has_i18n:      1
+  AssetType_option_value:
+    name:          option_value
+    model:         OptionValue
+    has_i18n:      1
