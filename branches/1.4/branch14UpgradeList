@@ -1,0 +1,205 @@
+                                           
+  1. Checking usage of deprecated classes  
+                                           
+   41 file(s) need to be changed. 
+  ROOT/lib/symfony/lib/validator/sfValidatorFromDescription.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/validator/sfValidatorBase.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/plugins/sfPropelPlugin/lib/generator/sfPropelFormFilterGenerator.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/plugins/sfPropelPlugin/lib/generator/sfPropelFormGenerator.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineFormGenerator.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/plugins/sfDoctrinePlugin/lib/generator/sfDoctrineFormFilterGenerator.class.php
+    sfValidator
+  ROOT/lib/symfony/lib/task/project/validation/sfDeprecatedConfigurationFilesValidation.class.php
+    sfPropelAdminGenerator
+  ROOT/lib/symfony/lib/task/project/validation/sfDeprecatedClassesValidation.class.php
+    sfDoctrineLogger, sfNoRouting, sfPathInfoRouting, sfRichTextEditor, sfRichTextEditorFCK, sfRichTextEditorTinyMCE, sfCrudGenerator, sfAdminGenerator, sfPropelCrudGenerator, sfPropelAdminGenerator, sfPropelUniqueValidator, sfDoctrineUniqueValidator, sfLoader, sfConsoleRequest, sfConsoleResponse, sfConsoleController, sfDoctrineDataRetriever, sfPropelDataRetriever, sfWidgetFormI18nSelectLanguage, sfWidgetFormI18nSelectCurrency, sfWidgetFormI18nSelectCountry, sfWidgetFormChoiceMany, sfWidgetFormPropelChoiceMany, sfWidgetFormDoctrineChoiceMany, sfValidatorChoiceMany, sfValidatorPropelChoiceMany, sfValidatorPropelDoctrineMany, SfExtensionObjectBuilder, SfExtensionPeerBuilder, SfMultiExtendObjectBuilder, SfNestedSetBuilder, SfNestedSetPeerBuilder, SfObjectBuilder, SfPeerBuilder, sfWidgetFormPropelSelect, sfWidgetFormPropelSelectMany, sfWidgetFormDoctrineSelect, sfWidgetFormDoctrineSelectMany, sfEzComponentsBridge, sfZendFrameworkBridge, sfProcessCache, sfValidatorConfigHandler, sfActionException, sfValidatorException, sfFillInFormFilter, sfValidationExecutionFilter, sfRequestCompat10, sfFillInForm, sfCallbackValidator, sfCompareValidator, sfDateValidator, sfEmailValidator, sfFileValidator, sfNumberValidator, sfRegexValidator, sfStringValidator, sfUrlValidator, sfValidator, sfValidatorManager, sfMailView, sfMail
+  ROOT/lib/symfony/test/unit/i18n/extract/sfI18nYamlValidateExtractorTest.php
+    sfStringValidator
+  ROOT/lib/symfony/test/unit/sfNoRouting.class.php
+    sfNoRouting
+  ROOT/lib/symfony/test/unit/validator/sfValidatorSchemaTest.php
+    sfValidator
+  ROOT/lib/symfony/test/unit/validator/sfValidatorErrorSchemaTest.php
+    sfValidator
+  ROOT/lib/symfony/test/unit/validator/sfValidatorDecoratorTest.php
+    sfValidator
+  ROOT/lib/symfony/test/unit/validator/sfValidatorSchemaForEachTest.php
+    sfValidator
+  ROOT/lib/symfony/test/unit/controller/sfWebControllerTest.php
+    sfNoRouting
+  ROOT/lib/symfony/test/unit/action/sfComponentTest.php
+    sfNoRouting
+  ROOT/plugins/sfsOrderPlugin/modules/order/lib/BaseOrderActions.class.php
+    sfLoader
+  ROOT/plugins/sfsProductPlugin/modules/productAdmin/lib/BaseProductAdminActions.class.php
+    sfLoader
+  ROOT/plugins/sfsProductPlugin/modules/product/lib/BaseProductActions.class.php
+    sfLoader
+  ROOT/plugins/sfsProductPlugin/lib/model/BrandPeer.php
+    sfLoader
+  ROOT/plugins/sfsProductPlugin/lib/form/sfsProductOptionsForm.class.php
+    sfLoader
+  ROOT/plugins/sfsProductPlugin/lib/form/ProductForm.class.php
+    sfWidgetFormChoiceMany
+  ROOT/plugins/sfSearchPlugin/data/generator/sfSearchInterface/default/template/actions/components.class.php
+    sfLoader
+  ROOT/plugins/sfsInstallPlugin/modules/installer/lib/BaseInstallerActions.class.php
+    sfLoader
+  ROOT/plugins/sfsDeliveryUpsPlugin/lib/form/sfsUpsParamsForm.class.php
+    sfValidatorChoiceMany
+  ROOT/plugins/sfsDeliveryUpsPlugin/lib/sfsUpsService.class.php
+    sfLoader
+  ROOT/plugins/sfsPaymentCMCICPlugin/modules/cmcic/lib/BaseCmcicActions.class.php
+    sfLoader
+  ROOT/plugins/sfsPaymentWebmoneyPlugin/modules/webmoney/lib/BaseWebmoneyActions.class.php
+    sfLoader
+  ROOT/plugins/sfsBasketPlugin/modules/basket/lib/BaseBasketActions.class.php
+    sfLoader
+  ROOT/plugins/sfsCategoryPlugin/modules/category/lib/BaseCategoryComponents.class.php
+    sfLoader
+  ROOT/plugins/sfsCategoryPlugin/modules/categoryAdmin/lib/BaseCategoryAdminComponents.class.php
+    sfLoader
+  ROOT/plugins/sfsCategoryPlugin/modules/categoryAdmin/lib/BaseCategoryAdminActions.class.php
+    sfLoader
+  ROOT/plugins/sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/BaseAuthorizeNetActions.class.php
+    sfLoader
+  ROOT/plugins/sfsDeliveryFedexPlugin/lib/sfsFedexService.class.php
+    sfLoader
+  ROOT/plugins/sfsDeliveryPlugin/modules/delivery/lib/BaseDeliveryActions.class.php
+    sfLoader
+  ROOT/plugins/sfsCorePlugin/lib/propel/builder/SfsPeerBuilder.php
+    SfPeerBuilder
+  ROOT/plugins/sfsAddressBookPlugin/modules/addressBook/lib/BaseAddressBookActions.class.php
+    sfLoader
+  ROOT/plugins/sfsAddressBookPlugin/lib/model/AddressBookPeer.php
+    sfLoader
+  ROOT/plugins/sfsPaymentPlugin/modules/payment/lib/BasePaymentActions.class.php
+    sfLoader
+  ROOT/plugins/sfsPaymentPlugin/lib/action/sfsPaymentAction.class.php
+    sfLoader
+  ROOT/plugins/sfsMemberPlugin/modules/member/lib/BaseMemberActions.class.php
+    sfLoader
+
+  The files above use deprecated classes
+  that have been removed in symfony 1.4.
+
+  You can find a list of all deprecated classes under the
+  "Classes" section of the DEPRECATED tutorial:
+
+  http://www.symfony-project.org/tutorial/1_4/en/deprecated
+
+                                                       
+  2. Checking usage of deprecated configuration files  
+                                                       
+   4 file(s) need to be changed. 
+  ROOT/plugins/sfsCurrencyPlugin/modules/currencyAdmin/validate/edit.yml
+  ROOT/plugins/sfsMemberPlugin/modules/memberAdmin/validate/edit.yml
+  ROOT/plugins/sfsProductPlugin/modules/optionTypeAdmin/validate/edit.yml
+  ROOT/plugins/sfsProductPlugin/modules/optionValueAdmin/validate/edit.yml
+
+  The project uses deprecated configuration files
+  that have been removed in symfony 1.4 (mailer.yml, validate/*.yml)
+  or for which the format changed (generator.yml)
+
+                                           
+  3. Checking usage of deprecated helpers  
+                                           
+   5 file(s) need to be changed. 
+  ROOT/lib/symfony/lib/task/project/validation/sfDeprecatedHelpersValidation.class.php
+    select_day_tag, select_month_tag, select_year_tag, select_date_tag, select_second_tag, select_minute_tag, select_hour_tag, select_ampm_tag, select_time_tag, select_datetime_tag, select_number_tag, select_timezone_tag, options_for_select, select_tag, select_country_tag, select_language_tag, select_currency_tag, input_tag, input_hidden_tag, input_file_tag, input_password_tag, textarea_tag, checkbox_tag, radiobutton_tag, input_date_range_tag, input_date_tag, submit_tag, reset_tag, submit_image_tag, label_for, object_admin_input_file_tag, object_admin_double_list, object_admin_select_list, object_admin_check_list, object_input_date_tag, object_textarea_tag, objects_for_select, object_select_tag, object_select_country_tag, object_select_language_tag, object_input_hidden_tag, object_input_tag, object_checkbox_tag, form_has_error, form_error, get_callbacks, get_ajax_options, button_to_remote, link_to_remote, periodically_call_remote, form_remote_tag, submit_to_remote, submit_image_to_remote, update_element_function, evaluate_remote_response, remote_function, observe_field, observe_form, visual_effect, sortable_element, draggable_element, drop_receiving_element, input_auto_complete_tag, input_in_place_editor_tag
+  ROOT/plugins/sfsOrderPlugin/modules/orderAdmin/templates/_filter_member_full_name.php
+    input_tag
+  ROOT/plugins/sfsOrderPlugin/modules/orderAdmin/templates/detailsSuccess.php
+    submit_tag
+  ROOT/plugins/sfsProductPlugin/modules/productAdmin/templates/_editOptionsListForm.php
+    options_for_select, select_tag, input_tag, checkbox_tag
+  ROOT/plugins/sfsProductPlugin/modules/productAdmin/templates/_addOptionValueForm.php
+    input_tag, input_hidden_tag, label_for
+
+  The files above use deprecated helpers
+  that have been removed in symfony 1.4.
+
+  You can find a list of all deprecated helpers under the
+  "Helpers" section of the DEPRECATED tutorial:
+
+  http://www.symfony-project.org/tutorial/1_4/en/deprecated
+
+                                           
+  4. Checking usage of deprecated methods  
+                                           
+   7 file(s) need to be changed. 
+  ROOT/lib/symfony/lib/validator/sfValidatedFile.class.php
+    sh
+  ROOT/lib/symfony/lib/plugins/sfPropelPlugin/test/bin/prove.php
+    sfToolkit::getTmpDir
+  ROOT/lib/symfony/lib/task/project/validation/sfDeprecatedMethodsValidation.class.php
+    sfToolkit::getTmpDir, sfToolkit::removeArrayValueForPath, sfToolkit::hasArrayValueForPath, sfToolkit::getArrayValueForPathByRef, sfValidatorBase::setInvalidMessage, sfValidatorBase::setRequiredMessage, debug_message, sfContext::retrieveObjects, getXDebugStack, checkSymfonyVersion, sh
+  ROOT/test/functional/frontend/deliveryActionsTest.php
+    isRequestParameter, checkResponseElement
+  ROOT/test/functional/frontend/currencyActionsTest.php
+    isRequestParameter, checkResponseElement
+  ROOT/test/functional/frontend/fedexActionsTest.php
+    isRequestParameter, checkResponseElement
+  ROOT/test/functional/frontend/odflActionsTest.php
+    isRequestParameter, checkResponseElement
+
+  The files above use deprecated functions and/or methods
+  that have been removed in symfony 1.4.
+
+  You can find a list of all deprecated methods under the
+  "Methods and Functions" section of the DEPRECATED tutorial:
+
+  http://www.symfony-project.org/tutorial/1_4/en/deprecated
+
+                                           
+  5. Checking usage of deprecated plugins  
+                                           
+   OK 
+                                            
+  6. Checking usage of deprecated settings  
+                                            
+   2 file(s) need to be changed. 
+  ROOT/lib/symfony/lib/task/project/validation/sfDeprecatedSettingsValidation.class.php
+    sf_check_symfony_version, sf_max_forwards, sf_lazy_cache_key, sf_strip_comments, sf_lazy_routes_deserialize, sf_calendar_web_dir, sf_rich_text_js_dir, sf_validation_error_prefix, sf_validation_error_suffix, sf_validation_error_class, sf_validation_error_id_prefix, _is_internal, sf_doc_dir
+  ROOT/lib/symfony/test/unit/controller/sfWebControllerTest.php
+    sf_max_forwards
+
+  The files above use deprecated settings
+  that have been removed in symfony 1.4.
+
+  You can find a list of all deprecated settings under the
+  "Settings" section of the DEPRECATED tutorial:
+
+  http://www.symfony-project.org/tutorial/1_4/en/deprecated
+
+                                                               
+  7. Checking usage of array notation with a parameter holder  
+                                                               
+   10 file(s) need to be changed. 
+  ROOT/lib/symfony/lib/plugins/sfPropelPlugin/test/functional/fixtures/apps/frontend/modules/unique/actions/actions.class.php
+  ROOT/plugins/sfsProductPlugin/modules/productAdmin/lib/BaseProductAdminActions.class.php
+  ROOT/plugins/sfsProductPlugin/modules/product/lib/BaseProductActions.class.php
+  ROOT/plugins/sfsBasketPlugin/modules/basket/lib/BaseBasketActions.class.php
+  ROOT/plugins/sfsCurrencyPlugin/modules/currency/lib/BaseCurrencyActions.class.php
+  ROOT/plugins/sfsCorePlugin/lib/validator/sfsValidatorAdmin.class.php
+  ROOT/plugins/sfsAddressBookPlugin/modules/addressBook/lib/BaseAddressBookActions.class.php
+  ROOT/plugins/sfsAddressBookPlugin/modules/addressBook/templates/editSuccess.php
+  ROOT/plugins/sfsMemberPlugin/modules/member/lib/BaseMemberActions.class.php
+  ROOT/plugins/sfsMemberPlugin/lib/validator/sfsValidatorMember.class.php
+
+  The files above use the array notation with a parameter holder,
+  which is not supported anymore in symfony 1.4.
+  For instance, you need to change this construct:
+
+    $foo = $request->getParameter('foo[bar]')
+
+  to this one:
+
+    $params = $request->getParameter('foo')
+    $foo = $params['bar'])
+
