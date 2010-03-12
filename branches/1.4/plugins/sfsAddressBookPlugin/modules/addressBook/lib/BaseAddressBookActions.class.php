@@ -61,7 +61,7 @@ class BaseAddressBookActions extends sfActions
     */
     public function executeEdit($request)
     {
-        sfLoader::loadHelpers('I18N');
+        $this->getContext()->getConfiguration()->loadHelpers('I18N');
         $sfUser = $this->getUser();
         $address = $this->getAddressOrCreate();
         $this->form = new AddressBookForm($address);
@@ -140,7 +140,7 @@ class BaseAddressBookActions extends sfActions
     */
     public function executeSelect($request)
     {
-        sfLoader::loadHelpers(array('Url', 'Tag'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'Tag'));
         
         $this->form = new sfsAddressBookSelectForm();
         

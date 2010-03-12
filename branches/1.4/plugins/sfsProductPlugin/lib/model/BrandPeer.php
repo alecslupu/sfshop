@@ -34,7 +34,7 @@ class BrandPeer extends BaseBrandPeer
     */
     public static function getBrandsFromCurrentCategory()
     {
-        sfLoader::loadHelpers('sfsCategory');
+        sfContext::getInstance()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         if(!$categoryId)
           return BrandPeer::getAll(new Criteria(), true);

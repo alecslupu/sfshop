@@ -85,7 +85,7 @@ class BaseInstallerActions extends sfActions
              $errors = array();
              
              if ($this->getUser()->hasFlash('error')) {
-                 sfLoader::loadHelpers(array('I18N'));
+                 $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
                  $errors[] = $this->getUser()->getFlash('error') . ' ' . __('Try again.');
              }
              
@@ -161,7 +161,7 @@ class BaseInstallerActions extends sfActions
     public function executeLoadSql($request)
     {
         if ($request->isXmlHttpRequest()) {
-            sfLoader::loadHelpers(array('Partial'));
+            $this->getContext()->getConfiguration()->loadHelpers(array('Partial'));
             
             $dispatcher = sfContext::getInstance()->getEventDispatcher();
             $formatter = new sfAnsiColorFormatter();
@@ -186,7 +186,7 @@ class BaseInstallerActions extends sfActions
     public function executeLoadData($request)
     {
         if ($request->isXmlHttpRequest()) {
-            sfLoader::loadHelpers(array('Partial'));
+            $this->getContext()->getConfiguration()->loadHelpers(array('Partial'));
             $dispatcher = sfContext::getInstance()->getEventDispatcher();
             $formatter = new sfAnsiColorFormatter();
             
@@ -209,7 +209,7 @@ class BaseInstallerActions extends sfActions
     
     public function executeFinished()
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         $sfUser = $this->getUser();
         
         $isDataLoaded = $sfUser->getAttribute('is_data_loaded', false, 'install');

@@ -31,7 +31,7 @@ class BaseWebmoneyActions extends sfsPaymentActions
     */
     public function executeIndex($request)
     {
-        sfLoader::loadHelpers(array('sfsCurrency', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('sfsCurrency', 'I18N'));
         
         $orderItem = $this->getOrderItemObjectByIdOrUuid($this->getRequestParameter('order_item_id'));
         $paymentService = $this->getPaymentServiceObject('webmoney');
@@ -92,7 +92,7 @@ class BaseWebmoneyActions extends sfsPaymentActions
     */
     public function executeCheckCharge($request)
     {
-        sfLoader::loadHelpers(array('sfsCurrency', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('sfsCurrency', 'I18N'));
         $service = $this->getPaymentServiceObject('webmoney');
         $params = sfsJSONPeer::decode($service->getParams());
         

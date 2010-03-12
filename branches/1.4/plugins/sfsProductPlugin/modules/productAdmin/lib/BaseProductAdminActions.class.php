@@ -24,7 +24,7 @@ class BaseProductAdminActions extends autoproductAdminActions
 {
     public function executeCatalogList()
     {
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         if ($this->getRequestParameter('id') != '') {
             $product = ProductPeer::retrieveById($this->getRequestParameter('id'));

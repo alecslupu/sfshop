@@ -142,7 +142,7 @@ class BaseBasketActions extends sfActions
         
         if ($request->isXmlHttpRequest()) {
             
-            sfLoader::loadHelpers(array('sfsCurrency'));
+            $this->getContext()->getConfiguration()->loadHelpers(array('sfsCurrency'));
             
             if (isset($errors)) {
                 return $this->renderText(sfsJSONPeer::createResponseError($errors));
@@ -186,7 +186,7 @@ class BaseBasketActions extends sfActions
     
     public function executeAdd($request)
     {
-        sfLoader::loadHelpers('Url');
+        $this->getContext()->getConfiguration()->loadHelpers('Url');
         $sfUser = $this->getUser();
         
         if ($request->isMethod('post')) {

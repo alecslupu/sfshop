@@ -29,7 +29,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeLogin($request)
     {
-        sfLoader::loadHelpers(array('Url', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'I18N'));
         
         $this->form = new sfsMemberLoginForm();
         
@@ -108,7 +108,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeRegistration($request)
     {
-        sfLoader::loadHelpers(array('I18N', 'Url'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N', 'Url'));
         
         if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('registered')) {
             $this->redirect('@homepage');
@@ -183,7 +183,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeConfirmEmail($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('confirmed')) {
             $this->redirect('@homepage');
@@ -249,7 +249,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeForgotPasswordStepTwo($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         $email = $this->getUser()->getAttribute('email', null, 'member/forgot_password');
         
@@ -330,7 +330,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeEditProfile($request)
     {
-        sfLoader::loadHelpers(array('I18N', 'Url'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N', 'Url'));
         
         $this->form = new MemberForm($this->getUser()->getUser());
         
@@ -388,7 +388,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeChangePassword($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         $this->form = new sfsMemberChangePasswordForm($this->getUser()->getUser());
         

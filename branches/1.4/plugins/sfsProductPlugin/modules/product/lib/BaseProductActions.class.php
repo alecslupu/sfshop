@@ -52,7 +52,7 @@ class BaseProductActions extends sfActions
         
         $criteria = new Criteria();
         
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         if ($categoryId != null && $catObj = CategoryPeer::retrieveById($categoryId)) {
             if($catObj->getInformationId()) {
@@ -86,7 +86,7 @@ class BaseProductActions extends sfActions
     */
     public function executeDetails($request)
     {
-        sfLoader::loadHelpers('sfsCurrency');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCurrency');
         $criteria = new Criteria();
         ProductPeer::addPublicCriteria($criteria);
         $this->product = ProductPeer::retrieveById($request->getParameter('id'), $criteria, true);
@@ -112,7 +112,7 @@ class BaseProductActions extends sfActions
     */
     protected function addCategoryCriteria($criteria)
     {
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         
         if ($categoryId != null) {

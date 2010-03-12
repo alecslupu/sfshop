@@ -1,57 +1,13 @@
                                            
   1. Checking usage of deprecated classes  
                                            
-   25 file(s) need to be changed. 
-  ROOT/plugins/sfsOrderPlugin/modules/order/lib/BaseOrderActions.class.php
-    sfLoader
-  ROOT/plugins/sfsProductPlugin/modules/productAdmin/lib/BaseProductAdminActions.class.php
-    sfLoader
-  ROOT/plugins/sfsProductPlugin/modules/product/lib/BaseProductActions.class.php
-    sfLoader
-  ROOT/plugins/sfsProductPlugin/lib/model/BrandPeer.php
-    sfLoader
-  ROOT/plugins/sfsProductPlugin/lib/form/sfsProductOptionsForm.class.php
-    sfLoader
+   3 file(s) need to be changed. 
   ROOT/plugins/sfsProductPlugin/lib/form/ProductForm.class.php
     sfWidgetFormChoiceMany
-  ROOT/plugins/sfSearchPlugin/data/generator/sfSearchInterface/default/template/actions/components.class.php
-    sfLoader
-  ROOT/plugins/sfsInstallPlugin/modules/installer/lib/BaseInstallerActions.class.php
-    sfLoader
   ROOT/plugins/sfsDeliveryUpsPlugin/lib/form/sfsUpsParamsForm.class.php
     sfValidatorChoiceMany
-  ROOT/plugins/sfsDeliveryUpsPlugin/lib/sfsUpsService.class.php
-    sfLoader
-  ROOT/plugins/sfsPaymentCMCICPlugin/modules/cmcic/lib/BaseCmcicActions.class.php
-    sfLoader
-  ROOT/plugins/sfsPaymentWebmoneyPlugin/modules/webmoney/lib/BaseWebmoneyActions.class.php
-    sfLoader
-  ROOT/plugins/sfsBasketPlugin/modules/basket/lib/BaseBasketActions.class.php
-    sfLoader
-  ROOT/plugins/sfsCategoryPlugin/modules/category/lib/BaseCategoryComponents.class.php
-    sfLoader
-  ROOT/plugins/sfsCategoryPlugin/modules/categoryAdmin/lib/BaseCategoryAdminComponents.class.php
-    sfLoader
-  ROOT/plugins/sfsCategoryPlugin/modules/categoryAdmin/lib/BaseCategoryAdminActions.class.php
-    sfLoader
-  ROOT/plugins/sfsPaymentAuthorizeNetPlugin/modules/authorizeNet/lib/BaseAuthorizeNetActions.class.php
-    sfLoader
-  ROOT/plugins/sfsDeliveryFedexPlugin/lib/sfsFedexService.class.php
-    sfLoader
-  ROOT/plugins/sfsDeliveryPlugin/modules/delivery/lib/BaseDeliveryActions.class.php
-    sfLoader
   ROOT/plugins/sfsCorePlugin/lib/propel/builder/SfsPeerBuilder.php
     SfPeerBuilder
-  ROOT/plugins/sfsAddressBookPlugin/modules/addressBook/lib/BaseAddressBookActions.class.php
-    sfLoader
-  ROOT/plugins/sfsAddressBookPlugin/lib/model/AddressBookPeer.php
-    sfLoader
-  ROOT/plugins/sfsPaymentPlugin/modules/payment/lib/BasePaymentActions.class.php
-    sfLoader
-  ROOT/plugins/sfsPaymentPlugin/lib/action/sfsPaymentAction.class.php
-    sfLoader
-  ROOT/plugins/sfsMemberPlugin/modules/member/lib/BaseMemberActions.class.php
-    sfLoader
 
   The files above use deprecated classes
   that have been removed in symfony 1.4.

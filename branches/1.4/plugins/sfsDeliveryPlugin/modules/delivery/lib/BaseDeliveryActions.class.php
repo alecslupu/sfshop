@@ -29,7 +29,7 @@ class BaseDeliveryActions extends sfActions
     */
     public function executeCheckout($request)
     {
-        sfLoader::loadHelpers(array('I18N', 'sfsCurrency'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N', 'sfsCurrency'));
         $sfUser = $this->getUser();
         
         $deliveryAddressId = $sfUser->getAttribute('address_id', null, 'order/delivery');

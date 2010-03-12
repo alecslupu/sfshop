@@ -63,7 +63,7 @@ class AddressBookPeer extends BaseAddressBookPeer
     */
     public static function getHashByMemberId($memberId)
     {
-        sfLoader::loadHelpers('sfsAddressBook');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsAddressBook');
         
         $addresses = self::getByMemberId($memberId);
         
