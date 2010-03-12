@@ -1,21 +1,18 @@
 <?php
 
-require_once(sfConfig::get('sf_lib_dir').'/filter/base/BaseFormFilterPropel.class.php');
-
 /**
  * Session filter form base class.
  *
  * @package    ##PROJECT_NAME##
  * @subpackage filter
  * @author     ##AUTHOR_NAME##
- * @version    SVN: $Id: sfPropelFormFilterGeneratedTemplate.php 15484 2009-02-13 13:13:51Z fabien $
  */
-class BaseSessionFormFilter extends BaseFormFilterPropel
+abstract class BaseSessionFormFilter extends BaseFormFilterPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'ses_data' => new sfWidgetFormFilterInput(),
+      'ses_data' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'ses_time' => new sfWidgetFormFilterInput(),
     ));
 

@@ -9,6 +9,20 @@
  */ 
 class BrandPeer extends BaseBrandPeer
 {
+        public static function getAll($criteria = null, $withI18n = false)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        if ($withI18n) {
+            return self::doSelectWithI18n($criteria);
+        }
+        else {
+            return self::doSelect($criteria);
+        }
+    }
+   
+
    /**
     * Get brands used in current category and its children
     * If no current category, get all brands

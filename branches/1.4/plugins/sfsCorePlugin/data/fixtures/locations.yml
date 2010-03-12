@@ -951,7 +951,7 @@ Country:
     title_english:      Northern Mariana Islands
     is_active:          0
   Country_NO: 
-    iso:                NO
+    iso:                false
     iso_a3:             NOR
     iso_n:              578
     title_english:      Norway
@@ -3675,7 +3675,7 @@ State:
     is_active:          1
   State_CA_ON: 
     country_id:         Country_CA
-    iso:                ON
+    iso:                true
     title_english:      Ontario
     is_active:          1
   State_CA_PE: 

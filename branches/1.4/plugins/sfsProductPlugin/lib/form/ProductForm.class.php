@@ -28,8 +28,8 @@ class ProductForm extends BaseProductForm
       $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('class' => 'product_price', 'onkeyup' => 'updateGrossPrice(\'product_price\')'));
       $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice(\'product_price\')'));
 
-      $this->validatorSchema['price'] = new sfValidatorNumberI18n(array('required' => true, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
-      $this->validatorSchema['weight'] = new sfValidatorNumberI18n(array('required' => false, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
+      $this->validatorSchema['price'] = new sfValidatorNumber(array('required' => true)); //, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
+      $this->validatorSchema['weight'] = new sfValidatorNumber(array('required' => false)); //, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
       $this->validatorSchema['quantity'] = new sfValidatorNumber(array('required' => false));
       
       $this->widgetSchema->setLabels(array(

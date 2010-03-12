@@ -1,13 +1,14 @@
 Language:
+  Language_FR:
+    culture:       fr
+    title_english: French
+    title_own:     Français
+    is_default:    1
+    is_active:     1
   Language_EN:
     culture:       en
     title_english: English
     title_own:     English
-    is_default:    1
-    is_active:     1
-  Language_RU:
-    culture:       ru
-    title_english: Russian
-    title_own:     Русский
     is_default:    0
     is_active:     1
+ 

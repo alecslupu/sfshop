@@ -62,29 +62,29 @@ MenuI18n:
 # Russian
   MenuI18n_HOME_RU_1: 
     id:      Menu_HOME_1
-    culture: ru
-    title:   Главная
+    culture: fr
+    title:   Accueil
   MenuI18n_BOTTOM_RU_1: 
     id:      Menu_BOTTOM_1
-    culture: ru
-    title:   Главная
+    culture: fr
+    title:   Accueil
   MenuI18n_BOTTOM_RU_2: 
     id:      Menu_BOTTOM_2
-    culture: ru
-    title:   О нас
+    culture: fr
+    title:   A propos
   MenuI18n_BOTTOM_RU_3: 
     id:      Menu_BOTTOM_3
-    culture: ru
-    title:   Shipping & Returns
+    culture: fr
+    title:   Expeditions
   MenuI18n_BOTTOM_RU_4: 
     id:      Menu_BOTTOM_4
-    culture: ru
-    title:   Privacy Notice
+    culture: fr
+    title:   Vie privée
   MenuI18n_BOTTOM_RU_5: 
     id:      Menu_BOTTOM_5
-    culture: ru
-    title:   Правила использоавания
+    culture: fr
+    title:   Conditions générales
   MenuI18n_BOTTOM_RU_6: 
     id:      Menu_BOTTOM_6
-    culture: ru
-    title:   Контакты
+    culture: fr
+    title:   Contact

@@ -1,24 +1,24 @@
 prod:
   .settings:
-    no_script_name:         on
-    logging_enabled:        on
-    cache:                  on
+    no_script_name:         true
+    logging_enabled:        true
+    cache:                  true
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              on
-    cache:                  off
-    no_script_name:         off
-    etag:                   off
+    web_debug:              true
+    cache:                  false
+    no_script_name:         false
+    etag:                   false
 
 test:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT & ~E_NOTICE)."\n" ?>
-    cache:                  off
-    web_debug:              off
-    no_script_name:         on
-    logging_enabled:        on
+    cache:                  false
+    web_debug:              false
+    no_script_name:         true
+    logging_enabled:        true
 
 all:
   .actions:
@@ -31,11 +31,11 @@ all:
   .settings:
     enabled_modules:        [ default, addressBook, menu, product, category, core, basket, order, paypal, information, currency, recaptcha, delivery, brand ]
     standard_helpers:       [ I18N, Partial, Javascript, Date, sfsCategory, sfsCurrency ]
-    i18n:                   on
+    i18n:                   true
     default_culture:        en
     csrf_secret:            false
     
-    escaping_strategy:      on
+    escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
     
 #all:
@@ -109,10 +109,10 @@ all:
 #    orm:                    propel
 #
 #    # Logging
-#    logging_enabled:        on
+#    logging_enabled:        true
 #
 #    # i18n
 #    default_culture:        en        # Default user culture
 #
 #    # enable 1.0 compatibility
-#    compat_10:              off
+#    compat_10:              false

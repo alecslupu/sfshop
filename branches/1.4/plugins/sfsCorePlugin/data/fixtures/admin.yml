@@ -4,10 +4,10 @@
 Admin: 
   Admin_1: 
     credential:      superadmin,admin
-    email:           admin@localhost
-    password:        superadmin
-    first_name:      Dmitry
-    last_name:       Nesteruk
+    email:           admin
+    password:        admin
+    first_name:      Sébastien
+    last_name:       HEITZMANN
     is_active:       1
 
 #
@@ -17,34 +17,34 @@ AdminMenu:
   AdminMenu_Administrator: 
     parent_id:      null
     credential:     ''
-    title:          Administrator
+    title:          Administrateurs
     route:          
     pos:            1
     is_active:      1
   AdminMenu_Catalog: 
     parent_id:      null
     credential:     ''
-    title:          Catalog
+    title:          Catalogue
     route:          
     pos:            2
     is_active:      1
   AdminMenu_MembersOrders: 
     parent_id:      null
     credential:     ''
-    title:          Members/Orders
+    title:          Clients/Commandes
     route:          
     pos:            3
     is_active:      1
   AdminMenu_ContentManager: 
     parent_id:      null
     credential:     ''
-    title:          Content Manager
+    title:          Gestion de contenu
     pos:            4
     is_active:      1
   AdminMenu_Localization: 
     parent_id:      null
     credential:     ''
-    title:          Localization
+    title:          Localisation
     pos:            5
     is_active:      1
   
@@ -60,7 +60,7 @@ AdminMenu:
   AdminMenu_Administrator_ChangePassword: 
     parent_id:      AdminMenu_Administrator
     credential:     superadmin,admin
-    title:          Change my password
+    title:          Modifier mon mot de passe
     module:         administratorAdmin
     action:         changeMyPassword
     route:          administratorAdmin_changeMyPassword
@@ -70,7 +70,8 @@ AdminMenu:
   AdminMenu_Catalog_CP: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
-    title:          Categories/Products
+    title:          Categories/Produits
+    module:         catalogAdmin
     route:          catalogAdmin_list
     pos:            1
     is_active:      1
@@ -78,13 +79,14 @@ AdminMenu:
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
     title:          Categories
+    module:         catalogAdmin
     route:          categoryAdmin
     pos:            2
     is_active:      1
   AdminMenu_Catalog_Brands: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
-    title:          Brands
+    title:          Marques
     module:         brandAdmin
     route:          brandAdmin
     pos:            4
@@ -92,14 +94,15 @@ AdminMenu:
   AdminMenu_Catalog_Products: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin,admin
-    title:          Products
+    title:          Produits
+    module:         catalogAdmin
     route:          productAdmin
     pos:            3
     is_active:      1
   AdminMenu_Catalog_OptionTypes: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
-    title:          Option types
+    title:          "Types d'options"
     module:         optionTypeAdmin
     route:          optionTypeAdmin
     pos:            5
@@ -108,7 +111,7 @@ AdminMenu:
   AdminMenu_Catalog_OptionValues: 
     parent_id:      AdminMenu_Catalog
     credential:     superadmin
-    title:          Option values
+    title:          "Valeur d'options"
     module:         optionValueAdmin
     route:          optionValueAdmin
     pos:            6
@@ -117,7 +120,7 @@ AdminMenu:
   AdminMenu_MembersOrders_Members: 
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
-    title:          Members
+    title:          Clients
     module:         memberAdmin
     route:          memberAdmin
     pos:            1
@@ -125,7 +128,7 @@ AdminMenu:
   AdminMenu_MembersOrders_Orders: 
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
-    title:          Orders
+    title:          Commandes
     module:         orderAdmin
     route:          orderAdmin
     pos:            2
@@ -134,7 +137,7 @@ AdminMenu:
   AdminMenu_MembersOrders_Delivery: 
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
-    title:          Delivery
+    title:          Expeditions
     module:         deliveryAdmin
     route:          deliveryAdmin
     pos:            3
@@ -143,7 +146,7 @@ AdminMenu:
   AdminMenu_MembersOrders_Payment: 
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin
-    title:          Payment
+    title:          Réglements
     module:         paymentAdmin
     route:          paymentAdmin
     pos:            4
@@ -152,7 +155,7 @@ AdminMenu:
   AdminMenu_ContentManager_Informations: 
     parent_id:      AdminMenu_ContentManager
     credential:     superadmin, admin
-    title:          Information pages
+    title:          "Pages d'informations"
     module:         informationAdmin
     route:          informationAdmin
     pos:            1
@@ -161,7 +164,7 @@ AdminMenu:
   AdminMenu_ContentManager_MailTemplates: 
     parent_id:      AdminMenu_ContentManager
     credential:     superadmin, admin
-    title:          Email templates
+    title:          "Modéles de mail"
     module:         emailTemplateAdmin
     route:          emailTemplateAdmin
     pos:            2
@@ -170,7 +173,7 @@ AdminMenu:
   AdminMenu_Localization_Currencies: 
     parent_id:      AdminMenu_Localization
     credential:     superadmin, admin
-    title:          Currencies
+    title:          Devises
     module:         currencyAdmin
     route:          currencyAdmin
     pos:            1
@@ -179,7 +182,7 @@ AdminMenu:
   AdminMenu_Localization_Languages: 
     parent_id:      AdminMenu_Localization
     credential:     superadmin, admin
-    title:          Languages
+    title:          Langues
     module:         languageAdmin
     route:          languageAdmin
     pos:            1

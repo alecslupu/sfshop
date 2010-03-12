@@ -14,6 +14,59 @@ class MemberPeer extends BaseMemberPeer
     
     protected static $member = null;
     
+    public static function getCountAll($criteria = null)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        self::addAdminCriteria($criteria);
+       return self::doCount($criteria);
+    }
+    public static function addAdminCriteria(Criteria $criteria) {
+        $criteria->addAnd(self::IS_DELETED, 0);
+    }
+
+    public static function getAll($criteria = null, $withI18n = false)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        self::addAdminCriteria($criteria);
+        if ($withI18n) {
+            return self::doSelectWithI18n($criteria);
+        }
+        else {
+            return self::doSelect($criteria);
+        }
+    }
+ 
+   /**
+    * Get member object by id.
+    *
+    * @param  string $id
+    * @return mixed if member exist returns object, otherwise null.
+    * @author Sébastien HEITZMANN
+    * @access public
+    */
+
+   public static function retrieveById($id, $criteria = null, $withI18n = false)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        
+        $criteria->add(self::ID,(int) $id);
+        
+        if ($withI18n) {
+            $criteria->setLimit(1);
+            list($object) = self::doSelectWithI18n($criteria);
+            return $object;
+        }
+        else {
+            return self::doSelectOne($criteria);
+        }
+    }
+ 
    /**
     * Get member object by email.
     *

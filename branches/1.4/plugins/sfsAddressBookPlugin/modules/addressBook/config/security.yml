@@ -1,6 +1,6 @@
 all:
-  is_secure:   on
+  is_secure:   true
   credentials: member
 
 addAddressForOrder:
-  is_secure:   off
+  is_secure:   false

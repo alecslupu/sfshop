@@ -8,6 +8,7 @@ class ProjectConfiguration extends sfProjectConfiguration
 {
   public function setup()
   {
-    $this->enableAllPluginsExcept(array('sfDoctrinePlugin', 'sfCompat10Plugin'));
+    sfYaml::setSpecVersion('1.1');
+    $this->enableAllPluginsExcept(array('sfDoctrinePlugin'));
   }
 }

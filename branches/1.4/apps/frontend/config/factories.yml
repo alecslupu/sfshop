@@ -49,7 +49,7 @@ all:
     class: sfI18N
     param:
       source:               gettext
-      debug:                off
+      debug:                false
       untranslated_prefix:  "[T]"
       untranslated_suffix:  "[/T]"
       cache:
@@ -65,7 +65,7 @@ all:
 #    param:
 #      source: MySQL
 #      database: mysql://devzpc_sfUser:AAsMM7Yx3:5Q.v4T@localhost/devzpc_sfshop
-#      debug:                off
+#      debug:                false
 #     untranslated_prefix:  "[T]"
 #      untranslated_suffix:  "[/T]"
 #      cache:
@@ -114,7 +114,7 @@ all:
 #    class: sfI18N
 #    param:
 #      source:               XLIFF
-#      debug:                off
+#      debug:                false
 #      untranslated_prefix:  "[T]"
 #      untranslated_suffix:  "[/T]"
 #      cache:

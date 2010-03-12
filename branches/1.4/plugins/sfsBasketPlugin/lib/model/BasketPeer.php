@@ -75,4 +75,31 @@ class BasketPeer extends BaseBasketPeer
         
         return $basket;
     }
+   /**
+    * Get member object by id.
+    *
+    * @param  string $id
+    * @return mixed if member exist returns object, otherwise null.
+    * @author Sébastien HEITZMANN
+    * @access public
+    */
+
+   public static function retrieveById($id, $criteria = null, $withI18n = false)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        
+        $criteria->add(self::ID,(int) $id);
+        
+        if ($withI18n) {
+            $criteria->setLimit(1);
+            list($object) = self::doSelectWithI18n($criteria);
+            return $object;
+        }
+        else {
+            return self::doSelectOne($criteria);
+        }
+    }
+ 
 }

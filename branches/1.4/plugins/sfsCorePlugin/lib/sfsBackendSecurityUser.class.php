@@ -55,11 +55,7 @@ class sfsBackendSecurityUser extends sfsSecurityUser
             }
         }
         
-        /*
-        echo '<pre>';
-        print_r($items);
-        exit;
-        */
+        
         $this->menu = $items;
         
     }
