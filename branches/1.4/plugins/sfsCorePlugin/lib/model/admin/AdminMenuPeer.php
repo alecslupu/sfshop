@@ -19,9 +19,11 @@ class AdminMenuPeer extends BaseAdminMenuPeer
         $c2->addAnd(self::MODULE, $module, Criteria::EQUAL);
         
         if (self::doCount($c1) > 0) {
+            $c1->setLimit(1);
             $item = self::doSelectOne($c1);
         }
         else {
+            $c2->setLimit(1);
             $item = self::doSelectOne($c2);
         }
         
@@ -40,6 +42,7 @@ class AdminMenuPeer extends BaseAdminMenuPeer
         }
         $c->addAscendingOrderByColumn(self::POS);
         
-        return self::doSelect($c);
+        return self::doSelectWithI18n($c);
     }
+
 }
