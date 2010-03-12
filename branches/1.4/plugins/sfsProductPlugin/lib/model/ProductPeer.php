@@ -9,31 +9,6 @@
  */ 
 class ProductPeer extends BaseProductPeer
 {
-   /**
-    * Gets object by $id.
-    * 
-    * @param  int $id
-    * @return object
-    * @author Sebastien HEITZMANN
-    * @access public
-    */
-    public static function retrieveById($id, $criteria = null, $withI18n = false)
-    {
-        if ($criteria == null) {
-            $criteria = new Criteria();
-        }
-        
-        $criteria->add(self::ID,(int) $id);
-        
-        if ($withI18n) {
-            $criteria->setLimit(1);
-            list($object) = self::doSelectWithI18n($criteria);
-            return $object;
-        }
-        else {
-            return self::doSelectOne($criteria);
-        }
-    }
  
    /**
     * Get array with products by array with products $id.
@@ -108,29 +83,6 @@ class ProductPeer extends BaseProductPeer
         $criteria->addAnd(self::IS_DELETED, 0);
     }
  
-
-    /**
-    * Gets records with i18n. But if records for current cultures does not exist, 
-    * the function will return records with i18n for default culture.
-    * 
-    * @param  \$criteria
-    * @param  \$culture
-    * @param  \$con
-    * @return array with objects
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public static function doSelectWithTranslation(Criteria $c, $culture = null, $con = null)
-    {
-        $results = self::doSelectWithI18n($c, $culture, $con);
-        
-        if ($results == null) {
-            $defaultCulture = LanguagePeer::getDefault();
-            $results = self::doSelectWithI18n($c, $defaultCulture->getCulture());
-        }
-        
-        return $results;
-    }
 
    /**
     * Gets recent products.
