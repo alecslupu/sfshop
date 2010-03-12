@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 21:43+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-03-12 13:40+0100\n"
+"Last-Translator: Sébastien HEITZMANN <2le@2le.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,76 +30,76 @@ msgid "First name can not be less than 2 characters"
 msgstr "Le prénom doit comprendre plus de 2 caractères"
 
 msgid "First name can not be more than 255 characters"
-msgstr ""
+msgstr "Le prénom ne doit pas comporter plus de 255 caractères"
 
 msgid "Last name is required"
-msgstr ""
+msgstr "Le champ nom est obligatoire"
 
 msgid "Last name can not be less than 2 characters"
-msgstr ""
+msgstr "Le prénom doit comporter plus de 2 caractères"
 
 msgid "Last name can not be more than 255 characters"
-msgstr ""
+msgstr "Le nom ne doit pas comporter plus de 255 caractères"
 
 msgid "Email is required"
-msgstr ""
+msgstr "L'email est obligatoire"
 
 msgid "This is not a valid email address"
-msgstr ""
+msgstr "Cet email est invalide"
 
 msgid "Subject is required"
-msgstr ""
+msgstr "Le sujet est obligatoire"
 
 msgid "Subject can not be less than 5 characters"
-msgstr ""
+msgstr "Le sujet doit comporter plus de 5 caractères"
 
 msgid "Body is required"
-msgstr ""
+msgstr "Le message est obligatoire"
 
 msgid "Body can not be less than 5 characters"
-msgstr ""
+msgstr "Le message doit comporter plus de 5 caractères"
 
 msgid "Subject"
-msgstr ""
+msgstr "Sujet"
 
 msgid "Body"
-msgstr ""
+msgstr "Message"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/error404Success.php:1
 msgid "Page not found"
-msgstr "Страница не найдена"
+msgstr "Page non trouvée"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/error404Success.php:2
 msgid "Sorry, but page which you requested was not found."
-msgstr "Извините. но запрашиваемая страница не найдена."
+msgstr "Désolé mais la page que vous demandé est inconnue"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/error500Success.php:1
 msgid "Server internal error"
-msgstr "Внутренняя ошибка сервера"
+msgstr "Erreur interne"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/error500Success.php:2
 msgid "Sorry, but something was broken, we has been notified about this error. As soon as possible we will fix this error and you will be able to use our service. "
-msgstr "Извините, но что-то было сломано, мы уже знаем об случившемся и работаем над устранением проблемы."
+msgstr "Désolé, quelque chose ne tourne pas rond. Nous en avons été informé et nous nous efforçons de régler le problème au plus vite."
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/core/templates/_selectLanguage.php:2
 msgid "Language"
-msgstr "Язык"
+msgstr "Langue"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/changePasswordSuccess.php:27
 msgid "Password: "
-msgstr ""
+msgstr "Mot de passe:"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/changePasswordSuccess.php:35
 msgid "New password for admin"
-msgstr ""
+msgstr "Nouveau mot de passe admin"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/changePasswordSuccess.php:45
 msgid "list"
-msgstr "Список"
+msgstr "liste"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/changePasswordSuccess.php:48
 msgid "save"
-msgstr "Сохранить"
+msgstr "Enregistrer"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/_edit_caption.php:2
 msgid "Add new admin"
@@ -107,7 +107,7 @@ msgstr "Ajoute un administrateur"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreAdminAdmin/templates/_edit_caption.php:4
 msgid "Edit admin &ldquo;%title%&rdquo;"
-msgstr ""
+msgstr "Edition de l'administrateur &ldquo;%title%&rdquo;"
 
 #: D:\sfShop\plugins\sfsCorePlugin/modules/coreInformationAdmin/templates/_edit_caption.php:2
 msgid "Add new page"

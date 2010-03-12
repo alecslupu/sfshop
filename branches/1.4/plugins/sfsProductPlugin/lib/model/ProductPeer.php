@@ -10,6 +10,32 @@
 class ProductPeer extends BaseProductPeer
 {
    /**
+    * Gets object by $id.
+    * 
+    * @param  int $id
+    * @return object
+    * @author Sebastien HEITZMANN
+    * @access public
+    */
+    public static function retrieveById($id, $criteria = null, $withI18n = false)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        
+        $criteria->add(self::ID,(int) $id);
+        
+        if ($withI18n) {
+            $criteria->setLimit(1);
+            list($object) = self::doSelectWithI18n($criteria);
+            return $object;
+        }
+        else {
+            return self::doSelectOne($criteria);
+        }
+    }
+ 
+   /**
     * Get array with products by array with products $id.
     * 
     * @param  array $ids
