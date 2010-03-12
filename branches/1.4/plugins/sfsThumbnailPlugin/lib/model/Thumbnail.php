@@ -30,8 +30,8 @@ class Thumbnail extends BaseThumbnail
             . $this->getPath() 
             . '/'
             . $this->getUuid()
-//            . '.'
-//            . $this->getMimeExtension()
+            . '.'
+            . $this->getMimeExtension()
         ;
     }
     
