@@ -47,13 +47,14 @@ class BrandPeer extends BaseBrandPeer
     $criteria->addJoin(Product2CategoryPeer::PRODUCT_ID, ProductPeer::ID);
     $ids = CategoryPeer::getAllChildIds($categoryId);
 
+    $ids = array_merge($ids, array($categoryId));
     if($cton2) {
       $cton1 = $criteria->getNewCriterion(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
-	  $cton1->addOr($cton2);
-	  $criteria->add($cton1);
+      $cton1->addOr($cton2);
+      $criteria->add($cton1);
     }
     else 
-	  $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
+      $criteria->add(Product2CategoryPeer::CATEGORY_ID, $ids, Criteria::IN);
 
     $criteria->addJoin(ProductPeer::BRAND_ID, BrandPeer::ID);
     $criteria->setDistinct();
@@ -63,4 +64,6 @@ class BrandPeer extends BaseBrandPeer
     $criteria->add(CategoryPeer::IS_DELETED, 0);
     return BrandPeer::doSelectWithTranslation($criteria);
   }
+
 }
+
