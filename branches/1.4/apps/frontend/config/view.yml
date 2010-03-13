@@ -17,4 +17,4 @@ default:
   layout:         layout
 
   components:
-    sidebar:      []
+    sidebar: [ category, menuTree ]
