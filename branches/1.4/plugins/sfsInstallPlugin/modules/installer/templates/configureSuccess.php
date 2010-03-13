@@ -16,7 +16,7 @@
 
 <div class="border">
     <p>
-      To set up your database, enter the following information.
+      <?php echo __('To set up your database, enter the following information.');?>
     </p>
     
     <form action="<?php echo url_for('@installer_configure') ?>" name="form_database" id="form_database" method="post">
