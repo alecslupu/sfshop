@@ -10,13 +10,13 @@
  */
 
 /**
- * BrandAdmin module configuration.
+ * BrandAdmin module helper.
  *
  * @package    plugin.sfsProductPlugin
  * @subpackage modules.brandAdmin.lib
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id$
+ * @version    SVN: $Id: BrandAdminGeneratorHelper.class.php 452 2008-12-24 09:53:15Z nesterukd $
  */
-class BrandAdminGeneratorConfiguration extends BaseBrandAdminGeneratorConfiguration
+class brandAdminGeneratorHelper extends BaseBrandAdminGeneratorHelper
 {
 }
