@@ -17,6 +17,6 @@
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class AdministratorAdminGeneratorHelper extends BaseAdministratorAdminGeneratorHelper
+class administratorAdminGeneratorHelper extends BaseAdministratorAdminGeneratorHelper
 {
 }

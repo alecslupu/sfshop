@@ -12,6 +12,16 @@ class sfsBackendSecurityUser extends sfsSecurityUser
     protected $model = 'admin';
     protected $menu     = null;
     protected $menuItem = null;
+
+    public function setCulture($culture)
+    {
+      if ($culture == 'admin')
+      {
+        $culture = LanguagePeer::getDefault();
+        $culture = $culture->getCulture();
+      }
+      parent::setCulture($culture);
+    }
     
     public function init($isForced = false)
     {
@@ -30,10 +40,10 @@ class sfsBackendSecurityUser extends sfsSecurityUser
             $root_id    = $this->menuItem->getParentId();
         }
         
-        $menu = AdminMenuPeer::getItems(null);
+        $menu = AdminMenuPeer::getItems(null, $this->getCulture());
         $items = array();
         for ($i = 0; $i < count($menu); $i++) {
-            $submenu = AdminMenuPeer::getItems($menu[$i]->getId());
+            $submenu = AdminMenuPeer::getItems($menu[$i]->getId(), $this->getCulture());
             $subitems = array();
             $menu_current = False;
             for ($j = 0; $j < count($submenu); $j++) {

@@ -62,7 +62,7 @@ public static function addAdminCriteria(Criteria $criteria)
  * Gets default language
  *
  * @param  void
- * @return object
+ * @return Language
  * @author Dmitry Nesteruk <nesterukd@gmail.com>
  * @access public
  */

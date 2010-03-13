@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseAdministratorAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/AdministratorAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/AdministratorAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/administratorAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/administratorAdminGeneratorHelper.class.php';
 
 /**
  * AdministratorAdmin actions.

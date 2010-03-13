@@ -31,7 +31,7 @@ class AdminMenuPeer extends BaseAdminMenuPeer
     }
     
     
-    public static function getItems($parentId = null)
+    public static function getItems($parentId = null, $culture = 'en')
     {
         $c = new Criteria();
         $c->addAnd(self::IS_ACTIVE, 1, Criteria::EQUAL);
@@ -42,7 +42,7 @@ class AdminMenuPeer extends BaseAdminMenuPeer
         }
         $c->addAscendingOrderByColumn(self::POS);
         
-        return self::doSelectWithI18n($c);
+        return self::doSelectWithI18n($c, $culture);
     }
 
 }
