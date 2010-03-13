@@ -10,13 +10,13 @@
  */
 
 /**
- * OptionTypeAdmin module configuration.
+ * MemberAdmin module helper.
  *
- * @package    plugin.sfsProductPlugin
- * @subpackage modules.optionTypeAdmin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.memberAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OptionTypeAdminGeneratorConfiguration extends BaseOptionTypeAdminGeneratorConfiguration
+class memberAdminGeneratorHelper extends BaseMemberAdminGeneratorHelper
 {
 }

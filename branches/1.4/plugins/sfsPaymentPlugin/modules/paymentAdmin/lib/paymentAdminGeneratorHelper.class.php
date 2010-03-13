@@ -10,13 +10,13 @@
  */
 
 /**
- * OptionValueAdmin module helper.
+ * InformationAdmin module helper.
  *
- * @package    plugin.sfsProductPlugin
- * @subpackage modules.optionValueAdmin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.informationAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OptionValueAdminGeneratorHelper extends BaseOptionValueAdminGeneratorHelper
+class paymentAdminGeneratorHelper extends BasePaymentAdminGeneratorHelper
 {
 }

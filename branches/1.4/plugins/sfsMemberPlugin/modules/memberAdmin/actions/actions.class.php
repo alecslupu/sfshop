@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseMemberAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/MemberAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/MemberAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/memberAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/memberAdminGeneratorHelper.class.php';
 
 /**
  * MemberAdmin actions.

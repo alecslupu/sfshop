@@ -10,13 +10,13 @@
  */
 
 /**
- * OptionValueAdmin module configuration.
+ * OrderAdmin module configuration.
  *
- * @package    plugin.sfsProductPlugin
- * @subpackage modules.optionValueAdmin
+ * @package    plugin.sfsOrderPlugin
+ * @subpackage modules.orderAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OptionValueAdminGeneratorConfiguration extends BaseOptionValueAdminGeneratorConfiguration
+class orderAdminGeneratorConfiguration extends BaseOrderAdminGeneratorConfiguration
 {
 }

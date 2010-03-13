@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseDeliveryAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/DeliveryAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/DeliveryAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/deliveryAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/deliveryAdminGeneratorHelper.class.php';
 
 
 /**

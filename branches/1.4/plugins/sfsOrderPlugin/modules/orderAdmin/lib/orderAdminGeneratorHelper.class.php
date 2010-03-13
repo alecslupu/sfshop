@@ -10,13 +10,13 @@
  */
 
 /**
- * InformationAdmin module helper.
+ * OrderAdmin module helper.
  *
- * @package    plugin.sfsCorePlugin
- * @subpackage modules.informationAdmin
+ * @package    plugin.sfsOrderPlugin
+ * @subpackage modules.orderAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class DeliveryAdminGeneratorHelper extends BaseDeliveryAdminGeneratorHelper
+class orderAdminGeneratorHelper extends BaseOrderAdminGeneratorHelper
 {
 }

@@ -17,6 +17,6 @@
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class PaymentAdminGeneratorHelper extends BasePaymentAdminGeneratorHelper
+class deliveryAdminGeneratorHelper extends BaseDeliveryAdminGeneratorHelper
 {
 }

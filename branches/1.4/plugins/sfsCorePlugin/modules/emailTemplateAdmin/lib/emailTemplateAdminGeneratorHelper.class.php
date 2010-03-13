@@ -10,13 +10,13 @@
  */
 
 /**
- * OrderAdmin module helper.
+ * EmailTemplateAdmin module helper.
  *
- * @package    plugin.sfsOrderPlugin
- * @subpackage modules.orderAdmin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.emailTemplateAdmin.lib
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OrderAdminGeneratorHelper extends BaseOrderAdminGeneratorHelper
+class emailTemplateAdminGeneratorHelper extends BaseEmailTemplateAdminGeneratorHelper
 {
 }

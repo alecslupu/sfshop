@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseOptionValueAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/OptionValueAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/OptionValueAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/optionValueAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/optionValueAdminGeneratorHelper.class.php';
 
 /**
  * OptionValue admin actions.

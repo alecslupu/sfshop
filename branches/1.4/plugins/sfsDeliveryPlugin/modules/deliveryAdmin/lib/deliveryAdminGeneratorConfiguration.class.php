@@ -10,13 +10,13 @@
  */
 
 /**
- * MemberAdmin module configuration.
+ * DeliveryAdmin module configuration.
  *
- * @package    plugin.sfsMemberPlugin
- * @subpackage modules.memberAdmin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.deliveryAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class MemberAdminGeneratorConfiguration extends BaseMemberAdminGeneratorConfiguration
+class deliveryAdminGeneratorConfiguration extends BaseDeliveryAdminGeneratorConfiguration
 {
 }

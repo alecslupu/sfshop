@@ -10,13 +10,13 @@
  */
 
 /**
- * EmailTemplateAdmin module helper.
+ * InformationAdmin module configuration.
  *
  * @package    plugin.sfsCorePlugin
- * @subpackage modules.emailTemplateAdmin.lib
+ * @subpackage modules.informationAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class EmailTemplateAdminGeneratorHelper extends BaseEmailTemplateAdminGeneratorHelper
+class paymentAdminGeneratorConfiguration extends BasePaymentAdminGeneratorConfiguration
 {
 }

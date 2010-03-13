@@ -10,13 +10,13 @@
  */
 
 /**
- * MemberAdmin module helper.
+ * InformationAdmin module helper.
  *
  * @package    plugin.sfsCorePlugin
- * @subpackage modules.memberAdmin
+ * @subpackage modules.informationAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
- * @version    SVN: $Id$
+ * @version    SVN: $Id: helper.php 12474 2008-10-31 10:41:27Z fabien $
  */
-class MemberAdminGeneratorHelper extends BaseMemberAdminGeneratorHelper
+class informationAdminGeneratorHelper extends BaseInformationAdminGeneratorHelper
 {
 }

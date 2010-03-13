@@ -10,13 +10,13 @@
  */
 
 /**
- * OptionTypeAdmin module helper.
+ * InformationAdmin module configuration.
  *
- * @package    plugin.sfsProductPlugin
- * @subpackage modules.optionTypeAdmin
+ * @package    plugin.sfsCorePlugin
+ * @subpackage modules.informationAdmin
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class OptionTypeAdminGeneratorHelper extends BaseOptionTypeAdminGeneratorHelper
+class languageAdminGeneratorConfiguration extends BaseLanguageAdminGeneratorConfiguration
 {
 }

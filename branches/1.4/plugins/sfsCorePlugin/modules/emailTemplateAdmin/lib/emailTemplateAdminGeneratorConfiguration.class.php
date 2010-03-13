@@ -17,6 +17,6 @@
  * @author     Dmitry Nesteruk <nesterukd@gmail.com>
  * @version    SVN: $Id$
  */
-class EmailTemplateAdminGeneratorConfiguration extends BaseEmailTemplateAdminGeneratorConfiguration
+class emailTemplateAdminGeneratorConfiguration extends BaseEmailTemplateAdminGeneratorConfiguration
 {
 }

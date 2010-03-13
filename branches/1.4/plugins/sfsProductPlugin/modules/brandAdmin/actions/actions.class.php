@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseBrandActions.class.php';
-require_once dirname(__FILE__).'/../lib/BrandAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/BrandAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/brandAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/brandAdminGeneratorHelper.class.php';
 
 /**
  * Brand admin actions.
