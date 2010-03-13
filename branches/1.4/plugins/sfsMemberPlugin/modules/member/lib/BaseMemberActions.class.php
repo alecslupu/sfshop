@@ -232,7 +232,8 @@ class BaseMemberActions extends sfActions
             $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
-                $this->getUser()->setAttribute('email', $request->getParameter('data[email]'), 'member/forgot_password');
+                $data = $request->getParameter('data');
+                $this->getUser()->setAttribute('email', $data['email'], 'member/forgot_password');
                 $this->getUser()->setAttribute('account_exist', true, 'member/forgot_password');
                 $this->redirect('@member_forgotPasswordStepTwo');
             }
@@ -272,8 +273,9 @@ class BaseMemberActions extends sfActions
                 $this->form->bind($request->getParameter('data'));
                 
                 if ($this->form->isValid()) {
-                    
-                    if ($member->getSecretAnswer() == $request->getParameter('data[secret_answer]')) {
+
+                    $data = $request->getParameter('data');
+                    if ($member->getSecretAnswer() == $data['secret_answer']) {
                         
                         $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::FORGOT_PASSWORD);
                         $password = MemberPeer::generatePassword();
@@ -339,7 +341,8 @@ class BaseMemberActions extends sfActions
             
             if ($this->form->isValid()) {
                 $member = $this->form->getObject();
-                $email = $request->getParameter('data[email]');
+                $email = $request->getParameter('data');
+                $email = $email['email'];
                 
                 if ($member->getEmail() != $email) {
                     $confirmCode = MemberPeer::generateConfirmCode();

@@ -81,14 +81,14 @@ class sfsValidatorAdmin extends sfValidatorBase
             $admin = AdminPeer::retrieveByEmail($value);
             $sfUser = sfContext::getInstance()->getUser();
             $ownEmail = false;
-            
+            $adminParamater = sfContext::getInstance()->getRequest()->getParameter('admin');
             if ($admin != null
                 && (
                     ($sfUser->isAuthenticated() && $sfUser->getUser()->getEmail() == $value
                         && $sfUser->getUserId() == $admin->getId()
-                        && !sfContext::getInstance()->getRequest()->hasParameter('admin[id]')
+                        && !$adminParamater['id']
                     )
-                    || ($admin->getId() == sfContext::getInstance()->getRequest()->getParameter('admin[id]') && sfConfig::get('sf_app') == 'backend')
+                    || ($admin->getId() == $adminParamater['id'] && sfConfig::get('sf_app') == 'backend')
                 )
             ) {
                 $ownEmail = true;

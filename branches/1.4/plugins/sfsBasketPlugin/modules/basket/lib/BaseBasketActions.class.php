@@ -191,7 +191,8 @@ class BaseBasketActions extends sfActions
         
         if ($request->isMethod('post')) {
             
-            $productId = $request->getParameter('add_product[product_id]');
+            $productId = $request->getParameter('add_product');
+            $productId = $productId['product_id'];
             $criteria = new Criteria();
             ProductPeer::addPublicCriteria($criteria);
             $product = ProductPeer::retrieveById($productId, $criteria);
@@ -200,7 +201,8 @@ class BaseBasketActions extends sfActions
                 return $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => $request->getReferer())));
             }
             else {
-                $optionsRequested = $request->getParameter('add_product[options]');
+                $optionsRequested = $request->getParameter('add_product');
+                $optionsRequested = $optionsRequested['options'];
                 $optionsList = null;
                 
                 if ($optionsRequested !== null) {
@@ -239,15 +241,15 @@ class BaseBasketActions extends sfActions
                     $subform = new sfsProductOptionsForm($product);
                     $this->form->embedForm('options', $subform);
                 }
-                
+                $quantity = $request->getParameter('add_product');
                 $this->form->bind(
                     array(
-                        'quantity' => $request->getParameter('add_product[quantity]')
+                        'quantity' => $quantity['quantity']
                     )
                 );
                 
                 if ($this->form->isValid()) {
-                    $quantity = $request->getParameter('add_product[quantity]');
+                    $quantity = $quantity['quantity'];
                     
                     $basketProduct->setProductId($product->getId());
                     $basketProduct->setBasketId($basket->getId());

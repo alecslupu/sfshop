@@ -82,11 +82,11 @@ class sfsValidatorMember extends sfValidatorBase
             $member = MemberPeer::retrieveByEmail($value, $criteria);
             $sfUser = sfContext::getInstance()->getUser();
             $ownEmail = false;
-            
+            $data = sfContext::getInstance()->getRequest()->getParameter('data');
             if ($member != null
                 && (
                     ($sfUser->isAuthenticated() && $sfUser->getUser()->getEmail() == $value && $sfUser->getUserId() == $member->getId())
-                    || ($member->getId() == sfContext::getInstance()->getRequest()->getParameter('data[id]') && sfConfig::get('sf_app') == 'backend')
+                    || ($member->getId() == $data['id'] && sfConfig::get('sf_app') == 'backend')
                 )
             ) {
                 $ownEmail = true;

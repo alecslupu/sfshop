@@ -37,7 +37,8 @@ class BaseCurrencyActions extends sfActions
             
             if ($form->isValid()) {
                 $basket = $this->getUser()->getBasket();
-                $basket->setCurrencyId($request->getParameter('currency[id]'));
+                $currency = $request->getParameter('currency');
+                $basket->setCurrencyId($currency['id']);
                 $basket->save();
             }
         }

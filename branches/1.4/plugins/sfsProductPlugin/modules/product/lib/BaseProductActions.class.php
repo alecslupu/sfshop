@@ -141,14 +141,16 @@ class BaseProductActions extends sfActions
         
         $this->formSearch = new sfsProductSearchForm();
         
-        if ($request->hasParameter('data[query]')) {
-            
+        if ($request->hasParameter('data')) {
             $data = $request->getParameter('data');
-            $this->formSearch->bind($data);
-            
-            if ($this->formSearch->isValid()) {
-                $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
-                $this->getUser()->setAttribute('query', $queryString, 'product');
+            if (isset($data['query']))
+            {
+              $this->formSearch->bind($data);
+
+              if ($this->formSearch->isValid()) {
+                  $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
+                  $this->getUser()->setAttribute('query', $queryString, 'product');
+              }
             }
         }
         elseif ($request->hasParameter('is_search')) {
