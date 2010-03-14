@@ -173,7 +173,7 @@ AdminMenu:
     title:          Languages
     module:         languageAdmin
     route:          languageAdmin
-    pos:            1
+    pos:            2
     is_active:      1
 
   AdminMenu_Localization_States:
@@ -182,7 +182,7 @@ AdminMenu:
     title:          States
     module:         stateAdmin
     route:          stateAdmin
-    pos:            1
+    pos:            3
     is_active:      1
 
   AdminMenu_Localization_Countries:
@@ -191,7 +191,7 @@ AdminMenu:
     title:          Countries
     module:         countryAdmin
     route:          countryAdmin
-    pos:            1
+    pos:            4
     is_active:      1
 
 #
