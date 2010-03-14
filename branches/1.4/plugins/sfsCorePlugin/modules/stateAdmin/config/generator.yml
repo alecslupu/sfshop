@@ -1,0 +1,25 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           State
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              State
+    plural:                States
+    route_prefix:          stateAdmin
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: States
+        display: [ id, country, iso, title, is_active ]
+      filter:  ~
+      form:    ~
+      edit:
+        title: Edit State %%title%%
+      new:
+        title: New State
