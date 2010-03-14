@@ -31,7 +31,7 @@ all:
     # Form security secret (CSRF protection)
     csrf_secret:            false     # Unique secret to enable CSRF protection or false to disable
     standard_helpers:       [ Partial, Cache, Form, sfsCurrency, I18N, Javascript ]
-    enabled_modules:        [ default, coreAdmin, coreAdminAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
+    enabled_modules:        [ default, countryAdmin, stateAdmin, coreAdmin, coreAdminAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
 
     # Output escaping settings
     escaping_strategy:      false            # Determines how variables are made available to templates. Accepted values: on, off.

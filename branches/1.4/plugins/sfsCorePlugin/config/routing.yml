@@ -107,3 +107,29 @@ languageAdmin:
     prefix_path:          languageAdmin
     column:               id
     with_wildcard_routes: true
+
+#
+# Stattes Admin
+#
+
+stateAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                State
+    module:               stateAdmin
+    prefix_path:          /stateAdmin
+    column:               id
+    with_wildcard_routes: true
+
+#
+# Country Admin
+#
+countryAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Country
+    module:               countryAdmin
+    prefix_path:          /countryAdmin
+    column:               id
+    with_wildcard_routes: true
+

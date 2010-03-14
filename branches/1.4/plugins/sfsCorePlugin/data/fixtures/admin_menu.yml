@@ -166,13 +166,31 @@ AdminMenu:
     route:          currencyAdmin
     pos:            1
     is_active:      1
-  
-  AdminMenu_Localization_Languages: 
+
+  AdminMenu_Localization_Languages:
     parent_id:      AdminMenu_Localization
     credential:     superadmin, admin
     title:          Languages
     module:         languageAdmin
     route:          languageAdmin
+    pos:            1
+    is_active:      1
+
+  AdminMenu_Localization_States:
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          States
+    module:         stateAdmin
+    route:          stateAdmin
+    pos:            1
+    is_active:      1
+
+  AdminMenu_Localization_Countries:
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          Countries
+    module:         countryAdmin
+    route:          countryAdmin
     pos:            1
     is_active:      1
 
@@ -282,6 +300,7 @@ AdminMenuI18N:
     culture: en
     title:          Languages
 
+    
   # french translation
   AdminMenu_Administrator_FR: 
     id: AdminMenu_Administrator 
@@ -378,8 +397,18 @@ AdminMenuI18N:
     id: AdminMenu_Localization_Currencies
     culture: fr
     title:          Devises
-  
-  AdminMenu_Localization_Languages_FR: 
+
+  AdminMenu_Localization_Languages_FR:
     id: AdminMenu_Localization_Languages
     culture: fr
     title:          Langues
+
+  AdminMenu_Localization_States_FR:
+    id: AdminMenu_Localization_States
+    culture: fr
+    title:          District
+
+  AdminMenu_Localization_Countries_FR:
+    id: AdminMenu_Localization_Countries
+    culture: fr
+    title:          Etat
