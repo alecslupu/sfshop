@@ -63,4 +63,9 @@ class BaseBasketComponents extends sfComponents
             }
         }
     }
+
+    public function executeBasketInfo(sfWebRequest $request)
+    {
+      $this->basket = $this->getUser()->getBasket();
+    }
 }
