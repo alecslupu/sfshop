@@ -49,6 +49,7 @@
         </div>
         <div class="login_container">
             <div class="login_form">
+                <?php include_component('basket', 'basketInfo')?>
             </div>
             <div class="search_form">
                 <?php include_component('product', 'searchShortForm') ?>
