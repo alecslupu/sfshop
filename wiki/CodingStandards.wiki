@@ -6,7 +6,7 @@ All developers working on the sfShop platform should follow next Coding standard
 For files that contain only PHP code, the closing tag ("?>") is never permitted. It is not required by PHP. Not including it prevents trailing whitespace from being accidentally injected into the output. 
 
 ====1.2. Indentation====
-Use an indent of 4 spaces, with no tabs.
+Use an indent of 2 spaces, with no tabs.
 
 ====1.3. Maximum Line Length====
 The target line length is 80 characters, i.e. developers should aim keep code as close to the 80-column boundary as is practical. However, longer lines are acceptable. The maximum length of any line of PHP code is 120 characters. 
