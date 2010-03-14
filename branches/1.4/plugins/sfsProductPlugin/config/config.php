@@ -5,5 +5,5 @@ if (sfConfig::get('sf_app') == 'frontend')
 }else
 if (sfConfig::get('sf_app') == 'backend')
 {
-  sfConfig::set('sf_enabled_modules', array_merge(sfConfig::get('sf_enabled_modules'), array('brandAdmin', 'optionTypeAdmin', 'optionValueAdmin','productAdmin')));
+  sfConfig::set('sf_enabled_modules', array_merge(sfConfig::get('sf_enabled_modules'), array('brandAdmin', 'product', 'optionTypeAdmin', 'optionValueAdmin','productAdmin')));
 }
