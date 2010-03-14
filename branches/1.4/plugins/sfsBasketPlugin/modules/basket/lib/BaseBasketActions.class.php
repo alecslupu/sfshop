@@ -323,4 +323,14 @@ class BaseBasketActions extends sfActions
             $this->redirect('@basket_list');
         }
     }
+
+    public function executeBasketInfoContent(sfWebRequest $request)
+    {
+      $this->basket = $this->getUser()->getBasket();
+//      if ($this->basket->hasProducts()) {
+//        foreach ($this->basket->getBasketProductsJoinProduct() as $basketProduct) {
+//          $qtty++
+//                $subForm->setDefault('quantity', $basketProduct->getQuantity());
+
+    }
 }

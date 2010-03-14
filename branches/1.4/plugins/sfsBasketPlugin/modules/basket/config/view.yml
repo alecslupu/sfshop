@@ -5,3 +5,6 @@ listSuccess:
 all:
   components:
     sidebar: [ category, menuTree ]
+    
+basketInfoContentSuccess:
+  has_layout: false
