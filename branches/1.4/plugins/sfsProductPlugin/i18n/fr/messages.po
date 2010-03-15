@@ -1,11 +1,13 @@
+#
+#  <>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: sfShop v0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-06 10:12+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2010-03-15 17:11+0100\n"
+"Last-Translator: Klein <florian@2le.net>\n"
+"Language-Team: <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +19,7 @@ msgstr ""
 
 #: D:\sfShop\plugins\sfsProductPlugin/modules/brand/templates/_product_brand.php:4
 msgid "Brand"
-msgstr "Marques"
+msgstr "Marque"
 
 #: D:\sfShop\plugins\sfsProductPlugin/modules/product/templates/detailsSuccess.php:15
 msgid "Price"
