@@ -290,6 +290,82 @@ CategoryI18n:
     title:       'Classic'
     description: 'Classic'
     
+  CategoryI18n_FR_1: 
+    id:          Category_1
+    culture:     fr
+    title:       'Films'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_FR_2: 
+    id:          Category_2
+    culture:     fr
+    title:       'Musique'
+    description: '<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerila facilisi. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p><p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_FR_3: 
+    id:          Category_3
+    culture:     fr
+    title:       'Jeux Vidéos'
+    description: '<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>'
+  CategoryI18n_FR_4: 
+    id:          Category_4
+    culture:     fr
+    title:       'Jeux PC'
+    description: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p><p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci vel...</p>'
+  CategoryI18n_FR_5: 
+    id:          Category_5
+    culture:     fr
+    title:       'Comedie'
+    description: 'Comedie'
+  CategoryI18n_FR_6: 
+    id:          Category_6
+    culture:     fr
+    title:       'Enfants & famille'
+    description: 'Enfants & famille'
+  CategoryI18n_FR_7: 
+    id:          Category_7
+    culture:     fr
+    title:       'Rock classique'
+    description: 'Rock classique'
+  CategoryI18n_FR_8: 
+    id:          Category_8
+    culture:     fr
+    title:       'Musique Country'
+    description: 'Musique Country'
+  CategoryI18n_FR_9: 
+    id:          Category_9
+    culture:     fr
+    title:       'Puzzles'
+    description: 'Puzzles'
+  CategoryI18n_FR_10: 
+    id:          Category_10
+    culture:     fr
+    title:       'Simulation'
+    description: 'Simulation'
+  CategoryI18n_FR_11: 
+    id:          Category_11
+    culture:     fr
+    title:       'Action'
+    description: 'Action'
+  CategoryI18n_FR_12: 
+    id:          Category_12
+    culture:     fr
+    title:       'Aventure'
+    description: 'Aventure'
+  CategoryI18n_FR_13: 
+    id:          Category_13
+    culture:     fr
+    title:       'Arcade'
+    description: 'Arcade'
+  CategoryI18n_FR_14: 
+    id:          Category_14
+    culture:     fr
+    title:       'Jeux de hasard'
+    description: 'Jeux de hasard'
+  CategoryI18n_FR_15: 
+    id:          Category_15
+    culture:     fr
+    title:       'Classique'
+    description: 'Classique'
+    
 # Russian
   CategoryI18n_RU_1: 
     id:          Category_1
@@ -392,6 +468,20 @@ BrandI18n:
     id:      Brand_3
     title:   Test brand 3
     culture: en
+
+#french
+  Brand_FR_1:
+    id:      Brand_1
+    title:   Marque 1
+    culture: fr
+  Brand_FR_2:
+    id:      Brand_2
+    title:   Marque 2
+    culture: fr
+  Brand_FR_3:
+    id:      Brand_3
+    title:   Marque 3
+    culture: fr
 # Russian
   Brand_RU_1:
     id:      Brand_1
@@ -763,6 +853,39 @@ ProductI18n:
       and Bruno Kirby co-star.
     meta_keywords:      Billy Crystal, Meg Ryan, Carrie Fisher, Bruno Kirby, Gretchen Palmer , David Burdick, Bernie Hern  
     meta_description:   When Harry Met Sally
+
+#french
+  ProductI18n_FR_1:
+    id:                 Product_1
+    culture:            fr
+    title:              Dan dans la vraie vie (2007)
+    description_short: |
+      'Magnifique...'
+    description: |
+      Dolor sit amet...
+    meta_keywords:      Comedie, Romance, Steve Carell, Juliette Binoche, Dane Cook, Alison Pill, Brittany Robertson, Marlene Lawston, Dianne Wiest, John Mahoney
+    meta_description:   Dan dans la vraie vie (2007)
+  ProductI18n_FR_2:
+    id:                 Product_2
+    culture:            fr
+    title:              Juno (2007)
+    description_short: |
+      'Parfait...'
+    description: |
+      Dolor sit amet...
+    meta_keywords:      Ellen Page, Michael Cera, Jennifer Garner, Jason Bateman, Allison Janney, J.K. Simmons, Rainn Wilson
+    meta_description:   Juno (2007)
+  ProductI18n_FR_3:
+    id:                 Product_3
+    culture:            fr
+    title:              Little Miss Sunshine (2006)
+    description_short: |
+      'fun...'
+    description: |
+      A voir absolument!
+    meta_keywords:      Gene Tierney, Rex Harrison, George Sanders, Edna Best, Vanessa Brown, Anna Lee, Robert Coote, Natalie Wood, Isobel Elsom, Victoria Horne, Stuart Holmes, Houseley Stevenson
+    meta_description:   Little Miss Sunshine (2006)
+    
 # Russian
   ProductI18n_RU_1:
     id:                 Product_1
