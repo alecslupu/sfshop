@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="./plugins/sfsProductPlugin/i18n/fr/messages.po" source-language="en-US" datatype="po">
+    <body>
+      <trans-unit id="1" xml:space="preserve" restype="x-gettext-domain-header" approved="no">
+        <source>Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:12+0200
+PO-Revision-Date: 2010-03-15 17:11+0100
+Last-Translator: Klein &lt;florian@2le.net&gt;
+Language-Team: &lt;&gt;
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsProductPlugin
+</source>
+        <target state="translated">Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:12+0200
+PO-Revision-Date: 2010-03-15 17:11+0100
+Last-Translator: Klein &lt;florian@2le.net&gt;
+Language-Team: &lt;&gt;
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsProductPlugin
+</target>
+        <context-group name="po-entry" purpose="information">
+          <context context-type="x-po-trancomment"> &lt;&gt;, 2010.</context>
+        </context-group>
+        <note from="po-translator"> &lt;&gt;, 2010.</note>
+      </trans-unit>
+      <trans-unit id="2" xml:space="preserve" approved="yes">
+        <source>Brand</source>
+        <target>Marque</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/brand/templates/_product_brand.php:4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3" xml:space="preserve" approved="yes">
+        <source>Price</source>
+        <target>Prix</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/detailsSuccess.php:15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4" xml:space="preserve" approved="yes">
+        <source>Description</source>
+        <target>Description</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/detailsSuccess.php:16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5" xml:space="preserve" approved="yes">
+        <source>Search</source>
+        <target>Recherche</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/listSuccess.php:16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6" xml:space="preserve" approved="yes">
+        <source>Category is empty</source>
+        <target>Categorie vide</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_list.php:23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7" xml:space="preserve" approved="yes">
+        <source>Add to cart</source>
+        <target>Ajouter au panier</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_list_tabular.php:38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8" xml:space="preserve" approved="yes">
+        <source>First</source>
+        <target>Premier</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_pager.php:12</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_list.php:6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9" xml:space="preserve" approved="yes">
+        <source>Previous</source>
+        <target>Précédent</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_pager.php:13</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_list.php:7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10" xml:space="preserve" approved="yes">
+        <source>Next</source>
+        <target>Suivant</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_pager.php:21</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_list.php:13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11" xml:space="preserve" approved="yes">
+        <source>Last</source>
+        <target>Dernier</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_pager.php:22</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_list.php:14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12" xml:space="preserve" approved="yes">
+        <source>Recent products</source>
+        <target>Nouveautés</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_recent.php:2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13" xml:space="preserve" approved="yes">
+        <source>SEARCH</source>
+        <target>Recherche</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/product/templates/_searchShortForm.php:6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14" xml:space="preserve" approved="yes">
+        <source>Types</source>
+        <target>Types</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_editFormOptionsList.php:5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15" xml:space="preserve" approved="yes">
+        <source>Values</source>
+        <target>Valeurs</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_editFormOptionsList.php:6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16" xml:space="preserve" approved="yes">
+        <source>Is used</source>
+        <target>Utilisé</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_editFormOptionsList.php:18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17" xml:space="preserve" approved="yes">
+        <source>Title</source>
+        <target>Titre</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_editFormOptionsList.php:19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18" xml:space="preserve" approved="yes">
+        <source>Prefix</source>
+        <target>Prefixe</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_editFormOptionsList.php:21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="19" xml:space="preserve" approved="yes">
+        <source>Add new product</source>
+        <target>Ajouter un produit</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_edit_caption.php:2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20" xml:space="preserve" approved="yes">
+        <source>Edit product &amp;ldquo;%title%&amp;rdquo;</source>
+        <target>Edition de &amp;ldquo;%title%&amp;rdquo;</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsProductPlugin/modules/productAdmin/templates/_edit_caption.php:4</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

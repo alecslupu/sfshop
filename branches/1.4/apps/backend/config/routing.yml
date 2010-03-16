@@ -1,20 +1,19 @@
 # default rules
 localized_homepage:
-  url:   /:sf_culture/
-  param: { module: coreAdmin, action: index, sf_culture: en }
+  url:   /:sf_culture
+  param: { module: coreAdmin, action: index }
   
 homepage:
   url:   /
-  param: { module: default, action: index, sf_culture: en }
+  param: { module: coreAdmin, action: index }
 
 default_symfony:
   url:   /symfony/:action/*
   param: { module: default }
 
 default_index:
-  url:   /:sf_culture/:module
-  param: { action: index, sf_culture: en }
+  url:   /:module
+  param: { action: index }
 
 default:
-  url:   /:sf_culture/:module/:action/*
-  param: { action: index, sf_culture: en }
+  url:   /:module/:action/*

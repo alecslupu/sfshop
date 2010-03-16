@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="./plugins/sfsPaymentCMCICPlugin/i18n/fr/messages.po" source-language="en-US" datatype="po">
+    <body>
+      <trans-unit id="1" xml:space="preserve" restype="x-gettext-domain-header" approved="no">
+        <source>Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:11+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin
+</source>
+        <target state="translated">Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:11+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsPaymentWebmoneyPlugin
+</target>
+      </trans-unit>
+      <trans-unit id="2" xml:space="preserve" approved="yes">
+        <source>Products</source>
+        <target>Продукты</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3" xml:space="preserve" approved="yes">
+        <source>Error: order does not exists</source>
+        <target>Ошибка: заказ не существует</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4" xml:space="preserve" approved="yes">
+        <source>Error: wrong currency hash</source>
+        <target>Ошибка: неверный хеш валюты</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5" xml:space="preserve" approved="yes">
+        <source>Error: wrong amount</source>
+        <target>Ошибка: неверная сумма</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6" xml:space="preserve" approved="yes">
+        <source>Error: wrong purse</source>
+        <target>Ошибка: неверный кошелек</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsPaymentWebmoneyPlugin/modules/webmoney/actions/actions.class.php:132</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="apps/frontend/i18n/ru/messages.po" source-language="en-US" datatype="po">
+    <body>
+      <trans-unit id="1" xml:space="preserve" restype="x-gettext-domain-header" approved="no">
+        <source>Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-04 22:03+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\apps\frontend
+</source>
+        <target state="translated">Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-04 22:03+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\apps\frontend
+</target>
+      </trans-unit>
+      <trans-unit id="2" xml:space="preserve" approved="yes">
+        <source>Loading</source>
+        <target>Загрузка</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3" xml:space="preserve" approved="yes">
+        <source>Sign in</source>
+        <target>Вход</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4" xml:space="preserve" approved="yes">
+        <source>Forgot password?</source>
+        <target>Забыли пароль?</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5" xml:space="preserve" approved="yes">
+        <source>Sign up</source>
+        <target>Регистрация</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6" xml:space="preserve" approved="yes">
+        <source>Hello</source>
+        <target>Привет</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7" xml:space="preserve" approved="yes">
+        <source>Logout</source>
+        <target>Выход</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8" xml:space="preserve">
+        <source>DVD shop</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9" xml:space="preserve">
+        <source>Copyright 2008 &amp;copy; %link%</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\apps\frontend/templates/layout.php:85</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

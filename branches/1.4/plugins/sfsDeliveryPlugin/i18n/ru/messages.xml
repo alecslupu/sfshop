@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="./plugins/sfsDeliveryPlugin/i18n/ru/messages.po" source-language="en-US" datatype="po">
+    <body>
+      <trans-unit id="1" xml:space="preserve" restype="x-gettext-domain-header" approved="no">
+        <source>Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:04+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsDeliveryPlugin
+</source>
+        <target state="translated">Project-Id-Version: sfShop v0.1
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2008-11-06 10:04+0200
+PO-Revision-Date: 
+Last-Translator: 
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: D:\sfShop\plugins\sfsDeliveryPlugin
+</target>
+      </trans-unit>
+      <trans-unit id="2" xml:space="preserve" approved="yes">
+        <source>An error occured with the %title% shipping calculations. %title% may not 
+                deliver to your country, or your postal code may be wrong.</source>
+        <target>Возникла ошибка при получении стоимости доставки. %title% возможно сервис(ы) не производит доставку в страну в которой вы находитесь.</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/lib/form/sfsDeliverySelectForm.class.php:133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3" xml:space="preserve" approved="yes">
+        <source>Please select a some delivery method</source>
+        <target>Пожалуйста, выберите метод доставки</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/lib/form/sfsDeliverySelectForm.class.php:151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4" xml:space="preserve" approved="yes">
+        <source>Order delivery methods</source>
+        <target>Методы доставки</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/checkoutSuccess.php:1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5" xml:space="preserve" approved="yes">
+        <source>Back</source>
+        <target>Вернуться</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/checkoutSuccess.php:36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6" xml:space="preserve" approved="yes">
+        <source>Continue</source>
+        <target>Продолжить</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/checkoutSuccess.php:37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7" xml:space="preserve" approved="yes">
+        <source>Shipping</source>
+        <target>Доставка</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/_orderDeliveryInfo.php:2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8" xml:space="preserve" approved="yes">
+        <source>Edit</source>
+        <target>Редактировать</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/_orderDeliveryInfo.php:4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9" xml:space="preserve" approved="yes">
+        <source>Select shipping method</source>
+        <target>Выбрать метод доставки</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/_orderDeliveryInfo.php:15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10" xml:space="preserve" approved="yes">
+        <source>Submit</source>
+        <target>Отправить</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/_selectForm.php:23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11" xml:space="preserve" approved="yes">
+        <source>Cancel</source>
+        <target>Отмена</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/delivery/templates/_selectForm.php:24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12" xml:space="preserve" approved="yes">
+        <source>Edit delivery service &amp;ldquo;%title%&amp;rdquo;</source>
+        <target>Редактирование сервиса доставки</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_caption.php:2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13" xml:space="preserve" approved="yes">
+        <source>list</source>
+        <target>список</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_form.php:6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14" xml:space="preserve" approved="yes">
+        <source>save</source>
+        <target>сохранить</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_form.php:9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15" xml:space="preserve" approved="yes">
+        <source>delete</source>
+        <target>удалить</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_form.php:18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16" xml:space="preserve" approved="yes">
+        <source>Are you sure?</source>
+        <target>Вы уверенны?</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_form.php:20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17" xml:space="preserve" approved="yes">
+        <source>The form is not valid because it contains some errors.</source>
+        <target>Форма содержит некоторые ошибки.</target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">D</context>
+          <context context-type="linenumber">\sfShop\plugins\sfsDeliveryPlugin/modules/deliveryAdmin/templates/_edit_messages.php:3</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

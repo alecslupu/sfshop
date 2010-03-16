@@ -948,3 +948,7 @@ span.service_title {
 span.menu_main {
     margin-left: 400px;
 }
+
+.language-switcher .current img {
+    width: 1.8em;
+}

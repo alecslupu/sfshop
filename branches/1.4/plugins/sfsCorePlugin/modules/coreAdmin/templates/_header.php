@@ -1,5 +1,7 @@
 <div id="wrapper">
-    <div id="header"><br/>
+    <div id="header">
+        <br/>
+        <?php include_component('core', 'selectLanguage'); ?>
         <h1 class="logo">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo link_to('ADMIN PANEL', '@homepage') ?></h1>
         <div id="header-in">
             <p><?php include_partial('coreAdmin/navigation_bar'); ?></p>

@@ -6,6 +6,7 @@ if (sfConfig::get('sf_app') == 'backend') {
       'administrationAdmin',
       'countryAdmin',
       'emailTemplateAdmin',
+      'core',
       'coreAdmin',
       'stateAdmin',
       'languageAdmin',
