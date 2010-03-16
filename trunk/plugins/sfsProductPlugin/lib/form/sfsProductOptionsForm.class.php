@@ -11,7 +11,7 @@ class sfsProductOptionsForm extends BaseProductForm
 {
     public function configure()
     {
-        sfLoader::loadHelpers('sfsCurrency');
+        sfContext::getInstance()->getConfiguration()->loadHelpers('sfsCurrency');
 
         unset($this['id']);
         

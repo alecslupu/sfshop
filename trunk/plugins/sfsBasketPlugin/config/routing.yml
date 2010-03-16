@@ -14,3 +14,6 @@ basket_delete:
   url: /shopping-cart-delete/*
   param: { module: basket, action: delete }
 
+basket_info:
+  url: /:sf_culture/shopping-cart-info
+  param: { module: basket, action: basketInfoContent }

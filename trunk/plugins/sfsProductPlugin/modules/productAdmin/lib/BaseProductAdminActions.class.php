@@ -24,7 +24,7 @@ class BaseProductAdminActions extends autoproductAdminActions
 {
     public function executeCatalogList()
     {
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         if ($this->getRequestParameter('id') != '') {
             $product = ProductPeer::retrieveById($this->getRequestParameter('id'));
@@ -75,31 +75,36 @@ class BaseProductAdminActions extends autoproductAdminActions
         
         $hasOptions = false;
         
-        if ($this->getRequest()->hasParameter('product[options]')) {
+        if ($this->getRequest()->hasParameter('product')) {
             
-            OptionProductPeer::deleteByProductId($product->getId());
-            
-            $options = $this->getRequest()->getParameter('product[options]');
-            foreach ($options as $key => $params) {
-                if (isset($params['is_used'])) {
-                    $optionProduct = new OptionProduct();
-                    
-                    $price = $params['price'];
-                    
-                    if ($params['prefix'] == 'minus') {
-                        $price = $price * (-1);
-                    }
-                    $optionProduct->setPrice($price);
-                    $optionProduct->setOptionValueId($key);
-                    $optionProduct->setProductId($product->getId());
-                    $optionProduct->setPriceType(OptionProductPeer::PRICE_TYPE_ADD);
-                    if(!is_numeric($params['quantity']))
-                      $params['quantity'] = null;
-                    $optionProduct->setQuantity($params['quantity']);
-                    $optionProduct->save();
-                    
-                    $hasOptions = true;
-                }
+            $options = $this->getRequest()->getParameter('product');
+            if (isset($options['options']))
+            {
+              $options = $options['options'];
+
+              OptionProductPeer::deleteByProductId($product->getId());
+
+              foreach ($options as $key => $params) {
+                  if (isset($params['is_used'])) {
+                      $optionProduct = new OptionProduct();
+
+                      $price = $params['price'];
+
+                      if ($params['prefix'] == 'minus') {
+                          $price = $price * (-1);
+                      }
+                      $optionProduct->setPrice($price);
+                      $optionProduct->setOptionValueId($key);
+                      $optionProduct->setProductId($product->getId());
+                      $optionProduct->setPriceType(OptionProductPeer::PRICE_TYPE_ADD);
+                      if(!is_numeric($params['quantity']))
+                        $params['quantity'] = null;
+                      $optionProduct->setQuantity($params['quantity']);
+                      $optionProduct->save();
+
+                      $hasOptions = true;
+                  }
+              }
             }
         }
         

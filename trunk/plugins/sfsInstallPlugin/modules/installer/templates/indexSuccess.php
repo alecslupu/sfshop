@@ -5,7 +5,7 @@
     <div class="error">
         <?php if (!$isValidPhpVersion): ?>
             <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'cross.png', array('width' => 16, 'height' => 16, 'align' => 'absmiddle')) ?>
-            <?php echo __('The platform is require 5.1 version of PHP or ealier. %version% is installed on this server now.', array('%version%' => phpversion())) ?>
+            <?php echo __('The platform is require 5.2.4 version of PHP or later. %version% is installed on this server now.', array('%version%' => phpversion())) ?>
             <br/>
         <?php endif; ?>
         
@@ -38,12 +38,12 @@
     <tr><td colspan="2"><b><?php echo __('Extension') ?>:</b></td></tr>
     
     <?php foreach ($phpExtensions as $extension): ?>
-        <tr class="<?php echo in_array($extension, $sf_data->getRaw('unexistsPhpExtensions')) ? 'error' : '' ?>">
+        <tr class="<?php echo isset($unexistsPhpExtensions[$extension]) ? 'error' : '' ?>">
             <td width="95%">
                 &nbsp; &nbsp; <?php echo $extension ?>
             </td>
             <td width="5%">
-                <?php if (in_array($extension, $sf_data->getRaw('unexistsPhpExtensions'))): ?>
+                <?php if ( isset($unexistsPhpExtensions[$extension]) ): ?>
                     <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'bad.png', array('width' => 16, 'height' => 16)) ?>
                 <?php else: ?>
                     <?php echo image_tag(sfConfig::get('app_sfshop_install_images_dir').'ok.png', array('width' => 16, 'height' => 16)) ?>

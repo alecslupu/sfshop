@@ -9,6 +9,7 @@
  */ 
 class ProductPeer extends BaseProductPeer
 {
+ 
    /**
     * Get array with products by array with products $id.
     * 
@@ -52,6 +53,37 @@ class ProductPeer extends BaseProductPeer
         BasePeer::doUpdate($criteriaWhere, $criteriaSet, Propel::getConnection(self::DATABASE_NAME));
     }
     
+   /**
+    * Gets public criteria.
+    * 
+    * @param  \$criteria
+    * @return object
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    
+    public static function addPublicCriteria(Criteria $criteria)
+    {
+        self::addAdminCriteria($criteria);
+        $criteria->addAnd(self::IS_ACTIVE, 1);
+    }
+
+
+    /**
+    * Gets admin criteria.
+    * 
+    * @param  \$criteria
+    * @return object
+    * @author Dmitry Nesteruk
+    * @access public
+    */
+    
+    public static function addAdminCriteria(Criteria $criteria)
+    {
+        $criteria->addAnd(self::IS_DELETED, 0);
+    }
+ 
+
    /**
     * Gets recent products.
     * 

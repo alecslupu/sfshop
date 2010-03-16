@@ -237,3 +237,7 @@ th.sf_admin_boolean {
   padding: 5px;
   border-bottom: 1px solid #ddd;
 }
+
+.language-switcher .current img {
+    width: 1.8em;
+}

@@ -31,7 +31,7 @@ class BaseCategoryAdminComponents extends sfComponents
     */
     public function executeTree()
     {
-        sfLoader::loadHelpers('sfsCategory');
+		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         $this->parentTree = array();
         
@@ -61,7 +61,7 @@ class BaseCategoryAdminComponents extends sfComponents
     */
     public function executeList()
     {
-        sfLoader::loadHelpers(array('sfsCategory', 'Url'));
+		$this->getContext()->getConfiguration()->loadHelpers(array('sfsCategory', 'Url'));
         
         $request = $this->getRequest();
         

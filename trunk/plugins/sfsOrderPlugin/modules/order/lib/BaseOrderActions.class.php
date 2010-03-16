@@ -29,7 +29,7 @@ class BaseOrderActions extends sfActions
     */
     public function executeCheckoutConfirmation($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         $sfUser = $this->getUser();
         

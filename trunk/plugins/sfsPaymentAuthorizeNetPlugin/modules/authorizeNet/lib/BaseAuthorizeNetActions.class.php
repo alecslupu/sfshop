@@ -85,7 +85,7 @@ class BaseAuthorizeNetActions extends sfsPaymentActions
     */
     public function executeCharge($request)
     {
-        sfLoader::loadHelpers(array('sfsCurrency', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('sfsCurrency', 'I18N'));
         $this->checkOrderStatus();
         
         $this->errors = array();

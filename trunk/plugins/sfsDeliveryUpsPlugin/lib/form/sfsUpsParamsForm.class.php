@@ -103,8 +103,8 @@ class sfsUpsParamsForm extends DeliveryForm
             array('invalid'  => 'Handling must contain only numerals')
         );
         
-        $validatorMethods = new sfValidatorChoiceMany(
-            array('choices' => array_keys($arrayMethods)),
+        $validatorMethods = new sfValidatorChoice(
+            array('multiple'=>true, 'choices' => array_keys($arrayMethods)),
             array('required' => 'You should select methods')
         );
         

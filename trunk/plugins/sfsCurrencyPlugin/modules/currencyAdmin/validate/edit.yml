@@ -6,21 +6,21 @@ methods:
     - "currency{decimal_places}"
 
 fillin:
-  activate: on
+  activate: true
 
 names: 
   currency{code}: 
-    required:           Yes
+    required:           true
     required_msg:       Code is a required field
   currency{value}: 
-    required:           Yes
+    required:           true
     required_msg:       Value is a required field
     validators:         valueValidator
   currency{title_i18n}: 
-    required:           Yes
+    required:           true
     required_msg:       Title is a required field
   currency{decimal_places}: 
-    required:           Yes
+    required:           true
     required_msg:       Decimal places is a required field
     validators:         decimalPlacesValidator
 

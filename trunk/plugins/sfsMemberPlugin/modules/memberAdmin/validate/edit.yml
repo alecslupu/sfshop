@@ -7,23 +7,23 @@ methods:
     - "member{secondary_phone}"
 
 fillin: 
-  activate: on
+  activate: true
 
 names: 
   member{email}: 
-    required:           Yes
+    required:           true
     required_msg:       Email is a required field
     validators:         [emailValidator, uniqueValidator]
   member{first_name}: 
-    required:           Yes
+    required:           true
     required_msg:       First Name is a required field
   member{last_name}: 
-    required:           Yes
+    required:           true
     required_msg:       Last Name is a required field
   member{primary_phone}: 
     required:           Primary phone is a required field
   member{secondary_phone}: 
-    required:           No
+    required:           false
 
 emailValidator: 
   class:              sfEmailValidator

@@ -14,6 +14,19 @@ class MemberPeer extends BaseMemberPeer
     
     protected static $member = null;
     
+    public static function getCountAll($criteria = null)
+    {
+        if ($criteria == null) {
+            $criteria = new Criteria();
+        }
+        self::addAdminCriteria($criteria);
+       return self::doCount($criteria);
+    }
+    public static function addAdminCriteria(Criteria $criteria) {
+        $criteria->addAnd(self::IS_DELETED, 0);
+    }
+
+ 
    /**
     * Get member object by email.
     *

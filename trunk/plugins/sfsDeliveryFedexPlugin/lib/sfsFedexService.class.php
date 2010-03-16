@@ -139,7 +139,7 @@ class sfsFedexService extends sfsBaseDeliveryService
     
     public function getQuote()
     {
-        sfLoader::loadHelpers(array('sfsCurrency'));
+        sfContext::getInstance()->getConfiguration()->loadHelpers(array('sfsCurrency'));
         ini_set("soap.wsdl_cache_enabled", "0"); 
         
         if (isset($storeAddress['state_iso']) && isset($deliveryAddress['state_iso'])) {

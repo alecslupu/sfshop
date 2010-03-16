@@ -1,3 +1,7 @@
+all:
+  components:
+    sidebar: [ category, menuTree ]
+
 registrationSuccess:
   metas:
     title:        Registration

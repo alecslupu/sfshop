@@ -52,7 +52,7 @@ class BaseProductActions extends sfActions
         
         $criteria = new Criteria();
         
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         if ($categoryId != null && $catObj = CategoryPeer::retrieveById($categoryId)) {
             if($catObj->getInformationId()) {
@@ -86,7 +86,7 @@ class BaseProductActions extends sfActions
     */
     public function executeDetails($request)
     {
-        sfLoader::loadHelpers('sfsCurrency');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCurrency');
         $criteria = new Criteria();
         ProductPeer::addPublicCriteria($criteria);
         $this->product = ProductPeer::retrieveById($request->getParameter('id'), $criteria, true);
@@ -112,7 +112,7 @@ class BaseProductActions extends sfActions
     */
     protected function addCategoryCriteria($criteria)
     {
-        sfLoader::loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         
         if ($categoryId != null) {
@@ -141,14 +141,16 @@ class BaseProductActions extends sfActions
         
         $this->formSearch = new sfsProductSearchForm();
         
-        if ($request->hasParameter('data[query]')) {
-            
+        if ($request->hasParameter('data')) {
             $data = $request->getParameter('data');
-            $this->formSearch->bind($data);
-            
-            if ($this->formSearch->isValid()) {
-                $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
-                $this->getUser()->setAttribute('query', $queryString, 'product');
+            if (isset($data['query']))
+            {
+              $this->formSearch->bind($data);
+
+              if ($this->formSearch->isValid()) {
+                  $queryString = trim(mb_strtolower($data['query'],"UTF-8"));
+                  $this->getUser()->setAttribute('query', $queryString, 'product');
+              }
             }
         }
         elseif ($request->hasParameter('is_search')) {

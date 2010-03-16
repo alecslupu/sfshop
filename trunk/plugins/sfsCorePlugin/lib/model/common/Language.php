@@ -29,9 +29,7 @@ class Language extends BaseLanguage
     public function getIconPath()
     {
         return sfConfig::get('sf_web_dir') 
-            . '/images/' . sfConfig::get('app_languages_images_dir') . '/' 
-            . strtolower(str_replace(' ', '', $this->getTitleEnglish())) 
-            . '/icon.png';
+            . $this->getIconUrl();
     }
     
    /**
@@ -45,7 +43,6 @@ class Language extends BaseLanguage
     public function getIconUrl()
     {
         return '/images/' . sfConfig::get('app_languages_images_dir') . '/' 
-            . strtolower(str_replace(' ', '', $this->getTitleEnglish())) 
-            . '/icon.png';
+            . strtolower($this->getCulture()).'.png';
     }
 }

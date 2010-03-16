@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseInformationAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/InformationAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/informationAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/informationAdminGeneratorHelper.class.php';
 
 /**
  * Information actions.

@@ -9,4 +9,7 @@
  */ 
 class OptionTypePeer extends BaseOptionTypePeer
 {
+  public static function addPublicCriteria(Criteria $criteria)
+  {
+  }
 }

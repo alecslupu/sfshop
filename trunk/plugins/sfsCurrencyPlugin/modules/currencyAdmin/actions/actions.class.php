@@ -10,8 +10,8 @@
  */
 
 require_once(dirname(__FILE__).'/../lib/BaseCurrencyAdminActions.class.php');
-require_once dirname(__FILE__).'/../lib/CurrencyAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/CurrencyAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/currencyAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/currencyAdminGeneratorHelper.class.php';
 
 /**
  * currencyAdmin actions.

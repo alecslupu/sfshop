@@ -19,6 +19,16 @@ a {
     font-family: Arial;
     color: #000000;
 }
+.header_basket_info, .header_basket_info a {
+  padding-left: 5px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.header_basket_info
+{
+  padding-left: 10px;
+}
 
  .ml1{
  font-size: 12px;
@@ -937,4 +947,8 @@ span.service_title {
 
 span.menu_main {
     margin-left: 400px;
+}
+
+.language-switcher .current img {
+    width: 1.8em;
 }

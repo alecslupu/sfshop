@@ -23,7 +23,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
 {
     public function executeCatalogList()
     {
-        sfLoader::loadHelpers('sfsCategory');
+		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         $category = CategoryPeer::retrieveById($this->getRequestParameter('id'));
         
@@ -38,7 +38,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
     
     public function executeDelete(sfWebRequest $request)
     {
-        sfLoader::loadHelpers('sfsCategory');
+		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         if ($request->hasParameter('id')) {
             $category = CategoryPeer::retrieveById($request->getParameter('id'));

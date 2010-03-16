@@ -10,8 +10,8 @@
  */
 
 require_once(dirname(__FILE__).'/../lib/BaseEmailTemplateAdminActions.class.php');
-require_once dirname(__FILE__).'/../lib/EmailTemplateAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/EmailTemplateAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/emailTemplateAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/emailTemplateAdminGeneratorHelper.class.php';
 
 /**
  * emailTemplateAdmin actions.
