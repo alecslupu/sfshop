@@ -135,7 +135,7 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
         }
     }
     
-    public function executeLogin($request)
+    public function executeLogin(sfWebRequest $request)
     {
         $this->getContext()->getInstance()->getConfiguration()->loadHelpers('I18N');
         
@@ -169,6 +169,10 @@ class BaseAdministratorAdminActions extends autoadministratorAdminActions
                     }
                 }
             }
+        }
+        if($request->isXmlHttpRequest())
+        {
+            $this->getResponse()->setStatusCode(401);
         }
         
         return sfView::SUCCESS;
