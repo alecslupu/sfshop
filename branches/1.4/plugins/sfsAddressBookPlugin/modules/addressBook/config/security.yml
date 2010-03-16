@@ -1,6 +1,0 @@
-all:
-  is_secure:   true
-  credentials: member
-
-addAddressForOrder:
-  is_secure:   false
