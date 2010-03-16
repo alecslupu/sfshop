@@ -83,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="copyright">Copyright 2008 &copy; <?php echo link_to('sfShop', 'http://code.google.com/p/sfshop/') ?></div>
+    <div class="copyright">Copyright 2010 &copy; <?php echo link_to('sfShop', 'http://code.google.com/p/sfshop/') ?></div>
 </div>
 </body>
 </html>
