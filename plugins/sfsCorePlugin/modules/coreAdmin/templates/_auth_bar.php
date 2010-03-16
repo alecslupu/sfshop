@@ -1,8 +1,8 @@
 <?php if ($sf_user->isAuthenticated()): ?>
-    Welcome: <?php echo $sf_user->getUserName(); ?>
+    <?php echo __('Welcome, %username%', array('%username%' => $sf_user->getUserName())); ?>
     |
-    <?php echo link_to('Logout', '@administratorAdmin_logout'); ?>
+    <?php echo link_to(__('Logout'), '@administratorAdmin_logout'); ?>
 <?php else: ?>
-    <?php echo link_to('Login', '@administratorAdmin_login'); ?>
+    <?php echo link_to(__('Login'), '@administratorAdmin_login'); ?>
 <?php endif; ?>
 

@@ -29,7 +29,7 @@ class BaseCategoryComponents extends sfComponents
     */
     public function executeMenuTree()
     {
-        sfLoader::loadHelpers('sfsCategory');
+		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         $request = $this->getRequest();
         $this->categories = CategoryPeer::getFirstLevel();
@@ -70,7 +70,7 @@ class BaseCategoryComponents extends sfComponents
     */
     public function executeHeaderProductList()
     {
-        sfLoader::loadHelpers('sfsCategory');
+		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         $categoryId = get_current_category_id();
         
         $this->category = CategoryPeer::retrieveById($categoryId);

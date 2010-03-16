@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BasePaymentAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/PaymentAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/PaymentAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/paymentAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/paymentAdminGeneratorHelper.class.php';
 
 /**
  * paymentAdmin actions.

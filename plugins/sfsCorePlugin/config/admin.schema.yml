@@ -59,6 +59,9 @@ propel:
   admin_menu: 
     _attributes: 
       phpName: AdminMenu
+      isI18N: true
+      i18nTable: admin_menu_i18n
+ 
     id: 
       type: INTEGER
       required: true
@@ -76,9 +79,6 @@ propel:
       size: 255
       required: true
       default: 'admin'
-    title: 
-      type: VARCHAR
-      size: 128
     module: 
       type: VARCHAR
       size: 128
@@ -95,3 +95,24 @@ propel:
       type: BOOLEAN
       required: true
       default: 1
+
+  admin_menu_i18n: 
+    _attributes: 
+      phpName: AdminMenuI18n
+    id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: admin_menu
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255

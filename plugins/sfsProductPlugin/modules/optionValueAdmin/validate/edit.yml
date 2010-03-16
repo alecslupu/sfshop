@@ -3,9 +3,9 @@ methods:
     - "option_value{title_i18n}"
 
 fillin:
-  activate: on
+  activate: true
 
 names: 
   option_value{title_i18n}: 
-    required:           Yes
+    required:           true
     required_msg:       Please enter title

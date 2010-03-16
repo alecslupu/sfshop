@@ -13,8 +13,8 @@ default:
 
   javascripts:    [ prototype/prototype.js, prototype/scriptaculous/effects.js, %APP_SFSHOP_CORE_JS_DIR%functions.js, %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js ]
 
-  has_layout:     on
+  has_layout:     true
   layout:         layout
 
   components:
-    sidebar:      []
+    sidebar: [ category, menuTree ]

@@ -29,7 +29,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeLogin($request)
     {
-        sfLoader::loadHelpers(array('Url', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'I18N'));
         
         $this->form = new sfsMemberLoginForm();
         
@@ -108,7 +108,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeRegistration($request)
     {
-        sfLoader::loadHelpers(array('I18N', 'Url'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N', 'Url'));
         
         if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('registered')) {
             $this->redirect('@homepage');
@@ -183,7 +183,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeConfirmEmail($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         if ($this->getUser()->isAuthenticated() && !$this->getUser()->hasFlash('confirmed')) {
             $this->redirect('@homepage');
@@ -232,7 +232,8 @@ class BaseMemberActions extends sfActions
             $this->form->bind($request->getParameter('data'));
             
             if ($this->form->isValid()) {
-                $this->getUser()->setAttribute('email', $request->getParameter('data[email]'), 'member/forgot_password');
+                $data = $request->getParameter('data');
+                $this->getUser()->setAttribute('email', $data['email'], 'member/forgot_password');
                 $this->getUser()->setAttribute('account_exist', true, 'member/forgot_password');
                 $this->redirect('@member_forgotPasswordStepTwo');
             }
@@ -249,7 +250,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeForgotPasswordStepTwo($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         $email = $this->getUser()->getAttribute('email', null, 'member/forgot_password');
         
@@ -272,8 +273,9 @@ class BaseMemberActions extends sfActions
                 $this->form->bind($request->getParameter('data'));
                 
                 if ($this->form->isValid()) {
-                    
-                    if ($member->getSecretAnswer() == $request->getParameter('data[secret_answer]')) {
+
+                    $data = $request->getParameter('data');
+                    if ($member->getSecretAnswer() == $data['secret_answer']) {
                         
                         $template = EmailTemplatePeer::retrieveByName(EmailTemplatePeer::FORGOT_PASSWORD);
                         $password = MemberPeer::generatePassword();
@@ -330,7 +332,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeEditProfile($request)
     {
-        sfLoader::loadHelpers(array('I18N', 'Url'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N', 'Url'));
         
         $this->form = new MemberForm($this->getUser()->getUser());
         
@@ -339,7 +341,8 @@ class BaseMemberActions extends sfActions
             
             if ($this->form->isValid()) {
                 $member = $this->form->getObject();
-                $email = $request->getParameter('data[email]');
+                $email = $request->getParameter('data');
+                $email = $email['email'];
                 
                 if ($member->getEmail() != $email) {
                     $confirmCode = MemberPeer::generateConfirmCode();
@@ -388,7 +391,7 @@ class BaseMemberActions extends sfActions
     */
     public function executeChangePassword($request)
     {
-        sfLoader::loadHelpers(array('I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('I18N'));
         
         $this->form = new sfsMemberChangePasswordForm($this->getUser()->getUser());
         

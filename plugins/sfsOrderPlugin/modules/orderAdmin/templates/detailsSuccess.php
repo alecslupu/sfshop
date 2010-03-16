@@ -1,4 +1,4 @@
-<?php use_helper('sfsAddressBook', 'Form') ?>
+<?php use_helper('sfsAddressBook', 'Form', 'Date') ?>
 <?php include_stylesheets_for_form($form) ?>
 <?php include_javascripts_for_form($form) ?>
 
@@ -125,7 +125,7 @@
                     <fieldset id="sf_fieldset">
                         <?php echo $form ?>
                     </fieldset>
-                    <?php echo submit_tag('Set status') ?>
+              <input type="submit" value="<?php __('Set status')?>" />
                 </form>
             </td>
             <td></td>

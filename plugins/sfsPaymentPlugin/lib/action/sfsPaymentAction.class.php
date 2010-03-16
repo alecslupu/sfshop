@@ -30,7 +30,7 @@ class sfsPaymentActions extends sfActions
     */
     public function preExecute()
     {
-        sfLoader::loadHelpers(array('Url', 'sfsCurrency'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('Url', 'sfsCurrency'));
         
         if ($this->getActionName() == 'index') {
             $this->checkOrderStatus();

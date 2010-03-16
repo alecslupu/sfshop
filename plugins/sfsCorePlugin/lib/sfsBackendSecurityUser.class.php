@@ -12,6 +12,16 @@ class sfsBackendSecurityUser extends sfsSecurityUser
     protected $model = 'admin';
     protected $menu     = null;
     protected $menuItem = null;
+
+    public function setCulture($culture)
+    {
+      if ($culture == 'admin')
+      {
+        $culture = LanguagePeer::getDefault();
+        $culture = $culture->getCulture();
+      }
+      parent::setCulture($culture);
+    }
     
     public function init($isForced = false)
     {
@@ -23,25 +33,27 @@ class sfsBackendSecurityUser extends sfsSecurityUser
         $root_id    = null;
         
         $this->menuItem = AdminMenuPeer::getItem($module, $action);
+
         if ($this->menuItem !== null) {
             //$root = $item->getAdminMenuRelatedByParentId();
             $current_id = $this->menuItem->getId();
             $root_id    = $this->menuItem->getParentId();
         }
         
-        
-        
-        $menu = AdminMenuPeer::getItems(null);
+        $menu = AdminMenuPeer::getItems(null, $this->getCulture());
         $items = array();
         for ($i = 0; $i < count($menu); $i++) {
-            $submenu = AdminMenuPeer::getItems($menu[$i]->getId());
+            $submenu = AdminMenuPeer::getItems($menu[$i]->getId(), $this->getCulture());
             $subitems = array();
+            $menu_current = False;
             for ($j = 0; $j < count($submenu); $j++) {
+
                 if ($this->isAccess($submenu[$j])) {
                     $subitem = array();
                     $subitem['title'] = $submenu[$j]->getTitle();
                     $subitem['route'] = '@' . $submenu[$j]->getRoute();
                     $subitem['is_current'] = ($submenu[$j]->getId() === $current_id);
+                    if ($subitem['is_current']) $menu_current = True;
                     $subitems[] = $subitem;
                 }
             }
@@ -49,17 +61,12 @@ class sfsBackendSecurityUser extends sfsSecurityUser
                 $item = array();
                 $item['title'] = $menu[$i]->getTitle();
                 $item['route'] = $subitems[0]['route'];
-                $item['is_current'] = ($menu[$i]->getId() === $root_id);
+                $item['is_current'] = ($menu[$i]->getId() === $root_id or $menu[$i]->getId() === $current_id or $menu_current);
                 $item['subitems'] = $subitems;
                 $items[] = $item;
             }
         }
         
-        /*
-        echo '<pre>';
-        print_r($items);
-        exit;
-        */
         $this->menu = $items;
         
     }

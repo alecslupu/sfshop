@@ -1,23 +1,23 @@
 prod:
   .settings:
-    no_script_name:         on
-    logging_enabled:        off
+    no_script_name:         true
+    logging_enabled:        false
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              on
-    cache:                  off
-    no_script_name:         off
-    etag:                   off
+    web_debug:              true
+    cache:                  false
+    no_script_name:         false
+    etag:                   false
 
 test:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT & ~E_NOTICE)."\n" ?>
-    cache:                  off
-    web_debug:              off
-    no_script_name:         off
-    etag:                   off
+    cache:                  false
+    web_debug:              false
+    no_script_name:         false
+    etag:                   false
 
 all:
   .actions:
@@ -31,8 +31,11 @@ all:
     # Form security secret (CSRF protection)
     csrf_secret:            false     # Unique secret to enable CSRF protection or false to disable
     standard_helpers:       [ Partial, Cache, Form, sfsCurrency, I18N, Javascript ]
-    enabled_modules:        [ default, coreAdmin, coreAdminAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
-
+    enabled_modules:        [ default, countryAdmin, stateAdmin, coreAdmin, coreAdminAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
+    
+#    # i18n
+    default_culture:        en        # Default user culture
+    i18n:                   true
     # Output escaping settings
     escaping_strategy:      false            # Determines how variables are made available to templates. Accepted values: on, off.
     escaping_method:        ESC_SPECIALCHARS # Function or helper used for escaping. Accepted values: ESC_RAW, ESC_ENTITIES, ESC_JS, ESC_JS_NO_ENTITIES, and ESC_SPECIALCHARS.
@@ -99,7 +102,5 @@ all:
 #    max_forwards:           5
 #
 #    # Logging
-#    logging_enabled:        on
+#    logging_enabled:        true
 #
-#    # i18n
-#    default_culture:        en        # Default user culture

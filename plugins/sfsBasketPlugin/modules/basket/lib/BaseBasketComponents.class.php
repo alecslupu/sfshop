@@ -63,4 +63,8 @@ class BaseBasketComponents extends sfComponents
             }
         }
     }
+
+    public function executeBasketInfo(sfWebRequest $request)
+    {
+    }
 }

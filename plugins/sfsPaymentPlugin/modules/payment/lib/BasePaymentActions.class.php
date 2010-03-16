@@ -29,7 +29,7 @@ class BasePaymentActions extends sfActions
     */
     public function executeCheckout($request)
     {
-        sfLoader::loadHelpers(array('Asset', 'Tag', 'I18N'));
+        $this->getContext()->getConfiguration()->loadHelpers(array('Asset', 'Tag', 'I18N'));
         
         $sfUser = $this->getUser();
         

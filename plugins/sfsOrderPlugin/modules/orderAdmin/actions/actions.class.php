@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseOrderAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/OrderAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/OrderAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/orderAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/orderAdminGeneratorHelper.class.php';
 
 /**
  * orderAdmin actions.

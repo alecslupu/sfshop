@@ -1,3 +1,12 @@
+dev:
+  i18n:
+    class: sfI18N
+    param:
+      source:               XLIFF
+      debug:                true
+      untranslated_prefix:  "[T]"
+      untranslated_suffix:  "[/T]"
+
 prod:
   logger:
     class:   sfNoLogger
@@ -29,6 +38,21 @@ all:
     param:
       generate_shortest_url:            true
       extra_parameters_as_query_string: true
+  
+  i18n:
+    class: sfI18N
+    param:
+      source:               XLIFF
+      debug:                false
+      untranslated_prefix:  "[T]"
+      untranslated_suffix:  "[/T]"
+      cache:
+        class: sfFileCache
+        param:
+          automatic_cleaning_factor: 0
+          cache_dir:                 %SF_I18N_CACHE_DIR%
+          lifetime:                  86400
+          prefix:                    %SF_APP_DIR%
 
 
 #all:
@@ -83,7 +107,7 @@ all:
 #    class: sfI18N
 #    param:
 #      source:               XLIFF
-#      debug:                off
+#      debug:                false
 #      untranslated_prefix:  "[T]"
 #      untranslated_suffix:  "[/T]"
 #      cache:

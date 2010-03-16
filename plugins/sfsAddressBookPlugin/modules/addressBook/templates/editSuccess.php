@@ -20,8 +20,13 @@
         </ul>
     </form>
 <?php include_partial('core/container_footer') ?>
-<?php if ($sf_request->hasParameter('data[state_id]')): ?>
-    <?php $stateId = $sf_request->getParameter('data[state_id]') ?>
+<?php if ($sf_request->hasParameter('data')): ?>
+  <?php $data = $sf_request->getParameter('data');?>
+  <?php if (isset($data['state_id'])):?>
+    <?php $stateId = $data['state_id'] ?>
+  <?php else: ?>
+      <?php $stateId = $form->getDefault('state_id') ?>
+  <?php endif; ?>
 <?php else: ?>
     <?php $stateId = $form->getDefault('state_id') ?>
 <?php endif; ?>

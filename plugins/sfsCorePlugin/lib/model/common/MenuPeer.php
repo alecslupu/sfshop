@@ -13,7 +13,17 @@ class MenuPeer extends BaseMenuPeer
     const TYPE_BOTTOM  = 2;
     const TYPE_PROFILE = 3;
     const TYPE_MAIN    = 4;
-    
+        public static function doSelectWithTranslation(Criteria $c, $culture = null, $con = null)
+    {
+        $results = self::doSelectWithI18n($c, $culture, $con);
+        
+        if ($results == null) {
+            $defaultCulture = LanguagePeer::getDefault();
+            $results = self::doSelectWithI18n($c, $defaultCulture->getCulture());
+        }
+        
+        return $results;
+    }
     /**
     * Gets menu items by menu type.
     *

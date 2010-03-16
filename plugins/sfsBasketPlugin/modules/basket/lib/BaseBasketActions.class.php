@@ -142,7 +142,7 @@ class BaseBasketActions extends sfActions
         
         if ($request->isXmlHttpRequest()) {
             
-            sfLoader::loadHelpers(array('sfsCurrency'));
+            $this->getContext()->getConfiguration()->loadHelpers(array('sfsCurrency'));
             
             if (isset($errors)) {
                 return $this->renderText(sfsJSONPeer::createResponseError($errors));
@@ -186,12 +186,13 @@ class BaseBasketActions extends sfActions
     
     public function executeAdd($request)
     {
-        sfLoader::loadHelpers('Url');
+        $this->getContext()->getConfiguration()->loadHelpers('Url');
         $sfUser = $this->getUser();
         
         if ($request->isMethod('post')) {
             
-            $productId = $request->getParameter('add_product[product_id]');
+            $productId = $request->getParameter('add_product');
+            $productId = $productId['product_id'];
             $criteria = new Criteria();
             ProductPeer::addPublicCriteria($criteria);
             $product = ProductPeer::retrieveById($productId, $criteria);
@@ -200,7 +201,8 @@ class BaseBasketActions extends sfActions
                 return $this->renderText(sfsJSONPeer::createResponseSuccess(array('redirect_to' => $request->getReferer())));
             }
             else {
-                $optionsRequested = $request->getParameter('add_product[options]');
+                $optionsRequested = $request->getParameter('add_product');
+                $optionsRequested = $optionsRequested['options'];
                 $optionsList = null;
                 
                 if ($optionsRequested !== null) {
@@ -239,15 +241,15 @@ class BaseBasketActions extends sfActions
                     $subform = new sfsProductOptionsForm($product);
                     $this->form->embedForm('options', $subform);
                 }
-                
+                $quantity = $request->getParameter('add_product');
                 $this->form->bind(
                     array(
-                        'quantity' => $request->getParameter('add_product[quantity]')
+                        'quantity' => $quantity['quantity']
                     )
                 );
                 
                 if ($this->form->isValid()) {
-                    $quantity = $request->getParameter('add_product[quantity]');
+                    $quantity = $quantity['quantity'];
                     
                     $basketProduct->setProductId($product->getId());
                     $basketProduct->setBasketId($basket->getId());
@@ -320,5 +322,15 @@ class BaseBasketActions extends sfActions
         else {
             $this->redirect('@basket_list');
         }
+    }
+
+    public function executeBasketInfoContent(sfWebRequest $request)
+    {
+      $this->basket = $this->getUser()->getBasket();
+//      if ($this->basket->hasProducts()) {
+//        foreach ($this->basket->getBasketProductsJoinProduct() as $basketProduct) {
+//          $qtty++
+//                $subForm->setDefault('quantity', $basketProduct->getQuantity());
+
     }
 }

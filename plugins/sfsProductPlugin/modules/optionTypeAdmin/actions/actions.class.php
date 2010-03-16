@@ -10,8 +10,8 @@
  */
 
 require_once dirname(__FILE__).'/../lib/BaseOptionTypeAdminActions.class.php';
-require_once dirname(__FILE__).'/../lib/OptionTypeAdminGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/OptionTypeAdminGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/optionTypeAdminGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/optionTypeAdminGeneratorHelper.class.php';
 
 /**
  * OptionType admin actions.

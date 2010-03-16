@@ -110,3 +110,18 @@ function highlightFieldsWithError(formId)
         }
     });
 }
+
+
+function basketInfoUrlUpdate()
+{
+  if (typeof(basketInfoUrl) == 'string' )
+  {
+    new Ajax.Request(basketInfoUrl, {
+      method:'get',
+      onSuccess: function(transport){
+        var doc = $('header_basket_info');
+        doc.innerHTML = transport.responseText;
+      }
+    });
+  }
+}

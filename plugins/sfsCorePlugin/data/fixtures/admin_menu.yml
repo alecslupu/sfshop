@@ -1,0 +1,414 @@
+#
+# AdminMenu
+#
+AdminMenu: 
+  AdminMenu_Administrator: 
+    parent_id:      null
+    credential:     ''
+    title:          Administrator
+    route:          
+    pos:            1
+    is_active:      1
+  AdminMenu_Catalog: 
+    parent_id:      null
+    credential:     ''
+    title:          Catalog
+    route:          
+    pos:            2
+    is_active:      1
+  AdminMenu_MembersOrders: 
+    parent_id:      null
+    credential:     ''
+    title:          Members/Orders
+    route:          
+    pos:            3
+    is_active:      1
+  AdminMenu_ContentManager: 
+    parent_id:      null
+    credential:     ''
+    title:          Content Manager
+    pos:            4
+    is_active:      1
+  AdminMenu_Localization: 
+    parent_id:      null
+    credential:     ''
+    title:          Localization
+    pos:            5
+    is_active:      1
+  
+  AdminMenu_Administrator_Admins: 
+    parent_id:      AdminMenu_Administrator
+    credential:     superadmin
+    title:          Administrators
+    module:         administratorAdmin
+    route:          administratorAdmin
+    pos:            1
+    is_active:      1
+  
+  AdminMenu_Administrator_ChangePassword: 
+    parent_id:      AdminMenu_Administrator
+    credential:     superadmin,admin
+    title:          Change my password
+    module:         administratorAdmin
+    action:         changeMyPassword
+    route:          administratorAdmin_changeMyPassword
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_Catalog_CP: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Categories/Products
+    route:          catalogAdmin_list
+    module:         catalogAdmin
+    pos:            1
+    is_active:      1
+  AdminMenu_Catalog_Categories: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Categories
+    route:          categoryAdmin
+    module:         categoryAdmin
+    pos:            2
+    is_active:      1
+  AdminMenu_Catalog_Brands: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Brands
+    module:         brandAdmin
+    route:          brandAdmin
+    pos:            4
+    is_active:      1
+  AdminMenu_Catalog_Products: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Products
+    module:         productAdmin
+    route:          productAdmin
+    pos:            3
+    is_active:      1
+  AdminMenu_Catalog_OptionTypes: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin
+    title:          Option types
+    module:         optionTypeAdmin
+    route:          optionTypeAdmin
+    pos:            5
+    is_active:      1
+    
+  AdminMenu_Catalog_OptionValues: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin
+    title:          Option values
+    module:         optionValueAdmin
+    route:          optionValueAdmin
+    pos:            6
+    is_active:      1
+    
+  AdminMenu_MembersOrders_Members: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     superadmin
+    title:          Members
+    module:         memberAdmin
+    route:          memberAdmin
+    pos:            1
+    is_active:      1
+  AdminMenu_MembersOrders_Orders: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     superadmin
+    title:          Orders
+    module:         orderAdmin
+    route:          orderAdmin
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_MembersOrders_Delivery: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     superadmin
+    title:          Delivery
+    module:         deliveryAdmin
+    route:          deliveryAdmin
+    pos:            3
+    is_active:      1
+  
+  AdminMenu_MembersOrders_Payment: 
+    parent_id:      AdminMenu_MembersOrders
+    credential:     superadmin
+    title:          Payment
+    module:         paymentAdmin
+    route:          paymentAdmin
+    pos:            4
+    is_active:      1
+  
+  AdminMenu_ContentManager_Informations: 
+    parent_id:      AdminMenu_ContentManager
+    credential:     superadmin, admin
+    title:          Information pages
+    module:         informationAdmin
+    route:          informationAdmin
+    pos:            1
+    is_active:      1
+  
+  AdminMenu_ContentManager_MailTemplates: 
+    parent_id:      AdminMenu_ContentManager
+    credential:     superadmin, admin
+    title:          Email templates
+    module:         emailTemplateAdmin
+    route:          emailTemplateAdmin
+    pos:            2
+    is_active:      1
+  
+  AdminMenu_Localization_Currencies: 
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          Currencies
+    module:         currencyAdmin
+    route:          currencyAdmin
+    pos:            1
+    is_active:      1
+
+  AdminMenu_Localization_Languages:
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          Languages
+    module:         languageAdmin
+    route:          languageAdmin
+    pos:            2
+    is_active:      1
+
+  AdminMenu_Localization_States:
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          States
+    module:         stateAdmin
+    route:          stateAdmin
+    pos:            3
+    is_active:      1
+
+  AdminMenu_Localization_Countries:
+    parent_id:      AdminMenu_Localization
+    credential:     superadmin, admin
+    title:          Countries
+    module:         countryAdmin
+    route:          countryAdmin
+    pos:            4
+    is_active:      1
+
+#
+# AdminMenuI18N
+#
+AdminMenuI18N: 
+  # english translation
+  AdminMenu_Administrator_FR: 
+    id: AdminMenu_Administrator 
+    culture: en
+    title:          Administrator
+
+  AdminMenu_Catalog_FR: 
+    id: AdminMenu_Catalog
+    culture: en
+    title:          Catalog
+
+  AdminMenu_MembersOrders_FR: 
+    id: AdminMenu_MembersOrders
+    culture: en
+    title:          Members/Orders
+  AdminMenu_ContentManager_FR: 
+    id: AdminMenu_ContentManager
+    culture: en
+    title:          Content Manager
+  AdminMenu_Localization_FR: 
+    id: AdminMenu_Localization
+    culture: en
+    title:          Localization
+  
+  AdminMenu_Administrator_Admins_FR: 
+    id: AdminMenu_Administrator_Admins
+    culture: en
+    title:          Administrators
+  
+  AdminMenu_Administrator_ChangePassword_FR: 
+    id: AdminMenu_Administrator_ChangePassword
+    culture: en
+    title:          Change my password
+  
+  AdminMenu_Catalog_CP_FR: 
+    id: AdminMenu_Catalog_CP
+    culture: en
+    title:          Categories/Products
+
+  AdminMenu_Catalog_Categories_FR: 
+    id: AdminMenu_Catalog_Categories
+    culture: en
+    title:          Categories
+
+  AdminMenu_Catalog_Brands_FR: 
+    id: AdminMenu_Catalog_Brands
+    culture: en
+    title:          Brands
+  AdminMenu_Catalog_Products_FR: 
+    id: AdminMenu_Catalog_Products
+    culture: en
+    title:          Products
+  AdminMenu_Catalog_OptionTypes_FR: 
+    id: AdminMenu_Catalog_OptionTypes
+    culture: en
+    title:          Option types
+    
+  AdminMenu_Catalog_OptionValues_FR: 
+    id: AdminMenu_Catalog_OptionValues
+    culture: en
+    title:          Option values
+    
+  AdminMenu_MembersOrders_Members_FR: 
+    id: AdminMenu_MembersOrders_Members
+    culture: en
+    title:          Members
+
+  AdminMenu_MembersOrders_Orders_FR: 
+    id: AdminMenu_MembersOrders_Orders
+    culture: en
+    title:          Orders
+  
+  AdminMenu_MembersOrders_Delivery_FR: 
+    id: AdminMenu_MembersOrders_Delivery
+    culture: en
+    title:          Delivery
+  
+  AdminMenu_MembersOrders_Payment_FR: 
+    id: AdminMenu_MembersOrders_Payment
+    culture: en
+    title:          Payment
+  
+  AdminMenu_ContentManager_Informations_FR: 
+    id: AdminMenu_ContentManager_Informations
+    culture: en
+    title:          Information pages
+  
+  AdminMenu_ContentManager_MailTemplates_FR: 
+    id: AdminMenu_ContentManager_MailTemplates
+    culture: en
+    title:          Email templates
+  
+  AdminMenu_Localization_Currencies_FR: 
+    id: AdminMenu_Localization_Currencies
+    culture: en
+    title:          Currencies
+  
+  AdminMenu_Localization_Languages_FR: 
+    id: AdminMenu_Localization_Languages
+    culture: en
+    title:          Languages
+
+    
+  # french translation
+  AdminMenu_Administrator_FR: 
+    id: AdminMenu_Administrator 
+    culture: fr
+    title:          Administrateurs
+
+  AdminMenu_Catalog_FR: 
+    id: AdminMenu_Catalog 
+    culture: fr
+    title:          Catalogue
+
+  AdminMenu_MembersOrders_FR: 
+    id: AdminMenu_MembersOrders 
+    culture: fr
+    title:          Client/Commandes
+  AdminMenu_ContentManager_FR: 
+    id: AdminMenu_ContentManager
+    culture: fr
+    title:          Contenu
+  AdminMenu_Localization_FR: 
+    id: AdminMenu_Localization
+    culture: fr
+    title:          Localisation
+  
+  AdminMenu_Administrator_Admins_FR: 
+    id: AdminMenu_Administrator_Admins
+    culture: fr
+    title:          Administrateurs
+  
+  AdminMenu_Administrator_ChangePassword_FR: 
+    id: AdminMenu_Administrator_ChangePassword
+    culture: fr
+    title:          Changer mon mot de passe
+  
+  AdminMenu_Catalog_CP_FR: 
+    id: AdminMenu_Catalog_CP
+    culture: fr
+    title:          Categories/Produits
+
+  AdminMenu_Catalog_Categories_FR: 
+    id: AdminMenu_Catalog_Categories
+    culture: fr
+    title:          Categories
+
+  AdminMenu_Catalog_Brands_FR: 
+    id: AdminMenu_Catalog_Brands
+    culture: fr
+    title:          Marques
+  AdminMenu_Catalog_Products_FR: 
+    id: AdminMenu_Catalog_Products
+    culture: fr
+    title:          Produits
+  AdminMenu_Catalog_OptionTypes_FR: 
+    id: AdminMenu_Catalog_OptionTypes
+    culture: fr
+    title:          "Type d'Options"
+    
+  AdminMenu_Catalog_OptionValues_FR: 
+    id: AdminMenu_Catalog_OptionValues
+    culture: fr
+    title:          "Valeur d'Options"
+    
+  AdminMenu_MembersOrders_Members_FR: 
+    id: AdminMenu_MembersOrders_Members
+    culture: fr
+    title:          Clients
+
+  AdminMenu_MembersOrders_Orders_FR: 
+    id: AdminMenu_MembersOrders_Orders
+    culture: fr
+    title:          Commandes
+  
+  AdminMenu_MembersOrders_Delivery_FR: 
+    id: AdminMenu_MembersOrders_Delivery
+    culture: fr
+    title:          Livraisons
+  
+  AdminMenu_MembersOrders_Payment_FR: 
+    id: AdminMenu_MembersOrders_Payment
+    culture: fr
+    title:          Reglements
+  
+  AdminMenu_ContentManager_Informations_FR: 
+    id: AdminMenu_ContentManager_Informations
+    culture: fr
+    title:          Pages
+  
+  AdminMenu_ContentManager_MailTemplates_FR: 
+    id: AdminMenu_ContentManager_MailTemplates
+    culture: fr
+    title:          Modèle de mail
+  
+  AdminMenu_Localization_Currencies_FR: 
+    id: AdminMenu_Localization_Currencies
+    culture: fr
+    title:          Devises
+
+  AdminMenu_Localization_Languages_FR:
+    id: AdminMenu_Localization_Languages
+    culture: fr
+    title:          Langues
+
+  AdminMenu_Localization_States_FR:
+    id: AdminMenu_Localization_States
+    culture: fr
+    title:          District
+
+  AdminMenu_Localization_Countries_FR:
+    id: AdminMenu_Localization_Countries
+    culture: fr
+    title:          Etat

@@ -46,7 +46,7 @@ class sfsUpsService extends sfsBaseDeliveryService
     
     public function getQuote()
     {
-        sfLoader::loadHelpers(array('sfsCurrency'));
+        sfContext::getInstance()->getConfiguration()->loadHelpers(array('sfsCurrency'));
         
         $deliveryAddress = $this->getDeliveryAddress();
         $storeAddress    = $this->getStoreAddress();
