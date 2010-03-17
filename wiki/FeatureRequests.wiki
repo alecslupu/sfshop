@@ -1,0 +1,8 @@
+#summary Feature Requests
+
+= Feature Requests =
+  # to be able to issue a bill (in pdf format)
+  # newsletter system
+  # comments for products
+  # scoring for the products 
+  # photo gallery for the products
