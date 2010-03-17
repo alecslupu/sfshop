@@ -9,7 +9,7 @@ if (strpos('@package_version@', '@package_version') === 0) {
         '.'
     );
 }
-class phpMassDetectorPluginConfiguration extends sfPluginConfiguration
+class phpMessDetectorPluginConfiguration extends sfPluginConfiguration
 {
   public function initialize()
   {

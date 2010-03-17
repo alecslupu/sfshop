@@ -1,5 +1,5 @@
 autoload:
-  phpMassDetectorPlugin_lib:
-    path:           %SF_PLUGINS_DIR%/phpMassDetectorPlugin/lib
+  phpMessDetectorPlugin_lib:
+    path:           %SF_PLUGINS_DIR%/phpMessDetectorPlugin/lib
     recursive:      true
 #    exclude:        [ vendor/pmd ]
