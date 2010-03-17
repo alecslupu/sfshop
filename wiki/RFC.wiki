@@ -1,0 +1,13 @@
+#summary Request for comments
+
+=Request for comments= 
+
+  # install the sfGuardPlugin or sfDoctrineGuardPlugin for ACL
+  # take advantage of the symfony mailer features
+  # implement nicer urls (stripped title)
+  # merges some of the plugins as one (see sfsOrder & sfsBasket )
+  # merge the payment plugins as one (and the completes moved in sfsPayment/lib/plugins )
+  # merge the delivery plugins as one (see above regarding payment )
+
+
+More to come
