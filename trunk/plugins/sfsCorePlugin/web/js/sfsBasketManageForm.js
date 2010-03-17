@@ -54,6 +54,7 @@ var sfsBasketManageForm = Class.create(sfsForm, {
                             }
                         );
                         $('basket_total_price').update(response.data.total_price);
+                        basketInfoUrlUpdate();
                     }
 
 		        }
@@ -91,6 +92,7 @@ var sfsBasketManageForm = Class.create(sfsForm, {
                 this.form.up('div').hide();
                 $('basket_empty').show();
             }
+            basketInfoUrlUpdate();
         }
         else {
             alert('Unknown response');
