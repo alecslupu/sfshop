@@ -1,0 +1,90 @@
+Menu: 
+  Menu_HOME_1: 
+    route:   @homepage
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_MAIN; ?> 
+  Menu_BOTTOM_1: 
+    route:   @homepage
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_2: 
+    route:   @homepage
+    pos:     2
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_3: 
+    route:   @information_shipping
+    pos:     3
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_4: 
+    route:   @information_privacyNotice
+    pos:     4
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_5: 
+    route:   @information_conditionsUse
+    pos:     5
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+  Menu_BOTTOM_6: 
+    route:   @core_contactUs
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_BOTTOM; ?> 
+
+MenuI18n:
+# English
+  MenuI18n_HOME_EN_1: 
+    id:      Menu_HOME_1
+    culture: en
+    title:   Home
+  MenuI18n_BOTTOM_EN_1: 
+    id:      Menu_BOTTOM_1
+    culture: en
+    title:   Home
+  MenuI18n_BOTTOM_EN_2: 
+    id:      Menu_BOTTOM_2
+    culture: en
+    title:   About Us
+  MenuI18n_BOTTOM_EN_3: 
+    id:      Menu_BOTTOM_3
+    culture: en
+    title:   Shipping & Returns
+  MenuI18n_BOTTOM_EN_4: 
+    id:      Menu_BOTTOM_4
+    culture: en
+    title:   Privacy Notice
+  MenuI18n_BOTTOM_EN_5: 
+    id:      Menu_BOTTOM_5
+    culture: en
+    title:   Conditions of Use
+  MenuI18n_BOTTOM_EN_6: 
+    id:      Menu_BOTTOM_6
+    culture: en
+    title:   Contact us
+    
+# Russian
+  MenuI18n_HOME_RU_1: 
+    id:      Menu_HOME_1
+    culture: fr
+    title:   Accueil
+  MenuI18n_BOTTOM_RU_1: 
+    id:      Menu_BOTTOM_1
+    culture: fr
+    title:   Accueil
+  MenuI18n_BOTTOM_RU_2: 
+    id:      Menu_BOTTOM_2
+    culture: fr
+    title:   A propos
+  MenuI18n_BOTTOM_RU_3: 
+    id:      Menu_BOTTOM_3
+    culture: fr
+    title:   Expeditions
+  MenuI18n_BOTTOM_RU_4: 
+    id:      Menu_BOTTOM_4
+    culture: fr
+    title:   Vie privée
+  MenuI18n_BOTTOM_RU_5: 
+    id:      Menu_BOTTOM_5
+    culture: fr
+    title:   Conditions générales
+  MenuI18n_BOTTOM_RU_6: 
+    id:      Menu_BOTTOM_6
+    culture: fr
+    title:   Contact

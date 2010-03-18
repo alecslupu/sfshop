@@ -1,0 +1,45 @@
+methods:
+  post: 
+    - "currency{code}"
+    - "currency{value}"
+    - "currency{title_i18n}"
+    - "currency{decimal_places}"
+
+fillin:
+  activate: true
+
+names: 
+  currency{code}: 
+    required:           true
+    required_msg:       Code is a required field
+  currency{value}: 
+    required:           true
+    required_msg:       Value is a required field
+    validators:         valueValidator
+  currency{title_i18n}: 
+    required:           true
+    required_msg:       Title is a required field
+  currency{decimal_places}: 
+    required:           true
+    required_msg:       Decimal places is a required field
+    validators:         decimalPlacesValidator
+
+codeValidator:
+    class: sfStringValidator
+    param:
+      min:        2
+      min_error:  Code must be 2 or more characters
+      max:        4
+      max_error:  Code can not be more 4 characters
+
+valueValidator:
+    class: sfNumberValidator
+    param:
+      nan_error:  This is not a number
+
+decimalPlacesValidator:
+    class: sfNumberValidator
+    param:
+      type:       integer
+      type_error: This is not a integer value
+      nan_error:  This is not a number

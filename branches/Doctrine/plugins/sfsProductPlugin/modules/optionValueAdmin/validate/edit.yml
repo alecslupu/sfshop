@@ -1,0 +1,11 @@
+methods:
+  post: 
+    - "option_value{title_i18n}"
+
+fillin:
+  activate: true
+
+names: 
+  option_value{title_i18n}: 
+    required:           true
+    required_msg:       Please enter title

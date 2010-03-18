@@ -1,0 +1,4 @@
+#_selectCurrencyForm:
+#  enabled:  true
+#  contextual: true
+#  lifetime: 86400

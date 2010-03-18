@@ -1,0 +1,24 @@
+#
+# Asset types
+#
+AssetType:
+  AssetType_country:
+    name:          country
+    model:         Country
+    has_i18n:      1
+  AssetType_information:
+    name:          information
+    model:         Information
+    has_i18n:      1
+  AssetType_menu:
+    name:          menu
+    model:         Menu
+    has_i18n:      1
+  AssetType_state:
+    name:          state
+    model:         State
+    has_i18n:      1
+  AssetType_email_templates:
+    name:          email_templates
+    model:         EmailTemplates
+    has_i18n:      1

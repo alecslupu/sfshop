@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="./plugins/sfsTaxPlugin/i18n/ru/messages.po" source-language="en-US" datatype="po">
+    <body>
+      <trans-unit id="1" xml:space="preserve" restype="x-gettext-domain-header" approved="no">
+        <source>Project-Id-Version: sfshop
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2009-03-11 16:21+0200
+PO-Revision-Date: 2009-03-11 16:24+0200
+Last-Translator: Andreas Nyholm &lt;andreas.nyholm@nyholmsolutions.fi&gt;
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: sfshop/plugins/sfsTaxPlugin
+</source>
+        <target state="translated">Project-Id-Version: sfshop
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2009-03-11 16:21+0200
+PO-Revision-Date: 2009-03-11 16:24+0200
+Last-Translator: Andreas Nyholm &lt;andreas.nyholm@nyholmsolutions.fi&gt;
+Language-Team: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Poedit-Language: Russian
+X-Poedit-SourceCharset: utf-8
+X-Poedit-KeywordsList: __
+X-Poedit-Basepath: .
+X-Poedit-SearchPath-0: sfshop/plugins/sfsTaxPlugin
+</target>
+      </trans-unit>
+      <trans-unit id="2" xml:space="preserve">
+        <source>Tax free</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/lib/BaseTaxComponents.class.php</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3" xml:space="preserve">
+        <source>Tax</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4" xml:space="preserve">
+        <source>Tax type</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5" xml:space="preserve">
+        <source>Net price</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6" xml:space="preserve">
+        <source>Gross price</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7" xml:space="preserve">
+        <source>Total</source>
+        <target></target>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group name="po-reference" purpose="location">
+          <context context-type="sourcefile">sfshop/plugins/sfsTaxPlugin/modules/tax/templates/_orderTaxInfo.php</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

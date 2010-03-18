@@ -1,0 +1,17 @@
+Menu:
+  Menu_PROFILE_1: 
+    route:   @addressBook_myList
+    pos:     1
+    type:    <?php echo MenuPeer::TYPE_PROFILE; ?>
+
+MenuI18n:
+# English
+  Menu_PROFILE_EN_1: 
+    id:      Menu_PROFILE_1
+    culture: en
+    title:   Address book
+# Russian
+  Menu_PROFILE_RU_1: 
+    id:      Menu_PROFILE_1
+    culture: ru
+    title:   Адресная книга

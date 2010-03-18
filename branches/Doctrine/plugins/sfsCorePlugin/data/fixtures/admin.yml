@@ -1,0 +1,11 @@
+#
+# Admins
+#
+Admin: 
+  Admin_1: 
+    credential:      superadmin,admin
+    email:           admin@localhost
+    password:        superadmin
+    first_name:      Dmitry
+    last_name:       Nesteruk
+    is_active:       1

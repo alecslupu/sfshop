@@ -1,0 +1,19 @@
+#
+# Basket
+#
+
+basket_add:
+  url: /add-to-cart/*
+  param: { module: basket, action: add }
+  
+basket_list:
+  url: /:sf_culture/shopping-cart/*
+  param: { module: basket, action: list }
+  
+basket_delete:
+  url: /shopping-cart-delete/*
+  param: { module: basket, action: delete }
+
+basket_info:
+  url: /:sf_culture/shopping-cart-info
+  param: { module: basket, action: basketInfoContent }

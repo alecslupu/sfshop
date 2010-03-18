@@ -1,0 +1,3 @@
+chargeSuccess:
+  javascripts:    [ %APP_SFSHOP_CORE_JS_DIR%sfsForm.js, %APP_SFSHOP_CORE_JS_DIR%sfsManage.js, %APP_SFSHOP_CORE_JS_DIR%sfsBillingManage.js, %APP_SFSHOP_CORE_JS_DIR%sfsPaymentAuthorizeNetConfirmManage.js ]
+

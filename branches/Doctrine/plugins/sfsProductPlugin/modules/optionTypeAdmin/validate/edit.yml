@@ -1,0 +1,11 @@
+methods:
+  post: 
+    - "option_type{title_i18n}"
+
+fillin:
+  activate: true
+
+names: 
+  option_type{title_i18n}: 
+    required:           true
+    required_msg:       Title is a required field
