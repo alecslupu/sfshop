@@ -23,13 +23,13 @@
                 $thumbnail, 
                 $product->getTitle()
             ), 
-            '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId()
+            '@product_details?s=' . $product->getSlug() . '&path=' . generate_category_path_for_url($path) . '&id=' . $product->getId()
         ); ?>
     </div>
     <div class="details">
         <?php echo link_to(
             $product->getTitle(), 
-            '@product_details?path=' . generate_category_path_for_url($path) . '&id=' . $product->getId(), 
+            '@product_details?s=' . $product->getSlug() . '&path=' . generate_category_path_for_url($path) . '&id=' . $product->getId(), 
             array('class' => 'product_title')
         ); ?><br/>
         <p><?php echo $product->getDescriptionShort(); ?></p>
