@@ -40,7 +40,7 @@ function draw_categories_tree($parentTree = array(), $routing, $arrow = '')
                 $title = $category['title'];
             }
             
-            $list.= '<li>' . $seperator . $arrow . '&nbsp;' . link_to($title, $routing . '?path='.$category['path']) . '</li>';
+            $list.= '<li>' . $seperator . $arrow . '&nbsp;' . link_to($title, $routing . '?path='.$category['path']. '&s='.$category['slug']) . '</li>';
         }
         
         $list.='</ul>';
@@ -133,7 +133,8 @@ function get_categories_tree($categories, &$array, $parentTree = array(), $crite
                 'title' => sfsStringPeer::special($category->getTitle()),
                 'id'    => $category->getId(),
                 'level' => $level,
-                'path'  => $path
+                'path'  => $path,
+                'slug'  => $category->getSlug()
             );
             
             if ($openedTree) {

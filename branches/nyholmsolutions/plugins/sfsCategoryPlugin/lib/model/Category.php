@@ -27,6 +27,19 @@ class Category extends BaseCategory
     }
     
     /**
+     * Generate slug from title. Note! Slug is not persistant
+     * Queries should depend on id.
+     * 
+     * @return string
+     * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+     * @access public
+     */
+    public function getSlug()
+    {
+      return sfShop_Inflector::urlize($this->getTitle());
+    }
+        
+    /**
      * Gets thumbnail object for category.
      * 
      * @param  string $type
