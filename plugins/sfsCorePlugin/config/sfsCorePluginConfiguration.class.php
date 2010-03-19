@@ -30,7 +30,7 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
    * @var Array
    */
   private $global_modules = array(
-      'core'
+      'sfsCore'
   );
 
   /**

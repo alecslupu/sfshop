@@ -1,0 +1,15 @@
+core_changeLanguage:
+  url: /change-language/:culture
+  param: { module: sfsCore, action: changeLanguage }
+
+core_error404:
+  url: /:sf_culture/page-not-found
+  param: { module: sfsCore, action: error404 }
+
+core_error500:
+  url: /internal-error
+  param: { module: sfsCore, action: error500 }
+
+core_contactUs:
+  url: /:sf_culture/contact-us
+  param: { module: sfsCore, action: contactUs }
