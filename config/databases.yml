@@ -1,14 +1,14 @@
 dev:
-  propel:
+  Doctrine:
     param:
       classname:  DebugPDO
 
 test:
-  propel:
+  Doctrine:
     param:
       classname:  DebugPDO
 all: 
-  propel: 
+  Doctrine:
     class: sfDoctrineDatabase
     param:
       dsn:        mysql:dbname=devzpc_sfshop;host=localhost
@@ -20,7 +20,7 @@ all:
       classname:  DoctrinePDO
       
   session_storage:
-    class: sfPropelDatabase
+    class: sfDoctrineDatabase
     param:
       dsn:        mysql:dbname=devzpc_sfshop;host=localhost
       username:   devzpc_sfUser
