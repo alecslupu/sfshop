@@ -4,9 +4,6 @@ default:
 
   metas:
     title:        Admin panel
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
     robots:       index, follow
 
   stylesheets:    [ %APP_SFSHOP_ADMIN_CSS_DIR%main ]

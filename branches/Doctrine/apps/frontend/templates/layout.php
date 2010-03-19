@@ -5,6 +5,8 @@
     <?php include_metas() ?>
     <?php include_title() ?>
 
+  <?php include_javascripts()?>
+  <?php include_stylesheets()?>
     <link rel="shortcut icon" href="/favicon.ico" />
 
 </head>

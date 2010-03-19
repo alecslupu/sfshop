@@ -9,7 +9,7 @@ test:
       classname:  DebugPDO
 all: 
   propel: 
-    class: sfPropelDatabase
+    class: sfDoctrineDatabase
     param:
       dsn:        mysql:dbname=devzpc_sfshop;host=localhost
       username:   devzpc_sfUser
@@ -17,7 +17,7 @@ all:
       encoding:   utf8
       persistent: true
       pooling:    true
-      classname:  PropelPDO
+      classname:  DoctrinePDO
       
   session_storage:
     class: sfPropelDatabase
@@ -28,4 +28,4 @@ all:
       encoding:   utf8
       persistent: true
       pooling:    true
-      classname:  PropelPDO
+      classname:  DoctrinePDO

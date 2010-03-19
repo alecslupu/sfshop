@@ -10,6 +10,4 @@ my_filter:
 
 
 cache:     ~
-common:
-  class: sfCommonFilter
 execution: ~
