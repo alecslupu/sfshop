@@ -21,5 +21,4 @@ require_once(dirname(__FILE__).'/../lib/BaseCoreActions.class.php');
  */
 class coreActions extends BaseCoreActions
 {
-
 }
