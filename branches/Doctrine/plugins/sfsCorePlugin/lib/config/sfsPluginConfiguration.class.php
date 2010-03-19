@@ -123,10 +123,13 @@ abstract class sfsPluginConfiguration extends sfPluginConfiguration
    */
   private function handleEnable($modules = array())
   {
-    sfConfig::set('sf_enabled_modules',
-        array_merge(
-        sfConfig::get('sf_enabled_modules'),
-        $modules
-    ));
+    if (true == is_array(sfConfig::get('sf_enabled_modules')))
+    {
+      sfConfig::set('sf_enabled_modules',
+          array_merge(
+          sfConfig::get('sf_enabled_modules'),
+          $modules
+      ));
+    }
   }
 }
