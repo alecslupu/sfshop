@@ -2,21 +2,6 @@
 # Core
 #
 
-core_changeLanguage:
-  url: /change-language/:culture
-  param: { module: core, action: changeLanguage }
-
-core_error404:
-  url: /:sf_culture/page-not-found
-  param: { module: core, action: error404 }
-
-core_error500:
-  url: /internal-error
-  param: { module: core, action: error500 }
-
-core_contactUs:
-  url: /:sf_culture/contact-us
-  param: { module: core, action: contactUs }
   
 #
 # Core Admin
@@ -30,7 +15,7 @@ coreAdmin_index:
 #
 
 administratorAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                Admin
     module:               administratorAdmin
@@ -74,7 +59,7 @@ information_conditionsUse:
 # Information Admin
 #
 informationAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                Information
     module:               informationAdmin
@@ -87,7 +72,7 @@ informationAdmin:
 #
 
 emailTemplateAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                EmailTemplate
     module:               emailTemplateAdmin
@@ -100,7 +85,7 @@ emailTemplateAdmin:
 #
 
 languageAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                Language
     module:               languageAdmin
@@ -113,7 +98,7 @@ languageAdmin:
 #
 
 stateAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                State
     module:               stateAdmin
@@ -125,7 +110,7 @@ stateAdmin:
 # Country Admin
 #
 countryAdmin:
-  class: sfPropelRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:                Country
     module:               countryAdmin
