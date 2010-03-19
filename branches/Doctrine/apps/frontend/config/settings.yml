@@ -30,7 +30,7 @@ all:
     
   .settings:
     enabled_modules:        [ default ]
-    standard_helpers:       [ I18N, Partial, Javascript, Date ]
+    standard_helpers:       [ I18N, Partial, Date ]  # Javascript
 #    enabled_modules:        [ default, addressBook, menu, product, category, core, basket, order, paypal, information, currency, recaptcha, delivery, brand ]
 #    standard_helpers:       [ sfsCategory, sfsCurrency ]
     i18n:                   true
