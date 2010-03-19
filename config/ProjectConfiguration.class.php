@@ -12,6 +12,13 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins(array(
       'sfDoctrinePlugin',
       'sfDoctrineGuardPlugin',
+      'sfTaskExtraPlugin',
+//      'sfLightboxPlugin',
+//      'sfLucenePlugin',
+//      'sfThumbnailPlugin',
+//      'sfWebBrowserPlugin',
+//      'sfFormExtraPlugin',
+      'sfPhpunitPlugin',
       'sfsCorePlugin'
     ));
   }
