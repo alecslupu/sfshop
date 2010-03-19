@@ -11,9 +11,11 @@
  * THE SOFTWARE.
  */
 
+require_once dirname(__FILE__).'/../lib/BasesfsCoreComponents.class.php';
+
 /**
- * Base actions for the sfsCorePlugin sfsCore module.
- * 
+ * sfsCore components.
+ *
  * @package     sfsCorePlugin
  * @subpackage  sfsCore
  * @author      Alexandru Emil Lupu <gang.alecs@gmail.com>
@@ -21,6 +23,6 @@
  * @license     http://www.opensource.org/licenses/mit-license.php
  * @version     SVN: $Id: BaseActions.class.php 12534 2008-11-01 13:38:27Z Kris.Wallsmith $
  */
-abstract class BasesfsCoreActions extends sfActions
+class sfsCoreComponents extends BasesfsCoreComponents
 {
 }

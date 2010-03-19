@@ -21,6 +21,6 @@
  * @license     http://www.opensource.org/licenses/mit-license.php
  * @version     SVN: $Id: BaseActions.class.php 12534 2008-11-01 13:38:27Z Kris.Wallsmith $
  */
-abstract class BasesfsCoreActions extends sfActions
+abstract class BasesfsCoreComponents extends sfComponents
 {
 }
