@@ -1,0 +1,20 @@
+sfsCountry:
+  actAs:
+    I18n:
+      fields: [title]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    iso:
+      type: string(2)
+    iso_a3:
+      type: string(3)
+    iso_n:
+      type: string(3)
+    title:
+      type: string(128)
+    is_active:
+      type: boolean
+      default: false

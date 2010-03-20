@@ -1,0 +1,21 @@
+sfsInformation:
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title, description, meta_keywords, meta_description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    is_active:
+      type: boolean
+      default: true
+    title:
+      type: string(255)
+    description:
+      type: clob
+    meta_keywords:
+      type: clob
+    meta_description:
+      type: clob

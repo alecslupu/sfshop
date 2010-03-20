@@ -1,0 +1,23 @@
+sfsMenu:
+  actAs:
+    I18n:
+      fields: [title, meta_keywords, meta_description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    type:
+      type: integer(2)
+    title:
+      type: string(255)
+    meta_keywords:
+      type: string(255)
+    meta_description:
+      type: string(255)
+    route:
+      type: string(128)
+    pos:
+      type: integer(2)
+      default: 0
+

@@ -1,0 +1,18 @@
+sfsLanguage:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    culture:
+      type: string(7)
+    title_english:
+      type: string(128)
+    title_own:
+      type: string(128)
+    is_default:
+      type: boolean
+      default: false
+    is_active:
+      type: boolean
+      default: false

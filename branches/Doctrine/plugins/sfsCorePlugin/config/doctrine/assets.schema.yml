@@ -1,0 +1,16 @@
+sfsAssetType:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(32)
+    model:
+      type: string(128)
+    has_thumbnail:
+      type: boolean
+      default: false
+    has_i18n:
+      type: boolean
+      default: false

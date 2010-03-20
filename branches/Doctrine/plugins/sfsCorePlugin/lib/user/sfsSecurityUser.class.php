@@ -16,13 +16,13 @@
  *
  * @package    sfShopPlugin
  * @subpackage sfsCorePlugin
- * @uses       sfsSecurityUser
+ * @uses       sfGuardSecurityUser
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>
  * @author     Andrey Kotlyarov
- * @author     Dmitry Nesteruk 
+ * @author     Dmitry Nesteruk
  * @license    http://www.opensource.org/licenses/mit-license.php
  */
-class sfsFrontendSecurityUser extends sfsSecurityUser
+class sfsSecurityUser extends sfGuardSecurityUser
 {
   
 }

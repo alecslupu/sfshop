@@ -16,7 +16,6 @@ require_once sfConfig::get('sf_plugins_dir') . '/sfsCorePlugin/lib/config/sfsPlu
 /**
  * sfsCorePluginConfiguration configuration.
  *
- *
  * @package    sfShopPlugin
  * @subpackage sfsCorePlugin
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>

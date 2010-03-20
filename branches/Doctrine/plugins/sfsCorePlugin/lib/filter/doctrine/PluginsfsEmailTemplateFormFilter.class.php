@@ -12,17 +12,13 @@
 */
 
 /**
- * Class extends basic user class
+ * PluginsfsEmailTemplate form.
  *
- * @package    sfShopPlugin
- * @subpackage sfsCorePlugin
- * @uses       sfsSecurityUser
+ * @package    sfsCorePlugin
+ * @subpackage filter
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>
- * @author     Andrey Kotlyarov
- * @author     Dmitry Nesteruk 
  * @license    http://www.opensource.org/licenses/mit-license.php
  */
-class sfsFrontendSecurityUser extends sfsSecurityUser
+abstract class PluginsfsEmailTemplateFormFilter extends BasesfsEmailTemplateFormFilter
 {
-  
 }
