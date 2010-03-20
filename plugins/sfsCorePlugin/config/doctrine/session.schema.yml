@@ -1,0 +1,9 @@
+sfsSession:
+  columns:
+    cid:
+      type: string(36)
+      primary: true
+    ses_data:
+      type: clob
+    ses_time:
+      type: timestamp

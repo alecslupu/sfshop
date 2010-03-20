@@ -1,9 +1,3 @@
-propel: 
-  _attributes: 
-    defaultIdMethod: native
-    noXsd: false
-    package: plugins.sfsCorePlugin.lib.model.admin
-
   admin: 
     _attributes: 
       phpName: Admin
@@ -55,64 +49,3 @@ propel:
       type: TIMESTAMP
     _uniques: 
       uni_admin_email: [email]
-
-  admin_menu: 
-    _attributes: 
-      phpName: AdminMenu
-      isI18N: true
-      i18nTable: admin_menu_i18n
- 
-    id: 
-      type: INTEGER
-      required: true
-      autoIncrement: true
-      primaryKey: true
-    parent_id: 
-      type: INTEGER
-      required: false
-      foreignTable: admin_menu
-      foreignReference: id
-      onDelete: RESTRICT
-      onUpdate: CASCADE
-    credential: 
-      type: VARCHAR
-      size: 255
-      required: true
-      default: 'admin'
-    module: 
-      type: VARCHAR
-      size: 128
-    action: 
-      type: VARCHAR
-      size: 128
-    route: 
-      type: VARCHAR
-      size: 128
-    pos: 
-      type: INTEGER
-      default: 0
-    is_active: 
-      type: BOOLEAN
-      required: true
-      default: 1
-
-  admin_menu_i18n: 
-    _attributes: 
-      phpName: AdminMenuI18n
-    id: 
-      type: INTEGER
-      required: true
-      primaryKey: true
-      foreignTable: admin_menu
-      foreignReference: id
-      onDelete: CASCADE
-      onUpdate: CASCADE
-    culture: 
-      isCulture: true
-      type: VARCHAR
-      size: 7
-      required: true
-      primaryKey: true
-    title: 
-      type: VARCHAR
-      size: 255

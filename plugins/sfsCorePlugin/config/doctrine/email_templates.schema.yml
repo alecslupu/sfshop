@@ -1,0 +1,15 @@
+sfsEmailTemplate:
+  actAs:
+    I18n:
+      fields: [subject, body]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+    subject:
+      type: string(255)
+    body:
+      type: clob

@@ -1,0 +1,31 @@
+sfsAdminMenu:
+  actAs:
+    I18n:
+      fields: [title]
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: parent_id
+    Sluggable:
+      fields: [username]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    credential:
+      type: integer(4)
+    module:
+      type: string(128)
+    action:
+      type: string(128)
+    route:
+      type: string(128)
+    pos:
+      type: integer(3)
+      default: 0
+    is_active:
+      type: boolean
+      default: true
+  relations:
+    sfGuardPermission:
+      local: credential

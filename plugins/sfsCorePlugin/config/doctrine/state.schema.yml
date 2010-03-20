@@ -1,0 +1,23 @@
+sfsState:
+  actAs:
+    I18n:
+      fields: [title]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    country_id:
+      type: integer(4)
+    title:
+      type: string(128)
+    iso:
+      type: string(2)
+    is_active:
+      type: boolean
+      default: false
+  relations:
+    sfsCountry:
+      local: country_id
+      onDelete: RESTRICT
+      onUpdate: CASCADE
