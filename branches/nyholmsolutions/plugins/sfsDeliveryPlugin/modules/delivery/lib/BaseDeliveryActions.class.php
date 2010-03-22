@@ -40,7 +40,8 @@ class BaseDeliveryActions extends sfActions
             $this->form = new sfsDeliverySelectForm();
             
             $defaultMethodId = $sfUser->getAttribute('method_id', null, 'order/delivery');
-            $this->form->setDefault('method_id', $defaultMethodId);
+            if($defaultMethodId)
+              $this->form->setDefault('method_id', $defaultMethodId);
             
             $this->errors = $this->form->getServiceErrors();
             $this->sections = $this->form->getSections();
