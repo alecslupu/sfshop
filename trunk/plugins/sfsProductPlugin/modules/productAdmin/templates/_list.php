@@ -1,8 +1,5 @@
 <?php if(!isset($component_list)): ?>
 <div class="sf_admin_list">
-  <?php if (!$pager->getNbResults()): ?>
-    <p><?php echo __('No result', array(), 'sf_admin') ?></p>
-  <?php else: ?>
     <table cellspacing="0">
       <thead>
         <tr>
@@ -10,10 +7,19 @@
           <?php include_partial('productAdmin/list_th_tabular', array('sort' => $sort)) ?>
           <th id="sf_admin_list_th_actions"><?php echo __('Actions', array(), 'sf_admin') ?></th>
         </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <?php include_partial('productAdmin/list_th_filters', array('filters' => $filters, 'configuration' => $configuration)) ?>
+            <th>
+                <?php echo $filters->renderHiddenFields() ?>
+                <?php echo link_to(__('Reset', array(), 'sf_admin'), 'productAdmin_collection', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post')) ?>
+                <input type="submit" value="<?php echo __('Filter', array(), 'sf_admin') ?>" />
+            </th>
+        </tr>
       </thead>
       <tfoot>
         <tr>
-          <th colspan="6">
+          <th colspan="7">
             <?php if ($pager->haveToPaginate()): ?>
               <?php include_partial('productAdmin/pagination', array('pager' => $pager)) ?>
             <?php endif; ?>
@@ -26,6 +32,11 @@
         </tr>
       </tfoot>
       <tbody>
+      <?php if ( ! $pager->getNbResults()): ?>
+        <tr>
+            <td colspan="7"><?php echo __('No result', array(), 'sf_admin') ?></td>
+        </tr>
+      <?php else: ?>
         <?php foreach ($pager->getResults() as $i => $product): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
           <tr class="sf_admin_row <?php echo $odd ?>">
             <?php include_partial('productAdmin/list_td_batch_actions', array('product' => $product, 'helper' => $helper)) ?>
@@ -33,9 +44,9 @@
             <?php include_partial('productAdmin/list_td_actions', array('product' => $product, 'helper' => $helper)) ?>
           </tr>
         <?php endforeach; ?>
+       <?php endif ?>
       </tbody>
     </table>
-  <?php endif; ?>
 </div>
 <script type="text/javascript">
 /* <![CDATA[  */
