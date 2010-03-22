@@ -2,7 +2,7 @@
 <table class="list" width="100%">
     <?php $i = 1; foreach ($itemProducts as $itemProduct): ?>
         <tr>
-            <td valign="top"><b><?php echo $i; ?>.</b>&nbsp;</td>
+            <td valign="top"><b><?php echo $i; ?>.</b> </td>
             <td>
                 <?php echo $itemProduct->getTitle() ?>
                 <?php include_component('product', 'optionsList', array('itemProduct' => $itemProduct, 'method_for_get_options' => $method_for_get_options)) ?>
