@@ -41,6 +41,47 @@ propel:
     description: 
       type: LONGVARCHAR
 
+  discount: 
+    _attributes: 
+      phpName: Discount
+      isI18N: true
+      i18nTable: discount_i18n
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    type: 
+      type: INTEGER
+      required: true
+    amount: 
+      type: DECIMAL
+      size: 10
+      scale: 4
+
+  discount_i18n: 
+    _attributes: 
+      phpName: DiscountI18n
+    id:
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: discount
+      foreignReference: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    culture: 
+      isCulture: true
+      type: VARCHAR
+      size: 7
+      required: true
+      primaryKey: true
+    title: 
+      type: VARCHAR
+      size: 255
+    description: 
+      type: LONGVARCHAR
+
   product: 
     _attributes: 
       phpName: Product
@@ -68,6 +109,13 @@ propel:
       foreignTable: tax_type
       foreignReference: id
       onDelete: RESTRICT
+      onUpdate: RESTRICT
+    discount_id: 
+      type: INTEGER
+      required: false
+      foreignTable: discount
+      foreignReference: id
+      onDelete: SETNULL
       onUpdate: RESTRICT
     quantity: 
       type: INTEGER

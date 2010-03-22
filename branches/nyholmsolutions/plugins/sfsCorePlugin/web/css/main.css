@@ -542,6 +542,18 @@ div.list_tabular div.details {
     color: #743954;
 }
 
+.base_price {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #743954;
+}
+
+.discount_price {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF0000;
+}
+
 .product_title {
     font-family: Arial;
     font-size: 13px;
