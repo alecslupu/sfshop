@@ -40,7 +40,8 @@ class BasePaymentActions extends sfActions
             
             $defaultMethodId = $sfUser->getAttribute('method_id', null, 'order/payment');
             $this->form = new sfsPaymentSelectForm();
-            $this->form->setDefault('method_id', $defaultMethodId);
+            if($defaultMethodId)
+              $this->form->setDefault('method_id', $defaultMethodId);
             
             $this->paymentServices = $this->form->getPaymentServices();
             
