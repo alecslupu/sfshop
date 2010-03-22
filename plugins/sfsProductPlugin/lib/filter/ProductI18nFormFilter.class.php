@@ -10,7 +10,4 @@
  */
 class ProductI18nFormFilter extends BaseProductI18nFormFilter
 {
-  public function configure()
-  {
-  }
 }

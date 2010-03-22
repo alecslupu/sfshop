@@ -13,7 +13,7 @@ generator:
     config:
       actions: ~
       filter: 
-        display:          [ brand_id, is_active, product2_category_list, quantity, tax_type_id, price, allow_out_of_stock ]
+        display:          [ title, price, is_active, created_at, updated_at ]
       form:    ~
       new:     ~
       fields:
@@ -22,7 +22,7 @@ generator:
 
         
       list: 
-        display:          [ =title, is_active, created_at, updated_at ]
+        display:          [ =title, price, is_active, created_at, updated_at ]
         max_per_page:     20
         peer_method:      doSelectWithTranslation
         sort:             [updated_at, desc]
@@ -37,12 +37,18 @@ generator:
             label:        'Products'
             help:         'Title'
     
+      new:
+        title: New Product
  
-#      edit: 
-#        title:            'Edit product %%title%%'
-#        actions: 
-#          _list:        { action: catalogList }
-#          _save:          ~
-#          _save_and_add:  ~
-#          _delete:        ~
+      edit: 
+        title:            'Edit product %%title%%'
         
+      form:
+        display:
+          Infos FR: [ fr ]
+          Infos EN: [ en ]
+          Infos: [ brand_id, quantity, weight, cube, is_active, price, tax_type_id ]
+          Stock: [ quantity, weight, cube, allow_out_of_stock ]
+          Prices: [ is_active, price, tax_type_id ]
+          Categories: [ product2_category_list ]
+          Medias: [ thumbnail ]

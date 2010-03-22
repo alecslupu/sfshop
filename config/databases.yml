@@ -11,9 +11,9 @@ all:
   propel: 
     class: sfPropelDatabase
     param:
-      dsn:        mysql:dbname=devzpc_sfshop;host=localhost
-      username:   devzpc_sfUser
-      password:   AAsMM7Yx3:5Q.v4T
+      dsn:        mysql:dbname=equipmoto2;host=localhost
+      username:   root
+      password:   timpwdfpc
       encoding:   utf8
       persistent: true
       pooling:    true
@@ -22,9 +22,9 @@ all:
   session_storage:
     class: sfPropelDatabase
     param:
-      dsn:        mysql:dbname=devzpc_sfshop;host=localhost
-      username:   devzpc_sfUser
-      password:   AAsMM7Yx3:5Q.v4T
+      dsn:        mysql:dbname=equipmoto2;host=localhost
+      username:   root
+      password:   timpwdfpc
       encoding:   utf8
       persistent: true
       pooling:    true
