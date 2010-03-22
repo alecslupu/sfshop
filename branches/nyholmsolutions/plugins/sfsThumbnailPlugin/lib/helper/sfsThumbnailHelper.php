@@ -42,11 +42,11 @@ function thumbnail_lightbox_image_tag($thumbnailMedium, $thumbnailLarge, $title)
         $images[] = array(
             'thumbnail' => $thumbnailMedium->getUrl(),
             'image'     => '/images/' . $thumbnailLarge->getUrl(),
-            'options'   => array()
+            'options'   => array('alt_title' => $title)
         );
         
         $linkOptions = array(
-            'alt_title'     => $title,
+            'title'     => $title,
             'slidename' => 'lightbox',
             'style'     => 'padding-left: 5px'
         );
