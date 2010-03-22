@@ -158,6 +158,9 @@ class sfsDeliverySelectForm extends BaseDeliveryForm
             array('required' => 'Please select a some delivery method')
         );
         
+        if(count($choices) == 1) {
+          $this->setDefault('method_id', key($choices));
+        }
         $this->setValidators(array('method_id' => $validatorMethodId));
         
         $this->getWidgetSchema()->setNameFormat('data[%s]');
