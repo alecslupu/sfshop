@@ -33,7 +33,7 @@
             array('class' => 'product_title')
         ); ?><br/>
         <p><?php echo $product->getDescriptionShort(); ?></p>
-        <strong><?php echo __('Price') ?>:</strong> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
+        <?php echo include_partial('product/price',array('product' => $product));?>
         <div >
             <?php if (!$product->getHasOptions()): ?>
                 <?php include_component('basket', 'addProductForm', array('product' => $product, 'isShortForm' => true)) ?>

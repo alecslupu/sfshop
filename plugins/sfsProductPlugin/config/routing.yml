@@ -64,3 +64,13 @@ optionValueAdmin:
     prefix_path:          optionValueAdmin
     column:               id
     with_wildcard_routes: true
+    
+discountAdmin:
+  class: sfPropelRouteCollection
+  options:
+    model:                Discount
+    module:               discountAdmin
+    prefix_path:          discountAdmin
+    column:               id
+    with_wildcard_routes: true
+    

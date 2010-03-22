@@ -114,6 +114,15 @@ AdminMenu:
     pos:            6
     is_active:      1
     
+  AdminMenu_Catalog_Discount: 
+    parent_id:      AdminMenu_Catalog
+    credential:     superadmin,admin
+    title:          Discount
+    module:         discountAdmin
+    route:          discountAdmin
+    pos:            7
+    is_active:      1
+    
   AdminMenu_MembersOrders_Members: 
     parent_id:      AdminMenu_MembersOrders
     credential:     superadmin

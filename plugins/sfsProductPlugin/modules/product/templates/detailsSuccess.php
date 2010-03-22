@@ -13,7 +13,7 @@
             <span class="product_title"><?php echo $product->getTitle() ?></span><br/>
             <?php echo $product->getDescription(ESC_RAW) ?><br/>
             <?php include_partial('brand/product_brand', array('product' => $product)) ?><br/>
-            <strong><?php echo __('Price') ?>:</strong> <span class="price"><?php echo format_currency($product->getProductPrice()); ?></span><br/>
+            <?php echo include_partial('product/price',array('product' => $product));?>
             <div><?php include_component('basket', 'addProductForm', array('product' => $product, 'optionsForm' => $optionsForm)); ?></div>
     </div>
 </div>

@@ -42,30 +42,28 @@ class OptionProduct extends BaseOptionProduct
     * Gets gross product option price
     * Net price is returned if taxes are globally disabled
     *
-    * @param  void
-    * @return string
+    * @param  bool $bWithDiscount
+    * @return decimal
     * @author Andreas Nyholm
     * @access public
     */
-    public function getGrossPrice()
+    public function getGrossPrice($bWithDiscount = true)
     {
-        // check if tax is enabled here to avoid unnecessary db-queries
-        if(!sfConfig::get('app_tax_is_enabled', false)) 
-            return $this->getPrice();
-        return $this->getProduct()->calculateGrossPrice($this->getPrice());
+      return $this->getProduct()->calculateGrossPrice($this->getPrice(),$bWithDiscount);
     }
+
     
    /**
     * Gets net product option price
     *
     * @param  void
-    * @return string
+    * @return decimal
     * @author Andreas Nyholm
     * @access public
     */
-    public function getNetPrice()
+    public function getNetPrice($bWithDiscount = true)
     {
-        return $this->getPrice();
+      return $this->getProduct()->calculateNetPrice($this->getPrice(),$bWithDiscount);
     }
     
     /**
@@ -79,14 +77,26 @@ class OptionProduct extends BaseOptionProduct
     */
      public function getProductPrice()
     {
-        // check if tax is enabled here to avoid unnecessary db-queries
-        if(!sfConfig::get('app_tax_is_enabled', false)) 
-            return $this->getPrice();
-
-        if(!sfConfig::get('app_tax_display_prices_with_tax', false))
-            return $this->getPrice();
-
-        return $this->getProduct()->calculateGrossPrice($this->getPrice());
+      if(!sfConfig::get('app_tax_display_prices_with_tax', false))
+        return $this->getProduct()->calculateNetPrice($this->getPrice());
+      return $this->getProduct()->calculateGrossPrice($this->getPrice());
     }
+
+    /**
+    * Gets product option base price, including or excluding taxes but no discount
+    * Net price is returned if taxes are globally disabled
+    * 
+    * @param  void
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getBasePrice()
+    {
+      if(!sfConfig::get('app_tax_display_prices_with_tax', false))
+        return $this->getProduct()->calculateNetPrice($this->getPrice(), false);
+      return $this->getProduct()->calculateGrossPrice($this->getPrice(), false);
+    }
+        
     
 }

@@ -152,27 +152,44 @@ class Product extends BaseProduct
     * Gets gross product price
     * Net price is returned if taxes are globally disabled
     *
-    * @param  void
+    * @param  bool $bWithDiscount
     * @return string
     * @author Andreas Nyholm
     * @access public
     */
-    public function getGrossPrice()
+    public function getGrossPrice($bWithDiscount = true)
     {
-        return $this->calculateGrossPrice($this->getPrice());
+      return $this->calculateGrossPrice($this->getPrice(), $bWithDiscount);
     }
     
    /**
     * Gets net product price
     *
-    * @param  void
+    * @param  bool $bWithDiscount
     * @return string
     * @author Andreas Nyholm
     * @access public
     */
-    public function getNetPrice()
+    public function getNetPrice($bWithDiscount = true)
     {
-        return $this->getPrice();
+      return $this->calculateNetPrice($this->getPrice(), $bWithDiscount);
+    }
+
+    /**
+    * Gets base price, including or excluding taxes but no discount
+    * Net price is returned if taxes are globally disabled
+    * 
+    * @param  void
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */ 
+     public function getBasePrice()
+    {
+      if(!sfConfig::get('app_tax_display_prices_with_tax', false))
+        return $this->getNetPrice(false);
+
+      return $this->getGrossPrice(false);
     }
     
     /**
@@ -188,9 +205,9 @@ class Product extends BaseProduct
     {
 
         if(!sfConfig::get('app_tax_display_prices_with_tax', false))
-            return $this->getPrice();
+            return $this->getNetPrice();
 
-        return TaxRatePeer::calculateGrossPrice($this->getPrice(),$this->getTaxTypeId());
+        return $this->getGrossPrice();
     }
 
    /**
@@ -198,13 +215,34 @@ class Product extends BaseProduct
     * Net price is returned if taxes are globally disabled
     * 
     * @param  decimal $price
+    * @param  bool $bWithDiscount
     * @return decimal
     * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
     * @access public
     */
-     public function calculateGrossPrice($price)
+     public function calculateGrossPrice($price, $bWithDiscount = true)
     {
-    	  return TaxRatePeer::calculateGrossPrice($price,$this->getTaxTypeId());
+      if($this->getDiscountId() && $bWithDiscount) {
+        return $this->getDiscount()->getGrossPrice($price,$this->getTaxTypeId());
+      }
+      return TaxRatePeer::calculateGrossPrice($price,$this->getTaxTypeId());
+    }    
+   
+   /**
+    * Calculates correct net price
+    * 
+    * @param  decimal $price
+    * @param  bool $bWithDiscount
+    * @return decimal
+    * @author Andreas Nyholm <andreas.nyholm@nyholmsolutions.fi>
+    * @access public
+    */
+     public function calculateNetPrice($price, $bWithDiscount = true)
+    {
+      if($this->getDiscountId() && $bWithDiscount) {
+        return $this->getDiscount()->getNetPrice($price,$this->getTaxTypeId());
+      }
+      return $price;
     }    
    
 }

@@ -25,8 +25,8 @@ class ProductForm extends BaseProductForm
       $this->widgetSchema['product2_category_list'] = new sfWidgetFormChoiceMany(array('choices' => get_categories_tree_for_select(false)), array('size' => '10'));
 
       $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'peer_method' => 'getTaxRatesByName', 'add_empty' => true),array('onchange' => 'taxRateChanged()'));
-      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('class' => 'product_price', 'onkeyup' => 'updateGrossPrice(\'product_price\')'));
-      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice(\'product_price\')'));
+      $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice(false)),array('class' => 'product_price', 'onkeyup' => 'updateGrossPrice(\'product_price\')'));
+      $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice(false)),array('onkeyup' => 'updateNetPrice(\'product_price\')'));
 
       $this->validatorSchema['price'] = new sfValidatorNumberI18n(array('required' => true, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
       $this->validatorSchema['weight'] = new sfValidatorNumberI18n(array('required' => false, 'culture' => sfContext::getInstance()->getUser()->getCulture()));
