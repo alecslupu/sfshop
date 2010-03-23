@@ -32,7 +32,7 @@ class sfsCorePluginRouting extends sfsBasicRouting
    * @uses sfsBasicRouting
    * @param sfEvent $event
    */
-  static public function listenToCoreRoutingLoadConfigurationEvent(sfEvent $event)
+  static public function listenToSfsCoreRoutingLoadConfigurationEvent(sfEvent $event)
   {
     $file = dirname(__FILE__).'/../../modules/core/config/routing.yml';
 
@@ -67,7 +67,7 @@ class sfsCorePluginRouting extends sfsBasicRouting
     self::registerRoutes($event, $file);
   }
   
-/**
+  /**
    * Loading dynamic routes for sfGuardAuth module
    *
    * @see sfsPluginConfiguration
