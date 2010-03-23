@@ -25,11 +25,11 @@ all:
     error_404_module:       default
     error_404_action:       error404
     
-    login_module:           member
-    login_action:           login
+    login_module:           sfGuardAuth
+    login_action:           signin
     
   .settings:
-    enabled_modules:        [ default ]
+    enabled_modules:        [ default, sfGuardAuth, product ]
     standard_helpers:       [ I18N, Partial, Date ]  # Javascript
 #    enabled_modules:        [ default, addressBook, menu, product, category, core, basket, order, paypal, information, currency, recaptcha, delivery, brand ]
 #    standard_helpers:       [ sfsCategory, sfsCurrency ]

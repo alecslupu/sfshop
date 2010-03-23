@@ -1,3 +1,4 @@
 all:
   components:
-    sidebar: [ category, menuTree ]
+    #sidebar: [ category, menuTree ]
+    header: [ sfGuardAuth, signin ]

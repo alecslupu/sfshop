@@ -28,21 +28,21 @@ abstract class sfsPluginConfiguration extends sfPluginConfiguration
    *
    * @var Array
    */
-  private $global_modules = array();
+  protected $global_modules = array();
 
   /**
    * Plugin frontend modules that needs to be loaded
    *
    * @var Array
    */
-  private $frontend_modules = array();
+  protected $frontend_modules = array();
 
   /**
    * Plugin backend modules that needs to be loaded
    *
    * @var Array
    */
-  private $backend_modules = array();
+  protected $backend_modules = array();
 
   /**
    * Constructor.

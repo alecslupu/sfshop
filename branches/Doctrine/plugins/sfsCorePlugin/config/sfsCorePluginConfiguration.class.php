@@ -28,7 +28,7 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
    *
    * @var Array
    */
-  private $global_modules = array(
+  protected $global_modules = array(
       'sfsCore'
   );
 
@@ -37,9 +37,10 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
    *
    * @var Array
    */
-  private $frontend_modules = array(
-      'information',
-      'menu'
+  protected $frontend_modules = array(
+      //'information',
+      //'menu',
+      'sfGuardAuth'
   );
 
   /**
@@ -47,14 +48,14 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
    *
    * @var Array
    */
-  private $backend_modules = array(
-      'administrationAdmin',
-      'countryAdmin',
-      'emailTemplateAdmin',
-      'coreAdmin',
-      'stateAdmin',
-      'languageAdmin',
-      'informationAdmin'
+  protected $backend_modules = array(
+      //'administrationAdmin',
+      //'countryAdmin',
+      //'emailTemplateAdmin',
+      //'coreAdmin',
+      //'stateAdmin',
+      //'languageAdmin',
+      //'informationAdmin'
   );
 
   /**

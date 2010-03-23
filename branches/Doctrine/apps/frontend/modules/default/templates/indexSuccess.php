@@ -1,1 +1,1 @@
-<?php include_component('product', 'recent') ?>
+<?php //include_component('product', 'recent') ?>
