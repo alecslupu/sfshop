@@ -12,6 +12,9 @@ all:
   admin:
     algorithm_callable: 'sha1'
 
+  sf_guard_plugin:
+    routes_register: false
+
   sfshop:
     core_web_dir: '/sfsCorePlugin/'
     core_js_dir: '/sfsCorePlugin/js/'
@@ -26,5 +29,4 @@ all:
     install_web_dir: '/sfsInstallPlugin/'
     install_js_dir: '/sfsInstallPlugin/js/'
     install_css_dir: '/sfsInstallPlugin/css/'
-    install_images_dir: '/sfsInstallPlugin/images/'
-      
+    install_images_dir: '/sfsInstallPlugin/images/'      

@@ -6,34 +6,34 @@
 #
 # Core Admin
 #
-coreAdmin_index:
-  url: /admin-index
-  param: { module: coreAdmin, action: index }
-  
+#coreAdmin_index:
+#  url: /admin-index
+#  param: { module: coreAdmin, action: index }
+#  
+##
+## administratorAdmin
+##
 #
-# administratorAdmin
+#administratorAdmin:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                Admin
+#    module:               administratorAdmin
+#    prefix_path:          administratorAdmin
+#    column:               id
+#    with_wildcard_routes: true
 #
-
-administratorAdmin:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Admin
-    module:               administratorAdmin
-    prefix_path:          administratorAdmin
-    column:               id
-    with_wildcard_routes: true
-
-administratorAdmin_changeMyPassword:
-  url: /administratorAdmin/change-my-password
-  param: { module: administratorAdmin, action: changeMyPassword }
-
-administratorAdmin_login:
-  url: /admin-login
-  param: { module: administratorAdmin, action: login }
-
-administratorAdmin_logout: 
-  url: /admin-logout
-  param: { module: administratorAdmin, action: logout }
+#administratorAdmin_changeMyPassword:
+#  url: /administratorAdmin/change-my-password
+#  param: { module: administratorAdmin, action: changeMyPassword }
+#
+#administratorAdmin_login:
+#  url: /admin-login
+#  param: { module: administratorAdmin, action: login }
+#
+#administratorAdmin_logout: 
+#  url: /admin-logout
+#  param: { module: administratorAdmin, action: logout }
 
 #
 # Core Information
