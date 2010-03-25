@@ -16,8 +16,8 @@
     <table cellspacing="0" class="sf_admin_list">
         <thead>
             <tr>
-                <?php include_partial('productAdmin/list_th_tabular', array('sort' => $sort)) ?>
-               <th id="sf_admin_list_th_sf_actions"><?php echo __('Actions') ?></th>
+                <?php include_partial('categoryAdmin/list_th_tabular', array('sort' => $sort)) ?>
+                <th id="sf_admin_list_th_sf_actions"><?php echo __('Actions') ?></th>
             </tr>
         </thead>
         <?php include_component('categoryAdmin', 'list', array('item_routing' => 'catalogAdmin/list')); ?>

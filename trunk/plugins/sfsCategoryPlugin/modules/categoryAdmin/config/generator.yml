@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           Category
-    theme:                 admin
+    theme:                 sfshop
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -13,12 +13,12 @@ generator:
     config:
       actions: ~
       fields:  ~
-      filter: 
-        display:        [ name, is_active ]
+      filter:  
+        display:        [ title, is_active, created_at, updated_at ]
       form:    ~
       new:     ~
       list: 
-        display:          [ _category_title, is_active, created_at, updated_at ]
+        display:          [ =title, is_active, created_at, updated_at ]
         max_per_page:     40
         object_actions: 
           _edit:          ~
