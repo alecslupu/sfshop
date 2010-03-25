@@ -11,7 +11,7 @@ default:
 
   stylesheets:    [ %APP_SFSHOP_ADMIN_CSS_DIR%main ]
 
-  javascripts:    [ ../../js/prototype/prototype, %APP_SFSHOP_ADMIN_JS_DIR%functions ]
+  javascripts:    [ /../sfProtoculousPlugin/js/prototype, %APP_SFSHOP_ADMIN_JS_DIR%functions ]
 
   has_layout:     true
   layout:         layout

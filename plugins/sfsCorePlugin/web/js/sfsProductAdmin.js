@@ -41,15 +41,9 @@ Object.extend( sfs || {}, {
             var element = event.findElement(this.options.togglerSelector);
             if(element)
             {
-                /*new Effect.toggle(event.findElement(this.options.bodySelector), 'blind', {
-                    duration: .2,
-                    afterFinish: function(effect) {
-                        var toggler = effect.element.up().down('img.toggler');
-                        toggler.toggleClassName('closed');
-                        //toggler.src = toggler.hasClassName('closed') ? '<?php echo image_path('toggler-bottom') ?>' : '<?php echo image_path('toggler') ?>';
-                    }
-                });*/
-                element.next(this.options.bodySelector).toggle();
+                this.options.root.select(this.options.bodySelector).each(Element.hide);
+                
+                new Effect.toggle(element.next(this.options.bodySelector), 'blind', { duration: .2 });
             }
         }
     })
