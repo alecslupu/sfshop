@@ -52,4 +52,4 @@ generator:
           Prices: [ price, tax_type_id ]
           Categories: [ product2_category_list ]
           Medias: [ thumbnail ]
-          Options: [ options_product, new_option_product ]
+          Options: [ options_product ]

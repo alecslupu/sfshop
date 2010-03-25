@@ -31,9 +31,18 @@ class OptionProductForm extends BaseOptionProductForm
             }
             $this->setWidget('option_value_id', new sfWidgetFormPropelChoice(array('model' => 'OptionValue', 'criteria' => $c, 'add_empty' => false)));
             $this->setValidator('option_value_id', new sfValidatorPropelChoice(array('model' => 'OptionValue', 'criteria' => $c, 'column' => 'id')));
+            
+            // delete option is here for productForm embedding 
+            $this->setWidget('delete_option', new sfWidgetFormInputCheckbox);
+            $this->setValidator('delete_option', new sfValidatorBoolean(array('required' => false)));
+            $this->widgetSchema->setHelp('delete_option', 'This will delete this option for this product.');
         }
     }
-    
+    /**
+     * Configures the option values of a new form:
+     * if the form is new, we can't filter on a predefined type.
+     * @return void
+     */
     public function configureForNew()
     {
         $options = $options_id = array();

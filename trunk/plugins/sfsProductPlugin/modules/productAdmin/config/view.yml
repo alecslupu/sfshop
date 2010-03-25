@@ -1,6 +1,9 @@
 all:
   javascripts:
-    - ../../js/prototype/window/window.js
+    - /../sfProtoculousPlugin/js/prototype
+    - /../sfProtoculousPlugin/js/scriptaculous.js?load=
+    - /../sfProtoculousPlugin/js/effects
+    #- ../../js/prototype/window/window.js
     - %APP_SFSHOP_CORE_JS_DIR%sfsForm.js
     - %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js
     - %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js

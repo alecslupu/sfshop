@@ -24,7 +24,7 @@ class ProductI18nForm extends BaseProductI18nForm
       $this->widgetSchema['description_short'] = new sfWidgetFormTextarea(
             array(),
             array(
-              'cols'  => 60,
+              'cols'  => 100,
               'rows'  => 5
             )
         );
