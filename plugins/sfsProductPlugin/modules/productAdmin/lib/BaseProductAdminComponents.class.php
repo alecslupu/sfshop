@@ -22,7 +22,6 @@ require_once dirname(__FILE__).'/productAdminGeneratorHelper.class.php';
  */
 class BaseProductAdminComponents extends sfComponents 
 {
-    
     public function executeList()
     {
         $this->currentCategoryId = 0;
@@ -52,51 +51,5 @@ class BaseProductAdminComponents extends sfComponents
         }
         $this->helper = new productAdminGeneratorHelper();
         $this->component_list = true;
-    }
-    
-    public function executeEditOptionsListForm()
-    {
-        $criteria = new Criteria();
-        OptionTypePeer::addPublicCriteria($criteria);
-        
-        //Local array needed with php5.2.0
-        $this->optionTypes = $oTypes = OptionTypePeer::getAll($criteria);
-     
-        $this->optionValues = $oValues = array();
-        
-        if (count($oTypes) > 0) {
-            
-            $this->productOptions = $this->product->getOptionProducts();
-            
-            $criteria = new Criteria();
-            OptionValuePeer::addPublicCriteria($criteria);
-            
-            foreach ($oTypes as $key => $optionType) {
-                $optionValues = OptionValuePeer::getByTypeId($optionType->getId(), $criteria);
-                
-                if (count($optionValues) > 0) {
-                    $oValues[$optionType->getId()] = $optionValues;
-                }
-                else {
-                    unset($oTypes[$key]);
-                }
-            }
-            $this->optionValues = $oValues;
-            $this->optionTypes = $oTypes;
-        }
-        else {
-            return sfView::NONE;
-        }
-        
-        if (count($this->optionTypes) < 1) {
-            return sfView::NONE;
-        }
-    }
-    
-    public function executeAddOptionValueForm()
-    {
-        $criteria = new Criteria();
-        LanguagePeer::addPublicCriteria($criteria);
-        $this->languages = LanguagePeer::getAll($criteria);
     }
 }

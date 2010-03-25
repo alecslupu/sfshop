@@ -16,6 +16,14 @@ class OptionProduct extends BaseOptionProduct
         return ' ';
     }
     
+    public function getOptionType() 
+    {
+        if($this->getOptionValue())
+        {
+            return $this->getOptionValue()->getOptionType();
+        }
+    }
+    
     public function getOptionValueJoinOptionType()
     {
         $criteria = new Criteria();
