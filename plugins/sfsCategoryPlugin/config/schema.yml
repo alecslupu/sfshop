@@ -86,3 +86,5 @@ propel:
       type: LONGVARCHAR
     meta_description: 
       type: LONGVARCHAR
+    noscript: 
+      type: LONGVARCHAR

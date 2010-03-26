@@ -50,6 +50,7 @@ class ProductI18nForm extends BaseProductI18nForm
       'description'       => new sfValidatorString(array('required' => false)),
       'meta_keywords'     => new sfValidatorString(array('required' => false)),
       'meta_description'  => new sfValidatorString(array('required' => false)),
+      'noscript'          => new sfValidatorString(array('required' => false)),
     ));
   }
 }

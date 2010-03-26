@@ -18,6 +18,14 @@ class OptionProductForm extends BaseOptionProductForm
         $this->setWidget('product_id', new sfWidgetFormInputHidden);
         $this->validatorSchema['quantity'] = new sfValidatorNumber(array('required' => false));
         
+        $choices = array(
+            OptionProductPeer::PRICE_TYPE_ADD => '+',
+            OptionProductPeer::PRICE_TYPE_MINUS => '-',
+            OptionProductPeer::PRICE_TYPE_REPLACE => '~',
+        );
+        $this->setWidget('price_type', new sfWidgetFormChoice(array('choices' => $choices)));
+        $this->validatorSchema['price_type'] = new sfValidatorChoice(array('choices' => array_keys($choices), 'required' => true));
+        
         if($this->isNew())
         {
             $this->configureForNew();

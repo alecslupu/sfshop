@@ -51,6 +51,10 @@ propel:
       required: true
       autoIncrement: true
       primaryKey: true
+    sku:
+      type: VARCHAR
+      required: true
+      size: 100
     brand_id: 
       type: INTEGER
       required: false
@@ -97,6 +101,13 @@ propel:
       default: 0
     created_at: 
     updated_at: 
+    is_new_product:
+      type: BOOLEAN
+      required: true
+      default: 0
+    url_key:
+      type: VARCHAR
+      size: 255
 
   product_i18n: 
     _attributes: 
@@ -125,6 +136,8 @@ propel:
     meta_keywords: 
       type: LONGVARCHAR
     meta_description: 
+      type: LONGVARCHAR
+    noscript: 
       type: LONGVARCHAR
 
   option_type: 
@@ -257,6 +270,10 @@ propel:
     quantity: 
       type: INTEGER
       required: false
+    sku:
+      type: VARCHAR
+      required: true
+      size: 100
 
   product2category: 
     _attributes: 
