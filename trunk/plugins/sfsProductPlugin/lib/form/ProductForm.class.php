@@ -102,15 +102,18 @@ class ProductForm extends BaseProductForm
             $embed = $this->getEmbeddedForms();
             ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($embed['thumbnail']->getObject()->getAssetId(), 'Product');
         }
-        if(isset($this->taintedFiles['thumbnail']['uuid']['name']) and ! $this->taintedFiles['thumbnail']['uuid']['name']) {
+        if( ! isset($this->taintedFiles['thumbnail']['uuid']['name'])
+        or (isset($this->taintedFiles['thumbnail']['uuid']['name']) and ! $this->taintedFiles['thumbnail']['uuid']['name'])) {
             unset($this['thumbnail']);
         }
-        if( isset($this->taintedValues['options_product']['add_new_option']) and ! $this->taintedValues['options_product']['add_new_option']) {
+        if( ! isset($this->taintedValues['options_product']['add_new_option']) 
+        or (isset($this->taintedValues['options_product']['add_new_option']) and ! $this->taintedValues['options_product']['add_new_option'])) {
             //if the "new option" checkbox is unchecked, we don't want to add a new one 
             // so we unset it to avoid the sfForm::save method to insert it anyway. 
             $this->getEmbeddedForm('options_product')->offsetUnset('new_option_product');
         }
-        foreach($this->getEmbeddedForm('options_product')->getEmbeddedForms() as $id => $op_form) {
+        foreach($this->getEmbeddedForm('options_product')->getEmbeddedForms() as $id => $op_form) 
+        {
             if( isset($this->taintedValues['options_product'][$id]['delete_option']) and $this->taintedValues['options_product'][$id]['delete_option']) {
                 // if the "delete option" checkbox is checked, we want to delete it,
                 // so we unset it to avoid the sfForm::save method to reinsert it after having deleted it. 

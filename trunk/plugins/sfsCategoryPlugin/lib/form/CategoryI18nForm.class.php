@@ -42,6 +42,6 @@ class CategoryI18nForm extends BaseCategoryI18nForm
               'cols'  => 100,
               'rows'  => 1
             )
-        );      
+        );
   }
 }

@@ -11,6 +11,7 @@ class OptionProductPeer extends BaseOptionProductPeer
 {
     const PRICE_TYPE_ADD = 1;
     const PRICE_TYPE_REPLACE = 2;
+    const PRICE_TYPE_MINUS = 3;
     
     
    /**
