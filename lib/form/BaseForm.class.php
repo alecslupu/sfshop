@@ -64,7 +64,7 @@ class BaseForm extends sfFormSymfony
     public function listenToPostConfigure(sfEvent $sevent) {
         foreach ($this->getJavascripts() as $file)
         {
-            sfContext::getInstance()->getResponse()->addJavascript($file);
+            sfContext::getInstance()->getResponse()->addJavascript($file, '');
         }
         foreach ($this->getStylesheets() as $file => $options)
         {

@@ -30,15 +30,17 @@ class ProductForm extends BaseProductForm
             unset($this['tax_type_id'], $this['price_gross']);
         }
 
-        $this->widgetSchema['thumbnail'] = new sfWidgetFormInputFile();
         //$this->widgetSchema['product2_category_list'] = new sfWidgetFormPropelChoiceMany(array('model' => 'Category', 'peer_method' => 'getTreeForChoice'));
         $this->widgetSchema['product2_category_list'] = new sfWidgetFormChoice(array('multiple'=>true,'choices' => get_categories_tree_for_select(false)), array('size' => '10'));
+        //$this->setWidget('product2_category_list', new sfWidgetFormTextBoxList(array('url' => '/admin/categoryAdmin/getTextBoxList', 'model' => 'Category')));
 
         $this->widgetSchema['tax_type_id'] = new sfWidgetFormPropelChoice(array('model' => 'TaxType', 'peer_method' => 'getTaxRatesByName', 'add_empty' => true),array('onchange' => 'taxRateChanged()'));
         $this->widgetSchema['price'] = new sfWidgetFormInput(array('default' => $this->object->getNetPrice()),array('class' => 'product_price', 'onkeyup' => 'updateGrossPrice(\'product_price\')'));
         $this->widgetSchema['price_gross'] = new sfWidgetFormInput(array('default' => $this->object->getGrossPrice()),array('onkeyup' => 'updateNetPrice(\'product_price\')'));
 
-        $this->validatorSchema['price'] = new sfValidatorNumber(array('required' => true));
+        $this->validatorSchema['price'] = new sfsValidatorCurrency(array('required' => true));
+        $this->validatorSchema['price_gross'] = new sfsValidatorCurrency(array('required' => false));
+        $this->validatorSchema['promo_price'] = new sfsValidatorCurrency(array('required' => false));
         $this->validatorSchema['weight'] = new sfValidatorNumber(array('required' => false));
         $this->validatorSchema['quantity'] = new sfValidatorNumber(array('required' => false));
 
@@ -52,6 +54,7 @@ class ProductForm extends BaseProductForm
             'brand_id'          => 'Brand',
         ));
         $this->widgetSchema->setHelp('allow_out_of_stock', 'Allow user to order product if product is out of stock?');
+        $this->widgetSchema->setHelp('stock_message', 'The message to show if OS allowed');
 
         $this->embedOptionsForm();
         
@@ -82,7 +85,6 @@ class ProductForm extends BaseProductForm
         $thumbnailTypeAssetType = ThumbnailTypeAssetTypePeer::retrieveByThumbnailTypeName(ThumbnailPeer::ORIGINAL);
         $path = date('Y/m/d');
         $thumbnail = $this->object->getThumbnail(ThumbnailPeer::ORIGINAL);
-        //     echo $thumbnail->getId(); die;
         if(!$thumbnail || $thumbnail->getIsBlank())
         {
             $thumbnail = new Thumbnail();
@@ -98,9 +100,9 @@ class ProductForm extends BaseProductForm
     
     public function save($con = null)
     {
+        $thumb_form = $this->getEmbeddedForm('thumbnail');
         if(isset($this->taintedValues['thumbnail']['uuid_delete'])) {
-            $embed = $this->getEmbeddedForms();
-            ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($embed['thumbnail']->getObject()->getAssetId(), 'Product');
+            ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($thumb_form->getObject()->getAssetId(), 'Product');
         }
         if( ! isset($this->taintedFiles['thumbnail']['uuid']['name'])
         or (isset($this->taintedFiles['thumbnail']['uuid']['name']) and ! $this->taintedFiles['thumbnail']['uuid']['name'])) {
@@ -126,12 +128,11 @@ class ProductForm extends BaseProductForm
         if(isset($this['thumbnail'])) {
             if($this->isNew()){
                 // save again and update id
-                $embed = $this->getEmbeddedForms();
-                $embed['thumbnail']->getObject()->setAssetId($this->object->getId());
+                $thumb_form->getObject()->setAssetId($this->getObject()->getId());
                 parent::save($con);
             }
-            ThumbnailPeer::updateThumbnails($this->object);
+            ThumbnailPeer::updateThumbnails($this->getObject());
         }
-        return $this->object;
+        return $this->getObject();
     }
 }

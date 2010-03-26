@@ -1,8 +1,7 @@
 all:
   javascripts:
-    - /../sfProtoculousPlugin/js/prototype
-    - /../sfProtoculousPlugin/js/scriptaculous.js?load=
-    - /../sfProtoculousPlugin/js/effects
+    - /../sfProtoculousPlugin/js/prototype: { position: first }
+    - /../sfProtoculousPlugin/js/scriptaculous.js?load=effects
     #- ../../js/prototype/window/window.js
     - %APP_SFSHOP_CORE_JS_DIR%sfsForm.js
     - %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js

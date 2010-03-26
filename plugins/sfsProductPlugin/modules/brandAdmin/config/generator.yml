@@ -15,11 +15,15 @@ generator:
       fields:  ~
       list:
         title: Brands
-        display: [title, url]
+        display: [ title, url ]
         max_per_page: 20
       filter:
         class: false
-      form:    ~
+      form: 
+        display: 
+          Infos FR: [ fr ]
+          Infos EN: [ en ]
+          Misc.: [ url, thumbnail ]
       edit:
         title: Edit brand
       new:
