@@ -66,6 +66,10 @@ propel:
       type: DECIMAL
       size: 10
       scale: 4
+    promo_price: 
+      type: DECIMAL
+      size: 10
+      scale: 4
     tax_type_id: 
       type: INTEGER
       required: false
@@ -91,6 +95,9 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
+    stock_message:
+      type: varchar
+      size: 255
     is_active: 
       type: BOOLEAN
       required: true
@@ -102,6 +109,10 @@ propel:
     created_at: 
     updated_at: 
     is_new_product:
+      type: BOOLEAN
+      required: true
+      default: 0
+    is_promo:
       type: BOOLEAN
       required: true
       default: 0

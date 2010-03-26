@@ -17,14 +17,14 @@ generator:
         is_new_product: { label: 'is new?' }
       actions: ~
       filter: 
-        display:          [ sku, title, price, is_active, is_new_product, created_at, updated_at ]
+        display:          [ sku, title, price, is_active, is_new_product, is_promo, created_at, updated_at ]
       form:    ~
       new:     ~
       
 
         
       list: 
-        display:          [ sku, =title, price, is_active, is_new_product, created_at, updated_at ]
+        display:          [ sku, =title, price, is_active, is_new_product, is_promo, created_at, updated_at ]
         max_per_page:     20
         peer_method:      doSelectWithTranslation
         sort:             [updated_at, desc]
@@ -47,8 +47,9 @@ generator:
           Infos: [ sku, url_key, brand_id, quantity, weight, cube, is_active, is_new_product ]
           Infos FR: [ fr ]
           Infos EN: [ en ]
-          Stock: [ quantity, allow_out_of_stock ]
+          Stock: [ quantity, allow_out_of_stock, stock_message ]
           Prices: [ price, tax_type_id ]
+          Promo: [ is_promo, promo_price ]
           Categories: [ product2_category_list ]
           Medias: [ thumbnail ]
           Options: [ options_product ]

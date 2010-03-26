@@ -13,4 +13,17 @@ class Brand extends BaseBrand
     {
         return $this->getTitle();
     }
+    
+   /**
+    * Gets thumbnail object for current brand.
+    *
+    * @param  string $type
+    * @return object
+    * @author Florian Klein <florian@2le.net>
+    * @access public
+    */
+    public function getThumbnail($thumbnailType)
+    {
+        return ThumbnailPeer::retrieveByTypeAndAssetId($thumbnailType, $this->getId(), get_class($this));
+    }
 }

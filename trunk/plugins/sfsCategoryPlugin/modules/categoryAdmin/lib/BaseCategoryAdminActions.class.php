@@ -23,7 +23,7 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
 {
     public function executeCatalogList()
     {
-		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         $category = CategoryPeer::retrieveById($this->getRequestParameter('id'));
         
@@ -36,9 +36,24 @@ class BaseCategoryAdminActions extends autocategoryAdminActions
         }
     }
     
+    public function executeGetTextBoxList(sfWebRequest $request)
+    {
+        $categories = array();
+        $criteria = new Criteria;
+        $criteria->add(CategoryI18nPeer::TITLE, '%'.$request->getParameter('keyword').'%', Criteria::LIKE);
+        foreach(CategoryPeer::doSelectWithI18n($criteria) as $c)
+        {
+            $categories[] = array(
+                'caption' => $c->getTitle(),
+                'value' => $c->getId()
+            );
+        }
+        return $this->renderText(json_encode($categories));
+    }
+    
     public function executeDelete(sfWebRequest $request)
     {
-		$this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
+        $this->getContext()->getConfiguration()->loadHelpers('sfsCategory');
         
         if ($request->hasParameter('id')) {
             $category = CategoryPeer::retrieveById($request->getParameter('id'));
