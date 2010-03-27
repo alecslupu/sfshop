@@ -1,0 +1,19 @@
+sfsLanguage:
+  lang1:
+    culture: en
+    title_english: English
+    title_own: English
+    is_default: true
+    is_active: true
+  lang2:
+    culture: fr
+    title_english: French
+    title_own: Français
+    is_default: false
+    is_active: true
+  lang3:
+    culture: ro
+    title_english: Romanian
+    title_own: Română
+    is_default: false
+    is_active: true

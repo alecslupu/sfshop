@@ -27,6 +27,6 @@ abstract class BasesfsCoreComponents extends sfComponents
   {
 
     $this->languages = Doctrine_Core::getTable('sfsLanguage')->
-        getPublicLanguages();
+        fetchPublicLanguages();
   }
 }

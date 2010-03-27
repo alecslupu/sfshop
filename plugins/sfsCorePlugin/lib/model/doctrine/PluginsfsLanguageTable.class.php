@@ -22,21 +22,35 @@
  */
 class PluginsfsLanguageTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object PluginsfsLanguageTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('PluginsfsLanguage');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object PluginsfsLanguageTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('PluginsfsLanguage');
+  }
 
-    public function getPublicLanguages()
-    {
-      return $this->
-          createQuery('lang')->
-          addWhere('lang.is_active = ?',true)->
-          execute();
-    }
+  public function getPublicLanguages()
+  {
+    return $this->
+        createQuery('lang')->
+        addWhere('lang.is_active = ?',true);
+  }
+
+  public function fetchPublicLanguageByCulture($culture)
+  {
+
+    return $this->getPublicLanguages()->
+        andWhere('lang.culture = ?', $culture)->
+        execute();
+  }
+
+  public function fetchPublicLanguages()
+  {
+
+    return $this->getPublicLanguages()->
+        execute();
+  }
 }
