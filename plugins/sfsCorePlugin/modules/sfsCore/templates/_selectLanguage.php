@@ -1,6 +1,6 @@
 <?php if ($languages !== null && count($languages) > 1): ?>
 <div class="language-switcher">
-    <?php echo __('Language') ?>:
+    <?php echo __('Language', array(), 'sfsCorePlugin') ?>:
     <?php foreach ($languages as $language): ?>
         <?php echo link_to(
             image_tag(
