@@ -22,5 +22,17 @@
  */
 abstract class PluginsfsLanguage extends BasesfsLanguage
 {
+  public function getIconUrl()
+  {
+    
+    return sprintf('%s/%s.png',
+        sfConfig::get('app_languages_images_dir'),
+        $this->getCulture());
+  }
+  
+  public function getTitle()
+  {
 
+    return $this->getTitleOwn();
+  }
 }

@@ -6,8 +6,8 @@
             image_tag(
                 $language->getIconUrl(),
                 array(
-                    'title' => $language->getTitleOwn(),
-                    'alt'   => $language->getTitleOwn(),
+                    'title' => $language->getTitle(),
+                    'alt'   => $language->getTitle(),
                     'align' => 'absmiddle'
                 )
             ), 

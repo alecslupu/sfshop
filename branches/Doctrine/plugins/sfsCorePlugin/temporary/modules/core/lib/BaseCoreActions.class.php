@@ -19,44 +19,6 @@
  */
 class BaseCoreActions extends sfActions
 {
-   /**
-    * Change language action.
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeChangeLanguage(sfWebRequest $request)
-    {
-        $criteria = new Criteria();
-        LanguagePeer::addPublicCriteria($criteria);
-        $language = LanguagePeer::retrieveByCulture($request->getParameter('culture'), $criteria);
-        
-        $url = $this->getCurrentUrl($request);
-        
-        if ($language !== null) {
-            $this->getUser()->setCulture($request->getParameter('culture'));
-        }
-        $this->redirect($url);
-    }
-    
-    /**
-     * Return referer if exists in backend app
-     * or the localized_homepage if frontend or no referer
-     * 
-     * @param sfWebRequest $request
-     * @return string the url
-     */
-    protected function getCurrentUrl(sfWebRequest $request) {
-        // only in backend cause frontend culture handling is handled differently.
-        if($request->getReferer() and sfConfig::get('sf_app') != 'frontend') {  
-            if($request->getReferer() != $this->generateUrl('localized_homepage', array(), true)) {
-                return $request->getReferer();
-            }
-        }
-        return 'localized_homepage';
-    }
     
    /**
     * Action for 404 error (Page not found).
