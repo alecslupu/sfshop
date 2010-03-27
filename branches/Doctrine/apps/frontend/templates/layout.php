@@ -24,7 +24,7 @@
     <div>
           <div class="top_static_menu">
               <?php include_component_slot('header');?>
-              <?php //include_component('core', 'selectLanguage'); ?>
+              <?php include_component('sfsCore', 'selectLanguage'); ?>
               <?php //include_component('menu', 'top'); ?>
           </div>
           <div class="login_menu">

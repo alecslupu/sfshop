@@ -23,4 +23,10 @@
  */
 abstract class BasesfsCoreComponents extends sfComponents
 {
+  public function executeSelectLanguage(sfWebRequest $request)
+  {
+
+    $this->languages = Doctrine_Core::getTable('sfsLanguage')->
+        getPublicLanguages();
+  }
 }

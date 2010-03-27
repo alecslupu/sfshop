@@ -31,4 +31,12 @@ class PluginsfsLanguageTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('PluginsfsLanguage');
     }
+
+    public function getPublicLanguages()
+    {
+      return $this->
+          createQuery('lang')->
+          addWhere('lang.is_active = ?',true)->
+          execute();
+    }
 }

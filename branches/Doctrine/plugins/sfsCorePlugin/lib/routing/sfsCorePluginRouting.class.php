@@ -34,7 +34,7 @@ class sfsCorePluginRouting extends sfsBasicRouting
    */
   static public function listenToSfsCoreRoutingLoadConfigurationEvent(sfEvent $event)
   {
-    $file = dirname(__FILE__).'/../../modules/core/config/routing.yml';
+    $file = dirname(__FILE__).'/../../modules/sfsCore/config/routing.yml';
 
     self::registerRoutes($event, $file);
   }
