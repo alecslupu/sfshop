@@ -22,13 +22,44 @@
  */
 class PluginsfsMenuTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object PluginsfsMenuTable
-     */
-    public static function getInstance()
+  private $type = array(
+    'top'     => 1,
+    'bottom'  => 2,
+    'profile' => 3,
+    'main'    => 4,
+  );
+
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object PluginsfsMenuTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('PluginsfsMenu');
+  }
+
+  public function getItemsByType($type)
+  {
+    if (!array_key_exists($type, $this->type))
     {
-        return Doctrine_Core::getTable('PluginsfsMenu');
+      throw new sfException(
+          sprintf('Invalid type supplied "%s". You can choose: $s',
+              $type,
+              implode(', ', $this->type)
+          ));
     }
+
+    return $this->createQuery('menu')->
+        leftJoin('menu.Translation')->
+        addWhere('menu.type = ?', $this->type[$type])->
+        addOrderBy('menu.pos ASC');
+  }
+
+  public function fetchMenuByType($type)
+  {
+
+    return $this->getItemsByType($type)->
+        execute();
+  }
 }

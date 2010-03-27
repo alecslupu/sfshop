@@ -1,0 +1,65 @@
+sfsMenu:
+  menuHome1:
+    route:  @homepage
+    pos:    1
+    type:   4
+    Translation:
+      en:
+        title: Home
+      ro:
+        title: Acasa
+  menuHome2:
+    route:  @homepage
+    pos:    1
+    type:   2
+    Translation:
+      en:
+        title: Home
+      ro:
+        title: Acasa
+  menuAbout:
+    route:  @homepage
+    pos:    2
+    type:   2
+    Translation:
+      en:
+        title: About Us
+      ro:
+        title: Despre Noi
+  menuShipping:
+    route:  @information_shipping
+    pos:    3
+    type:   2
+    Translation:
+      en:
+        title: Shipping & Returns
+      ro:
+        title: Livrare
+  menuPrivacy:
+    route:  @information_privacyNotice
+    pos:    4
+    type:   2
+    Translation:
+      en:
+        title:  Privacy Notice
+      ro:
+        title: Informatii confidentialitate
+  menuConditionsUse:
+    route:  @information_conditionsUse
+    pos:    5
+    type:   2
+    Translation:
+      en:
+        title:  Conditions of Use
+      ro:
+        title: Termene si conditii
+  menuContactUs:
+    route:  @core_contactUs
+    pos:    6
+    type:   2
+    Translation:
+      en:
+        title:  Contact us
+      en:
+        title:  Contactati-ne
+  
