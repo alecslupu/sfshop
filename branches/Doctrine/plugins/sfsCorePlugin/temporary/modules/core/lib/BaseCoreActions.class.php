@@ -46,31 +46,4 @@ class BaseCoreActions extends sfActions
         return sfView::SUCCESS;
     }
     
-   /**
-    * Form for send letter from site to administrator (Contact us).
-    *
-    * @param  void
-    * @return void
-    * @author Dmitry Nesteruk
-    * @access public
-    */
-    public function executeContactUs($request)
-    {
-        $this->form = new sfsContactUsForm();
-        
-        if ($this->getRequest()->isMethod('post')) {
-            $data = $request->getParameter('data');
-            $this->form->bind($data);
-            
-            if ($this->form->isValid()) {
-                $mail = new sfsMail();
-                $mail->addAddress(sfConfig::get('app_mail_address_feedback'));
-                $mail->setFrom($data['first_name'] . ' ' . $data['last_name'] . '<' . $data['email'] . '>');
-                $mail->setSubject($data['subject']);
-                $mail->setBody($data['body']);
-                $mail->send();
-                $this->getUser()->setFlash('message', 'Your letter sent. Thanks!');
-            }
-        }
-    }
 }
