@@ -36,7 +36,7 @@ abstract class BasesfsCoreActions extends sfActions
     $language = Doctrine_Core::getTable('sfsLanguage')->fetchPublicLanguageByCulture(
         $request->getParameter('culture')
     );
-    
+
     $url = $this->getCurrentUrl($request);
 
     if ($language !== null)
@@ -59,11 +59,52 @@ abstract class BasesfsCoreActions extends sfActions
     {
       if($request->getReferer() != $this->generateUrl('localized_homepage', array(), true))
       {
-        
+
         return $request->getReferer();
       }
     }
 
     return 'localized_homepage';
+  }
+
+  /**
+   * Form for send letter from site to administrator (Contact us).
+   *
+   * @param  void
+   * @return void
+   * @author Dmitry Nesteruk
+   * @author      Alexandru Emil Lupu <gang.alecs@gmail.com>
+   * @access public
+   */
+  public function executeContactUs(sfWebRequest $request)
+  {
+    $this->form = new sfsContactUsForm();
+
+    if ($request->isMethod('post'))
+    {
+      $data = $request->getParameter('sf_core_contact_form');
+
+      if (true == sfConfig::get('app_recaptcha_is_enabled', true))
+      {
+        $captcha = array(
+            'recaptcha_challenge_field' => $request->getParameter('recaptcha_challenge_field'),
+            'recaptcha_response_field'  => $request->getParameter('recaptcha_response_field'),
+        );
+        $data = array_merge($data, array('captcha' => $captcha));
+      }
+
+      $this->form->bind($data);
+
+      if ($this->form->isValid())
+      {
+        $values = $this->form->getValues();
+
+        $this->getMailer()->send(
+            new sfsContactUsMessage($values)
+        );
+
+        $this->getUser()->setFlash('message', 'Your letter has been sent. Thanks!');
+      }
+    }
   }
 }

@@ -6,3 +6,16 @@ all:
     core_js_dir: '/sfsCorePlugin/js/'
     core_css_dir: '/sfsCorePlugin/css/'
     core_images_dir: '/sfsCorePlugin/images/'
+
+  recaptcha:
+    is_enabled: true
+    publickey:  6LdiKQQAAAAAAJS8Yaz_bEBYkiIQHHBO3IaK-iIZ
+    privatekey: 6LdiKQQAAAAAACeDjQKCFBU1sIOeVzph4bsgRGUv
+    
+  mail:
+    address_feedback: nesterukd@root.ro
+    
+test:
+  recaptcha:
+    publickey: 6Lc-SwMAAAAAAJwQAQpZ_fl-cWUF9ACyAwakzgLv
+    privatekey: 6Lc-SwMAAAAAAN48a9hzqXLD38zu-cATC1bkGxmv

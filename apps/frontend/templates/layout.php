@@ -84,9 +84,6 @@
         </div>
       </div>
       <div class="copyright">Copyright 2010 &copy; <?php echo link_to('sfShop', 'http://code.google.com/p/sfshop/') ?></div>
-
-      <?php echo $sf_content ?>
-
     </div>
   </body>
 </html>
