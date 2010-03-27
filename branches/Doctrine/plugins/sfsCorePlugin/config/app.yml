@@ -1,4 +1,8 @@
 all:
   languages:
     images_dir: languages
-  
+
+  sfshop:
+    core_js_dir: '/sfsCorePlugin/js/'
+    core_css_dir: '/sfsCorePlugin/css/'
+    core_images_dir: '/sfsCorePlugin/images/'

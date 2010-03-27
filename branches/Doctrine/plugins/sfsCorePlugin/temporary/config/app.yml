@@ -14,9 +14,6 @@ all:
 
   sfshop:
     core_web_dir: '/sfsCorePlugin/'
-    core_js_dir: '/sfsCorePlugin/js/'
-    core_css_dir: '/sfsCorePlugin/css/'
-    core_images_dir: '/sfsCorePlugin/images/'
 
     admin_web_dir: '/sfsCorePlugin/admin/'
     admin_js_dir: '/sfsCorePlugin/admin/js/'
