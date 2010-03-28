@@ -1,0 +1,37 @@
+sfsInformation:
+  shipping:
+    is_active: true
+    Translation:
+      en:
+        title:            Shipping & Returns
+        description:      Put here your Shipping & Returns information.
+        meta_keywords:    shipping and returns
+        meta_description: shipping and returns
+  privacy:
+    is_active: true
+    Translation:
+      en:
+        title:            Privacy Notice
+        description:      Put here your Privacy Notice information.
+        meta_keywords:    Privacy Notice
+        meta_description: Privacy Notice
+  conditions:
+    is_active: true
+    Translation:
+      en:
+        title:            Conditions of Use
+        description:      Put here your Conditions of Use information.
+        meta_keywords:    Conditions of Use
+        meta_description: Conditions of Use
+  not_found:
+    is_active: true
+    Translation:
+      en:
+        title:            404
+        description:      Error 404: page not found.
+  internal_server:
+    is_active: true
+    Translation:
+      en:
+        title:            500
+        description:      Error 500: page not found.

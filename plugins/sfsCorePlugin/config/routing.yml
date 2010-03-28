@@ -38,23 +38,6 @@
 #
 # Core Information
 #
-
-information_details:
-  url: /:sf_culture/information/:id
-  param: { module: information, action: details }
-
-information_shipping:
-  url: /:sf_culture/information-shipping
-  param: { module: information, action: details, id: 1 }
-
-information_privacyNotice:
-  url: /:sf_culture/information-privacy-notice
-  param: { module: information, action: details, id: 2 }
-
-information_conditionsUse:
-  url: /:sf_culture/information-conditions-of-use
-  param: { module: information, action: details, id: 3 }
-
 #
 # Information Admin
 #

@@ -38,8 +38,7 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
    * @var Array
    */
   protected $frontend_modules = array(
-      //'information',
-      //'menu',
+      'sfsInformation',
       'sfGuardAuth',
       'sfsMenu'
   );
