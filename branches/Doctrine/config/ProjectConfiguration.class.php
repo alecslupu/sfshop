@@ -18,7 +18,8 @@ class ProjectConfiguration extends sfProjectConfiguration
 //      'sfThumbnailPlugin',
 //      'sfWebBrowserPlugin',
       'sfFormExtraPlugin',
-      'sfsCorePlugin'
+      'sfsCorePlugin',
+      'sfsCoreAdminPlugin'
     ));
   }
 }
