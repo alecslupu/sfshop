@@ -7,7 +7,7 @@ core_error404:
   param: { module: sfsCore, action: error404 }
 
 core_error500:
-  url: /internal-error
+  url: /:sf_culture/internal-error
   param: { module: sfsCore, action: error500 }
 
 core_contactUs:
