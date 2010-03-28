@@ -23,7 +23,6 @@
     <div class="body">
       <div>
         <div class="top_static_menu">
-          <?php //include_component_slot('header');?>
           <?php include_component('sfsCore', 'selectLanguage'); ?>
           <?php include_component('sfsMenu', 'top'); ?>
         </div>
@@ -68,11 +67,20 @@
       </div>
       <div class="columns">
         <div class="column_left">
-          <?php //include_component_slot('sidebar') ?>
+          <?php //  include_component_slot('sidebar') ?>
           <div class="box_separator"></div>
           <?php //include_component('currency', 'selectCurrencyForm'); ?>
         </div>
         <div class="column_center">
+
+              <!-- begin 1st_slot -->
+    <div class="left">
+       <h1>Welcome to sfShop</h1>
+       <h2>A new implementation with Doctrine.</h2>
+       <p class="grey">We are currently in private beta, which means that we won't be able to let everyone in just yet.</p>
+    </div>
+    <!-- end 1st slot -->
+
           <?php echo $sf_content ?>
         </div>
       </div>

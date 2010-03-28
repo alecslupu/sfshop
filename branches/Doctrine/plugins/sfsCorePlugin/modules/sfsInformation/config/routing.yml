@@ -1,0 +1,15 @@
+information_details:
+  url: /:sf_culture/information/:slug
+  param: { module: sfsInformation, action: details }
+
+information_shipping:
+  url: /:sf_culture/information/shipping
+  param: { module: sfsInformation, action: details, id: 1 }
+
+information_privacyNotice:
+  url: /:sf_culture/information/privacy-notice
+  param: { module: sfsInformation, action: details, id: 2 }
+
+information_conditionsUse:
+  url: /:sf_culture/information/conditions-of-use
+  param: { module: sfsInformation, action: details, id: 3 }

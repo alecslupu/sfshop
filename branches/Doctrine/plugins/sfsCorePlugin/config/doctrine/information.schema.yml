@@ -1,5 +1,7 @@
 sfsInformation:
   actAs:
+    Sluggable:
+      field: [title]
     Timestampable: ~
     I18n:
       fields: [title, description, meta_keywords, meta_description]

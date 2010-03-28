@@ -29,7 +29,7 @@ all:
     login_action:           signin
     
   .settings:
-    enabled_modules:        [ default, sfGuardAuth, product ]
+    enabled_modules:        [ default, sfGuardAuth ]
     standard_helpers:       [ I18N, Partial, Date, JavascriptBase ]
 #    enabled_modules:        [ default, addressBook, menu, product, category, core, basket, order, paypal, information, currency, recaptcha, delivery, brand ]
 #    standard_helpers:       [ sfsCategory, sfsCurrency ]
