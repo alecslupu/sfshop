@@ -107,4 +107,30 @@ abstract class BasesfsCoreActions extends sfActions
       }
     }
   }
+  
+  /**
+   * Action for 404 error (Page not found).
+   *
+   * @param  void
+   * @return void
+   * @author Dmitry Nesteruk
+   * @access public
+   */
+  public function executeError404()
+  {
+    return sfView::SUCCESS;
+  }
+
+  /**
+   * Action for 500 error (Server inernal error).
+   *
+   * @param  void
+   * @return void
+   * @author Dmitry Nesteruk
+   * @access public
+   */
+  public function executeError500()
+  {
+    return sfView::SUCCESS;
+  }
 }
