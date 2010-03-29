@@ -117,8 +117,7 @@ class sfsThumbnailUtil
     {
         $thumbnails = ThumbnailPeer::getUnconverted();
         
-        if ($thumbnails !== null) {
-            
+        if ($thumbnails) {
             foreach ($thumbnails as $thumbnail) {
                 $originalThumbnail = ThumbnailPeer::retrieveByPK($thumbnail->getParentId());
                 
@@ -139,8 +138,24 @@ class sfsThumbnailUtil
                     $thumb = new sfThumbnail($thumbnail->getThumbnailTypeAssetType()->getWidth(), $thumbnail->getThumbnailTypeAssetType()->getHeight(), true, true, 75, 'sfGDAdapter');
                     $thumb->loadFile($originalThumbnail->getStoragePath());
                     $thumb->save($thumbnail->getStoragePath(), $thumbnail->getThumbnailMime()->getMime());
+                    
+                    ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
+                        sprintf('successfully converted %s ( %s )', $thumbnail->getStoragePath(), $thumbnail)
+                    )));
+                }
+                else
+                {
+                    ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
+                        sprintf('Could not find  original of %s', $thumbnail->getStoragePath())
+                    )));
                 }
             }
+        }
+        else 
+        {
+            ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnails, 'application.log', array(
+                'No unconverted thumbnails'
+            )));
         }
     }
 }
