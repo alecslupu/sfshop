@@ -22,8 +22,8 @@ class Brand extends BaseBrand
     * @author Florian Klein <florian@2le.net>
     * @access public
     */
-    public function getThumbnail($thumbnailType)
+    public function getThumbnails($thumbnailType)
     {
-        return ThumbnailPeer::retrieveByTypeAndAssetId($thumbnailType, $this->getId(), get_class($this));
+        return ThumbnailPeer::doSelectByTypeAndAssetId($thumbnailType, $this->getId(), get_class($this));
     }
 }

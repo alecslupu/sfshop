@@ -32,6 +32,27 @@ class ThumbnailPeer extends BaseThumbnailPeer
     }
     
    /**
+    * Gets thumbnail objects for some asset.
+    * 
+    * @param  string $thumbnailType
+    * @param  int $assetId
+    * @param  string $assetModel
+    * @return array of Thumbnail objects
+    * @author Florian Klein
+    * @access public
+    */
+    public static function doSelectByTypeAndAssetId($thumbnailTypeName, $assetId, $assetTypeModel)
+    {
+        $criteria = new Criteria;
+        $criteria->add(self::IS_CONVERTED, 1);
+        $criteria->add(self::IS_BLANK, 0);
+        $criteria->add(self::ASSET_ID, $assetId);
+        $criteria->add(self::ASSET_TYPE_MODEL, $assetTypeModel);
+        $criteria->add(ThumbnailTypeAssetTypePeer::THUMBNAIL_TYPE_NAME, $thumbnailTypeName);
+        return self::doSelectJoinThumbnailTypeAssetType($criteria);
+    }
+    
+   /**
     * Gets thumbnail object for some asset.
     * 
     * @param  string $thumbnailType
@@ -110,7 +131,7 @@ class ThumbnailPeer extends BaseThumbnailPeer
     
    /**
     * Generate and convert thumbnails for some asset.
-    * TODO: This only work for onw image/asset. 
+    * TODO: This only work for one image/asset. 
     * This should be improved to check and possible update all thumbs for asset
     * This also help if new ttat:s have been added
     * 
@@ -122,35 +143,31 @@ class ThumbnailPeer extends BaseThumbnailPeer
     public static function updateThumbnails($asset_object)
     { 
         ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
-            sprintf('Updating thumbnail for %s', $asset_object)
+            sprintf('Updating thumbnails for %s', $asset_object)
         )));
-        if(!$thumbnailOrig = self::retrieveByTypeAndAssetId(ThumbnailPeer::ORIGINAL, $asset_object->getId(), get_class($asset_object)))
+        $original_thumbs = self::doSelectByTypeAndAssetId(ThumbnailPeer::ORIGINAL, $asset_object->getId(), get_class($asset_object));
+        foreach($original_thumbs as $thumbnailOrig)
         {
-            ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
-                sprintf('Could not find orginal thumbnail for %s', $asset_object)
-            )));
-            return;
-        }
-        $c = new Criteria();
-        $c->add(self::PARENT_ID, $thumbnailOrig->getId());
-        $thumbnails = self::doSelect($c);
-        if($thumbnails) {
-            foreach($thumbnails as $thumbnail) {
-                $thumbnail->setIsConverted(false);
-                $thumbnail->setMimeId($thumbnailOrig->getMimeId());
-                $thumbnail->setMimeExtension($thumbnailOrig->getMimeExtension());
-                $thumbnail->save();
-                ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
-                    sprintf('Successfully updated thumbnail child %s of original %s', $thumbnail, $thumbnailOrig)
-                )));
+            $c = new Criteria;
+            $c->add(self::PARENT_ID, $thumbnailOrig->getId());
+            $thumbnails = self::doSelect($c);
+            if($thumbnails) {
+                foreach($thumbnails as $thumbnail) {
+                    $thumbnail->setIsConverted(false);
+                    $thumbnail->setMimeId($thumbnailOrig->getMimeId());
+                    $thumbnail->setMimeExtension($thumbnailOrig->getMimeExtension());
+                    $thumbnail->save();
+                    ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
+                        sprintf('Successfully updated thumbnail child %s of original %s', $thumbnail->getId(), $thumbnailOrig->getId())
+                    )));
+                }
             }
-        }
-        else {
-            $assetType = AssetTypePeer::retrieveByModel($thumbnailOrig->getAssetTypeModel());
-            if($assetType)
-                $thumbnailTypesAssetTypes = ThumbnailTypeAssetTypePeer::getByAssetTypeId($assetType->getId());
-            
-            if (count($thumbnailTypesAssetTypes) > 0) {
+            else {
+                $assetType = AssetTypePeer::retrieveByModel($thumbnailOrig->getAssetTypeModel());
+                if($assetType)
+                {
+                    $thumbnailTypesAssetTypes = ThumbnailTypeAssetTypePeer::getByAssetTypeId($assetType->getId());
+                }
                 foreach ($thumbnailTypesAssetTypes as $thumbnailTypeAssetType) {
                     if($thumbnailTypeAssetType->getId() != $thumbnailOrig->getTtatId()) {
                         $thumbnail = new Thumbnail();
@@ -201,19 +218,16 @@ class ThumbnailPeer extends BaseThumbnailPeer
         
         $thumbnailTypesAssetTypes = ThumbnailTypeAssetTypePeer::getByAssetTypeId($assetType->getId());
         
-        if (count($thumbnailTypesAssetTypes) > 0) {
-            foreach ($thumbnailTypesAssetTypes as $thumbnailTypeAssetType) {
-                $thumbnail = new Thumbnail();
-                $thumbnail->setParentId($originalThumbnail->getId());
-                $thumbnail->setAssetId($assetId);
-                $thumbnail->setTtatId($thumbnailTypeAssetType->getId());
-                $thumbnail->setPath($assetDirName . '/' . $path);
-                $thumbnail->setUuid(md5(time() + rand()));
-                $thumbnail->setAssetTypeModel($assetType->getModel());
-                $thumbnail->save();
-            }
+        foreach ($thumbnailTypesAssetTypes as $thumbnailTypeAssetType) {
+            $thumbnail = new Thumbnail();
+            $thumbnail->setParentId($originalThumbnail->getId());
+            $thumbnail->setAssetId($assetId);
+            $thumbnail->setTtatId($thumbnailTypeAssetType->getId());
+            $thumbnail->setPath($assetDirName . '/' . $path);
+            $thumbnail->setUuid(md5(time() + rand()));
+            $thumbnail->setAssetTypeModel($assetType->getModel());
+            $thumbnail->save();
         }
-        
         return $originalThumbnail;
     }
 }

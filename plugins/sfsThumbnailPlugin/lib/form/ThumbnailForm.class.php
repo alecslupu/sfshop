@@ -13,13 +13,20 @@ class ThumbnailForm extends BaseThumbnailForm
   public function configure()
   {
       unset(
-        $this['id'],        $this['parent_id'], 
-        $this['ttat_id'],   $this['mime_id'], 
-        $this['asset_id'],  $this['path'], 
-        $this['asset_type_model'], $this['mime_extension'], 
-        $this['is_blank'],  $this['is_converted'], 
-        $this['created_at'], $this['updated_at']
-        );
+        $this['id'], 
+        $this['parent_id'], 
+        $this['mime_id'],
+        $this['mime_extension'], 
+        $this['is_blank'], 
+        $this['is_converted'], 
+        $this['created_at'], 
+        $this['updated_at']
+      );
+      
+      $this->setWidget('asset_id', new sfWidgetFormInputHidden);
+      $this->setWidget('asset_type_model', new sfWidgetFormInputHidden);
+      $this->setWidget('ttat_id', new sfWidgetFormInputHidden);
+      $this->setWidget('path', new sfWidgetFormInputHidden);
 
      $this->object->setIsConverted(true);
         
