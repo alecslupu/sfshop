@@ -129,24 +129,31 @@ class sfsThumbnailUtil
                     if (!is_dir($thumbDir)) {
                         sfsThumbnailUtil::mkdirTree($thumbDir);
                     }
-                    
-//                    $thumbnail->setMimeExtension($originalThumbnail->getMimeExtension());
                     $thumbnail->setMimeId($originalThumbnail->getMimeId());
-                    $thumbnail->setIsConverted(1);
+                    $thumbnail->setIsConverted(true);
                     $thumbnail->save();
                     
                     $thumb = new sfThumbnail($thumbnail->getThumbnailTypeAssetType()->getWidth(), $thumbnail->getThumbnailTypeAssetType()->getHeight(), true, true, 75, 'sfGDAdapter');
-                    $thumb->loadFile($originalThumbnail->getStoragePath());
-                    $thumb->save($thumbnail->getStoragePath(), $thumbnail->getThumbnailMime()->getMime());
+                    try 
+                    {
+                        $thumb->loadFile($originalThumbnail->getStoragePath());
+                        $thumb->save($thumbnail->getStoragePath(), $thumbnail->getThumbnailMime()->getMime());
                     
-                    ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
-                        sprintf('successfully converted %s ( %s )', $thumbnail->getStoragePath(), $thumbnail)
-                    )));
+                        ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
+                            sprintf('successfully converted %s (result: %s)', $thumbnail->getId(), $thumbnail->getStoragePath())
+                        )));
+                    }
+                    catch(Exception $e)
+                    {
+                        ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
+                            sprintf('Unable to convert %s: %s', $thumbnail->getId(), $e->getMessage())
+                        )));
+                    }
                 }
                 else
                 {
                     ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($thumbnail, 'application.log', array(
-                        sprintf('Could not find  original of %s', $thumbnail->getStoragePath())
+                        sprintf('Could not find original of %s', $thumbnail->getId())
                     )));
                 }
             }

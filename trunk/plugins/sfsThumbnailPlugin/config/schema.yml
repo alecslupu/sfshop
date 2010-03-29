@@ -117,6 +117,10 @@ propel:
       type: BOOLEAN
       required: true
       default: 0
+    is_default: 
+      type: BOOLEAN
+      required: true
+      default: false
     created_at:
     updated_at:
 

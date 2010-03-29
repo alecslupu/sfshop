@@ -28,6 +28,19 @@ class Product extends BaseProduct
     {
         return ThumbnailPeer::retrieveByTypeAndAssetId($thumbnailType, $this->getId(), get_class($this));
     }
+    
+   /**
+    * Gets thumbnail objects for current product.
+    *
+    * @param  string $type
+    * @return array of Thumbnail objects
+    * @author Florian Klein
+    * @access public
+    */
+    public function getThumbnails($thumbnailType)
+    {
+        return ThumbnailPeer::doSelectByTypeAndAssetId($thumbnailType, $this->getId(), get_class($this));
+    }
 
    /**
     * Gets brand optin for product with translation.
