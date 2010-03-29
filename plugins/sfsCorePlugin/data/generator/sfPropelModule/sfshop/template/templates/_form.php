@@ -10,6 +10,9 @@
     [?php endif; ?]
 
     [?php $first = true; foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?]
+      [?php if($form->hasErrors()): ?]
+        [?php $first = true; ?]
+      [?php endif; ?]
       [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset, 'first' => $first)) ?]
     [?php $first = false; endforeach; ?]
 

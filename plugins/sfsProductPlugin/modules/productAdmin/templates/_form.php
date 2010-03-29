@@ -62,6 +62,9 @@ function updateGrossPrice(element_id)
     <?php endif; ?>
 
     <?php $first = true; foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?>
+      <?php if($form->hasErrors()): ?>
+        <?php $first = true; ?>
+      <?php endif; ?>
       <?php include_partial('productAdmin/form_fieldset', array('product' => $product, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset, 'first' => $first)) ?>
     <?php $first = false; endforeach; ?>
     <?php include_partial('productAdmin/form_actions', array('product' => $product, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?>
