@@ -121,9 +121,16 @@ class ThumbnailPeer extends BaseThumbnailPeer
     */
     public static function updateThumbnails($asset_object)
     { 
-            
+        ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
+            sprintf('Updating thumbnail for %s', $asset_object)
+        )));
         if(!$thumbnailOrig = self::retrieveByTypeAndAssetId(ThumbnailPeer::ORIGINAL, $asset_object->getId(), get_class($asset_object)))
+        {
+            ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
+                sprintf('Could not find orginal thumbnail for %s', $asset_object)
+            )));
             return;
+        }
         $c = new Criteria();
         $c->add(self::PARENT_ID, $thumbnailOrig->getId());
         $thumbnails = self::doSelect($c);
@@ -133,8 +140,11 @@ class ThumbnailPeer extends BaseThumbnailPeer
                 $thumbnail->setMimeId($thumbnailOrig->getMimeId());
                 $thumbnail->setMimeExtension($thumbnailOrig->getMimeExtension());
                 $thumbnail->save();
+                ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
+                    sprintf('Successfully updated thumbnail child %s of original %s', $thumbnail, $thumbnailOrig)
+                )));
             }
-        } 
+        }
         else {
             $assetType = AssetTypePeer::retrieveByModel($thumbnailOrig->getAssetTypeModel());
             if($assetType)
@@ -153,10 +163,13 @@ class ThumbnailPeer extends BaseThumbnailPeer
                         $thumbnail->setUuid(md5(time() + rand()).'.'.$thumbnailOrig->getMimeExtension());
                         $thumbnail->setAssetTypeModel($assetType->getModel());
                         $thumbnail->save();
+                        ProjectConfiguration::getActive()->getEventDispatcher()->notify(new sfEvent($asset_object, 'application.log', array(
+                            sprintf('Updating thumbnail for %s ( type: %s )', $asset_object, $thumbnailTypeAssetType)
+                        )));
                     }
                 }
             }
-        }       
+        }
         sfsThumbnailUtil::convert();
     }
     

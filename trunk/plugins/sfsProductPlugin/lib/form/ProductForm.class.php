@@ -80,34 +80,10 @@ class ProductForm extends BaseProductForm
         $this->embedForm('options_product', $opWrapperForm);
     }
     
-    public function embedThumbnailForm()
-    {
-        $thumbnailTypeAssetType = ThumbnailTypeAssetTypePeer::retrieveByThumbnailTypeName(ThumbnailPeer::ORIGINAL);
-        $path = date('Y/m/d');
-        $thumbnail = $this->object->getThumbnail(ThumbnailPeer::ORIGINAL);
-        if(!$thumbnail || $thumbnail->getIsBlank())
-        {
-            $thumbnail = new Thumbnail();
-            $thumbnail->setAssetId($this->object->getId());
-            $thumbnail->setAssetTypeModel($this->getModelName());
-            $thumbnail->setTtatId($thumbnailTypeAssetType->getId());
-            $thumbnail->setPath(sfConfig::get('app_product_thumbnails_dir_name','products') . '/' . $path);
-        }
-        $thumbnailForm = new ThumbnailForm($thumbnail);
-        $thumbnailForm->widgetSchema->setLabels(array('uuid' => false ));
-        $this->embedForm('thumbnail', $thumbnailForm);
-    }
-    
     public function save($con = null)
     {
-        $thumb_form = $this->getEmbeddedForm('thumbnail');
-        if(isset($this->taintedValues['thumbnail']['uuid_delete'])) {
-            ThumbnailPeer::deleteByAssetIdAndAssetTypeModel($thumb_form->getObject()->getAssetId(), 'Product');
-        }
-        if( ! isset($this->taintedFiles['thumbnail']['uuid']['name'])
-        or (isset($this->taintedFiles['thumbnail']['uuid']['name']) and ! $this->taintedFiles['thumbnail']['uuid']['name'])) {
-            unset($this['thumbnail']);
-        }
+        $this->preSaveThumbnail();
+        
         if( ! isset($this->taintedValues['options_product']['add_new_option']) 
         or (isset($this->taintedValues['options_product']['add_new_option']) and ! $this->taintedValues['options_product']['add_new_option'])) {
             //if the "new option" checkbox is unchecked, we don't want to add a new one 
@@ -123,16 +99,11 @@ class ProductForm extends BaseProductForm
                 $op_form->getObject()->delete();
             }
         }
-
+        
         parent::save($con);
-        if(isset($this['thumbnail'])) {
-            if($this->isNew()){
-                // save again and update id
-                $thumb_form->getObject()->setAssetId($this->getObject()->getId());
-                parent::save($con);
-            }
-            ThumbnailPeer::updateThumbnails($this->getObject());
-        }
+        
+        $this->postSaveThumbnail();
+        
         return $this->getObject();
     }
 }
