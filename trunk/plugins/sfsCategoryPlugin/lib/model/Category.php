@@ -47,7 +47,7 @@ class Category extends BaseCategory
      * @author Florian Klein
      * @access public
      */
-    public function getChildren(Criteria $criteria = null, $deep = true, $withI18n = false)
+    public function getChildren(Criteria $criteria = null, $deep = true, $withI18n = false, &$level = 0)
     {
         $cats = array();
         if ( ! $criteria) 
@@ -57,10 +57,11 @@ class Category extends BaseCategory
         if ($this->getHasChild()) {
             foreach($this->getChild($criteria, $withI18n) as $cat)
             {
-                $cats[] = $cat;
+                $cats[] = array('level' => $level, 'cat' => $cat);
                 if($deep and $cat->getHasChild())
                 {
-                    $cats = array_merge($cats, $cat->getChildren($criteria, $withI18n));
+                    $level++;
+                    $cats = array_merge($cats, $cat->getChildren($criteria, $deep, $withI18n, &$level));
                 }
             }
         }
