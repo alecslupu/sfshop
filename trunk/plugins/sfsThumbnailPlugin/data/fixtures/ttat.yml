@@ -1,4 +1,109 @@
-
+AssetType:
+  AssetType_1:
+    name: product
+    model: Product
+    has_thumbnail: '1'
+    has_i18n: '1'
+  AssetType_2:
+    name: category
+    model: Category
+    has_thumbnail: '1'
+    has_i18n: '1'
+  AssetType_3:
+    name: country
+    model: Country
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_4:
+    name: information
+    model: Information
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_5:
+    name: menu
+    model: Menu
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_6:
+    name: state
+    model: State
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_7:
+    name: email_templates
+    model: EmailTemplates
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_8:
+    name: currency
+    model: Currencies
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_9:
+    name: delivery
+    model: Delivery
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_10:
+    name: order_status
+    model: OrderStatus
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_11:
+    name: payment
+    model: Payment
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_12:
+    name: brand
+    model: Brand
+    has_thumbnail: '1'
+    has_i18n: '1'
+  AssetType_13:
+    name: option_type
+    model: OptionType
+    has_thumbnail: '0'
+    has_i18n: '1'
+  AssetType_14:
+    name: option_value
+    model: OptionValue
+    has_thumbnail: '0'
+    has_i18n: '1'
+ThumbnailType:
+  ThumbnailType_1:
+    name: mini
+    is_active: '1'
+  ThumbnailType_2:
+    name: small
+    is_active: '1'
+  ThumbnailType_3:
+    name: medium
+    is_active: '1'
+  ThumbnailType_4:
+    name: large
+    is_active: '1'
+  ThumbnailType_5:
+    name: big
+    is_active: '1'
+  ThumbnailType_6:
+    name: large
+    is_active: '1'
+  ThumbnailType_7:
+    name: original
+    is_active: '1'
+ThumbnailMime:
+  ThumbnailMime_1:
+    mime: image/jpeg
+    extension: jpg
+    extensions: 'jpe, jpg, jpeg'
+  ThumbnailMime_2:
+    mime: image/gif
+    extension: gif
+    extensions: gif
+  ThumbnailMime_3:
+    mime: image/png
+    extension: png
+    extensions: png
 ThumbnailTypeAssetType:
   ThumbnailTypeAssetType_1:
     thumbnail_type_id: ThumbnailType_1
