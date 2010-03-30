@@ -40,6 +40,34 @@ class Category extends BaseCategory
     }
     
     /**
+     * Gets children for this category.
+     *
+     * @param  Criteria $criteria
+     * @return array of Category objects
+     * @author Florian Klein
+     * @access public
+     */
+    public function getChildren(Criteria $criteria = null, $deep = true, $withI18n = false)
+    {
+        $cats = array();
+        if ( ! $criteria) 
+        {
+            $criteria = new Criteria;
+        }
+        if ($this->getHasChild()) {
+            foreach($this->getChild($criteria, $withI18n) as $cat)
+            {
+                $cats[] = $cat;
+                if($deep and $cat->getHasChild())
+                {
+                    $cats = array_merge($cats, $cat->getChildren($criteria, $withI18n));
+                }
+            }
+        }
+        return $cats;
+    }
+    
+    /**
      * Gets child categories for category.
      *
      * @param  void

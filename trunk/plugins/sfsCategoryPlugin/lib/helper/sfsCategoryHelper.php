@@ -101,7 +101,7 @@ function get_categories_tree_for_select($rmBranchOfCurrentCategory = true, $empt
         $list = array();
         
         if($emptyCategory) {
-	        $list[0] = '';
+            $list[0] = '';
         }
         
         foreach ($categoriesTree as $category) {
