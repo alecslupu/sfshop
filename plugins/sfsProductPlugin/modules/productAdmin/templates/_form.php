@@ -70,3 +70,13 @@ function updateGrossPrice(element_id)
     <?php include_partial('productAdmin/form_actions', array('product' => $product, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?>
   </form>
 </div>
+
+<script type="text/javascript">
+document.observe('dom:loaded', function() {
+    sfsPA = new sfs.Accordion({
+        bodySelector: 'div.sf_fieldset_content'
+        ,elementSelector: '.sf_admin_form fieldset'
+        ,togglerSelector: 'h2'
+    });
+});
+</script>

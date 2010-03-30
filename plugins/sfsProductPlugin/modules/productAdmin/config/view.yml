@@ -7,4 +7,5 @@ all:
     - %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js
     - %APP_SFSHOP_ADMIN_JS_DIR%tiny_mce/tiny_mce.js
     - %APP_SFSHOP_ADMIN_JS_DIR%apply_tiny_mce.js
-    - %APP_SFSHOP_CORE_JS_DIR%sfsProductAdmin.js
+    - %APP_SFSHOP_CORE_JS_DIR%sfsCookies.js
+    - %APP_SFSHOP_CORE_JS_DIR%sfsAccordion.js

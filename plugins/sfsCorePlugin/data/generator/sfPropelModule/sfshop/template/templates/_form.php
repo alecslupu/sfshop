@@ -19,3 +19,13 @@
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
   </form>
 </div>
+
+<script type="text/javascript">
+document.observe('dom:loaded', function() {
+    sfsPA = new sfs.Accordion({
+        bodySelector: 'div.sf_fieldset_content'
+        ,elementSelector: '.sf_admin_form fieldset'
+        ,togglerSelector: 'h2'
+    });
+});
+</script>
