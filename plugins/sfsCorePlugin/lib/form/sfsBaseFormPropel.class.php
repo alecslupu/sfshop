@@ -184,4 +184,17 @@ abstract class sfsBaseFormPropel extends sfFormPropel
         }
         ThumbnailPeer::updateThumbnails($this->getObject());
     }
+    
+    public static function array_flatten(array $array)
+    {
+        $flat_array = array();
+        foreach(new RecursiveIteratorIterator(new RecursiveArrayIterator($array)) as $v)
+        {
+            if($v)
+            {
+                $flat_array[$v] = $v;
+            }
+        }
+        return $flat_array;
+    }
 }
