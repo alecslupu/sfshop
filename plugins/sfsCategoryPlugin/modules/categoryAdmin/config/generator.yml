@@ -20,6 +20,7 @@ generator:
       edit:    ~
       list: 
         display:          [ =title, is_active, created_at, updated_at ]
+        peer_method:      doSelectWithTranslation
         max_per_page:     40
         object_actions: 
           _edit:          ~
