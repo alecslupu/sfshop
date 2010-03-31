@@ -61,7 +61,7 @@ class Category extends BaseCategory
                 if($deep and $cat->getHasChild())
                 {
                     $level++;
-                    $cats = array_merge($cats, $cat->getChildren($criteria, $deep, $withI18n, &$level));
+                    $cats = array_merge($cats, $cat->getChildren($criteria, $deep, $withI18n, $level));
                 }
             }
         }
