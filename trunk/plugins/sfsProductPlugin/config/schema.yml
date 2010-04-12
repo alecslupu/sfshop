@@ -258,7 +258,7 @@ propel:
       primaryKey: true
     option_value_id: 
       type: INTEGER
-      required: true
+      required: false
       foreignTable: option_value
       foreignReference: id
       onDelete: CASCADE
@@ -285,7 +285,24 @@ propel:
       type: VARCHAR
       required: true
       size: 100
-
+    libelle: varchar(255)
+    pos: 
+      type: INTEGER
+      required: true
+      default: 1
+    is_active: 
+      type: BOOLEAN
+      required: true
+      default: 1
+    weight: 
+      type: DECIMAL
+      size: 10
+      scale: 3
+    cube: 
+      type: DECIMAL
+      size: 10
+      scale: 3
+ 
   product2category: 
     _attributes: 
       phpName: Product2Category
