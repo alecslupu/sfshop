@@ -175,6 +175,36 @@
         <source>Products</source>
         <target>Produits</target>
       </trans-unit>
+      <trans-unit id="22">
+        <source>Is active</source>
+        <target>Actif</target>
+      </trans-unit>
+       <trans-unit id="23">
+        <source>Is promo</source>
+        <target>Promo</target>
+      </trans-unit>
+       <trans-unit id="24">
+        <source>Updated at</source>
+        <target>Maj</target>
+      </trans-unit>
+       <trans-unit id="26">
+        <source>Created at</source>
+        <target>Crée le</target>
+      </trans-unit>
+ 
+        <trans-unit id="27">
+        <source>Sku</source>
+        <target>Ref.</target>
+      </trans-unit>
+         <trans-unit id="28">
+        <source>ProductAdmin List</source>
+        <target>Administration produits.</target>
+      </trans-unit>
+        <trans-unit id="29">
+        <source>Is new product</source>
+        <target>Nouveauté</target>
+      </trans-unit>
+ 
     </body>
   </file>
 </xliff>

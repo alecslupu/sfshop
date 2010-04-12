@@ -14,17 +14,17 @@ generator:
       fields:
         description_short: 
           label:           'Short description'
-        is_new_product: { label: 'is new?' }
+        price: {renderer: format_currency}
       actions: ~
       filter: 
-        display:          [ sku, title, price, is_active, is_new_product, is_promo, created_at, updated_at ]
+        display:          [ sku, title, price, is_active, is_new_product, is_promo  ]
       form:    ~
       new:     ~
       
 
         
       list: 
-        display:          [ sku, =title, price, is_active, is_new_product, is_promo, created_at, updated_at ]
+        display:          [ sku, =title, price, is_active, is_new_product, is_promo, updated_at ]
         max_per_page:     20
         peer_method:      doSelectWithTranslation
         sort:             [updated_at, desc]
