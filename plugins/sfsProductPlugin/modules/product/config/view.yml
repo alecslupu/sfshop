@@ -1,3 +1,0 @@
-all:
-  components:
-    sidebar: [ category, menuTree ]
