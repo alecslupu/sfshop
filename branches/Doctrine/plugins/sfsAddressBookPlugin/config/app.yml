@@ -1,4 +1,0 @@
-all:
-  address_book:
-    enabled:   true
-
