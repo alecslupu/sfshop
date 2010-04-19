@@ -1,8 +1,0 @@
-Menu: 
-  # English
-  Menu_PROFILE_EN_1: 
-    culture: 'en'
-    route:   '@order_myList'
-    title:   'My orders'
-    pos:     1
-    type:    <?php echo MenuPeer::TYPE_PROFILE; ?> 
