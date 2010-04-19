@@ -31,4 +31,4 @@ all:
     escaping_method:        ESC_SPECIALCHARS # Function or helper used for escaping. Accepted values: ESC_RAW, ESC_ENTITIES, ESC_JS, ESC_JS_NO_ENTITIES, and ESC_SPECIALCHARS.
 
     standard_helpers:       [Partial, Cache, Form, I18N, Javascript]
-    enabled_modules:        [ default ] #, installer
+    enabled_modules:        [ default ] 
