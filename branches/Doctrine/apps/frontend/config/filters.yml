@@ -3,10 +3,6 @@ security:  ~
 
 
 # insert your own filters here
-my_filter: 
-  class: myFilter
-  param: 
-    #param_name:   'param_value'
 
 
 cache:     ~
