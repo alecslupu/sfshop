@@ -1,8 +1,0 @@
-#
-# Asset types
-#
-AssetType:
-  AssetType_payment:
-    name:          payment
-    model:         Payment
-    has_i18n:      1
