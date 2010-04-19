@@ -6,9 +6,9 @@ default:
     title:        Admin panel
     robots:       index, follow
 
-  stylesheets:    [ %APP_SFSHOP_ADMIN_CSS_DIR%main ]
+  stylesheets:    ~
 
-  javascripts:    [ ../../js/prototype/prototype, %APP_SFSHOP_ADMIN_JS_DIR%functions ]
+  javascripts:    ~
 
   has_layout:     true
   layout:         layout
