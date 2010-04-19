@@ -57,12 +57,4 @@ class sfsCorePluginConfiguration extends sfsPluginConfiguration
       //'languageAdmin',
       //'informationAdmin'
   );
-
-  /**
-   * @see sfsPluginConfiguration
-   */
-  public function initialize()
-  {
-    parent::initialize();
-  }
 }
