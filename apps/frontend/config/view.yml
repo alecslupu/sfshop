@@ -2,19 +2,10 @@ default:
   http_metas:
     content-type: text/html
 
-  metas:
-    title:        'sfShop'
-    description:  'The best video on DVD.'
-    keywords:     'DVD, shop, ecommerce, video'
-    language:     'en'
-    robots:       'index, follow'
+  stylesheets:    ~
 
-  stylesheets:    [ %APP_SFSHOP_CORE_CSS_DIR%main ]
-
-  javascripts:    [ prototype/prototype.js, prototype/scriptaculous/effects.js, %APP_SFSHOP_CORE_JS_DIR%functions.js, %APP_SFSHOP_CORE_JS_DIR%sfsAjax.js ]
-
+  javascripts:    ~
+  
   has_layout:     true
   layout:         layout
 
-  components:
-    sidebar: [ category, menuTree ]
