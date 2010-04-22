@@ -3,9 +3,9 @@
 #  url:   /:sf_culture
 #  param: { module: coreAdmin, action: index }
 #
-#homepage:
-#  url:   /
-#  param: { module: coreAdmin, action: index }
+homepage:
+  url:   /
+  param: { module: sfsCoreAdmin, action: index }
 
 default_symfony:
   url:   /symfony/:action/*

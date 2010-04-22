@@ -3,7 +3,7 @@ dev:
     class: sfI18N
     param:
       source:               XLIFF
-      debug:                true
+      debug:                false
       untranslated_prefix:  "[T]"
       untranslated_suffix:  "[/T]"
 
