@@ -13,11 +13,23 @@
     <div id="main">
       <?php if ($sf_user->isAuthenticated()):?>
         <?php include_component("sfsCoreAdminLayout","head"); ?>
+      <hr class="noscreen" />
+        <?php include_component("sfsCoreAdminLayout","menu"); ?>
+      <hr class="noscreen" />
+      <!-- Columns -->
+      <div id="cols" class="box">
+          <?php include_component("sfsCoreAdminLayout","left"); ?>
         <hr class="noscreen" />
-      <?php endif;  ?>
-       <?php echo $sf_content?>
-      <?php if ($sf_user->isAuthenticated()):?>
-        <hr class="noscreen" />
+        <!-- Content (Right Column) -->
+        <div id="content" class="box">
+          <?php endif;  ?>
+
+          <?php echo $sf_content?>
+
+          <?php if ($sf_user->isAuthenticated()):?>
+        </div>
+      </div>
+      <hr class="noscreen" />
         <?php include_component("sfsCoreAdminLayout","footer"); ?>
       <?php endif;  ?>
     </div>

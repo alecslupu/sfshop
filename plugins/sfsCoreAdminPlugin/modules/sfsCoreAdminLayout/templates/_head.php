@@ -1,16 +1,13 @@
 <!-- Tray -->
 <div id="tray" class="box">
-
   <p class="f-left box">
-
     <!-- Switcher -->
     <span class="f-left" id="switcher">
-      <a href="#" rel="1col" class="styleswitch ico-col1" title="Display one column"><img src="design/switcher-1col.gif" alt="1 Column" /></a>
-
-      <a href="#" rel="2col" class="styleswitch ico-col2" title="Display two columns"><img src="design/switcher-2col.gif" alt="2 Columns" /></a>
+      <a href="#" rel="1col" class="styleswitch ico-col1" title="<?php echo __('Display one column', array(), 'sfsCoreAdminPlugin')?>"><img src="/sfsCoreAdminPlugin/images/switcher-1col.gif" alt="<?php echo __('1 Column', array(), 'sfsCoreAdminPlugin')?>" /></a>
+      <a href="#" rel="2col" class="styleswitch ico-col2" title="<?php echo __('Display two columns', array(), 'sfsCoreAdminPlugin')?>"><img src="/sfsCoreAdminPlugin/images/switcher-2col.gif" alt="<?php echo __('2 Columns', array(), 'sfsCoreAdminPlugin')?>" /></a>
     </span>
 
-    Project: <strong>Your Project</strong>
+    <?php echo __('Project', array(), 'sfsCoreAdminPlugin');?>: <strong>Your Project</strong>
 
   </p>
 
