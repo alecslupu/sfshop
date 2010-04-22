@@ -30,7 +30,7 @@ all:
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            false
-    standard_helpers: [ Partial, Cache, Form, I18N, Javascript]
+#    standard_helpers: [ Partial, Cache, I18N, Javascript]
     enabled_modules: [ default ]
 #    standard_helpers:       [ , sfsCurrency ]
 #    enabled_modules:        [ default, countryAdmin, stateAdmin, coreAdmin, coreAdminAdmin, categoryAdmin, brandAdmin, productAdmin, orderAdmin, catalogAdmin, optionTypeAdmin, optionValueAdmin, currencyAdmin, emailTemplateAdmin, deliveryAdmin, administratorAdmin ]
