@@ -57,6 +57,7 @@ abstract class sfsPluginConfiguration extends sfPluginConfiguration
 
     if ($this->configuration instanceof sfApplicationConfiguration)
     {
+      $this->configuration->loadHelpers(array("I18N"));
       $this->registerRoutes();
     }
   }

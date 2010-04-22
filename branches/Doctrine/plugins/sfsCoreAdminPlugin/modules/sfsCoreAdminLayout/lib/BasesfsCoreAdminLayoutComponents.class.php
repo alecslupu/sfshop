@@ -22,4 +22,23 @@
 
 abstract class BasesfsCoreAdminLayoutComponents extends sfComponents
 {
+  public function executeHead(sfWebRequest $request)
+  {
+  }
+
+  public function executeFooter(sfWebRequest $request)
+  {
+  }
+
+  public function executeMenu(sfWebRequest $request)
+  {
+  }
+
+  public function executeLeft(sfWebRequest $request)
+  {
+  }
+
+  public function executeSearch(sfWebRequest $request)
+  {
+  }
 }

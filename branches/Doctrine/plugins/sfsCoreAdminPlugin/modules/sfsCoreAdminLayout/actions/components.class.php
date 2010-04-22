@@ -24,8 +24,4 @@ require_once dirname(__FILE__).'/../lib/BasesfsCoreAdminLayoutComponents.class.p
  */
 class sfsCoreAdminLayoutComponents extends BasesfsCoreAdminLayoutComponents
 {
-  public function executeHead(sfWebRequest $request)
-  {
-
-  }
 }
