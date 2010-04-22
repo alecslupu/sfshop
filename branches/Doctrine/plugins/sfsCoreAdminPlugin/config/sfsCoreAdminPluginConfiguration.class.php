@@ -14,7 +14,7 @@ require_once sfConfig::get('sf_plugins_dir') . '/sfsCorePlugin/lib/config/sfsPlu
 
 /**
  * sfsCoreAdminPlugin configuration.
- * 
+ *
  * @package    sfShopPlugin
  * @subpackage sfsCoreAdminPlugin
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>
@@ -23,18 +23,21 @@ require_once sfConfig::get('sf_plugins_dir') . '/sfsCorePlugin/lib/config/sfsPlu
 class sfsCoreAdminPluginConfiguration extends sfsPluginConfiguration
 {
   const VERSION = '1.0.0-DEV';
-
-  // to be moved as $backend_modules
-  protected $global_modules = array(
-      'sfsCoreAdminLayout'
-  );
   
+  protected $backend_modules = array(
+      'sfsCoreAdminLayout',
+      'sfsCoreAdmin'
+  );
+
   public function __construct(sfProjectConfiguration $configuration, $rootDir = null, $name = null)
   {
     parent::__construct($configuration, $rootDir, $name);
     if ($this->configuration instanceof sfApplicationConfiguration)
     {
       sfConfig::set('sf_app_template_dir', $this->getDecoratorPath());
+      sfConfig::set('sf_login_action', 'signin');
+      sfConfig::set('sf_login_module', 'sfsCoreAdmin');
+
       $this->setAssets();
     }
   }

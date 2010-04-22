@@ -11,16 +11,16 @@
  * THE SOFTWARE.
 */
 
-require_once dirname(__FILE__).'/../lib/BasesfsCoreAdminLayoutActions.class.php';
+require_once dirname(__FILE__).'/../lib/BasesfsCoreAdminActions.class.php';
 
 /**
- * sfsCoreAdminLayout actions.
+ * sfsCoreAdmin actions.
  *
  * @package    sfShopPlugin
  * @subpackage sfsCoreAdminPlugin
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>
  * @license    http://www.opensource.org/licenses/mit-license.php
  */
-class sfsCoreAdminLayoutActions extends BasesfsCoreAdminLayoutActions
+class sfsCoreAdminActions extends BasesfsCoreAdminActions
 {
 }

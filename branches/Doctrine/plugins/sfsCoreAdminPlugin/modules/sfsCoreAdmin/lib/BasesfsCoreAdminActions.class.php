@@ -11,16 +11,20 @@
  * THE SOFTWARE.
 */
 
-require_once dirname(__FILE__).'/../lib/BasesfsCoreAdminLayoutActions.class.php';
-
+require_once sfConfig::get("sf_plugins_dir") . "/sfDoctrineGuardPlugin/modules/sfGuardAuth/lib/BasesfGuardAuthActions.class.php";
 /**
- * sfsCoreAdminLayout actions.
- *
+ * Base actions for the sfsCoreAdminPlugin sfsCoreAdmin module.
+ * 
  * @package    sfShopPlugin
  * @subpackage sfsCoreAdminPlugin
  * @author     Alexandru Emil Lupu <gang.alecs@gmail.com>
  * @license    http://www.opensource.org/licenses/mit-license.php
  */
-class sfsCoreAdminLayoutActions extends BasesfsCoreAdminLayoutActions
+abstract class BasesfsCoreAdminActions extends BasesfGuardAuthActions
 {
+  public function executeIndex(sfWebRequest $request)
+  {
+    
+  }
+  
 }

@@ -1,0 +1,44 @@
+#signin {
+  padding:20px;
+  -moz-background-clip:border;
+  -moz-background-inline-policy:continuous;
+  -moz-background-origin:padding;
+  background:#FFFFFF none repeat scroll 0 0;
+  border:1px solid #AFAFAF;
+  width: 341px;
+  margin: 10% auto auto auto;
+}
+
+#signin legend {
+  -moz-background-clip:border;
+  -moz-background-inline-policy:continuous;
+  -moz-background-origin:padding;
+  background:#FFFFFF none repeat scroll 0 0;
+  color:#0085CC;
+}
+
+#signin legend {
+  font-size:120%;
+  font-weight:bold;
+}
+
+#signin fieldset {
+  border:1px solid #CCCCCC;
+}
+
+#signin fieldset {
+  margin:10px 0;
+  padding:10px;
+  position:relative;
+}
+
+#signin table {
+  border-collapse:collapse;
+}
+#signin .notification {
+  width: 319px;
+}
+
+#signin .input-text {
+  width: 210px;
+}

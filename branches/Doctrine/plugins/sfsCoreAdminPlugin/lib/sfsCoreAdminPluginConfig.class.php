@@ -30,22 +30,22 @@ class sfsCoreAdminPluginConfig
 
 //    foreach ($response->getStylesheets() as $file)
 //    {
-//      $response->removeStylesheet($file);
+//      $response->removeStylesheet('/sfsCoreAdminPlugin/' . $file);
 //    }
 
     foreach (self::getRegisteredStyleSheets() as $file=>$attributes)
     {
-      $response->addStylesheet('/' . $file, 'first', $attributes);
+      $response->addStylesheet('/sfsCoreAdminPlugin/' . $file, 'first', $attributes);
     }
 
 //    foreach ($response->getJavascripts() as $file)
 //    {
-//      $response->removeJavascript($file);
+//      $response->removeJavascript('/sfsCoreAdminPlugin/' . $file);
 //    }
 
     foreach (self::getRegisteredJavascripts() as $file)
     {
-      $response->addJavascript('/' . $file, 'first');
+      $response->addJavascript('/sfsCoreAdminPlugin/' . $file, 'first');
     }
   }
 
@@ -109,7 +109,8 @@ class sfsCoreAdminPluginConfig
       'js/switcher.js',
       'js/toggle.js',
       'js/ui.core.js',
-      'js/ui.tabs.js'
+      'js/ui.tabs.js',
+      'js/notification_handler.js'
     );
     return $js_files;
   }
