@@ -1,0 +1,2 @@
+all:
+  stylesheets: [ /sfsCoreAdminPlugin/css/signin.css ]
